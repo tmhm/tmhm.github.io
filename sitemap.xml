@@ -2,11 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://tmhm.github.io/2017/02/18/</loc>
-    <lastmod>2017-02-18T16:49:04+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://tmhm.github.io/about/</loc>
     <lastmod>2017-02-18T16:49:04+08:00</lastmod>
   </url>
@@ -17,8 +12,9 @@
   </url>
   
   <url>
-    <loc>https://tmhm.github.io/2017/02/18/test3/</loc>
+    <loc>https://tmhm.github.io/categories/</loc>
     <lastmod>2017-02-18T16:49:04+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -28,23 +24,17 @@
   </url>
   
   <url>
-    <loc>https://tmhm.github.io/categories/</loc>
-    <lastmod>2017-02-18T16:49:04+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://tmhm.github.io/LICENSE/</loc>
   </url>
   
   <url>
-    <loc>https://tmhm.github.io/tags/about-me/</loc>
+    <loc>https://tmhm.github.io/categories/about-me/</loc>
     <lastmod>2017-02-18T16:49:04+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://tmhm.github.io/categories/about-me/</loc>
+    <loc>https://tmhm.github.io/tags/about-me/</loc>
     <lastmod>2017-02-18T16:49:04+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -68,12 +58,6 @@
   
   <url>
     <loc>https://tmhm.github.io/post/</loc>
-    <lastmod>2017-02-18T16:49:04+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://tmhm.github.io/categories/second/</loc>
     <lastmod>2017-02-18T16:49:04+08:00</lastmod>
     <priority>0</priority>
   </url>
