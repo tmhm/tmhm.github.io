@@ -2,63 +2,339 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://tmhm.github.io/2017/02/20/hello_world/</loc>
+    <lastmod>2017-02-20T02:03:45-08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://tmhm.github.io/about/</loc>
-    <lastmod>2017-02-18T16:49:04+08:00</lastmod>
+    <lastmod>2017-02-19T19:54:02-08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://tmhm.github.io/2017/02/18/hello-world/</loc>
-    <lastmod>2017-02-18T16:49:04+08:00</lastmod>
+    <loc>https://tmhm.github.io/license/</loc>
+    <lastmod>2017-02-19T19:54:02-08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://tmhm.github.io/tags/</loc>
-    <lastmod>2017-02-18T16:49:04+08:00</lastmod>
-    <priority>0</priority>
+    <loc>https://tmhm.github.io/2017/02/13/win10%E7%A6%81%E7%94%A8%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E6%9C%8D%E5%8A%A1/</loc>
+    <lastmod>2017-02-13T00:48:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://tmhm.github.io/categories/</loc>
-    <lastmod>2017-02-18T16:49:04+08:00</lastmod>
-    <priority>0</priority>
+    <loc>https://tmhm.github.io/2017/02/08/%E5%9F%BA%E4%BA%8Edrl%E5%92%8Ctorcs%E7%9A%84%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E4%BB%BF%E7%9C%9F%E7%B3%BB%E7%BB%9F%E4%B9%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2017-02-08T09:13:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://tmhm.github.io/LICENSE/</loc>
+    <loc>https://tmhm.github.io/2016/12/25/logging-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2016-12-25T04:49:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://tmhm.github.io/tags/about-me/</loc>
-    <lastmod>2017-02-18T16:49:04+08:00</lastmod>
-    <priority>0</priority>
+    <loc>https://tmhm.github.io/2016/12/23/matplotlib-y%E8%BD%B4%E6%A0%87%E6%B3%A8%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8%E4%BB%A5%E5%8F%8Asubplot%E8%B0%83%E6%95%B4%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2016-12-23T08:32:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://tmhm.github.io/categories/about-me/</loc>
-    <lastmod>2017-02-18T16:49:04+08:00</lastmod>
-    <priority>0</priority>
+    <loc>https://tmhm.github.io/2016/12/02/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E4%B9%8B%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E6%91%84%E5%83%8F%E5%A4%B4%E4%B8%BB%E8%A6%81from-%E9%80%9F%E8%85%BEceo-%E9%82%B1%E7%BA%AF%E9%91%AB%E5%88%86%E4%BA%AB/</loc>
+    <lastmod>2016-12-02T05:03:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://tmhm.github.io/categories/</loc>
-    <priority>0</priority>
+    <loc>https://tmhm.github.io/2016/11/30/%E8%AF%BB%E5%BE%AE%E8%BD%AF%E7%9A%84%E6%A2%A6%E5%B7%A5%E5%8E%82/</loc>
+    <lastmod>2016-11-30T07:25:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://tmhm.github.io/categories/first/</loc>
-    <lastmod>2017-02-18T16:49:04+08:00</lastmod>
-    <priority>0</priority>
+    <loc>https://tmhm.github.io/2016/11/30/gpu%E9%A9%B1%E5%8A%A8%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2016-11-30T01:12:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://tmhm.github.io/tags/hello/</loc>
-    <lastmod>2017-02-18T16:49:04+08:00</lastmod>
+    <loc>https://tmhm.github.io/2016/11/25/shadowsocks-%E5%9C%A8win10%E4%B8%8B%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2016-11-25T04:38:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/11/21/dl%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%BB%E6%9C%BA%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AEubuntu14.04&#43;gtx1080&#43;cuda8.0%E8%A7%A3%E5%86%B3%E6%A1%8C%E9%9D%A2%E9%87%8D%E5%A4%8D%E7%99%BB%E5%BD%95/</loc>
+    <lastmod>2016-11-21T12:15:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/11/21/dl%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%BB%E6%9C%BA%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AEubuntu14.04&#43;gtx1080&#43;cuda8.0/</loc>
+    <lastmod>2016-11-21T07:25:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/11/21/gpu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E4%B8%AD%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80note/</loc>
+    <lastmod>2016-11-21T06:29:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/11/18/%E8%AF%AD%E5%BD%95%E6%94%B6%E9%9B%86/</loc>
+    <lastmod>2016-11-18T08:43:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/11/02/macdown%E5%9C%A8mac-os-%E4%B8%AD%E7%9A%84%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2016-11-02T13:50:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/10/31/%E7%94%9F%E6%88%90.eps%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/</loc>
+    <lastmod>2016-10-31T10:15:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/10/27/%E6%95%B0%E5%AD%A6%E9%9A%8F%E8%AE%B0%E8%BD%AC%E8%BD%BD/</loc>
+    <lastmod>2016-10-27T06:51:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/10/26/%E7%94%A8keras-%E5%92%8C-ddpg-play-torcs1/</loc>
+    <lastmod>2016-10-26T12:06:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/10/10/%E4%B8%80%E4%BA%9B%E4%B9%A6%E5%8D%95/</loc>
+    <lastmod>2016-10-10T08:40:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/09/17/stacks-and-queues--codility/</loc>
+    <lastmod>2016-09-17T10:44:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/09/14/sorting--codility/</loc>
+    <lastmod>2016-09-14T09:36:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/09/04/prefix-sums--codility/</loc>
+    <lastmod>2016-09-04T09:08:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/09/02/%E5%86%8D%E6%8E%A2vim%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2016-09-02T16:13:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/09/01/counting-elements--codility/</loc>
+    <lastmod>2016-09-01T15:46:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/09/01/time-complexity--codility/</loc>
+    <lastmod>2016-09-01T15:44:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/09/01/arrays--codility/</loc>
+    <lastmod>2016-09-01T15:40:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/09/01/iterations---codility/</loc>
+    <lastmod>2016-09-01T15:35:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/08/31/adobe-reader-dc-%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE/</loc>
+    <lastmod>2016-08-31T07:51:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/08/30/codility-lessons/</loc>
+    <lastmod>2016-08-30T14:19:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/08/30/%E6%8C%89%E4%BD%8D%E6%93%8D%E4%BD%9C/</loc>
+    <lastmod>2016-08-30T10:54:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/08/30/microsoft-visual-studio%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2016-08-30T10:51:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/08/30/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AF%B9%E9%BD%90/</loc>
+    <lastmod>2016-08-30T10:50:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/08/30/c_c&#43;&#43;%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%B6%89%E5%8F%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9/</loc>
+    <lastmod>2016-08-30T10:47:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/08/08/git%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2016-08-08T09:13:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/06/04/%E6%AF%94%E8%BE%83%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%85%E5%90%AB%E4%BB%A5%E5%8F%8A%E5%8F%98%E4%BD%8D%E8%AF%8D/</loc>
+    <lastmod>2016-06-04T09:48:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/05/31/python-%E4%B8%8E%E6%97%B6%E9%97%B4%E6%9C%89%E5%85%B3%E7%9A%84%E6%93%8D%E4%BD%9C/</loc>
+    <lastmod>2016-05-31T10:46:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/05/27/pybrain%E5%BA%93%E7%9A%84example%E4%B9%8Bnfq%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%88%86%E6%9E%90/</loc>
+    <lastmod>2016-05-27T11:43:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/05/26/python%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BB%A7%E6%89%BF/</loc>
+    <lastmod>2016-05-26T09:53:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/05/22/c_c&#43;&#43;%E4%B8%AD%E4%B8%80%E4%BA%9B%E4%B8%8D%E5%A4%AA%E6%B3%A8%E6%84%8F%E5%88%B0%E7%9A%84%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9--%E9%94%A6%E9%9B%86/</loc>
+    <lastmod>2016-05-22T14:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/05/21/python-%E6%9C%89%E5%85%B3%E5%BC%95%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2016-05-21T14:24:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/05/21/cmake%E5%B0%9D%E9%B2%9C/</loc>
+    <lastmod>2016-05-21T01:50:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/05/21/vim%E5%88%9D%E6%8E%A2/</loc>
+    <lastmod>2016-05-21T01:49:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/05/19/python%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E9%A1%B9/</loc>
+    <lastmod>2016-05-19T06:07:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/05/17/python%E4%B8%80%E4%BA%9B%E5%86%85%E5%BB%BA%E5%87%BD%E6%95%B0mapzipfilterreduceyield%E7%AD%89/</loc>
+    <lastmod>2016-05-17T15:06:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/05/14/spss-v21.0-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2016-05-14T14:50:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/04/24/python&#43;anaconda&#43;pycharm%E5%B7%A5%E5%85%B7%E5%8C%85%E5%AE%89%E8%A3%85/</loc>
+    <lastmod>2016-04-24T13:24:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/04/20/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B00/</loc>
+    <lastmod>2016-04-20T15:26:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/04/20/ipython-notebook-%E4%B8%80%E4%BA%9B%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2016-04-20T09:40:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/04/12/i.e-%E5%92%8Ce.g-%E7%9A%84%E5%8C%BA%E5%88%AB/</loc>
+    <lastmod>2016-04-12T02:09:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/04/11/%E6%B1%82%E8%A7%A3%E8%B7%AF%E7%94%B1%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98%E5%8D%8E%E4%B8%BA%E6%8C%91%E6%88%98%E8%B5%9B%E5%B0%8F%E6%80%9D/</loc>
+    <lastmod>2016-04-11T13:47:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/03/31/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF0/</loc>
+    <lastmod>2016-03-31T08:18:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/03/25/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E5%80%92%E6%95%B0%E7%AC%ACn%E4%B8%AA%E8%8A%82%E7%82%B9/</loc>
+    <lastmod>2016-03-25T09:25:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/03/25/%E7%94%A8python%E7%BB%83%E4%B9%A0%E7%AE%97%E6%B3%95%E9%A2%98/</loc>
+    <lastmod>2016-03-25T09:01:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/03/24/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/</loc>
+    <lastmod>2016-03-24T09:04:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/03/16/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0/</loc>
+    <lastmod>2016-03-16T07:20:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/03/12/ubuntu%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2016-03-12T03:34:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/03/10/shell%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2016-03-10T08:36:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/03/08/pycharm%E5%B0%8F%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2016-03-08T13:57:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/03/08/how-to-install-torcs-package-in-debian/</loc>
+    <lastmod>2016-03-08T13:19:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/03/08/qt4.8.6%E9%9D%99%E6%80%81%E7%BC%96%E8%AF%91/</loc>
+    <lastmod>2016-03-08T12:48:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/03/08/qt%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%85%B1%E4%BA%AB%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2016-03-08T12:47:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/03/08/debian%E5%88%9D%E8%AF%86%E9%80%89%E6%8B%A9%E6%9C%80%E4%BD%B3%E9%95%9C%E5%83%8F%E5%8F%91%E5%B8%83%E7%AB%99%E7%82%B9%E5%8A%A0%E5%85%A5source.list%E6%96%87%E4%BB%B6/</loc>
+    <lastmod>2016-03-08T07:28:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/02/21/dev-c&#43;&#43;-%E5%B0%8F%E9%97%AE%E9%A2%98%E9%94%A6%E9%9B%86/</loc>
+    <lastmod>2016-02-21T13:10:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/2016/02/18/ubuntu-12.04lts-%E5%AE%89%E8%A3%85mysql-%E5%B9%B6%E9%80%9A%E8%BF%87qt%E8%BF%9E%E6%8E%A5/</loc>
+    <lastmod>2016-02-18T10:58:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://tmhm.github.io/tags/about/</loc>
+    <lastmod>2017-02-19T19:54:02-08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://tmhm.github.io/post/</loc>
-    <lastmod>2017-02-18T16:49:04+08:00</lastmod>
+    <lastmod>2017-02-20T02:03:45-08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -69,7 +345,7 @@
   
   <url>
     <loc>https://tmhm.github.io/</loc>
-    <lastmod>2017-02-18T16:49:04+08:00</lastmod>
+    <lastmod>2017-02-20T02:03:45-08:00</lastmod>
     <priority>0</priority>
   </url>
   

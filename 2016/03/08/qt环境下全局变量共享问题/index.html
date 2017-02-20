@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>QT环境下，全局变量共享问题  &middot; Well</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="">
+
+
+<meta property="og:title" content="QT环境下，全局变量共享问题  &middot; Well ">
+<meta property="og:site_name" content="Well"/>
+<meta property="og:url" content="https://tmhm.github.io/2016/03/08/qt%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%85%B1%E4%BA%AB%E9%97%AE%E9%A2%98/" />
+<meta property="og:locale" content="en-EN">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2016-03-08T12:47:00Z" />
+<meta property="og:article:modified_time" content="2016-03-08T12:47:00Z" />
+
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta name="twitter:title" content="QT环境下，全局变量共享问题" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="https://tmhm.github.io/2016/03/08/qt%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%85%B1%E4%BA%AB%E9%97%AE%E9%A2%98/" />
+<meta name="twitter:domain" content="https://tmhm.github.io/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "QT环境下，全局变量共享问题",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2016-03-08",
+    "description": "",
+    "wordCount":  91 
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://tmhm.github.io/2016/03/08/qt%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%85%B1%E4%BA%AB%E9%97%AE%E9%A2%98/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://tmhm.github.io/v2.png">
+<link href="https://tmhm.github.io/v2.png" rel="icon">
+
+<meta name="generator" content="Hugo 0.18.1" />
+
+  
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://tmhm.github.io/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://tmhm.github.io/css/style.css">
+<link rel="stylesheet" href="https://tmhm.github.io/css/highlight/default.css">
+
+  
+  
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'Your Google Analytics tracking code', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+</head>
+<body>
+  <main id="main-wrapper" class="container main_wrapper has-sidebar">
+    <header id="main-header" class="container main_header">
+  <div class="container brand">
+  <div class="container title h1-like">
+  <a class="baselink" href="https://tmhm.github.io/">
+  芝麻无花
+
+</a>
+
+</div>
+
+  
+<div class="container topline">
+  
+  few words about your site
+
+
+</div>
+
+
+</div>
+
+  <nav class="container nav primary no-print">
+  
+
+<a class="homelink" href="https://tmhm.github.io/">home</a>
+
+
+  
+<a href="https://tmhm.github.io/about">About</a>
+
+<a href="https://tmhm.github.io/categories" title="Show list of categories">Categories</a>
+
+<a href="https://tmhm.github.io/post" title="Show list of posts">Posts</a>
+
+<a href="https://tmhm.github.io/tags" title="show list of tags">Tags</a>
+
+
+</nav>
+
+<div class="container nav secondary no-print">
+  
+<a id="contact-link-email" class="contact_link" href="mailto:wells217@163.com">
+  <span class="fa fa-envelope-square"></span><span>email</span></a>
+
+
+
+<a id="contact-link-github" class="contact_link" href="https://github.com/tmhm">
+  <span class="fa fa-github-square"></span><span>github</span></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+  
+
+</header>
+
+
+<article id="main-content" class="container main_content single">
+  <header class="container hat">
+  <h1>QT环境下，全局变量共享问题
+</h1>
+
+  <div class="metas">
+<time datetime="2016-03-08">8 Mar, 2016</time>
+
+
+  
+  &middot; Read in about 1 min
+  &middot; (91 Words)
+  <br>
+  
+
+
+</div>
+
+</header>
+
+  <div class="container content">
+  <p><strong>开始的技术路线是：</strong></p>
+<p>&nbsp;首先有两个主线程：</p>
+<p>　　1，gui线程</p>
+<p>　　2，等待客户端socket连接用的，listen线程</p>
+<p>　　（当有客户端连接时，即creat一个新的线程2用来跟客户端通信，再来新的客户端，继续creat新的work线程3用于通信，以此类推，目前最多可以creat5个线程，即可以同时跟5台客户端通信，设置了监听的socket服务器最多监听5个队列。线程2继续listen）</p>
+<p>&nbsp;</p>
+<p><strong>出现的问题是：</strong></p>
+<p>　　用来通信的work线程3，收到一个来自客户端的xml文件，然后解析文件，并将其数据放在一个全局的静态struct数组里。数据正常，线程2和线程3均可以看到已经更新的数据值。但是，</p>
+<p>　　当gui线程去访问时，发现数据并没有更新到其线程，在gui线程下改变该全局变量的数值，也并没有更新到线程2和3，不知何解？</p>
+<p>&nbsp;</p>
+<p><em>一博主，有如此解释</em>：</p>
+<div id="article_content" class="article_content"><a href="http://blog.csdn.net/lmh12506/article/details/8452700" target="_blank">其实在Linux 中，新建的线程并不是在原先的进程中，而是系统通过一个系统调用clone() 。该系统copy 了一个和原先进程完全一样的进程，并在这个进程中执行线程函数。不过这个copy 过程和fork 不一样。copy 后的进程和原先的进程共享了所有的变量，运行环境（clone的实现是可以指定新进程与老进程之间的共享关系，100%共享就表示创建了一个线程）。这样，原先进程中的变量变动在copy 后的进程中便能体现出来。</a></div>
+<div class="bdsharebuttonbox tracking-ad bdshare-button-style0-16" data-mod="popu_172" data-bd-bind="1457096202549">&nbsp;</div>
+<div id="digg">&nbsp;不过，问题并没有清晰化。</div>
+<div>&nbsp;</div>
+<div>想到的解决方案暂时有两种：</div>
+<div>　　1，不在work线程里面解析数据，直接在gui线程里面解析数据。</div>
+<div>&nbsp;　　2，采用<a href="https://www.ibm.com/developerworks/cn/linux/thread/posix_threadapi/part2/" target="_blank">线程私有数据</a></div>
+<div>&nbsp;</div>
+<p>（此处出现过，小插曲：QT的变量查看器，在调试时不太稳定，更新过后的值在窗口中查看，并没有得到及时更新，需要通过程序判定验证！）</p>
+<p>　</p>
+<p>另外的问题是：一个变量在多线程环境下，它们的地址都是不同的，为什么呢？<span style="background-color: #ff0000;">待解！</span>　</p>
+<p><img src="http://images2015.cnblogs.com/blog/781469/201603/781469-20160309170140991-312431222.png" alt="" /></p>
+<p>&nbsp;</p>
+<p>由于程序需要在线程创建之后必须返回到gui主线程，所以采用创建两次线程的方式：创建线程A，返回，然后在线程A里面创建</p>
+<p>在多线程POSIX标准下，主线程（1），即是GUI线程。它初始化一个类，并调用其一个成员函数创建一个线程3（ininlistenThred）【不知，为什么不从2开始？】，然后在线程3里面一直循环检测是否有新的客户端发来socket连接。当有新的客户端连接上时，即创建一个新的线程专门用于socket通信。</p>
+<p>此时有一客户端连接上，创建了通信工作线程4（listenthreadwork）。</p>
+<p>&nbsp;</p>
+<p>输出g_buf[0].carid的代码位置分别为：</p>
+<p>1，initlistenthread线程在进入循环入口 即打印出：</p>
+<div class="cnblogs_code">
+<p>for( ; ; )<br />    {</p>
+<p>　　 &nbsp;qDebug(<span style="color: #800000;">"</span><span style="color: #800000;">listenthread g_buf[0].carid: %s </span><span style="color: #800000;">"</span>,g_buf[<span style="color: #800080;">0</span><span>].carid);</span></p>
+<p><em id="__mceDel"><span style="color: #0000ff;">&nbsp; 　　char</span> *t = &amp;(g_buf[<span style="color: #800080;">0</span>].carid[<span style="color: #800080;">0</span><span>]);</span></em></p>
+<pre><em id="__mceDel"><em id="__mceDel"><span style="color: #000000;">　　qDebug(</span><span style="color: #800000;">"</span><span style="color: #800000;">dizhi: %d</span></em><span style="color: #800000;"> \n\n</span><span style="color: #800000;">"</span>,&amp;t);<br />//......<br />}</em></pre>
+</div>
+<p>2，gui主线程在点击按钮的时候，即打印：</p>
+<div class="cnblogs_code">
+<pre>qDebug(<span style="color: #800000;">"</span><span style="color: #800000;">mainwindow g_buf[0].carid: %s</span><span style="color: #800000;">"</span>,g_buf[<span style="color: #800080;">0</span><span style="color: #000000;">].carid);
+</span><span style="color: #0000ff;">char</span> *t = &amp;(g_buf[<span style="color: #800080;">0</span>].carid[<span style="color: #800080;">0</span><span style="color: #000000;">]);
+qDebug(</span><span style="color: #800000;">"</span><span style="color: #800000;">dizhi: %d \n\n</span><span style="color: #800000;">"</span>,&amp;t);</pre>
+</div>
+<p>3，listenthreadwork线程在循环工作的时候开始就打印信息：（一进去此线程就会先打印一次值，然后每次收到文件就会打印一次）</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">for</span><span style="color: #000000;">( ; ; )
+    {
+        qDebug(</span><span style="color: #800000;">"</span><span style="color: #800000;">listenthreadwork g_buf[0].carid: %s</span><span style="color: #800000;">"</span>,g_buf[<span style="color: #800080;">0</span><span style="color: #000000;">].carid);
+        </span><span style="color: #0000ff;">char</span> *t = &amp;(g_buf[<span style="color: #800080;">0</span>].carid[<span style="color: #800080;">0</span><span style="color: #000000;">]);
+        qDebug(</span><span style="color: #800000;">"</span><span style="color: #800000;">dizhi: %d \n\n</span><span style="color: #800000;">"</span>,&amp;<span style="color: #000000;">t);
+</span><span style="color: #008000;">//</span><span style="color: #008000;">.........</span>
+}</pre>
+</div>
+<p>&nbsp;</p>
+<ul>
+<li><strong>线程3和4的值一样的！</strong></li>
+<li><strong>线程1跟另外两个线程是不同的值！</strong></li>
+<li><strong>&nbsp;跟类没关系的两个线程值一样</strong></li>
+</ul>
+<p><img src="http://images2015.cnblogs.com/blog/781469/201603/781469-20160309171434179-548213179.png" alt="" /></p>
+<p><img src="http://images2015.cnblogs.com/blog/781469/201603/781469-20160309191531804-530669003.jpg" alt="" /></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><img src="http://images2015.cnblogs.com/blog/781469/201603/781469-20160309191541944-1721815549.jpg" alt="" /></p>
+<p>&nbsp;</p>
+
+</div>
+
+
+  <footer class="container">
+  <div class="container navigation no-print">
+  <h2>Navigation</h2>
+  
+  
+
+    
+    <a class="prev" href="https://tmhm.github.io/2016/03/08/debian%E5%88%9D%E8%AF%86%E9%80%89%E6%8B%A9%E6%9C%80%E4%BD%B3%E9%95%9C%E5%83%8F%E5%8F%91%E5%B8%83%E7%AB%99%E7%82%B9%E5%8A%A0%E5%85%A5source.list%E6%96%87%E4%BB%B6/" title="Debian初识（选择最佳镜像发布站点加入source.list文件）">
+      Previous
+    </a>
+    
+
+    
+    <a class="next" href="https://tmhm.github.io/2016/03/08/qt4.8.6%E9%9D%99%E6%80%81%E7%BC%96%E8%AF%91/" title="QT4.8.6静态编译">
+      Next
+    </a>
+    
+
+  
+
+
+</div>
+
+  <div class="container comments">
+  <h2>Comments</h2>
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//http-wwcreator-github-io.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+</footer>
+
+</article>
+      <footer id="main-footer" class="container main_footer">
+  
+
+  <div class="container nav foot no-print">
+  
+<a href="https://tmhm.github.io/license">license</a>
+
+
+  &nbsp; &nbsp; &nbsp; &nbsp;<a class="toplink" href="#">back to top</a>
+
+</div>
+
+  <div class="container credits">
+  
+<div class="container footline">
+  
+  code with <i class='fa fa-heart'></i>
+
+
+</div>
+
+
+  
+<div class="container copyright">
+  
+  &copy; 2017 Well.
+
+
+</div>
+
+
+</div>
+
+</footer>
+
+    </main>
+    
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//http-wwcreator-github-io.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+
+<script src="https://tmhm.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+    
+  </body>
+</html>
+
