@@ -2,11 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://tmhm.github.io/2017/02/20/hello_world/</loc>
-    <lastmod>2017-02-20T02:03:45-08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://tmhm.github.io/about/</loc>
     <lastmod>2017-02-19T19:54:02-08:00</lastmod>
   </url>
@@ -334,7 +329,7 @@
   
   <url>
     <loc>https://tmhm.github.io/post/</loc>
-    <lastmod>2017-02-20T02:03:45-08:00</lastmod>
+    <lastmod>2017-02-13T00:48:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -345,7 +340,7 @@
   
   <url>
     <loc>https://tmhm.github.io/</loc>
-    <lastmod>2017-02-20T02:03:45-08:00</lastmod>
+    <lastmod>2017-02-19T19:54:02-08:00</lastmod>
     <priority>0</priority>
   </url>
   

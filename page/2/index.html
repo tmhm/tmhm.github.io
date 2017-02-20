@@ -150,53 +150,11 @@
     <h1>Well
 </h1>
 
-    <span>last update: <time datetime="2017-02-20T02:03:45-08:00">20 February at 2:03am</time>
+    <span>last update: <time datetime="2017-02-19T19:54:02-08:00">19 February at 7:54pm</time>
 </span>
 
   </header>
   
-  
-    <article class="container content summary">
-  <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/10/10/%E4%B8%80%E4%BA%9B%E4%B9%A6%E5%8D%95/">一些书单
-</a>
-</h2>
-
-  <time datetime="2016-10-10">10 Oct, 2016</time>
-
-</div>
-
-  <p class="container content">
-  
-  
-    仅对近来的学习做些回顾吧
-学习永无止境--&gt;
-&nbsp;
-2015年已完成书单：
-文学：
- 硅谷之火 浪潮之巅 天才在左疯子在右 从0到1 生命咖啡馆 黑客与画家 奇思妙想：15位计算机天才及其重大发现 乔布斯传 平凡的世界（三部全） 一只iphone的全球旅行  &nbsp;专业类：
- C++ Primer（中文第五版）　匆忙过了一遍，未实现代码。 ios 游戏开发：创意与实现  &nbsp;
-2016年书单：
-文学：
- 历史的教训 硅谷之谜 文明之光 facebook 马克 扎克伯格传记：后乔布斯时代的传奇 弘一大师新传 三体（未完成，过半后，吸引力下降） 微软的梦工厂（一口气读完了） 数学之美（第二版） 富爸爸穷爸爸 人类简史 智能时代（吴军著）  &nbsp;
-专业类：
- C++语言的设计与演化 数据结构与算法分析（C语言描述） &nbsp; &nbsp;缺代码实现 统计学习方法. 李航 控制系统设计指南（第三版） 嵌入式Linux系统使用开发（主要包括完成linux系统，c/c++的回顾，多线程等） 机器学习实践（-ing） 机器学习.周志华（-ing） 算法（第四版）. Robert Sedgewick（-ing，看进去以后，相见恨晚） Reinforcement learning: An&nbsp;induction.&nbsp;Richard S. Sutton（-ing） 无人驾驶车辆模型预测控制.北京理工大学出版社（-ing）（发现战线好长，得收敛到某个方向）  16的专业书籍还有很多在继续。。
-&nbsp;2017年书单：
- Google 未来之镜 创新者的窘境 （-ing） 围城（-ing）  &nbsp;
-  
-
-
-</p>
-
-
-  <div class="container readlink">
-  <a href="https://tmhm.github.io/2016/10/10/%E4%B8%80%E4%BA%9B%E4%B9%A6%E5%8D%95/">Read more &rarr;</a>
-
-</div>
-
-
-</article>
-
   
     <article class="container content summary">
   <div class="container hat">
@@ -523,8 +481,8 @@ edit-&gt;preferences-&gt;page display-&gt;rendering：
   <p class="container content">
   
   
-     按位操作 异或  异或自己 变成零 异或零，值不变  与 &amp;  递归与自己的减一按位与，返回的是该数化为二进制数后，数字1的个数
- int fun(int x){ int c = 0; while(x){ c++; x = x&amp;(x-1); cout&lt;&lt; x &lt;&lt; endl; } return c; }   
+     按位操作 异或  异或自己 变成零 异或零，值不变  与&amp;  递归与自己的减一按位与，返回的是该数化为二进制数后，数字1的个数
+int fun(int x){ int c = 0; while(x){ c++; x = x&amp;(x-1); cout&lt;&lt; x &lt;&lt; endl; } return c; }   
   
 
 
@@ -701,6 +659,36 @@ solution： class Solution: &quot;&quot;&quot; @param s: The first string @param
 
   <div class="container readlink">
   <a href="https://tmhm.github.io/2016/06/04/%E6%AF%94%E8%BE%83%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%85%E5%90%AB%E4%BB%A5%E5%8F%8A%E5%8F%98%E4%BD%8D%E8%AF%8D/">Read more &rarr;</a>
+
+</div>
+
+
+</article>
+
+  
+    <article class="container content summary">
+  <div class="container hat">
+  <h2><a href="https://tmhm.github.io/2016/05/31/python-%E4%B8%8E%E6%97%B6%E9%97%B4%E6%9C%89%E5%85%B3%E7%9A%84%E6%93%8D%E4%BD%9C/">python 与时间有关的操作
+</a>
+</h2>
+
+  <time datetime="2016-05-31">31 May, 2016</time>
+
+</div>
+
+  <p class="container content">
+  
+  
+    ##python保存时间戳文件
+ import time # ISOTIMEFORMAT='%Y-%m-%d %X' ISOTIMEFORMAT='%Y-%m-%d' t= time.strftime( ISOTIMEFORMAT, time.gmtime( time.time() ) ) f = open( t + &quot;test.txt&quot;,'wb') f.write(&quot;hello,\n This is a test file&quot;) f.close()  计算程序运行时间  import time # ISOTIMEFORMAT='%Y-%m-%d %X' start = time.time() ISOTIMEFORMAT='%Y-%m-%d' t= time.strftime( ISOTIMEFORMAT, time.gmtime( time.time() ) ) f = open( t + &quot;test.txt&quot;,'wb') f.write(&quot;hello,\n This is a test file&quot;) f.close() print t elapsed = time.time() - start print elapsed  out： ​
+  
+
+
+</p>
+
+
+  <div class="container readlink">
+  <a href="https://tmhm.github.io/2016/05/31/python-%E4%B8%8E%E6%97%B6%E9%97%B4%E6%9C%89%E5%85%B3%E7%9A%84%E6%93%8D%E4%BD%9C/">Read more &rarr;</a>
 
 </div>
 

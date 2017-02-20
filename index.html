@@ -150,40 +150,11 @@
     <h1>Well
 </h1>
 
-    <span>last update: <time datetime="2017-02-20T02:03:45-08:00">20 February at 2:03am</time>
+    <span>last update: <time datetime="2017-02-19T19:54:02-08:00">19 February at 7:54pm</time>
 </span>
 
   </header>
   
-  
-    <article class="container content summary">
-  <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2017/02/20/hello_world/">Hello_world
-</a>
-</h2>
-
-  <time datetime="2017-02-20">20 Feb, 2017</time>
-
-</div>
-
-  <p class="container content">
-  
-  
-    Hello World
-  
-
-
-</p>
-
-
-  <div class="container readlink">
-  <a href="https://tmhm.github.io/2017/02/20/hello_world/">Read more &rarr;</a>
-
-</div>
-
-
-</article>
-
   
     <article class="container content summary">
   <div class="container hat">
@@ -227,25 +198,7 @@
   <p class="container content">
   
   
-    #基于DRL和TORCS的自动驾驶仿真系统
-——之环境配置 玩TORCS和DRL差不多有一整年了，开始的摸爬滚打都是不断碰壁过来的，近来在参与CMU的DRL10703课程学习和翻译志愿者工作，也将自己以前的一些工作做一些备忘，以作为有兴趣同学的参考。
-##TORCS仿真器平台安装 仿真器平台主要包括两步：安装TORCS，然后添加锦标赛用的patch。
-###TORCS仿真器的安装
-The open racing car simulator（TORCS）主页
-仿真器源文件下载地址
-支持windows和linux，windows下面的安装有集成的安装源文件包；linux系统下则需要自己编译安装一些依赖库，否则在下一步打patch的时候不成功，原因是linux的包是编译后的文件，不包括源文件，windows无此问题。
-示例是在win-64bits系统下安装torcs-1.3.4。
-跟普通应用安装类似，安装后，可在桌面创建快捷方式 。 打开安装好的TORCS，如下图所示。 某些简单问题，在这里可能可以找到答案： http://torcs.sourceforge.net/index.php?name=Sections&amp;op=viewarticle&amp;artid=30
-简单配置How-to教程可参考（开始使用默认配置即可）： http://torcs.sourceforge.net/index.php?name=Sections&amp;op=listarticles&amp;secid=4
-如何在仿真器上一步步实现一个简单ROBOT，教程可见： http://www.berniw.org/tutorials/robot/
-###Championship Platform的安装 为扩展仿真器平台用于我们的智能驾驶AI程序的开发，我们采用的是锦标赛平台的接口。在安装torcs之后，可以直接安装patch。实现安装源文件下载地址： https://sourceforge.net/projects/cig/files/SCR%20Championship/
-示例安装的是windows server patch2.0. 文件链接： https://sourceforge.net/projects/cig/files/SCR%20Championship/Server%20Windows/2.0/
-解压下载的patch.zip覆盖上一步安装torcs的安装文件，即可搭建一个服务器端。 上图中的wtorcs.exe即平台的入口地址。可将其快捷方式发送到桌面。打开该程序，现在可以配置我们的drivers。
-路径是： Race &ndash;&gt; Quick Race/ Practice &ndash;&gt; Configure Race &ndash;&gt; Select Track (Accept)&ndash;&gt; Select Drivers (如1，用上下方向键选择scr…，然后点击select(选择和删除是同一按钮)，最后Accept即可)，如下图所示。 然后accept， New Race 即可以进入仿真器。 我们的程序即可以通过scr车手来模拟控制，一些有用的配置可以参考。 Manual的官方文件: http://arxiv.org/abs/1304.1672
-若有墙，可参考： https://www.yumpu.com/en/document/view/48269886/simulated-car-racing-championship-competition-software-manual
-至此，TORCS仿真器平台安装完毕，下面搭建配套的软件IDE环境。
-软件IDE环境搭建 ###Anaconda 的安装 Anaconda 是一个开源的，基于python的跨平台（windows，osx，liunx）科学计算平台，支持python2和python3，示例用的是基于python2的anaconda2-4.0.0
-安装后，会创建一个Anaconda Prompt（一个类似DOS的命令行窗口），它可以像linux一样来通过命令管理各种科学计算包，执行命令等。 比如可以用conda ，pip等工具管理包
+    玩TORCS和DRL差不多有一整年了，开始的摸爬滚打都是不断碰壁过来的，近来在参与[CMU的DRL10703课程](https://katefvision.github.io/)学习和翻译志愿者工作，也将自己以前的一些工作做一些备忘，以作为有兴趣同学的参考。
   
 
 
@@ -769,6 +722,48 @@ gym_torcs/vtorcs-RL-color/src/modules/simu/simuv2/simu.cpp 中第64行替换为 
 
   <div class="container readlink">
   <a href="https://tmhm.github.io/2016/10/26/%E7%94%A8keras-%E5%92%8C-ddpg-play-torcs1/">Read more &rarr;</a>
+
+</div>
+
+
+</article>
+
+  
+    <article class="container content summary">
+  <div class="container hat">
+  <h2><a href="https://tmhm.github.io/2016/10/10/%E4%B8%80%E4%BA%9B%E4%B9%A6%E5%8D%95/">一些书单
+</a>
+</h2>
+
+  <time datetime="2016-10-10">10 Oct, 2016</time>
+
+</div>
+
+  <p class="container content">
+  
+  
+    仅对近来的学习做些回顾吧
+学习永无止境--&gt;
+&nbsp;
+2015年已完成书单：
+文学：
+ 硅谷之火 浪潮之巅 天才在左疯子在右 从0到1 生命咖啡馆 黑客与画家 奇思妙想：15位计算机天才及其重大发现 乔布斯传 平凡的世界（三部全） 一只iphone的全球旅行  &nbsp;专业类：
+ C++ Primer（中文第五版）　匆忙过了一遍，未实现代码。 ios 游戏开发：创意与实现  &nbsp;
+2016年书单：
+文学：
+ 历史的教训 硅谷之谜 文明之光 facebook 马克 扎克伯格传记：后乔布斯时代的传奇 弘一大师新传 三体（未完成，过半后，吸引力下降） 微软的梦工厂（一口气读完了） 数学之美（第二版） 富爸爸穷爸爸 人类简史 智能时代（吴军著）  &nbsp;
+专业类：
+ C++语言的设计与演化 数据结构与算法分析（C语言描述） &nbsp; &nbsp;缺代码实现 统计学习方法. 李航 控制系统设计指南（第三版） 嵌入式Linux系统使用开发（主要包括完成linux系统，c/c++的回顾，多线程等） 机器学习实践（-ing） 机器学习.周志华（-ing） 算法（第四版）. Robert Sedgewick（-ing，看进去以后，相见恨晚） Reinforcement learning: An&nbsp;induction.&nbsp;Richard S. Sutton（-ing） 无人驾驶车辆模型预测控制.北京理工大学出版社（-ing）（发现战线好长，得收敛到某个方向）  16的专业书籍还有很多在继续。。
+&nbsp;2017年书单：
+ Google 未来之镜 创新者的窘境 （-ing） 围城（-ing）  &nbsp;
+  
+
+
+</p>
+
+
+  <div class="container readlink">
+  <a href="https://tmhm.github.io/2016/10/10/%E4%B8%80%E4%BA%9B%E4%B9%A6%E5%8D%95/">Read more &rarr;</a>
 
 </div>
 

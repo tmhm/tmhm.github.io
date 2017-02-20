@@ -51,7 +51,7 @@
     },
     "datePublished": "2016-08-30",
     "description": "",
-    "wordCount":  28 
+    "wordCount":  27 
   }
 </script>
 
@@ -181,7 +181,7 @@
 
   
   &middot; Read in about 1 min
-  &middot; (28 Words)
+  &middot; (27 Words)
   <br>
   
 
@@ -193,29 +193,29 @@
   <div class="container content">
   
 
-<h1 id="按位操作">按位操作</h1>
+<h2 id="按位操作">按位操作</h2>
 
-<h2 id="异或">异或</h2>
+<h3 id="异或">异或</h3>
 
 <ul>
 <li>异或自己 变成零</li>
 <li>异或零，值不变</li>
 </ul>
 
-<h2 id="与">与 &amp;</h2>
+<h3 id="与">与&amp;</h3>
 
 <ul>
 <li><p>递归与自己的减一按位与，返回的是该数化为二进制数后，数字1的个数</p>
 
-<pre><code>        int fun(int x){
-                int c = 0;
-                while(x){
-                        c++;
-                        x = x&amp;(x-1);
-                        cout&lt;&lt; x &lt;&lt; endl;
-                }
-                return c;
+<pre><code>int fun(int x){
+        int c = 0;
+        while(x){
+                c++;
+                x = x&amp;(x-1);
+                cout&lt;&lt; x &lt;&lt; endl;
         }
+        return c;
+}
 </code></pre></li>
 </ul>
 
