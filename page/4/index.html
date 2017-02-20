@@ -158,25 +158,19 @@
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/08/30/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AF%B9%E9%BD%90/">数据的对齐
+  <h2><a href="https://tmhm.github.io/2016/03/25/%E7%94%A8python%E7%BB%83%E4%B9%A0%E7%AE%97%E6%B3%95%E9%A2%98/">用python练习算法题
 </a>
 </h2>
 
-  <time datetime="2016-08-30">30 Aug, 2016</time>
+  <time datetime="2016-03-25">25 Mar, 2016</time>
 
 </div>
 
   <p class="container content">
   
   
-    数据的对齐 cpu在读写内存的时候，如果所给的地址是机器字长的整数倍，则操作效率会比较高，这可以称之为地址的对齐。
-在一般的32bits机器上，地址对齐的界线默认是4的整数倍。
- struct my_struct{ char ch1; //1字节 char ch2; //1字节 int n; //4字节 char ch3; 1字节 };//整个结构体在32bits系统占12个字节  对结构体类型采用sizeof操作符，得到的是结构体占用的内存字节数，包括所有的空闲字节，显然，这个值并不一定等于它的所有成员的大小之和。
- #pragma pack(1) //将地址对齐界线改为1的整数 struct my_struct{ char ch1; //1字节 char ch2; //1字节 int n; //4字节 char ch3; 1字节 };//整个结构体占7个字节 #pragma pack() //将地址对齐界线改回原来的值  对齐规则参考  该博文也给出了#pragma pack(show) 和#pragma pack(num)的说明以及在VS中的设置；默认num＝8.
-这内存宝贵的应用场合，比如嵌入式系统，一般要考虑对齐，一般原则，可以是从小到大排，把多个小字节变量放一起，并且跟对齐的大小对齐。
- 一般来说，
- 结构体的对齐规则是先按数据类型自身进行对齐，这里需要比较＃pragma pack(num)中num的数值和数据类型的大小，取小的作为基准； 然后再按整个结构体进行对齐，对齐值必须是2的幂，比如1，2， 4， 8， 16。准确来讲，结构的总大小是其成员中最大类型的sizeof(该类型)整数倍。 如果一个类型按n字节对齐，那么该类型的变量起始地址必须是n的倍数。比如int按四字节对齐，那么int类型的变量起始地址一定是4的倍数，比如0x0012ff60，0x0012ff48等。  查看系统是多少位的  file /sbin/init
-  /sbin/init: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.
+    年前学习了python语言的基本语法，他很简洁，感觉还是挺有意思的。很久没用在项目上，发现都忘记差不多了，但是鉴于机器学习中python的兴起，想用python来练练手，熟悉一些算法基础，顺带温故一下python基础知识。
+&nbsp;
   
 
 
@@ -184,7 +178,7 @@
 
 
   <div class="container readlink">
-  <a href="https://tmhm.github.io/2016/08/30/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AF%B9%E9%BD%90/">Read more &rarr;</a>
+  <a href="https://tmhm.github.io/2016/03/25/%E7%94%A8python%E7%BB%83%E4%B9%A0%E7%AE%97%E6%B3%95%E9%A2%98/">Read more &rarr;</a>
 
 </div>
 
@@ -194,22 +188,25 @@
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/08/30/c_c&#43;&#43;%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%B6%89%E5%8F%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9/">C_C&#43;&#43;程序设计涉及的一些知识点
+  <h2><a href="https://tmhm.github.io/2016/03/24/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">斐波那契数列
 </a>
 </h2>
 
-  <time datetime="2016-08-30">30 Aug, 2016</time>
+  <time datetime="2016-03-24">24 Mar, 2016</time>
 
 </div>
 
   <p class="container content">
   
   
-    C_C++程序设计涉及的一些知识点 ##c中的printf函数 main(){ int b = 3; int arr[]= {6,7,8,9,10}; int * ptr = arr; *(ptr++) += 123; printf(&laquo;%d,%d\n&raquo;,ptr,(++ptr)); return 0; }
- 输出 ： 8,8
-原因：printf函数计算参数是从右往左压栈的
- c和c++的关系  c++ 语言支持函数重载，c语言不支持函数重载； 函数在C++编译后在库中的名字和C语言的不同，假设某个函数原型是void foo（int x， int y）。该函数被C编译器编译后，在库中的名字是_foo,而在C++编译器中则会产生像_foo_int_int之类的名字。 C++提供了C连接交换指定符 extern &laquo;c&raquo; 解决名字匹配的问题。  指针和引用 区别：
- 非空区别，在任何情况下都不能使用指向空值的引用。一个引用必须总是指向某些对象； 合法性，在使用引用之前不需要测试它的合法性，相反，指针则应该总是被测试，防止其为空； 可修改区别，指针可被重新赋值以指向另一个不同对象。但是引用则总是指向在初始化被指定的对象，以后不能改变，但是指向的对象的其内容可以改变 应用区别，有存在不指向任何对象的可能和不同时刻会指向不同的对象等情况时，使用指针；如果总是指向一个对象并且指向一个对象以后就不会改变指向，那么应该使用引用。  传递动态内存  void swap3(int *p, int *q){ int *tmp; tmp = p; p = q; q = tmp;//仅仅交换了指针的值，并没有改变两块内存的值 } void swap4(int *p, int *q){ int tmp; tmp = *p; //获取p指向内存的值 *p = *q; *q = tmp; } void swap5(int &amp;p, int &amp;q){ int tmp; tmp = p; //获取p指向内存的值 p = q; q = tmp; }  //&mdash;&mdash;&mdash;&mdash;
+    查找斐波纳契数列中第 N 个数。
+所谓的斐波纳契数列是指：
+ 前2个数是 0 和 1 。 第&nbsp;i&nbsp;个数是第&nbsp;i-1 个数和第i-2 个数的和。  斐波纳契数列的前10个数字是：
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ...
+&nbsp;
+1，用递归实现，lintcode提示超过时间
+classSolution{ public: /** * @param n: an integer * @return an integer f(n) */ int fibonacci(intn) { //write your code here if(n == 0) return 0; else if(n == 1) return 1; else return fibonacci(n-1) + fibonacci(n-2); } };  &nbsp;2,用函数本身相加求和
+classSolution{ public: /** * @param n: an integer * @return an integer f(n) */ int fibonacci(intn) { //write your code here int t1=0,t2=1; int t3=0; int cnt=0; //cnt =n; if(n == 0) return 0; else if(n == 1) return 1; else{ for(cnt = 2;cnt&lt;n;cnt++) { t3 = t1+t2; t1=t2; t2=t3; } returnt2; } } };  &nbsp;
   
 
 
@@ -217,7 +214,7 @@
 
 
   <div class="container readlink">
-  <a href="https://tmhm.github.io/2016/08/30/c_c&#43;&#43;%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%B6%89%E5%8F%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9/">Read more &rarr;</a>
+  <a href="https://tmhm.github.io/2016/03/24/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">Read more &rarr;</a>
 
 </div>
 
@@ -227,26 +224,23 @@
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/08/08/git%E7%9A%84%E4%BD%BF%E7%94%A8/">git的使用
+  <h2><a href="https://tmhm.github.io/2016/03/16/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0/">删除链表中的元素
 </a>
 </h2>
 
-  <time datetime="2016-08-08">8 Aug, 2016</time>
+  <time datetime="2016-03-16">16 Mar, 2016</time>
 
 </div>
 
   <p class="container content">
   
   
-    git的使用 ####1.创建SSH Key
- ssh-keygen -t rsa -C &quot;5733*****@qq.com&quot;  在主用户目录下生成 .ssh 文件夹，该目录下有 id_rsa 和 id_rsa.pub 两个文件。
-id_rsa 是私钥， id_rsa.pub 是公钥
-####2.Add SSH Key
-登陆GitHub，打开 Account settings &ndash;&gt; SSH and GPG Keys页面：Add SSH Key, 填上Title， 在Key文本框粘贴id_rsa.pub 的内容。
-####3.在远程服务器初始化仓库 swrd
-之后它会给出如下提示：
-or create a new repository on the command line
- echo &quot;# swrd&quot; &gt;&gt; README.md git init git add README.md git commit -m &quot;first commit&quot; git remote add origin git@github.
+    删除链表中等于给定值val的所有节点。
+给出链表&nbsp;1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;5-&gt;3, 和 val =&nbsp;3, 你需要返回删除3之后的链表：1-&gt;2-&gt;4-&gt;5。
+&nbsp;
+迷惑点：陷入没有表头的陷阱，总是想记下删除节点的先驱，导致折腾了很久，其实只要人为加一个表头就简单很多了！！
+&nbsp;
+1 /** 2 * Definition for singly-linked list. 3 * struct ListNode { 4 * int val; 5 * ListNode *next; 6 * ListNode(int x) : val(x), next(NULL) {} 7 * }; 8 */ 9 classSolution { 10 public: 11 /** 12 * @param head a ListNode 13 * @param val an integer 14 * @return a ListNode 15 */ 16 ListNode *removeElements(ListNode *head, intval) { 17 //Write your code here 18 //meiyou ya ba jie dian!
   
 
 
@@ -254,7 +248,7 @@ or create a new repository on the command line
 
 
   <div class="container readlink">
-  <a href="https://tmhm.github.io/2016/08/08/git%E7%9A%84%E4%BD%BF%E7%94%A8/">Read more &rarr;</a>
+  <a href="https://tmhm.github.io/2016/03/16/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0/">Read more &rarr;</a>
 
 </div>
 
@@ -264,21 +258,21 @@ or create a new repository on the command line
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/06/04/%E6%AF%94%E8%BE%83%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%85%E5%90%AB%E4%BB%A5%E5%8F%8A%E5%8F%98%E4%BD%8D%E8%AF%8D/">比较字符串（包含以及变位词）
+  <h2><a href="https://tmhm.github.io/2016/03/12/ubuntu%E6%8A%80%E5%B7%A7/">ubuntu技巧
 </a>
 </h2>
 
-  <time datetime="2016-06-04">4 Jun, 2016</time>
+  <time datetime="2016-03-12">12 Mar, 2016</time>
 
 </div>
 
   <p class="container content">
   
   
-    Two Strings Are Anagrams Description Write a method anagram(s,t) to decide if two strings are anagrams or not.
-What is Anagram? - Two strings are anagram if they can be the same after change the order of characters.
-Example Given s = &laquo;abcd&raquo;, t = &laquo;dcab&raquo;, return true. Given s = &laquo;ab&raquo;, t = &laquo;ab&raquo;, return true. Given s = &laquo;ab&raquo;, t = &laquo;ac&raquo;, return false.
-solution： class Solution: &quot;&quot;&quot; @param s: The first string @param b: The second string @return true or false &quot;&quot;&quot; def countchar(self,ch): result = {} for item in ch: ikey = ord(item) if result.
+    &nbsp;
+ 在终端界面里面查找，命令：ctrl + shift +f  &nbsp;
+ VMware 中 Ubuntu 不能全屏：   转到虚拟机--&gt;安装VMware Tools 把装载的 VMware Tools CD里面的VMwareTools.x.x.x-xxxx.tar.gz文件解压到桌面 cd进入解压位置，运行&nbsp;sudo ./vmware-install.pl -d &nbsp;（注意：-d 开关假定您希望接受默认设置。如果不使用 -d，请按 Return 接受默认值或提供您自己的答案。） 重启 此时已经安装VMware tools，但是在ubuntu在VMware控制台显示时，四周仍然有黑框，可以在VMware中点击：查看--&gt;自动调整大小--&gt;自动适应客户机。   &nbsp;codeblocks 编译开发环境(需要先安装gcc，g++,gdb)  sudo apt-get install codeblocks 添加头文件：依次点击project-&gt;bulid options-&gt;Search directories，在该标签页中点击Compiler，单击Add按钮添加头文件路径 添加静态库路径：依次点击project-&gt;bulid options-&gt;Linker setting，在该标签页中点击Add按钮添加静态库路径。 设置main函数参数：Project-&gt;Set programs&rsquo; arguments    &nbsp;查看ssh服务状态   ps -e |grep ssh  &nbsp;
+  &nbsp;
   
 
 
@@ -286,7 +280,7 @@ solution： class Solution: &quot;&quot;&quot; @param s: The first string @param
 
 
   <div class="container readlink">
-  <a href="https://tmhm.github.io/2016/06/04/%E6%AF%94%E8%BE%83%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%85%E5%90%AB%E4%BB%A5%E5%8F%8A%E5%8F%98%E4%BD%8D%E8%AF%8D/">Read more &rarr;</a>
+  <a href="https://tmhm.github.io/2016/03/12/ubuntu%E6%8A%80%E5%B7%A7/">Read more &rarr;</a>
 
 </div>
 
@@ -296,19 +290,18 @@ solution： class Solution: &quot;&quot;&quot; @param s: The first string @param
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/05/31/python-%E4%B8%8E%E6%97%B6%E9%97%B4%E6%9C%89%E5%85%B3%E7%9A%84%E6%93%8D%E4%BD%9C/">python 与时间有关的操作
+  <h2><a href="https://tmhm.github.io/2016/03/10/shell%E5%AD%A6%E4%B9%A0/">shell学习
 </a>
 </h2>
 
-  <time datetime="2016-05-31">31 May, 2016</time>
+  <time datetime="2016-03-10">10 Mar, 2016</time>
 
 </div>
 
   <p class="container content">
   
   
-    ##python保存时间戳文件
- import time # ISOTIMEFORMAT='%Y-%m-%d %X' ISOTIMEFORMAT='%Y-%m-%d' t= time.strftime( ISOTIMEFORMAT, time.gmtime( time.time() ) ) f = open( t + &quot;test.txt&quot;,'wb') f.write(&quot;hello,\n This is a test file&quot;) f.close()  计算程序运行时间  import time # ISOTIMEFORMAT='%Y-%m-%d %X' start = time.time() ISOTIMEFORMAT='%Y-%m-%d' t= time.strftime( ISOTIMEFORMAT, time.gmtime( time.time() ) ) f = open( t + &quot;test.txt&quot;,'wb') f.write(&quot;hello,\n This is a test file&quot;) f.close() print t elapsed = time.time() - start print elapsed  out： ​
+    &nbsp;  readlink是linux系统中一个常用工具，主要用来找出符号链接所指向的位置。 定义变量&ldquo;=&rdquo;两边不能有空格，否则会被shell解析错误。 tee 同时将输出内容显示在屏幕上、记录在文件里 三种引号&lsquo;&rsquo;，&ldquo;&rdquo;，`。&lt;/strong&gt; &lt;ul&gt; &lt;li&gt;　rm -rf &amp;lsquo;my document&amp;rsquo; &amp;nbsp;----当命令行里面包含空格时，用单引号包含起来&lt;/li&gt; &lt;li&gt;这时也可由用双引号，区别在于双引号的值会被变量的之替换，单引号保持原样。&lt;/li&gt; &lt;li&gt;&amp;nbsp; &lt;div class=&quot;cnblogs_code&quot;&gt; &lt;pre&gt;$ ABC=&lt;span style=&quot;color: #000000;&quot;&gt;hello $ echo &lt;/span&gt;&lt;span style=&quot;color: #800000;&quot;&gt;'&lt;/span&gt;&lt;span style=&quot;color: #800000;&quot;&gt;string is ${ABC}&lt;/span&gt;&lt;span style=&quot;color: #800000;&quot;&gt;'&lt;/span&gt; &lt;span style=&quot;color: #0000ff;&quot;&gt;string&lt;/span&gt; &lt;span style=&quot;color: #0000ff;&quot;&gt;is&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; ${ABC} $ echo &lt;/span&gt;&lt;span style=&quot;color: #800000;&quot;&gt;&quot;&lt;/span&gt;&lt;span style=&quot;color: #800000;&quot;&gt;string is ${ABC}&lt;/span&gt;&lt;span style=&quot;color: #800000;&quot;&gt;&quot;&lt;/span&gt; &lt;span style=&quot;color: #0000ff;&quot;&gt;string&lt;/span&gt; &lt;span style=&quot;color: #0000ff;&quot;&gt;is&lt;/span&gt; hello&lt;/pre&gt; &lt;/div&gt; &lt;p&gt;反引号实际上就是命令替换&lt;/p&gt; &lt;/li&gt; &lt;li&gt;echouname&amp;nbsp;#等价 echo $(uname)&lt;/li&gt; &lt;li&gt; &lt;div class=&quot;cnblogs_code&quot;&gt; &lt;pre&gt;$ echouname -a` Linux ubuntu 3.
   
 
 
@@ -316,7 +309,7 @@ solution： class Solution: &quot;&quot;&quot; @param s: The first string @param
 
 
   <div class="container readlink">
-  <a href="https://tmhm.github.io/2016/05/31/python-%E4%B8%8E%E6%97%B6%E9%97%B4%E6%9C%89%E5%85%B3%E7%9A%84%E6%93%8D%E4%BD%9C/">Read more &rarr;</a>
+  <a href="https://tmhm.github.io/2016/03/10/shell%E5%AD%A6%E4%B9%A0/">Read more &rarr;</a>
 
 </div>
 
@@ -326,20 +319,18 @@ solution： class Solution: &quot;&quot;&quot; @param s: The first string @param
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/05/27/pybrain%E5%BA%93%E7%9A%84example%E4%B9%8Bnfq%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%88%86%E6%9E%90/">PyBrain库的example之NFQ流程图分析
+  <h2><a href="https://tmhm.github.io/2016/03/08/pycharm%E5%B0%8F%E6%8A%80%E5%B7%A7/">PyCharm小技巧
 </a>
 </h2>
 
-  <time datetime="2016-05-27">27 May, 2016</time>
+  <time datetime="2016-03-08">8 Mar, 2016</time>
 
 </div>
 
   <p class="container content">
   
   
-    PyBrain库的example之NFQ流程图分析
-如下是测试程序。主要分析doEpisode和learn两个函数。
- #!/usr/bin/env python __author__ = 'Thomas Rueckstiess, ruecksti@in.tum.de' from pybrain.rl.environments.cartpole import CartPoleEnvironment, DiscreteBalanceTask, CartPoleRenderer from pybrain.rl.agents import LearningAgent from pybrain.rl.experiments import EpisodicExperiment from pybrain.rl.learners.valuebased import NFQ, ActionValueNetwork #,ActionValueLSTMNetwork from pybrain.rl.explorers import BoltzmannExplorer from numpy import array, arange, meshgrid, pi, zeros, mean from matplotlib import pyplot as plt # switch this to True if you want to see the cart balancing the pole (slower) render = False #True # plt.
+    pycharm中配置main函数执行输入参数：  　&nbsp;Run-&gt;Edit Configurations-&gt;Script Parames
   
 
 
@@ -347,7 +338,7 @@ solution： class Solution: &quot;&quot;&quot; @param s: The first string @param
 
 
   <div class="container readlink">
-  <a href="https://tmhm.github.io/2016/05/27/pybrain%E5%BA%93%E7%9A%84example%E4%B9%8Bnfq%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%88%86%E6%9E%90/">Read more &rarr;</a>
+  <a href="https://tmhm.github.io/2016/03/08/pycharm%E5%B0%8F%E6%8A%80%E5%B7%A7/">Read more &rarr;</a>
 
 </div>
 
@@ -357,29 +348,20 @@ solution： class Solution: &quot;&quot;&quot; @param s: The first string @param
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/05/26/python%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BB%A7%E6%89%BF/">python之面向对象（继承）
+  <h2><a href="https://tmhm.github.io/2016/03/08/how-to-install-torcs-package-in-debian/">How to install torcs package in Debian
 </a>
 </h2>
 
-  <time datetime="2016-05-26">26 May, 2016</time>
+  <time datetime="2016-03-08">8 Mar, 2016</time>
 
 </div>
 
   <p class="container content">
   
   
-    ##类的继承
-python之面向对象（继承） 面向对象的编程带来的主要好处之一是代码的重用，实现这种重用的方法之一是通过继承机制。继承完全可以理解成类之间的类型和子类型关系。
-需要注意的地方：继承语法 class 派生类名（基类名）：//&hellip; 基类名写作括号里，基本类是在类定义的时候，在元组之中指明的。
-在python中继承中的一些特点：
- 在继承中基类的构造（init()方法）不会被自动调用，它需要在其派生类的构造中亲自专门调用。
- 在调用基类的方法时，需要加上基类的类名前缀，且需要带上self参数变量。区别于在类中调用普通函数时并不需要带上self参数.
- Python总是首先查找对应类型的方法，如果它不能在派生类中找到对应的方法，它才开始到基类中逐个查找。（先在本类中查找调用的方法，找不到才去基类中找）。
-   class animal(object): def __init__(self): print 'animal init' def say(self): print 'animal say' class dog(animal): def __init__(self): #animal.__init__(self) print 'dog init' def say(self): animal.say(self) print 'dog say'  In [23]:
- d = dog() d.say()  out:
- dog init animal say dog say  如果在继承元组中列了一个以上的类，那么它就被称作&raquo;多重继承&raquo; 。 当多个类之间有包含关系，不能继承。
-比如，下面的例子不行。
- class A: class B(A): class C(A,B)  下面是，多重继承逐个查找的示例：
+    Installation instructions Installing torcs package in Debian Wheezy is as easy as running:
+没想到在debian上安装TORCS，如此简单：一句命令，所有的依赖全装好了！nice～
+ apt-get install torcs  &nbsp;
   
 
 
@@ -387,7 +369,7 @@ python之面向对象（继承） 面向对象的编程带来的主要好处之�
 
 
   <div class="container readlink">
-  <a href="https://tmhm.github.io/2016/05/26/python%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BB%A7%E6%89%BF/">Read more &rarr;</a>
+  <a href="https://tmhm.github.io/2016/03/08/how-to-install-torcs-package-in-debian/">Read more &rarr;</a>
 
 </div>
 
@@ -397,28 +379,22 @@ python之面向对象（继承） 面向对象的编程带来的主要好处之�
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/05/22/c_c&#43;&#43;%E4%B8%AD%E4%B8%80%E4%BA%9B%E4%B8%8D%E5%A4%AA%E6%B3%A8%E6%84%8F%E5%88%B0%E7%9A%84%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9--%E9%94%A6%E9%9B%86/">C_C&#43;&#43;中一些不太注意到的小知识点--[锦集]
+  <h2><a href="https://tmhm.github.io/2016/03/08/qt4.8.6%E9%9D%99%E6%80%81%E7%BC%96%E8%AF%91/">QT4.8.6静态编译
 </a>
 </h2>
 
-  <time datetime="2016-05-22">22 May, 2016</time>
+  <time datetime="2016-03-08">8 Mar, 2016</time>
 
 </div>
 
   <p class="container content">
   
   
-    C/C++中一些不太注意到的小知识点&ndash;[锦集] C/C++小知识点&ndash;[锦集]
-“=”和“&lt;=” 的优先级 1.( (file_got_len = recv_str(sock,buf,BUF_SIZE) ) &lt;= 0)
-2.( file_got_len = recv_str(sock,buf,BUF_SIZE) &lt;= 0 )
-第二种情况下，当recv_str()函数成功返回发送字符串的时候，尽管会成功返回发送字节数大于0，
-但是，file_got_len只会返回0，
-因为“&lt;=”的优先级大于“=”。
-所以在多语句写在一起时，最好用（） 明示！！
-运算操作符  int i,t; t = (i=1)+(++i);  输出
- t= 4  i首先被赋值1，随后++i，使i的值变为2，到做加法的操作的时候，两个操作数都要读i此时的值，结果是两个2相加，等于4.
-其汇编程序（基于vs2010），如下：
- int i,t; t = (i=1)+(++i); 011413FE mov dword ptr [i],1 01141405 mov eax,dword ptr [i] 01141408 add eax,1 0114140B mov dword ptr [i],eax 0114140E mov ecx,dword ptr [i] 01141411 add ecx,dword ptr [i] 01141414 mov dword ptr [t],ecx  i自加后，只保留在eax 寄存器里，然后将eax的2赋给i，所以，i 就变成2了。此处和动态语言的引用似乎有所类似。
+    下载源安装程序，http://download.qt.io/archive/qt/4.8/4.8.6/qt-everywhere-opensource-src-4.8.6.tar.gz 解压 cd 进入解压后的目录，命令  &nbsp;
+./configure -static -release -opensource -qt-zlib -qt-libpng -qt-libmng -qt-libjpeg -nomake demos -nomake examples -qt-sql-sqlite -prefix /usr/local/Trolltech/Qt-4.8.6_static  命令参数含义如下所示（带有+号的是默认选项）：
+-static &hellip;&hellip;&hellip;&hellip; Create and use static Qt libraries. -opensource &hellip;&hellip;.. Compile and link the Open-Source Edition of Qt. -release &hellip;&hellip;&hellip;.. Compile and link Qt with debugging turned off.
+Third Party Libraries:
+-qt-zlib &hellip;&hellip;&hellip;.. Use the zlib bundled with Qt. + -system-zlib &hellip;&hellip;. Use zlib from the operating system.
   
 
 
@@ -426,7 +402,7 @@ python之面向对象（继承） 面向对象的编程带来的主要好处之�
 
 
   <div class="container readlink">
-  <a href="https://tmhm.github.io/2016/05/22/c_c&#43;&#43;%E4%B8%AD%E4%B8%80%E4%BA%9B%E4%B8%8D%E5%A4%AA%E6%B3%A8%E6%84%8F%E5%88%B0%E7%9A%84%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9--%E9%94%A6%E9%9B%86/">Read more &rarr;</a>
+  <a href="https://tmhm.github.io/2016/03/08/qt4.8.6%E9%9D%99%E6%80%81%E7%BC%96%E8%AF%91/">Read more &rarr;</a>
 
 </div>
 
@@ -436,20 +412,44 @@ python之面向对象（继承） 面向对象的编程带来的主要好处之�
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/05/21/python-%E6%9C%89%E5%85%B3%E5%BC%95%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/">python 有关引用的一些问题
+  <h2><a href="https://tmhm.github.io/2016/03/08/qt%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%85%B1%E4%BA%AB%E9%97%AE%E9%A2%98/">QT环境下，全局变量共享问题
 </a>
 </h2>
 
-  <time datetime="2016-05-21">21 May, 2016</time>
+  <time datetime="2016-03-08">8 Mar, 2016</time>
 
 </div>
 
   <p class="container content">
   
   
-    python 有关引用的一些问题  print id.__doc__ ​ id(object) -&gt; integer Return the identity of an object. This is guaranteed to be unique among simultaneously existing objects. (Hint: it's the object's memory address.)  python中的引用对象特点：  python不允许程序员选择采用传值还是传引用。 - Python参数传递采用的肯定是“传对象引用”的方式。实际上，这种方式相当于传值和传引用的一种综合。如果函数收到的是一个可变对象（比如字典或者列表）的引用，就能修改对象的原始值——相当于通过“传引用”来传递对象。 - 如果函数收到的是一个不可变对象（比如数字、字符或者元组）的引用，就不能直接修改原始对象——相当于通过“传值&rsquo;来传递对象。 当人们复制列表或字典时，就复制了对象列表的引用，如果改变引用的值，则修改了原始的参数。 为了简化内存管理，Python通过引用计数机制实现自动垃圾回收功能，Python中的每个对象都有一个引用计数，用来计数该对象在不同场所分别被引用了多少次。每当引用一次Python对象，相应的引用计数就增1，每当消毁一次Python对象，则相应的引用就减1，只有当引用计数为零时，才真正从内存中删除Python对象。 参考  以下是一些例子：
-In [19]:
- # variable 动态创建一个新的变量，但是，list，tuple，dictionary 却不会创建新的实例 a= 1 b = a print id(a) print id(b) ​ b = 3 print &quot;change b to 3 &quot; print &quot;a: %s, b: %s&quot; %(a ,b) print &quot;a id is : %s; b id is : %s&quot; %(id(a),id(b))  out:
+    开始的技术路线是：
+&nbsp;首先有两个主线程：
+　1，gui线程
+　2，等待客户端socket连接用的，listen线程
+　（当有客户端连接时，即creat一个新的线程2用来跟客户端通信，再来新的客户端，继续creat新的work线程3用于通信，以此类推，目前最多可以creat5个线程，即可以同时跟5台客户端通信，设置了监听的socket服务器最多监听5个队列。线程2继续listen）
+&nbsp;
+出现的问题是：
+　用来通信的work线程3，收到一个来自客户端的xml文件，然后解析文件，并将其数据放在一个全局的静态struct数组里。数据正常，线程2和线程3均可以看到已经更新的数据值。但是，
+　当gui线程去访问时，发现数据并没有更新到其线程，在gui线程下改变该全局变量的数值，也并没有更新到线程2和3，不知何解？
+&nbsp;
+一博主，有如此解释：
+其实在Linux 中，新建的线程并不是在原先的进程中，而是系统通过一个系统调用clone() 。该系统copy 了一个和原先进程完全一样的进程，并在这个进程中执行线程函数。不过这个copy 过程和fork 不一样。copy 后的进程和原先的进程共享了所有的变量，运行环境（clone的实现是可以指定新进程与老进程之间的共享关系，100%共享就表示创建了一个线程）。这样，原先进程中的变量变动在copy 后的进程中便能体现出来。 &nbsp; &nbsp;不过，问题并没有清晰化。 &nbsp; 想到的解决方案暂时有两种： 　1，不在work线程里面解析数据，直接在gui线程里面解析数据。 &nbsp;　2，采用线程私有数据 &nbsp; （此处出现过，小插曲：QT的变量查看器，在调试时不太稳定，更新过后的值在窗口中查看，并没有得到及时更新，需要通过程序判定验证！）
+　另外的问题是：一个变量在多线程环境下，它们的地址都是不同的，为什么呢？待解！　&nbsp;
+由于程序需要在线程创建之后必须返回到gui主线程，所以采用创建两次线程的方式：创建线程A，返回，然后在线程A里面创建
+在多线程POSIX标准下，主线程（1），即是GUI线程。它初始化一个类，并调用其一个成员函数创建一个线程3（ininlistenThred）【不知，为什么不从2开始？】，然后在线程3里面一直循环检测是否有新的客户端发来socket连接。当有新的客户端连接上时，即创建一个新的线程专门用于socket通信。
+此时有一客户端连接上，创建了通信工作线程4（listenthreadwork）。
+&nbsp;
+输出g_buf[0].carid的代码位置分别为：
+1，initlistenthread线程在进入循环入口 即打印出：
+for( ; ; )
+{
+　&nbsp;qDebug("listenthread g_buf[0].carid: %s ",g_buf[0].carid);
+&nbsp; char *t = &amp;(g_buf[0].carid[0]);
+qDebug("dizhi: %d\n\n",&amp;t);
+//......
+}  2，gui主线程在点击按钮的时候，即打印：
+qDebug("mainwindow g_buf[0].carid: %s",g_buf[0].carid); char *t = &amp;(g_buf[0].
   
 
 
@@ -457,7 +457,7 @@ In [19]:
 
 
   <div class="container readlink">
-  <a href="https://tmhm.github.io/2016/05/21/python-%E6%9C%89%E5%85%B3%E5%BC%95%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/">Read more &rarr;</a>
+  <a href="https://tmhm.github.io/2016/03/08/qt%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%85%B1%E4%BA%AB%E9%97%AE%E9%A2%98/">Read more &rarr;</a>
 
 </div>
 
@@ -467,20 +467,29 @@ In [19]:
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/05/21/cmake%E5%B0%9D%E9%B2%9C/">CMake尝鲜
+  <h2><a href="https://tmhm.github.io/2016/03/08/debian%E5%88%9D%E8%AF%86%E9%80%89%E6%8B%A9%E6%9C%80%E4%BD%B3%E9%95%9C%E5%83%8F%E5%8F%91%E5%B8%83%E7%AB%99%E7%82%B9%E5%8A%A0%E5%85%A5source.list%E6%96%87%E4%BB%B6/">Debian初识（选择最佳镜像发布站点加入source.list文件）
 </a>
 </h2>
 
-  <time datetime="2016-05-21">21 May, 2016</time>
+  <time datetime="2016-03-08">8 Mar, 2016</time>
 
 </div>
 
   <p class="container content">
   
   
-    安装gcc，cmake，g++,gdb
-sudo apt-get install gcc cmake g++ gdb  sudo apt-get update &amp;&amp; sudo apt-get install build-essential  &nbsp;
-gdbtui --args ./future_net test-case/case0/topo.csv test-case/case0/demand.csv test-case/case0/sample_result.csv   &nbsp;
+    选择最佳镜像发布站点加入source.list文件：netselect，netselect-apt &ldquo;该将哪个Debian镜像发布站点加入source.list文件？&rdquo;。有很多方法来选择镜像发布站点，专家们可能会写一个脚本去测试 不同站点的ping时间。不过其实有一个程序可以帮你：&nbsp;netselect。
+要安装netselect，通常使用：
+# apt-getinstall netselect
+sudo netselect ftp.debian.org http.us.debian.org ftp.at.debian.org download.unesp.br ftp.debian.org.br ftp.hk.debian.org ftp.tw.debian.org debian.linux.org.tw ftp.sjtu.edu.cn mirrors.163.com
+150 mirrors.163.com  表示，在netselect后列出的所有主机中，mirrors.163.com是下载速 度最快的主机，其得分为150。(注意！！这是在我电脑上的测试结果，不同的网络 节点网速会大不相同，所以这个分值不一定适用于其它电脑)
+# apt-get install netselect-apt
+# netselect-apt stable  从0.3.ds1版开始，netselect源码包中包含了netselect-apt二 进制包，它使上述操作自动完成。只需将发布目录树做为参数(默认为stable)输入，&nbsp;sources.list文件就会生成速度最快的main和non-US镜像站点列表，并保 存在当前目录下。下面的例子生成一个包含stable发布镜像站点列表的sources.list：
+# ls sources.list ls: sources.list: File or directory not found # netselect-apt stable (&hellip;) # ls -l sources.list sources.list #  记住：sources.list生成在当前目录下，必须将其移 至/etc/apt目录。 根据文档内提示：打开注释deb-src。
+&nbsp;
+ putty在win10下面访问不了debian8.2，可能原因有：  　1，防火墙
+　2，网卡驱动不支持！！这点需注意，升级电脑，被坑！
+ &nbsp;查看软件安装位置  whereis torcs man whereis
   
 
 
@@ -488,7 +497,71 @@ gdbtui --args ./future_net test-case/case0/topo.csv test-case/case0/demand.csv t
 
 
   <div class="container readlink">
-  <a href="https://tmhm.github.io/2016/05/21/cmake%E5%B0%9D%E9%B2%9C/">Read more &rarr;</a>
+  <a href="https://tmhm.github.io/2016/03/08/debian%E5%88%9D%E8%AF%86%E9%80%89%E6%8B%A9%E6%9C%80%E4%BD%B3%E9%95%9C%E5%83%8F%E5%8F%91%E5%B8%83%E7%AB%99%E7%82%B9%E5%8A%A0%E5%85%A5source.list%E6%96%87%E4%BB%B6/">Read more &rarr;</a>
+
+</div>
+
+
+</article>
+
+  
+    <article class="container content summary">
+  <div class="container hat">
+  <h2><a href="https://tmhm.github.io/2016/02/21/dev-c&#43;&#43;-%E5%B0%8F%E9%97%AE%E9%A2%98%E9%94%A6%E9%9B%86/">Dev-C&#43;&#43; 小问题锦集
+</a>
+</h2>
+
+  <time datetime="2016-02-21">21 Feb, 2016</time>
+
+</div>
+
+  <p class="container content">
+  
+  
+    C++ project cann&rsquo;t debug  Your project does not have debugging information, do you want to enable debugging and rebuild your project?   　解决办法：
+　在tools 菜单下的compiler项中，勾选：Add the following commands when calling compiler:
+　并在框内添加参数：-g
+（版本：Dev-C++ 4.9.9.2.）
+&nbsp;
+  
+
+
+</p>
+
+
+  <div class="container readlink">
+  <a href="https://tmhm.github.io/2016/02/21/dev-c&#43;&#43;-%E5%B0%8F%E9%97%AE%E9%A2%98%E9%94%A6%E9%9B%86/">Read more &rarr;</a>
+
+</div>
+
+
+</article>
+
+  
+    <article class="container content summary">
+  <div class="container hat">
+  <h2><a href="https://tmhm.github.io/2016/02/18/ubuntu-12.04lts-%E5%AE%89%E8%A3%85mysql-%E5%B9%B6%E9%80%9A%E8%BF%87qt%E8%BF%9E%E6%8E%A5/">ubuntu 12.04lts 安装mysql ，并通过QT连接
+</a>
+</h2>
+
+  <time datetime="2016-02-18">18 Feb, 2016</time>
+
+</div>
+
+  <p class="container content">
+  
+  
+    安装server$ sudo apt-get install mysql-server
+安装驱动 $ sudo apt-get install libqt4-sql-mysql 
+ 　$ dpkg &ndash;list | grep mysql ii libdbd-mysql-perl 4.020-1build2 Perl5 database interface to the MySQL database ii libmysqlclient18 5.5.47-0ubuntu0.12.04.1 MySQL database client library ii libqt4-sql-mysql 4:4.8.1-0ubuntu4.9 Qt 4 MySQL database driver ii mysql-client-5.5 5.5.47-0ubuntu0.12.04.1 MySQL database client binaries ii mysql-client-core-5.5 5.5.47-0ubuntu0.12.04.1 MySQL database core client binaries ii mysql-common 5.5.47-0ubuntu0.12.04.1 MySQL database common files, e.g. /etc/mysql/my.cnf ii mysql-server 5.
+  
+
+
+</p>
+
+
+  <div class="container readlink">
+  <a href="https://tmhm.github.io/2016/02/18/ubuntu-12.04lts-%E5%AE%89%E8%A3%85mysql-%E5%B9%B6%E9%80%9A%E8%BF%87qt%E8%BF%9E%E6%8E%A5/">Read more &rarr;</a>
 
 </div>
 
@@ -526,24 +599,12 @@ gdbtui --args ./future_net test-case/case0/topo.csv test-case/case0/demand.csv t
   4
 </a>
 
-<a href="https://tmhm.github.io//page/5/">
-  5
-</a>
 
-<a href="https://tmhm.github.io//page/6/">
-  6
-</a>
-
-<a href="https://tmhm.github.io//page/7/">
-  7
-</a>
-
-
-<a aria-label="Next" href="https://tmhm.github.io//page/5/">
+<a class="disabled" aria-label="Next" href="#">
   <span aria-hidden="true">»</span>
 </a>
 
-<a aria-label="Last" href="https://tmhm.github.io//page/7/">
+<a aria-label="Last" href="https://tmhm.github.io//page/4/">
   <span aria-hidden="true">»»</span>
 </a>
 
@@ -598,7 +659,7 @@ gdbtui --args ./future_net test-case/case0/topo.csv test-case/case0/demand.csv t
       return;
 
     var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
-    dsq.src = '//http-wwcreator-github-io.disqus.com/count.js';
+    dsq.src = '//wells217-github-io.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
