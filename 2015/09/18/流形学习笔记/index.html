@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>流形学习笔记  &middot; Well</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="">
+
+
+<meta property="og:title" content="流形学习笔记  &middot; Well ">
+<meta property="og:site_name" content="Well"/>
+<meta property="og:url" content="https://tmhm.github.io/2015/09/18/%E6%B5%81%E5%BD%A2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" />
+<meta property="og:locale" content="en-EN">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2015-09-18T14:50:00Z" />
+<meta property="og:article:modified_time" content="2015-09-18T14:50:00Z" />
+
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta name="twitter:title" content="流形学习笔记" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="https://tmhm.github.io/2015/09/18/%E6%B5%81%E5%BD%A2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" />
+<meta name="twitter:domain" content="https://tmhm.github.io/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "流形学习笔记",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2015-09-18",
+    "description": "",
+    "wordCount":  109 
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://tmhm.github.io/2015/09/18/%E6%B5%81%E5%BD%A2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://tmhm.github.io/v2.png">
+<link href="https://tmhm.github.io/v2.png" rel="icon">
+
+<meta name="generator" content="Hugo 0.18.1" />
+
+  
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://tmhm.github.io/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://tmhm.github.io/css/style.css">
+<link rel="stylesheet" href="https://tmhm.github.io/css/highlight/default.css">
+
+  
+  
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'Your Google Analytics tracking code', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+</head>
+<body>
+  <main id="main-wrapper" class="container main_wrapper has-sidebar">
+    <header id="main-header" class="container main_header">
+  <div class="container brand">
+  <div class="container title h1-like">
+  <a class="baselink" href="https://tmhm.github.io/">
+  芝麻无花
+
+</a>
+
+</div>
+
+  
+<div class="container topline">
+  
+  few words about your site
+
+
+</div>
+
+
+</div>
+
+  <nav class="container nav primary no-print">
+  
+
+<a class="homelink" href="https://tmhm.github.io/">home</a>
+
+
+  
+<a href="https://tmhm.github.io/about">About</a>
+
+<a href="https://tmhm.github.io/categories" title="Show list of categories">Categories</a>
+
+<a href="https://tmhm.github.io/post" title="Show list of posts">Posts</a>
+
+<a href="https://tmhm.github.io/tags" title="show list of tags">Tags</a>
+
+
+</nav>
+
+<div class="container nav secondary no-print">
+  
+<a id="contact-link-email" class="contact_link" href="mailto:wells217@163.com">
+  <span class="fa fa-envelope-square"></span><span>email</span></a>
+
+
+
+<a id="contact-link-github" class="contact_link" href="https://github.com/tmhm">
+  <span class="fa fa-github-square"></span><span>github</span></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+  
+
+</header>
+
+
+<article id="main-content" class="container main_content single">
+  <header class="container hat">
+  <h1>流形学习笔记
+</h1>
+
+  <div class="metas">
+<time datetime="2015-09-18">18 Sep, 2015</time>
+
+
+  
+  &middot; Read in about 1 min
+  &middot; (109 Words)
+  <br>
+  
+
+
+</div>
+
+</header>
+
+  <div class="container content">
+  <p><ul>
+<li><strong>维数约简</strong></li>
+</ul>
+<ol>
+<li>特征选择，依据某一标准选择性质最突出的特征</li>
+<li>特征抽取，经已有特征的某种变换获取约简特征</li>
+</ol>
+<p>增加特征数：</p>
+<ol>
+<li>可以增加信息量，进而提高准确度</li>
+<li>增加训练分类器的难度，进而带来维数灾难。</li>
+</ol>
+<p>解决办法：</p>
+<p>　　选取尽可能多的、可能有用的特征，然后根据需要进行特征约简。</p>
+<p>&nbsp;</p>
+<ul>
+<li><strong>主成分分析（PCA）</strong></li>
+</ul>
+<p><strong style="line-height: 1.5;"><img style="display: block; margin-left: auto; margin-right: auto;" src="http://images2015.cnblogs.com/blog/781469/201509/781469-20150918214617414-906516153.png" alt="" /></strong></p>
+<p>目的：</p>
+<p>　　寻找能够表示采样数据的最好投影子空间。</p>
+<p>求解：</p>
+<p>　　对样本的散布矩阵（scatter matrix）进行特征值分解，所求之空间为过样本均值，（何为过样本均值？）</p>
+<p>以最大特征值所对应的特征向量为方向的之空间。</p>
+<p>特点：</p>
+<ol>
+<li>对椭球状分布的样本集具有很好的效果，理论上，学习到的主方向就是椭圆的主轴方向。</li>
+<li>非监督学习算法，能找到很好地代表所有样本的方向，但是，对于分类未必是最有利的，如下图：　　</li>
+</ol>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://images2015.cnblogs.com/blog/781469/201509/781469-20150918215131414-1106255874.png" alt="" width="451" height="260" /></p>
+<p>线性判别分析（LDA）</p>
+<p>思想：</p>
+<p>　　寻找最能把两类样本分开的投影直线</p>
+<p>特点：</p>
+<p>　　监督的维数约简</p>
+<p>目标：</p>
+<p>　　是投影后两类样本的均值之差与投影样本的总类散步的比值最大。</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://images2015.cnblogs.com/blog/781469/201509/781469-20150918215637336-153431327.png" alt="" /></p>
+<p>&nbsp;</p>
+<p>求解：</p>
+<p>　　把原问题转化为关于样本集总<span style="color: #ff0000;">类内</span>散步矩阵和总<span style="color: #ff0000;">类间</span>散步矩阵的广义特征值问题。</p>
+<p>&nbsp;</p>
+<ul>
+<li><strong>多重判别分析（MDA）</strong></li>
+</ul>
+<p>　　LDA往多类情况的推广</p>
+<p>　　解法与LDA类似，对于C－类问题，把样本投影到C－１维之空间。</p>
+<p>&nbsp;</p>
+<p>线性方法的缺点：</p>
+<p>线性方法对于某些数据不能进行有效的处理，这类数据，在现实中，往往很多。比如下图：</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://images2015.cnblogs.com/blog/781469/201509/781469-20150918220506773-237605601.jpg" alt="" width="389" height="292" /></p>
+<p>&nbsp;</p>
+<p>另外，现实中的数据往往并不是特征的线性组合。</p>
+<p>比如　paper：A Global Geometric Framework　for Nonlinear Dimensionality　Reduction　所提到的人脸模型</p>
+<p>&nbsp;</p>
+<ul>
+<li><strong>流形学习</strong></li>
+</ul>
+<ol>
+<li>是线性之空间的一种非线性推广；</li>
+<li>一种局部可坐标话的拓扑空间结构；</li>
+<li>一种非线性额维数约简方法。</li>
+</ol>
+<p>基本思想：</p>
+<p>　　高维观测空间中的点是由少数独立变量的共同作用在观测空间张成一个流形，如果能有效地展开观测空间卷曲的流形或者发现其内在的主要变量，就可以对该数据集进行降维。</p>
+<p>&nbsp;</p>
+<p>可行性分析：</p>
+<ol>
+<li>许多高维采样数据都是由少数几个隐含变量所决定的, 如人脸采样由光线亮度, 人离相机的距离, 人的头部姿势, 人的脸部肌肉等因素决定；</li>
+<li>从认知心理学的角度来看, 心理学家认为人的认知过程是基于认知流形和拓扑连续性的。</li>
+</ol>
+<p>几种经典的流形学习方法：</p>
+<p>　　局部线性嵌入（LLE）　Nonlinear dimensionality reduction by locally linear embedding. Science</p>
+<p>　　等距映射（IsoMap）A global geometric framework for nonlinear dimensionality reduction. Science,</p>
+<p>　　拉普拉斯特征映射（Laplacian　Eigenmap）Laplacian Eigenmaps for Dimensionality Reduction and Data Representation. Neural Computation,</p>
+<p>&nbsp;</p>
+<p>参考：</p>
+<ol>
+<li>自动化所　流形学习　课件。</li>
+<li>paper：A Global Geometric Framework　for Nonlinear Dimensionality　Reduction，　ｓｃｉｅｎｃｅ，２０００</li>
+</ol>
+<p>&nbsp;</p></p>
+
+</div>
+
+
+  <footer class="container">
+  <div class="container navigation no-print">
+  <h2>Navigation</h2>
+  
+  
+
+    
+
+    
+    <a class="next" href="https://tmhm.github.io/2015/11/20/python&#43;mysql%E5%AD%A6%E4%B9%A0/" title="python&#43;mysql学习">
+      Next
+    </a>
+    
+
+  
+
+
+</div>
+
+  <div class="container comments">
+  <h2>Comments</h2>
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//wells217-github-io.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+</footer>
+
+</article>
+      <footer id="main-footer" class="container main_footer">
+  
+
+  <div class="container nav foot no-print">
+  
+<a href="https://tmhm.github.io/license">license</a>
+
+
+  &nbsp; &nbsp; &nbsp; &nbsp;<a class="toplink" href="#">back to top</a>
+
+</div>
+
+  <div class="container credits">
+  
+<div class="container footline">
+  
+  code with <i class='fa fa-heart'></i>
+
+
+</div>
+
+
+  
+<div class="container copyright">
+  
+  &copy; 2017 Well.
+
+
+</div>
+
+
+</div>
+
+</footer>
+
+    </main>
+    
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//wells217-github-io.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+
+<script src="https://tmhm.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+    
+  </body>
+</html>
+

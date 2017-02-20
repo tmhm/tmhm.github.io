@@ -150,7 +150,7 @@
     <h1>Well
 </h1>
 
-    <span>last update: <time datetime="2017-02-20T02:03:45-08:00">20 February at 2:03am</time>
+    <span>last update: <time datetime="2017-02-19T19:54:02-08:00">19 February at 7:54pm</time>
 </span>
 
   </header>
@@ -158,21 +158,108 @@
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/05/21/vim%E5%88%9D%E6%8E%A2/">vim初探
+  <h2><a href="https://tmhm.github.io/2016/01/06/ubuntu12.04lts%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E5%8D%B8%E8%BD%BD-qt4.8.6%E5%92%8Cqt-creator2.5.2/">ubuntu12.04LTS安装以及卸载 QT4.8.6和QT creator2.5.2
 </a>
 </h2>
 
-  <time datetime="2016-05-21">21 May, 2016</time>
+  <time datetime="2016-01-06">6 Jan, 2016</time>
 
 </div>
 
   <p class="container content">
   
   
-    https://github.com/spf13/spf13-vim
-安装了此博主的开源项目。
-：vsp &nbsp; &mdash;&mdash;竖分屏
-：sp &nbsp;　&mdash;&mdash;横分屏&nbsp;
+    鉴于，下载QT5.5安装，编译总是有问题，可能是配置不正确。
+于是按照论坛的一些资料，就换回QT4版本，具体实施步骤如下：
+在qt官网http://download.qt.io/archive/
+下的qt4.8.6 ： &nbsp;http://download.qt.io/archive/qt/4.8/4.8.6/qt-everywhere-opensource-src-4.8.6.tar.gz
+和 qt creator 2.5.2 ：&nbsp;http://download.qt.io/archive/qtcreator/2.5/qt-creator-linux-x86-opensource-2.5.2.bin
+ 在终端依次输入以下命令：  &nbsp;
+1 tar xzvf qt-everywhere-opensource-src-4.8.6.tar.gz 2 cd qt-everywhere-opensource-src-4.8.6 3 sudo apt-get install g++ 4 sudo apt-get install libX11-dev libXext-dev libXtst-dev 5 配置QT Library ，输入命令： ./configure  &nbsp;
+配置完成，会得到如下终端界面：
+Qt is now configured for building. Just run 'make'. Once everything is built, you must run 'make install'. Qt will be installed into /usr/local/Trolltech/Qt-4.8.6 To reconfigure, run 'make confclean' and 'configure'.
+  
+
+
+</p>
+
+
+  <div class="container readlink">
+  <a href="https://tmhm.github.io/2016/01/06/ubuntu12.04lts%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E5%8D%B8%E8%BD%BD-qt4.8.6%E5%92%8Cqt-creator2.5.2/">Read more &rarr;</a>
+
+</div>
+
+
+</article>
+
+  
+    <article class="container content summary">
+  <div class="container hat">
+  <h2><a href="https://tmhm.github.io/2015/11/30/%E7%94%A8vs2010%E7%BC%96%E8%AF%91vs2013%E5%BB%BA%E7%9A%84%E5%B7%A5%E7%A8%8B/">用vs2010编译vs2013建的工程
+</a>
+</h2>
+
+  <time datetime="2015-11-30">30 Nov, 2015</time>
+
+</div>
+
+  <p class="container content">
+  
+  
+    第一步，用文本打开，修改.sln文件
+原始：
+Microsoft Visual Studio Solution File, Format Version 12.00 # Visual Studio 2013 VisualStudioVersion = 12.0.21005.1 MinimumVisualStudioVersion = 10.0.40219.1   　修改为：
+Microsoft Visual Studio Solution File, Format Version 11.00   这里已经可以用vs2010打开工程了，只是还不能编译。
+&nbsp;
+第二步，文本打开，修改.vcxproj文件
+　可以删除带有&ldquo;V120&rdquo;的两行语句，或者修改&ldquo;v120&rdquo;为&ldquo;v100&rdquo;。
+原始：
+"Configuration"&gt; &lt;ConfigurationType&gt;Application&lt;/ConfigurationType&gt; &lt;CharacterSet&gt;MultiByte&lt;/CharacterSet&gt; &lt;CLRSupport&gt;false&lt;/CLRSupport&gt; &lt;PlatformToolset&gt;v120&lt;/PlatformToolset&gt; &lt;/PropertyGroup&gt; &lt;PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration"&gt; &lt;ConfigurationType&gt;Application&lt;/ConfigurationType&gt; &lt;CharacterSet&gt;MultiByte&lt;/CharacterSet&gt; &lt;CLRSupport&gt;false&lt;/CLRSupport&gt; &lt;PlatformToolset&gt;v120&lt;/PlatformToolset&gt;   　修改后：
+"Configuration"&gt; &lt;ConfigurationType&gt;Application&lt;/ConfigurationType&gt; &lt;CharacterSet&gt;MultiByte&lt;/CharacterSet&gt; &lt;CLRSupport&gt;false&lt;/CLRSupport&gt; &lt;PlatformToolset&gt;v100&lt;/PlatformToolset&gt; &lt;/PropertyGroup&gt; &lt;PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration"&gt; &lt;ConfigurationType&gt;Application&lt;/ConfigurationType&gt; &lt;CharacterSet&gt;MultiByte&lt;/CharacterSet&gt; &lt;CLRSupport&gt;false&lt;/CLRSupport&gt; &lt;PlatformToolset&gt;v100&lt;/PlatformToolset&gt;   第三步，加入关联的.
+  
+
+
+</p>
+
+
+  <div class="container readlink">
+  <a href="https://tmhm.github.io/2015/11/30/%E7%94%A8vs2010%E7%BC%96%E8%AF%91vs2013%E5%BB%BA%E7%9A%84%E5%B7%A5%E7%A8%8B/">Read more &rarr;</a>
+
+</div>
+
+
+</article>
+
+  
+    <article class="container content summary">
+  <div class="container hat">
+  <h2><a href="https://tmhm.github.io/2015/11/21/mysql&#43;matlab%E9%85%8D%E7%BD%AE/">mysql&#43;matlab配置
+</a>
+</h2>
+
+  <time datetime="2015-11-21">21 Nov, 2015</time>
+
+</div>
+
+  <p class="container content">
+  
+  
+    mysql 中一直出现&rsquo;&gt;   单双引号没有配对
+&nbsp;
+  mysql 连接matlab   1， 到mysql官网下载 http://dev.mysql.com/downloads/connector/j/
+(mysql-connector-java-5.1.37.tar.gz
+将mysql-connector-java-5.1.37-bin.jar 放在matlabroot/java/jar/toolbox/
+2， 在E:\Program Files\MATLAB\R2011b\toolbox\local目录下，找到classpath.txt
+增加一句
+$matlabroot/java/jar/toolbox/mysql-connector-java-5.1.37-bin.jar
+注意：驱动名字匹配
+$matlabroot指安装目录
+3，重启matlab
+4，测试
+conn = database(&lsquo;xw&rsquo;,&lsquo;root&rsquo;,&lsquo;key&rsquo;,&lsquo;com.mysql.jdbc.Driver&rsquo;,&lsquo;jdbc:mysql://localhost:3306/xw&rsquo;)
+aTemp = exec(conn,&lsquo;select * from gd_train_data limit 5&rsquo;)
+aTemp = fetch(aTemp);
+curs = aTemp.Data
 &nbsp;
   
 
@@ -181,7 +268,7 @@
 
 
   <div class="container readlink">
-  <a href="https://tmhm.github.io/2016/05/21/vim%E5%88%9D%E6%8E%A2/">Read more &rarr;</a>
+  <a href="https://tmhm.github.io/2015/11/21/mysql&#43;matlab%E9%85%8D%E7%BD%AE/">Read more &rarr;</a>
 
 </div>
 
@@ -191,23 +278,19 @@
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/05/19/python%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E9%A1%B9/">python运算符一些注意项
+  <h2><a href="https://tmhm.github.io/2015/11/20/python&#43;mysql%E5%AD%A6%E4%B9%A0/">python&#43;mysql学习
 </a>
 </h2>
 
-  <time datetime="2016-05-19">19 May, 2016</time>
+  <time datetime="2015-11-20">20 Nov, 2015</time>
 
 </div>
 
   <p class="container content">
   
   
-     #python运算符一些注意项
-&rsquo;/&lsquo;浮点除，和&rsquo;//&lsquo;整除 单个&rsquo;/&lsquo;是浮点除，两个除号&rsquo;//&lsquo;是整除
-整除也适用于浮点数。但是，用整除计算浮点除的结果只是在整除的结果上*浮点化*，比如3.6//2.1,结果是1.0。
-例子：
- a = 5 for i in [1.0,1.5,2,3,4,5,6]: b= 5//i c = 5/i print a, b,c print &quot;3.6/2.1 =&quot;,3.6/2.1 print &quot;3.6//2.1 =&quot;,3.6//2.1  out：
- 5 5.0 5.0 5 3.0 3.33333333333 5 2 2 5 1 1 5 1 1 5 1 1 5 0 0 3.6/2.1 = 1.71428571429 3.6//2.1 = 1.0  
+    需要用到数据库，初学mysql，记录一下笔记
+&nbsp;
   
 
 
@@ -215,7 +298,7 @@
 
 
   <div class="container readlink">
-  <a href="https://tmhm.github.io/2016/05/19/python%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E9%A1%B9/">Read more &rarr;</a>
+  <a href="https://tmhm.github.io/2015/11/20/python&#43;mysql%E5%AD%A6%E4%B9%A0/">Read more &rarr;</a>
 
 </div>
 
@@ -225,21 +308,47 @@
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/05/17/python%E4%B8%80%E4%BA%9B%E5%86%85%E5%BB%BA%E5%87%BD%E6%95%B0mapzipfilterreduceyield%E7%AD%89/">python一些内建函数(map,zip,filter,reduce,yield等)
+  <h2><a href="https://tmhm.github.io/2015/09/18/%E6%B5%81%E5%BD%A2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">流形学习笔记
 </a>
 </h2>
 
-  <time datetime="2016-05-17">17 May, 2016</time>
+  <time datetime="2015-09-18">18 Sep, 2015</time>
 
 </div>
 
   <p class="container content">
   
   
-    ##python一些内建函数(map,zip,filter,reduce,yield等)
-###map函数 Python实际上提供了一个内置的工具，map函数。这个函数的主要功能是对一个序列对象中的每一个元素应用被传入的函数，并且返回一个包含了所有函数调用结果的一个列表。
-map?
- Docstring: map(function, sequence[, sequence, ...]) -&gt; list Return a list of the results of applying the function to the items of the argument sequence(s). If more than one sequence is given, the function is called with an argument list consisting of the corresponding item of each sequence, substituting None for missing values when not all sequences have the same length. If the function is None, return a list of the items of the sequence (or a list of tuples if more than one sequence).
+    维数约简   特征选择，依据某一标准选择性质最突出的特征 特征抽取，经已有特征的某种变换获取约简特征  增加特征数：
+ 可以增加信息量，进而提高准确度 增加训练分类器的难度，进而带来维数灾难。  解决办法：
+　选取尽可能多的、可能有用的特征，然后根据需要进行特征约简。
+&nbsp;
+ 主成分分析（PCA）  
+目的：
+　寻找能够表示采样数据的最好投影子空间。
+求解：
+　对样本的散布矩阵（scatter matrix）进行特征值分解，所求之空间为过样本均值，（何为过样本均值？）
+以最大特征值所对应的特征向量为方向的之空间。
+特点：
+ 对椭球状分布的样本集具有很好的效果，理论上，学习到的主方向就是椭圆的主轴方向。 非监督学习算法，能找到很好地代表所有样本的方向，但是，对于分类未必是最有利的，如下图：　  线性判别分析（LDA）
+思想：
+　寻找最能把两类样本分开的投影直线
+特点：
+　监督的维数约简
+目标：
+　是投影后两类样本的均值之差与投影样本的总类散步的比值最大。
+&nbsp;
+求解：
+　把原问题转化为关于样本集总类内散步矩阵和总类间散步矩阵的广义特征值问题。
+&nbsp;
+ 多重判别分析（MDA）  　LDA往多类情况的推广
+　解法与LDA类似，对于C－类问题，把样本投影到C－１维之空间。
+&nbsp;
+线性方法的缺点：
+线性方法对于某些数据不能进行有效的处理，这类数据，在现实中，往往很多。比如下图：
+&nbsp;
+另外，现实中的数据往往并不是特征的线性组合。
+比如　paper：A Global Geometric Framework　for Nonlinear Dimensionality　Reduction　所提到的人脸模型
   
 
 
@@ -247,254 +356,7 @@ map?
 
 
   <div class="container readlink">
-  <a href="https://tmhm.github.io/2016/05/17/python%E4%B8%80%E4%BA%9B%E5%86%85%E5%BB%BA%E5%87%BD%E6%95%B0mapzipfilterreduceyield%E7%AD%89/">Read more &rarr;</a>
-
-</div>
-
-
-</article>
-
-  
-    <article class="container content summary">
-  <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/05/14/spss-v21.0-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/">spss v21.0 使用笔记
-</a>
-</h2>
-
-  <time datetime="2016-05-14">14 May, 2016</time>
-
-</div>
-
-  <p class="container content">
-  
-  
-    ##spss v21.0 使用笔记 有问题，戳官方帮助文档
-###神经网络 分析-神经网络-多层感知机 ####变量。 分析-神经网络-多层感知机-变量
- 预测变量可指定为因子（分类）或协变量（刻度）。 在因变量框输入预测Y 因子框 必须是分类的数据 协变量允许各种类型的数据  频率分析 分析-描述统计-频率
- 在统计量里面可以添加选择中位数、众数等 在图表选项可以添加直方图等  画图 图形-旧对话框-&gt;
-画双y轴图 图形-图表构建程序- 在选择范围框里面选：双轴
-  
-
-
-</p>
-
-
-  <div class="container readlink">
-  <a href="https://tmhm.github.io/2016/05/14/spss-v21.0-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/">Read more &rarr;</a>
-
-</div>
-
-
-</article>
-
-  
-    <article class="container content summary">
-  <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/04/24/python&#43;anaconda&#43;pycharm%E5%B7%A5%E5%85%B7%E5%8C%85%E5%AE%89%E8%A3%85/">python&#43;anaconda&#43;pycharm工具包安装
-</a>
-</h2>
-
-  <time datetime="2016-04-24">24 Apr, 2016</time>
-
-</div>
-
-  <p class="container content">
-  
-  
-    ###更新额外包
-$ conda update conda
-更新pip python -m pip install &ndash;upgrade pip
-更新所有 conda update &ndash;all
-安装ffmpeg conda install ffmpeg
-不存在该包，用anaconda search
-[Anaconda2] C:\Users\xwei&gt;anaconda search -t conda ffmpeg
-groakat/ffmpeg-dev | 2.4.3 | conda | linux-64, win-64,osx-64
-[Anaconda2] C:\Users\xwei&gt;conda install -c https://conda.anaconda.org/groakat ffmpeg-dev
-安装theano source for win-install
-source for install
-stack overflow
-[Anaconda2] C:\Users\xwei\Desktop\lstm-test&gt; &gt;anaconda search -t conda theano
- jaikumarm/theano | 0.8.2 | conda | linux-64, win-32, win-64, linux-32, osx-64 : Optimizing compiler for evaluating mathematical expressions on CPUs and GPUs.
-  
-
-
-</p>
-
-
-  <div class="container readlink">
-  <a href="https://tmhm.github.io/2016/04/24/python&#43;anaconda&#43;pycharm%E5%B7%A5%E5%85%B7%E5%8C%85%E5%AE%89%E8%A3%85/">Read more &rarr;</a>
-
-</div>
-
-
-</article>
-
-  
-    <article class="container content summary">
-  <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/04/20/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B00/">统计学习笔记（0）
-</a>
-</h2>
-
-  <time datetime="2016-04-20">20 Apr, 2016</time>
-
-</div>
-
-  <p class="container content">
-  
-  
-    统计学习分类：  监督学习 （supervised learning） 非监督学习 （unsupervised learning） 半监督学习 （semi-supervised learning） 强化学习 （reinforcement learning）  一直以为强化学习不属于统计学习的范畴，看来过去臆想了。
-监督学习基本概念 输入、特征、输出空间  输入与输出的所有值分别称之为输入空间和输出空间； 所有特征向量存在的空间称为特征空间，特征空间的每一维对应于一个特征； 有时，输入空间会和特征空间一致；有时会不同，输入空间往往会经过某些变换将输入空间映射到特征空间； 模型实际是都是定义在特征空间上的； 人们根据输入和输出变量的不同类型来*区分不同的预测任务*： - 输入和输出均为连续变量的预测问题称之为回归问题； - 输出为有限个离散变量的预测问题称之为分类问题； - 输入和输出均为变量序列的预测问题称之为标注问题。  联合概率分布 监督学习假设输入和输出遵循联合概率分布$P(X,Y)$.
-假设空间 监督学习的目的在于学习一个有输入到输出的映射，这一映射由模型来表示。 模型属于由输入空间到输出空间的映射的集合，这一集合就是假设空间（hypothesis space），假设空间的确定意味着学习范围的确定。
-监督学习的模型可以是概率模型或非概率模型，用条件概率分布或决策函数表示。
-###问题形式化 监督学习分学习和预测两个过程。学习过程是利用训练数据集学习一个模型，再用学习到的模型对测试样本进行预测，即预测过程。
-一个具体的模型$y=f(x)$,对一个输入$x_i$,可以产生一个输出$f(x_i)$,而训练模型中对应的输出是$y_i$,如果这个模型训练的足够好，有很好的预测能力，则其训练样本的输出$y_i$和模型的输出$f(x_i)$之间的差就应该足够小。学习系统就是通过不断尝试，选取最好的模型，以便对训练数据集具有最好的预测，同时对未知的测试数据集的预测也有尽可能好的推广，即泛化能力。
-统计学习三要素  模型 * 模型的假设空间包含所有可能的条件概率或决策函数 * 参数空间 策略 学习的准则 * 损失函数和风险函数 * 0-1、 平方、 绝对、 对数损失函数 * 损失函数的期望，即平均意义下的损失，称之为风险函数或期望损失 * 经验风险最小化与结构风险最小化 * 经验最小化的策略认为经验最小的模型是最优的，当样本数量很小时会出现“过拟合” * 结构最小化是为了防止“过拟合”提出，其等价于正则化。结构风险在经验风险上加上表示模型复杂度的正则项或者惩罚项 * $\frac{1}{N} \sum_{i=1}^{N} L(y_i,f(x_i)) +\lambda \ast J(f)$
-  
-
-
-</p>
-
-
-  <div class="container readlink">
-  <a href="https://tmhm.github.io/2016/04/20/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B00/">Read more &rarr;</a>
-
-</div>
-
-
-</article>
-
-  
-    <article class="container content summary">
-  <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/04/20/ipython-notebook-%E4%B8%80%E4%BA%9B%E6%8A%80%E5%B7%A7/">Ipython notebook 一些技巧
-</a>
-</h2>
-
-  <time datetime="2016-04-20">20 Apr, 2016</time>
-
-</div>
-
-  <p class="container content">
-  
-  
-     在模块后面输入：？，运行可以显示说明； 输入：？？，运行可以显示源代码。 输入%matplotlib inline将matplotlib库导入，要显示的图片就可以嵌入到网页中了 %prun用于代码的执行性能分析，可以作为行命令和单元命令使用 在网页中输入%pylab inline，将自动导入SciPy、NumPy、Matplotlib模块 显示行号：在编辑模式，esc键启用之后，按键盘L键，即可开启当前单元格行号 esc进入命令模式，然后按h键进入快捷键帮助界面。 多查看Ipython notebook tutorial  
-  
-
-
-</p>
-
-
-  <div class="container readlink">
-  <a href="https://tmhm.github.io/2016/04/20/ipython-notebook-%E4%B8%80%E4%BA%9B%E6%8A%80%E5%B7%A7/">Read more &rarr;</a>
-
-</div>
-
-
-</article>
-
-  
-    <article class="container content summary">
-  <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/04/12/i.e-%E5%92%8Ce.g-%E7%9A%84%E5%8C%BA%E5%88%AB/">i.e 和e.g 的区别
-</a>
-</h2>
-
-  <time datetime="2016-04-12">12 Apr, 2016</time>
-
-</div>
-
-  <p class="container content">
-  
-  
-     i.e 和e.g 的区别  两者都是拉丁文缩写
- i.e是*id est*的缩写，意思是that is.
- e.g是*exempli gration*的缩写,意思是for example;
-  
-  
-
-
-</p>
-
-
-  <div class="container readlink">
-  <a href="https://tmhm.github.io/2016/04/12/i.e-%E5%92%8Ce.g-%E7%9A%84%E5%8C%BA%E5%88%AB/">Read more &rarr;</a>
-
-</div>
-
-
-</article>
-
-  
-    <article class="container content summary">
-  <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/04/11/%E6%B1%82%E8%A7%A3%E8%B7%AF%E7%94%B1%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98%E5%8D%8E%E4%B8%BA%E6%8C%91%E6%88%98%E8%B5%9B%E5%B0%8F%E6%80%9D/">求解路由路径问题（华为挑战赛小思）
-</a>
-</h2>
-
-  <time datetime="2016-04-11">11 Apr, 2016</time>
-
-</div>
-
-  <p class="container content">
-  
-  
-    HUAWEI Code Craft 2016杂思碎想 赛题源自“未来网络”业务发放中的路由计算问题。
-问题定义 给定一个带权重的有向图G=(V,E)，V为顶点集，E为有向边集，每一条有向边均有一个权重。对于给定的顶点s、t，以及V的子集V&rsquo;，寻找从s到t的不成环有向路径P，使得P经过V&rsquo;中所有的顶点(对经过V&rsquo;中节点的顺序不做要求)。 若不存在这样的有向路径P，则输出无解，程序运行时间越短，则视为结果越优；若存在这样的有向路径P，则输出所得到的路径，路径的权重越小，则视为结果越优，在输出路径权重一样的前提下，程序运行时间越短，则视为结果越优。
-说明：  1）图中所有权重均为[1，20]内的整数； 2）任一有向边的起点不等于终点； 3）连接顶点A至顶点B的有向边可能超过一条，其权重可能一样，也可能不一样； 4）该有向图的顶点不会超过600个，每个顶点出度(以该点为起点的有向边的数量)不超过8； 5）V&rsquo;中元素个数不超过50； 6）从s到t的不成环有向路径P是指，P为由一系列有向边组成的从s至t的有向连通路径，且不允许重复经过任一节点； 7）路径的权重是指所有组成该路径的所有有向边的权重之和。
-最终得分机制 华为后台会使用N个测试用例判题，该N个测试用例分为初级、中级、高级三个等级，参赛者对于每个测试用例都会得到一个百分制分数，使用加权平均分(初级权重为0.2，中级权重为0.3，高级权重为0.5)作为该参赛者的最终得分。
-  输入输出采用文件的形式。
-####思： 对于上述，这么一个问题， 最初的想法是根据dijkstra最短路径算法中贪心的思想，结合剪枝进行求解，但是对于复杂图节点的情况，主要是在于当必经节点变多，这个规则感觉就太多，没法继续下去。
-然后，接触到蚁群算法。 我从旅行商问题（TSP）开始学习这个算法，但是对于我们这个要求经过给定必经点的问题，跟TSP还是有比较大的差距。 TSP问题得以求解的核心思想在于： 每只蚂蚁经过所有的节点，蚂蚁行走相对于cpu总的频率是一样的，当路径越短，其蚂蚁行走的次数就会增大
-然后，突然有了一个这样类蚂蚁的想法，接下来就是围绕这个想法在实现了。 此处，仅仅是自己的一个思路的回顾，可能会存在一些问题。仅供讨论。 #####初衷：
-将所有蚂蚁丢在 起点和必经点上，然后再让他们自己去走，走到另一必经点，其信息素增大， 如果走到终点，信息素更大，直到某只蚂蚁找到终点。每次信息素更新时，信息素更新量的大小跟该蚂蚁走过的node数量和是否经过必经点有关。 这样来，理想情况下，每次更新时，经过必经点的路径信息素应该是比较大的，每次更新信息素后，进行一次从起点开始贪心搜，每次走信息素最大的，看是否可以走到终点，如果走到终点，本次路径即是一个解。
-因为，我们蚂蚁在每个节点，可供选择的节点是很少的， 最多才8个，而tsp问题是可以去任意个节点的 ，这样更新一遍信息素，就可以去类贪心一次，看是否可以找到解。
-于是，开始慢慢地折腾和实现了 :-) ######类邻接表的图表结构
-头结点表
- struct AlGraph{ EdgeNode *adjacencyNode[8]; // AlGraph *algacency_alGraph[8]; //point to the adjacencyNode struct !!! short int edgecnt; // the num of node link to this head node short int vertexNum; long distToSource; // distance from start to this node ,default = 0; // due to the pre cost among [1:20] bool known; // degault = false, become to true when parse it.
-  
-
-
-</p>
-
-
-  <div class="container readlink">
-  <a href="https://tmhm.github.io/2016/04/11/%E6%B1%82%E8%A7%A3%E8%B7%AF%E7%94%B1%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98%E5%8D%8E%E4%B8%BA%E6%8C%91%E6%88%98%E8%B5%9B%E5%B0%8F%E6%80%9D/">Read more &rarr;</a>
-
-</div>
-
-
-</article>
-
-  
-    <article class="container content summary">
-  <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/03/31/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF0/">强化学习之路（0）
-</a>
-</h2>
-
-  <time datetime="2016-03-31">31 Mar, 2016</time>
-
-</div>
-
-  <p class="container content">
-  
-  
-    强化学习之路（0）之缘由 开始接触强化学习是在回到所里开始找课题研究方向的时候，偶然查到伯克利的机器人视频,给我比较惊艳的感觉。陆续开始查找强化学习的一些资料。最近看到一篇有关强化学习的博文，瞬时，想把自己接触到强化学习的过程也做一个简单梳理，为接下来准备在强化学习方向完成毕业论文做一个初略安排。
-有关强化学习的资料：  Tom M. Mitchell的《机器学习》最后一章讲reinforcement learning，算是入门
- 吴恩达公开课中的强化学习部分，他们自动直升机实验室做的项目。
- 吴恩达的博士生Pieter Abbeel(现任教于伯克利，上面的机器人即是他们实验室)，他的博士论文Apprenticeship Learning and Reinforcement Learning with Application to Robotic Control值得一看,还有其在伯克利的DRL课程
- Richard S.Sutton and Andrew G.Barto的RL的经典之作Reinforcement Learning: An Introduction
- Marco Wiering Martijn van Otterlo (Eds.)写的 Reinforcement Learning State-Of-the-Art
- 2015 nature上的 一篇关于 reinforcement learning 的综述: Reinforcement learning improves behaviour from evaluative feedback（Michael L. Littman）（链接还包括2015年机器学习专栏其他5篇综述，如下： * Machine intelligence （Tanguy Chouard &amp; Liesbeth Venema） * Deep learning（Yann LeCun, Yoshua Bengio &amp; Geoffrey Hinton） * Reinforcement learning improves behaviour from evaluative feedback （Michael L.
-  
-
-
-</p>
-
-
-  <div class="container readlink">
-  <a href="https://tmhm.github.io/2016/03/31/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF0/">Read more &rarr;</a>
+  <a href="https://tmhm.github.io/2015/09/18/%E6%B5%81%E5%BD%A2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">Read more &rarr;</a>
 
 </div>
 
@@ -536,20 +398,12 @@ stack overflow
   5
 </a>
 
-<a href="https://tmhm.github.io//page/6/">
-  6
-</a>
 
-<a href="https://tmhm.github.io//page/7/">
-  7
-</a>
-
-
-<a aria-label="Next" href="https://tmhm.github.io//page/6/">
+<a class="disabled" aria-label="Next" href="#">
   <span aria-hidden="true">»</span>
 </a>
 
-<a aria-label="Last" href="https://tmhm.github.io//page/7/">
+<a aria-label="Last" href="https://tmhm.github.io//page/5/">
   <span aria-hidden="true">»»</span>
 </a>
 
@@ -604,7 +458,7 @@ stack overflow
       return;
 
     var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
-    dsq.src = '//http-wwcreator-github-io.disqus.com/count.js';
+    dsq.src = '//wells217-github-io.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>

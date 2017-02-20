@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>配置 on Well</title>
+    <link>https://tmhm.github.io/categories/%E9%85%8D%E7%BD%AE/index.xml</link>
+    <description>Recent content in 配置 on Well</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <managingEditor>wells217@163.com (Well)</managingEditor>
+    <webMaster>wells217@163.com (Well)</webMaster>
+    <copyright>(c) 2017 Well.</copyright>
+    <atom:link href="https://tmhm.github.io/categories/%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>logging 的配置和使用</title>
+      <link>https://tmhm.github.io/2016/12/25/logging-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Sun, 25 Dec 2016 04:49:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/12/25/logging-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/</guid>
+      <description>
+
+&lt;h2 id=&#34;logging-的配置和使用&#34;&gt;logging 的配置和使用&lt;/h2&gt;
+
+&lt;p&gt;reference :&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://python.usyiyi.cn/python_278/library/logging.handlers.html#&#34;&gt;logging cookbook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://python.usyiyi.cn/translate/python_278/howto/logging.html#logging-advanced-tutorial&#34;&gt;logging HOWTO&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;测试源码，example&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;            import logging
+
+            nt = &#39;xwei&#39;
+            # logging.basicConfig(filename=&#39;log/log_test.log&#39;,
+            #                     format=&#39;%(asctime)s, %(levelname)s:%(message)s&#39;, datefmt=&#39;%m/%d/%Y %I:%M:%S %p&#39;,
+            #                     filemode=&#39;w&#39;, level=logging.INFO)
+
+            # set up logging to file - see previous section for more details
+            # w ,new file
+            logging.basicConfig(level=logging.DEBUG,
+                                format=&#39;%(asctime)s %(name)-12s %(levelname)-8s %(message)s&#39;,
+                                datefmt=&#39;%m/%d/%Y %H:%M:%S %p&#39;,
+                                filename=&#39;log/log_test.log&#39;,
+                                filemode=&#39;w&#39;)
+            # define a Handler which writes INFO messages or higher to the sys.stderr
+            console = logging.StreamHandler()
+            console.setLevel(logging.INFO)
+            # set a format which is simpler for console use
+            formatter = logging.Formatter(&#39;%(name)-12s: %(levelname)-8s %(message)s&#39;)
+            # tell the handler to use this format
+            console.setFormatter(formatter)
+            # add the handler to the root logger
+            logging.getLogger(&#39;&#39;).addHandler(console)
+
+            # Now, we can log to the root logger, or any other logger. First the root...
+            logging.info(&#39;Jackdaws love my big sphinx of quartz.&#39;)
+
+            # Now, define a couple of other loggers which might represent areas in your
+            # application:
+            logger1 = logging.getLogger(&#39;myapp.area1&#39;)
+            logger2 = logging.getLogger(&#39;myapp.area2&#39;)
+
+            logger1.debug(&#39;Quick zephyrs blow, vexing daft Jim.&#39;)
+            logger1.info(&#39;How quickly daft jumping zebras vex.&#39;)
+            logger2.warning(&#39;Jail zesty vixen who grabbed pay from quack.&#39;)
+            logger2.error(&#39;The five boxing wizards jump quickly.&#39;)
+
+            # &#39;application&#39; code
+            logging.debug(&amp;quot;this is debug.&amp;quot;)
+            logging.info(&amp;quot;this is info form %s.&amp;quot; % nt)
+            logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;默认设置文件的level 是debug，基础上再设置console的格式。&lt;/p&gt;
+
+&lt;p&gt;程序分别在文件中和console里面保留了对应level的信息：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;console 记录显示大于info level的信息&lt;/li&gt;
+&lt;li&gt;文件中记录level 超过 debug 的信息&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;level设计&#34;&gt;level设计&lt;/h3&gt;
+
+&lt;p&gt;logging函数根据它们用来跟踪的事件的级别或严重程度来命名。&lt;a href=&#34;http://python.usyiyi.cn/translate/python_278/howto/logging.html#logging-advanced-tutorial&#34;&gt;标准级别及其适用性描述&lt;/a&gt;如下（以严重程度递增排序）：&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;级别&lt;/th&gt;
+&lt;th&gt;数字值&lt;/th&gt;
+&lt;th&gt;何时使用&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;DEBUG&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;详细信息，典型地调试问题时会感兴趣。&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;INFO&lt;/td&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;证明事情按预期工作。&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;WARNING&lt;/td&gt;
+&lt;td&gt;30&lt;/td&gt;
+&lt;td&gt;表明发生了一些意外，或者不久的将来会发生问题（如‘磁盘满了’）。软件还是在正常工作。&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ERROR&lt;/td&gt;
+&lt;td&gt;40&lt;/td&gt;
+&lt;td&gt;由于更严重的问题，软件已不能执行一些功能了。&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;CRITICAL&lt;/td&gt;
+&lt;td&gt;50&lt;/td&gt;
+&lt;td&gt;严重错误，表明软件已不能继续运行了。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;默认级别为 WARNING，表示只有该级别及其以上的事件会被跟踪，除非另外配置了logging包。&lt;/p&gt;
+
+&lt;p&gt;我希望：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在console里面输出所有的交互信息，用debug level；&lt;/li&gt;
+&lt;li&gt;在文件里面保存每次迭代完成的数据，用于分析画图，不要太多的中间数据，应该用info level。&lt;/li&gt;
+&lt;li&gt;logging 可以配置&lt;a href=&#34;http://python.usyiyi.cn/python_278/library/logging.handlers.html#&#34;&gt;RotatingFileHandler保留循环文件的大小以及个数&lt;/a&gt;，不想保存太多的log信息。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>macdown在mac OS 中的配置</title>
+      <link>https://tmhm.github.io/2016/11/02/macdown%E5%9C%A8mac-os-%E4%B8%AD%E7%9A%84%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Wed, 02 Nov 2016 13:50:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/11/02/macdown%E5%9C%A8mac-os-%E4%B8%AD%E7%9A%84%E9%85%8D%E7%BD%AE/</guid>
+      <description>
+
+&lt;h1 id=&#34;macdown-用命令行打开-md文件&#34;&gt;macdown 用命令行打开.md文件&lt;/h1&gt;
+
+&lt;p&gt;执行两条命令即可。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo echo &amp;quot;open -a MacDown \$*&amp;quot; &amp;gt; /usr/local/bin/macdown
+
+sudo chmod +x /usr/local/bin/macdown
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;设置文件默认打开方式&#34;&gt;设置文件默认打开方式&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;选定文件&lt;/li&gt;
+&lt;li&gt;右击，选择显示简介&lt;/li&gt;
+&lt;li&gt;选择打开方式子选项&lt;/li&gt;
+&lt;li&gt;选择默认打开的程序，并设置全部更改。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>再探VIM配置</title>
+      <link>https://tmhm.github.io/2016/09/02/%E5%86%8D%E6%8E%A2vim%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Fri, 02 Sep 2016 16:13:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/09/02/%E5%86%8D%E6%8E%A2vim%E9%85%8D%E7%BD%AE/</guid>
+      <description>
+
+&lt;h1 id=&#34;再探vim配置&#34;&gt;再探VIM配置&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;最初找到这个发行版&lt;a href=&#34;https://github.com/spf13/spf13-vim&#34;&gt;spf13-vim&lt;/a&gt;，在ubuntu上用的还比较方便，有很多插件；最近在mac上用，总是不兼容vim，用brew安装了最新的vim，还是跟系统不兼容，总是有问题，于是就找到了下面第二个配置。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/j1z0/vim-config&#34;&gt;vim－config&lt;/a&gt;，这哥们基于vundle配置了一些有用的插件，国内有某君翻译了&lt;a href=&#34;http://codingpy.com/article/vim-and-python-match-in-heaven/&#34;&gt;他的博文&lt;/a&gt;.美中不足的是，安装有问题，有几处安装不成功。使用的时候也是有问题。在翻译的文章最后，编者才告知有问题，但是并没有给出解决的办法。于是我又开始自己造轮子了。&lt;/li&gt;
+&lt;li&gt;拷贝默认的配置文件 &lt;code&gt;$ cp /usr/sh are/vim/vimrc ~/.vimrc&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;编辑文件 &lt;code&gt;$ vim ~/.vimrc&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;安装Vundle: &lt;code&gt;$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;将插件管理器&lt;a href=&#34;https://github.com/VundleVim/Vundle.vim&#34;&gt;vundle&lt;/a&gt;的Configure Plugins:拿过来&lt;/li&gt;
+&lt;li&gt;再借用了上面&lt;a href=&#34;https://github.com/j1z0/vim-config&#34;&gt;vim－config&lt;/a&gt;中的高亮颜色插件，折叠等,并参考了该&lt;a href=&#34;http://www.jianshu.com/p/a0b901307b76&#34;&gt;博文&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;于是得到下面的配置文件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;set nocompatible              &amp;quot; be iMproved, required
+filetype off                  &amp;quot; required
+
+&amp;quot; set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+&amp;quot; alternatively, pass a path where Vundle should install plugins
+&amp;quot;call vundle#begin(&#39;~/some/path/here&#39;)
+
+&amp;quot; let Vundle manage Vundle, required
+Plugin &#39;VundleVim/Vundle.vim&#39;
+
+&amp;quot; The following are examples of different formats supported.
+&amp;quot; Keep Plugin commands between vundle#begin/end.
+&amp;quot; plugin on GitHub repo
+&amp;quot;Plugin &#39;tpope/vim-fugitive&#39;
+&amp;quot; plugin from http://vim-scripts.org/vim/scripts.html
+&amp;quot;Plugin &#39;L9&#39;
+&amp;quot; Git plugin not hosted on GitHub
+&amp;quot;Plugin &#39;git://git.wincent.com/command-t.git&#39;
+&amp;quot; git repos on your local machine (i.e. when working on your own plugin)
+&amp;quot;Plugin &#39;file:///home/gmarik/path/to/plugin&#39;
+&amp;quot; The sparkup vim script is in a subdirectory of this repo called vim.
+&amp;quot; Pass the path to set the runtimepath properly.
+&amp;quot;Plugin &#39;rstacruz/sparkup&#39;, {&#39;rtp&#39;: &#39;vim/&#39;}
+&amp;quot; Install L9 and avoid a Naming conflict if you&#39;ve already installed a
+&amp;quot; different version somewhere else.
+&amp;quot;Plugin &#39;ascenator/L9&#39;, {&#39;name&#39;: &#39;newL9&#39;}
+
+&amp;quot;&amp;quot;code folding
+Plugin &#39;tmhedberg/SimpylFold&#39;
+
+&amp;quot;Colors!!!
+Plugin &#39;altercation/vim-colors-solarized&#39;
+Plugin &#39;jnurmine/Zenburn&#39;
+
+
+&amp;quot; All of your Plugins must be added before the following line
+call vundle#end()            &amp;quot; required
+filetype plugin indent on    &amp;quot; required
+&amp;quot; To ignore plugin indent changes, instead use:
+&amp;quot;filetype plugin on
+&amp;quot;
+&amp;quot; Brief help
+&amp;quot; :PluginList       - lists configured plugins
+&amp;quot; :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+&amp;quot; :PluginSearch foo - searches for foo; append `!` to refresh local cache
+&amp;quot; :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+&amp;quot;
+&amp;quot; see :h vundle for more details or wiki for FAQ
+&amp;quot; Put your non-Plugin stuff after this line
+
+&amp;quot; ==================
+
+&amp;quot; Configuration file for vim
+set modelines=0         &amp;quot; CVE-2007-2438
+
+&amp;quot; Normally we use vim-extensions. If you want true vi-compatibility
+&amp;quot; remove change the following statements
+&amp;quot;set nocompatible       &amp;quot; Use Vim defaults instead of 100% vi compatibility
+set backspace=2         &amp;quot; more powerful backspacing
+
+&amp;quot; Don&#39;t write backup file if vim is being called by &amp;quot;crontab -e&amp;quot;
+au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
+&amp;quot; Don&#39;t write backup file if vim is being called by &amp;quot;chpass&amp;quot;
+au BufWrite /private/etc/pw.* set nowritebackup nobackup
+
+set number
+
+&amp;quot;filetype on
+
+set history=1000
+
+&amp;quot; 启动的时候黑色背景，关闭，启动的时候彩色，后面有设置F5切换
+&amp;quot;set background=dark
+
+&amp;quot;语法高亮
+&amp;quot; For full syntax highlighting:
+let python_highlight_all=1
+syntax on
+
+set autoindent
+
+set smartindent
+
+set tabstop=4
+
+set shiftwidth=4
+
+set showmatch
+
+&amp;quot;当vim进行编辑时，如果命令错误，会发出一个响声，该设置去掉响声
+set vb t_vb=
+
+&amp;quot;在编辑过程中，在右下角显示光标位置的状态行
+set ruler
+
+set incsearch
+
+&amp;quot;默认情况下，寻找匹配是高亮度显示的，该设置关闭高亮显示
+
+&amp;quot;set nohls
+
+&amp;quot;custom keys
+let mapleader=&amp;quot; &amp;quot;
+map &amp;lt;leader&amp;gt;g  :YcmCompleter GoToDefinitionElseDeclaration&amp;lt;CR&amp;gt;
+&amp;quot;&amp;quot;
+call togglebg#map(&amp;quot;&amp;lt;F5&amp;gt;&amp;quot;)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;最后别忘了
+在vim界面输入&lt;code&gt;:PluginInstall&lt;/code&gt;安装&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201609/781469-20160903112937168-1853675546.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;为方便有兴趣的同学使用，我将配置文件放到&lt;a href=&#34;https://github.com/tmhm/vim-config&#34;&gt;github&lt;/a&gt;上了,只要clone下来，进入该文件目录下，执行&lt;code&gt;setup_vim.sh&lt;/code&gt;即可。&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Enjoy it～&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>mysql&#43;matlab配置</title>
+      <link>https://tmhm.github.io/2015/11/21/mysql&#43;matlab%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sat, 21 Nov 2015 13:56:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2015/11/21/mysql&#43;matlab%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;p&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;h3&gt;&lt;span class=&#34;ask-title &#34;&gt;mysql 中一直出现&amp;rsquo;&amp;gt;&lt;/span&gt;&lt;/h3&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span class=&#34;ask-title &#34;&gt;　　　　单双引号没有配对&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h3&gt;&lt;span class=&#34;ask-title &#34; style=&#34;font-size: 14px;&#34;&gt;mysql 连接matlab&lt;/span&gt;&lt;/h3&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p style=&#34;margin-left: 60px;&#34;&gt;1， 到mysql官网下载 &lt;a href=&#34;http://dev.mysql.com/downloads/connector/j/&#34;&gt;http://dev.mysql.com/downloads/connector/j/&lt;/a&gt;&lt;br /&gt;(mysql-connector-java-5.1.37.tar.gz&lt;br /&gt;将mysql-connector-java-5.1.37-bin.jar  放在matlabroot/java/jar/toolbox/&lt;/p&gt;
+&lt;p style=&#34;margin-left: 60px;&#34;&gt;2， 在E:\Program Files\MATLAB\R2011b\toolbox\local目录下，找到classpath.txt&lt;br /&gt;增加一句&lt;br /&gt;$matlabroot/java/jar/toolbox/mysql-connector-java-5.1.37-bin.jar&lt;/p&gt;
+&lt;p style=&#34;margin-left: 60px;&#34;&gt;&lt;span style=&#34;color: #ff0000;&#34;&gt;注意：驱动名字匹配&lt;/span&gt;&lt;br /&gt;$matlabroot指安装目录&lt;/p&gt;
+&lt;p style=&#34;margin-left: 60px;&#34;&gt;3，重启matlab&lt;/p&gt;
+&lt;p style=&#34;margin-left: 60px;&#34;&gt;4，测试&lt;/p&gt;
+&lt;p style=&#34;margin-left: 90px;&#34;&gt;conn = database(&amp;lsquo;xw&amp;rsquo;,&amp;lsquo;root&amp;rsquo;,&amp;lsquo;key&amp;rsquo;,&amp;lsquo;com.mysql.jdbc.Driver&amp;rsquo;,&amp;lsquo;jdbc:mysql://localhost:3306/xw&amp;rsquo;)&lt;/p&gt;
+&lt;p style=&#34;margin-left: 90px;&#34;&gt;aTemp = exec(conn,&amp;lsquo;select * from gd_train_data limit 5&amp;rsquo;)&lt;br /&gt;aTemp = fetch(aTemp);&lt;/p&gt;
+&lt;p style=&#34;margin-left: 90px;&#34;&gt;&lt;em id=&#34;__mceDel&#34; style=&#34;line-height: 1.5;&#34;&gt;&lt;em&gt;curs = aTemp.Data&lt;/em&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p style=&#34;margin-left: 60px;&#34;&gt;&amp;nbsp;&lt;/p&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>技术 on Well</title>
+    <link>https://tmhm.github.io/categories/%E6%8A%80%E6%9C%AF/index.xml</link>
+    <description>Recent content in 技术 on Well</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <managingEditor>wells217@163.com (Well)</managingEditor>
+    <webMaster>wells217@163.com (Well)</webMaster>
+    <copyright>(c) 2017 Well.</copyright>
+    <atom:link href="https://tmhm.github.io/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>按位操作</title>
+      <link>https://tmhm.github.io/2016/08/30/%E6%8C%89%E4%BD%8D%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Tue, 30 Aug 2016 10:54:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/08/30/%E6%8C%89%E4%BD%8D%E6%93%8D%E4%BD%9C/</guid>
+      <description>
+
+&lt;h2 id=&#34;按位操作&#34;&gt;按位操作&lt;/h2&gt;
+
+&lt;h3 id=&#34;异或&#34;&gt;异或&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;异或自己 变成零&lt;/li&gt;
+&lt;li&gt;异或零，值不变&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;与&#34;&gt;与&amp;amp;&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;递归与自己的减一按位与，返回的是该数化为二进制数后，数字1的个数&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;int fun(int x){
+        int c = 0;
+        while(x){
+                c++;
+                x = x&amp;amp;(x-1);
+                cout&amp;lt;&amp;lt; x &amp;lt;&amp;lt; endl;
+        }
+        return c;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>比较字符串（包含以及变位词）</title>
+      <link>https://tmhm.github.io/2016/06/04/%E6%AF%94%E8%BE%83%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%85%E5%90%AB%E4%BB%A5%E5%8F%8A%E5%8F%98%E4%BD%8D%E8%AF%8D/</link>
+      <pubDate>Sat, 04 Jun 2016 09:48:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/06/04/%E6%AF%94%E8%BE%83%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%85%E5%90%AB%E4%BB%A5%E5%8F%8A%E5%8F%98%E4%BD%8D%E8%AF%8D/</guid>
+      <description>
+
+&lt;h3 id=&#34;two-strings-are-anagrams&#34;&gt;Two Strings Are Anagrams&lt;/h3&gt;
+
+&lt;h4 id=&#34;description&#34;&gt;Description&lt;/h4&gt;
+
+&lt;p&gt;Write a method anagram(s,t) to decide if two strings are anagrams or not.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What is Anagram?&lt;/strong&gt;
+- Two strings are anagram if they can be the same after change the order of characters.&lt;/p&gt;
+
+&lt;h4 id=&#34;example&#34;&gt;Example&lt;/h4&gt;
+
+&lt;p&gt;Given s = &amp;laquo;abcd&amp;raquo;, t = &amp;laquo;dcab&amp;raquo;, return true.
+Given s = &amp;laquo;ab&amp;raquo;, t = &amp;laquo;ab&amp;raquo;, return true.
+Given s = &amp;laquo;ab&amp;raquo;, t = &amp;laquo;ac&amp;raquo;, return false.&lt;/p&gt;
+
+&lt;h4 id=&#34;solution&#34;&gt;solution：&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;class Solution:
+    &amp;quot;&amp;quot;&amp;quot;
+    @param s: The first string
+    @param b: The second string
+    @return true or false
+    &amp;quot;&amp;quot;&amp;quot;
+    def countchar(self,ch):
+        result = {}
+        for item in ch:
+            ikey = ord(item)
+            if result.has_key(ikey):
+                result[ikey] +=1
+            else:
+                result.setdefault(ikey,0)
+        return result
+
+    def anagram(self, s, t):
+        # write your code here
+        dicS = self.countchar(s)
+        dicT = self.countchar(t)
+        if not cmp(dicS,dicT):
+             return True
+        else:
+            return False
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;compare-strings&#34;&gt;Compare Strings&lt;/h3&gt;
+
+&lt;h4 id=&#34;description-1&#34;&gt;Description&lt;/h4&gt;
+
+&lt;p&gt;Compare two strings A and B, determine whether A contains all of the characters in B.&lt;/p&gt;
+
+&lt;p&gt;The characters in string A and B are all Upper Case letters.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Notice&lt;/strong&gt;
+&amp;gt;The characters of B in A are not necessary continuous or ordered.&lt;/p&gt;
+
+&lt;h4 id=&#34;example-1&#34;&gt;Example&lt;/h4&gt;
+
+&lt;p&gt;For A = &amp;laquo;ABCD&amp;raquo;, B = &amp;laquo;ACD&amp;raquo;, return true.&lt;/p&gt;
+
+&lt;p&gt;For A = &amp;laquo;ABCD&amp;raquo;, B = &amp;laquo;AABC&amp;raquo;, return false.&lt;/p&gt;
+
+&lt;h4 id=&#34;solution-1&#34;&gt;solution&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;class Solution:
+    &amp;quot;&amp;quot;&amp;quot;
+    @param A : A string includes Upper Case letters
+    @param B : A string includes Upper Case letters
+    @return :  if string A contains all of the characters in B return True else return False
+    &amp;quot;&amp;quot;&amp;quot;
+    # used a list with 26 iterm to save the number of each alphabet
+
+    def compareStrings(self, A, B):
+        # write your code here
+        if B is None:
+            return True
+        elif A is None:
+            return False
+
+        CntA = self.countString(A)
+        CntB = self.countString(B)
+
+        for order in range(ord(&amp;quot;Z&amp;quot;)-ord(&amp;quot;A&amp;quot;) + 1):
+            if CntA[order] &amp;lt; CntB[order]:
+                return False
+
+        return True
+
+    def countString(self,string):
+        count = []
+        for item in range(ord(&amp;quot;Z&amp;quot;)-ord(&amp;quot;A&amp;quot;) + 1):
+            count.append(0)
+        for item in string:
+            count[ord(item) - ord(&amp;quot;A&amp;quot;)] +=1
+        return count
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

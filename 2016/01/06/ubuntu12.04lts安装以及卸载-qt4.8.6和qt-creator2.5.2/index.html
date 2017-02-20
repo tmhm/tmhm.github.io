@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>ubuntu12.04LTS安装以及卸载 QT4.8.6和QT creator2.5.2  &middot; Well</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="" />
+
+<meta name="keywords" content="">
+
+
+<meta property="og:title" content="ubuntu12.04LTS安装以及卸载 QT4.8.6和QT creator2.5.2  &middot; Well ">
+<meta property="og:site_name" content="Well"/>
+<meta property="og:url" content="https://tmhm.github.io/2016/01/06/ubuntu12.04lts%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E5%8D%B8%E8%BD%BD-qt4.8.6%E5%92%8Cqt-creator2.5.2/" />
+<meta property="og:locale" content="en-EN">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content=""/>
+<meta property="og:article:published_time" content="2016-01-06T10:30:00Z" />
+<meta property="og:article:modified_time" content="2016-01-06T10:30:00Z" />
+
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta name="twitter:title" content="ubuntu12.04LTS安装以及卸载 QT4.8.6和QT creator2.5.2" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:url" content="https://tmhm.github.io/2016/01/06/ubuntu12.04lts%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E5%8D%B8%E8%BD%BD-qt4.8.6%E5%92%8Cqt-creator2.5.2/" />
+<meta name="twitter:domain" content="https://tmhm.github.io/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "ubuntu12.04LTS安装以及卸载 QT4.8.6和QT creator2.5.2",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2016-01-06",
+    "description": "",
+    "wordCount":  187 
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://tmhm.github.io/2016/01/06/ubuntu12.04lts%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E5%8D%B8%E8%BD%BD-qt4.8.6%E5%92%8Cqt-creator2.5.2/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://tmhm.github.io/v2.png">
+<link href="https://tmhm.github.io/v2.png" rel="icon">
+
+<meta name="generator" content="Hugo 0.18.1" />
+
+  
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://tmhm.github.io/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://tmhm.github.io/css/style.css">
+<link rel="stylesheet" href="https://tmhm.github.io/css/highlight/default.css">
+
+  
+  
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'Your Google Analytics tracking code', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+</head>
+<body>
+  <main id="main-wrapper" class="container main_wrapper has-sidebar">
+    <header id="main-header" class="container main_header">
+  <div class="container brand">
+  <div class="container title h1-like">
+  <a class="baselink" href="https://tmhm.github.io/">
+  芝麻无花
+
+</a>
+
+</div>
+
+  
+<div class="container topline">
+  
+  few words about your site
+
+
+</div>
+
+
+</div>
+
+  <nav class="container nav primary no-print">
+  
+
+<a class="homelink" href="https://tmhm.github.io/">home</a>
+
+
+  
+<a href="https://tmhm.github.io/about">About</a>
+
+<a href="https://tmhm.github.io/categories" title="Show list of categories">Categories</a>
+
+<a href="https://tmhm.github.io/post" title="Show list of posts">Posts</a>
+
+<a href="https://tmhm.github.io/tags" title="show list of tags">Tags</a>
+
+
+</nav>
+
+<div class="container nav secondary no-print">
+  
+<a id="contact-link-email" class="contact_link" href="mailto:wells217@163.com">
+  <span class="fa fa-envelope-square"></span><span>email</span></a>
+
+
+
+<a id="contact-link-github" class="contact_link" href="https://github.com/tmhm">
+  <span class="fa fa-github-square"></span><span>github</span></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+  
+
+</header>
+
+
+<article id="main-content" class="container main_content single">
+  <header class="container hat">
+  <h1>ubuntu12.04LTS安装以及卸载 QT4.8.6和QT creator2.5.2
+</h1>
+
+  <div class="metas">
+<time datetime="2016-01-06">6 Jan, 2016</time>
+
+
+  
+  &middot; Read in about 1 min
+  &middot; (187 Words)
+  <br>
+  
+
+
+</div>
+
+</header>
+
+  <div class="container content">
+  <p>鉴于，下载QT5.5安装，编译总是有问题，可能是配置不正确。</p>
+<p>于是按照论坛的一些资料，就换回QT4版本，具体实施步骤如下：</p>
+<p>在qt官网http://download.qt.io/archive/</p>
+<p>下的qt4.8.6 ： &nbsp;http://download.qt.io/archive/qt/4.8/4.8.6/qt-everywhere-opensource-src-4.8.6.tar.gz</p>
+<p>和 qt creator 2.5.2 ：&nbsp;http://download.qt.io/archive/qtcreator/2.5/qt-creator-linux-x86-opensource-2.5.2.bin</p>
+<ul>
+<li><strong>在终端依次输入以下命令：</strong></li>
+</ul>
+<p class="alt">&nbsp;</p>
+<div class="cnblogs_code">
+<pre><span style="color: #800080;">1</span> tar xzvf qt-everywhere-opensource-src-<span style="color: #800080;">4.8</span>.<span style="color: #800080;">6</span><span style="color: #000000;">.tar.gz
+
+</span><span style="color: #800080;">2</span> cd qt-everywhere-opensource-src-<span style="color: #800080;">4.8</span>.<span style="color: #800080;">6</span>
+
+<span style="color: #800080;">3</span> sudo apt-<span style="color: #0000ff;">get</span> install g++
+
+<span style="color: #800080;">4</span> sudo apt-<span style="color: #0000ff;">get</span> install libX11-dev libXext-dev libXtst-<span style="color: #000000;">dev
+
+</span><span style="color: #800080;">5</span> 配置QT Library ，输入命令： ./configure</pre>
+</div>
+<p>&nbsp;</p>
+<p>配置完成，会得到如下终端界面：</p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:cpp;gutter:true;">Qt is now configured for building. Just run 'make'.
+Once everything is built, you must run 'make install'.
+Qt will be installed into /usr/local/Trolltech/Qt-4.8.6
+
+To reconfigure, run 'make confclean' and 'configure'.
+</pre>
+</div>
+<p>　　</p>
+<ul>
+<li><strong>然后再输入：&nbsp;</strong></li>
+</ul>
+<p style="margin-left: 30px;">　　　　make &nbsp; 生成QT库，以及编译所有演示程序</p>
+<p>这里的时间挺长的。。。。。</p>
+<ul>
+<li><strong>执行安装命令：</strong></li>
+</ul>
+<ol>
+<li class="alt">sudo&nbsp;make&nbsp;install &nbsp;</li>
+<li class="alt"><em>（卸载的时候也是在此目录下，执行：sudo make uninstall）</em></li>
+</ol>
+<ul>
+<li><strong>QT默认安装在/usr/local/Trolltech/Qt-4.8.6目录里面，进入该目录，测试</strong></li>
+</ul>
+<div class="cnblogs_Highlighter">
+<pre class="brush:cpp;gutter:true;">cd /usr/local/Trolltech/Qt-4.8.6
+cd bin
+./qmake -v
+</pre>
+</div>
+<p>输出：</p>
+<div class="cnblogs_code">
+<pre>tl@tl-<span style="color: #0000ff;">virtual</span>-machine:/usr/local/Trolltech/Qt-<span style="color: #800080;">4.8</span>.<span style="color: #800080;">6</span>/bin$ ./qmake -<span style="color: #000000;">v
+QMake version </span><span style="color: #800080;">2</span><span style="color: #000000;">.01a
+Using Qt version </span><span style="color: #800080;">4.8</span>.<span style="color: #800080;">6</span> <span style="color: #0000ff;">in</span> /usr/local/Trolltech/Qt-<span style="color: #800080;">4.8</span>.<span style="color: #800080;">6</span>/lib</pre>
+</div>
+<p>&nbsp;</p>
+<p>　　</p>
+<p>如果出现正确版本信息，表示安装成功。</p>
+<p>&nbsp;</p>
+<p>我的ubuntu安装了多个qmake，测试的结果是这样子的。（注意执行qmake -v命令的路径，因为4.8.6并没有设置环境变量，故得在qmake程序所在目录路径执行。）</p>
+<div class="cnblogs_code">
+<pre>[linux-devkit]:/media/tl437x/qtcreator-<span style="color: #800080;">2.6</span>.<span style="color: #800080;">1</span>/bin&gt; qmake -<span style="color: #000000;">v
+QMake version </span><span style="color: #800080;">3.0</span><span style="color: #000000;">
+Using Qt version </span><span style="color: #800080;">5.4</span>.<span style="color: #800080;">1</span> <span style="color: #0000ff;">in</span> /media/tl437x/ti-processor-sdk-linux-am437x-evm-<span style="color: #800080;">01.00</span>.<span style="color: #800080;">00.03</span>/linux-devkit/sysroots/cortexa9t2hf-vfp-neon-linux-gnueabi/usr/lib</pre>
+</div>
+<div class="cnblogs_code">
+<pre>tl@tl-<span style="color: #0000ff;">virtual</span>-machine:~$ qmake -<span style="color: #000000;">v
+QMake version </span><span style="color: #800080;">2</span><span style="color: #000000;">.01a
+Using Qt version </span><span style="color: #800080;">4.8</span>.<span style="color: #800080;">1</span> <span style="color: #0000ff;">in</span> /usr/lib/i386-linux-gnu</pre>
+</div>
+<p>&nbsp;</p>
+<div class="cnblogs_code">
+<pre>tl@tl-<span style="color: #0000ff;">virtual</span>-machine:/usr/local/Trolltech/Qt-<span style="color: #800080;">4.8</span>.<span style="color: #800080;">6</span>/bin$ ./qmake -<span style="color: #000000;">v
+QMake version </span><span style="color: #800080;">2</span><span style="color: #000000;">.01a
+Using Qt version </span><span style="color: #800080;">4.8</span>.<span style="color: #800080;">6</span> <span style="color: #0000ff;">in</span> /usr/local/Trolltech/Qt-<span style="color: #800080;">4.8</span>.<span style="color: #800080;">6</span>/lib</pre>
+</div>
+<p>&nbsp;</p>
+<p>添加环境变量，（需要在任意目录下使用，才添加环境变量）</p>
+<p>首先需要设置用户环境变量，</p>
+<div class="cnblogs_code">
+<pre>gedit /home/your name/.bashrc   </pre>
+</div>
+<p>弹出一个编辑窗口，在末尾添加以下代码，</p>
+<div class="cnblogs_code">
+<pre>export QTDIR=/usr/local/Trolltech/Qt-<span style="color: #800080;">4.8</span>.<span style="color: #800080;">6</span><span style="color: #000000;">
+export PATH</span>=$QTDIR/<span style="color: #000000;">bin:$PATH
+export MANPATH</span>=$QTDIR/<span style="color: #000000;">man:$MANPATH
+export LD_LIBRARY_PATH</span>=$QTDIR/lib:$LD_LIBRARY_PATH  </pre>
+</div>
+<p>然后设置root用户的环境变量，设置root用户的环境变量需要root权限，所以要加sudo，</p>
+<p>&nbsp;</p>
+<div class="cnblogs_code">
+<pre>sudo gedit /etc/profile  </pre>
+</div>
+<p>添加：</p>
+<div class="cnblogs_code">
+<pre>export QTDIR=/usr/local/Trolltech/Qt-<span style="color: #800080;">4.8</span>.<span style="color: #800080;">6</span><span style="color: #000000;">
+export PATH</span>=$QTDIR/<span style="color: #000000;">bin:$PATH
+export MANPATH</span>=$QTDIR/<span style="color: #000000;">man:$MANPATH
+export LD_LIBRARY_PATH</span>=$QTDIR/lib:$LD_LIBRARY_PATH </pre>
+</div>
+<p>保存后退出，然后重启电脑，在终端的任意目录下输入qmake， 如果能出现正确信息，表示环境变量配置成功。</p>
+<p><span style="color: #ff0000;">&nbsp;此处，我并没有添加系统变量！，下面直接通过qtcreator工具选项添加。</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<ul>
+<li><strong>安装qtcreator</strong></li>
+</ul>
+<p>安装路径：/home/tl/qtcreator-2.5.2</p>
+<div class="cnblogs_code">
+<pre>chmod a+x qt-creator-linux-x86-opensource-<span style="color: #800080;">2.5</span>.<span style="color: #800080;">2</span><span style="color: #000000;">.bin<br />
+ .</span>/qt-creator-linux-x86-opensource-<span style="color: #800080;">2.5</span>.<span style="color: #800080;">2</span>.bin  </pre>
+</div>
+<p><em>&nbsp;卸载的时候在安装目录下/home/tl/qtcreator-2.5.2/bin，执行:uninstall</em></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>打开qtcreator，添加qt4.8.6，即刚刚安装好的那个版本。</p>
+<p>&nbsp;</p>
+<p><img src="http://images2015.cnblogs.com/blog/781469/201601/781469-20160106172901965-4851180.jpg" alt="" width="802" height="498" /></p>
+<p><img style="vertical-align: middle;" src="http://images2015.cnblogs.com/blog/781469/201601/781469-20160106182922887-471010331.jpg" alt="" width="803" height="515" /></p>
+<p>成功运行，第一个桌面程序。</p>
+<p>&nbsp;</p>
+
+</div>
+
+
+  <footer class="container">
+  <div class="container navigation no-print">
+  <h2>Navigation</h2>
+  
+  
+
+    
+    <a class="prev" href="https://tmhm.github.io/2015/11/30/%E7%94%A8vs2010%E7%BC%96%E8%AF%91vs2013%E5%BB%BA%E7%9A%84%E5%B7%A5%E7%A8%8B/" title="用vs2010编译vs2013建的工程">
+      Previous
+    </a>
+    
+
+    
+    <a class="next" href="https://tmhm.github.io/2016/01/06/ubuntu12.04%E5%AE%89%E8%A3%85kdevelop/" title="ubuntu12.04安装KDevelop">
+      Next
+    </a>
+    
+
+  
+
+
+</div>
+
+  <div class="container comments">
+  <h2>Comments</h2>
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//wells217-github-io.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+</footer>
+
+</article>
+      <footer id="main-footer" class="container main_footer">
+  
+
+  <div class="container nav foot no-print">
+  
+<a href="https://tmhm.github.io/license">license</a>
+
+
+  &nbsp; &nbsp; &nbsp; &nbsp;<a class="toplink" href="#">back to top</a>
+
+</div>
+
+  <div class="container credits">
+  
+<div class="container footline">
+  
+  code with <i class='fa fa-heart'></i>
+
+
+</div>
+
+
+  
+<div class="container copyright">
+  
+  &copy; 2017 Well.
+
+
+</div>
+
+
+</div>
+
+</footer>
+
+    </main>
+    
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//wells217-github-io.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+
+<script src="https://tmhm.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+    
+  </body>
+</html>
+

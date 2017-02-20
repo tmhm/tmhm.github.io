@@ -539,6 +539,207 @@ sudo netselect ftp.debian.org http.us.debian.org ftp.at.debian.org download.unes
 </article>
 
   
+    <article class="container content summary">
+  <div class="container hat">
+  <h2><a href="https://tmhm.github.io/2016/01/14/win7%E4%B8%8B%E5%AE%89%E8%A3%85ubuntu14.04lts-%E5%8F%8C%E7%B3%BB%E7%BB%9F/">win7下安装ubuntu14.04lts 双系统
+</a>
+</h2>
+
+  <time datetime="2016-01-14">14 Jan, 2016</time>
+
+</div>
+
+  <p class="container content">
+  
+  
+     首先，在win7下的硬盘管理   压缩出一块空闲的分区，即压缩卷之后，不做任何操作。  　并且确保该空闲卷是&ldquo;基本&rdquo;类型    &nbsp;　&nbsp; &nbsp;　不是的话，参考http://www.jianshu.com/p/2f0731274ee6
+ 下载免费的分区助手
+注：一定要下载分区助手3.0版本，其它的高版本如4.0没有包含动态磁盘转换器这个工具 安装并运行。在主界面的左上边，点击&ldquo;动态磁盘转换器&rdquo;来运行这个程序。 然后你将看动态磁盘转换器的欢迎界面，你可以读一下它的简介，然后直接点击&ldquo;下一步&rdquo;按钮以进入下一个向导页 在这儿的&ldquo;操作选择&rdquo;页里，请选择&ldquo;转换动态磁盘到基本磁盘&rdquo;选项，并点击&ldquo;下一步&rdquo;按钮 然后进入&ldquo;动态磁盘列表&rdquo;页，在这里程序要求你选择一个你想转换到基本磁盘的动态磁盘 操作确认，请在&ldquo;我已经决定好执行这个转换&rdquo;上打勾，然后点击&ldquo;执行&rdquo;按钮开始转换这个动态磁盘到基本磁盘。 在几秒后，这个转换将完成，同时程序可能要求你重启电脑，在重启电脑之后，你在进入Windows的磁盘管理器中查看磁盘时，它已经被成功改变到基本磁盘了
+ &nbsp;
+  分区空闲，不可用！！ 如果显示的未识别，则需要将windows硬盘转换成逻辑分区。用上面的分区工具即可。3.0版本没有转换逻辑分区的功能，我用的是6.1版本的。 原因是，主分区只能最多有4个，故要将其中一个主分区转换为逻辑分区，然后才可以通过u盘安装ubuntu。 最后得到用来装ubuntu的分区应该是：基本的、主分区。 
+
+ 用做好的u盘ubuntu14.04LTS直接进行多系统安装即可。如下图选项所示。
+ 
+  
+
+
+</p>
+
+
+  <div class="container readlink">
+  <a href="https://tmhm.github.io/2016/01/14/win7%E4%B8%8B%E5%AE%89%E8%A3%85ubuntu14.04lts-%E5%8F%8C%E7%B3%BB%E7%BB%9F/">Read more &rarr;</a>
+
+</div>
+
+
+</article>
+
+  
+    <article class="container content summary">
+  <div class="container hat">
+  <h2><a href="https://tmhm.github.io/2016/01/08/linux%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91/">linux多线程并发
+</a>
+</h2>
+
+  <time datetime="2016-01-08">8 Jan, 2016</time>
+
+</div>
+
+  <p class="container content">
+  
+  
+     多线程并发 进程和线程的概念  进程
+进程包括程序映象、地址空间等要素。内核采用PCB来管理进程。进程是内核进行调度的基本单元，每个独立的进程都有自己的代码段、数据段以及堆栈，它们有自己的虚拟地址空间，多个进程间互不影响。
+ 线程
+在linux系统中，实际上，线程和进程都是以统一的方式来管理的。线程也是内核进行调度的基本单元。
+不同点在于: &gt; 线程没有自己独立的地址空间，创建出来的新线程将和创建它的进程 &gt;（或线程)共享同一个虚拟地址空间，它们被置于同一个线程组中。线程的代码 &gt; 段、全局数据段、堆及其他一些诸如文件描述符表等内核管理的东西在同一组内是共享的， &gt; 但是每个线程都有自己独立的栈空间。
+因此，多线程环境下多全局变量的访问有可能需要同步，但是局部变量仍然有各自的存储空间，互不影响。
+ 与多进程相比，多线程具有的优点： &gt;1，线程适合多任务通信环境。多线程间的通信比多进程的更简单，但是需要注意同步问题
+ 2，线程的创建和调度更高效。创建线程时，无需单独复制进程的内存空间或文件描述符等；切换线程时不需要更换整个页表。
+  
+  
+
+
+</p>
+
+
+  <div class="container readlink">
+  <a href="https://tmhm.github.io/2016/01/08/linux%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91/">Read more &rarr;</a>
+
+</div>
+
+
+</article>
+
+  
+    <article class="container content summary">
+  <div class="container hat">
+  <h2><a href="https://tmhm.github.io/2016/01/08/%E5%B5%8C%E5%85%A5%E5%BC%8Flinux%E9%97%AE%E9%A2%98%E6%9D%82%E9%94%A6/">嵌入式linux问题杂锦
+</a>
+</h2>
+
+  <time datetime="2016-01-08">8 Jan, 2016</time>
+
+</div>
+
+  <p class="container content">
+  
+  
+    tftp 在开发板上不能获取共享文件，出现：&nbsp;Permission denied  tftp: can&lsquo;t open &lsquo;myTcpTest&lsquo;: Permission denied    是因为，我在/sys目录下执行的，
+  root@am437x-evm:/sys# tftp -g -r myTcpTest 172.20.9.59 tftp: can&rsquo;t open &lsquo;myTcpTest&rsquo;: Permission denied   　回到～ 主文件夹，既可以获取：
+root@am437x-evm:~# tftp -g -r myTcpTest 172.20.9.59   &nbsp;
+  
+
+
+</p>
+
+
+  <div class="container readlink">
+  <a href="https://tmhm.github.io/2016/01/08/%E5%B5%8C%E5%85%A5%E5%BC%8Flinux%E9%97%AE%E9%A2%98%E6%9D%82%E9%94%A6/">Read more &rarr;</a>
+
+</div>
+
+
+</article>
+
+  
+    <article class="container content summary">
+  <div class="container hat">
+  <h2><a href="https://tmhm.github.io/2016/01/08/qt-creator-%E8%B0%83%E8%AF%95%E9%97%AE%E9%A2%98/">QT creator 调试问题
+</a>
+</h2>
+
+  <time datetime="2016-01-08">8 Jan, 2016</time>
+
+</div>
+
+  <p class="container content">
+  
+  
+    问题：debug出现&ldquo;ptrace：不允许的操作。&rdquo;   解决办法：
+&nbsp;
+# may not be appropriate fordevelopers or servers with only admin accounts. kernel.yama.ptrace_scope = 1  修改为：
+kernel.yama.ptrace_scope = 0  然后终端输入，重启：
+sudo reboot  完毕。
+&nbsp;
+ &nbsp;问题：During startup program exited with code 126.  原因：编译的是基于嵌入式开发板的二进制文件，在ubuntu上运行不了，放到开发板上能正常运行。
+&nbsp;
+ 问题：打开Qt creator出现&ldquo;无法写入文件 qtversion.xml.磁盘已满？&rdquo;  原因：权限不够
+-rwx&ndash;x&ndash;x 1 tl tl 1592 1月 15 15:30 qtversion.xml   解决办法：添加读写权限
+　&nbsp;
+  
+
+
+</p>
+
+
+  <div class="container readlink">
+  <a href="https://tmhm.github.io/2016/01/08/qt-creator-%E8%B0%83%E8%AF%95%E9%97%AE%E9%A2%98/">Read more &rarr;</a>
+
+</div>
+
+
+</article>
+
+  
+    <article class="container content summary">
+  <div class="container hat">
+  <h2><a href="https://tmhm.github.io/2016/01/06/torcs%E4%BB%A3%E7%A0%81/">torcs代码
+</a>
+</h2>
+
+  <time datetime="2016-01-06">6 Jan, 2016</time>
+
+</div>
+
+  <p class="container content">
+  
+  
+    /** Info returned by driver during the race */ typedef struct { tdble steer; /&lt; Steer command [-1.0, 1.0] */ tdble accelCmd; /&lt; Accelerator command [0.0, 1.0] */ tdble brakeCmd; /&lt; Brake command [0.0, 1.0] */ tdble clutchCmd; /&lt; Clutch command [0.0, 1.0] */ int gear; /&lt; [-1,6] for gear selection */ int raceCmd; /&lt; command issued by the driver */ #define RM_CMD_NONE 0 /&lt; No race command */ #define RM_CMD_PIT_ASKED 1 /&lt; Race command: Pit asked */ char msg[4][32]; /&lt; 4 lines of 31 characters 0-1 from car 2-3 from race engine */ #define RM_MSG_LEN 31 float msgColor[4]; /&lt; RGBA of text */ int lightCmd; /&lt; Lights command */ #define RM_LIGHT_HEAD1 0x00000001 /&lt; head light 1 */ #define RM_LIGHT_HEAD2 0x00000002 /**&lt; head light 2 */ } tCarCtrl;   　
+  
+
+
+</p>
+
+
+  <div class="container readlink">
+  <a href="https://tmhm.github.io/2016/01/06/torcs%E4%BB%A3%E7%A0%81/">Read more &rarr;</a>
+
+</div>
+
+
+</article>
+
+  
+    <article class="container content summary">
+  <div class="container hat">
+  <h2><a href="https://tmhm.github.io/2016/01/06/ubuntu12.04%E5%AE%89%E8%A3%85kdevelop/">ubuntu12.04安装KDevelop
+</a>
+</h2>
+
+  <time datetime="2016-01-06">6 Jan, 2016</time>
+
+</div>
+
+  <p class="container content">
+  
+  
+    1， 　sudo apt-get update 2， 　sudo apt-get install kdevelop 
+  
+
+
+</p>
+
+
+  <div class="container readlink">
+  <a href="https://tmhm.github.io/2016/01/06/ubuntu12.04%E5%AE%89%E8%A3%85kdevelop/">Read more &rarr;</a>
+
+</div>
+
+
+</article>
+
+  
   
 <div class="container pagination">
   
@@ -569,12 +770,16 @@ sudo netselect ftp.debian.org http.us.debian.org ftp.at.debian.org download.unes
   4
 </a>
 
+<a href="https://tmhm.github.io//page/5/">
+  5
+</a>
 
-<a class="disabled" aria-label="Next" href="#">
+
+<a aria-label="Next" href="https://tmhm.github.io//page/5/">
   <span aria-hidden="true">»</span>
 </a>
 
-<a aria-label="Last" href="https://tmhm.github.io//page/4/">
+<a aria-label="Last" href="https://tmhm.github.io//page/5/">
   <span aria-hidden="true">»»</span>
 </a>
 

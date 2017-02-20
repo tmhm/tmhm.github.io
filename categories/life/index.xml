@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Life on Well</title>
+    <link>https://tmhm.github.io/categories/life/index.xml</link>
+    <description>Recent content in Life on Well</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <managingEditor>wells217@163.com (Well)</managingEditor>
+    <webMaster>wells217@163.com (Well)</webMaster>
+    <copyright>(c) 2017 Well.</copyright>
+    <atom:link href="https://tmhm.github.io/categories/life/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>win10禁用自动更新服务</title>
+      <link>https://tmhm.github.io/2017/02/13/win10%E7%A6%81%E7%94%A8%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Mon, 13 Feb 2017 00:48:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2017/02/13/win10%E7%A6%81%E7%94%A8%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E6%9C%8D%E5%8A%A1/</guid>
+      <description>
+
+&lt;h2 id=&#34;win10禁用自动更新服务&#34;&gt;win10禁用自动更新服务&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;按Win+R，打开运行，输入“services.msc&amp;raquo;打开服务；&lt;/li&gt;
+&lt;li&gt;找到“Windows Update”，选择属性，修改为禁用即可；&lt;/li&gt;
+&lt;li&gt;开启，反之亦然.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>matplotlib y轴标注显示不全以及subplot调整的问题</title>
+      <link>https://tmhm.github.io/2016/12/23/matplotlib-y%E8%BD%B4%E6%A0%87%E6%B3%A8%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8%E4%BB%A5%E5%8F%8Asubplot%E8%B0%83%E6%95%B4%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 23 Dec 2016 08:32:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/12/23/matplotlib-y%E8%BD%B4%E6%A0%87%E6%B3%A8%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8%E4%BB%A5%E5%8F%8Asubplot%E8%B0%83%E6%95%B4%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>
+
+&lt;p&gt;#matplotlib y轴标注显示不全以及subplot调整的问题&lt;/p&gt;
+
+&lt;p&gt;问题：
+我想在y轴显示的标注太长，想把它变成两行显示，发现生成的图形只显示的第二行的字，把第一行的字&lt;strong&gt;挤出去&lt;/strong&gt;了&lt;/p&gt;
+
+&lt;p&gt;想要的是&lt;strong&gt;显示两行&lt;/strong&gt;这样子的
+&lt;img src=&#34;http://i.imgur.com/6fxUwHR.jpg&#34; alt=&#34;&#34; /&gt;
+现实却是这样子
+&lt;img src=&#34;http://i.imgur.com/XZmJtEF.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;###主要相关的api有：
+- plt.subplots_adjust
+- set_ylabel
+- plt.text&lt;/p&gt;
+
+&lt;h3 id=&#34;解决思路&#34;&gt;解决思路&lt;/h3&gt;
+
+&lt;p&gt;来自matplotlib的&lt;a href=&#34;http://matplotlib.org/gallery.html&#34;&gt;官网&lt;/a&gt;,以及&lt;a href=&#34;http://matplotlib.org/examples/images_contours_and_fields/interpolation_none_vs_nearest.html&#34;&gt;图示&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;当出现右边显示不全的时候，第一感觉是：应该可以通过set_ylabel 来设置y轴标注的位置和大小，发现set_ylabel只能设置labelpad ，没有位置的参数；&lt;/li&gt;
+&lt;li&gt;然后找到了可以用text设置标注字体的位置和方向，但是要多次定位，尝试，发现不方便；&lt;/li&gt;
+&lt;li&gt;那么想到的是应该可以设置plot的位置吧，用ax1.plot?找了下，也没看到，不爽；&lt;/li&gt;
+&lt;li&gt;在show的图形界面发现一个移动的按钮&lt;img src=&#34;http://i.imgur.com/VThZrvx.jpg&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;
+&lt;li&gt;移动left亦可以显示出y轴的标注了，那么我应该只需要在程序中设置一下left的参数既可以了吧，在上面[matplotlib的example]()中，找到了我想要的subplots_adjust&lt;/li&gt;
+&lt;li&gt;即有了下面的源代码，满足设置要求。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;源代码如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    import matplotlib.pyplot as plt
+    import numpy as np
+    from numpy import abs
+
+    size=[5,10,20,30,50,100]
+    avg=[-0.2896,0.073865632,0.034858287,-0.092241705,-0.022924236,0.016541661]
+    avr=[0.032,0.077757872,0.090351641,0.036522663,0.034413038,0.096587464]
+
+    fig = plt.figure()
+
+    ax1 = fig.add_subplot(211)
+    lns1 = ax1.plot(size, trackPos_avg,color=&#39;blue&#39;,label=&#39;error average&#39;,linestyle=&#39;-&#39;,linewidth=1.9)
+    ax1.set_ylabel(&#39;deviation from\ncentral line ($m$)&#39;,fontsize=18, labelpad = 0.5)
+
+    plt.xticks(fontsize = 17)#对坐标的值数值，大小限制
+    plt.yticks(fontsize = 17)
+
+    ax2 = fig.add_subplot(212)
+    ax2.set_ylabel(&#39;standard \nvariance ($m^2$)&#39;,fontsize=18,labelpad = 12.5)
+    lns2 = ax2.plot(size, avr, color=&#39;red&#39;,label=&#39;mean square error&#39;,linestyle=&#39;-&#39;,linewidth=1.9)
+
+    plt.xticks(fontsize = 17)#对坐标的值数值，大小限制
+    plt.yticks(fontsize = 17)
+    ax2.set_xlabel(&#39;replay size&#39;,fontsize=18)
+
+    plt.subplots_adjust(left=0.18, wspace=0.25, hspace=0.25,
+                        bottom=0.13, top=0.91)
+
+    \#plt.text(0.4, 0.4, &#39;deviation from\n central line ($m$)&#39;, rotation=90, ha=&#39;left&#39;)
+
+    \#plt.legend(prop={&#39;size&#39;:18})  # loc=&#39;upper left&#39;,
+
+    \#fig.savefig(&#39;./figure/error_paper.eps&#39;, format=&#39;eps&#39;, dpi=1000)
+    fig.savefig(&#39;./figure/error_paper.png&#39;, dpi=1000)
+
+    plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;可以下面的yticks，限制横纵坐标的值&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;plt.xticks(fontsize = 17)#对坐标的值数值，大小限制
+plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>读《微软的梦工厂》</title>
+      <link>https://tmhm.github.io/2016/11/30/%E8%AF%BB%E5%BE%AE%E8%BD%AF%E7%9A%84%E6%A2%A6%E5%B7%A5%E5%8E%82/</link>
+      <pubDate>Wed, 30 Nov 2016 07:25:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/11/30/%E8%AF%BB%E5%BE%AE%E8%BD%AF%E7%9A%84%E6%A2%A6%E5%B7%A5%E5%8E%82/</guid>
+      <description>&lt;p&gt;　　前段时间看了扎克伯格和李叔同的传记，最近在看《&lt;span style=&#34;font-family: 隶书;&#34;&gt;微软的梦工厂&lt;/span&gt;》。&lt;/p&gt;
+&lt;p&gt;看的过程总是会让我想起一些人，想起一些事情。。。&lt;/p&gt;
+&lt;p&gt;文字在我的嘴里总是略带苦涩：&lt;/p&gt;
+&lt;p&gt;也许这就是环境的影响，MSRA从一开始，就塑造了一个优秀的环境。&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;同时也让我看到自己的渺小，其实曾经我总是会把自己看成&amp;ldquo;全能&amp;rdquo;的，一直活在自己的小世界里，突然不断地让我接触了越来越大的世界，这也是我总是爱多想的次因。&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;还有原因是，不愿接受过去的自己，不愿接受依次放大的阶梯，其实我也是在不断成长中，知足，&lt;/p&gt;
+&lt;p&gt;沉淀，时间需要沉淀，成长更需要沉淀。&lt;/p&gt;
+&lt;p&gt;我总是希望急于求成，希望一下就能学会所有，做到所有，&lt;/p&gt;
+&lt;p&gt;做人得符合实际，不急不躁，踏实。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>shadowsocks 在win10下无法使用的问题</title>
+      <link>https://tmhm.github.io/2016/11/25/shadowsocks-%E5%9C%A8win10%E4%B8%8B%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 25 Nov 2016 04:38:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/11/25/shadowsocks-%E5%9C%A8win10%E4%B8%8B%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>
+
+&lt;h1 id=&#34;shadowsocks-在win10下无法使用的问题&#34;&gt;shadowsocks 在win10下无法使用的问题&lt;/h1&gt;
+
+&lt;p&gt;问题描述：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;按照&lt;a href=&#34;http://my.yizhihongxing.com/knowledgebase.php?action=displayarticle&amp;amp;id=3&#34;&gt;帮助中心&lt;/a&gt;的配置设置好之后.&lt;/li&gt;
+&lt;li&gt;启用代理,显示了start，但是就是不能上google，卸载了迅雷也是没用。&lt;/li&gt;
+&lt;li&gt;在mac下能正常使用。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;解决问题：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;问题在于本地的端口有问题，将默认的1080端口修改为1081，&lt;/li&gt;
+&lt;li&gt;即可以打开google，youtobe&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;有时是3.3.5不能用，换会用低版本2.5.8的即可以&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>语录收集</title>
+      <link>https://tmhm.github.io/2016/11/18/%E8%AF%AD%E5%BD%95%E6%94%B6%E9%9B%86/</link>
+      <pubDate>Fri, 18 Nov 2016 08:43:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/11/18/%E8%AF%AD%E5%BD%95%E6%94%B6%E9%9B%86/</guid>
+      <description>
+
+&lt;h1 id=&#34;一些有趣的语录&#34;&gt;一些有趣的语录&lt;/h1&gt;
+
+&lt;p&gt;马化腾，第三次互联网大会
+&amp;gt; 创新一定是所有公司都重视的，一定要有突破。腾讯过去再有优势，但在新趋势面前也有压力，微信之后，我们也在思考，未来三年还能做什么？回头看，创新不是搞一个部门，名字叫创新。而是把为用户服务的意识灌输到每一个产品和设计上，不要让员工掉入KPI陷阱。在快速服务用户过程中，用户抱怨，那就是你创新的机会。&lt;/p&gt;
+
+&lt;p&gt;真格基金 王强老师推荐的三本书&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://pic.36krcnd.com/201611/17092410/2y1m00k6ocjkz47h!1200&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;沃尔玛的创始人Sam Walton的自传《Made in America》&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://pic.36krcnd.com/201611/17093654/8314vcwe06vx4kco!1200&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If Aristotle Ran General Motors《如果亚里士多德来管理通用汽车》&lt;/p&gt;
+
+&lt;p&gt;真，善，美&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://pic.36krcnd.com/201611/17094055/wylsehjibfs4wqjt!1200&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;PourYour Heart Into It: How Starbucks Built a Company One Cup at aTime 《将心注入-星巴克传奇》&lt;/p&gt;
+
+&lt;p&gt;星巴克创始人霍华德·舒尔茨（Howard Schultz）的自传。&lt;/p&gt;
+
+&lt;p&gt;Pour your heart into a cup of coffee。“把心倾注进一杯小小的咖啡里”。成功之树的全部秘诀正是在这颗初心的种子里。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>生成.eps文件方法</title>
+      <link>https://tmhm.github.io/2016/10/31/%E7%94%9F%E6%88%90.eps%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Mon, 31 Oct 2016 10:15:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/10/31/%E7%94%9F%E6%88%90.eps%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/</guid>
+      <description>
+
+&lt;h1 id=&#34;生成-eps文件方法&#34;&gt;生成.eps文件方法&lt;/h1&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;背景：&lt;/strong&gt;
+要写论文了，图像的分辨率是一大痛点&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;方法一&#34;&gt;方法一：&lt;/h2&gt;
+
+&lt;p&gt;两步生成.eps文件&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;用visio 制作图形，保存为pdf格式；&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;直接用adobe acrobat 打开pdf，然后保存为.eps 格式即可。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;方法二&#34;&gt;方法二：&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;参考：&lt;a href=&#34;http://chrisalbon.com/python/matplotlib_save_a_plot_as_vector.html&#34;&gt;Save A Matplotlib Plot As A Vector&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;可以用python直接生成.eps文件&lt;/p&gt;
+
+&lt;p&gt;plt.savefig(&amp;laquo;./plteps.eps&amp;raquo;, format=&amp;lsquo;eps&amp;rsquo;, dpi=1000)&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;有网友说，需要安装 &lt;a href=&#34;http://www.ghostscript.com/&#34;&gt;Ghostscript&lt;/a&gt;,&lt;/p&gt;
+
+&lt;p&gt;亲测，不需要&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;eg.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    import matplotlib.pyplot as plt
+    from math import sin
+    i = [x for x in xrange(-10,10,1)]
+    j = [x**2 for x in i]
+
+    plt.plot(i, j, linewidth=2.0, color=&#39;r&#39;)
+    # plt.show()
+    plt.savefig(&#39;./plteps.eps&#39;, format=&#39;eps&#39;, dpi=1000)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;不能打开plt.show 否则，生成不了有效的eps文件&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;注释掉show，即可以正常生成eps文件。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;note:&lt;/strong&gt;
+图形不能设置字体为Times New Roman，否则，生成不了。&lt;/p&gt;
+
+&lt;p&gt;e.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    font = {&#39;family&#39; : &#39;Times New Roman&#39;, #&#39;serif&#39;,
+            &#39;color&#39;  : &#39;black&#39;,
+            &#39;weight&#39; : &#39;normal&#39;,
+            &#39;size&#39;   : 35,
+            }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;截图图片转换-eps&#34;&gt;截图图片转换.eps&lt;/h2&gt;
+
+&lt;h3 id=&#34;方法1&#34;&gt;方法1&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;用FastStone capture 截图，然后直接生成pdf；&lt;/li&gt;
+&lt;li&gt;用adobe acrobat 打开pdf，然后保存为.eps 格式即可。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;方法2&#34;&gt;方法2&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;上述方法1，当图片比较大的时候，会出现生成的eps文件只有一部分，会有黑色框。&lt;/li&gt;
+&lt;li&gt;然后，尝试用jpg转eps的&lt;a href=&#34;http://www.tlhiv.org/rast2vec/&#34;&gt;在线工具&lt;/a&gt;，以及&lt;a href=&#34;http://blog.sina.com.cn/s/blog_5410e7b50101lme2.html&#34;&gt;该博文中的方法&lt;/a&gt;皆只生成部分。&lt;/li&gt;
+&lt;li&gt;可以采用corel draw 中的photo point 另存为eps 文件，即可以得到大分辨率，大张图片的eps文件了。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NOTE：&lt;/strong&gt;从视频中截图的时候用faststone capture 截图要比视频播放软件（e.g qq影音）自带生成截图功能略差。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>数学随记[转载]</title>
+      <link>https://tmhm.github.io/2016/10/27/%E6%95%B0%E5%AD%A6%E9%9A%8F%E8%AE%B0%E8%BD%AC%E8%BD%BD/</link>
+      <pubDate>Thu, 27 Oct 2016 06:51:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/10/27/%E6%95%B0%E5%AD%A6%E9%9A%8F%E8%AE%B0%E8%BD%AC%E8%BD%BD/</guid>
+      <description>
+
+&lt;h1 id=&#34;数学随记&#34;&gt;数学随记&lt;/h1&gt;
+
+&lt;p&gt;转载自：&lt;a href=&#34;http://www.matrix67.com/blog/archives/4294&#34;&gt;随记：我们需要怎样的数学教育？&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;虚数i&#34;&gt;虚数i&lt;/h2&gt;
+
+&lt;p&gt;虚数是什么？&lt;/p&gt;
+
+&lt;p&gt;为什么要承认虚数？&lt;/p&gt;
+
+&lt;p&gt;虚数怎么就表示旋转了？&lt;/p&gt;
+
+&lt;p&gt;其实，人们建立复数理论，并不是因为人们有时需要处理根号里是负数的情况，而是因为下面这个不可抗拒的理由：如果承认虚数，那么 n 次多项式就会有恰好 n 个根，数系一下子就如同水晶球一般的完美了。&lt;/p&gt;
+
+&lt;p&gt;但复数并不能形象地反映在数轴上，这不仅是因为实数在数轴上已经完备了，还有另外一个原因：没有什么几何操作连做两次就能实现取相反数。比如，“乘以 3”就代表数轴上的点离原点的距离扩大到原来的三倍，“3 的平方”，也就是“乘以 3 再乘以 3”，就是把上述操作连做两次，即扩大到 9 倍。同样地，“乘以 -1”表示把点翻折到数轴另一侧，“-1 的平方”就会把这个点又翻回来。&lt;/p&gt;
+
+&lt;p&gt;但是，怎么在数轴上表示“乘以 i ”的操作？换句话说，什么操作连做两次能够把 1 变成 -1 ？一个颇具革命性的创意答案便是，把这个点绕着原点旋转 90 度。转 90 度转两次，自然就跑到数轴的另一侧了。&lt;/p&gt;
+
+&lt;p&gt;没错，这就把数轴扩展到了整个平面，正好解决了复数没地方表示的问题。于是，复数的乘法可以解释为缩放加旋转，复数本身自然也就有了 z = r (cosθ + sinθi) 的表示方式。顺着这个道理推下去，一切都顺理成章了。复数不但有了几何解释，有时还能更便捷地处理几何问题&lt;/p&gt;
+
+&lt;h2 id=&#34;线性代数&#34;&gt;线性代数&lt;/h2&gt;
+
+&lt;p&gt;此处&lt;a href=&#34;http://mathoverflow.net/questions/7584/what-are-the-most-misleading-alternate-definitions-in-taught-mathematics&#34;&gt;网页&lt;/a&gt;，有人一语道破线性代数的真谛。
+就好像把 x 变成 2 x 一样，我们经常需要把 (x, y) 变成 (2 x + y, x – 3 y) 之类的东西，这就叫做线性变换。&lt;/p&gt;
+
+&lt;p&gt;于是才想到定义矩阵乘法，用于表示一切线性变换。几何上看，把平面上的每个点 (x, y) 都变到 (2 x + y, x – 3 y) 的位置上去，效果就相当于对这个平面进行了一个“线性的拉扯”。&lt;/p&gt;
+
+&lt;p&gt;矩阵的乘法，其实就是多个线性变换叠加的效果，它显然满足结合律，但不满足交换律。&lt;/p&gt;
+
+&lt;p&gt;主对角线全是 1 的矩阵所对应的线性变换其实就是不变的意思，因此它叫做单位矩阵。&lt;/p&gt;
+
+&lt;p&gt;矩阵 A 乘以矩阵 B 得单位矩阵，就是做完线性变换 A 后再做一次线性变换 B 就又变回去了的意思，难怪我们说矩阵 B 是矩阵 A 的逆矩阵。&lt;/p&gt;
+
+&lt;p&gt;课本上对行列式的定义千奇百怪，又是什么递归，又是什么逆序对，还编写口诀帮助大家记忆。&lt;/p&gt;
+
+&lt;p&gt;其实，行列式的真正定义就一句话：&lt;strong&gt;每个单位正方形在线性变换之后的面积&lt;/strong&gt;。因此，单位矩阵的行列式当然就为 1，某行全为 0 的行列式显然为 0 （因为某一维度会被无视掉，线性变换会把整个平面压扁）， |A·B| 显然等于 |A|·|B| 。行列式为 0 ，对应的矩阵当然不可逆，因为这样的线性变换已经把平面压成一条线了，什么都不能把它变回去了。当然，更高阶的矩阵就对应了更高维的空间。&lt;/p&gt;
+
+&lt;p&gt;一瞬间，所有东西都解释清楚了。&lt;/p&gt;
+
+&lt;p&gt;最近看到李泽湘教授的一句话，“很多工业界用的算法是错的，所以很难做到质量标准的提升，和工匠的定位。”&lt;/p&gt;
+
+&lt;p&gt;做技术研究，做到最后发现都是数学问题。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>一些书单</title>
+      <link>https://tmhm.github.io/2016/10/10/%E4%B8%80%E4%BA%9B%E4%B9%A6%E5%8D%95/</link>
+      <pubDate>Mon, 10 Oct 2016 08:40:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/10/10/%E4%B8%80%E4%BA%9B%E4%B9%A6%E5%8D%95/</guid>
+      <description>&lt;p&gt;&lt;em&gt;&lt;strong&gt;仅对近来的学习做些回顾吧&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;学习永无止境--&amp;gt;&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2015年已完成书单：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;文学：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;硅谷之火&lt;/li&gt;
+&lt;li&gt;浪潮之巅&lt;/li&gt;
+&lt;li&gt;天才在左疯子在右&lt;/li&gt;
+&lt;li&gt;从0到1&lt;/li&gt;
+&lt;li&gt;生命咖啡馆&lt;/li&gt;
+&lt;li&gt;黑客与画家&lt;/li&gt;
+&lt;li&gt;奇思妙想：15位计算机天才及其重大发现&lt;/li&gt;
+&lt;li&gt;乔布斯传&lt;/li&gt;
+&lt;li&gt;平凡的世界（三部全）&lt;/li&gt;
+&lt;li&gt;一只iphone的全球旅行&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&amp;nbsp;专业类：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;C++ Primer（中文第五版）　　匆忙过了一遍，未实现代码。&lt;/li&gt;
+&lt;li&gt;ios 游戏开发：创意与实现&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2016年书单：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;文学：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;历史的教训&lt;/li&gt;
+&lt;li&gt;硅谷之谜&lt;/li&gt;
+&lt;li&gt;文明之光&lt;/li&gt;
+&lt;li&gt;facebook 马克 扎克伯格传记：后乔布斯时代的传奇&lt;/li&gt;
+&lt;li&gt;弘一大师新传&lt;/li&gt;
+&lt;li&gt;三体（未完成，过半后，吸引力下降）&lt;/li&gt;
+&lt;li&gt;微软的梦工厂（一口气读完了）&lt;/li&gt;
+&lt;li&gt;数学之美（第二版）&lt;/li&gt;
+&lt;li&gt;富爸爸穷爸爸&lt;/li&gt;
+&lt;li&gt;人类简史&lt;/li&gt;
+&lt;li&gt;智能时代（吴军著）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;专业类：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;C++语言的设计与演化&lt;/li&gt;
+&lt;li&gt;数据结构与算法分析（C语言描述） &amp;nbsp; &amp;nbsp;缺代码实现&lt;/li&gt;
+&lt;li&gt;统计学习方法. 李航&lt;/li&gt;
+&lt;li&gt;控制系统设计指南（第三版）&lt;/li&gt;
+&lt;li&gt;嵌入式Linux系统使用开发（主要包括完成linux系统，c/c++的回顾，多线程等）&lt;/li&gt;
+&lt;li&gt;机器学习实践（-ing）&lt;/li&gt;
+&lt;li&gt;机器学习.周志华（-ing）&lt;/li&gt;
+&lt;li&gt;算法（第四版）. Robert Sedgewick（-ing，看进去以后，相见恨晚）&lt;/li&gt;
+&lt;li&gt;Reinforcement learning: An&amp;nbsp;induction.&amp;nbsp;Richard S. Sutton（-ing）&lt;/li&gt;
+&lt;li&gt;无人驾驶车辆模型预测控制.北京理工大学出版社（-ing）（发现战线好长，得收敛到某个方向）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;16的专业书籍还有很多在继续。。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&amp;nbsp;2017年书单：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Google 未来之镜&lt;/li&gt;
+&lt;li&gt;创新者的窘境 （-ing）&lt;/li&gt;
+&lt;li&gt;围城（-ing）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>adobe reader DC 字体设置</title>
+      <link>https://tmhm.github.io/2016/08/31/adobe-reader-dc-%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE/</link>
+      <pubDate>Wed, 31 Aug 2016 07:51:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/08/31/adobe-reader-dc-%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE/</guid>
+      <description>
+
+&lt;h1 id=&#34;adobe-reader-dc-字体设置&#34;&gt;adobe reader DC 字体设置&lt;/h1&gt;
+
+&lt;p&gt;一直使用adobe reader阅读pdf文档，系统提醒我升级一个reader助手，&lt;/p&gt;
+
+&lt;p&gt;升级之后：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;感觉字体颜色变浅，笔画也变细了，整体有些模糊不清。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;google了一下，原来是设置的&lt;a href=&#34;http://www.itcao.com/post_1058.html&#34;&gt;问题&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;在菜单中依次可以找到如下的设置：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;edit-&amp;gt;preferences-&amp;gt;page display-&amp;gt;rendering：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;将Smooth Text 设置为：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;for laptop/LCD screens&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;如下所示：
+&lt;img src=&#34;http://i.imgur.com/CWH0aHI.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;问题解决完毕。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Microsoft Visual Studio小技巧</title>
+      <link>https://tmhm.github.io/2016/08/30/microsoft-visual-studio%E5%B0%8F%E6%8A%80%E5%B7%A7/</link>
+      <pubDate>Tue, 30 Aug 2016 10:51:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/08/30/microsoft-visual-studio%E5%B0%8F%E6%8A%80%E5%B7%A7/</guid>
+      <description>&lt;p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;main函数调试参数：&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;　　Project -&amp;gt; Properties -&amp;gt; Configuration Properties -&amp;gt; Debugging&lt;/p&gt;
+&lt;p&gt;　　在Command Arguments里填上即可。&lt;/p&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>数据的对齐</title>
+      <link>https://tmhm.github.io/2016/08/30/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AF%B9%E9%BD%90/</link>
+      <pubDate>Tue, 30 Aug 2016 10:50:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/08/30/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AF%B9%E9%BD%90/</guid>
+      <description>
+
+&lt;h2 id=&#34;数据的对齐&#34;&gt;数据的对齐&lt;/h2&gt;
+
+&lt;p&gt;cpu在读写内存的时候，如果所给的地址是机器字长的整数倍，则操作效率会比较高，这可以称之为地址的对齐。&lt;/p&gt;
+
+&lt;p&gt;在一般的32bits机器上，地址对齐的界线默认是4的整数倍。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    struct my_struct{
+        char ch1;  //1字节
+        char ch2; //1字节
+        int n; //4字节
+        char ch3; 1字节
+    };//整个结构体在32bits系统占12个字节
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;对结构体类型采用sizeof操作符，得到的是结构体占用的内存字节数，包括所有的空闲字节，显然，这个值并不一定等于它的所有成员的大小之和。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    #pragma pack(1) //将地址对齐界线改为1的整数
+    struct my_struct{
+        char ch1;  //1字节
+        char ch2; //1字节
+        int n; //4字节
+        char ch3; 1字节
+    };//整个结构体占7个字节
+    #pragma pack() //将地址对齐界线改回原来的值
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;对齐规则-参考-http-www-cnblogs-com-graphics-archive-2010-08-12-1797953-html&#34;&gt;对齐规则&lt;a href=&#34;http://www.cnblogs.com/graphics/archive/2010/08/12/1797953.html&#34;&gt;参考&lt;/a&gt;&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;该博文也给出了#pragma pack(show) 和#pragma pack(num)的说明以及在VS中的设置；默认num＝8.&lt;/p&gt;
+
+&lt;p&gt;这内存宝贵的应用场合，比如嵌入式系统，一般要考虑对齐，一般原则，可以是从小到大排，把多个小字节变量放一起，并且跟对齐的大小对齐。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;一般来说，&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;结构体的对齐规则是先按数据类型自身进行对齐，这里需要比较＃pragma pack(num)中num的数值和数据类型的大小，取小的作为基准；&lt;/li&gt;
+&lt;li&gt;然后再按整个结构体进行对齐，对齐值必须是2的幂，比如1，2， 4， 8， 16。准确来讲，&lt;strong&gt;结构的总大小是其成员中最大类型的sizeof(该类型)整数倍。&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;如果一个类型按n字节对齐，那么该类型的变量起始地址必须是n的倍数。比如int按四字节对齐，那么int类型的变量起始地址一定是4的倍数，比如0x0012ff60，0x0012ff48等。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;查看系统是多少位的&#34;&gt;查看系统是多少位的&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;file /sbin/init&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;    /sbin/init: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.24, BuildID[sha1]=7a4c688d009fc1f06ffc692f5f42ab09e68582b2, stripped
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;file /bin/ls&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;    /bin/ls: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.32, BuildID[sha1]=3bf9ca54ea5e261943509c2e47bc814bb1248921, stripped
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;uname -a&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;    Linux ubuntu 3.13.0-79-generic #123-Ubuntu SMP Fri Feb 19 14:27:58 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;cat /proc/version&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;    Linux version 3.13.0-79-generic (buildd@lcy01-24) (gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) ) #123-Ubuntu SMP Fri Feb 19 14:27:58 UTC 2016
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;cat /etc/issue&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;    Ubuntu 15.04 \n \l
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;测试数据所占字节&#34;&gt;测试数据所占字节&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;因为在数据对齐的时候需要考虑是在什么系统下，各数据类型所占字节大小，纠正网上一些有问题的解答，比如long是只占4bits的。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;    cout &amp;lt;&amp;lt; &amp;quot;char: &amp;quot; &amp;lt;&amp;lt; sizeof(char) &amp;lt;&amp;lt; endl;
+    cout &amp;lt;&amp;lt; &amp;quot;short: &amp;quot; &amp;lt;&amp;lt; sizeof(short) &amp;lt;&amp;lt; endl;
+    cout &amp;lt;&amp;lt; &amp;quot;int: &amp;quot; &amp;lt;&amp;lt; sizeof(int) &amp;lt;&amp;lt; endl;
+    cout &amp;lt;&amp;lt; &amp;quot;long: &amp;quot; &amp;lt;&amp;lt; sizeof(long) &amp;lt;&amp;lt; endl;
+    cout &amp;lt;&amp;lt; &amp;quot;unsigned long: &amp;quot; &amp;lt;&amp;lt; sizeof(unsigned long) &amp;lt;&amp;lt; endl;
+    cout &amp;lt;&amp;lt; &amp;quot;long long: &amp;quot; &amp;lt;&amp;lt; sizeof(long long) &amp;lt;&amp;lt; endl;
+    //在vc6.0下不支持 long long 数据类型。
+    cout &amp;lt;&amp;lt; &amp;quot;double: &amp;quot; &amp;lt;&amp;lt; sizeof(double) &amp;lt;&amp;lt; endl;
+    cout &amp;lt;&amp;lt; &amp;quot;char*: &amp;quot; &amp;lt;&amp;lt; sizeof(char*) &amp;lt;&amp;lt; endl;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;32bit windows xp (VC6.0 IDE 32bits) 测试：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    char: 1
+    short: 2
+    int: 4
+    long: 4
+    unsigned long: 4
+    double: 8
+    char*: 4
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;64bit windows 10 (Dev-C++ 5.11 64bits的)测试：&lt;/strong&gt;
+&amp;gt; Window系统下的MinGW，总是编译为32位代码。因为MinGW只支持32位代码。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    char: 1
+    short: 2
+    int: 4
+    long: 4             // 不知道为什指针又是8字节的！！！
+    unsigned long: 4
+    long long: 8
+    double: 8
+    char*: 8            //指针所占内存大小有区别，每字节8位，跟总线搭配
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;64bit ubuntu15.04 (g++ 4.8.4)测试：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    char: 1
+    short: 2
+    int: 4
+    long: 8         // 8 !!
+    unsigned long: 8
+    long long: 8
+    double: 8
+    char*: 8    //指针所占内存大小有区别，每字节8位，跟总线搭配
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;地址对齐&lt;/strong&gt;的概念：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;由于硬件设计的特点，CPU在读写内存时，如果所给的地址是机器字长的整数倍，则操作效率会比较高。&lt;/li&gt;
+&lt;li&gt;有的CPU甚至不支持读写地址不对齐的内存单元。&lt;/li&gt;
+&lt;li&gt;为了提高程序运行的效率，编译器会尽量避免一个变量（包括结构体成员）的存储空间跨越地址对齐的界线。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;实验（64bits 环境）&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;        #include &amp;lt;iostream&amp;gt;
+        using namespace std;
+        typedef struct{
+
+        }test_null;              // test 1
+
+        typedef struct{
+                double d1;      //8
+                char c1;        //1
+                short s1;       //补1+2
+                char ch2;       //1
+                int i1;         //补3+4+补4  =&amp;gt; 24
+        }testdouble;        // test 2
+
+        typedef struct{
+                int d1;         //4
+                char c1;        //1
+                short s1;       //fill 1 + 2
+                char ch2;       //1
+                int i1;         //fill 3 + 4  =&amp;gt; 16
+        }testint;               // test 3
+
+        #pragma pack(2)
+        typedef struct{
+                int d1;         //4
+                char c1;        //1
+                short s1;       //fill 1 +2
+                char ch2;       //1
+                int i1;         //fill 1 + 4  =&amp;gt; 14
+        }testint2;
+
+        class BU{
+             int number;                                //4
+             union UBffer{
+                 char buffer[13];//13
+                 int number;    //4
+             }ubuf;                                             //-&amp;gt;13
+             void foo(){}                               //0
+             typedef char*(*f)(void*);  //0
+             enum{hdd,ssd,blueray}disk; //fill 1 + 4
+             int* a;                                    //8             =&amp;gt; 30
+        }bu;                            // test 4
+        #pragma(4)
+
+        #pragma pack(1) //
+         typedef struct {
+                char ch1;       //1
+                char ch2;       //1
+                int n;          //4
+                char ch3;       //1
+        }stch3_1;       // -&amp;gt; 7
+
+        class clt_1{
+                char ch1;       //1
+                int a;          //4
+                short b;        //2
+                char c;         //1
+                stch3_1 st1;//7 =&amp;gt; 15
+        }st_inside;             // test 5
+        #pragma pack(4) //
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;输出控制：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;64bits win10（GCC 4.9.2）测试结果：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;        test null struct: 1
+        sizeof(bu): 30
+        sizeof(testdouble):24
+        sizeof(testint):16
+        sizeof(testint2):14
+        st_inside: 15,  inside stch3_1: 7
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;64bits ubuntu (gcc version 4.8.4 ) 测试结果：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;        test null struct: 1
+        sizeof(bu): 30
+        sizeof(testdouble):24
+        sizeof(testint):16
+        sizeof(testint2):14
+        st_inside: 15,  inside stch3_1: 7
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;空的结构体在linux系统中并不是0，它和windows 一样，均是占一个字节；&lt;/li&gt;
+&lt;li&gt;long类型在32bits 是占4个字节，64bits 编译器中是8字节；&lt;/li&gt;
+&lt;li&gt;在32bits 系统中指针是4字节，64bits系统占8字节，由于总线物理跟指针的空间是一样大的：4*8 -&amp;gt; 32 ; 8*8 -&amp;gt; 64 .&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>PyBrain库的example之NFQ流程图分析</title>
+      <link>https://tmhm.github.io/2016/05/27/pybrain%E5%BA%93%E7%9A%84example%E4%B9%8Bnfq%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%88%86%E6%9E%90/</link>
+      <pubDate>Fri, 27 May 2016 11:43:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/05/27/pybrain%E5%BA%93%E7%9A%84example%E4%B9%8Bnfq%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%88%86%E6%9E%90/</guid>
+      <description>&lt;p&gt;PyBrain库的example之NFQ流程图分析&lt;/p&gt;
+
+&lt;p&gt;如下是测试程序。主要分析&lt;strong&gt;doEpisode和learn&lt;/strong&gt;两个函数。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    #!/usr/bin/env python
+    __author__ = &#39;Thomas Rueckstiess, ruecksti@in.tum.de&#39;
+
+    from pybrain.rl.environments.cartpole import CartPoleEnvironment, DiscreteBalanceTask, CartPoleRenderer
+    from pybrain.rl.agents import LearningAgent
+    from pybrain.rl.experiments import EpisodicExperiment
+    from pybrain.rl.learners.valuebased import NFQ, ActionValueNetwork
+    #,ActionValueLSTMNetwork
+    from pybrain.rl.explorers import BoltzmannExplorer
+
+    from numpy import array, arange, meshgrid, pi, zeros, mean
+    from matplotlib import pyplot as plt
+
+    # switch this to True if you want to see the cart balancing the pole (slower)
+    render = False  #True #
+
+    plt.ion()
+
+    env = CartPoleEnvironment()
+    if render:
+        renderer = CartPoleRenderer()
+        env.setRenderer(renderer)
+        renderer.start()
+
+
+    # balancetask. py inside only used 2 sensors, so here can&#39;t use(4,3), just use (2,3)
+    # there is a debug in vesion 0.30, now, new version 0.33 had correct it!!
+    module = ActionValueNetwork(4,3)  #(4,3) #  0.33 had correct it
+    #module = ActionValueLSTMNetwork(2,3)
+
+    task = DiscreteBalanceTask(env, 100)
+    learner = NFQ()
+    learner.explorer.epsilon = 0.4
+
+    agent = LearningAgent(module, learner)
+    testagent = LearningAgent(module, None)
+    experiment = EpisodicExperiment(task, agent)
+
+
+    def plotPerformance(values, fig):
+        plt.figure(fig.number)
+        plt.clf()
+        plt.plot(values, &#39;o-&#39;)
+        plt.gcf().canvas.draw()
+
+
+    performance = []
+
+    if not render:
+        pf_fig = plt.figure()
+
+    #while (True):
+    for _ in xrange(60): #60
+        # one learning step after one episode of world-interaction!!!
+        experiment.doEpisodes(1)
+        agent.learn(2)  # 5
+
+        # test performance (these real-world experiences are not used for training)
+        if render:
+            env.delay = True
+        experiment.agent = testagent
+        #r = mean([sum(x) for x in experiment.doEpisodes(5)])
+        env.delay = False
+        testagent.reset()
+        experiment.agent = agent
+
+        #performance.append(r)
+        print &amp;quot;update step&amp;quot;, len(performance)
+
+        #print &amp;quot;reward avg&amp;quot;, r
+        print &amp;quot;explorer epsilon&amp;quot;, learner.explorer.epsilon
+        print &amp;quot;num episodes&amp;quot;, agent.history.getNumSequences()
+        print &amp;quot;update step&amp;quot;, len(performance)
+
+    if not render:
+        plotPerformance(performance, pf_fig)
+
+    str = raw_input(&amp;quot;please input sth to end!&amp;quot;)
+    print &amp;quot;you put :&amp;quot;,str
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;experiment.doEpisodes(1)
+&lt;img src=&#34;http://i.imgur.com/Un1ow9B.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;agent.learn(2)
+&lt;img src=&#34;http://i.imgur.com/TQ2YO9y.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;图2的注释2部分，可以参考该博文&lt;a href=&#34;http://lamda.nju.edu.cn/yangjw/project/drlintro.html&#34;&gt;深度强化学习初探&lt;/a&gt; ,但是他文中的公式应该有点问题。应该把Qm+1改为Qm，进一步参考维基百科&lt;a href=&#34;https://en.wikipedia.org/wiki/Q-learning&#34;&gt;Q-learning&lt;/a&gt; ,如下所示。&lt;/p&gt;
+
+&lt;p&gt;Qm+1(st,at)=Qm(st,at)+α[rt+1+γQm(st+1,at+1)−Qm(st,at)]&lt;/p&gt;
+
+&lt;p&gt;推荐所用的画图软件&lt;a href=&#34;https://www.processon.com/i/56873407e4b0b5afb309e00c&#34;&gt;process on&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;用起来挺方便的，在线用谷歌浏览器运行，用户体验挺佳，比visio2010快多了；&lt;/li&gt;
+&lt;li&gt;可以多用户协作；&lt;/li&gt;
+&lt;li&gt;目前有一个缺点就是一个框里面的字体格式必须是一样的，不可以修改一个框里面部分的文字的格式。有点类似PS的思想。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CMake尝鲜</title>
+      <link>https://tmhm.github.io/2016/05/21/cmake%E5%B0%9D%E9%B2%9C/</link>
+      <pubDate>Sat, 21 May 2016 01:50:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/05/21/cmake%E5%B0%9D%E9%B2%9C/</guid>
+      <description>&lt;p&gt;安装gcc，cmake，g++,gdb&lt;/p&gt;
+&lt;div class=&#34;cnblogs_code&#34;&gt;
+&lt;pre&gt;sudo apt-&lt;span style=&#34;color: #0000ff;&#34;&gt;get&lt;/span&gt; install gcc cmake g++ gdb&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&#34;cnblogs_code&#34;&gt;
+&lt;pre&gt;sudo apt-&lt;span style=&#34;color: #0000ff;&#34;&gt;get&lt;/span&gt; update &amp;amp;&amp;amp; sudo apt-&lt;span style=&#34;color: #0000ff;&#34;&gt;get&lt;/span&gt; install build-essential&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;div class=&#34;cnblogs_code&#34;&gt;
+&lt;pre&gt;gdbtui --args ./future_net test-&lt;span style=&#34;color: #0000ff;&#34;&gt;case&lt;/span&gt;/case0/topo.csv test-&lt;span style=&#34;color: #0000ff;&#34;&gt;case&lt;/span&gt;/case0/demand.csv test-&lt;span style=&#34;color: #0000ff;&#34;&gt;case&lt;/span&gt;/case0/sample_result.csv &lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>vim初探</title>
+      <link>https://tmhm.github.io/2016/05/21/vim%E5%88%9D%E6%8E%A2/</link>
+      <pubDate>Sat, 21 May 2016 01:49:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/05/21/vim%E5%88%9D%E6%8E%A2/</guid>
+      <description>&lt;p&gt;https://github.com/spf13/spf13-vim&lt;/p&gt;
+&lt;p&gt;安装了此博主的开源项目。&lt;/p&gt;
+&lt;p&gt;：vsp &amp;nbsp; &amp;mdash;&amp;mdash;竖分屏&lt;/p&gt;
+&lt;p&gt;：sp &amp;nbsp;　&amp;mdash;&amp;mdash;横分屏&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>spss v21.0 使用笔记</title>
+      <link>https://tmhm.github.io/2016/05/14/spss-v21.0-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sat, 14 May 2016 14:50:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/05/14/spss-v21.0-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
+      <description>
+
+&lt;p&gt;##spss v21.0 使用笔记
+有问题，戳&lt;a href=&#34;http://www.ibm.com/support/knowledgecenter/SSLVMB_23.0.0/spss/base/chart_creation_dualy.dita?lang=zh&#34;&gt;官方帮助文档&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;###神经网络
+&lt;em&gt;分析-神经网络-多层感知机&lt;/em&gt;
+####变量。
+&lt;em&gt;分析-神经网络-多层感知机-变量&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;预测变量可指定为因子（分类）或协变量（刻度）。&lt;/li&gt;
+&lt;li&gt;在因变量框输入&lt;strong&gt;预测Y&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;因子框 必须是&lt;strong&gt;分类的数据&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;协变量允许各种类型的数据&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;频率分析&#34;&gt;频率分析&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;分析-描述统计-频率&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在统计量里面可以添加选择中位数、众数等&lt;/li&gt;
+&lt;li&gt;在图表选项可以添加直方图等&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;画图&#34;&gt;画图&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;图形-旧对话框-&amp;gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;画双y轴图&#34;&gt;画双y轴图&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;图形-图表构建程序- 在选择范围框里面选：双轴&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
