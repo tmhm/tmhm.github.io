@@ -19,8 +19,6 @@
       <guid>https://tmhm.github.io/2016/12/25/logging-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/</guid>
       <description>
 
-&lt;h2 id=&#34;logging-的配置和使用&#34;&gt;logging 的配置和使用&lt;/h2&gt;
-
 &lt;p&gt;reference :&lt;/p&gt;
 
 &lt;ul&gt;
@@ -30,47 +28,48 @@
 
 &lt;p&gt;测试源码，example&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;            import logging
+&lt;pre&gt;&lt;code&gt;import logging
 
-            nt = &#39;xwei&#39;
-            # logging.basicConfig(filename=&#39;log/log_test.log&#39;,
-            #                     format=&#39;%(asctime)s, %(levelname)s:%(message)s&#39;, datefmt=&#39;%m/%d/%Y %I:%M:%S %p&#39;,
-            #                     filemode=&#39;w&#39;, level=logging.INFO)
+nt = &#39;xwei&#39;
+# logging.basicConfig(filename=&#39;log/log_test.log&#39;,
+#                     format=&#39;%(asctime)s, %(levelname)s:%(message)s&#39;, datefmt=&#39;%m/%d/%Y %I:%M:%S %p&#39;,
+#                     filemode=&#39;w&#39;, level=logging.INFO)
 
-            # set up logging to file - see previous section for more details
-            # w ,new file
-            logging.basicConfig(level=logging.DEBUG,
-                                format=&#39;%(asctime)s %(name)-12s %(levelname)-8s %(message)s&#39;,
-                                datefmt=&#39;%m/%d/%Y %H:%M:%S %p&#39;,
-                                filename=&#39;log/log_test.log&#39;,
-                                filemode=&#39;w&#39;)
-            # define a Handler which writes INFO messages or higher to the sys.stderr
-            console = logging.StreamHandler()
-            console.setLevel(logging.INFO)
-            # set a format which is simpler for console use
-            formatter = logging.Formatter(&#39;%(name)-12s: %(levelname)-8s %(message)s&#39;)
-            # tell the handler to use this format
-            console.setFormatter(formatter)
-            # add the handler to the root logger
-            logging.getLogger(&#39;&#39;).addHandler(console)
+# set up logging to file - see previous section for more details
+# w ,new file
+logging.basicConfig(level=logging.DEBUG,
+                    format=&#39;%(asctime)s %(name)-12s %(levelname)-8s %(message)s&#39;,
+                    datefmt=&#39;%m/%d/%Y %H:%M:%S %p&#39;,
+                    filename=&#39;log/log_test.log&#39;,
+                    filemode=&#39;w&#39;)
+# define a Handler which writes INFO messages or higher to the sys.stderr
+console = logging.StreamHandler()
+console.setLevel(logging.INFO)
+# set a format which is simpler for console use
+formatter = logging.Formatter(&#39;%(name)-12s: %(levelname)-8s %(message)s&#39;)
+# tell the handler to use this format
+console.setFormatter(formatter)
+# add the handler to the root logger
+logging.getLogger(&#39;&#39;).addHandler(console)
 
-            # Now, we can log to the root logger, or any other logger. First the root...
-            logging.info(&#39;Jackdaws love my big sphinx of quartz.&#39;)
+# Now, we can log to the root logger, or any other logger. First the root...
+logging.info(&#39;Jackdaws love my big sphinx of quartz.&#39;)
 
-            # Now, define a couple of other loggers which might represent areas in your
-            # application:
-            logger1 = logging.getLogger(&#39;myapp.area1&#39;)
-            logger2 = logging.getLogger(&#39;myapp.area2&#39;)
+# Now, define a couple of other loggers which might represent areas in your
+# application:
+logger1 = logging.getLogger(&#39;myapp.area1&#39;)
+logger2 = logging.getLogger(&#39;myapp.area2&#39;)
 
-            logger1.debug(&#39;Quick zephyrs blow, vexing daft Jim.&#39;)
-            logger1.info(&#39;How quickly daft jumping zebras vex.&#39;)
-            logger2.warning(&#39;Jail zesty vixen who grabbed pay from quack.&#39;)
-            logger2.error(&#39;The five boxing wizards jump quickly.&#39;)
+logger1.debug(&#39;Quick zephyrs blow, vexing daft Jim.&#39;)
+logger1.info(&#39;How quickly daft jumping zebras vex.&#39;)
+logger2.warning(&#39;Jail zesty vixen who grabbed pay from quack.&#39;)
+logger2.error(&#39;The five boxing wizards jump quickly.&#39;)
 
-            # &#39;application&#39; code
-            logging.debug(&amp;quot;this is debug.&amp;quot;)
-            logging.info(&amp;quot;this is info form %s.&amp;quot; % nt)
-            logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
+# &#39;application&#39; code
+logging.debug(&amp;quot;this is debug.&amp;quot;)
+logging.info(&amp;quot;this is info form %s.&amp;quot; % nt)
+logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
+
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;默认设置文件的level 是debug，基础上再设置console的格式。&lt;/p&gt;
@@ -82,7 +81,7 @@
 &lt;li&gt;文件中记录level 超过 debug 的信息&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;level设计&#34;&gt;level设计&lt;/h3&gt;
+&lt;h4 id=&#34;level设计&#34;&gt;level设计&lt;/h4&gt;
 
 &lt;p&gt;logging函数根据它们用来跟踪的事件的级别或严重程度来命名。&lt;a href=&#34;http://python.usyiyi.cn/translate/python_278/howto/logging.html#logging-advanced-tutorial&#34;&gt;标准级别及其适用性描述&lt;/a&gt;如下（以严重程度递增排序）：&lt;/p&gt;
 
@@ -148,8 +147,6 @@
       <guid>https://tmhm.github.io/2016/11/02/macdown%E5%9C%A8mac-os-%E4%B8%AD%E7%9A%84%E9%85%8D%E7%BD%AE/</guid>
       <description>
 
-&lt;h1 id=&#34;macdown-用命令行打开-md文件&#34;&gt;macdown 用命令行打开.md文件&lt;/h1&gt;
-
 &lt;p&gt;执行两条命令即可。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo echo &amp;quot;open -a MacDown \$*&amp;quot; &amp;gt; /usr/local/bin/macdown
@@ -157,7 +154,7 @@
 sudo chmod +x /usr/local/bin/macdown
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;设置文件默认打开方式&#34;&gt;设置文件默认打开方式&lt;/h2&gt;
+&lt;h3 id=&#34;设置文件默认打开方式&#34;&gt;设置文件默认打开方式&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;选定文件&lt;/li&gt;
@@ -174,11 +171,7 @@ sudo chmod +x /usr/local/bin/macdown
       <pubDate>Fri, 02 Sep 2016 16:13:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
       <guid>https://tmhm.github.io/2016/09/02/%E5%86%8D%E6%8E%A2vim%E9%85%8D%E7%BD%AE/</guid>
-      <description>
-
-&lt;h1 id=&#34;再探vim配置&#34;&gt;再探VIM配置&lt;/h1&gt;
-
-&lt;ul&gt;
+      <description>&lt;ul&gt;
 &lt;li&gt;最初找到这个发行版&lt;a href=&#34;https://github.com/spf13/spf13-vim&#34;&gt;spf13-vim&lt;/a&gt;，在ubuntu上用的还比较方便，有很多插件；最近在mac上用，总是不兼容vim，用brew安装了最新的vim，还是跟系统不兼容，总是有问题，于是就找到了下面第二个配置。&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/j1z0/vim-config&#34;&gt;vim－config&lt;/a&gt;，这哥们基于vundle配置了一些有用的插件，国内有某君翻译了&lt;a href=&#34;http://codingpy.com/article/vim-and-python-match-in-heaven/&#34;&gt;他的博文&lt;/a&gt;.美中不足的是，安装有问题，有几处安装不成功。使用的时候也是有问题。在翻译的文章最后，编者才告知有问题，但是并没有给出解决的办法。于是我又开始自己造轮子了。&lt;/li&gt;
 &lt;li&gt;拷贝默认的配置文件 &lt;code&gt;$ cp /usr/sh are/vim/vimrc ~/.vimrc&lt;/code&gt;&lt;/li&gt;
@@ -214,9 +207,12 @@ Plugin &#39;VundleVim/Vundle.vim&#39;
 &amp;quot;Plugin &#39;file:///home/gmarik/path/to/plugin&#39;
 &amp;quot; The sparkup vim script is in a subdirectory of this repo called vim.
 &amp;quot; Pass the path to set the runtimepath properly.
-&amp;quot;Plugin &#39;rstacruz/sparkup&#39;, {&#39;rtp&#39;: &#39;vim/&#39;}
+&amp;quot;Plugin &#39;rstacruz/sparkup&#39;, {
+&#39;rtp&#39;
+        : &#39;vim/&#39;
+}
 &amp;quot; Install L9 and avoid a Naming conflict if you&#39;ve already installed a
-&amp;quot; different version somewhere else.
+&amp;quot;different version somewhere else.
 &amp;quot;Plugin &#39;ascenator/L9&#39;, {&#39;name&#39;: &#39;newL9&#39;}
 
 &amp;quot;&amp;quot;code folding
@@ -313,32 +309,39 @@ call togglebg#map(&amp;quot;&amp;lt;F5&amp;gt;&amp;quot;)
     </item>
     
     <item>
-      <title>mysql&#43;matlab配置</title>
-      <link>https://tmhm.github.io/2015/11/21/mysql&#43;matlab%E9%85%8D%E7%BD%AE/</link>
+      <title>mysql &amp;&amp; matlab配置</title>
+      <link>https://tmhm.github.io/2015/11/21/mysql--matlab%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Sat, 21 Nov 2015 13:56:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2015/11/21/mysql&#43;matlab%E9%85%8D%E7%BD%AE/</guid>
-      <description>&lt;p&gt;&lt;ul&gt;
-&lt;li&gt;
-&lt;h3&gt;&lt;span class=&#34;ask-title &#34;&gt;mysql 中一直出现&amp;rsquo;&amp;gt;&lt;/span&gt;&lt;/h3&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;span class=&#34;ask-title &#34;&gt;　　　　单双引号没有配对&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+      <guid>https://tmhm.github.io/2015/11/21/mysql--matlab%E9%85%8D%E7%BD%AE/</guid>
+      <description>
+
+&lt;h4 id=&#34;mysql-中一直出现-gt&#34;&gt;mysql 中一直出现&amp;rsquo;&amp;gt;&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;单双引号没有配对
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;mysql-连接matlab&#34;&gt;mysql 连接matlab&lt;/h4&gt;
+
 &lt;ul&gt;
-&lt;li&gt;
-&lt;h3&gt;&lt;span class=&#34;ask-title &#34; style=&#34;font-size: 14px;&#34;&gt;mysql 连接matlab&lt;/span&gt;&lt;/h3&gt;
-&lt;/li&gt;
+&lt;li&gt;1， 到mysql官网下载 &lt;a href=&#34;http://dev.mysql.com/downloads/connector/j/&#34;&gt;http://dev.mysql.com/downloads/connector/j/&lt;/a&gt;&lt;br /&gt;(mysql-connector-java-5.1.37.tar.gz&lt;br /&gt;将mysql-connector-java-5.1.37-bin.jar  放在matlabroot/java/jar/toolbox/&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;2， 在E:\Program Files\MATLAB\R2011b\toolbox\local目录下，找到classpath.txt&lt;br /&gt;增加一句&lt;br /&gt;$matlabroot/java/jar/toolbox/mysql-connector-java-5.1.37-bin.jar&lt;/p&gt;
+
+&lt;p&gt;注意：驱动名字匹配; matlabroot指安装目录&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;3，重启matlab&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;4，测试&lt;/p&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;conn=database(&#39;xw&#39;,&#39;root&#39;,&#39;key&#39;,&#39;com.mysql.jdbc.Driver&#39;,&#39;jdbc:mysql://localhost:3306/xw&#39;)
+aTemp = exec(conn,&#39;select * from gd_train_data limit 5
+    
+aTemp = fetch(aTemp)
+curs = aTemp.Data
+    
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p style=&#34;margin-left: 60px;&#34;&gt;1， 到mysql官网下载 &lt;a href=&#34;http://dev.mysql.com/downloads/connector/j/&#34;&gt;http://dev.mysql.com/downloads/connector/j/&lt;/a&gt;&lt;br /&gt;(mysql-connector-java-5.1.37.tar.gz&lt;br /&gt;将mysql-connector-java-5.1.37-bin.jar  放在matlabroot/java/jar/toolbox/&lt;/p&gt;
-&lt;p style=&#34;margin-left: 60px;&#34;&gt;2， 在E:\Program Files\MATLAB\R2011b\toolbox\local目录下，找到classpath.txt&lt;br /&gt;增加一句&lt;br /&gt;$matlabroot/java/jar/toolbox/mysql-connector-java-5.1.37-bin.jar&lt;/p&gt;
-&lt;p style=&#34;margin-left: 60px;&#34;&gt;&lt;span style=&#34;color: #ff0000;&#34;&gt;注意：驱动名字匹配&lt;/span&gt;&lt;br /&gt;$matlabroot指安装目录&lt;/p&gt;
-&lt;p style=&#34;margin-left: 60px;&#34;&gt;3，重启matlab&lt;/p&gt;
-&lt;p style=&#34;margin-left: 60px;&#34;&gt;4，测试&lt;/p&gt;
-&lt;p style=&#34;margin-left: 90px;&#34;&gt;conn = database(&amp;lsquo;xw&amp;rsquo;,&amp;lsquo;root&amp;rsquo;,&amp;lsquo;key&amp;rsquo;,&amp;lsquo;com.mysql.jdbc.Driver&amp;rsquo;,&amp;lsquo;jdbc:mysql://localhost:3306/xw&amp;rsquo;)&lt;/p&gt;
-&lt;p style=&#34;margin-left: 90px;&#34;&gt;aTemp = exec(conn,&amp;lsquo;select * from gd_train_data limit 5&amp;rsquo;)&lt;br /&gt;aTemp = fetch(aTemp);&lt;/p&gt;
-&lt;p style=&#34;margin-left: 90px;&#34;&gt;&lt;em id=&#34;__mceDel&#34; style=&#34;line-height: 1.5;&#34;&gt;&lt;em&gt;curs = aTemp.Data&lt;/em&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p style=&#34;margin-left: 60px;&#34;&gt;&amp;nbsp;&lt;/p&gt;&lt;/p&gt;
 </description>
     </item>
     

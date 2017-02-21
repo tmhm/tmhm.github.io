@@ -18,8 +18,7 @@
       <author>wells217@163.com (Well)</author>
       <guid>https://tmhm.github.io/2016/09/17/stacks-and-queues--codility/</guid>
       <description>&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#1.7&#34;&gt;lesson 7: &lt;em&gt;stacks and queues&lt;/em&gt;&lt;/a&gt;
-    * &lt;a href=&#34;#1.7.1&#34;&gt;1. Nesting&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;#1.7.1&#34;&gt;1. Nesting&lt;/a&gt;
     * &lt;a href=&#34;#1.7.2&#34;&gt;2. StoneWall&lt;/a&gt;
     * &lt;a href=&#34;#1.7.3&#34;&gt;3. Brackets&lt;/a&gt;
     * &lt;a href=&#34;#1.7.4&#34;&gt;4. Finsh&lt;/a&gt;&lt;/li&gt;
@@ -151,11 +150,15 @@ lesson 7: &lt;i&gt;stacks and queues&lt;/i&gt;
 
 &lt;ul&gt;
 &lt;li&gt;S is empty;&lt;/li&gt;
-&lt;li&gt;S has the form &amp;laquo;(U)&amp;raquo; or &amp;laquo;[U]&amp;raquo; or &amp;laquo;{U}&amp;raquo; where U is a properly nested string;&lt;/li&gt;
+&lt;li&gt;S has the form &amp;laquo;(U)&amp;raquo; or &amp;laquo;[U]&amp;raquo; or &amp;laquo; {
+    U
+}&amp;raquo; where U is a properly nested string;&lt;/li&gt;
 &lt;li&gt;S has the form &amp;laquo;VW&amp;raquo; where V and W are properly nested strings.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;For example, the string &amp;laquo;{[()()]}&amp;raquo; is properly nested but &amp;laquo;([)()]&amp;raquo; is not.&lt;/p&gt;
+&lt;p&gt;For example, the string &amp;laquo; {
+        [()()]
+}&amp;raquo; is properly nested but &amp;laquo;([)()]&amp;raquo; is not.&lt;/p&gt;
 
 &lt;p&gt;For example, given S = &amp;laquo;{[()()]}&amp;laquo;, the function should return 1 and given S = &amp;laquo;([)()]&amp;laquo;, the function should return 0, as explained above.&lt;/p&gt;
 
@@ -384,8 +387,7 @@ def solution(S):
       <description>
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#1.6&#34;&gt;lesson 6: &lt;em&gt;sorting&lt;/em&gt;&lt;/a&gt;
-    * &lt;a href=&#34;#1.6.1&#34;&gt;1. Distinct&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;#1.6.1&#34;&gt;1. Distinct&lt;/a&gt;
     * &lt;a href=&#34;#1.6.2&#34;&gt;2. Triangle&lt;/a&gt;
     * &lt;a href=&#34;#1.6.3&#34;&gt;2. MaxProductOfThree&lt;/a&gt;
     * &lt;a href=&#34;#1.6.4&#34;&gt;4. NumberOfDiscIntersections&lt;/a&gt;&lt;/li&gt;
@@ -395,7 +397,7 @@ def solution(S):
 lesson 6: &lt;i&gt;sorting&lt;/i&gt;
 &lt;/h2&gt;
 
-&lt;h3 id=&#34;exercise&#34;&gt;exercise&lt;/h3&gt;
+&lt;h4 id=&#34;exercise&#34;&gt;exercise&lt;/h4&gt;
 
 &lt;p&gt;&lt;strong&gt;Problem:&lt;/strong&gt;&lt;/p&gt;
 
@@ -484,7 +486,7 @@ def distinct(A):
 &amp;gt;
 Maximize A[P] * A[Q] * A[R] for any triplet (P, Q, R).
 
-#### solution 1
+#####  solution 1
 - O(N)
 - Test score  100% OJ test is O(N * log(N))
 - 考虑到有负数存在， 故乘积最大的三个数，会出现在两种情况：
@@ -514,7 +516,7 @@ return a if a &amp;gt; b else b
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;pre&gt;&lt;code&gt;
-#### solution 2
+#####  solution 2
 
 **note:**
 
@@ -595,7 +597,7 @@ given an array A describing N discs as explained above, returns the number of (u
 
 
 
-#### sloution:[100%]
+#####  sloution:[100%]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;def solution(A):
@@ -629,8 +631,7 @@ given an array A describing N discs as explained above, returns the number of (u
       <description>
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#1.5&#34;&gt;lesson 5: &lt;em&gt;prefix sums&lt;/em&gt;&lt;/a&gt;
-    * &lt;a href=&#34;#1.5.1&#34;&gt;1. PassingCars&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;#1.5.1&#34;&gt;1. PassingCars&lt;/a&gt;
     * &lt;a href=&#34;#1.5.2&#34;&gt;2. CountDiv&lt;/a&gt;
     * &lt;a href=&#34;#1.5.3&#34;&gt;3. GenomicRangeQuery&lt;/a&gt;
     * &lt;a href=&#34;#1.5.4&#34;&gt;4. MinAvgTwoSlice&lt;/a&gt;
@@ -739,7 +740,7 @@ A ≤ B.&lt;/li&gt;
 &lt;li&gt;expected worst-case space complexity is O(1).&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;countdiv-solution-1&#34;&gt;CountDiv solution 1&lt;/h4&gt;
+&lt;h5 id=&#34;countdiv-solution-1&#34;&gt;CountDiv solution 1&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score 100%&lt;/li&gt;
@@ -754,7 +755,7 @@ A ≤ B.&lt;/li&gt;
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;solution-2&#34;&gt;solution 2&lt;/h4&gt;
+&lt;h5 id=&#34;solution-2&#34;&gt;solution 2&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score 100%&lt;/li&gt;
@@ -818,7 +819,7 @@ P[2] = 0    Q[2] = 6
 &lt;li&gt;expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;解法一&#34;&gt;解法一：&lt;/h4&gt;
+&lt;h5 id=&#34;解法一&#34;&gt;解法一：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score  62%&lt;/li&gt;
@@ -852,7 +853,7 @@ def solution(S, P, Q):
     return result
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;解法二&#34;&gt;解法二：&lt;/h4&gt;
+&lt;h5 id=&#34;解法二&#34;&gt;解法二：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score 100%&lt;/li&gt;
@@ -941,7 +942,7 @@ A[6] = 8
 &lt;li&gt;expected worst-case space complexity is O(N),&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;sloution&#34;&gt;sloution&lt;/h4&gt;
+&lt;h5 id=&#34;sloution&#34;&gt;sloution&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score 100%&lt;/li&gt;
@@ -983,8 +984,7 @@ A[6] = 8
       <description>
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#1.4&#34;&gt;lesson 4: &lt;em&gt;counting elements&lt;/em&gt;&lt;/a&gt;
-    * &lt;a href=&#34;#1.4.1&#34;&gt;1. FrogRiverOne&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;#1.4.1&#34;&gt;1. FrogRiverOne&lt;/a&gt;
     * &lt;a href=&#34;#1.4.2&#34;&gt;2. PermCheck&lt;/a&gt;
     * &lt;a href=&#34;#1.4.3&#34;&gt;3. MissingInteger&lt;/a&gt;
     * &lt;a href=&#34;#1.4.4&#34;&gt;4. MaxCounters&lt;/a&gt;&lt;/li&gt;
@@ -1020,7 +1020,7 @@ lesson 4: &lt;i&gt;counting elements&lt;/i&gt;
         return count
 
 
-#from collections import Counter
+## from collections import Counter
 def fast_solution(A, B, m):
         n = len(A)
         sum_a = sum(A)
@@ -1247,7 +1247,7 @@ A[6] = 4
 
 &lt;p&gt;The goal is to calculate the value of every counter after all operations.&lt;/p&gt;
 
-&lt;h4 id=&#34;解法一&#34;&gt;解法一：&lt;/h4&gt;
+&lt;h5 id=&#34;解法一&#34;&gt;解法一：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Detected time complexity: O(N*M)&lt;/li&gt;
@@ -1275,7 +1275,7 @@ A[6] = 4
     return ret
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;解法二&#34;&gt;解法二&lt;/h4&gt;
+&lt;h5 id=&#34;解法二&#34;&gt;解法二&lt;/h5&gt;
 
 &lt;p&gt;[100%] MaxCounters
 &amp;gt;
@@ -1384,7 +1384,6 @@ lesson 3: &lt;i&gt;Time complexity&lt;/i&gt;
 &lt;p&gt;&lt;strong&gt;note:&lt;/strong&gt; 依次求sum&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;def solution(A):
-    # write your code in Python 2.7
 
     #left,right =A[0], sum(A)-A[0]
     left,right =A[0], sum(A[1:])
@@ -1522,7 +1521,6 @@ lesson 2: &lt;i&gt;Arrays&lt;/i&gt;
         n = n - 1
 
 def solution(A, K):
-    # write your code in Python 2.7
     length = len(A)
     if length &amp;lt; 2:
         return A
@@ -1674,7 +1672,6 @@ lesson 1：&lt;i&gt;Iterations&lt;/i&gt;
 
 &lt;pre&gt;&lt;code&gt;from math import log
 def solution(N):
-    # write your code in Python 2.7
 
     #if N == 1:   #can belong to the next for i = 0
     #    return 0
@@ -1711,17 +1708,16 @@ def solution(N):
 
 &amp;lt;script&amp;gt;hljs.initHighlightingOnLoad();&amp;lt;/script&amp;gt;
 &amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
- $(document).ready(function(){
-      $(&amp;quot;h2,h3,h4,h5,h6&amp;quot;).each(function(i,item){
+ $(document).ready(function() {
+        $(&amp;quot;h2,h3,h4,h5,h6&amp;quot;).each(function(i,item){
         var tag = $(item).get(0).localName;
         $(item).attr(&amp;quot;id&amp;quot;,&amp;quot;wow&amp;quot;+i);
-        $(&amp;quot;#category&amp;quot;).append(&#39;&amp;lt;a class=&amp;quot;new&#39;+tag+&#39;&amp;quot; href=&amp;quot;#wow&#39;+i+&#39;&amp;quot;&amp;gt;&#39;+$(this).text()+&#39;&amp;lt;/a&amp;gt;&amp;lt;/br&amp;gt;&#39;);
         $(&amp;quot;.newh2&amp;quot;).css(&amp;quot;margin-left&amp;quot;,0);
         $(&amp;quot;.newh3&amp;quot;).css(&amp;quot;margin-left&amp;quot;,20);
         $(&amp;quot;.newh4&amp;quot;).css(&amp;quot;margin-left&amp;quot;,40);
         $(&amp;quot;.newh5&amp;quot;).css(&amp;quot;margin-left&amp;quot;,60);
         $(&amp;quot;.newh6&amp;quot;).css(&amp;quot;margin-left&amp;quot;,80);
-      });
+});
  });
 &amp;lt;/script&amp;gt;
 &amp;lt;div id=&amp;quot;category&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
@@ -2044,7 +2040,7 @@ lesson 4: &lt;i&gt;counting elements&lt;/i&gt;
 increase counter by 1; set value of all counters to current maximum.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h4 id=&#34;解法一&#34;&gt;解法一：&lt;/h4&gt;
+&lt;h5 id=&#34;解法一&#34;&gt;解法一：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Detected time complexity: O(N*M)&lt;/li&gt;
@@ -2069,7 +2065,7 @@ increase counter by 1; set value of all counters to current maximum.&lt;/p&gt;
     return ret
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;解法二&#34;&gt;解法二&lt;/h4&gt;
+&lt;h5 id=&#34;解法二&#34;&gt;解法二&lt;/h5&gt;
 
 &lt;p&gt;[100%] MaxCounters
 &amp;gt;
@@ -2150,7 +2146,7 @@ O(N)&lt;/p&gt;&lt;/li&gt;
 &lt;p&gt;Compute number of integers divisible by k in range [a..b].&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h4 id=&#34;countdiv-solution-1&#34;&gt;CountDiv solution 1&lt;/h4&gt;
+&lt;h5 id=&#34;countdiv-solution-1&#34;&gt;CountDiv solution 1&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;test score 67%&lt;/li&gt;
@@ -2174,7 +2170,7 @@ O(N)&lt;/p&gt;&lt;/li&gt;
     return ret
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;countdiv-solution-2&#34;&gt;CountDiv solution 2&lt;/h4&gt;
+&lt;h5 id=&#34;countdiv-solution-2&#34;&gt;CountDiv solution 2&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score 100%&lt;/li&gt;
@@ -2190,7 +2186,7 @@ O(N)&lt;/p&gt;&lt;/li&gt;
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;solution-3&#34;&gt;solution 3&lt;/h4&gt;
+&lt;h5 id=&#34;solution-3&#34;&gt;solution 3&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score 100%&lt;/li&gt;
@@ -2211,7 +2207,7 @@ O(N)&lt;/p&gt;&lt;/li&gt;
 &lt;p&gt;Find the minimal nucleotide from a range of sequence DNA.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h4 id=&#34;解法一-1&#34;&gt;解法一：&lt;/h4&gt;
+&lt;h5 id=&#34;解法一-1&#34;&gt;解法一：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score  37%&lt;/li&gt;
@@ -2241,7 +2237,7 @@ def solution(S, P, Q):
     return result
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;解法二-1&#34;&gt;解法二：&lt;/h4&gt;
+&lt;h5 id=&#34;解法二-1&#34;&gt;解法二：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score 100%
@@ -2347,7 +2343,7 @@ lesson 6: &lt;i&gt;sorting&lt;/i&gt;
 &lt;p&gt;Maximize A[P] * A[Q] * A[R] for any triplet (P, Q, R).&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h4 id=&#34;solution-1&#34;&gt;solution 1&lt;/h4&gt;
+&lt;h5 id=&#34;solution-1&#34;&gt;solution 1&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;O(N)&lt;/li&gt;
@@ -2373,7 +2369,7 @@ lesson 6: &lt;i&gt;sorting&lt;/i&gt;
     return a if a &amp;gt; b else b
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;solution-2&#34;&gt;solution 2&lt;/h4&gt;
+&lt;h5 id=&#34;solution-2&#34;&gt;solution 2&lt;/h5&gt;
 
 &lt;p&gt;&lt;strong&gt;note:&lt;/strong&gt;&lt;/p&gt;
 

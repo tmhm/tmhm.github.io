@@ -12,32 +12,35 @@
     <atom:link href="https://tmhm.github.io/categories/c&#43;&#43;/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>C_C&#43;&#43;程序设计涉及的一些知识点</title>
-      <link>https://tmhm.github.io/2016/08/30/c_c&#43;&#43;%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%B6%89%E5%8F%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9/</link>
+      <title>C_Cplus程序设计涉及的一些知识点</title>
+      <link>https://tmhm.github.io/2016/08/30/c_cplus%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%B6%89%E5%8F%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9/</link>
       <pubDate>Tue, 30 Aug 2016 10:47:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/08/30/c_c&#43;&#43;%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%B6%89%E5%8F%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
+      <guid>https://tmhm.github.io/2016/08/30/c_cplus%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%B6%89%E5%8F%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
       <description>
 
-&lt;h1 id=&#34;c-c-程序设计涉及的一些知识点&#34;&gt;C_C++程序设计涉及的一些知识点&lt;/h1&gt;
+&lt;h3 id=&#34;c中的printf函数&#34;&gt;c中的printf函数&lt;/h3&gt;
 
-&lt;p&gt;##c中的printf函数
-        main(){
-                int b = 3;
-                int arr[]= {6,7,8,9,10};
-                int * ptr = arr;
+&lt;pre&gt;&lt;code&gt;        main() {
+int b = 3;
+                int arr[]= {6,7,8,9,10
+};
+
+int * ptr = arr;
                 *(ptr++) += 123;
-                printf(&amp;laquo;%d,%d\n&amp;raquo;,&lt;em&gt;ptr,&lt;/em&gt;(++ptr));
+                printf(&amp;quot;%d,%d\n&amp;quot;,*ptr,*(++ptr));
                 return 0;
-        }&lt;/p&gt;
+}
+
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;输出 ： 8,8&lt;/p&gt;
+&lt;p&gt;输出 ：8,8&lt;/p&gt;
 
 &lt;p&gt;原因：printf函数计算参数是&lt;strong&gt;从右往左压栈的&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&#34;c和c-的关系&#34;&gt;c和c++的关系&lt;/h2&gt;
+&lt;h3 id=&#34;c和c-的关系&#34;&gt;c和c++的关系&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;c++ 语言支持函数重载，c语言不支持函数重载；&lt;/li&gt;
@@ -45,7 +48,7 @@
 &lt;li&gt;C++提供了C连接交换指定符 extern &amp;laquo;c&amp;raquo; 解决名字匹配的问题。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;指针和引用&#34;&gt;指针和引用&lt;/h2&gt;
+&lt;h3 id=&#34;指针和引用&#34;&gt;指针和引用&lt;/h3&gt;
 
 &lt;p&gt;区别：&lt;/p&gt;
 
@@ -56,196 +59,203 @@
 &lt;li&gt;应用区别，有存在不指向任何对象的可能和不同时刻会指向不同的对象等情况时，使用指针；如果总是指向一个对象并且指向一个对象以后就不会改变指向，那么应该使用引用。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;传递动态内存&#34;&gt;传递动态内存&lt;/h2&gt;
+&lt;h3 id=&#34;传递动态内存&#34;&gt;传递动态内存&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code&gt;    void swap3(int *p, int *q){
-            int *tmp;
-            tmp = p;
-            p = q;
-            q = tmp;//仅仅交换了指针的值，并没有改变两块内存的值
-    }
-    void swap4(int *p, int *q){
-            int tmp;
-            tmp = *p;  //获取p指向内存的值
-            *p = *q;
-            *q = tmp;
-    }
-    void swap5(int &amp;amp;p, int &amp;amp;q){
-            int tmp;
-            tmp = p; //获取p指向内存的值
-            p = q;
-            q = tmp;
-    }
+&lt;pre&gt;&lt;code&gt;        void swap3(int *p, int *q) {
+int *tmp;
+                tmp = p;
+                p = q;
+                q = tmp;//仅仅交换了指针的值，并没有改变两块内存的值
+}
+
+void swap4(int *p, int *q) {
+int tmp;
+                tmp = *p;  //获取p指向内存的值
+                *p = *q;
+                *q = tmp;
+}
+
+void swap5(int &amp;amp;p, int &amp;amp;q) {
+int tmp;
+                tmp = p; //获取p指向内存的值
+                p = q;
+                q = tmp;
+}
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;//&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    int t1 = 1,t2 = 2;
-    cout &amp;lt;&amp;lt; t1 &amp;lt;&amp;lt; &amp;quot;&amp;quot;&amp;lt;&amp;lt; t2 &amp;lt;&amp;lt; endl;
-    swap3(&amp;amp;t1,&amp;amp;t2); //仅仅交换了指针的值，并没有改变两块内存的值
-    cout &amp;lt;&amp;lt; t1 &amp;lt;&amp;lt; &amp;quot;&amp;quot;&amp;lt;&amp;lt; t2 &amp;lt;&amp;lt; endl;
-    // 后面两个函数分别用指针和引用交换成功
-    swap4(&amp;amp;t1,&amp;amp;t2);
-    cout &amp;lt;&amp;lt; t1 &amp;lt;&amp;lt; &amp;quot;&amp;quot;&amp;lt;&amp;lt; t2 &amp;lt;&amp;lt; endl;
-    swap5(t1,t2);
-    cout &amp;lt;&amp;lt; t1 &amp;lt;&amp;lt; &amp;quot;&amp;quot;&amp;lt;&amp;lt; t2 &amp;lt;&amp;lt; endl;
+&lt;pre&gt;&lt;code&gt;        int t1 = 1,t2 = 2;
+        cout &amp;lt;&amp;lt; t1 &amp;lt;&amp;lt; &amp;quot;&amp;quot;&amp;lt;&amp;lt; t2 &amp;lt;&amp;lt; endl;
+        swap3(&amp;amp;t1,&amp;amp;t2); //仅仅交换了指针的值，并没有改变两块内存的值
+        cout &amp;lt;&amp;lt; t1 &amp;lt;&amp;lt; &amp;quot;&amp;quot;&amp;lt;&amp;lt; t2 &amp;lt;&amp;lt; endl;
+        // 后面两个函数分别用指针和引用交换成功
+        swap4(&amp;amp;t1,&amp;amp;t2);
+        cout &amp;lt;&amp;lt; t1 &amp;lt;&amp;lt; &amp;quot;&amp;quot;&amp;lt;&amp;lt; t2 &amp;lt;&amp;lt; endl;
+        swap5(t1,t2);
+        cout &amp;lt;&amp;lt; t1 &amp;lt;&amp;lt; &amp;quot;&amp;quot;&amp;lt;&amp;lt; t2 &amp;lt;&amp;lt; endl;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;malloc-申请内存&#34;&gt;malloc 申请内存&lt;/h2&gt;
+&lt;h3 id=&#34;malloc-申请内存&#34;&gt;malloc 申请内存&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code&gt;    void getMemory_err(char *p, int num){
-            p = (char *)malloc(sizeof(char )* num);
-            // 没有return 指针，不能传递动态内存
-    }
-    //返回指针变量
-    char *pGetMemory(char *p, int num){
-            p = (char *)malloc(sizeof(char )* num);
-            return p;
-    }
-    // 用指针的指针，
-    void getMemory(char **p, int num){
-            *p = (char *)malloc(sizeof(char )* num);
-    }
+&lt;pre&gt;&lt;code&gt;        void getMemory_err(char *p, int num) {
+p = (char *)malloc(sizeof(char )* num);
+                // 没有return 指针，不能传递动态内存
+}
+        //返回指针变量
+char *pGetMemory(char *p, int num) {
+p = (char *)malloc(sizeof(char )* num);
+                return p;
+}
+        // 用指针的指针，
+void getMemory(char **p, int num) {
+*p = (char *)malloc(sizeof(char )* num);
+}
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;//&amp;mdash;&amp;mdash;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    char *str = NULL;
-    getMemory(&amp;amp;str,10);
-    strcpy(str,&amp;quot;hello&amp;quot;);
+&lt;pre&gt;&lt;code&gt;        char *str = NULL;
+        getMemory(&amp;amp;str,10);
+        strcpy(str,&amp;quot;hello&amp;quot;);
 
-    char *str2 = NULL;
-    str2 = pGetMemory(str2,10);
-    strcpy(str2,&amp;quot;test&amp;quot;);
+        char *str2 = NULL;
+        str2 = pGetMemory(str2,10);
+        strcpy(str2,&amp;quot;test&amp;quot;);
 
-    cout&amp;lt;&amp;lt; *str &amp;lt;&amp;lt;endl;
-    cout&amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;
-    cout&amp;lt;&amp;lt; &amp;amp;str &amp;lt;&amp;lt; endl;
+        cout&amp;lt;&amp;lt; *str &amp;lt;&amp;lt;endl;
+        cout&amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;
+        cout&amp;lt;&amp;lt; &amp;amp;str &amp;lt;&amp;lt; endl;
 
-    cout&amp;lt;&amp;lt; *str2 &amp;lt;&amp;lt;endl;
-    cout&amp;lt;&amp;lt; str2 &amp;lt;&amp;lt; endl;
-    cout&amp;lt;&amp;lt; &amp;amp;str2 &amp;lt;&amp;lt; endl;
+        cout&amp;lt;&amp;lt; *str2 &amp;lt;&amp;lt;endl;
+        cout&amp;lt;&amp;lt; str2 &amp;lt;&amp;lt; endl;
+        cout&amp;lt;&amp;lt; &amp;amp;str2 &amp;lt;&amp;lt; endl;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;output:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    h
-    hello
-    012FF774
-    t
-    test
-    012FF768
+&lt;pre&gt;&lt;code&gt;        h
+        hello
+        012FF774
+        t
+        test
+        012FF768
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;字符串变量存储问题&#34;&gt;字符串变量存储问题&lt;/h2&gt;
+&lt;h3 id=&#34;字符串变量存储问题&#34;&gt;字符串变量存储问题&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code&gt;    int a = 0; //全局初始化区
-    char *p1; //全局未初始化区
-    int _tmain(int argc, _TCHAR* argv[])
-    {
-            int b; //栈
-            char s[] = &amp;quot;abc&amp;quot;; //s在栈上， 常量区会存储一份&amp;quot;abc\0&amp;quot;，用于共享，s[]初始化的时候拷贝过来放到栈上
-            char *p2; //栈
-            char *p3 = &amp;quot;123456&amp;quot;; //123456\0在常量区，p3在栈上。
-            const char *m = &amp;quot;123456&amp;quot;; //m在栈上， “123456” 在常量区
-            static int c =0; //全局（静态）初始化区
-            p1 = (char *)malloc(10);
-            p2 = (char *)malloc(20);
-            //分配得来得10和20字节的区域就在堆区。
-            strcpy(p1, &amp;quot;123456&amp;quot;); //123456\0放在常量区，编译器可能会将它与p3所指向的&amp;quot;123456&amp;quot; 优化成一个地方。
+&lt;pre&gt;&lt;code&gt;        int a = 0; //全局初始化区
+        char *p1; //全局未初始化区
+        int _tmain(int argc, _TCHAR* argv[]) {
+int b; //栈
+                char s[] = &amp;quot;abc&amp;quot;; //s在栈上， 常量区会存储一份&amp;quot;abc\0&amp;quot;，用于共享，s[]初始化的时候拷贝过来放到栈上
+                char *p2; //栈
+                char *p3 = &amp;quot;123456&amp;quot;; //123456\0在常量区，p3在栈上。
+                const char *m = &amp;quot;123456&amp;quot;; //m在栈上， “123456” 在常量区
+                static int c =0; //全局（静态）初始化区
+                p1 = (char *)malloc(10);
+                p2 = (char *)malloc(20);
+                //分配得来得10和20字节的区域就在堆区。
+                strcpy(p1, &amp;quot;123456&amp;quot;); //123456\0放在常量区，编译器可能会将它与p3所指向的&amp;quot;123456&amp;quot; 优化成一个地方。
 
-            cout &amp;lt;&amp;lt; (m == p3 ? 1:0) &amp;lt;&amp;lt; endl; // out 1,
-            cout &amp;lt;&amp;lt; (p1 == p3? 1:0) &amp;lt;&amp;lt; endl; // out 0;
-            cout &amp;lt;&amp;lt; p1 &amp;lt;&amp;lt; &amp;quot;———&amp;quot; &amp;lt;&amp;lt; p3 &amp;lt;&amp;lt; endl; // out 123456---123456
+                cout &amp;lt;&amp;lt; (m == p3 ? 1: 0) &amp;lt;&amp;lt; endl;
+// out 1,
+                cout &amp;lt;&amp;lt; (p1 == p3? 1: 0) &amp;lt;&amp;lt; endl;
+// out 0;
+                cout &amp;lt;&amp;lt; p1 &amp;lt;&amp;lt; &amp;quot;———&amp;quot; &amp;lt;&amp;lt; p3 &amp;lt;&amp;lt; endl; // out 123456---123456
 
-            return 0;
-    }
+                return 0;
+}
+
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;//&amp;mdash;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    char *strA(){
-            char str[] = &amp;quot;hello world&amp;quot;;
-            cout &amp;lt;&amp;lt; &amp;quot;in str[] &amp;quot;&amp;lt;&amp;lt;endl;
-            cout &amp;lt;&amp;lt; &amp;quot;before: &amp;quot;&amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;
-            str[0] = &#39;t&#39;;
-            cout &amp;lt;&amp;lt;&amp;quot;After:&amp;quot; &amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;
-            return str;
-    }
-    char *pStrA_err(){
-            char *str = &amp;quot;hello world&amp;quot;;
-            cout &amp;lt;&amp;lt; &amp;quot;in *str &amp;quot;&amp;lt;&amp;lt;endl;
-            cout &amp;lt;&amp;lt; &amp;quot;before: &amp;quot;&amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;
-            //*str = &#39;P&#39;; // !!!!!!------runtime error 字符串常量保存在只读数据段
-            cout &amp;lt;&amp;lt;&amp;quot;After:&amp;quot; &amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;
-            return str;
-    }
-    char *pStrA(){
-            static char *str = &amp;quot;hello world&amp;quot;;
-            cout &amp;lt;&amp;lt; &amp;quot;in *str &amp;quot;&amp;lt;&amp;lt;endl;
-            cout &amp;lt;&amp;lt; &amp;quot;before: &amp;quot;&amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;
-            //*str = &#39;P&#39;; // !!!!!!------runtime error  ,字符串常量保存在只读数据段
-            cout &amp;lt;&amp;lt;&amp;quot;After:&amp;quot; &amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;
-            return str;
-    }
+&lt;pre&gt;&lt;code&gt;        char *strA() {
+char str[] = &amp;quot;hello world&amp;quot;;
+                cout &amp;lt;&amp;lt; &amp;quot;in str[] &amp;quot;&amp;lt;&amp;lt;endl;
+                cout &amp;lt;&amp;lt; &amp;quot;before: &amp;quot;&amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;
+                str[0] = &#39;t&#39;;
+                cout &amp;lt;&amp;lt;&amp;quot;After:&amp;quot; &amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;
+                return str;
+}
+
+char *pStrA_err() {
+char *str = &amp;quot;hello world&amp;quot;;
+                cout &amp;lt;&amp;lt; &amp;quot;in *str &amp;quot;&amp;lt;&amp;lt;endl;
+                cout &amp;lt;&amp;lt; &amp;quot;before: &amp;quot;&amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;
+                //*str = &#39;P&#39;; // !!!!!!------runtime error 字符串常量保存在只读数据段
+                cout &amp;lt;&amp;lt;&amp;quot;After:&amp;quot; &amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;
+                return str;
+        }
+        char *pStrA(){
+                static char *str = &amp;quot;hello world&amp;quot;;
+                cout &amp;lt;&amp;lt; &amp;quot;in *str &amp;quot;&amp;lt;&amp;lt;endl;
+                cout &amp;lt;&amp;lt; &amp;quot;before: &amp;quot;&amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;
+                //*str = &#39;P&#39;; // !!!!!!------runtime error  ,字符串常量保存在只读数据段
+                cout &amp;lt;&amp;lt;&amp;quot;After:&amp;quot; &amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;
+                return str;
+        }
+
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;main:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    char *c = strA();
-    char *c2 = pStrA_err();
-    char *c3 = pStrA();
+&lt;pre&gt;&lt;code&gt;        char *c = strA();
+        char *c2 = pStrA_err();
+        char *c3 = pStrA();
 
-    cout &amp;lt;&amp;lt; &amp;quot;After fun return:&amp;quot; &amp;lt;&amp;lt; &amp;quot;--c:&amp;quot; &amp;lt;&amp;lt; c &amp;lt;&amp;lt; &amp;quot;--c2:&amp;quot; &amp;lt;&amp;lt; c2 &amp;lt;&amp;lt; &amp;quot;--c3&amp;quot; &amp;lt;&amp;lt; c3 &amp;lt;&amp;lt; endl;
+        cout &amp;lt;&amp;lt; &amp;quot;After fun return:&amp;quot; &amp;lt;&amp;lt; &amp;quot;--c:&amp;quot; &amp;lt;&amp;lt; c &amp;lt;&amp;lt; &amp;quot;--c2:&amp;quot; &amp;lt;&amp;lt; c2 &amp;lt;&amp;lt; &amp;quot;--c3&amp;quot; &amp;lt;&amp;lt; c3 &amp;lt;&amp;lt; endl;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;output:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    in str[]
-    before: hello world
-    After:tello world
-    in *str
-    before: hello world
-    After:hello world
-    in *str
-    before: hello world
-    After:hello world
-    After fun return:--c:@?--c2:hello world--c3hello world
+&lt;pre&gt;&lt;code&gt;        in str[]
+        before: hello world
+        After:tello world
+        in *str
+        before: hello world
+        After:hello world
+        in *str
+        before: hello world
+        After:hello world
+        After fun return:--c:@?--c2:hello world--c3hello world
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;strong&gt;结论：&lt;/strong&gt;
 &amp;gt; - 字符串数据保存在常量区，只读的数据段，不能直接修改
 &amp;gt; - 函数内数组是局部变量，在函数内通过str[0] 可以修改。return之后，局部变量释放，&lt;/p&gt;
 
-&lt;h2 id=&#34;构造函数&#34;&gt;构造函数&lt;/h2&gt;
+&lt;h3 id=&#34;构造函数&#34;&gt;构造函数&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code&gt;    class tA{
-    public:
-            int _a;
-            tA(){
-                    _a = 1;
-            }
-            void print(){
-                    printf(&amp;quot;%d&amp;quot;,_a);
-            }
-    };
-    class tB :public tA{
-    public:
-            int _a;
-            tB(){
-                    _a = 2;
-            }
+&lt;pre&gt;&lt;code&gt;        class tA{
+        public:
+                int _a;
+                tA(){
+                        _a = 1;
+                }
+                void print(){
+                        printf(&amp;quot;%d&amp;quot;,_a);
+                }
+        };
+        class tB :public tA{
+        public:
+                int _a;
+                tB(){
+                        _a = 2;
+                }
 
-    };
+        };
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;//&amp;ndash;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    tB b;
-    tB b;
-    b.print(); // 在构造B类之前，先调用A的构造函数，在A类中_a =1,
-    printf(&amp;quot;%d&amp;quot;,b._a); // B类中 _a = 2;
-    return 0;
+&lt;pre&gt;&lt;code&gt;        tB b;
+        tB b;
+        b.print(); // 在构造B类之前，先调用A的构造函数，在A类中_a =1,
+        printf(&amp;quot;%d&amp;quot;,b._a); // B类中 _a = 2;
+        return 0;
+        
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;blockquote&gt;
@@ -254,7 +264,7 @@
 &lt;p&gt;在构造B类之前，先调用A的构造函数&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&#34;malloc-free-new-delete&#34;&gt;malloc/free ＆＆new/delete&lt;/h2&gt;
+&lt;h3 id=&#34;malloc-free-new-delete&#34;&gt;malloc/free ＆＆new/delete&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;malloc/free 是c++/c语言的标准库函数，new/delete是c++的运算符，它们都可以用于申请和释放动态内存&lt;/li&gt;
@@ -262,7 +272,7 @@
 &lt;li&gt;c++语言中new运算符， 能完成动态内存分配和初始化工作； delete 运算符完成清理和释放内存工作&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;指针和句柄&#34;&gt;指针和句柄&lt;/h2&gt;
+&lt;h3 id=&#34;指针和句柄&#34;&gt;指针和句柄&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;句柄和指针其实是两个截然不同的概念。&lt;/li&gt;
@@ -271,7 +281,7 @@
 &lt;li&gt;句柄可以看做是指向指针的指针。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;this-指针&#34;&gt;this 指针&lt;/h2&gt;
+&lt;h3 id=&#34;this-指针&#34;&gt;this 指针&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;本质上是一个函数参数，只是编译器隐藏起形式，语法层面的参数，this指针只能在成员函数中使用，全局函数，静态函数都不能使用this指针。 在python中直接显性给出&lt;/li&gt;
@@ -290,18 +300,16 @@
     </item>
     
     <item>
-      <title>C_C&#43;&#43;中一些不太注意到的小知识点--[锦集]</title>
-      <link>https://tmhm.github.io/2016/05/22/c_c&#43;&#43;%E4%B8%AD%E4%B8%80%E4%BA%9B%E4%B8%8D%E5%A4%AA%E6%B3%A8%E6%84%8F%E5%88%B0%E7%9A%84%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9--%E9%94%A6%E9%9B%86/</link>
+      <title>C_Cplus中一些不太注意到的小知识点--[锦集]</title>
+      <link>https://tmhm.github.io/2016/05/22/c_cplus%E4%B8%AD%E4%B8%80%E4%BA%9B%E4%B8%8D%E5%A4%AA%E6%B3%A8%E6%84%8F%E5%88%B0%E7%9A%84%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9--%E9%94%A6%E9%9B%86/</link>
       <pubDate>Sun, 22 May 2016 14:55:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/05/22/c_c&#43;&#43;%E4%B8%AD%E4%B8%80%E4%BA%9B%E4%B8%8D%E5%A4%AA%E6%B3%A8%E6%84%8F%E5%88%B0%E7%9A%84%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9--%E9%94%A6%E9%9B%86/</guid>
+      <guid>https://tmhm.github.io/2016/05/22/c_cplus%E4%B8%AD%E4%B8%80%E4%BA%9B%E4%B8%8D%E5%A4%AA%E6%B3%A8%E6%84%8F%E5%88%B0%E7%9A%84%E5%B0%8F%E7%9F%A5%E8%AF%86%E7%82%B9--%E9%94%A6%E9%9B%86/</guid>
       <description>
-
-&lt;h2 id=&#34;c-c-中一些不太注意到的小知识点-锦集&#34;&gt;C/C++中一些不太注意到的小知识点&amp;ndash;[锦集]&lt;/h2&gt;
 
 &lt;p&gt;C/C++小知识点&amp;ndash;[锦集]&lt;/p&gt;
 
-&lt;h3 id=&#34;和-的优先级&#34;&gt;“=”和“&amp;lt;=” 的优先级&lt;/h3&gt;
+&lt;h4 id=&#34;和-的优先级&#34;&gt;“=”和“&amp;lt;=” 的优先级&lt;/h4&gt;
 
 &lt;p&gt;1.(   (file_got_len = recv_str(sock,buf,BUF_SIZE) )    &amp;lt;= 0)&lt;/p&gt;
 
@@ -315,7 +323,7 @@
 
 &lt;p&gt;所以在多语句写在一起时，最好用（） 明示！！&lt;/p&gt;
 
-&lt;h3 id=&#34;运算操作符&#34;&gt;运算操作符&lt;/h3&gt;
+&lt;h4 id=&#34;运算操作符&#34;&gt;运算操作符&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;    int i,t;
     t = (i=1)+(++i);
@@ -343,7 +351,7 @@
 
 &lt;p&gt;i自加后，只保留在eax 寄存器里，然后将eax的2赋给i，所以，i 就变成2了。此处和动态语言的引用似乎有所类似。&lt;/p&gt;
 
-&lt;h3 id=&#34;sizeof操作符与数组&#34;&gt;sizeof操作符与数组&lt;/h3&gt;
+&lt;h4 id=&#34;sizeof操作符与数组&#34;&gt;sizeof操作符与数组&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;    int t,tt,num;
     int array[5];
@@ -365,11 +373,11 @@
     </item>
     
     <item>
-      <title>Dev-C&#43;&#43; 小问题锦集</title>
-      <link>https://tmhm.github.io/2016/02/21/dev-c&#43;&#43;-%E5%B0%8F%E9%97%AE%E9%A2%98%E9%94%A6%E9%9B%86/</link>
+      <title>Dev-C 小问题锦集</title>
+      <link>https://tmhm.github.io/2016/02/21/dev-c-%E5%B0%8F%E9%97%AE%E9%A2%98%E9%94%A6%E9%9B%86/</link>
       <pubDate>Sun, 21 Feb 2016 13:10:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/02/21/dev-c&#43;&#43;-%E5%B0%8F%E9%97%AE%E9%A2%98%E9%94%A6%E9%9B%86/</guid>
+      <guid>https://tmhm.github.io/2016/02/21/dev-c-%E5%B0%8F%E9%97%AE%E9%A2%98%E9%94%A6%E9%9B%86/</guid>
       <description>&lt;p&gt;&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;C++ project cann&amp;rsquo;t debug&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;

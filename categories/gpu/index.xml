@@ -17,9 +17,7 @@
       <pubDate>Wed, 30 Nov 2016 01:12:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
       <guid>https://tmhm.github.io/2016/11/30/gpu%E9%A9%B1%E5%8A%A8%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/</guid>
-      <description>&lt;p&gt;#　GPU驱动兼容性问题&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;问题描述：&lt;/strong&gt;
+      <description>&lt;p&gt;&lt;strong&gt;问题描述：&lt;/strong&gt;
 将笔记本的GTX860M 的驱动升级到了376.09版本，出现登陆界面，输入密码后黑屏。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;解决思路：&lt;/strong&gt;&lt;/p&gt;
@@ -45,9 +43,7 @@
       <guid>https://tmhm.github.io/2016/11/21/gpu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E4%B8%AD%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80note/</guid>
       <description>
 
-&lt;h1 id=&#34;gpu-服务器环境安装中一些基础note&#34;&gt;GPU 服务器环境安装中一些基础note&lt;/h1&gt;
-
-&lt;p&gt;##GPU 服务器：&lt;/p&gt;
+&lt;h3 id=&#34;gpu-服务器&#34;&gt;GPU 服务器：&lt;/h3&gt;
 
 &lt;p&gt;添加组，用户，并为之新建主目录。&lt;/p&gt;
 
@@ -62,7 +58,7 @@
 &lt;pre&gt;&lt;code&gt;    passwd testuser
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;安装anaconda环境&#34;&gt;安装anaconda环境&lt;/h2&gt;
+&lt;h3 id=&#34;安装anaconda环境&#34;&gt;安装anaconda环境&lt;/h3&gt;
 
 &lt;p&gt;官网下载之，&lt;a href=&#34;https://www.continuum.io/downloads&#34;&gt;https://www.continuum.io/downloads&lt;/a&gt;&lt;/p&gt;
 
@@ -70,7 +66,7 @@
 
 &lt;p&gt;export PATH=/home/c302/anaconda2/bin:$PATH&lt;/p&gt;
 
-&lt;h2 id=&#34;ubuntu-linux系统环境变量配置文件&#34;&gt;Ubuntu Linux系统环境变量配置文件：&lt;/h2&gt;
+&lt;h3 id=&#34;ubuntu-linux系统环境变量配置文件&#34;&gt;Ubuntu Linux系统环境变量配置文件：&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;/etc/profile : 在登录时,操作系统定制用户环境时使用的第一个文件 ,此文件为系统的每个用户设置环境信息,当用户第一次登录时,该文件被执行。&lt;/p&gt;
@@ -86,7 +82,7 @@
 
 &lt;p&gt;修改~/.profile 文件，添加export PATH=/home/c302/anaconda2/bin:$PATH&lt;/p&gt;
 
-&lt;h2 id=&#34;安装pybrain-0-33&#34;&gt;安装pybrain 0.33&lt;/h2&gt;
+&lt;h3 id=&#34;安装pybrain-0-33&#34;&gt;安装pybrain 0.33&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;    pip install pybrain
 &lt;/code&gt;&lt;/pre&gt;
@@ -117,7 +113,7 @@
 &lt;p&gt;运行：
         conda install -c &lt;a href=&#34;https://conda.anaconda.org/mq&#34;&gt;https://conda.anaconda.org/mq&lt;/a&gt; pybrain&lt;/p&gt;
 
-&lt;h2 id=&#34;挂载硬盘&#34;&gt;挂载硬盘&lt;/h2&gt;
+&lt;h3 id=&#34;挂载硬盘&#34;&gt;挂载硬盘&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;    mount  /dev/sdb1 /data1
     mount  /dev/sdc1 /data2
@@ -137,7 +133,7 @@
 
 &lt;p&gt;这样重启后会自动挂载&lt;/p&gt;
 
-&lt;h2 id=&#34;安装-nvidia-gtx-1080-驱动-367-27&#34;&gt;安装 Nvidia GTX 1080 驱动 367.27&lt;/h2&gt;
+&lt;h3 id=&#34;安装-nvidia-gtx-1080-驱动-367-27&#34;&gt;安装 Nvidia GTX 1080 驱动 367.27&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;    sudo add-apt-repository ppa:graphics-drivers/ppa
 &lt;/code&gt;&lt;/pre&gt;
@@ -161,7 +157,7 @@
 
 &lt;p&gt;重启进不了ubuntu 的桌面，输入密码又返回登陆界面，但是可以用ssh远程登陆。&lt;/p&gt;
 
-&lt;h2 id=&#34;新安装的系统-14-04-输入密码后又返回登录界面&#34;&gt;新安装的系统，14.04。输入密码后又返回登录界面&lt;/h2&gt;
+&lt;h3 id=&#34;新安装的系统-14-04-输入密码后又返回登录界面&#34;&gt;新安装的系统，14.04。输入密码后又返回登录界面&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;sudo rm -r .Xauthority*  （Xauthority文件在/home/用户名/.Xauthority）&lt;/p&gt;
@@ -193,7 +189,7 @@
 &lt;p&gt;删除了nvidia的驱动，重启之后Unity桌面成功恢复了。
 nvidia-smi 已经无效。&lt;/p&gt;
 
-&lt;h2 id=&#34;teamviewer-安装&#34;&gt;teamviewer 安装&lt;/h2&gt;
+&lt;h3 id=&#34;teamviewer-安装&#34;&gt;teamviewer 安装&lt;/h3&gt;
 
 &lt;p&gt;在网站下载teamviewer &lt;a href=&#34;https://www.teamviewer.com/zhcn/download/linux/&#34;&gt;https://www.teamviewer.com/zhcn/download/linux/&lt;/a&gt;&lt;/p&gt;
 
@@ -214,7 +210,7 @@ nvidia-smi 已经无效。&lt;/p&gt;
 
 &lt;p&gt;即可以通过teamviewer 远程访问图形界面&lt;/p&gt;
 
-&lt;h2 id=&#34;安装torcs-gym等相关环境&#34;&gt;安装TORCS_gym等相关环境&lt;/h2&gt;
+&lt;h3 id=&#34;安装torcs-gym等相关环境&#34;&gt;安装TORCS_gym等相关环境&lt;/h3&gt;
 
 &lt;p&gt;请参考上一文章记录&lt;a href=&#34;http://www.cnblogs.com/Qwells/p/6001699.html&#34;&gt;用Keras 和 DDPG play TORCS（环境配置篇）&lt;/a&gt;&lt;/p&gt;
 

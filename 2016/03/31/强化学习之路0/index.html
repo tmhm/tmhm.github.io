@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="description" content="" />
+<meta name="description" content=" " />
 
 <meta name="keywords" content="">
 
@@ -24,7 +24,7 @@
 
 
 <meta property="og:type" content="article" />
-<meta property="og:description" content=""/>
+<meta property="og:description" content=" "/>
 <meta property="og:article:published_time" content="2016-03-31T08:18:00Z" />
 <meta property="og:article:modified_time" content="2016-03-31T08:18:00Z" />
 
@@ -35,7 +35,7 @@
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@" />
 <meta name="twitter:title" content="强化学习之路（0）" />
-<meta name="twitter:description" content="" />
+<meta name="twitter:description" content=" " />
 <meta name="twitter:url" content="https://tmhm.github.io/2016/03/31/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF0/" />
 <meta name="twitter:domain" content="https://tmhm.github.io/">
   
@@ -50,8 +50,8 @@
       "name": "http://profiles.google.com/+?rel=author"
     },
     "datePublished": "2016-03-31",
-    "description": "",
-    "wordCount":  263 
+    "description": " ",
+    "wordCount":  255 
   }
 </script>
 
@@ -69,7 +69,6 @@
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-
 <link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://tmhm.github.io/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://tmhm.github.io/css/style.css">
@@ -88,6 +87,8 @@
 
 	</script>
 
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
 </head>
 <body>
   <main id="main-wrapper" class="container main_wrapper has-sidebar">
@@ -181,11 +182,14 @@
 
   
   &middot; Read in about 2 min
-  &middot; (263 Words)
+  &middot; (255 Words)
   <br>
   
 
 
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
 </div>
 
 </header>
@@ -193,11 +197,9 @@
   <div class="container content">
   
 
-<h4 id="强化学习之路-0-之缘由">强化学习之路（0）之缘由</h4>
-
 <p>开始接触强化学习是在回到所里开始找课题研究方向的时候，偶然查到<a href="http://news.berkeley.edu/2015/05/21/deep-learning-robot-masters-skills-via-trial-and-error/">伯克利的机器人视频</a>,给我比较惊艳的感觉。陆续开始查找强化学习的一些资料。最近看到一篇有关强化学习的<a href="http://blog.exbot.net/archives/223">博文</a>，瞬时，想把自己接触到强化学习的过程也做一个简单梳理，为接下来准备在强化学习方向完成毕业论文做一个初略安排。</p>
 
-<h4 id="有关强化学习的资料">有关强化学习的资料：</h4>
+<h5 id="有关强化学习的资料">有关强化学习的资料：</h5>
 
 <ul>
 <li><p>Tom M. Mitchell的《机器学习》最后一章讲reinforcement learning，算是入门</p></li>
@@ -210,18 +212,21 @@
 
 <li><p>Marco Wiering Martijn van Otterlo (Eds.)写的 Reinforcement Learning State-Of-the-Art</p></li>
 
-<li><p>2015 nature上的 一篇关于 reinforcement learning 的综述: <a href="http://valser.org/thread-246-1-1.html">Reinforcement learning improves behaviour from evaluative feedback（Michael L. Littman）</a>（链接还包括2015年机器学习专栏其他5篇综述，如下：
-    * Machine intelligence  （Tanguy Chouard &amp; Liesbeth Venema）
-    * Deep learning（Yann LeCun, Yoshua Bengio &amp; Geoffrey Hinton）
-    * Reinforcement learning improves behaviour from evaluative feedback
-（Michael L. Littman）
-    * Probabilistic machine learning and artificial intelligence（Zoubin Ghahramani）
-    * Science, technology and the future of small autonomous drone（Dario Floreano &amp; Robert J. Wood）
-    * Design, fabrication and control of soft robots（Daniela Rus &amp; Michael T. Tolley）
-    * From evolutionary computation to the evolution of things（Agoston E. Eiben &amp; Jim Smith）</p></li>
+<li><p>2015 nature上的 一篇关于 reinforcement learning 的综述: <a href="http://valser.org/thread-246-1-1.html">Reinforcement learning improves behaviour from evaluative feedback（Michael L. Littman）</a>（链接还包括2015年机器学习专栏其他5篇综述，如下：</p>
+
+<ul>
+<li>Machine intelligence  （Tanguy Chouard &amp; Liesbeth Venema）</li>
+<li>Deep learning（Yann LeCun, Yoshua Bengio &amp; Geoffrey Hinton）</li>
+<li>Reinforcement learning improves behaviour from evaluative feedback
+（Michael L. Littman）</li>
+<li>Probabilistic machine learning and artificial intelligence（Zoubin Ghahramani）</li>
+<li>Science, technology and the future of small autonomous drone（Dario Floreano &amp; Robert J. Wood）</li>
+<li>Design, fabrication and control of soft robots（Daniela Rus &amp; Michael T. Tolley）</li>
+<li>From evolutionary computation to the evolution of things（Agoston E. Eiben &amp; Jim Smith）</li>
+</ul></li>
 </ul>
 
-<h4 id="应该关注的实验室">应该关注的实验室：</h4>
+<h5 id="应该关注的实验室">应该关注的实验室：</h5>
 
 <ul>
 <li><a href="https://www.cs.york.ac.uk/rl/research.php">Knowledge-Based Reinforcement Learning</a></li>
@@ -229,7 +234,7 @@
 <li><a href="http://www.cs.colostate.edu/~anderson/res/rl/">Reinforcement Learning and Control</a></li>
 </ul>
 
-<h4 id="代码工具框架">代码工具框架:</h4>
+<h5 id="代码工具框架">代码工具框架:</h5>
 
 <ul>
 <li><p>最近找到一个<a href="http://pybrain.org/">PyBrain</a>的python开源库，不错,准备前期就用它了</p></li>
@@ -246,7 +251,7 @@
             * <a href="http://en.wikipedia.org/wiki/Reinforcement_learning">http://en.wikipedia.org/wiki/Reinforcement_learning</a></p></li>
 </ul>
 
-<h4 id="一些相关会议">一些相关会议：</h4>
+<h5 id="一些相关会议">一些相关会议：</h5>
 
 <p><em>(from reinforcement learning State of the art)</em></p>
 
@@ -349,7 +354,7 @@
   
   &copy; 2017 Well.
 
-
+ &nbsp; &nbsp;
 </div>
 
 

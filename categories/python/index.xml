@@ -19,18 +19,15 @@
       <guid>https://tmhm.github.io/2016/05/31/python-%E4%B8%8E%E6%97%B6%E9%97%B4%E6%9C%89%E5%85%B3%E7%9A%84%E6%93%8D%E4%BD%9C/</guid>
       <description>
 
-&lt;p&gt;##python保存时间戳文件&lt;/p&gt;
+&lt;p&gt;import time
+        # ISOTIMEFORMAT=&amp;lsquo;%Y-%m-%d %X&amp;rsquo;
+        ISOTIMEFORMAT=&amp;lsquo;%Y-%m-%d&amp;rsquo;
+        t= time.strftime( ISOTIMEFORMAT, time.gmtime( time.time() ) )
+        f = open( t + &amp;laquo;test.txt&amp;raquo;,&amp;lsquo;wb&amp;rsquo;)
+        f.write(&amp;laquo;hello,\n This is a test file&amp;raquo;)
+        f.close()&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    import time
-    # ISOTIMEFORMAT=&#39;%Y-%m-%d %X&#39;
-    ISOTIMEFORMAT=&#39;%Y-%m-%d&#39;
-    t= time.strftime( ISOTIMEFORMAT, time.gmtime( time.time() ) )
-    f = open( t + &amp;quot;test.txt&amp;quot;,&#39;wb&#39;)
-    f.write(&amp;quot;hello,\n This is a test file&amp;quot;)
-    f.close()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;计算程序运行时间&#34;&gt;计算程序运行时间&lt;/h2&gt;
+&lt;h3 id=&#34;计算程序运行时间&#34;&gt;计算程序运行时间&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;    import time
     # ISOTIMEFORMAT=&#39;%Y-%m-%d %X&#39;
@@ -62,9 +59,7 @@
       <guid>https://tmhm.github.io/2016/05/26/python%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BB%A7%E6%89%BF/</guid>
       <description>
 
-&lt;p&gt;##&lt;a href=&#34;http://www.runoob.com/python/python-object.html&#34;&gt;类的继承&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;python之面向对象-继承&#34;&gt;python之面向对象（继承）&lt;/h3&gt;
+&lt;h4 id=&#34;python之面向对象-继承&#34;&gt;python之面向对象（继承）&lt;/h4&gt;
 
 &lt;p&gt;面向对象的编程带来的主要好处之一是代码的重用，实现这种重用的方法之一是通过继承机制。继承完全可以理解成类之间的类型和子类型关系。&lt;/p&gt;
 
@@ -186,17 +181,15 @@
       <guid>https://tmhm.github.io/2016/05/21/python-%E6%9C%89%E5%85%B3%E5%BC%95%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</guid>
       <description>
 
-&lt;h2 id=&#34;python-有关引用的一些问题&#34;&gt;python 有关引用的一些问题&lt;/h2&gt;
+&lt;p&gt;print id.&lt;strong&gt;doc&lt;/strong&gt;
+        ​
+        id(object) -&amp;gt; integer&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    print id.__doc__
-    ​
-    id(object) -&amp;gt; integer
-
-    Return the identity of an object.  This is guaranteed to be unique among
+&lt;pre&gt;&lt;code&gt;    Return the identity of an object.  This is guaranteed to be unique among
     simultaneously existing objects.  (Hint: it&#39;s the object&#39;s memory address.)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;python中的引用对象特点&#34;&gt;python中的引用对象特点：&lt;/h3&gt;
+&lt;h4 id=&#34;python中的引用对象特点&#34;&gt;python中的引用对象特点：&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;python不允许程序员选择采用传值还是传引用。
@@ -427,9 +420,7 @@
       <guid>https://tmhm.github.io/2016/05/19/python%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E9%A1%B9/</guid>
       <description>
 
-&lt;p&gt;#python运算符一些注意项&lt;/p&gt;
-
-&lt;h2 id=&#34;浮点除-和-整除&#34;&gt;&amp;rsquo;/&amp;lsquo;浮点除，和&amp;rsquo;//&amp;lsquo;整除&lt;/h2&gt;
+&lt;h3 id=&#34;浮点除-和-整除&#34;&gt;&amp;rsquo;/&amp;lsquo;浮点除，和&amp;rsquo;//&amp;lsquo;整除&lt;/h3&gt;
 
 &lt;p&gt;单个&amp;rsquo;/&amp;lsquo;是浮点除，两个除号&amp;rsquo;//&amp;lsquo;是整除&lt;/p&gt;
 
@@ -469,237 +460,239 @@
       <guid>https://tmhm.github.io/2016/05/17/python%E4%B8%80%E4%BA%9B%E5%86%85%E5%BB%BA%E5%87%BD%E6%95%B0mapzipfilterreduceyield%E7%AD%89/</guid>
       <description>
 
-&lt;p&gt;##python一些内建函数(map,zip,filter,reduce,yield等)&lt;/p&gt;
+&lt;h4 id=&#34;map函数&#34;&gt;map函数&lt;/h4&gt;
 
-&lt;p&gt;###map函数
-Python实际上提供了一个内置的工具，map函数。这个函数的主要功能是对一个序列对象中的每一个元素应用被传入的函数，并且返回一个包含了所有函数调用结果的一个列表。&lt;/p&gt;
+&lt;p&gt;Python实际上提供了一个内置的工具，map函数。这个函数的主要功能是对一个序列对象中的每一个元素应用被传入的函数，并且返回一个包含了所有函数调用结果的一个列表。&lt;/p&gt;
 
 &lt;p&gt;map?&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    Docstring:
-    map(function, sequence[, sequence, ...]) -&amp;gt; list
+&lt;pre&gt;&lt;code&gt;Docstring:
+map(function, sequence[, sequence, ...]) -&amp;gt; list
 
-    Return a list of the results of applying the function to the items of
-    the argument sequence(s).  If more than one sequence is given, the
-    function is called with an argument list consisting of the corresponding
-    item of each sequence, substituting None for missing values when not all
-    sequences have the same length.  If the function is None, return a list of
-    the items of the sequence (or a list of tuples if more than one sequence).
-    Type:      builtin_function_or_method
+Return a list of the results of applying the function to the items of
+the argument sequence(s).  If more than one sequence is given, the
+function is called with an argument list consisting of the corresponding
+item of each sequence, substituting None for missing values when not all
+sequences have the same length.  If the function is None, return a list of
+the items of the sequence (or a list of tuples if more than one sequence).
+Type:      builtin_function_or_method
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;下面三个例子参考了&lt;a href=&#34;http://my.oschina.net/zyzzy/blog/115096&#34;&gt;该博文&lt;/a&gt;
 ​
 对可迭代函数&amp;rsquo;iterable&amp;rsquo;中的每一个元素应用‘function’方法，将结果作为list返回。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    def add100(x):
-        return x+100
-    hh = [11,22,33]
-    map(add100,hh)
-    Out[2]:
-    [111, 122, 133]
+&lt;pre&gt;&lt;code&gt;        def add100(x):
+            return x+100
+        hh = [11,22,33]
+        map(add100,hh)
+        Out[2]:
+        [111, 122, 133]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;如果给出了额外的可迭代参数，则对每个可迭代参数中的元素‘并行’的应用‘function’。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    def abc(a, b, c):
-        return a*10000 + b*100 + c
-    ​
-    list1 = [11,22,33]
-    list2 = [44,55,66]
-    list3 = [77,88,99]
-    map(abc,list1,list2,list3)
-    Out[3]:
-    [114477, 225588, 336699]
+&lt;pre&gt;&lt;code&gt;        def abc(a, b, c):
+            return a*10000 + b*100 + c
+        ​
+        list1 = [11,22,33]
+        list2 = [44,55,66]
+        list3 = [77,88,99]
+        map(abc,list1,list2,list3)
+        Out[3]:
+        [114477, 225588, 336699]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;如果&amp;rsquo;function&amp;rsquo;给出的是‘None’，自动假定一个‘identity’函数（这个‘identity’不知道怎么解释，看例子吧）&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    list1 = [11,22,33]
-    map(None,list1)
-    Out[5]:
-    [11, 22, 33]
+&lt;pre&gt;&lt;code&gt;        list1 = [11,22,33]
+        map(None,list1)
+        Out[5]:
+        [11, 22, 33]
 
 
-    list1 = [11,22,33]
-    list2 = [44,55,66]
-    list3 = [77,88,99]
-    map(None,list1,list2,list3)
-    Out[6]:
-    [(11, 44, 77), (22, 55, 88), (33, 66, 99)]
+        list1 = [11,22,33]
+        list2 = [44,55,66]
+        list3 = [77,88,99]
+        map(None,list1,list2,list3)
+        Out[6]:
+        [(11, 44, 77), (22, 55, 88), (33, 66, 99)]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;###zip函数
-以下参考了&lt;a href=&#34;http://www.bkjia.com/Pythonjc/664161.html&#34;&gt;博文&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;zip函数&#34;&gt;zip函数&lt;/h4&gt;
+
+&lt;p&gt;以下参考了&lt;a href=&#34;http://www.bkjia.com/Pythonjc/664161.html&#34;&gt;博文&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;函式说明：zip(seq1[,seq2 [&amp;hellip;]])-&amp;gt;[(seq1(0),seq2(0)&amp;hellip;,(&amp;hellip;)]。 同时循环两个一样长的函数，返回一个包含每个参数元组对应元素的元组。若不一致，采取截取方式，使得返回的结果元组的长度为各参数元组长度最小值。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    for x,y in zip([1,2,3],[4,5,6]):
-        print x,y
-    for x,y in zip([1,2,3],[4,5,6]):
-        print x,y
-    1 4
-    2 5
-    3 6
+&lt;pre&gt;&lt;code&gt;        for x,y in zip([1,2,3],[4,5,6]):
+            print x,y
+        for x,y in zip([1,2,3],[4,5,6]):
+            print x,y
+        1 4
+        2 5
+        3 6
 
 
-    for x,y in zip([1,2,3],[5,6]):
-        print x,y
-    1 5
-    2 6
+        for x,y in zip([1,2,3],[5,6]):
+            print x,y
+        1 5
+        2 6
+        
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;###filter函数
-filter(bool_func,seq)：此函数的功能相当于过滤器。 调用一个布尔函数bool_func来迭代遍历每个seq中的元素，返回一个使bool_seq返回值为true的元素的序列。&lt;/p&gt;
+&lt;h4 id=&#34;filter函数&#34;&gt;filter函数&lt;/h4&gt;
 
-&lt;pre&gt;&lt;code&gt;    filter(lambda x:x%2==0,[1,2,3,4,6,5,7])
-    Out[15]:
-    [2, 4, 6]
+&lt;p&gt;filter(bool_func,seq)：此函数的功能相当于过滤器。 调用一个布尔函数bool_func来迭代遍历每个seq中的元素，返回一个使bool_seq返回值为true的元素的序列。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;        filter(lambda x:x%2==0,[1,2,3,4,6,5,7])
+        Out[15]:
+        [2, 4, 6]
+        
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;###reduce函数&lt;/p&gt;
+&lt;h4 id=&#34;reduce函数&#34;&gt;reduce函数&lt;/h4&gt;
 
 &lt;p&gt;reduce(func,seq[,init])：func为二元函数，将func作用于seq序列的元素，每次携带一对（先前的结果以及下一个序列的元素），连续的将现有的结果和下一个值作用在获得的随后的结果上，最后减少我们的序列为一个单一的返回值：如果初始值init给定，第一个比较会是init和第一个序列元素而不是序列的头两个元素。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    reduce(lambda x,y:x+y,[1,2,3,4])
-    Out[22]:
-    10
+&lt;pre&gt;&lt;code&gt;        reduce(lambda x,y:x+y,[1,2,3,4])
+        Out[22]:
+        10
 
 
-    reduce(lambda x,y: x-y,[1,2,3,4,5],19)
-    reduce(lambda x,y: x-y,[1,2,3,4,5],19)
-    Out[23]:
-    4
+        reduce(lambda x,y: x-y,[1,2,3,4,5],19)
+        reduce(lambda x,y: x-y,[1,2,3,4,5],19)
+        Out[23]:
+        4
 
 
-    reduce(lambda x,y: x-y,[1,2,3,5],5)
-    Out[21]:
-    -6
+        reduce(lambda x,y: x-y,[1,2,3,5],5)
+        Out[21]:
+        -6
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;isinstance&#34;&gt;isinstance&lt;/h3&gt;
+&lt;h4 id=&#34;isinstance&#34;&gt;isinstance&lt;/h4&gt;
 
 &lt;p&gt;isinstance(object, classinfo)  判断一个对象是否是一个已知的类型。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;isinstance(object, class-or-type-or-tuple) -&amp;gt; bool
+&lt;pre&gt;&lt;code&gt;    isinstance(object, class-or-type-or-tuple) -&amp;gt; bool
 
-Return whether an object is an instance of a class or of a subclass thereof.
-With a type as second argument, return whether that is the object&#39;s type.
-The form using a tuple, isinstance(x, (A, B, ...)), is a shortcut for
-isinstance(x, A) or isinstance(x, B) or ... (etc.).
+    Return whether an object is an instance of a class or of a subclass thereof.
+    With a type as second argument, return whether that is the object&#39;s type.
+    The form using a tuple, isinstance(x, (A, B, ...)), is a shortcut for
+    isinstance(x, A) or isinstance(x, B) or ... (etc.).
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;其第一个参数为对象，第二个为类型名或类型名的一个列表。其返回值为布尔型。若对象的类型与参数二的类型相同则返回True。若参数二为一个元组，则若对象类型与元组中类型名之一相同即返回True。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    tes = list()
-    tes.append(3)
-    ta= &#39;a&#39;,&#39;b&#39;
-    print tes
-    print isinstance(tes, list)
-    print isinstance(ta, tuple)
+&lt;pre&gt;&lt;code&gt;        tes = list()
+        tes.append(3)
+        ta= &#39;a&#39;,&#39;b&#39;
+        print tes
+        print isinstance(tes, list)
+        print isinstance(ta, tuple)
 
-    print isinstance(tes,(int, tuple, list))
-    print isinstance(tes,(int, tuple))
+        print isinstance(tes,(int, tuple, list))
+        print isinstance(tes,(int, tuple))
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Out:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    [3]
-    True
-    True
-    True
-    False
+&lt;pre&gt;&lt;code&gt;        [3]
+        True
+        True
+        True
+        False
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;id&#34;&gt;id&lt;/h3&gt;
+&lt;h4 id=&#34;id&#34;&gt;id&lt;/h4&gt;
 
 &lt;p&gt;查看object 地址&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    in：
-    print id.__doc__
+&lt;p&gt;in：
+&lt;code&gt;print id.__doc__
+&lt;/code&gt;&lt;/p&gt;
 
-    Out：​
-    id(object) -&amp;gt; integer
+&lt;p&gt;Out：​
+ &lt;code&gt;id(object) -&amp;gt; integer
+&lt;/code&gt;&lt;/p&gt;
 
-    Return the identity of an object.  This is guaranteed to be unique among
-    simultaneously existing objects.  (Hint: it&#39;s the object&#39;s memory address.)
+&lt;pre&gt;&lt;code&gt;        Return the identity of an object.  This is guaranteed to be unique among
+        simultaneously existing objects.  (Hint: it&#39;s the object&#39;s memory address.)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;assert&#34;&gt;assert&lt;/h3&gt;
+&lt;h4 id=&#34;assert&#34;&gt;assert&lt;/h4&gt;
 
 &lt;p&gt;断言&lt;/p&gt;
 
 &lt;p&gt;Python中assert用来判断语句的真假，如果&lt;strong&gt;为假的时候，将触发AssertionError错误&lt;/strong&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    a = None
-    assert a != None
-    print a
+&lt;pre&gt;&lt;code&gt;        a = None
+        assert a != None
+        print a
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;out：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    ---------------------------------------------------------------------------
-    AssertionError                            Traceback (most recent call last)
-    &amp;lt;ipython-input-1-4165ca7bb901&amp;gt; in &amp;lt;module&amp;gt;()
-          1
-          2 a = None
-    ----&amp;gt; 3 assert a != None
-          4 print a
+&lt;pre&gt;&lt;code class=&#34;language----------------------------------------------------------------------------&#34;&gt;        AssertionError                            Traceback (most recent call last)
+        &amp;lt;ipython-input-1-4165ca7bb901&amp;gt; in &amp;lt;module&amp;gt;()
+              1
+              2 a = None
+        ----&amp;gt; 3 assert a != None
+              4 print a
 
-    AssertionError:
+        AssertionError:
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;另一例子：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    a=[1,2,3]
-    # a = None
-    assert len(a) &amp;lt; 5  # 为真通过
-    assert a != None
-    print a
+&lt;pre&gt;&lt;code&gt;        a=[1,2,3]
+        # a = None
+        assert len(a) &amp;lt; 5  # 为真通过
+        assert a != None
+        print a
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;out：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    [1, 2, 3]
+&lt;pre&gt;&lt;code&gt;        [1, 2, 3]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;min-max&#34;&gt;min &amp;amp;&amp;amp; max&lt;/h3&gt;
+&lt;h4 id=&#34;min-max&#34;&gt;min &amp;amp;&amp;amp; max&lt;/h4&gt;
 
-&lt;pre&gt;&lt;code&gt;    c = [-10, -45, 0, 5, 3, 50, 15, -20, 25]
+&lt;pre&gt;&lt;code&gt;        c = [-10, -45, 0, 5, 3, 50, 15, -20, 25]
 
-    print &amp;quot;min: %s&amp;quot; %c.index(min(c))  # 返回最小值
-    print &amp;quot;max: %s&amp;quot; %c.index(max(c)) # 返回最大值
+        print &amp;quot;min: %s&amp;quot; %c.index(min(c))  # 返回最小值
+        print &amp;quot;max: %s&amp;quot; %c.index(max(c)) # 返回最大值
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;out:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    min: 1
-    max: 5
+&lt;pre&gt;&lt;code&gt;        min: 1
+        max: 5
 &lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
     <item>
-      <title>python&#43;anaconda&#43;pycharm工具包安装</title>
-      <link>https://tmhm.github.io/2016/04/24/python&#43;anaconda&#43;pycharm%E5%B7%A5%E5%85%B7%E5%8C%85%E5%AE%89%E8%A3%85/</link>
+      <title>python &amp;&amp; anaconda &amp;&amp; pycharm工具包安装</title>
+      <link>https://tmhm.github.io/2016/04/24/python--anaconda--pycharm%E5%B7%A5%E5%85%B7%E5%8C%85%E5%AE%89%E8%A3%85/</link>
       <pubDate>Sun, 24 Apr 2016 13:24:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/04/24/python&#43;anaconda&#43;pycharm%E5%B7%A5%E5%85%B7%E5%8C%85%E5%AE%89%E8%A3%85/</guid>
+      <guid>https://tmhm.github.io/2016/04/24/python--anaconda--pycharm%E5%B7%A5%E5%85%B7%E5%8C%85%E5%AE%89%E8%A3%85/</guid>
       <description>
-
-&lt;p&gt;###更新额外包&lt;/p&gt;
 
 &lt;p&gt;$ conda update conda&lt;/p&gt;
 
-&lt;h3 id=&#34;更新pip&#34;&gt;更新pip&lt;/h3&gt;
+&lt;h4 id=&#34;更新pip&#34;&gt;更新pip&lt;/h4&gt;
 
 &lt;p&gt;python -m pip install &amp;ndash;upgrade pip&lt;/p&gt;
 
-&lt;h3 id=&#34;更新所有&#34;&gt;更新所有&lt;/h3&gt;
+&lt;h4 id=&#34;更新所有&#34;&gt;更新所有&lt;/h4&gt;
 
 &lt;p&gt;conda update &amp;ndash;all&lt;/p&gt;
 
-&lt;h3 id=&#34;安装ffmpeg&#34;&gt;安装ffmpeg&lt;/h3&gt;
+&lt;h4 id=&#34;安装ffmpeg&#34;&gt;安装ffmpeg&lt;/h4&gt;
 
 &lt;p&gt;conda install ffmpeg&lt;/p&gt;
 
@@ -711,7 +704,7 @@ isinstance(x, A) or isinstance(x, B) or ... (etc.).
 
 &lt;p&gt;[Anaconda2] C:\Users\xwei&amp;gt;conda install -c &lt;a href=&#34;https://conda.anaconda.org/groakat&#34;&gt;https://conda.anaconda.org/groakat&lt;/a&gt; ffmpeg-dev&lt;/p&gt;
 
-&lt;h3 id=&#34;安装theano&#34;&gt;安装theano&lt;/h3&gt;
+&lt;h4 id=&#34;安装theano&#34;&gt;安装theano&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://deeplearning.net/software/theano/install_windows.html#install-windows&#34;&gt;source for win-install&lt;/a&gt;&lt;/p&gt;
 
@@ -740,7 +733,7 @@ isinstance(x, A) or isinstance(x, B) or ... (etc.).
 &lt;li&gt;运行&lt;a href=&#34;http://www.deeplearning.net/tutorial/lstm.html#lstm&#34;&gt;LSTM Networks for Sentiment Analysis&lt;/a&gt; 明显快了很多很多，直接在cpu下运行纯python代码，一两分钟才出来第一次迭代， 安装之后，运行c代码的时候，基本上两三秒一次迭代。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;安装出现anaconda-python-installation-error&#34;&gt;安装出现Anaconda Python installation error&lt;/h3&gt;
+&lt;h4 id=&#34;安装出现anaconda-python-installation-error&#34;&gt;安装出现Anaconda Python installation error&lt;/h4&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201606/781469-20160612222301152-884209750.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
@@ -780,17 +773,6 @@ isinstance(x, A) or isinstance(x, B) or ... (etc.).
 &lt;li&gt;esc进入命令模式，然后按h键进入快捷键帮助界面。&lt;/li&gt;
 &lt;li&gt;多查看&lt;a href=&#34;https://plot.ly/python/ipython-notebook-tutorial/&#34;&gt;Ipython notebook tutorial&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>python&#43;mysql学习</title>
-      <link>https://tmhm.github.io/2015/11/20/python&#43;mysql%E5%AD%A6%E4%B9%A0/</link>
-      <pubDate>Fri, 20 Nov 2015 14:47:00 +0000</pubDate>
-      <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2015/11/20/python&#43;mysql%E5%AD%A6%E4%B9%A0/</guid>
-      <description>&lt;p&gt;需要用到数据库，初学mysql，记录一下笔记&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
 </description>
     </item>
     

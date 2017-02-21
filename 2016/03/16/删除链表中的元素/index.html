@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="description" content="" />
+<meta name="description" content=" " />
 
 <meta name="keywords" content="">
 
@@ -24,7 +24,7 @@
 
 
 <meta property="og:type" content="article" />
-<meta property="og:description" content=""/>
+<meta property="og:description" content=" "/>
 <meta property="og:article:published_time" content="2016-03-16T07:20:00Z" />
 <meta property="og:article:modified_time" content="2016-03-16T07:20:00Z" />
 
@@ -35,7 +35,7 @@
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@" />
 <meta name="twitter:title" content="删除链表中的元素" />
-<meta name="twitter:description" content="" />
+<meta name="twitter:description" content=" " />
 <meta name="twitter:url" content="https://tmhm.github.io/2016/03/16/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0/" />
 <meta name="twitter:domain" content="https://tmhm.github.io/">
   
@@ -50,8 +50,8 @@
       "name": "http://profiles.google.com/+?rel=author"
     },
     "datePublished": "2016-03-16",
-    "description": "",
-    "wordCount":  134 
+    "description": " ",
+    "wordCount":  102 
   }
 </script>
 
@@ -69,7 +69,6 @@
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-
 <link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://tmhm.github.io/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://tmhm.github.io/css/style.css">
@@ -88,6 +87,8 @@
 
 	</script>
 
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
 </head>
 <body>
   <main id="main-wrapper" class="container main_wrapper has-sidebar">
@@ -181,59 +182,62 @@
 
   
   &middot; Read in about 1 min
-  &middot; (134 Words)
+  &middot; (102 Words)
   <br>
   
 
 
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
 </div>
 
 </header>
 
   <div class="container content">
   <p>删除链表中等于给定值<code>val</code>的所有节点。</p>
+
 <p>给出链表&nbsp;<code>1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;5-&gt;3</code>, 和 val =&nbsp;<code>3</code>, 你需要返回删除3之后的链表：<code>1-&gt;2-&gt;4-&gt;5</code>。</p>
-<p>&nbsp;</p>
-<p>迷惑点：陷入没有表头的陷阱，总是想记下删除节点的先驱，导致折腾了很久，其实只要人为加一个表头就简单很多了！！</p>
-<p>&nbsp;</p>
-<div class="cnblogs_code">
-<pre><span style="color: #008080;"> 1</span> <span style="color: #008000;">/*</span><span style="color: #008000;">*
-</span><span style="color: #008080;"> 2</span> <span style="color: #008000;"> * Definition for singly-linked list.
-</span><span style="color: #008080;"> 3</span> <span style="color: #008000;"> * struct ListNode {
-</span><span style="color: #008080;"> 4</span> <span style="color: #008000;"> *     int val;
-</span><span style="color: #008080;"> 5</span> <span style="color: #008000;"> *     ListNode *next;
-</span><span style="color: #008080;"> 6</span> <span style="color: #008000;"> *     ListNode(int x) : val(x), next(NULL) {}
-</span><span style="color: #008080;"> 7</span> <span style="color: #008000;"> * };
-</span><span style="color: #008080;"> 8</span>  <span style="color: #008000;">*/</span>
-<span style="color: #008080;"> 9</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> Solution {
-</span><span style="color: #008080;">10</span> <span style="color: #0000ff;">public</span><span style="color: #000000;">:
-</span><span style="color: #008080;">11</span>     <span style="color: #008000;">/*</span><span style="color: #008000;">*
-</span><span style="color: #008080;">12</span> <span style="color: #008000;">     * @param head a ListNode
-</span><span style="color: #008080;">13</span> <span style="color: #008000;">     * @param val an integer
-</span><span style="color: #008080;">14</span> <span style="color: #008000;">     * @return a ListNode
-</span><span style="color: #008080;">15</span>      <span style="color: #008000;">*/</span>
-<span style="color: #008080;">16</span>     ListNode *removeElements(ListNode *head, <span style="color: #0000ff;">int</span><span style="color: #000000;"> val) {
-</span><span style="color: #008080;">17</span>         <span style="color: #008000;">//</span><span style="color: #008000;"> Write your code here
-</span><span style="color: #008080;">18</span>         <span style="color: #008000;">//</span><span style="color: #008000;">meiyou ya ba jie dian!!!???  自己加一个表头
-</span><span style="color: #008080;">19</span>         <span style="color: #008000;">//</span><span style="color: #008000;">static int cnt = 0;
-</span><span style="color: #008080;">20</span>         <span style="color: #008000;">//</span><span style="color: #008000;">kong biao!!就不是问题了。</span>
-<span style="color: #008080;">21</span>         ListNode *temp=<span style="color: #0000ff;">new</span> ListNode(<span style="color: #800080;">0</span><span style="color: #000000;">);
-</span><span style="color: #008080;">22</span>         temp-&gt;next=<span style="color: #000000;"> head;
-</span><span style="color: #008080;">23</span>         head=<span style="color: #000000;">temp;
-</span><span style="color: #008080;">24</span>
-<span style="color: #008080;">25</span>         <span style="color: #0000ff;">while</span>(head-&gt;next !=<span style="color: #000000;"> NULL){
-</span><span style="color: #008080;">26</span>             <span style="color: #0000ff;">if</span>(head-&gt;next-&gt;val ==<span style="color: #000000;"> val){
-</span><span style="color: #008080;">27</span>                 head-&gt;next = head-&gt;next-&gt;<span style="color: #000000;">next;
-</span><span style="color: #008080;">28</span>             }<span style="color: #0000ff;">else</span><span style="color: #000000;">{
-</span><span style="color: #008080;">29</span>                 head = head-&gt;<span style="color: #000000;">next;
-</span><span style="color: #008080;">30</span> <span style="color: #000000;">            }
-</span><span style="color: #008080;">31</span> <span style="color: #000000;">        }
-</span><span style="color: #008080;">32</span>         <span style="color: #0000ff;">return</span> temp-&gt;<span style="color: #000000;">next;
-</span><span style="color: #008080;">33</span>
-<span style="color: #008080;">34</span> <span style="color: #000000;">    }
-</span><span style="color: #008080;">35</span> };</pre>
-</div>
-<p>&nbsp;</p>
+
+<p><p>迷惑点：陷入没有表头的陷阱，总是想记下删除节点的先驱，导致折腾了很久，其实只要人为加一个表头就简单很多了！!</p>
+
+<pre><code>/*
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    /*
+     * @param head a ListNode
+     * @param val an integer
+     * @return a ListNode
+     */
+    ListNode *removeElements(ListNode *head, int val) {
+        // Write your code here
+        //meiyou ya ba jie dian!!!???  自己加一个表头
+        //static int cnt = 0;
+        //kong biao!!就不是问题了。
+        ListNode *temp=new ListNode(0);
+        temp-&gt;next= head;
+        head=temp;
+        
+        while(head-&gt;next != NULL){
+            if(head-&gt;next-&gt;val == val){
+                head-&gt;next = head-&gt;next-&gt;next;
+            }else{
+                head = head-&gt;next;
+            }
+        }
+        return temp-&gt;next;
+	
+    }
+};
+	
+</code></pre>
 
 </div>
 
@@ -312,7 +316,7 @@
   
   &copy; 2017 Well.
 
-
+ &nbsp; &nbsp;
 </div>
 
 

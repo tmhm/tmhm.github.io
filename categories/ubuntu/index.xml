@@ -35,7 +35,6 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&amp;nbsp;codeblocks 编译开发环境(需要先安装gcc，g++,gdb)&lt;/strong&gt;
 &lt;ul&gt;
-&lt;li&gt;sudo apt-&lt;span style=&#34;color: #0000ff;&#34;&gt;get&lt;/span&gt; install codeblocks&lt;/li&gt;
 &lt;li&gt;添加头文件：依次点击project-&amp;gt;bulid options-&amp;gt;Search directories，在该标签页中点击Compiler，单击Add按钮添加头文件路径&lt;/li&gt;
 &lt;li&gt;添加静态库路径：依次点击project-&amp;gt;bulid options-&amp;gt;Linker setting，在该标签页中点击Add按钮添加静态库路径。&lt;/li&gt;
 &lt;li&gt;设置main函数参数：Project-&amp;gt;Set programs&amp;rsquo; arguments&lt;/li&gt;
@@ -112,7 +111,6 @@ ii  mysql-server-core-5.5                       5.5.47-0ubuntu0.12.04.1         
 &lt;li&gt;首先，在win7下的硬盘管理&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ul&gt;
-&lt;li&gt;压缩出一块空闲的分区，&lt;span style=&#34;color: #ff0000;&#34;&gt;即压缩卷之后，不做任何操作&lt;/span&gt;。
 &lt;ul&gt;
 &lt;li&gt;　　并且确保&lt;span style=&#34;color: #ff0000;&#34;&gt;该空闲卷是&amp;ldquo;基本&amp;rdquo;类型&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -177,7 +175,6 @@ ii  mysql-server-core-5.5                       5.5.47-0ubuntu0.12.04.1         
 &lt;/ul&gt;
 &lt;p class=&#34;alt&#34;&gt;&amp;nbsp;&lt;/p&gt;
 &lt;div class=&#34;cnblogs_code&#34;&gt;
-&lt;pre&gt;&lt;span style=&#34;color: #800080;&#34;&gt;1&lt;/span&gt; tar xzvf qt-everywhere-opensource-src-&lt;span style=&#34;color: #800080;&#34;&gt;4.8&lt;/span&gt;.&lt;span style=&#34;color: #800080;&#34;&gt;6&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;.tar.gz
 
 &lt;/span&gt;&lt;span style=&#34;color: #800080;&#34;&gt;2&lt;/span&gt; cd qt-everywhere-opensource-src-&lt;span style=&#34;color: #800080;&#34;&gt;4.8&lt;/span&gt;.&lt;span style=&#34;color: #800080;&#34;&gt;6&lt;/span&gt;
 

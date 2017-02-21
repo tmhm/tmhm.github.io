@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="description" content="" />
+<meta name="description" content=" " />
 
 <meta name="keywords" content="">
 
@@ -24,7 +24,7 @@
 
 
 <meta property="og:type" content="article" />
-<meta property="og:description" content=""/>
+<meta property="og:description" content=" "/>
 <meta property="og:article:published_time" content="2016-08-30T10:47:00Z" />
 <meta property="og:article:modified_time" content="2016-08-30T10:47:00Z" />
 
@@ -35,7 +35,7 @@
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@" />
 <meta name="twitter:title" content="C_C&#43;&#43;程序设计涉及的一些知识点" />
-<meta name="twitter:description" content="" />
+<meta name="twitter:description" content=" " />
 <meta name="twitter:url" content="https://tmhm.github.io/2016/08/30/c_c&#43;&#43;%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%B6%89%E5%8F%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9/" />
 <meta name="twitter:domain" content="https://tmhm.github.io/">
   
@@ -50,8 +50,8 @@
       "name": "http://profiles.google.com/+?rel=author"
     },
     "datePublished": "2016-08-30",
-    "description": "",
-    "wordCount":  573 
+    "description": " ",
+    "wordCount":  583 
   }
 </script>
 
@@ -59,8 +59,8 @@
 
 <link rel="canonical" href="https://tmhm.github.io/2016/08/30/c_c&#43;&#43;%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%B6%89%E5%8F%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9/" />
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://tmhm.github.io/v2.png">
-<link href="https://tmhm.github.io/v2.png" rel="icon">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://tmhm.github.io/touch-icon-144-precomposed.png">
+<link href="https://tmhm.github.io/favicon.png" rel="icon">
 
 <meta name="generator" content="Hugo 0.18.1" />
 
@@ -69,7 +69,6 @@
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-
 <link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://tmhm.github.io/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://tmhm.github.io/css/style.css">
@@ -88,6 +87,8 @@
 
 	</script>
 
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
 </head>
 <body>
   <main id="main-wrapper" class="container main_wrapper has-sidebar">
@@ -181,11 +182,14 @@
 
   
   &middot; Read in about 3 min
-  &middot; (573 Words)
+  &middot; (583 Words)
   <br>
   
 
 
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
 </div>
 
 </header>
@@ -193,25 +197,28 @@
   <div class="container content">
   
 
-<h1 id="c-c-程序设计涉及的一些知识点">C_C++程序设计涉及的一些知识点</h1>
+<h3 id="c中的printf函数">c中的printf函数</h3>
 
-<p>##c中的printf函数
-        main(){
-                int b = 3;
-                int arr[]= {6,7,8,9,10};
-                int * ptr = arr;
+<pre><code>    main() {
+</code></pre>
+
+<p>int b = 3;
+                int arr[]= {6,7,8,9,10
+};</p>
+
+<p>int * ptr = arr;
                 *(ptr++) += 123;
                 printf(&laquo;%d,%d\n&raquo;,<em>ptr,</em>(++ptr));
                 return 0;
-        }</p>
+}</p>
 
 <blockquote>
-<p>输出 ： 8,8</p>
+<p>输出 ：8,8</p>
 
 <p>原因：printf函数计算参数是<strong>从右往左压栈的</strong></p>
 </blockquote>
 
-<h2 id="c和c-的关系">c和c++的关系</h2>
+<h3 id="c和c-的关系">c和c++的关系</h3>
 
 <ul>
 <li>c++ 语言支持函数重载，c语言不支持函数重载；</li>
@@ -219,7 +226,7 @@
 <li>C++提供了C连接交换指定符 extern &laquo;c&raquo; 解决名字匹配的问题。</li>
 </ul>
 
-<h2 id="指针和引用">指针和引用</h2>
+<h3 id="指针和引用">指针和引用</h3>
 
 <p>区别：</p>
 
@@ -230,29 +237,31 @@
 <li>应用区别，有存在不指向任何对象的可能和不同时刻会指向不同的对象等情况时，使用指针；如果总是指向一个对象并且指向一个对象以后就不会改变指向，那么应该使用引用。</li>
 </ul>
 
-<h2 id="传递动态内存">传递动态内存</h2>
+<h3 id="传递动态内存">传递动态内存</h3>
 
-<pre><code>    void swap3(int *p, int *q){
-            int *tmp;
-            tmp = p;
-            p = q;
-            q = tmp;//仅仅交换了指针的值，并没有改变两块内存的值
-    }
-    void swap4(int *p, int *q){
-            int tmp;
-            tmp = *p;  //获取p指向内存的值
-            *p = *q;
-            *q = tmp;
-    }
-    void swap5(int &amp;p, int &amp;q){
-            int tmp;
-            tmp = p; //获取p指向内存的值
-            p = q;
-            q = tmp;
-    }
+<pre><code>    void swap3(int *p, int *q) {
 </code></pre>
 
-<p>//&mdash;&mdash;&mdash;&mdash;</p>
+<p>int *tmp;
+                tmp = p;
+                p = q;
+                q = tmp;//仅仅交换了指针的值，并没有改变两块内存的值
+}</p>
+
+<p>void swap4(int *p, int *q) {
+int tmp;
+                tmp = *p;  //获取p指向内存的值
+                *p = *q;
+                *q = tmp;
+}</p>
+
+<p>void swap5(int &amp;p, int &amp;q) {
+int tmp;
+                tmp = p; //获取p指向内存的值
+                p = q;
+                q = tmp;
+}
+//&mdash;&mdash;&mdash;&mdash;</p>
 
 <pre><code>    int t1 = 1,t2 = 2;
     cout &lt;&lt; t1 &lt;&lt; &quot;&quot;&lt;&lt; t2 &lt;&lt; endl;
@@ -265,24 +274,24 @@
     cout &lt;&lt; t1 &lt;&lt; &quot;&quot;&lt;&lt; t2 &lt;&lt; endl;
 </code></pre>
 
-<h2 id="malloc-申请内存">malloc 申请内存</h2>
+<h3 id="malloc-申请内存">malloc 申请内存</h3>
 
-<pre><code>    void getMemory_err(char *p, int num){
-            p = (char *)malloc(sizeof(char )* num);
-            // 没有return 指针，不能传递动态内存
-    }
-    //返回指针变量
-    char *pGetMemory(char *p, int num){
-            p = (char *)malloc(sizeof(char )* num);
-            return p;
-    }
-    // 用指针的指针，
-    void getMemory(char **p, int num){
-            *p = (char *)malloc(sizeof(char )* num);
-    }
+<pre><code>    void getMemory_err(char *p, int num) {
 </code></pre>
 
-<p>//&mdash;&mdash;</p>
+<p>p = (char <em>)malloc(sizeof(char )</em> num);
+                // 没有return 指针，不能传递动态内存
+}
+        //返回指针变量
+char *pGetMemory(char *p, int num) {
+p = (char <em>)malloc(sizeof(char )</em> num);
+                return p;
+}
+        // 用指针的指针，
+void getMemory(char **p, int num) {
+*p = (char <em>)malloc(sizeof(char )</em> num);
+}
+//&mdash;&mdash;</p>
 
 <pre><code>    char *str = NULL;
     getMemory(&amp;str,10);
@@ -311,58 +320,66 @@
     012FF768
 </code></pre>
 
-<h2 id="字符串变量存储问题">字符串变量存储问题</h2>
+<h3 id="字符串变量存储问题">字符串变量存储问题</h3>
 
 <pre><code>    int a = 0; //全局初始化区
     char *p1; //全局未初始化区
-    int _tmain(int argc, _TCHAR* argv[])
-    {
-            int b; //栈
-            char s[] = &quot;abc&quot;; //s在栈上， 常量区会存储一份&quot;abc\0&quot;，用于共享，s[]初始化的时候拷贝过来放到栈上
-            char *p2; //栈
-            char *p3 = &quot;123456&quot;; //123456\0在常量区，p3在栈上。
-            const char *m = &quot;123456&quot;; //m在栈上， “123456” 在常量区
-            static int c =0; //全局（静态）初始化区
-            p1 = (char *)malloc(10);
-            p2 = (char *)malloc(20);
-            //分配得来得10和20字节的区域就在堆区。
-            strcpy(p1, &quot;123456&quot;); //123456\0放在常量区，编译器可能会将它与p3所指向的&quot;123456&quot; 优化成一个地方。
-
-            cout &lt;&lt; (m == p3 ? 1:0) &lt;&lt; endl; // out 1,
-            cout &lt;&lt; (p1 == p3? 1:0) &lt;&lt; endl; // out 0;
-            cout &lt;&lt; p1 &lt;&lt; &quot;———&quot; &lt;&lt; p3 &lt;&lt; endl; // out 123456---123456
-
-            return 0;
-    }
+    int _tmain(int argc, _TCHAR* argv[]) {
 </code></pre>
+
+<p>int b; //栈
+                char s[] = &laquo;abc&raquo;; //s在栈上， 常量区会存储一份&raquo;abc\0&raquo;，用于共享，s[]初始化的时候拷贝过来放到栈上
+                char *p2; //栈
+                char *p3 = &laquo;123456&raquo;; //123456\0在常量区，p3在栈上。
+                const char *m = &laquo;123456&raquo;; //m在栈上， “123456” 在常量区
+                static int c =0; //全局（静态）初始化区
+                p1 = (char *)malloc(10);
+                p2 = (char *)malloc(20);
+                //分配得来得10和20字节的区域就在堆区。
+                strcpy(p1, &laquo;123456&raquo;); //123456\0放在常量区，编译器可能会将它与p3所指向的&raquo;123456&raquo; 优化成一个地方。</p>
+
+<pre><code>            cout &lt;&lt; (m == p3 ? 1: 0) &lt;&lt; endl;
+</code></pre>
+
+<p>// out 1,
+                cout &lt;&lt; (p1 == p3? 1: 0) &lt;&lt; endl;
+// out 0;
+                cout &lt;&lt; p1 &lt;&lt; &laquo;———&raquo; &lt;&lt; p3 &lt;&lt; endl; // out 123456&mdash;123456</p>
+
+<pre><code>            return 0;
+</code></pre>
+
+<p>}</p>
 
 <p>//&mdash;</p>
 
-<pre><code>    char *strA(){
-            char str[] = &quot;hello world&quot;;
-            cout &lt;&lt; &quot;in str[] &quot;&lt;&lt;endl;
-            cout &lt;&lt; &quot;before: &quot;&lt;&lt; str &lt;&lt; endl;
-            str[0] = 't';
-            cout &lt;&lt;&quot;After:&quot; &lt;&lt; str &lt;&lt; endl;
-            return str;
-    }
-    char *pStrA_err(){
-            char *str = &quot;hello world&quot;;
-            cout &lt;&lt; &quot;in *str &quot;&lt;&lt;endl;
-            cout &lt;&lt; &quot;before: &quot;&lt;&lt; str &lt;&lt; endl;
-            //*str = 'P'; // !!!!!!------runtime error 字符串常量保存在只读数据段
-            cout &lt;&lt;&quot;After:&quot; &lt;&lt; str &lt;&lt; endl;
-            return str;
-    }
-    char *pStrA(){
-            static char *str = &quot;hello world&quot;;
-            cout &lt;&lt; &quot;in *str &quot;&lt;&lt;endl;
-            cout &lt;&lt; &quot;before: &quot;&lt;&lt; str &lt;&lt; endl;
-            //*str = 'P'; // !!!!!!------runtime error  ,字符串常量保存在只读数据段
-            cout &lt;&lt;&quot;After:&quot; &lt;&lt; str &lt;&lt; endl;
-            return str;
-    }
+<pre><code>    char *strA() {
 </code></pre>
+
+<p>char str[] = &laquo;hello world&raquo;;
+                cout &lt;&lt; &laquo;in str[] &laquo;&lt;&lt;endl;
+                cout &lt;&lt; &laquo;before: &laquo;&lt;&lt; str &lt;&lt; endl;
+                str[0] = &rsquo;t&rsquo;;
+                cout &lt;&lt;&laquo;After:&raquo; &lt;&lt; str &lt;&lt; endl;
+                return str;
+}</p>
+
+<p>char *pStrA_err() {
+char *str = &laquo;hello world&raquo;;
+                cout &lt;&lt; &laquo;in *str &laquo;&lt;&lt;endl;
+                cout &lt;&lt; &laquo;before: &laquo;&lt;&lt; str &lt;&lt; endl;
+                //*str = &lsquo;P&rsquo;; // !!!!!!&mdash;&mdash;runtime error 字符串常量保存在只读数据段
+                cout &lt;&lt;&laquo;After:&raquo; &lt;&lt; str &lt;&lt; endl;
+                return str;
+        }
+        char *pStrA(){
+                static char *str = &laquo;hello world&raquo;;
+                cout &lt;&lt; &laquo;in *str &laquo;&lt;&lt;endl;
+                cout &lt;&lt; &laquo;before: &laquo;&lt;&lt; str &lt;&lt; endl;
+                //*str = &lsquo;P&rsquo;; // !!!!!!&mdash;&mdash;runtime error  ,字符串常量保存在只读数据段
+                cout &lt;&lt;&laquo;After:&raquo; &lt;&lt; str &lt;&lt; endl;
+                return str;
+        }</p>
 
 <p>main:</p>
 
@@ -391,7 +408,7 @@
 &gt; - 字符串数据保存在常量区，只读的数据段，不能直接修改
 &gt; - 函数内数组是局部变量，在函数内通过str[0] 可以修改。return之后，局部变量释放，</p>
 
-<h2 id="构造函数">构造函数</h2>
+<h3 id="构造函数">构造函数</h3>
 
 <pre><code>    class tA{
     public:
@@ -428,7 +445,7 @@
 <p>在构造B类之前，先调用A的构造函数</p>
 </blockquote>
 
-<h2 id="malloc-free-new-delete">malloc/free ＆＆new/delete</h2>
+<h3 id="malloc-free-new-delete">malloc/free ＆＆new/delete</h3>
 
 <ul>
 <li>malloc/free 是c++/c语言的标准库函数，new/delete是c++的运算符，它们都可以用于申请和释放动态内存</li>
@@ -436,7 +453,7 @@
 <li>c++语言中new运算符， 能完成动态内存分配和初始化工作； delete 运算符完成清理和释放内存工作</li>
 </ul>
 
-<h2 id="指针和句柄">指针和句柄</h2>
+<h3 id="指针和句柄">指针和句柄</h3>
 
 <ul>
 <li>句柄和指针其实是两个截然不同的概念。</li>
@@ -445,7 +462,7 @@
 <li>句柄可以看做是指向指针的指针。</li>
 </ul>
 
-<h2 id="this-指针">this 指针</h2>
+<h3 id="this-指针">this 指针</h3>
 
 <ul>
 <li>本质上是一个函数参数，只是编译器隐藏起形式，语法层面的参数，this指针只能在成员函数中使用，全局函数，静态函数都不能使用this指针。 在python中直接显性给出</li>
@@ -538,7 +555,7 @@
   
   &copy; 2017 Well.
 
-
+ &nbsp; &nbsp;
 </div>
 
 

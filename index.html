@@ -41,7 +41,6 @@
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-
 <link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://tmhm.github.io/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://tmhm.github.io/css/style.css">
@@ -60,6 +59,8 @@
 
 	</script>
 
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
 </head>
 <body>
   <main id="main-wrapper" class="container main_wrapper has-sidebar">
@@ -150,17 +151,28 @@
     <h1>Well
 </h1>
 
-    <span>last update: <time datetime="2017-02-19T19:54:02-08:00">19 February at 7:54pm</time>
+    <div class="metas">
+<span>last update: <time datetime="2017-02-19T19:54:02-08:00">19 February at 7:54pm</time>
 </span>
+&nbsp;&nbsp;
+
+<span id="busuanzi_container_site_pv">
+    Pv:<span id="busuanzi_value_site_pv"></span>次
+</span>
+&nbsp;
+<span id="busuanzi_container_site_uv">
+  Uv:<span id="busuanzi_value_site_uv"></span>次
+</span>
+</div>
 
   </header>
   
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2017/02/13/win10%E7%A6%81%E7%94%A8%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E6%9C%8D%E5%8A%A1/">win10禁用自动更新服务
+  <h3><a href="https://tmhm.github.io/2017/02/13/win10%E7%A6%81%E7%94%A8%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E6%9C%8D%E5%8A%A1/">win10禁用自动更新服务
 </a>
-</h2>
+</h3>
 
   <time datetime="2017-02-13">13 Feb, 2017</time>
 
@@ -169,7 +181,7 @@
   <p class="container content">
   
   
-     win10禁用自动更新服务  按Win+R，打开运行，输入“services.msc&raquo;打开服务； 找到“Windows Update”，选择属性，修改为禁用即可； 开启，反之亦然.  
+     
   
 
 
@@ -187,9 +199,9 @@
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2017/02/08/%E5%9F%BA%E4%BA%8Edrl%E5%92%8Ctorcs%E7%9A%84%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E4%BB%BF%E7%9C%9F%E7%B3%BB%E7%BB%9F%E4%B9%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">基于DRL和TORCS的自动驾驶仿真系统——之环境配置
+  <h3><a href="https://tmhm.github.io/2017/02/08/%E5%9F%BA%E4%BA%8Edrl%E5%92%8Ctorcs%E7%9A%84%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E4%BB%BF%E7%9C%9F%E7%B3%BB%E7%BB%9F%E4%B9%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">基于DRL和TORCS的自动驾驶仿真系统——之环境配置
 </a>
-</h2>
+</h3>
 
   <time datetime="2017-02-08">8 Feb, 2017</time>
 
@@ -216,9 +228,9 @@
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/12/25/logging-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/">logging 的配置和使用
+  <h3><a href="https://tmhm.github.io/2016/12/25/logging-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/">logging 的配置和使用
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-12-25">25 Dec, 2016</time>
 
@@ -227,9 +239,7 @@
   <p class="container content">
   
   
-    logging 的配置和使用 reference :
- logging cookbook logging HOWTO  测试源码，example
- import logging nt = 'xwei' # logging.basicConfig(filename='log/log_test.log', # format='%(asctime)s, %(levelname)s:%(message)s', datefmt='%m/%d/%Y %I:%M:%S %p', # filemode='w', level=logging.INFO) # set up logging to file - see previous section for more details # w ,new file logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s', datefmt='%m/%d/%Y %H:%M:%S %p', filename='log/log_test.log', filemode='w') # define a Handler which writes INFO messages or higher to the sys.stderr console = logging.
+     
   
 
 
@@ -247,9 +257,9 @@
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/12/23/matplotlib-y%E8%BD%B4%E6%A0%87%E6%B3%A8%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8%E4%BB%A5%E5%8F%8Asubplot%E8%B0%83%E6%95%B4%E7%9A%84%E9%97%AE%E9%A2%98/">matplotlib y轴标注显示不全以及subplot调整的问题
+  <h3><a href="https://tmhm.github.io/2016/12/23/matplotlib-y%E8%BD%B4%E6%A0%87%E6%B3%A8%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8%E4%BB%A5%E5%8F%8Asubplot%E8%B0%83%E6%95%B4%E7%9A%84%E9%97%AE%E9%A2%98/">matplotlib y轴标注显示不全以及subplot调整的问题
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-12-23">23 Dec, 2016</time>
 
@@ -258,12 +268,7 @@
   <p class="container content">
   
   
-    #matplotlib y轴标注显示不全以及subplot调整的问题
-问题： 我想在y轴显示的标注太长，想把它变成两行显示，发现生成的图形只显示的第二行的字，把第一行的字挤出去了
-想要的是显示两行这样子的 现实却是这样子 ###主要相关的api有： - plt.subplots_adjust - set_ylabel - plt.text
-解决思路 来自matplotlib的官网,以及图示
- 当出现右边显示不全的时候，第一感觉是：应该可以通过set_ylabel 来设置y轴标注的位置和大小，发现set_ylabel只能设置labelpad ，没有位置的参数； 然后找到了可以用text设置标注字体的位置和方向，但是要多次定位，尝试，发现不方便； 那么想到的是应该可以设置plot的位置吧，用ax1.plot?找了下，也没看到，不爽； 在show的图形界面发现一个移动的按钮 移动left亦可以显示出y轴的标注了，那么我应该只需要在程序中设置一下left的参数既可以了吧，在上面[matplotlib的example]()中，找到了我想要的subplots_adjust 即有了下面的源代码，满足设置要求。  源代码如下：
- import matplotlib.pyplot as plt import numpy as np from numpy import abs size=[5,10,20,30,50,100] avg=[-0.2896,0.073865632,0.034858287,-0.092241705,-0.022924236,0.016541661] avr=[0.032,0.077757872,0.090351641,0.036522663,0.034413038,0.096587464] fig = plt.figure() ax1 = fig.add_subplot(211) lns1 = ax1.plot(size, trackPos_avg,color='blue',label='error average',linestyle='-',linewidth=1.9) ax1.set_ylabel('deviation from\ncentral line ($m$)',fontsize=18, labelpad = 0.5) plt.xticks(fontsize = 17)#对坐标的值数值，大小限制 plt.yticks(fontsize = 17) ax2 = fig.add_subplot(212) ax2.
+     
   
 
 
@@ -281,9 +286,9 @@
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/12/02/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E4%B9%8B%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E6%91%84%E5%83%8F%E5%A4%B4%E4%B8%BB%E8%A6%81from-%E9%80%9F%E8%85%BEceo-%E9%82%B1%E7%BA%AF%E9%91%AB%E5%88%86%E4%BA%AB/">无人驾驶之激光雷达&amp;摄像头（主要from 速腾CEO 邱纯鑫分享）
+  <h3><a href="https://tmhm.github.io/2016/12/02/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E4%B9%8B%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E6%91%84%E5%83%8F%E5%A4%B4%E4%B8%BB%E8%A6%81from-%E9%80%9F%E8%85%BEceo-%E9%82%B1%E7%BA%AF%E9%91%AB%E5%88%86%E4%BA%AB/">无人驾驶之激光雷达&amp;摄像头（主要from 速腾CEO 邱纯鑫分享）
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-12-02">2 Dec, 2016</time>
 
@@ -292,30 +297,7 @@
   <p class="container content">
   
   
-    无人驾驶之激光雷达&amp;摄像头  （from 速腾CEO 邱纯鑫公开课分享）
- 根据听的一些讲座和看的书籍，个人感觉：目前现在的自动驾驶，根本问题还是在于感知（路况，周边物体，交通标识等等)，控制的方法论问题并没有根本性的改变。
-激光雷达与摄像头性能对比 摄像头的优点是成本低廉，技术上相对比较成熟。
-摄像头的劣势，第一，获取准确三维信息非常难（单目摄像头几乎不可能，也有人提出双目或三目摄像头去做）；另一个缺点是受环境光限制比较大。
-激光雷达的优点在于，其探测距离较远，而且能够准确获取物体的三维信息；
-另外它的稳定性相当高，鲁棒性好。但重要的缺点是，目前激光雷达成本较高，而且产品的最终形态也还未确定。百度车上顶的一个就50W+。
-就两种传感器应用特点来讲，摄像头和激光雷达摄像头都可用于进行车道线检测。除此之外，激光雷达还可用于路牙检测。对于车牌识别以及道路两边，比如限速牌和红绿灯的识别，主要还是用摄像头来完成。如果对障碍物的识别，摄像头可以很容易通过深度学习把障碍物进行细致分类。但对激光雷达而言，它对障碍物只能分一些大类，但对物体运动状态的判断主要靠激光雷达完成。
-从这里来看，激光雷达主要还是提供动态性能，但是，激光雷达对于信号的连续性又缺乏支持，需要摄像头来标定前后帧。
-激光雷达和摄像头分别完成什么工作？ 无人驾驶过程中，环境感知信息主要有：
-一是行驶路径上的感知，对于结构化道路可能要感知的是行车线，就是我们所说的车道线以及道路的边缘、道路隔离物以及恶劣路况的识别；对非结构道路而言，其实会更加复杂。
-周边物体感知，就是可能影响车辆通行性、安全性的静态物体和动态物体的识别，包括车辆，行人以及交通标志的识别，包括红绿灯识别和限速牌识别。
-对于环境感知所需要的传感器，我们把它分成三类：  感知周围物体的传感器，包括激光雷达、摄像头和毫米波雷达这三类； 实现无人驾驶汽车定位的传感器，就是 GPS 、IMU 和 Encoder； 其他传感器，指的是感知天气情况及温、湿度的传感器。  感觉，跟移动机器人并没有本质上的区别。
-车道线检测： 图像一般实际处理的是灰度图像，没用到彩色的作用，
-车道线，特征提取，图像增强，二值化，变成黑白，然后做边缘提取，
-直线拟合
-###无人驾驶环境感知中摄像头的用处： 车道线检测，障碍物检测，交通标识识别
-###无人驾驶环境感知中激光雷达的用处：
- 1.路沿检测，包括车道线 2.障碍物识别，对静态物体和动态物体的识别 3.定位以及地图构建  路沿检测大致分三个步骤：  拿到原始点云， 地面店检测、提取路沿点 通过路沿点的直线拟合，可以把路沿检测出来  障碍物的检测，大致包括：  获取三维点云数据后，对障碍物进行聚类 聚类后，提取三维物体信息（最难） 获取到新物体之后，把这个物体放到训练集里面，然后用SVM分类器把物体时别出来。（看来svm还是经典中的稳定战斗机），此处，选择特征也非常重要吧，对于每一个物体，可能包括它的反射强度，横纵向的宽度，以及位置姿态。（速腾的方法）  辅助定位： 利用激光雷达进行辅助定位。定位理论有两种：基于已知地图的定位方法以及基于未知地图的定位方法。
-基于已知地图定位方法，顾名思义，就是事先获取无人驾驶车的工作环境地图（高精度地图），然后根据高精度地图结合激光雷达及其它传感器通过无人驾驶定位算法获得准确的位置估计。现在大家普遍采用的是基于已知地图的定位方法。
-制作高精度地图也是一件非常困难的事情。举个例子，探月车在月球上，原来不知道月球的地图，只能靠机器人在月球上边走边定位，然后感知环境，相当于在过程中既完成了定位又完成了制图，也就是我们在业界所说的 SLAM 技术。（Google 开源的slam 值得研究下）
-激光雷达是获取高精度地图非常重要的传感器。通过 GPS、IMU 和 Encoder 对汽车做一个初步位置的估计，然后再结合激光雷达和高精度地图，通过无人驾驶定位算法最终得到汽车的位置信息。
-高精地图可分为基础层、道路信息层、周围环境信息层和其他信息层。
-比如基础层，有车道的宽度、坡度、倾斜角、航向、高程、车道线信息、人行道和隔离带等等。之后还有信息层，相当于告诉每一个道路上限速的标记、红绿灯标记，还有一个就是环境信息层，相当于周围建筑物的三维模型。其他信息层，比如说天气信息、施工信息等等，天气信息非常重要，它提供一个场景信息，比如说天气非常恶劣的时候，比如下雨天，如果高精度地图能提供天气信息，或者无人驾驶汽车车身所携带的传感器，能够感知到下雨信息，这时非常有利于指导无人驾驶汽车做一些决策。
-现在对高精度地图的定义，不同地图厂家有不同定义的方式。做高精度地图是为了辅助无人驾驶，所谓高精度地图就是相比之前的导航地图，前者精确度更高，可以达到厘米级；另一个就是高精度地图包含更多的信息量，比如说车道的宽度、倾斜度等信息。
+     
   
 
 
@@ -333,9 +315,9 @@
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/11/30/%E8%AF%BB%E5%BE%AE%E8%BD%AF%E7%9A%84%E6%A2%A6%E5%B7%A5%E5%8E%82/">读《微软的梦工厂》
+  <h3><a href="https://tmhm.github.io/2016/11/30/%E8%AF%BB%E5%BE%AE%E8%BD%AF%E7%9A%84%E6%A2%A6%E5%B7%A5%E5%8E%82/">读《微软的梦工厂》
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-11-30">30 Nov, 2016</time>
 
@@ -344,17 +326,7 @@
   <p class="container content">
   
   
-    前段时间看了扎克伯格和李叔同的传记，最近在看《微软的梦工厂》。
-看的过程总是会让我想起一些人，想起一些事情。。。
-文字在我的嘴里总是略带苦涩：
-也许这就是环境的影响，MSRA从一开始，就塑造了一个优秀的环境。
-&nbsp;
-同时也让我看到自己的渺小，其实曾经我总是会把自己看成&ldquo;全能&rdquo;的，一直活在自己的小世界里，突然不断地让我接触了越来越大的世界，这也是我总是爱多想的次因。
-&nbsp;
-还有原因是，不愿接受过去的自己，不愿接受依次放大的阶梯，其实我也是在不断成长中，知足，
-沉淀，时间需要沉淀，成长更需要沉淀。
-我总是希望急于求成，希望一下就能学会所有，做到所有，
-做人得符合实际，不急不躁，踏实。
+     
   
 
 
@@ -372,9 +344,9 @@
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/11/30/gpu%E9%A9%B1%E5%8A%A8%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/">GPU驱动兼容性问题
+  <h3><a href="https://tmhm.github.io/2016/11/30/gpu%E9%A9%B1%E5%8A%A8%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/">GPU驱动兼容性问题
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-11-30">30 Nov, 2016</time>
 
@@ -383,10 +355,7 @@
   <p class="container content">
   
   
-    #　GPU驱动兼容性问题
-问题描述： 将笔记本的GTX860M 的驱动升级到了376.09版本，出现登陆界面，输入密码后黑屏。
-解决思路：
- 由于正常显示登陆窗口，且可以输入密码，基本排除硬件问题和集成显卡的问题， 问题应该是出在独立显卡上， 用U盘启动一个ubuntu系统（u盘内有一个ubuntu系统），使用正常，再次说明硬件没问题。 重启多次，输入密码后偶尔有一次可以进入。进入系统后，插入U盘，有弹窗的程序可以打开，并且可以播放U盘中的ppt。 此问题与安转ubuntu14.04在GPU服务器上的时候类似，输入登陆密码，反复出现登陆界面，进不了系统，类似。当时就是由于GPU显卡不兼容的原因。 在一次进入系统后，下载了driver 359.12版本。安装后，重启即可以正常进入系统。  完毕。
+    *问题描述：*
   
 
 
@@ -404,9 +373,9 @@
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/11/25/shadowsocks-%E5%9C%A8win10%E4%B8%8B%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/">shadowsocks 在win10下无法使用的问题
+  <h3><a href="https://tmhm.github.io/2016/11/25/shadowsocks-%E5%9C%A8win10%E4%B8%8B%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/">shadowsocks 在win10下无法使用的问题
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-11-25">25 Nov, 2016</time>
 
@@ -415,9 +384,7 @@
   <p class="container content">
   
   
-    shadowsocks 在win10下无法使用的问题 问题描述：
- 按照帮助中心的配置设置好之后. 启用代理,显示了start，但是就是不能上google，卸载了迅雷也是没用。 在mac下能正常使用。  解决问题：
- 问题在于本地的端口有问题，将默认的1080端口修改为1081， 即可以打开google，youtobe  有时是3.3.5不能用，换会用低版本2.5.8的即可以
+     
   
 
 
@@ -435,9 +402,9 @@
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/11/21/dl%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%BB%E6%9C%BA%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AEubuntu14.04&#43;gtx1080&#43;cuda8.0%E8%A7%A3%E5%86%B3%E6%A1%8C%E9%9D%A2%E9%87%8D%E5%A4%8D%E7%99%BB%E5%BD%95/">DL服务器主机环境配置(ubuntu14.04&#43;GTX1080&#43;cuda8.0)解决桌面重复登录
+  <h3><a href="https://tmhm.github.io/2016/11/21/dl%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%BB%E6%9C%BA%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-ubuntu14.04---gtx1080--cuda8.0-%E8%A7%A3%E5%86%B3%E6%A1%8C%E9%9D%A2%E9%87%8D%E5%A4%8D%E7%99%BB%E5%BD%95/">DL服务器主机环境配置 ubuntu14.04 &amp;&amp;  GTX1080 &amp;&amp; Cuda8.0 解决桌面重复登录
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-11-21">21 Nov, 2016</time>
 
@@ -446,20 +413,7 @@
   <p class="container content">
   
   
-    DL服务器主机环境配置(ubuntu14.04+GTX1080+cuda8.0)解决桌面重复登录 前面部分是自己的记录，后面方案部分是成功安装驱动+桌面的正解
-问题的开始在于：登录不了桌面，停留在重复输入密码界面
-博文中分析的结论： 虚拟机中不能直接调用物理显卡进行 CUDA 编程；虚拟机中运行 CUDA 需要硬件和软件的配合才能使用，对于一般使用者可能暂时不太可能的。
-参考博文：
-深度学习主机环境配置: Ubuntu16.04+Nvidia GTX 1080+CUDA8.0
-深度学习主机环境配置: Ubuntu16.04+GeForce GTX 1080+TensorFlow
-ubuntu14.04+cuda8.0（GTX1080）+caffe安装
-如何搭建一台深度学习服务器
-Ctrl+alt+F1进入字符界面，关闭图形界面
- sudo service lightdm stop //必须有，不然会安装失败 sudo /etc/init.d/lightdm stop //一样的命令 sudo chmod 755 NVIDIA-Linux-x86_64-367.27.run //获取权限 sudo ./NVIDIA-Linux-x86_64-367.27.run //安装驱动  Accept Continue installation 安装完成之后
- sudo service lightdm start  图形界面出现，然后关机，由让人重复输入密码，登录不了
-博主说
- $ sudo /etc/init.d/gdm stop $ sudo nvidia-installer --update $ sudo /etc/init.d/gdm start  升级到375版本， 还是没用，启动进入不了桌面，重复登录
-Install driver 367 Uninstall previous nvidia drivers.
+    前面部分是自己的记录，后面方案部分是成功安装驱动&#43;桌面的正解
   
 
 
@@ -467,7 +421,7 @@ Install driver 367 Uninstall previous nvidia drivers.
 
 
   <div class="container readlink">
-  <a href="https://tmhm.github.io/2016/11/21/dl%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%BB%E6%9C%BA%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AEubuntu14.04&#43;gtx1080&#43;cuda8.0%E8%A7%A3%E5%86%B3%E6%A1%8C%E9%9D%A2%E9%87%8D%E5%A4%8D%E7%99%BB%E5%BD%95/">Read more &rarr;</a>
+  <a href="https://tmhm.github.io/2016/11/21/dl%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%BB%E6%9C%BA%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-ubuntu14.04---gtx1080--cuda8.0-%E8%A7%A3%E5%86%B3%E6%A1%8C%E9%9D%A2%E9%87%8D%E5%A4%8D%E7%99%BB%E5%BD%95/">Read more &rarr;</a>
 
 </div>
 
@@ -477,9 +431,9 @@ Install driver 367 Uninstall previous nvidia drivers.
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/11/21/dl%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%BB%E6%9C%BA%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AEubuntu14.04&#43;gtx1080&#43;cuda8.0/">DL服务器主机环境配置(ubuntu14.04&#43;GTX1080&#43;cuda8.0)
+  <h3><a href="https://tmhm.github.io/2016/11/21/gpu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E4%B8%AD%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80note/">GPU 服务器环境安装中一些基础note
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-11-21">21 Nov, 2016</time>
 
@@ -488,54 +442,7 @@ Install driver 367 Uninstall previous nvidia drivers.
   <p class="container content">
   
   
-    DL服务器主机环境配置(ubuntu14.04+GTX1080+cuda8.0)
-博文中分析的结论： 虚拟机中不能直接调用物理显卡进行 CUDA 编程；虚拟机中运行 CUDA 需要硬件和软件的配合才能使用，对于一般使用者可能暂时不太可能的。
-参考博文：
-深度学习主机环境配置: Ubuntu16.04+Nvidia GTX 1080+CUDA8.0
-深度学习主机环境配置: Ubuntu16.04+GeForce GTX 1080+TensorFlow
-ubuntu14.04+cuda8.0（GTX1080）+caffe安装
-如何搭建一台深度学习服务器
-  
-
-
-</p>
-
-
-  <div class="container readlink">
-  <a href="https://tmhm.github.io/2016/11/21/dl%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%BB%E6%9C%BA%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AEubuntu14.04&#43;gtx1080&#43;cuda8.0/">Read more &rarr;</a>
-
-</div>
-
-
-</article>
-
-  
-    <article class="container content summary">
-  <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/11/21/gpu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E4%B8%AD%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80note/">GPU 服务器环境安装中一些基础note
-</a>
-</h2>
-
-  <time datetime="2016-11-21">21 Nov, 2016</time>
-
-</div>
-
-  <p class="container content">
-  
-  
-    GPU 服务器环境安装中一些基础note ##GPU 服务器：
-添加组，用户，并为之新建主目录。
- c302@c302-dl:~$ sudo addgroup testgroup Adding group `testgroup' (GID 1001) ... Done. c302@c302-dl:~$ sudo useradd testuser -g testgroup -m  新建密码
- passwd testuser  安装anaconda环境 官网下载之，https://www.continuum.io/downloads
-安装，修改环境变量
-export PATH=/home/c302/anaconda2/bin:$PATH
-Ubuntu Linux系统环境变量配置文件：  /etc/profile : 在登录时,操作系统定制用户环境时使用的第一个文件 ,此文件为系统的每个用户设置环境信息,当用户第一次登录时,该文件被执行。
-/etc /environment : 在登录时操作系统使用的第二个文件, 系统在读取你自己的profile前,设置环境文件的环境变量。
-~/.profile : 在登录时用到的第三个文件 是.profile文件,每个用户都可使用该文件输入专用于自己使用的shell信息,当用户登录时,该文件仅仅执行一次!默认情况下,他设置一些环境变量,执行用户的.bashrc文件。
-/etc/bashrc : 为每一个运行bash shell的用户执行此文件.当bash shell被打开时,该文件被读取.
-~/.bashrc : 该文件包含专用于你的bash shell的bash信息,当登录时以及每次打开新的shell时,该该文件被读取。
- 修改~/.profile 文件，添加export PATH=/home/c302/anaconda2/bin:$PATH
-安装pybrain 0.33  pip install pybrain  pip安装的是0.
+     
   
 
 
@@ -553,9 +460,9 @@ Ubuntu Linux系统环境变量配置文件：  /etc/profile : 在登录时,操�
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/11/18/%E8%AF%AD%E5%BD%95%E6%94%B6%E9%9B%86/">语录收集
+  <h3><a href="https://tmhm.github.io/2016/11/18/%E8%AF%AD%E5%BD%95%E6%94%B6%E9%9B%86/">语录收集
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-11-18">18 Nov, 2016</time>
 
@@ -564,14 +471,7 @@ Ubuntu Linux系统环境变量配置文件：  /etc/profile : 在登录时,操�
   <p class="container content">
   
   
-    一些有趣的语录 马化腾，第三次互联网大会 &gt; 创新一定是所有公司都重视的，一定要有突破。腾讯过去再有优势，但在新趋势面前也有压力，微信之后，我们也在思考，未来三年还能做什么？回头看，创新不是搞一个部门，名字叫创新。而是把为用户服务的意识灌输到每一个产品和设计上，不要让员工掉入KPI陷阱。在快速服务用户过程中，用户抱怨，那就是你创新的机会。
-真格基金 王强老师推荐的三本书
-沃尔玛的创始人Sam Walton的自传《Made in America》
-If Aristotle Ran General Motors《如果亚里士多德来管理通用汽车》
-真，善，美
-PourYour Heart Into It: How Starbucks Built a Company One Cup at aTime 《将心注入-星巴克传奇》
-星巴克创始人霍华德·舒尔茨（Howard Schultz）的自传。
-Pour your heart into a cup of coffee。“把心倾注进一杯小小的咖啡里”。成功之树的全部秘诀正是在这颗初心的种子里。
+     
   
 
 
@@ -589,9 +489,9 @@ Pour your heart into a cup of coffee。“把心倾注进一杯小小的咖啡�
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/11/02/macdown%E5%9C%A8mac-os-%E4%B8%AD%E7%9A%84%E9%85%8D%E7%BD%AE/">macdown在mac OS 中的配置
+  <h3><a href="https://tmhm.github.io/2016/11/02/macdown%E5%9C%A8mac-os-%E4%B8%AD%E7%9A%84%E9%85%8D%E7%BD%AE/">macdown在mac OS 中的配置
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-11-02">2 Nov, 2016</time>
 
@@ -600,8 +500,7 @@ Pour your heart into a cup of coffee。“把心倾注进一杯小小的咖啡�
   <p class="container content">
   
   
-     macdown 用命令行打开.md文件 执行两条命令即可。
-sudo echo &quot;open -a MacDown \$*&quot; &gt; /usr/local/bin/macdown sudo chmod +x /usr/local/bin/macdown  设置文件默认打开方式  选定文件 右击，选择显示简介 选择打开方式子选项 选择默认打开的程序，并设置全部更改。  
+     
   
 
 
@@ -619,9 +518,9 @@ sudo echo &quot;open -a MacDown \$*&quot; &gt; /usr/local/bin/macdown sudo chmod
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/10/31/%E7%94%9F%E6%88%90.eps%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/">生成.eps文件方法
+  <h3><a href="https://tmhm.github.io/2016/10/31/%E7%94%9F%E6%88%90.eps%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/">生成.eps文件方法
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-10-31">31 Oct, 2016</time>
 
@@ -630,17 +529,7 @@ sudo echo &quot;open -a MacDown \$*&quot; &gt; /usr/local/bin/macdown sudo chmod
   <p class="container content">
   
   
-    生成.eps文件方法  背景： 要写论文了，图像的分辨率是一大痛点
- 方法一： 两步生成.eps文件
- 用visio 制作图形，保存为pdf格式；
- 直接用adobe acrobat 打开pdf，然后保存为.eps 格式即可。
-  方法二：  参考：Save A Matplotlib Plot As A Vector
- 可以用python直接生成.eps文件
-plt.savefig(&laquo;./plteps.eps&raquo;, format=&lsquo;eps&rsquo;, dpi=1000)
- 有网友说，需要安装 Ghostscript,
-亲测，不需要
- eg.
- import matplotlib.pyplot as plt from math import sin i = [x for x in xrange(-10,10,1)] j = [x**2 for x in i] plt.plot(i, j, linewidth=2.0, color='r') # plt.show() plt.savefig('./plteps.eps', format='eps', dpi=1000)  不能打开plt.
+     
   
 
 
@@ -658,47 +547,9 @@ plt.savefig(&laquo;./plteps.eps&raquo;, format=&lsquo;eps&rsquo;, dpi=1000)
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/10/27/%E6%95%B0%E5%AD%A6%E9%9A%8F%E8%AE%B0%E8%BD%AC%E8%BD%BD/">数学随记[转载]
+  <h3><a href="https://tmhm.github.io/2016/10/26/%E7%94%A8keras-%E5%92%8C-ddpg-play-torcs1/">用Keras 和 DDPG play TORCS（1）
 </a>
-</h2>
-
-  <time datetime="2016-10-27">27 Oct, 2016</time>
-
-</div>
-
-  <p class="container content">
-  
-  
-    数学随记 转载自：随记：我们需要怎样的数学教育？
-虚数i 虚数是什么？
-为什么要承认虚数？
-虚数怎么就表示旋转了？
-其实，人们建立复数理论，并不是因为人们有时需要处理根号里是负数的情况，而是因为下面这个不可抗拒的理由：如果承认虚数，那么 n 次多项式就会有恰好 n 个根，数系一下子就如同水晶球一般的完美了。
-但复数并不能形象地反映在数轴上，这不仅是因为实数在数轴上已经完备了，还有另外一个原因：没有什么几何操作连做两次就能实现取相反数。比如，“乘以 3”就代表数轴上的点离原点的距离扩大到原来的三倍，“3 的平方”，也就是“乘以 3 再乘以 3”，就是把上述操作连做两次，即扩大到 9 倍。同样地，“乘以 -1”表示把点翻折到数轴另一侧，“-1 的平方”就会把这个点又翻回来。
-但是，怎么在数轴上表示“乘以 i ”的操作？换句话说，什么操作连做两次能够把 1 变成 -1 ？一个颇具革命性的创意答案便是，把这个点绕着原点旋转 90 度。转 90 度转两次，自然就跑到数轴的另一侧了。
-没错，这就把数轴扩展到了整个平面，正好解决了复数没地方表示的问题。于是，复数的乘法可以解释为缩放加旋转，复数本身自然也就有了 z = r (cosθ + sinθi) 的表示方式。顺着这个道理推下去，一切都顺理成章了。复数不但有了几何解释，有时还能更便捷地处理几何问题
-线性代数 此处网页，有人一语道破线性代数的真谛。 就好像把 x 变成 2 x 一样，我们经常需要把 (x, y) 变成 (2 x + y, x – 3 y) 之类的东西，这就叫做线性变换。
-于是才想到定义矩阵乘法，用于表示一切线性变换。几何上看，把平面上的每个点 (x, y) 都变到 (2 x + y, x – 3 y) 的位置上去，效果就相当于对这个平面进行了一个“线性的拉扯”。
-  
-
-
-</p>
-
-
-  <div class="container readlink">
-  <a href="https://tmhm.github.io/2016/10/27/%E6%95%B0%E5%AD%A6%E9%9A%8F%E8%AE%B0%E8%BD%AC%E8%BD%BD/">Read more &rarr;</a>
-
-</div>
-
-
-</article>
-
-  
-    <article class="container content summary">
-  <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/10/26/%E7%94%A8keras-%E5%92%8C-ddpg-play-torcs1/">用Keras 和 DDPG play TORCS（1）
-</a>
-</h2>
+</h3>
 
   <time datetime="2016-10-26">26 Oct, 2016</time>
 
@@ -707,13 +558,7 @@ plt.savefig(&laquo;./plteps.eps&raquo;, format=&lsquo;eps&rsquo;, dpi=1000)
   <p class="container content">
   
   
-    用Keras 和 DDPG play TORCS（环境配置篇） 原作者Using Keras and Deep Deterministic Policy Gradient to play TORCS
-配置gym-torcs，参考
- 由于使用的环境是ubuntu 14.04 desktop版，故不需要安装opencv。
-安装一些依赖包：  sudo apt-get install xautomation sudo pip install numpy sudo pip install gym   下载gym_torcs源码  然后将
-gym_torcs/vtorcs-RL-color/src/modules/simu/simuv2/simu.cpp 中第64行替换为 if (isnan((float)(car-&gt;ctrl-&gt;gear)) || isinf(((float)(car-&gt;ctrl-&gt;gear)))) car-&gt;ctrl-&gt;gear = 0;   即添加两个（float），否则，下一步make的时候会出现error，安转失败
- cd 到 gym_torcs/vtorcs-Rl-color目录，  执行以下命令：
- sudo apt-get install libglib2.0-dev libgl1-mesa-dev libglu1-mesa-dev freeglut3-dev libplib-dev libopenal-dev libalut-dev libxi-dev libxmu-dev libxrender-dev libxrandr-dev libpng12-dev .
+     
   
 
 
@@ -731,9 +576,9 @@ gym_torcs/vtorcs-RL-color/src/modules/simu/simuv2/simu.cpp 中第64行替换为 
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/10/10/%E4%B8%80%E4%BA%9B%E4%B9%A6%E5%8D%95/">一些书单
+  <h3><a href="https://tmhm.github.io/2016/10/10/%E4%B8%80%E4%BA%9B%E4%B9%A6%E5%8D%95/">一些书单
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-10-10">10 Oct, 2016</time>
 
@@ -742,20 +587,7 @@ gym_torcs/vtorcs-RL-color/src/modules/simu/simuv2/simu.cpp 中第64行替换为 
   <p class="container content">
   
   
-    仅对近来的学习做些回顾吧
-学习永无止境--&gt;
-&nbsp;
-2015年已完成书单：
-文学：
- 硅谷之火 浪潮之巅 天才在左疯子在右 从0到1 生命咖啡馆 黑客与画家 奇思妙想：15位计算机天才及其重大发现 乔布斯传 平凡的世界（三部全） 一只iphone的全球旅行  &nbsp;专业类：
- C++ Primer（中文第五版）　匆忙过了一遍，未实现代码。 ios 游戏开发：创意与实现  &nbsp;
-2016年书单：
-文学：
- 历史的教训 硅谷之谜 文明之光 facebook 马克 扎克伯格传记：后乔布斯时代的传奇 弘一大师新传 三体（未完成，过半后，吸引力下降） 微软的梦工厂（一口气读完了） 数学之美（第二版） 富爸爸穷爸爸 人类简史 智能时代（吴军著）  &nbsp;
-专业类：
- C++语言的设计与演化 数据结构与算法分析（C语言描述） &nbsp; &nbsp;缺代码实现 统计学习方法. 李航 控制系统设计指南（第三版） 嵌入式Linux系统使用开发（主要包括完成linux系统，c/c++的回顾，多线程等） 机器学习实践（-ing） 机器学习.周志华（-ing） 算法（第四版）. Robert Sedgewick（-ing，看进去以后，相见恨晚） Reinforcement learning: An&nbsp;induction.&nbsp;Richard S. Sutton（-ing） 无人驾驶车辆模型预测控制.北京理工大学出版社（-ing）（发现战线好长，得收敛到某个方向）  16的专业书籍还有很多在继续。。
-&nbsp;2017年书单：
- Google 未来之镜 创新者的窘境 （-ing） 围城（-ing）  &nbsp;
+     
   
 
 
@@ -764,6 +596,64 @@ gym_torcs/vtorcs-RL-color/src/modules/simu/simuv2/simu.cpp 中第64行替换为 
 
   <div class="container readlink">
   <a href="https://tmhm.github.io/2016/10/10/%E4%B8%80%E4%BA%9B%E4%B9%A6%E5%8D%95/">Read more &rarr;</a>
+
+</div>
+
+
+</article>
+
+  
+    <article class="container content summary">
+  <div class="container hat">
+  <h3><a href="https://tmhm.github.io/2016/09/17/stacks-and-queues--codility/">stacks and queues--codility
+</a>
+</h3>
+
+  <time datetime="2016-09-17">17 Sep, 2016</time>
+
+</div>
+
+  <p class="container content">
+  
+  
+     
+  
+
+
+</p>
+
+
+  <div class="container readlink">
+  <a href="https://tmhm.github.io/2016/09/17/stacks-and-queues--codility/">Read more &rarr;</a>
+
+</div>
+
+
+</article>
+
+  
+    <article class="container content summary">
+  <div class="container hat">
+  <h3><a href="https://tmhm.github.io/2016/09/14/sorting--codility/">sorting--codility
+</a>
+</h3>
+
+  <time datetime="2016-09-14">14 Sep, 2016</time>
+
+</div>
+
+  <p class="container content">
+  
+  
+     
+  
+
+
+</p>
+
+
+  <div class="container readlink">
+  <a href="https://tmhm.github.io/2016/09/14/sorting--codility/">Read more &rarr;</a>
 
 </div>
 
@@ -847,7 +737,7 @@ gym_torcs/vtorcs-RL-color/src/modules/simu/simuv2/simu.cpp 中第64行替换为 
   
   &copy; 2017 Well.
 
-
+ &nbsp; &nbsp;
 </div>
 
 

@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="description" content="" />
+<meta name="description" content=" " />
 
 <meta name="keywords" content="">
 
@@ -24,7 +24,7 @@
 
 
 <meta property="og:type" content="article" />
-<meta property="og:description" content=""/>
+<meta property="og:description" content=" "/>
 <meta property="og:article:published_time" content="2016-03-10T08:36:00Z" />
 <meta property="og:article:modified_time" content="2016-03-10T08:36:00Z" />
 
@@ -35,7 +35,7 @@
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@" />
 <meta name="twitter:title" content="shell学习" />
-<meta name="twitter:description" content="" />
+<meta name="twitter:description" content=" " />
 <meta name="twitter:url" content="https://tmhm.github.io/2016/03/10/shell%E5%AD%A6%E4%B9%A0/" />
 <meta name="twitter:domain" content="https://tmhm.github.io/">
   
@@ -50,8 +50,8 @@
       "name": "http://profiles.google.com/+?rel=author"
     },
     "datePublished": "2016-03-10",
-    "description": "",
-    "wordCount":  201 
+    "description": " ",
+    "wordCount":  168 
   }
 </script>
 
@@ -69,7 +69,6 @@
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-
 <link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://tmhm.github.io/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://tmhm.github.io/css/style.css">
@@ -88,6 +87,8 @@
 
 	</script>
 
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
 </head>
 <body>
   <main id="main-wrapper" class="container main_wrapper has-sidebar">
@@ -181,51 +182,53 @@
 
   
   &middot; Read in about 1 min
-  &middot; (201 Words)
+  &middot; (168 Words)
   <br>
   
 
 
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
 </div>
 
 </header>
 
   <div class="container content">
-  <p><div class="cnblogs_code">&nbsp;</div>
+  
+
 <ul>
-<li><strong>readlink是linux系统中一个常用工具，主要用来找出符号链接所指向的位置。</strong></li>
-<li><strong>定义变量&ldquo;=&rdquo;两边不能有空格，否则会被shell解析错误。</strong></li>
-<li><strong>tee 同时将输出内容显示在屏幕上、记录在文件里</strong></li>
-<li><strong>三种引号&lsquo;&rsquo;，&ldquo;&rdquo;，`<code>。&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;　　rm -rf &amp;lsquo;my document&amp;rsquo; &amp;nbsp;----当命令行里面包含空格时，用单引号包含起来&lt;/li&gt;
-&lt;li&gt;这时也可由用双引号，区别在于双引号的值会被变量的之替换，单引号保持原样。&lt;/li&gt;
-&lt;li&gt;&amp;nbsp;
-&lt;div class=&quot;cnblogs_code&quot;&gt;
-&lt;pre&gt;$ ABC=&lt;span style=&quot;color: #000000;&quot;&gt;hello
-$ echo &lt;/span&gt;&lt;span style=&quot;color: #800000;&quot;&gt;'&lt;/span&gt;&lt;span style=&quot;color: #800000;&quot;&gt;string is ${ABC}&lt;/span&gt;&lt;span style=&quot;color: #800000;&quot;&gt;'&lt;/span&gt;
-&lt;span style=&quot;color: #0000ff;&quot;&gt;string&lt;/span&gt; &lt;span style=&quot;color: #0000ff;&quot;&gt;is&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; ${ABC}
-$ echo &lt;/span&gt;&lt;span style=&quot;color: #800000;&quot;&gt;&quot;&lt;/span&gt;&lt;span style=&quot;color: #800000;&quot;&gt;string is ${ABC}&lt;/span&gt;&lt;span style=&quot;color: #800000;&quot;&gt;&quot;&lt;/span&gt;
-&lt;span style=&quot;color: #0000ff;&quot;&gt;string&lt;/span&gt; &lt;span style=&quot;color: #0000ff;&quot;&gt;is&lt;/span&gt; hello&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;反引号实际上就是命令替换&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;echo</code>uname<code>&amp;nbsp;#等价 echo $(uname)&lt;/li&gt;
-&lt;li&gt;
-&lt;div class=&quot;cnblogs_code&quot;&gt;
-&lt;pre&gt;$ echo</code>uname -<span style="color: #000000;">a`
-Linux ubuntu </span><span style="color: #800080;">3.13</span>.<span style="color: #800080;">0</span>-<span style="color: #800080;">24</span>-generic #<span style="color: #800080;">46</span>-Ubuntu SMP Thu Apr <span style="color: #800080;">10</span> <span style="color: #800080;">19</span>:<span style="color: #800080;">11</span>:<span style="color: #800080;">08</span> UTC <span style="color: #800080;">2014</span> x86_64 x86_64 x86_64 GNU/<span style="color: #000000;">Linux
-$ uname </span>-<span style="color: #000000;">a
-Linux ubuntu </span><span style="color: #800080;">3.13</span>.<span style="color: #800080;">0</span>-<span style="color: #800080;">24</span>-generic #<span style="color: #800080;">46</span>-Ubuntu SMP Thu Apr <span style="color: #800080;">10</span> <span style="color: #800080;">19</span>:<span style="color: #800080;">11</span>:<span style="color: #800080;">08</span> UTC <span style="color: #800080;">2014</span> x86_64 x86_64 x86_64 GNU/Linux</pre>
-</div>
-<p>&nbsp;</p>
-</li>
+<li>readlink是linux系统中一个常用工具，主要用来找出符号链接所指向的位置。</li>
+<li>定义变量“=”两边不能有空格，否则会被shell解析错误。</li>
+<li>tee 同时将输出内容显示在屏幕上、记录在文件里</li>
+
+<li><p>三种引号‘’，“”，``。</p>
+
+<ul>
+<li>rm -rf ‘my document’  &mdash;-当命令行里面包含空格时，用单引号包含起来</li>
+<li>这时也可由用双引号，区别在于双引号的值会被变量的之替换，单引号保持原样。</li>
 </ul>
-</li>
-<li><strong>&nbsp;脚本的执行</strong>
-<ul>
-<li>　
-<div class="cnblogs_code">
+
+<pre><code>$ ABC=hello
+$ echo 'string is ${ABC}'
+string is ${ABC}
+$ echo &quot;string is ${ABC}&quot;
+string is hello
+</code></pre>
+
+<p>反引号实际上就是命令替换</p>
+
+<pre><code>echo `uname`  #等价 echo $(uname)
+$ echo `uname -a`
+Linux ubuntu 3.13.0-24-generic #46-Ubuntu SMP Thu Apr 10 19:11:08 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+$ uname -a
+Linux ubuntu 3.13.0-24-generic #46-Ubuntu SMP Thu Apr 10 19:11:08 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+</code></pre></li>
+</ul>
+
+<h4 id="脚本的执行">脚本的执行</h4>
+
+<p><div class="cnblogs_code">
 <pre><span style="color: #000000;">$ vi test.sh
 $ cat test.sh
 echo </span><span style="color: #800000;">&laquo;</span><span style="color: #800000;"> this is a test</span><span style="color: #800000;">&laquo;</span><span style="color: #000000;"></p>
@@ -333,7 +336,7 @@ $ .</span>/<span style="color: #000000;">test.sh  #在一个子shell中执行命
   
   &copy; 2017 Well.
 
-
+ &nbsp; &nbsp;
 </div>
 
 

@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="description" content="" />
+<meta name="description" content=" " />
 
 <meta name="keywords" content="">
 
@@ -24,7 +24,7 @@
 
 
 <meta property="og:type" content="article" />
-<meta property="og:description" content=""/>
+<meta property="og:description" content=" "/>
 <meta property="og:article:published_time" content="2016-05-17T15:06:00Z" />
 <meta property="og:article:modified_time" content="2016-05-17T15:06:00Z" />
 
@@ -35,7 +35,7 @@
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@" />
 <meta name="twitter:title" content="python一些内建函数(map,zip,filter,reduce,yield等)" />
-<meta name="twitter:description" content="" />
+<meta name="twitter:description" content=" " />
 <meta name="twitter:url" content="https://tmhm.github.io/2016/05/17/python%E4%B8%80%E4%BA%9B%E5%86%85%E5%BB%BA%E5%87%BD%E6%95%B0mapzipfilterreduceyield%E7%AD%89/" />
 <meta name="twitter:domain" content="https://tmhm.github.io/">
   
@@ -50,8 +50,8 @@
       "name": "http://profiles.google.com/+?rel=author"
     },
     "datePublished": "2016-05-17",
-    "description": "",
-    "wordCount":  429 
+    "description": " ",
+    "wordCount":  427 
   }
 </script>
 
@@ -69,7 +69,6 @@
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-
 <link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://tmhm.github.io/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://tmhm.github.io/css/style.css">
@@ -88,6 +87,8 @@
 
 	</script>
 
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
 </head>
 <body>
   <main id="main-wrapper" class="container main_wrapper has-sidebar">
@@ -181,11 +182,14 @@
 
   
   &middot; Read in about 3 min
-  &middot; (429 Words)
+  &middot; (427 Words)
   <br>
   
 
 
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
 </div>
 
 </header>
@@ -193,212 +197,216 @@
   <div class="container content">
   
 
-<p>##python一些内建函数(map,zip,filter,reduce,yield等)</p>
+<h4 id="map函数">map函数</h4>
 
-<p>###map函数
-Python实际上提供了一个内置的工具，map函数。这个函数的主要功能是对一个序列对象中的每一个元素应用被传入的函数，并且返回一个包含了所有函数调用结果的一个列表。</p>
+<p>Python实际上提供了一个内置的工具，map函数。这个函数的主要功能是对一个序列对象中的每一个元素应用被传入的函数，并且返回一个包含了所有函数调用结果的一个列表。</p>
 
 <p>map?</p>
 
-<pre><code>    Docstring:
-    map(function, sequence[, sequence, ...]) -&gt; list
+<pre><code>Docstring:
+map(function, sequence[, sequence, ...]) -&gt; list
 
-    Return a list of the results of applying the function to the items of
-    the argument sequence(s).  If more than one sequence is given, the
-    function is called with an argument list consisting of the corresponding
-    item of each sequence, substituting None for missing values when not all
-    sequences have the same length.  If the function is None, return a list of
-    the items of the sequence (or a list of tuples if more than one sequence).
-    Type:      builtin_function_or_method
+Return a list of the results of applying the function to the items of
+the argument sequence(s).  If more than one sequence is given, the
+function is called with an argument list consisting of the corresponding
+item of each sequence, substituting None for missing values when not all
+sequences have the same length.  If the function is None, return a list of
+the items of the sequence (or a list of tuples if more than one sequence).
+Type:      builtin_function_or_method
 </code></pre>
 
 <p>下面三个例子参考了<a href="http://my.oschina.net/zyzzy/blog/115096">该博文</a>
 ​
 对可迭代函数&rsquo;iterable&rsquo;中的每一个元素应用‘function’方法，将结果作为list返回。</p>
 
-<pre><code>    def add100(x):
-        return x+100
-    hh = [11,22,33]
-    map(add100,hh)
-    Out[2]:
-    [111, 122, 133]
+<pre><code>        def add100(x):
+            return x+100
+        hh = [11,22,33]
+        map(add100,hh)
+        Out[2]:
+        [111, 122, 133]
 </code></pre>
 
 <p>如果给出了额外的可迭代参数，则对每个可迭代参数中的元素‘并行’的应用‘function’。</p>
 
-<pre><code>    def abc(a, b, c):
-        return a*10000 + b*100 + c
-    ​
-    list1 = [11,22,33]
-    list2 = [44,55,66]
-    list3 = [77,88,99]
-    map(abc,list1,list2,list3)
-    Out[3]:
-    [114477, 225588, 336699]
+<pre><code>        def abc(a, b, c):
+            return a*10000 + b*100 + c
+        ​
+        list1 = [11,22,33]
+        list2 = [44,55,66]
+        list3 = [77,88,99]
+        map(abc,list1,list2,list3)
+        Out[3]:
+        [114477, 225588, 336699]
 </code></pre>
 
 <p>如果&rsquo;function&rsquo;给出的是‘None’，自动假定一个‘identity’函数（这个‘identity’不知道怎么解释，看例子吧）</p>
 
-<pre><code>    list1 = [11,22,33]
-    map(None,list1)
-    Out[5]:
-    [11, 22, 33]
+<pre><code>        list1 = [11,22,33]
+        map(None,list1)
+        Out[5]:
+        [11, 22, 33]
 
 
-    list1 = [11,22,33]
-    list2 = [44,55,66]
-    list3 = [77,88,99]
-    map(None,list1,list2,list3)
-    Out[6]:
-    [(11, 44, 77), (22, 55, 88), (33, 66, 99)]
+        list1 = [11,22,33]
+        list2 = [44,55,66]
+        list3 = [77,88,99]
+        map(None,list1,list2,list3)
+        Out[6]:
+        [(11, 44, 77), (22, 55, 88), (33, 66, 99)]
 </code></pre>
 
-<p>###zip函数
-以下参考了<a href="http://www.bkjia.com/Pythonjc/664161.html">博文</a></p>
+<h4 id="zip函数">zip函数</h4>
+
+<p>以下参考了<a href="http://www.bkjia.com/Pythonjc/664161.html">博文</a></p>
 
 <p>函式说明：zip(seq1[,seq2 [&hellip;]])-&gt;[(seq1(0),seq2(0)&hellip;,(&hellip;)]。 同时循环两个一样长的函数，返回一个包含每个参数元组对应元素的元组。若不一致，采取截取方式，使得返回的结果元组的长度为各参数元组长度最小值。</p>
 
-<pre><code>    for x,y in zip([1,2,3],[4,5,6]):
-        print x,y
-    for x,y in zip([1,2,3],[4,5,6]):
-        print x,y
-    1 4
-    2 5
-    3 6
+<pre><code>        for x,y in zip([1,2,3],[4,5,6]):
+            print x,y
+        for x,y in zip([1,2,3],[4,5,6]):
+            print x,y
+        1 4
+        2 5
+        3 6
 
 
-    for x,y in zip([1,2,3],[5,6]):
-        print x,y
-    1 5
-    2 6
+        for x,y in zip([1,2,3],[5,6]):
+            print x,y
+        1 5
+        2 6
+        
 </code></pre>
 
-<p>###filter函数
-filter(bool_func,seq)：此函数的功能相当于过滤器。 调用一个布尔函数bool_func来迭代遍历每个seq中的元素，返回一个使bool_seq返回值为true的元素的序列。</p>
+<h4 id="filter函数">filter函数</h4>
 
-<pre><code>    filter(lambda x:x%2==0,[1,2,3,4,6,5,7])
-    Out[15]:
-    [2, 4, 6]
+<p>filter(bool_func,seq)：此函数的功能相当于过滤器。 调用一个布尔函数bool_func来迭代遍历每个seq中的元素，返回一个使bool_seq返回值为true的元素的序列。</p>
+
+<pre><code>        filter(lambda x:x%2==0,[1,2,3,4,6,5,7])
+        Out[15]:
+        [2, 4, 6]
+        
 </code></pre>
 
-<p>###reduce函数</p>
+<h4 id="reduce函数">reduce函数</h4>
 
 <p>reduce(func,seq[,init])：func为二元函数，将func作用于seq序列的元素，每次携带一对（先前的结果以及下一个序列的元素），连续的将现有的结果和下一个值作用在获得的随后的结果上，最后减少我们的序列为一个单一的返回值：如果初始值init给定，第一个比较会是init和第一个序列元素而不是序列的头两个元素。</p>
 
-<pre><code>    reduce(lambda x,y:x+y,[1,2,3,4])
-    Out[22]:
-    10
+<pre><code>        reduce(lambda x,y:x+y,[1,2,3,4])
+        Out[22]:
+        10
 
 
-    reduce(lambda x,y: x-y,[1,2,3,4,5],19)
-    reduce(lambda x,y: x-y,[1,2,3,4,5],19)
-    Out[23]:
-    4
+        reduce(lambda x,y: x-y,[1,2,3,4,5],19)
+        reduce(lambda x,y: x-y,[1,2,3,4,5],19)
+        Out[23]:
+        4
 
 
-    reduce(lambda x,y: x-y,[1,2,3,5],5)
-    Out[21]:
-    -6
+        reduce(lambda x,y: x-y,[1,2,3,5],5)
+        Out[21]:
+        -6
 </code></pre>
 
-<h3 id="isinstance">isinstance</h3>
+<h4 id="isinstance">isinstance</h4>
 
 <p>isinstance(object, classinfo)  判断一个对象是否是一个已知的类型。</p>
 
-<pre><code>isinstance(object, class-or-type-or-tuple) -&gt; bool
+<pre><code>    isinstance(object, class-or-type-or-tuple) -&gt; bool
 
-Return whether an object is an instance of a class or of a subclass thereof.
-With a type as second argument, return whether that is the object's type.
-The form using a tuple, isinstance(x, (A, B, ...)), is a shortcut for
-isinstance(x, A) or isinstance(x, B) or ... (etc.).
+    Return whether an object is an instance of a class or of a subclass thereof.
+    With a type as second argument, return whether that is the object's type.
+    The form using a tuple, isinstance(x, (A, B, ...)), is a shortcut for
+    isinstance(x, A) or isinstance(x, B) or ... (etc.).
 </code></pre>
 
 <p>其第一个参数为对象，第二个为类型名或类型名的一个列表。其返回值为布尔型。若对象的类型与参数二的类型相同则返回True。若参数二为一个元组，则若对象类型与元组中类型名之一相同即返回True。</p>
 
-<pre><code>    tes = list()
-    tes.append(3)
-    ta= 'a','b'
-    print tes
-    print isinstance(tes, list)
-    print isinstance(ta, tuple)
+<pre><code>        tes = list()
+        tes.append(3)
+        ta= 'a','b'
+        print tes
+        print isinstance(tes, list)
+        print isinstance(ta, tuple)
 
-    print isinstance(tes,(int, tuple, list))
-    print isinstance(tes,(int, tuple))
+        print isinstance(tes,(int, tuple, list))
+        print isinstance(tes,(int, tuple))
 </code></pre>
 
 <p>Out:</p>
 
-<pre><code>    [3]
-    True
-    True
-    True
-    False
+<pre><code>        [3]
+        True
+        True
+        True
+        False
 </code></pre>
 
-<h3 id="id">id</h3>
+<h4 id="id">id</h4>
 
 <p>查看object 地址</p>
 
-<pre><code>    in：
-    print id.__doc__
+<p>in：
+<code>print id.__doc__
+</code></p>
 
-    Out：​
-    id(object) -&gt; integer
+<p>Out：​
+ <code>id(object) -&gt; integer
+</code></p>
 
-    Return the identity of an object.  This is guaranteed to be unique among
-    simultaneously existing objects.  (Hint: it's the object's memory address.)
+<pre><code>        Return the identity of an object.  This is guaranteed to be unique among
+        simultaneously existing objects.  (Hint: it's the object's memory address.)
 </code></pre>
 
-<h3 id="assert">assert</h3>
+<h4 id="assert">assert</h4>
 
 <p>断言</p>
 
 <p>Python中assert用来判断语句的真假，如果<strong>为假的时候，将触发AssertionError错误</strong></p>
 
-<pre><code>    a = None
-    assert a != None
-    print a
+<pre><code>        a = None
+        assert a != None
+        print a
 </code></pre>
 
 <p>out：</p>
 
-<pre><code>    ---------------------------------------------------------------------------
-    AssertionError                            Traceback (most recent call last)
-    &lt;ipython-input-1-4165ca7bb901&gt; in &lt;module&gt;()
-          1
-          2 a = None
-    ----&gt; 3 assert a != None
-          4 print a
+<pre><code class="language----------------------------------------------------------------------------">        AssertionError                            Traceback (most recent call last)
+        &lt;ipython-input-1-4165ca7bb901&gt; in &lt;module&gt;()
+              1
+              2 a = None
+        ----&gt; 3 assert a != None
+              4 print a
 
-    AssertionError:
+        AssertionError:
 </code></pre>
 
 <p>另一例子：</p>
 
-<pre><code>    a=[1,2,3]
-    # a = None
-    assert len(a) &lt; 5  # 为真通过
-    assert a != None
-    print a
+<pre><code>        a=[1,2,3]
+        # a = None
+        assert len(a) &lt; 5  # 为真通过
+        assert a != None
+        print a
 </code></pre>
 
 <p>out：</p>
 
-<pre><code>    [1, 2, 3]
+<pre><code>        [1, 2, 3]
 </code></pre>
 
-<h3 id="min-max">min &amp;&amp; max</h3>
+<h4 id="min-max">min &amp;&amp; max</h4>
 
-<pre><code>    c = [-10, -45, 0, 5, 3, 50, 15, -20, 25]
+<pre><code>        c = [-10, -45, 0, 5, 3, 50, 15, -20, 25]
 
-    print &quot;min: %s&quot; %c.index(min(c))  # 返回最小值
-    print &quot;max: %s&quot; %c.index(max(c)) # 返回最大值
+        print &quot;min: %s&quot; %c.index(min(c))  # 返回最小值
+        print &quot;max: %s&quot; %c.index(max(c)) # 返回最大值
 </code></pre>
 
 <p>out:</p>
 
-<pre><code>    min: 1
-    max: 5
+<pre><code>        min: 1
+        max: 5
 </code></pre>
 
 </div>
@@ -478,7 +486,7 @@ isinstance(x, A) or isinstance(x, B) or ... (etc.).
   
   &copy; 2017 Well.
 
-
+ &nbsp; &nbsp;
 </div>
 
 

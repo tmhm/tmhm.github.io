@@ -41,7 +41,6 @@
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-
 <link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://tmhm.github.io/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://tmhm.github.io/css/style.css">
@@ -60,6 +59,8 @@
 
 	</script>
 
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
 </head>
 <body>
   <main id="main-wrapper" class="container main_wrapper has-sidebar">
@@ -150,53 +151,28 @@
     <h1>Well
 </h1>
 
-    <span>last update: <time datetime="2017-02-19T19:54:02-08:00">19 February at 7:54pm</time>
+    <div class="metas">
+<span>last update: <time datetime="2017-02-19T19:54:02-08:00">19 February at 7:54pm</time>
 </span>
+&nbsp;&nbsp;
+
+<span id="busuanzi_container_site_pv">
+    Pv:<span id="busuanzi_value_site_pv"></span>次
+</span>
+&nbsp;
+<span id="busuanzi_container_site_uv">
+  Uv:<span id="busuanzi_value_site_uv"></span>次
+</span>
+</div>
 
   </header>
   
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/03/24/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">斐波那契数列
+  <h3><a href="https://tmhm.github.io/2016/03/16/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0/">删除链表中的元素
 </a>
-</h2>
-
-  <time datetime="2016-03-24">24 Mar, 2016</time>
-
-</div>
-
-  <p class="container content">
-  
-  
-    查找斐波纳契数列中第 N 个数。
-所谓的斐波纳契数列是指：
- 前2个数是 0 和 1 。 第&nbsp;i&nbsp;个数是第&nbsp;i-1 个数和第i-2 个数的和。  斐波纳契数列的前10个数字是：
-0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ...
-&nbsp;
-1，用递归实现，lintcode提示超过时间
-classSolution{ public: /** * @param n: an integer * @return an integer f(n) */ int fibonacci(intn) { //write your code here if(n == 0) return 0; else if(n == 1) return 1; else return fibonacci(n-1) + fibonacci(n-2); } };  &nbsp;2,用函数本身相加求和
-classSolution{ public: /** * @param n: an integer * @return an integer f(n) */ int fibonacci(intn) { //write your code here int t1=0,t2=1; int t3=0; int cnt=0; //cnt =n; if(n == 0) return 0; else if(n == 1) return 1; else{ for(cnt = 2;cnt&lt;n;cnt++) { t3 = t1+t2; t1=t2; t2=t3; } returnt2; } } };  &nbsp;
-  
-
-
-</p>
-
-
-  <div class="container readlink">
-  <a href="https://tmhm.github.io/2016/03/24/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/">Read more &rarr;</a>
-
-</div>
-
-
-</article>
-
-  
-    <article class="container content summary">
-  <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/03/16/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0/">删除链表中的元素
-</a>
-</h2>
+</h3>
 
   <time datetime="2016-03-16">16 Mar, 2016</time>
 
@@ -205,12 +181,7 @@ classSolution{ public: /** * @param n: an integer * @return an integer f(n) */ i
   <p class="container content">
   
   
-    删除链表中等于给定值val的所有节点。
-给出链表&nbsp;1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;5-&gt;3, 和 val =&nbsp;3, 你需要返回删除3之后的链表：1-&gt;2-&gt;4-&gt;5。
-&nbsp;
-迷惑点：陷入没有表头的陷阱，总是想记下删除节点的先驱，导致折腾了很久，其实只要人为加一个表头就简单很多了！！
-&nbsp;
-1 /** 2 * Definition for singly-linked list. 3 * struct ListNode { 4 * int val; 5 * ListNode *next; 6 * ListNode(int x) : val(x), next(NULL) {} 7 * }; 8 */ 9 classSolution { 10 public: 11 /** 12 * @param head a ListNode 13 * @param val an integer 14 * @return a ListNode 15 */ 16 ListNode *removeElements(ListNode *head, intval) { 17 //Write your code here 18 //meiyou ya ba jie dian!
+     
   
 
 
@@ -228,9 +199,9 @@ classSolution{ public: /** * @param n: an integer * @return an integer f(n) */ i
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/03/12/ubuntu%E6%8A%80%E5%B7%A7/">ubuntu技巧
+  <h3><a href="https://tmhm.github.io/2016/03/12/ubuntu%E6%8A%80%E5%B7%A7/">ubuntu技巧
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-03-12">12 Mar, 2016</time>
 
@@ -239,10 +210,7 @@ classSolution{ public: /** * @param n: an integer * @return an integer f(n) */ i
   <p class="container content">
   
   
-    &nbsp;
- 在终端界面里面查找，命令：ctrl + shift +f  &nbsp;
- VMware 中 Ubuntu 不能全屏：   转到虚拟机--&gt;安装VMware Tools 把装载的 VMware Tools CD里面的VMwareTools.x.x.x-xxxx.tar.gz文件解压到桌面 cd进入解压位置，运行&nbsp;sudo ./vmware-install.pl -d &nbsp;（注意：-d 开关假定您希望接受默认设置。如果不使用 -d，请按 Return 接受默认值或提供您自己的答案。） 重启 此时已经安装VMware tools，但是在ubuntu在VMware控制台显示时，四周仍然有黑框，可以在VMware中点击：查看--&gt;自动调整大小--&gt;自动适应客户机。   &nbsp;codeblocks 编译开发环境(需要先安装gcc，g++,gdb)  sudo apt-get install codeblocks 添加头文件：依次点击project-&gt;bulid options-&gt;Search directories，在该标签页中点击Compiler，单击Add按钮添加头文件路径 添加静态库路径：依次点击project-&gt;bulid options-&gt;Linker setting，在该标签页中点击Add按钮添加静态库路径。 设置main函数参数：Project-&gt;Set programs&rsquo; arguments    &nbsp;查看ssh服务状态   ps -e |grep ssh  &nbsp;
-  &nbsp;
+     
   
 
 
@@ -260,9 +228,9 @@ classSolution{ public: /** * @param n: an integer * @return an integer f(n) */ i
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/03/10/shell%E5%AD%A6%E4%B9%A0/">shell学习
+  <h3><a href="https://tmhm.github.io/2016/03/10/shell%E5%AD%A6%E4%B9%A0/">shell学习
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-03-10">10 Mar, 2016</time>
 
@@ -271,7 +239,7 @@ classSolution{ public: /** * @param n: an integer * @return an integer f(n) */ i
   <p class="container content">
   
   
-    &nbsp;  readlink是linux系统中一个常用工具，主要用来找出符号链接所指向的位置。 定义变量&ldquo;=&rdquo;两边不能有空格，否则会被shell解析错误。 tee 同时将输出内容显示在屏幕上、记录在文件里 三种引号&lsquo;&rsquo;，&ldquo;&rdquo;，`。&lt;/strong&gt; &lt;ul&gt; &lt;li&gt;　rm -rf &amp;lsquo;my document&amp;rsquo; &amp;nbsp;----当命令行里面包含空格时，用单引号包含起来&lt;/li&gt; &lt;li&gt;这时也可由用双引号，区别在于双引号的值会被变量的之替换，单引号保持原样。&lt;/li&gt; &lt;li&gt;&amp;nbsp; &lt;div class=&quot;cnblogs_code&quot;&gt; &lt;pre&gt;$ ABC=&lt;span style=&quot;color: #000000;&quot;&gt;hello $ echo &lt;/span&gt;&lt;span style=&quot;color: #800000;&quot;&gt;'&lt;/span&gt;&lt;span style=&quot;color: #800000;&quot;&gt;string is ${ABC}&lt;/span&gt;&lt;span style=&quot;color: #800000;&quot;&gt;'&lt;/span&gt; &lt;span style=&quot;color: #0000ff;&quot;&gt;string&lt;/span&gt; &lt;span style=&quot;color: #0000ff;&quot;&gt;is&lt;/span&gt;&lt;span style=&quot;color: #000000;&quot;&gt; ${ABC} $ echo &lt;/span&gt;&lt;span style=&quot;color: #800000;&quot;&gt;&quot;&lt;/span&gt;&lt;span style=&quot;color: #800000;&quot;&gt;string is ${ABC}&lt;/span&gt;&lt;span style=&quot;color: #800000;&quot;&gt;&quot;&lt;/span&gt; &lt;span style=&quot;color: #0000ff;&quot;&gt;string&lt;/span&gt; &lt;span style=&quot;color: #0000ff;&quot;&gt;is&lt;/span&gt; hello&lt;/pre&gt; &lt;/div&gt; &lt;p&gt;反引号实际上就是命令替换&lt;/p&gt; &lt;/li&gt; &lt;li&gt;echouname&amp;nbsp;#等价 echo $(uname)&lt;/li&gt; &lt;li&gt; &lt;div class=&quot;cnblogs_code&quot;&gt; &lt;pre&gt;$ echouname -a` Linux ubuntu 3.
+     
   
 
 
@@ -289,9 +257,9 @@ classSolution{ public: /** * @param n: an integer * @return an integer f(n) */ i
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/03/08/pycharm%E5%B0%8F%E6%8A%80%E5%B7%A7/">PyCharm小技巧
+  <h3><a href="https://tmhm.github.io/2016/03/08/pycharm%E5%B0%8F%E6%8A%80%E5%B7%A7/">PyCharm小技巧
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-03-08">8 Mar, 2016</time>
 
@@ -300,7 +268,7 @@ classSolution{ public: /** * @param n: an integer * @return an integer f(n) */ i
   <p class="container content">
   
   
-    pycharm中配置main函数执行输入参数：  　&nbsp;Run-&gt;Edit Configurations-&gt;Script Parames
+     
   
 
 
@@ -318,9 +286,9 @@ classSolution{ public: /** * @param n: an integer * @return an integer f(n) */ i
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/03/08/how-to-install-torcs-package-in-debian/">How to install torcs package in Debian
+  <h3><a href="https://tmhm.github.io/2016/03/08/how-to-install-torcs-package-in-debian/">How to install torcs package in Debian
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-03-08">8 Mar, 2016</time>
 
@@ -329,9 +297,7 @@ classSolution{ public: /** * @param n: an integer * @return an integer f(n) */ i
   <p class="container content">
   
   
-    Installation instructions Installing torcs package in Debian Wheezy is as easy as running:
-没想到在debian上安装TORCS，如此简单：一句命令，所有的依赖全装好了！nice～
- apt-get install torcs  &nbsp;
+     
   
 
 
@@ -349,9 +315,9 @@ classSolution{ public: /** * @param n: an integer * @return an integer f(n) */ i
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/03/08/qt4.8.6%E9%9D%99%E6%80%81%E7%BC%96%E8%AF%91/">QT4.8.6静态编译
+  <h3><a href="https://tmhm.github.io/2016/03/08/qt4.8.6%E9%9D%99%E6%80%81%E7%BC%96%E8%AF%91/">QT4.8.6静态编译
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-03-08">8 Mar, 2016</time>
 
@@ -360,11 +326,7 @@ classSolution{ public: /** * @param n: an integer * @return an integer f(n) */ i
   <p class="container content">
   
   
-    下载源安装程序，http://download.qt.io/archive/qt/4.8/4.8.6/qt-everywhere-opensource-src-4.8.6.tar.gz 解压 cd 进入解压后的目录，命令  &nbsp;
-./configure -static -release -opensource -qt-zlib -qt-libpng -qt-libmng -qt-libjpeg -nomake demos -nomake examples -qt-sql-sqlite -prefix /usr/local/Trolltech/Qt-4.8.6_static  命令参数含义如下所示（带有+号的是默认选项）：
--static &hellip;&hellip;&hellip;&hellip; Create and use static Qt libraries. -opensource &hellip;&hellip;.. Compile and link the Open-Source Edition of Qt. -release &hellip;&hellip;&hellip;.. Compile and link Qt with debugging turned off.
-Third Party Libraries:
--qt-zlib &hellip;&hellip;&hellip;.. Use the zlib bundled with Qt. + -system-zlib &hellip;&hellip;. Use zlib from the operating system.
+     
   
 
 
@@ -382,9 +344,9 @@ Third Party Libraries:
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/03/08/qt%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%85%B1%E4%BA%AB%E9%97%AE%E9%A2%98/">QT环境下，全局变量共享问题
+  <h3><a href="https://tmhm.github.io/2016/03/08/qt%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%85%B1%E4%BA%AB%E9%97%AE%E9%A2%98/">QT环境下，全局变量共享问题
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-03-08">8 Mar, 2016</time>
 
@@ -393,33 +355,7 @@ Third Party Libraries:
   <p class="container content">
   
   
-    开始的技术路线是：
-&nbsp;首先有两个主线程：
-　1，gui线程
-　2，等待客户端socket连接用的，listen线程
-　（当有客户端连接时，即creat一个新的线程2用来跟客户端通信，再来新的客户端，继续creat新的work线程3用于通信，以此类推，目前最多可以creat5个线程，即可以同时跟5台客户端通信，设置了监听的socket服务器最多监听5个队列。线程2继续listen）
-&nbsp;
-出现的问题是：
-　用来通信的work线程3，收到一个来自客户端的xml文件，然后解析文件，并将其数据放在一个全局的静态struct数组里。数据正常，线程2和线程3均可以看到已经更新的数据值。但是，
-　当gui线程去访问时，发现数据并没有更新到其线程，在gui线程下改变该全局变量的数值，也并没有更新到线程2和3，不知何解？
-&nbsp;
-一博主，有如此解释：
-其实在Linux 中，新建的线程并不是在原先的进程中，而是系统通过一个系统调用clone() 。该系统copy 了一个和原先进程完全一样的进程，并在这个进程中执行线程函数。不过这个copy 过程和fork 不一样。copy 后的进程和原先的进程共享了所有的变量，运行环境（clone的实现是可以指定新进程与老进程之间的共享关系，100%共享就表示创建了一个线程）。这样，原先进程中的变量变动在copy 后的进程中便能体现出来。 &nbsp; &nbsp;不过，问题并没有清晰化。 &nbsp; 想到的解决方案暂时有两种： 　1，不在work线程里面解析数据，直接在gui线程里面解析数据。 &nbsp;　2，采用线程私有数据 &nbsp; （此处出现过，小插曲：QT的变量查看器，在调试时不太稳定，更新过后的值在窗口中查看，并没有得到及时更新，需要通过程序判定验证！）
-　另外的问题是：一个变量在多线程环境下，它们的地址都是不同的，为什么呢？待解！　&nbsp;
-由于程序需要在线程创建之后必须返回到gui主线程，所以采用创建两次线程的方式：创建线程A，返回，然后在线程A里面创建
-在多线程POSIX标准下，主线程（1），即是GUI线程。它初始化一个类，并调用其一个成员函数创建一个线程3（ininlistenThred）【不知，为什么不从2开始？】，然后在线程3里面一直循环检测是否有新的客户端发来socket连接。当有新的客户端连接上时，即创建一个新的线程专门用于socket通信。
-此时有一客户端连接上，创建了通信工作线程4（listenthreadwork）。
-&nbsp;
-输出g_buf[0].carid的代码位置分别为：
-1，initlistenthread线程在进入循环入口 即打印出：
-for( ; ; )
-{
-　&nbsp;qDebug("listenthread g_buf[0].carid: %s ",g_buf[0].carid);
-&nbsp; char *t = &amp;(g_buf[0].carid[0]);
-qDebug("dizhi: %d\n\n",&amp;t);
-//......
-}  2，gui主线程在点击按钮的时候，即打印：
-qDebug("mainwindow g_buf[0].carid: %s",g_buf[0].carid); char *t = &amp;(g_buf[0].
+     
   
 
 
@@ -437,9 +373,9 @@ qDebug("mainwindow g_buf[0].carid: %s",g_buf[0].carid); char *t = &amp;(g_buf[0]
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/03/08/debian%E5%88%9D%E8%AF%86%E9%80%89%E6%8B%A9%E6%9C%80%E4%BD%B3%E9%95%9C%E5%83%8F%E5%8F%91%E5%B8%83%E7%AB%99%E7%82%B9%E5%8A%A0%E5%85%A5source.list%E6%96%87%E4%BB%B6/">Debian初识（选择最佳镜像发布站点加入source.list文件）
+  <h3><a href="https://tmhm.github.io/2016/03/08/debian%E5%88%9D%E8%AF%86%E9%80%89%E6%8B%A9%E6%9C%80%E4%BD%B3%E9%95%9C%E5%83%8F%E5%8F%91%E5%B8%83%E7%AB%99%E7%82%B9%E5%8A%A0%E5%85%A5source.list%E6%96%87%E4%BB%B6/">Debian初识（选择最佳镜像发布站点加入source.list文件）
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-03-08">8 Mar, 2016</time>
 
@@ -448,18 +384,7 @@ qDebug("mainwindow g_buf[0].carid: %s",g_buf[0].carid); char *t = &amp;(g_buf[0]
   <p class="container content">
   
   
-    选择最佳镜像发布站点加入source.list文件：netselect，netselect-apt &ldquo;该将哪个Debian镜像发布站点加入source.list文件？&rdquo;。有很多方法来选择镜像发布站点，专家们可能会写一个脚本去测试 不同站点的ping时间。不过其实有一个程序可以帮你：&nbsp;netselect。
-要安装netselect，通常使用：
-# apt-getinstall netselect
-sudo netselect ftp.debian.org http.us.debian.org ftp.at.debian.org download.unesp.br ftp.debian.org.br ftp.hk.debian.org ftp.tw.debian.org debian.linux.org.tw ftp.sjtu.edu.cn mirrors.163.com
-150 mirrors.163.com  表示，在netselect后列出的所有主机中，mirrors.163.com是下载速 度最快的主机，其得分为150。(注意！！这是在我电脑上的测试结果，不同的网络 节点网速会大不相同，所以这个分值不一定适用于其它电脑)
-# apt-get install netselect-apt
-# netselect-apt stable  从0.3.ds1版开始，netselect源码包中包含了netselect-apt二 进制包，它使上述操作自动完成。只需将发布目录树做为参数(默认为stable)输入，&nbsp;sources.list文件就会生成速度最快的main和non-US镜像站点列表，并保 存在当前目录下。下面的例子生成一个包含stable发布镜像站点列表的sources.list：
-# ls sources.list ls: sources.list: File or directory not found # netselect-apt stable (&hellip;) # ls -l sources.list sources.list #  记住：sources.list生成在当前目录下，必须将其移 至/etc/apt目录。 根据文档内提示：打开注释deb-src。
-&nbsp;
- putty在win10下面访问不了debian8.2，可能原因有：  　1，防火墙
-　2，网卡驱动不支持！！这点需注意，升级电脑，被坑！
- &nbsp;查看软件安装位置  whereis torcs man whereis
+     
   
 
 
@@ -477,9 +402,9 @@ sudo netselect ftp.debian.org http.us.debian.org ftp.at.debian.org download.unes
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/02/21/dev-c&#43;&#43;-%E5%B0%8F%E9%97%AE%E9%A2%98%E9%94%A6%E9%9B%86/">Dev-C&#43;&#43; 小问题锦集
+  <h3><a href="https://tmhm.github.io/2016/02/21/dev-c-%E5%B0%8F%E9%97%AE%E9%A2%98%E9%94%A6%E9%9B%86/">Dev-C 小问题锦集
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-02-21">21 Feb, 2016</time>
 
@@ -488,11 +413,7 @@ sudo netselect ftp.debian.org http.us.debian.org ftp.at.debian.org download.unes
   <p class="container content">
   
   
-    C++ project cann&rsquo;t debug  Your project does not have debugging information, do you want to enable debugging and rebuild your project?   　解决办法：
-　在tools 菜单下的compiler项中，勾选：Add the following commands when calling compiler:
-　并在框内添加参数：-g
-（版本：Dev-C++ 4.9.9.2.）
-&nbsp;
+     
   
 
 
@@ -500,7 +421,7 @@ sudo netselect ftp.debian.org http.us.debian.org ftp.at.debian.org download.unes
 
 
   <div class="container readlink">
-  <a href="https://tmhm.github.io/2016/02/21/dev-c&#43;&#43;-%E5%B0%8F%E9%97%AE%E9%A2%98%E9%94%A6%E9%9B%86/">Read more &rarr;</a>
+  <a href="https://tmhm.github.io/2016/02/21/dev-c-%E5%B0%8F%E9%97%AE%E9%A2%98%E9%94%A6%E9%9B%86/">Read more &rarr;</a>
 
 </div>
 
@@ -510,9 +431,9 @@ sudo netselect ftp.debian.org http.us.debian.org ftp.at.debian.org download.unes
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/02/18/ubuntu-12.04lts-%E5%AE%89%E8%A3%85mysql-%E5%B9%B6%E9%80%9A%E8%BF%87qt%E8%BF%9E%E6%8E%A5/">ubuntu 12.04lts 安装mysql ，并通过QT连接
+  <h3><a href="https://tmhm.github.io/2016/02/18/ubuntu-12.04lts-%E5%AE%89%E8%A3%85mysql-%E5%B9%B6%E9%80%9A%E8%BF%87qt%E8%BF%9E%E6%8E%A5/">ubuntu 12.04lts 安装mysql ，并通过QT连接
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-02-18">18 Feb, 2016</time>
 
@@ -521,9 +442,7 @@ sudo netselect ftp.debian.org http.us.debian.org ftp.at.debian.org download.unes
   <p class="container content">
   
   
-    安装server$ sudo apt-get install mysql-server
-安装驱动 $ sudo apt-get install libqt4-sql-mysql 
- 　$ dpkg &ndash;list | grep mysql ii libdbd-mysql-perl 4.020-1build2 Perl5 database interface to the MySQL database ii libmysqlclient18 5.5.47-0ubuntu0.12.04.1 MySQL database client library ii libqt4-sql-mysql 4:4.8.1-0ubuntu4.9 Qt 4 MySQL database driver ii mysql-client-5.5 5.5.47-0ubuntu0.12.04.1 MySQL database client binaries ii mysql-client-core-5.5 5.5.47-0ubuntu0.12.04.1 MySQL database core client binaries ii mysql-common 5.5.47-0ubuntu0.12.04.1 MySQL database common files, e.g. /etc/mysql/my.cnf ii mysql-server 5.
+     
   
 
 
@@ -541,9 +460,9 @@ sudo netselect ftp.debian.org http.us.debian.org ftp.at.debian.org download.unes
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/01/14/win7%E4%B8%8B%E5%AE%89%E8%A3%85ubuntu14.04lts-%E5%8F%8C%E7%B3%BB%E7%BB%9F/">win7下安装ubuntu14.04lts 双系统
+  <h3><a href="https://tmhm.github.io/2016/01/14/win7%E4%B8%8B%E5%AE%89%E8%A3%85ubuntu14.04lts-%E5%8F%8C%E7%B3%BB%E7%BB%9F/">win7下安装ubuntu14.04lts 双系统
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-01-14">14 Jan, 2016</time>
 
@@ -552,14 +471,7 @@ sudo netselect ftp.debian.org http.us.debian.org ftp.at.debian.org download.unes
   <p class="container content">
   
   
-     首先，在win7下的硬盘管理   压缩出一块空闲的分区，即压缩卷之后，不做任何操作。  　并且确保该空闲卷是&ldquo;基本&rdquo;类型    &nbsp;　&nbsp; &nbsp;　不是的话，参考http://www.jianshu.com/p/2f0731274ee6
- 下载免费的分区助手
-注：一定要下载分区助手3.0版本，其它的高版本如4.0没有包含动态磁盘转换器这个工具 安装并运行。在主界面的左上边，点击&ldquo;动态磁盘转换器&rdquo;来运行这个程序。 然后你将看动态磁盘转换器的欢迎界面，你可以读一下它的简介，然后直接点击&ldquo;下一步&rdquo;按钮以进入下一个向导页 在这儿的&ldquo;操作选择&rdquo;页里，请选择&ldquo;转换动态磁盘到基本磁盘&rdquo;选项，并点击&ldquo;下一步&rdquo;按钮 然后进入&ldquo;动态磁盘列表&rdquo;页，在这里程序要求你选择一个你想转换到基本磁盘的动态磁盘 操作确认，请在&ldquo;我已经决定好执行这个转换&rdquo;上打勾，然后点击&ldquo;执行&rdquo;按钮开始转换这个动态磁盘到基本磁盘。 在几秒后，这个转换将完成，同时程序可能要求你重启电脑，在重启电脑之后，你在进入Windows的磁盘管理器中查看磁盘时，它已经被成功改变到基本磁盘了
- &nbsp;
-  分区空闲，不可用！！ 如果显示的未识别，则需要将windows硬盘转换成逻辑分区。用上面的分区工具即可。3.0版本没有转换逻辑分区的功能，我用的是6.1版本的。 原因是，主分区只能最多有4个，故要将其中一个主分区转换为逻辑分区，然后才可以通过u盘安装ubuntu。 最后得到用来装ubuntu的分区应该是：基本的、主分区。 
-
- 用做好的u盘ubuntu14.04LTS直接进行多系统安装即可。如下图选项所示。
- 
+     
   
 
 
@@ -577,9 +489,9 @@ sudo netselect ftp.debian.org http.us.debian.org ftp.at.debian.org download.unes
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/01/08/linux%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91/">linux多线程并发
+  <h3><a href="https://tmhm.github.io/2016/01/08/linux%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91/">linux多线程并发
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-01-08">8 Jan, 2016</time>
 
@@ -588,15 +500,7 @@ sudo netselect ftp.debian.org http.us.debian.org ftp.at.debian.org download.unes
   <p class="container content">
   
   
-     多线程并发 进程和线程的概念  进程
-进程包括程序映象、地址空间等要素。内核采用PCB来管理进程。进程是内核进行调度的基本单元，每个独立的进程都有自己的代码段、数据段以及堆栈，它们有自己的虚拟地址空间，多个进程间互不影响。
- 线程
-在linux系统中，实际上，线程和进程都是以统一的方式来管理的。线程也是内核进行调度的基本单元。
-不同点在于: &gt; 线程没有自己独立的地址空间，创建出来的新线程将和创建它的进程 &gt;（或线程)共享同一个虚拟地址空间，它们被置于同一个线程组中。线程的代码 &gt; 段、全局数据段、堆及其他一些诸如文件描述符表等内核管理的东西在同一组内是共享的， &gt; 但是每个线程都有自己独立的栈空间。
-因此，多线程环境下多全局变量的访问有可能需要同步，但是局部变量仍然有各自的存储空间，互不影响。
- 与多进程相比，多线程具有的优点： &gt;1，线程适合多任务通信环境。多线程间的通信比多进程的更简单，但是需要注意同步问题
- 2，线程的创建和调度更高效。创建线程时，无需单独复制进程的内存空间或文件描述符等；切换线程时不需要更换整个页表。
-  
+     
   
 
 
@@ -614,9 +518,9 @@ sudo netselect ftp.debian.org http.us.debian.org ftp.at.debian.org download.unes
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/01/08/%E5%B5%8C%E5%85%A5%E5%BC%8Flinux%E9%97%AE%E9%A2%98%E6%9D%82%E9%94%A6/">嵌入式linux问题杂锦
+  <h3><a href="https://tmhm.github.io/2016/01/08/%E5%B5%8C%E5%85%A5%E5%BC%8Flinux%E9%97%AE%E9%A2%98%E6%9D%82%E9%94%A6/">嵌入式linux问题杂锦
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-01-08">8 Jan, 2016</time>
 
@@ -625,9 +529,7 @@ sudo netselect ftp.debian.org http.us.debian.org ftp.at.debian.org download.unes
   <p class="container content">
   
   
-    tftp 在开发板上不能获取共享文件，出现：&nbsp;Permission denied  tftp: can&lsquo;t open &lsquo;myTcpTest&lsquo;: Permission denied    是因为，我在/sys目录下执行的，
-  root@am437x-evm:/sys# tftp -g -r myTcpTest 172.20.9.59 tftp: can&rsquo;t open &lsquo;myTcpTest&rsquo;: Permission denied   　回到～ 主文件夹，既可以获取：
-root@am437x-evm:~# tftp -g -r myTcpTest 172.20.9.59   &nbsp;
+     
   
 
 
@@ -645,9 +547,9 @@ root@am437x-evm:~# tftp -g -r myTcpTest 172.20.9.59   &nbsp;
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/01/08/qt-creator-%E8%B0%83%E8%AF%95%E9%97%AE%E9%A2%98/">QT creator 调试问题
+  <h3><a href="https://tmhm.github.io/2016/01/08/qt-creator-%E8%B0%83%E8%AF%95%E9%97%AE%E9%A2%98/">QT creator 调试问题
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-01-08">8 Jan, 2016</time>
 
@@ -656,17 +558,7 @@ root@am437x-evm:~# tftp -g -r myTcpTest 172.20.9.59   &nbsp;
   <p class="container content">
   
   
-    问题：debug出现&ldquo;ptrace：不允许的操作。&rdquo;   解决办法：
-&nbsp;
-# may not be appropriate fordevelopers or servers with only admin accounts. kernel.yama.ptrace_scope = 1  修改为：
-kernel.yama.ptrace_scope = 0  然后终端输入，重启：
-sudo reboot  完毕。
-&nbsp;
- &nbsp;问题：During startup program exited with code 126.  原因：编译的是基于嵌入式开发板的二进制文件，在ubuntu上运行不了，放到开发板上能正常运行。
-&nbsp;
- 问题：打开Qt creator出现&ldquo;无法写入文件 qtversion.xml.磁盘已满？&rdquo;  原因：权限不够
--rwx&ndash;x&ndash;x 1 tl tl 1592 1月 15 15:30 qtversion.xml   解决办法：添加读写权限
-　&nbsp;
+     
   
 
 
@@ -684,9 +576,9 @@ sudo reboot  完毕。
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/01/06/torcs%E4%BB%A3%E7%A0%81/">torcs代码
+  <h3><a href="https://tmhm.github.io/2016/01/06/torcs%E4%BB%A3%E7%A0%81/">torcs代码
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-01-06">6 Jan, 2016</time>
 
@@ -695,7 +587,7 @@ sudo reboot  完毕。
   <p class="container content">
   
   
-    /** Info returned by driver during the race */ typedef struct { tdble steer; /&lt; Steer command [-1.0, 1.0] */ tdble accelCmd; /&lt; Accelerator command [0.0, 1.0] */ tdble brakeCmd; /&lt; Brake command [0.0, 1.0] */ tdble clutchCmd; /&lt; Clutch command [0.0, 1.0] */ int gear; /&lt; [-1,6] for gear selection */ int raceCmd; /&lt; command issued by the driver */ #define RM_CMD_NONE 0 /&lt; No race command */ #define RM_CMD_PIT_ASKED 1 /&lt; Race command: Pit asked */ char msg[4][32]; /&lt; 4 lines of 31 characters 0-1 from car 2-3 from race engine */ #define RM_MSG_LEN 31 float msgColor[4]; /&lt; RGBA of text */ int lightCmd; /&lt; Lights command */ #define RM_LIGHT_HEAD1 0x00000001 /&lt; head light 1 */ #define RM_LIGHT_HEAD2 0x00000002 /**&lt; head light 2 */ } tCarCtrl;   　
+     
   
 
 
@@ -713,9 +605,9 @@ sudo reboot  完毕。
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/01/06/ubuntu12.04%E5%AE%89%E8%A3%85kdevelop/">ubuntu12.04安装KDevelop
+  <h3><a href="https://tmhm.github.io/2016/01/06/ubuntu12.04%E5%AE%89%E8%A3%85kdevelop/">ubuntu12.04安装KDevelop
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-01-06">6 Jan, 2016</time>
 
@@ -724,7 +616,7 @@ sudo reboot  完毕。
   <p class="container content">
   
   
-    1， 　sudo apt-get update 2， 　sudo apt-get install kdevelop 
+     
   
 
 
@@ -733,6 +625,35 @@ sudo reboot  完毕。
 
   <div class="container readlink">
   <a href="https://tmhm.github.io/2016/01/06/ubuntu12.04%E5%AE%89%E8%A3%85kdevelop/">Read more &rarr;</a>
+
+</div>
+
+
+</article>
+
+  
+    <article class="container content summary">
+  <div class="container hat">
+  <h3><a href="https://tmhm.github.io/2016/01/06/ubuntu12.04lts%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E5%8D%B8%E8%BD%BD-qt4.8.6%E5%92%8Cqt-creator2.5.2/">ubuntu12.04LTS安装以及卸载 QT4.8.6和QT creator2.5.2
+</a>
+</h3>
+
+  <time datetime="2016-01-06">6 Jan, 2016</time>
+
+</div>
+
+  <p class="container content">
+  
+  
+     
+  
+
+
+</p>
+
+
+  <div class="container readlink">
+  <a href="https://tmhm.github.io/2016/01/06/ubuntu12.04lts%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E5%8D%B8%E8%BD%BD-qt4.8.6%E5%92%8Cqt-creator2.5.2/">Read more &rarr;</a>
 
 </div>
 
@@ -816,7 +737,7 @@ sudo reboot  完毕。
   
   &copy; 2017 Well.
 
-
+ &nbsp; &nbsp;
 </div>
 
 

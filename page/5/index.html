@@ -41,7 +41,6 @@
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-
 <link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://tmhm.github.io/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://tmhm.github.io/css/style.css">
@@ -60,6 +59,8 @@
 
 	</script>
 
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
 </head>
 <body>
   <main id="main-wrapper" class="container main_wrapper has-sidebar">
@@ -150,54 +151,28 @@
     <h1>Well
 </h1>
 
-    <span>last update: <time datetime="2017-02-19T19:54:02-08:00">19 February at 7:54pm</time>
+    <div class="metas">
+<span>last update: <time datetime="2017-02-19T19:54:02-08:00">19 February at 7:54pm</time>
 </span>
+&nbsp;&nbsp;
+
+<span id="busuanzi_container_site_pv">
+    Pv:<span id="busuanzi_value_site_pv"></span>次
+</span>
+&nbsp;
+<span id="busuanzi_container_site_uv">
+  Uv:<span id="busuanzi_value_site_uv"></span>次
+</span>
+</div>
 
   </header>
   
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/01/06/ubuntu12.04lts%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E5%8D%B8%E8%BD%BD-qt4.8.6%E5%92%8Cqt-creator2.5.2/">ubuntu12.04LTS安装以及卸载 QT4.8.6和QT creator2.5.2
+  <h3><a href="https://tmhm.github.io/2015/11/30/%E7%94%A8vs2010%E7%BC%96%E8%AF%91vs2013%E5%BB%BA%E7%9A%84%E5%B7%A5%E7%A8%8B/">用vs2010编译vs2013建的工程
 </a>
-</h2>
-
-  <time datetime="2016-01-06">6 Jan, 2016</time>
-
-</div>
-
-  <p class="container content">
-  
-  
-    鉴于，下载QT5.5安装，编译总是有问题，可能是配置不正确。
-于是按照论坛的一些资料，就换回QT4版本，具体实施步骤如下：
-在qt官网http://download.qt.io/archive/
-下的qt4.8.6 ： &nbsp;http://download.qt.io/archive/qt/4.8/4.8.6/qt-everywhere-opensource-src-4.8.6.tar.gz
-和 qt creator 2.5.2 ：&nbsp;http://download.qt.io/archive/qtcreator/2.5/qt-creator-linux-x86-opensource-2.5.2.bin
- 在终端依次输入以下命令：  &nbsp;
-1 tar xzvf qt-everywhere-opensource-src-4.8.6.tar.gz 2 cd qt-everywhere-opensource-src-4.8.6 3 sudo apt-get install g++ 4 sudo apt-get install libX11-dev libXext-dev libXtst-dev 5 配置QT Library ，输入命令： ./configure  &nbsp;
-配置完成，会得到如下终端界面：
-Qt is now configured for building. Just run 'make'. Once everything is built, you must run 'make install'. Qt will be installed into /usr/local/Trolltech/Qt-4.8.6 To reconfigure, run 'make confclean' and 'configure'.
-  
-
-
-</p>
-
-
-  <div class="container readlink">
-  <a href="https://tmhm.github.io/2016/01/06/ubuntu12.04lts%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E5%8D%B8%E8%BD%BD-qt4.8.6%E5%92%8Cqt-creator2.5.2/">Read more &rarr;</a>
-
-</div>
-
-
-</article>
-
-  
-    <article class="container content summary">
-  <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2015/11/30/%E7%94%A8vs2010%E7%BC%96%E8%AF%91vs2013%E5%BB%BA%E7%9A%84%E5%B7%A5%E7%A8%8B/">用vs2010编译vs2013建的工程
-</a>
-</h2>
+</h3>
 
   <time datetime="2015-11-30">30 Nov, 2015</time>
 
@@ -206,16 +181,7 @@ Qt is now configured for building. Just run 'make'. Once everything is built, yo
   <p class="container content">
   
   
-    第一步，用文本打开，修改.sln文件
-原始：
-Microsoft Visual Studio Solution File, Format Version 12.00 # Visual Studio 2013 VisualStudioVersion = 12.0.21005.1 MinimumVisualStudioVersion = 10.0.40219.1   　修改为：
-Microsoft Visual Studio Solution File, Format Version 11.00   这里已经可以用vs2010打开工程了，只是还不能编译。
-&nbsp;
-第二步，文本打开，修改.vcxproj文件
-　可以删除带有&ldquo;V120&rdquo;的两行语句，或者修改&ldquo;v120&rdquo;为&ldquo;v100&rdquo;。
-原始：
-"Configuration"&gt; &lt;ConfigurationType&gt;Application&lt;/ConfigurationType&gt; &lt;CharacterSet&gt;MultiByte&lt;/CharacterSet&gt; &lt;CLRSupport&gt;false&lt;/CLRSupport&gt; &lt;PlatformToolset&gt;v120&lt;/PlatformToolset&gt; &lt;/PropertyGroup&gt; &lt;PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration"&gt; &lt;ConfigurationType&gt;Application&lt;/ConfigurationType&gt; &lt;CharacterSet&gt;MultiByte&lt;/CharacterSet&gt; &lt;CLRSupport&gt;false&lt;/CLRSupport&gt; &lt;PlatformToolset&gt;v120&lt;/PlatformToolset&gt;   　修改后：
-"Configuration"&gt; &lt;ConfigurationType&gt;Application&lt;/ConfigurationType&gt; &lt;CharacterSet&gt;MultiByte&lt;/CharacterSet&gt; &lt;CLRSupport&gt;false&lt;/CLRSupport&gt; &lt;PlatformToolset&gt;v100&lt;/PlatformToolset&gt; &lt;/PropertyGroup&gt; &lt;PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration"&gt; &lt;ConfigurationType&gt;Application&lt;/ConfigurationType&gt; &lt;CharacterSet&gt;MultiByte&lt;/CharacterSet&gt; &lt;CLRSupport&gt;false&lt;/CLRSupport&gt; &lt;PlatformToolset&gt;v100&lt;/PlatformToolset&gt;   第三步，加入关联的.
+     
   
 
 
@@ -233,9 +199,9 @@ Microsoft Visual Studio Solution File, Format Version 11.00   这里已经可以
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2015/11/21/mysql&#43;matlab%E9%85%8D%E7%BD%AE/">mysql&#43;matlab配置
+  <h3><a href="https://tmhm.github.io/2015/11/21/mysql--matlab%E9%85%8D%E7%BD%AE/">mysql &amp;&amp; matlab配置
 </a>
-</h2>
+</h3>
 
   <time datetime="2015-11-21">21 Nov, 2015</time>
 
@@ -244,23 +210,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00   这里已经可以
   <p class="container content">
   
   
-    mysql 中一直出现&rsquo;&gt;   单双引号没有配对
-&nbsp;
-  mysql 连接matlab   1， 到mysql官网下载 http://dev.mysql.com/downloads/connector/j/
-(mysql-connector-java-5.1.37.tar.gz
-将mysql-connector-java-5.1.37-bin.jar 放在matlabroot/java/jar/toolbox/
-2， 在E:\Program Files\MATLAB\R2011b\toolbox\local目录下，找到classpath.txt
-增加一句
-$matlabroot/java/jar/toolbox/mysql-connector-java-5.1.37-bin.jar
-注意：驱动名字匹配
-$matlabroot指安装目录
-3，重启matlab
-4，测试
-conn = database(&lsquo;xw&rsquo;,&lsquo;root&rsquo;,&lsquo;key&rsquo;,&lsquo;com.mysql.jdbc.Driver&rsquo;,&lsquo;jdbc:mysql://localhost:3306/xw&rsquo;)
-aTemp = exec(conn,&lsquo;select * from gd_train_data limit 5&rsquo;)
-aTemp = fetch(aTemp);
-curs = aTemp.Data
-&nbsp;
+     
   
 
 
@@ -268,7 +218,7 @@ curs = aTemp.Data
 
 
   <div class="container readlink">
-  <a href="https://tmhm.github.io/2015/11/21/mysql&#43;matlab%E9%85%8D%E7%BD%AE/">Read more &rarr;</a>
+  <a href="https://tmhm.github.io/2015/11/21/mysql--matlab%E9%85%8D%E7%BD%AE/">Read more &rarr;</a>
 
 </div>
 
@@ -278,39 +228,9 @@ curs = aTemp.Data
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2015/11/20/python&#43;mysql%E5%AD%A6%E4%B9%A0/">python&#43;mysql学习
+  <h3><a href="https://tmhm.github.io/2015/09/18/%E6%B5%81%E5%BD%A2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">流形学习笔记
 </a>
-</h2>
-
-  <time datetime="2015-11-20">20 Nov, 2015</time>
-
-</div>
-
-  <p class="container content">
-  
-  
-    需要用到数据库，初学mysql，记录一下笔记
-&nbsp;
-  
-
-
-</p>
-
-
-  <div class="container readlink">
-  <a href="https://tmhm.github.io/2015/11/20/python&#43;mysql%E5%AD%A6%E4%B9%A0/">Read more &rarr;</a>
-
-</div>
-
-
-</article>
-
-  
-    <article class="container content summary">
-  <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2015/09/18/%E6%B5%81%E5%BD%A2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">流形学习笔记
-</a>
-</h2>
+</h3>
 
   <time datetime="2015-09-18">18 Sep, 2015</time>
 
@@ -319,36 +239,7 @@ curs = aTemp.Data
   <p class="container content">
   
   
-    维数约简   特征选择，依据某一标准选择性质最突出的特征 特征抽取，经已有特征的某种变换获取约简特征  增加特征数：
- 可以增加信息量，进而提高准确度 增加训练分类器的难度，进而带来维数灾难。  解决办法：
-　选取尽可能多的、可能有用的特征，然后根据需要进行特征约简。
-&nbsp;
- 主成分分析（PCA）  
-目的：
-　寻找能够表示采样数据的最好投影子空间。
-求解：
-　对样本的散布矩阵（scatter matrix）进行特征值分解，所求之空间为过样本均值，（何为过样本均值？）
-以最大特征值所对应的特征向量为方向的之空间。
-特点：
- 对椭球状分布的样本集具有很好的效果，理论上，学习到的主方向就是椭圆的主轴方向。 非监督学习算法，能找到很好地代表所有样本的方向，但是，对于分类未必是最有利的，如下图：　  线性判别分析（LDA）
-思想：
-　寻找最能把两类样本分开的投影直线
-特点：
-　监督的维数约简
-目标：
-　是投影后两类样本的均值之差与投影样本的总类散步的比值最大。
-&nbsp;
-求解：
-　把原问题转化为关于样本集总类内散步矩阵和总类间散步矩阵的广义特征值问题。
-&nbsp;
- 多重判别分析（MDA）  　LDA往多类情况的推广
-　解法与LDA类似，对于C－类问题，把样本投影到C－１维之空间。
-&nbsp;
-线性方法的缺点：
-线性方法对于某些数据不能进行有效的处理，这类数据，在现实中，往往很多。比如下图：
-&nbsp;
-另外，现实中的数据往往并不是特征的线性组合。
-比如　paper：A Global Geometric Framework　for Nonlinear Dimensionality　Reduction　所提到的人脸模型
+     
   
 
 
@@ -440,7 +331,7 @@ curs = aTemp.Data
   
   &copy; 2017 Well.
 
-
+ &nbsp; &nbsp;
 </div>
 
 

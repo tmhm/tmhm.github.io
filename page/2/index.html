@@ -41,7 +41,6 @@
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-
 <link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://tmhm.github.io/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://tmhm.github.io/css/style.css">
@@ -60,6 +59,8 @@
 
 	</script>
 
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
 </head>
 <body>
   <main id="main-wrapper" class="container main_wrapper has-sidebar">
@@ -150,80 +151,28 @@
     <h1>Well
 </h1>
 
-    <span>last update: <time datetime="2017-02-19T19:54:02-08:00">19 February at 7:54pm</time>
+    <div class="metas">
+<span>last update: <time datetime="2017-02-19T19:54:02-08:00">19 February at 7:54pm</time>
 </span>
+&nbsp;&nbsp;
+
+<span id="busuanzi_container_site_pv">
+    Pv:<span id="busuanzi_value_site_pv"></span>次
+</span>
+&nbsp;
+<span id="busuanzi_container_site_uv">
+  Uv:<span id="busuanzi_value_site_uv"></span>次
+</span>
+</div>
 
   </header>
   
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/09/17/stacks-and-queues--codility/">stacks and queues--codility
+  <h3><a href="https://tmhm.github.io/2016/09/04/prefix-sums--codility/">prefix sums--codility
 </a>
-</h2>
-
-  <time datetime="2016-09-17">17 Sep, 2016</time>
-
-</div>
-
-  <p class="container content">
-  
-  
-    lesson 7: stacks and queues * 1. Nesting * 2. StoneWall * 3. Brackets * 4. Finsh  lesson 7: stacks and queues  1. Nesting   Determine whether given string of parentheses is properly nested.
- A string S consisting of N characters is called properly nested if:
- S is empty; S has the form &laquo;(U)&raquo; where U is a properly nested string; S has the form &laquo;VW&raquo; where V and W are properly nested strings.
-  
-
-
-</p>
-
-
-  <div class="container readlink">
-  <a href="https://tmhm.github.io/2016/09/17/stacks-and-queues--codility/">Read more &rarr;</a>
-
-</div>
-
-
-</article>
-
-  
-    <article class="container content summary">
-  <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/09/14/sorting--codility/">sorting--codility
-</a>
-</h2>
-
-  <time datetime="2016-09-14">14 Sep, 2016</time>
-
-</div>
-
-  <p class="container content">
-  
-  
-    lesson 6: sorting * 1. Distinct * 2. Triangle * 2. MaxProductOfThree * 4. NumberOfDiscIntersections  lesson 6: sorting  exercise Problem:
-You are given a zero-indexed array A consisting of n &gt; 0 integers; you must return the number of unique values in array A.
-Solution O(nlogn):
-First, sort array A; similar values will then be next to each other. Finally, just count the number of distinct pairs in adjacent cells.
-  
-
-
-</p>
-
-
-  <div class="container readlink">
-  <a href="https://tmhm.github.io/2016/09/14/sorting--codility/">Read more &rarr;</a>
-
-</div>
-
-
-</article>
-
-  
-    <article class="container content summary">
-  <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/09/04/prefix-sums--codility/">prefix sums--codility
-</a>
-</h2>
+</h3>
 
   <time datetime="2016-09-04">4 Sep, 2016</time>
 
@@ -232,9 +181,7 @@ First, sort array A; similar values will then be next to each other. Finally, ju
   <p class="container content">
   
   
-    lesson 5: prefix sums * 1. PassingCars * 2. CountDiv * 3. GenomicRangeQuery * 4. MinAvgTwoSlice   lesson 5: prefix sums    PassingCars    Count the number of passing cars on the road.
- A non-empty zero-indexed array A consisting of N integers is given. The consecutive elements of array A represent consecutive cars on a road.
-Array A contains only 0s and/or 1s:
+     
   
 
 
@@ -252,9 +199,9 @@ Array A contains only 0s and/or 1s:
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/09/02/%E5%86%8D%E6%8E%A2vim%E9%85%8D%E7%BD%AE/">再探VIM配置
+  <h3><a href="https://tmhm.github.io/2016/09/02/%E5%86%8D%E6%8E%A2vim%E9%85%8D%E7%BD%AE/">再探VIM配置
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-09-02">2 Sep, 2016</time>
 
@@ -263,8 +210,7 @@ Array A contains only 0s and/or 1s:
   <p class="container content">
   
   
-    再探VIM配置  最初找到这个发行版spf13-vim，在ubuntu上用的还比较方便，有很多插件；最近在mac上用，总是不兼容vim，用brew安装了最新的vim，还是跟系统不兼容，总是有问题，于是就找到了下面第二个配置。 vim－config，这哥们基于vundle配置了一些有用的插件，国内有某君翻译了他的博文.美中不足的是，安装有问题，有几处安装不成功。使用的时候也是有问题。在翻译的文章最后，编者才告知有问题，但是并没有给出解决的办法。于是我又开始自己造轮子了。 拷贝默认的配置文件 $ cp /usr/sh are/vim/vimrc ~/.vimrc 编辑文件 $ vim ~/.vimrc 安装Vundle: $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 将插件管理器vundle的Configure Plugins:拿过来 再借用了上面vim－config中的高亮颜色插件，折叠等,并参考了该博文  于是得到下面的配置文件
-set nocompatible &quot; be iMproved, required filetype off &quot; required &quot; set the runtime path to include Vundle and initialize set rtp+=~/.vim/bundle/Vundle.vim call vundle#begin() &quot; alternatively, pass a path where Vundle should install plugins &quot;call vundle#begin('~/some/path/here') &quot; let Vundle manage Vundle, required Plugin 'VundleVim/Vundle.vim' &quot; The following are examples of different formats supported.
+     
   
 
 
@@ -282,9 +228,9 @@ set nocompatible &quot; be iMproved, required filetype off &quot; required &quot
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/09/01/counting-elements--codility/">counting elements--codility
+  <h3><a href="https://tmhm.github.io/2016/09/01/counting-elements--codility/">counting elements--codility
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-09-01">1 Sep, 2016</time>
 
@@ -293,7 +239,7 @@ set nocompatible &quot; be iMproved, required filetype off &quot; required &quot
   <p class="container content">
   
   
-    lesson 4: counting elements * 1. FrogRiverOne * 2. PermCheck * 3. MissingInteger * 4. MaxCounters  lesson 4: counting elements   exercise Problem: You are given an integer m (1 &lt;= m &lt;= 1,000,000) and two non-empty, zero-indexed arrays A and B of n integers, a0,a1,&hellip;,an−1 and b0,b1,&hellip;,bn−1 respectively (0 &lt;= ai,bi &lt;= m).   For every element of array B, we assume that we will swap it with some element from array A.
+     
   
 
 
@@ -311,9 +257,9 @@ set nocompatible &quot; be iMproved, required filetype off &quot; required &quot
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/09/01/time-complexity--codility/">Time complexity--codility
+  <h3><a href="https://tmhm.github.io/2016/09/01/time-complexity--codility/">Time complexity--codility
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-09-01">1 Sep, 2016</time>
 
@@ -322,9 +268,7 @@ set nocompatible &quot; be iMproved, required filetype off &quot; required &quot
   <p class="container content">
   
   
-    lesson 3: Time complexity   exercise: Problem: You are given an integer n. Count the total of 1+2+&hellip;+n.  def sumN(N): return N*(N+1)//2  1. TapeEquilibrium -----[100%]   Minimize the value |(A[0] + &hellip; + A[P-1]) - (A[P] + &hellip; + A[N-1])|.
- A non-empty zero-indexed array A consisting of N integers is given. Array A represents numbers on a tape.
-Any integer P, such that 0 &lt; P &lt; N, splits this tape into two non-empty parts: A[0], A[1], &hellip;, A[P − 1] and A[P], A[P + 1], &hellip;, A[N − 1].
+     
   
 
 
@@ -342,9 +286,9 @@ Any integer P, such that 0 &lt; P &lt; N, splits this tape into two non-empty pa
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/09/01/arrays--codility/">Arrays--codility
+  <h3><a href="https://tmhm.github.io/2016/09/01/arrays--codility/">Arrays--codility
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-09-01">1 Sep, 2016</time>
 
@@ -353,8 +297,7 @@ Any integer P, such that 0 &lt; P &lt; N, splits this tape into two non-empty pa
   <p class="container content">
   
   
-    lesson 2: Arrays   exercise: Problem: Given array A consisting of N integers, return the reversed array.  def myreverse(A): length = len(A) for i in xrange(length//2): A[i], A[length -i-1] = A[length - i-1], A[i] return A  1. CyclicRotation------[100%]   Rotate an array to the right by a given number of steps.
- A zero-indexed array A consisting of N integers is given. Rotation of the array means that each element is shifted right by one index, and the last element of the array is also moved to the first place.
+     
   
 
 
@@ -372,9 +315,9 @@ Any integer P, such that 0 &lt; P &lt; N, splits this tape into two non-empty pa
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/09/01/iterations---codility/">Iterations --codility
+  <h3><a href="https://tmhm.github.io/2016/09/01/iterations---codility/">Iterations --codility
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-09-01">1 Sep, 2016</time>
 
@@ -383,9 +326,7 @@ Any integer P, such that 0 &lt; P &lt; N, splits this tape into two non-empty pa
   <p class="container content">
   
   
-    lesson 1：Iterations  1. BinaryGap-----[100%]   Find longest sequence of zeros in binary representation of an integer.
- A binary gap within a positive integer N is any maximal sequence of consecutive zeros that is surrounded by ones at both ends in the binary representation of N.
-For example, number 9 has binary representation 1001 and contains a binary gap of length 2. The number 529 has binary representation 1000010001 and contains two binary gaps: one of length 4 and one of length 3.
+     
   
 
 
@@ -403,9 +344,9 @@ For example, number 9 has binary representation 1001 and contains a binary gap o
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/08/31/adobe-reader-dc-%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE/">adobe reader DC 字体设置
+  <h3><a href="https://tmhm.github.io/2016/08/31/adobe-reader-dc-%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE/">adobe reader DC 字体设置
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-08-31">31 Aug, 2016</time>
 
@@ -414,13 +355,7 @@ For example, number 9 has binary representation 1001 and contains a binary gap o
   <p class="container content">
   
   
-    adobe reader DC 字体设置 一直使用adobe reader阅读pdf文档，系统提醒我升级一个reader助手，
-升级之后：
- 感觉字体颜色变浅，笔画也变细了，整体有些模糊不清。  google了一下，原来是设置的问题
-在菜单中依次可以找到如下的设置：
-edit-&gt;preferences-&gt;page display-&gt;rendering：
-将Smooth Text 设置为：
- for laptop/LCD screens  如下所示： 问题解决完毕。
+     
   
 
 
@@ -438,9 +373,9 @@ edit-&gt;preferences-&gt;page display-&gt;rendering：
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/08/30/codility-lessons/">codility lessons
+  <h3><a href="https://tmhm.github.io/2016/08/30/codility-lessons/">codility lessons
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-08-30">30 Aug, 2016</time>
 
@@ -449,10 +384,7 @@ edit-&gt;preferences-&gt;page display-&gt;rendering：
   <p class="container content">
   
   
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;http://yandex.st/highlightjs/6.2/styles/googlecode.min.css&quot;&gt; &lt;script src=&quot;http://code.jquery.com/jquery-1.7.2.min.js&quot;&gt;&lt;/script&gt; &lt;script src=&quot;http://yandex.st/highlightjs/6.2/highlight.min.js&quot;&gt;&lt;/script&gt; &lt;script&gt;hljs.initHighlightingOnLoad();&lt;/script&gt; &lt;script type=&quot;text/javascript&quot;&gt; $(document).ready(function(){ $(&quot;h2,h3,h4,h5,h6&quot;).each(function(i,item){ var tag = $(item).get(0).localName; $(item).attr(&quot;id&quot;,&quot;wow&quot;+i); $(&quot;#category&quot;).append('&lt;a class=&quot;new'+tag+'&quot; href=&quot;#wow'+i+'&quot;&gt;'+$(this).text()+'&lt;/a&gt;&lt;/br&gt;'); $(&quot;.newh2&quot;).css(&quot;margin-left&quot;,0); $(&quot;.newh3&quot;).css(&quot;margin-left&quot;,20); $(&quot;.newh4&quot;).css(&quot;margin-left&quot;,40); $(&quot;.newh5&quot;).css(&quot;margin-left&quot;,60); $(&quot;.newh6&quot;).css(&quot;margin-left&quot;,80); }); }); &lt;/script&gt; &lt;div id=&quot;category&quot;&gt;&lt;/div&gt;    codility lessons
- lesson 1: Iterations * 1. BinaryGap lesson 2: Arrays * 1. CyclicRotation * 2. OddOccurrencesInArray
- lesson 3: Time complexity * 1. TapeEquilibrium * 2. FrogJmp * 3. PermMissingElem
- lesson 4: counting elements * 1.
+     
   
 
 
@@ -470,9 +402,9 @@ edit-&gt;preferences-&gt;page display-&gt;rendering：
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/08/30/%E6%8C%89%E4%BD%8D%E6%93%8D%E4%BD%9C/">按位操作
+  <h3><a href="https://tmhm.github.io/2016/08/30/%E6%8C%89%E4%BD%8D%E6%93%8D%E4%BD%9C/">按位操作
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-08-30">30 Aug, 2016</time>
 
@@ -481,8 +413,7 @@ edit-&gt;preferences-&gt;page display-&gt;rendering：
   <p class="container content">
   
   
-     按位操作 异或  异或自己 变成零 异或零，值不变  与&amp;  递归与自己的减一按位与，返回的是该数化为二进制数后，数字1的个数
-int fun(int x){ int c = 0; while(x){ c++; x = x&amp;(x-1); cout&lt;&lt; x &lt;&lt; endl; } return c; }   
+     
   
 
 
@@ -500,9 +431,9 @@ int fun(int x){ int c = 0; while(x){ c++; x = x&amp;(x-1); cout&lt;&lt; x &lt;&l
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/08/30/microsoft-visual-studio%E5%B0%8F%E6%8A%80%E5%B7%A7/">Microsoft Visual Studio小技巧
+  <h3><a href="https://tmhm.github.io/2016/08/30/microsoft-visual-studio%E5%B0%8F%E6%8A%80%E5%B7%A7/">Microsoft Visual Studio小技巧
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-08-30">30 Aug, 2016</time>
 
@@ -511,8 +442,7 @@ int fun(int x){ int c = 0; while(x){ c++; x = x&amp;(x-1); cout&lt;&lt; x &lt;&l
   <p class="container content">
   
   
-    main函数调试参数：  　Project -&gt; Properties -&gt; Configuration Properties -&gt; Debugging
-　在Command Arguments里填上即可。
+     
   
 
 
@@ -530,9 +460,9 @@ int fun(int x){ int c = 0; while(x){ c++; x = x&amp;(x-1); cout&lt;&lt; x &lt;&l
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/08/30/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AF%B9%E9%BD%90/">数据的对齐
+  <h3><a href="https://tmhm.github.io/2016/08/30/%E6%95%B0%E5%AD%A6%E9%9A%8F%E8%AE%B0%E8%BD%AC/">数学随记（转）
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-08-30">30 Aug, 2016</time>
 
@@ -541,14 +471,36 @@ int fun(int x){ int c = 0; while(x){ c++; x = x&amp;(x-1); cout&lt;&lt; x &lt;&l
   <p class="container content">
   
   
-    数据的对齐 cpu在读写内存的时候，如果所给的地址是机器字长的整数倍，则操作效率会比较高，这可以称之为地址的对齐。
-在一般的32bits机器上，地址对齐的界线默认是4的整数倍。
- struct my_struct{ char ch1; //1字节 char ch2; //1字节 int n; //4字节 char ch3; 1字节 };//整个结构体在32bits系统占12个字节  对结构体类型采用sizeof操作符，得到的是结构体占用的内存字节数，包括所有的空闲字节，显然，这个值并不一定等于它的所有成员的大小之和。
- #pragma pack(1) //将地址对齐界线改为1的整数 struct my_struct{ char ch1; //1字节 char ch2; //1字节 int n; //4字节 char ch3; 1字节 };//整个结构体占7个字节 #pragma pack() //将地址对齐界线改回原来的值  对齐规则参考  该博文也给出了#pragma pack(show) 和#pragma pack(num)的说明以及在VS中的设置；默认num＝8.
-这内存宝贵的应用场合，比如嵌入式系统，一般要考虑对齐，一般原则，可以是从小到大排，把多个小字节变量放一起，并且跟对齐的大小对齐。
- 一般来说，
- 结构体的对齐规则是先按数据类型自身进行对齐，这里需要比较＃pragma pack(num)中num的数值和数据类型的大小，取小的作为基准； 然后再按整个结构体进行对齐，对齐值必须是2的幂，比如1，2， 4， 8， 16。准确来讲，结构的总大小是其成员中最大类型的sizeof(该类型)整数倍。 如果一个类型按n字节对齐，那么该类型的变量起始地址必须是n的倍数。比如int按四字节对齐，那么int类型的变量起始地址一定是4的倍数，比如0x0012ff60，0x0012ff48等。  查看系统是多少位的  file /sbin/init
-  /sbin/init: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.
+     
+  
+
+
+</p>
+
+
+  <div class="container readlink">
+  <a href="https://tmhm.github.io/2016/08/30/%E6%95%B0%E5%AD%A6%E9%9A%8F%E8%AE%B0%E8%BD%AC/">Read more &rarr;</a>
+
+</div>
+
+
+</article>
+
+  
+    <article class="container content summary">
+  <div class="container hat">
+  <h3><a href="https://tmhm.github.io/2016/08/30/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AF%B9%E9%BD%90/">数据的对齐
+</a>
+</h3>
+
+  <time datetime="2016-08-30">30 Aug, 2016</time>
+
+</div>
+
+  <p class="container content">
+  
+  
+     
   
 
 
@@ -566,9 +518,9 @@ int fun(int x){ int c = 0; while(x){ c++; x = x&amp;(x-1); cout&lt;&lt; x &lt;&l
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/08/30/c_c&#43;&#43;%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%B6%89%E5%8F%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9/">C_C&#43;&#43;程序设计涉及的一些知识点
+  <h3><a href="https://tmhm.github.io/2016/08/30/c_cplus%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%B6%89%E5%8F%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9/">C_Cplus程序设计涉及的一些知识点
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-08-30">30 Aug, 2016</time>
 
@@ -577,11 +529,7 @@ int fun(int x){ int c = 0; while(x){ c++; x = x&amp;(x-1); cout&lt;&lt; x &lt;&l
   <p class="container content">
   
   
-    C_C++程序设计涉及的一些知识点 ##c中的printf函数 main(){ int b = 3; int arr[]= {6,7,8,9,10}; int * ptr = arr; *(ptr++) += 123; printf(&laquo;%d,%d\n&raquo;,ptr,(++ptr)); return 0; }
- 输出 ： 8,8
-原因：printf函数计算参数是从右往左压栈的
- c和c++的关系  c++ 语言支持函数重载，c语言不支持函数重载； 函数在C++编译后在库中的名字和C语言的不同，假设某个函数原型是void foo（int x， int y）。该函数被C编译器编译后，在库中的名字是_foo,而在C++编译器中则会产生像_foo_int_int之类的名字。 C++提供了C连接交换指定符 extern &laquo;c&raquo; 解决名字匹配的问题。  指针和引用 区别：
- 非空区别，在任何情况下都不能使用指向空值的引用。一个引用必须总是指向某些对象； 合法性，在使用引用之前不需要测试它的合法性，相反，指针则应该总是被测试，防止其为空； 可修改区别，指针可被重新赋值以指向另一个不同对象。但是引用则总是指向在初始化被指定的对象，以后不能改变，但是指向的对象的其内容可以改变 应用区别，有存在不指向任何对象的可能和不同时刻会指向不同的对象等情况时，使用指针；如果总是指向一个对象并且指向一个对象以后就不会改变指向，那么应该使用引用。  传递动态内存  void swap3(int *p, int *q){ int *tmp; tmp = p; p = q; q = tmp;//仅仅交换了指针的值，并没有改变两块内存的值 } void swap4(int *p, int *q){ int tmp; tmp = *p; //获取p指向内存的值 *p = *q; *q = tmp; } void swap5(int &amp;p, int &amp;q){ int tmp; tmp = p; //获取p指向内存的值 p = q; q = tmp; }  //&mdash;&mdash;&mdash;&mdash;
+     
   
 
 
@@ -589,7 +537,7 @@ int fun(int x){ int c = 0; while(x){ c++; x = x&amp;(x-1); cout&lt;&lt; x &lt;&l
 
 
   <div class="container readlink">
-  <a href="https://tmhm.github.io/2016/08/30/c_c&#43;&#43;%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%B6%89%E5%8F%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9/">Read more &rarr;</a>
+  <a href="https://tmhm.github.io/2016/08/30/c_cplus%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%B6%89%E5%8F%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9/">Read more &rarr;</a>
 
 </div>
 
@@ -599,9 +547,9 @@ int fun(int x){ int c = 0; while(x){ c++; x = x&amp;(x-1); cout&lt;&lt; x &lt;&l
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/08/08/git%E7%9A%84%E4%BD%BF%E7%94%A8/">git的使用
+  <h3><a href="https://tmhm.github.io/2016/08/08/git%E7%9A%84%E4%BD%BF%E7%94%A8/">git的使用
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-08-08">8 Aug, 2016</time>
 
@@ -610,15 +558,7 @@ int fun(int x){ int c = 0; while(x){ c++; x = x&amp;(x-1); cout&lt;&lt; x &lt;&l
   <p class="container content">
   
   
-    git的使用 ####1.创建SSH Key
- ssh-keygen -t rsa -C &quot;5733*****@qq.com&quot;  在主用户目录下生成 .ssh 文件夹，该目录下有 id_rsa 和 id_rsa.pub 两个文件。
-id_rsa 是私钥， id_rsa.pub 是公钥
-####2.Add SSH Key
-登陆GitHub，打开 Account settings &ndash;&gt; SSH and GPG Keys页面：Add SSH Key, 填上Title， 在Key文本框粘贴id_rsa.pub 的内容。
-####3.在远程服务器初始化仓库 swrd
-之后它会给出如下提示：
-or create a new repository on the command line
- echo &quot;# swrd&quot; &gt;&gt; README.md git init git add README.md git commit -m &quot;first commit&quot; git remote add origin git@github.
+     
   
 
 
@@ -636,9 +576,9 @@ or create a new repository on the command line
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/06/04/%E6%AF%94%E8%BE%83%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%85%E5%90%AB%E4%BB%A5%E5%8F%8A%E5%8F%98%E4%BD%8D%E8%AF%8D/">比较字符串（包含以及变位词）
+  <h3><a href="https://tmhm.github.io/2016/06/04/%E6%AF%94%E8%BE%83%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%85%E5%90%AB%E4%BB%A5%E5%8F%8A%E5%8F%98%E4%BD%8D%E8%AF%8D/">比较字符串（包含以及变位词）
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-06-04">4 Jun, 2016</time>
 
@@ -647,10 +587,7 @@ or create a new repository on the command line
   <p class="container content">
   
   
-    Two Strings Are Anagrams Description Write a method anagram(s,t) to decide if two strings are anagrams or not.
-What is Anagram? - Two strings are anagram if they can be the same after change the order of characters.
-Example Given s = &laquo;abcd&raquo;, t = &laquo;dcab&raquo;, return true. Given s = &laquo;ab&raquo;, t = &laquo;ab&raquo;, return true. Given s = &laquo;ab&raquo;, t = &laquo;ac&raquo;, return false.
-solution： class Solution: &quot;&quot;&quot; @param s: The first string @param b: The second string @return true or false &quot;&quot;&quot; def countchar(self,ch): result = {} for item in ch: ikey = ord(item) if result.
+     
   
 
 
@@ -668,9 +605,9 @@ solution： class Solution: &quot;&quot;&quot; @param s: The first string @param
   
     <article class="container content summary">
   <div class="container hat">
-  <h2><a href="https://tmhm.github.io/2016/05/31/python-%E4%B8%8E%E6%97%B6%E9%97%B4%E6%9C%89%E5%85%B3%E7%9A%84%E6%93%8D%E4%BD%9C/">python 与时间有关的操作
+  <h3><a href="https://tmhm.github.io/2016/05/31/python-%E4%B8%8E%E6%97%B6%E9%97%B4%E6%9C%89%E5%85%B3%E7%9A%84%E6%93%8D%E4%BD%9C/">python 与时间有关的操作
 </a>
-</h2>
+</h3>
 
   <time datetime="2016-05-31">31 May, 2016</time>
 
@@ -679,8 +616,7 @@ solution： class Solution: &quot;&quot;&quot; @param s: The first string @param
   <p class="container content">
   
   
-    ##python保存时间戳文件
- import time # ISOTIMEFORMAT='%Y-%m-%d %X' ISOTIMEFORMAT='%Y-%m-%d' t= time.strftime( ISOTIMEFORMAT, time.gmtime( time.time() ) ) f = open( t + &quot;test.txt&quot;,'wb') f.write(&quot;hello,\n This is a test file&quot;) f.close()  计算程序运行时间  import time # ISOTIMEFORMAT='%Y-%m-%d %X' start = time.time() ISOTIMEFORMAT='%Y-%m-%d' t= time.strftime( ISOTIMEFORMAT, time.gmtime( time.time() ) ) f = open( t + &quot;test.txt&quot;,'wb') f.write(&quot;hello,\n This is a test file&quot;) f.close() print t elapsed = time.time() - start print elapsed  out： ​
+     
   
 
 
@@ -689,6 +625,35 @@ solution： class Solution: &quot;&quot;&quot; @param s: The first string @param
 
   <div class="container readlink">
   <a href="https://tmhm.github.io/2016/05/31/python-%E4%B8%8E%E6%97%B6%E9%97%B4%E6%9C%89%E5%85%B3%E7%9A%84%E6%93%8D%E4%BD%9C/">Read more &rarr;</a>
+
+</div>
+
+
+</article>
+
+  
+    <article class="container content summary">
+  <div class="container hat">
+  <h3><a href="https://tmhm.github.io/2016/05/27/pybrain%E5%BA%93%E7%9A%84example%E4%B9%8Bnfq%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%88%86%E6%9E%90/">PyBrain库的example之NFQ流程图分析
+</a>
+</h3>
+
+  <time datetime="2016-05-27">27 May, 2016</time>
+
+</div>
+
+  <p class="container content">
+  
+  
+     
+  
+
+
+</p>
+
+
+  <div class="container readlink">
+  <a href="https://tmhm.github.io/2016/05/27/pybrain%E5%BA%93%E7%9A%84example%E4%B9%8Bnfq%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%88%86%E6%9E%90/">Read more &rarr;</a>
 
 </div>
 
@@ -772,7 +737,7 @@ solution： class Solution: &quot;&quot;&quot; @param s: The first string @param
   
   &copy; 2017 Well.
 
-
+ &nbsp; &nbsp;
 </div>
 
 
