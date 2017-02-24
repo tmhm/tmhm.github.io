@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="description" content=" " />
+<meta name="description" content="数据的对齐在嵌入式开发中很重要，当然，很多软件公司喜欢用来面试之用。" />
 
 <meta name="keywords" content="">
 
@@ -24,7 +24,7 @@
 
 
 <meta property="og:type" content="article" />
-<meta property="og:description" content=" "/>
+<meta property="og:description" content="数据的对齐在嵌入式开发中很重要，当然，很多软件公司喜欢用来面试之用。"/>
 <meta property="og:article:published_time" content="2016-08-30T10:50:00Z" />
 <meta property="og:article:modified_time" content="2016-08-30T10:50:00Z" />
 
@@ -35,7 +35,7 @@
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@" />
 <meta name="twitter:title" content="数据的对齐" />
-<meta name="twitter:description" content=" " />
+<meta name="twitter:description" content="数据的对齐在嵌入式开发中很重要，当然，很多软件公司喜欢用来面试之用。" />
 <meta name="twitter:url" content="https://tmhm.github.io/2016/08/30/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AF%B9%E9%BD%90/" />
 <meta name="twitter:domain" content="https://tmhm.github.io/">
   
@@ -50,7 +50,7 @@
       "name": "http://profiles.google.com/+?rel=author"
     },
     "datePublished": "2016-08-30",
-    "description": " ",
+    "description": "数据的对齐在嵌入式开发中很重要，当然，很多软件公司喜欢用来面试之用。",
     "wordCount":  525 
   }
 </script>
@@ -224,26 +224,25 @@
 
 <p>在一般的32bits机器上，地址对齐的界线默认是4的整数倍。</p>
 
-<pre><code>    struct my_struct {
-</code></pre>
-
-<p>char ch1;  //1字节
+<pre><code>struct my_struct {
+char ch1;  //1字节
             char ch2; //1字节
             int n; //4字节
             char ch3; 1字节
 };//整个结构体在32bits系统占12个字节
-对结构体类型采用sizeof操作符，得到的是结构体占用的内存字节数，包括所有的空闲字节，显然，这个值并不一定等于它的所有成员的大小之和。</p>
-
-<pre><code>    #pragma pack(1) //将地址对齐界线改为1的整数
-    struct my_struct {
 </code></pre>
 
-<p>char ch1;  //1字节
-            char ch2; //1字节
-            int n; //4字节
-            char ch3; 1字节
+<p>对结构体类型采用sizeof操作符，得到的是结构体占用的内存字节数，包括所有的空闲字节，显然，这个值并不一定等于它的所有成员的大小之和。</p>
+
+<pre><code>#pragma pack(1) //将地址对齐界线改为1的整数
+struct my_struct {
+	char ch1;  //1字节
+	char ch2; //1字节
+	int n; //4字节
+	char ch3; 1字节
 };//整个结构体占7个字节
-        #pragma pack() //将地址对齐界线改回原来的值</p>
+#pragma pack() //将地址对齐界线改回原来的值
+</code></pre>
 
 <h4 id="对齐规则-参考-http-www-cnblogs-com-graphics-archive-2010-08-12-1797953-html">对齐规则<a href="http://www.cnblogs.com/graphics/archive/2010/08/12/1797953.html">参考</a></h4>
 
@@ -267,36 +266,36 @@
 <p>file /sbin/init</p>
 </blockquote>
 
-<pre><code>    /sbin/init: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.24, BuildID[sha1]=7a4c688d009fc1f06ffc692f5f42ab09e68582b2, stripped
-</code></pre>
+<p><code>/sbin/init: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.24, BuildID[sha1]=7a4c688d009fc1f06ffc692f5f42ab09e68582b2, stripped
+</code></p>
 
 <blockquote>
 <p>file /bin/ls</p>
 </blockquote>
 
-<pre><code>    /bin/ls: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.32, BuildID[sha1]=3bf9ca54ea5e261943509c2e47bc814bb1248921, stripped
-</code></pre>
+<p><code>/bin/ls: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.32, BuildID[sha1]=3bf9ca54ea5e261943509c2e47bc814bb1248921, stripped
+</code></p>
 
 <blockquote>
 <p>uname -a</p>
 </blockquote>
 
-<pre><code>    Linux ubuntu 3.13.0-79-generic #123-Ubuntu SMP Fri Feb 19 14:27:58 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
-</code></pre>
+<p><code>Linux ubuntu 3.13.0-79-generic #123-Ubuntu SMP Fri Feb 19 14:27:58 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
+</code></p>
 
 <blockquote>
 <p>cat /proc/version</p>
 </blockquote>
 
-<pre><code>    Linux version 3.13.0-79-generic (buildd@lcy01-24) (gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) ) #123-Ubuntu SMP Fri Feb 19 14:27:58 UTC 2016
-</code></pre>
+<p><code>Linux version 3.13.0-79-generic (buildd@lcy01-24) (gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) ) #123-Ubuntu SMP Fri Feb 19 14:27:58 UTC 2016
+</code></p>
 
 <blockquote>
 <p>cat /etc/issue</p>
 </blockquote>
 
-<pre><code>    Ubuntu 15.04 \n \l
-</code></pre>
+<p><code>Ubuntu 15.04 \n \l
+</code></p>
 
 <h4 id="测试数据所占字节">测试数据所占字节</h4>
 
@@ -304,15 +303,15 @@
 <p>因为在数据对齐的时候需要考虑是在什么系统下，各数据类型所占字节大小，纠正网上一些有问题的解答，比如long是只占4bits的。</p>
 </blockquote>
 
-<pre><code>    cout &lt;&lt; &quot;char: &quot; &lt;&lt; sizeof(char) &lt;&lt; endl;
-    cout &lt;&lt; &quot;short: &quot; &lt;&lt; sizeof(short) &lt;&lt; endl;
-    cout &lt;&lt; &quot;int: &quot; &lt;&lt; sizeof(int) &lt;&lt; endl;
-    cout &lt;&lt; &quot;long: &quot; &lt;&lt; sizeof(long) &lt;&lt; endl;
-    cout &lt;&lt; &quot;unsigned long: &quot; &lt;&lt; sizeof(unsigned long) &lt;&lt; endl;
-    cout &lt;&lt; &quot;long long: &quot; &lt;&lt; sizeof(long long) &lt;&lt; endl;
-    //在vc6.0下不支持 long long 数据类型。
-    cout &lt;&lt; &quot;double: &quot; &lt;&lt; sizeof(double) &lt;&lt; endl;
-    cout &lt;&lt; &quot;char*: &quot; &lt;&lt; sizeof(char*) &lt;&lt; endl;
+<pre><code>cout &lt;&lt; &quot;char: &quot; &lt;&lt; sizeof(char) &lt;&lt; endl;
+cout &lt;&lt; &quot;short: &quot; &lt;&lt; sizeof(short) &lt;&lt; endl;
+cout &lt;&lt; &quot;int: &quot; &lt;&lt; sizeof(int) &lt;&lt; endl;
+cout &lt;&lt; &quot;long: &quot; &lt;&lt; sizeof(long) &lt;&lt; endl;
+cout &lt;&lt; &quot;unsigned long: &quot; &lt;&lt; sizeof(unsigned long) &lt;&lt; endl;
+cout &lt;&lt; &quot;long long: &quot; &lt;&lt; sizeof(long long) &lt;&lt; endl;
+//在vc6.0下不支持 long long 数据类型。
+cout &lt;&lt; &quot;double: &quot; &lt;&lt; sizeof(double) &lt;&lt; endl;
+cout &lt;&lt; &quot;char*: &quot; &lt;&lt; sizeof(char*) &lt;&lt; endl;
 </code></pre>
 
 <p><strong>32bit windows xp (VC6.0 IDE 32bits) 测试：</strong></p>
@@ -430,26 +429,28 @@ class clt_1{
 <p><strong>输出控制:</strong></p>
 
 <ul>
-<li><p>64bits win10（GCC 4.9.2）测试结果：</p>
-
-<pre><code>        test null struct: 1
-        sizeof(bu): 30
-        sizeof(testdouble):24
-        sizeof(testint):16
-        sizeof(testint2):14
-        st_inside: 15,  inside stch3_1: 7
-</code></pre></li>
-
-<li><p>64bits ubuntu (gcc version 4.8.4 ) 测试结果：</p>
-
-<pre><code>        test null struct: 1
-        sizeof(bu): 30
-        sizeof(testdouble):24
-        sizeof(testint):16
-        sizeof(testint2):14
-        st_inside: 15,  inside stch3_1: 7
-</code></pre></li>
+<li>64bits win10（GCC 4.9.2）测试结果：</li>
 </ul>
+
+<pre><code>    test null struct: 1
+    sizeof(bu): 30
+    sizeof(testdouble):24
+    sizeof(testint):16
+    sizeof(testint2):14
+    st_inside: 15,  inside stch3_1: 7
+</code></pre>
+
+<ul>
+<li>64bits ubuntu (gcc version 4.8.4 ) 测试结果：</li>
+</ul>
+
+<pre><code>    test null struct: 1
+    sizeof(bu): 30
+    sizeof(testdouble):24
+    sizeof(testint):16
+    sizeof(testint2):14
+    st_inside: 15,  inside stch3_1: 7
+</code></pre>
 
 <p><strong>注意：</strong></p>
 

@@ -338,11 +338,11 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
     </item>
     
     <item>
-      <title>无人驾驶之激光雷达&amp;摄像头（主要from 速腾CEO 邱纯鑫分享）</title>
-      <link>https://tmhm.github.io/2016/12/02/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E4%B9%8B%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E6%91%84%E5%83%8F%E5%A4%B4%E4%B8%BB%E8%A6%81from-%E9%80%9F%E8%85%BEceo-%E9%82%B1%E7%BA%AF%E9%91%AB%E5%88%86%E4%BA%AB/</link>
+      <title>无人驾驶之激光雷达&amp;摄像头</title>
+      <link>https://tmhm.github.io/2016/12/02/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E4%B9%8B%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E6%91%84%E5%83%8F%E5%A4%B4/</link>
       <pubDate>Fri, 02 Dec 2016 05:03:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/12/02/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E4%B9%8B%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E6%91%84%E5%83%8F%E5%A4%B4%E4%B8%BB%E8%A6%81from-%E9%80%9F%E8%85%BEceo-%E9%82%B1%E7%BA%AF%E9%91%AB%E5%88%86%E4%BA%AB/</guid>
+      <guid>https://tmhm.github.io/2016/12/02/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E4%B9%8B%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E6%91%84%E5%83%8F%E5%A4%B4/</guid>
       <description>
 
 &lt;blockquote&gt;
@@ -397,18 +397,16 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 
 &lt;h4 id=&#34;无人驾驶环境感知中激光雷达的用处&#34;&gt;无人驾驶环境感知中激光雷达的用处：&lt;/h4&gt;
 
-&lt;pre&gt;&lt;code&gt;    1.路沿检测，包括车道线
-    2.障碍物识别，对静态物体和动态物体的识别
-    3.定位以及地图构建
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;1.路沿检测，包括车道线
+2.障碍物识别，对静态物体和动态物体的识别
+3.定位以及地图构建&lt;/p&gt;
 
 &lt;h5 id=&#34;路沿检测大致分三个步骤&#34;&gt;路沿检测大致分三个步骤：&lt;/h5&gt;
 
-&lt;ol&gt;
-&lt;li&gt;拿到原始点云，&lt;/li&gt;
-&lt;li&gt;地面店检测、提取路沿点&lt;/li&gt;
-&lt;li&gt;通过路沿点的直线拟合，可以把路沿检测出来&lt;/li&gt;
-&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;1. 拿到原始点云，
+2. 地面店检测、提取路沿点
+3. 通过路沿点的直线拟合，可以把路沿检测出来
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h5 id=&#34;障碍物的检测-大致包括&#34;&gt;障碍物的检测，大致包括：&lt;/h5&gt;
 
@@ -438,19 +436,17 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 
 &lt;p&gt;第一步，标定&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    激光雷达与摄像头融合，其实相当于是激光雷达发挥激光雷达的优势，摄像头发挥摄像头的优势，他们在某些地方是做得不够好，需要两个传感器甚至多个传感器信息进行底层的融合。
+&lt;p&gt;激光雷达与摄像头融合，其实相当于是激光雷达发挥激光雷达的优势，摄像头发挥摄像头的优势，他们在某些地方是做得不够好，需要两个传感器甚至多个传感器信息进行底层的融合。&lt;/p&gt;
 
-    在融合的时候，首先第一步，标定。比如说左上角（上图），我看到凳子，左下角激光雷达也看到的是凳子，那么我通过标定的方式告诉它，其实两个是同一个物体。
+&lt;p&gt;在融合的时候，首先第一步，标定。比如说左上角（上图），我看到凳子，左下角激光雷达也看到的是凳子，那么我通过标定的方式告诉它，其实两个是同一个物体。&lt;/p&gt;
 
-    其实摄像头发现同一个物体是非常容易的，比如做人的跟踪或车的跟踪。对于激光雷达而言， 要去识别前后帧是否同一辆车和同一个行人是非常困难的。
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;其实摄像头发现同一个物体是非常容易的，比如做人的跟踪或车的跟踪。对于激光雷达而言， 要去识别前后帧是否同一辆车和同一个行人是非常困难的。&lt;/p&gt;
 
 &lt;p&gt;第二步，根据目标设计融合算法&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    激光雷达有一个好处：如果可以通过摄像头告诉它前后两帧是同一个物体，那么通过激光雷达就可以知道物体在这前后两帧间隔内：运动速度和运动位移是多少。这是非常关键的，因为只有做运动物体的跟踪才能做一些预测。
+&lt;p&gt;激光雷达有一个好处：如果可以通过摄像头告诉它前后两帧是同一个物体，那么通过激光雷达就可以知道物体在这前后两帧间隔内：运动速度和运动位移是多少。这是非常关键的，因为只有做运动物体的跟踪才能做一些预测。&lt;/p&gt;
 
-    人在驾驶的过程中，他得时刻知道周围物体的运动状态。对于无人驾驶，除了对车辆进行位置的估计以及导航之外，其实还需要对周边物体、运动物体的跟踪和预测，这是非常有意义的。
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;人在驾驶的过程中，他得时刻知道周围物体的运动状态。对于无人驾驶，除了对车辆进行位置的估计以及导航之外，其实还需要对周边物体、运动物体的跟踪和预测，这是非常有意义的。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;问：相机和激光雷达融合中还有哪些要去解决的技术问题？&lt;/strong&gt;&lt;/p&gt;
 
@@ -464,13 +460,13 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
       <pubDate>Wed, 30 Nov 2016 07:25:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
       <guid>https://tmhm.github.io/2016/11/30/%E8%AF%BB%E5%BE%AE%E8%BD%AF%E7%9A%84%E6%A2%A6%E5%B7%A5%E5%8E%82/</guid>
-      <description>&lt;p&gt;　　前段时间看了扎克伯格和李叔同的传记，最近在看《&lt;span style=&#34;font-family: 隶书;&#34;&gt;微软的梦工厂&lt;/span&gt;》。&lt;/p&gt;
+      <description>&lt;p&gt;前段时间看了扎克伯格和李叔同的传记，最近在看《&lt;span style=&#34;font-family: 隶书;&#34;&gt;微软的梦工厂&lt;/span&gt;》。
 &lt;p&gt;看的过程总是会让我想起一些人，想起一些事情。。。&lt;/p&gt;
 &lt;p&gt;文字在我的嘴里总是略带苦涩：&lt;/p&gt;
-&lt;p&gt;也许这就是环境的影响，MSRA从一开始，就塑造了一个优秀的环境。&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;也许这就是环境的影响，MSRA从一开始，就塑造了一个优秀的环境。&lt;/p&gt;&lt;/p&gt;
+
 &lt;p&gt;同时也让我看到自己的渺小，其实曾经我总是会把自己看成&amp;ldquo;全能&amp;rdquo;的，一直活在自己的小世界里，突然不断地让我接触了越来越大的世界，这也是我总是爱多想的次因。&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
 &lt;p&gt;还有原因是，不愿接受过去的自己，不愿接受依次放大的阶梯，其实我也是在不断成长中，知足，&lt;/p&gt;
 &lt;p&gt;沉淀，时间需要沉淀，成长更需要沉淀。&lt;/p&gt;
 &lt;p&gt;我总是希望急于求成，希望一下就能学会所有，做到所有，&lt;/p&gt;
@@ -1106,14 +1102,14 @@ sudo chmod +x /usr/local/bin/macdown
 
 &lt;p&gt;eg.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    import matplotlib.pyplot as plt
-    from math import sin
-    i = [x for x in xrange(-10,10,1)]
-    j = [x**2 for x in i]
+&lt;pre&gt;&lt;code&gt;import matplotlib.pyplot as plt
+from math import sin
+i = [x for x in xrange(-10,10,1)]
+j = [x**2 for x in i]
 
-    plt.plot(i, j, linewidth=2.0, color=&#39;r&#39;)
-    # plt.show()
-    plt.savefig(&#39;./plteps.eps&#39;, format=&#39;eps&#39;, dpi=1000)
+plt.plot(i, j, linewidth=2.0, color=&#39;r&#39;)
+# plt.show()
+plt.savefig(&#39;./plteps.eps&#39;, format=&#39;eps&#39;, dpi=1000)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;strong&gt;不能打开plt.show 否则，生成不了有效的eps文件&lt;/strong&gt;&lt;/p&gt;
@@ -1125,11 +1121,11 @@ sudo chmod +x /usr/local/bin/macdown
 
 &lt;p&gt;e.g.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    font = {&#39;family&#39; : &#39;Times New Roman&#39;, #&#39;serif&#39;,
-            &#39;color&#39;  : &#39;black&#39;,
-            &#39;weight&#39; : &#39;normal&#39;,
-            &#39;size&#39;   : 35,
-            }
+&lt;pre&gt;&lt;code&gt;font = {&#39;family&#39; : &#39;Times New Roman&#39;, #&#39;serif&#39;,
+                &#39;color&#39;  : &#39;black&#39;,
+                &#39;weight&#39; : &#39;normal&#39;,
+                &#39;size&#39;   : 35,
+                }
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&#34;截图图片转换-eps&#34;&gt;截图图片转换.eps&lt;/h3&gt;
@@ -1168,23 +1164,23 @@ sudo chmod +x /usr/local/bin/macdown
 &lt;p&gt;由于使用的环境是ubuntu 14.04 desktop版，故不需要安装opencv。&lt;/p&gt;
 
 &lt;h4 id=&#34;安装一些依赖包&#34;&gt;安装一些依赖包：&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;    sudo apt-get install xautomation
-    sudo pip install numpy
-    sudo pip install gym
-&lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install xautomation
+sudo pip install numpy
+sudo pip install gym
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h4 id=&#34;下载-gym-torcs源码-https-github-com-ugo-nama-kun-gym-torcs&#34;&gt;下载&lt;a href=&#34;https://github.com/ugo-nama-kun/gym_torcs&#34;&gt;gym_torcs源码&lt;/a&gt;&lt;/h4&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;然后将&lt;/p&gt;
+&lt;li&gt;然后将&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;pre&gt;&lt;code&gt;gym_torcs/vtorcs-RL-color/src/modules/simu/simuv2/simu.cpp
 中第64行替换为
 if (isnan((float)(car-&amp;gt;ctrl-&amp;gt;gear)) || isinf(((float)(car-&amp;gt;ctrl-&amp;gt;gear)))) car-&amp;gt;ctrl-&amp;gt;gear = 0;
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;即添加两个（float），否则，下一步make的时候会出现error，安转失败&lt;/p&gt;
 
@@ -1194,19 +1190,19 @@ if (isnan((float)(car-&amp;gt;ctrl-&amp;gt;gear)) || isinf(((float)(car-&amp;gt;
 
 &lt;p&gt;执行以下命令：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    sudo apt-get install libglib2.0-dev  libgl1-mesa-dev libglu1-mesa-dev  freeglut3-dev  libplib-dev  libopenal-dev libalut-dev libxi-dev libxmu-dev libxrender-dev  libxrandr-dev libpng12-dev
+&lt;pre&gt;&lt;code&gt;sudo apt-get install libglib2.0-dev  libgl1-mesa-dev libglu1-mesa-dev  freeglut3-dev  libplib-dev  libopenal-dev libalut-dev libxi-dev libxmu-dev libxrender-dev  libxrandr-dev libpng12-dev
 
-    ./configure
+./configure
 
-    make
+make
 
-    sudo make install
+sudo make install
 
-    sudo make datainstall
+sudo make datainstall
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;输入命令
-        torcs&lt;/p&gt;
+        &lt;code&gt;torcs&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;即将打开，熟悉的TORCS 界面， 已打patch scr&lt;/p&gt;
 
@@ -1214,19 +1210,18 @@ if (isnan((float)(car-&amp;gt;ctrl-&amp;gt;gear)) || isinf(((float)(car-&amp;gt;
 
 &lt;h3 id=&#34;ddpg源码-https-github-com-yanpanlau-ddpg-keras-torcs&#34;&gt;&lt;a href=&#34;https://github.com/yanpanlau/DDPG-Keras-Torcs&#34;&gt;DDPG源码&lt;/a&gt;&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code&gt;    pip install keras
-    pip install tensorflow
+&lt;pre&gt;&lt;code&gt;pip install keras
+pip install tensorflow
 
-    git clone https://github.com/yanpanlau/DDPG-Keras-Torcs.git
-    cd DDPG-Keras-Torcs
-    cp *.* ../gym_torcs
-    cd ../gym_torcs
+git clone https://github.com/yanpanlau/DDPG-Keras-Torcs.git
+cd DDPG-Keras-Torcs
+cp *.* ../gym_torcs
+cd ../gym_torcs
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;下面运行ddpg.py&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    python ddpg.py
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;python ddpg.py&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;开始看到漂亮的训练过程啦&lt;/p&gt;
 
@@ -1238,30 +1233,27 @@ if (isnan((float)(car-&amp;gt;ctrl-&amp;gt;gear)) || isinf(((float)(car-&amp;gt;
 &lt;li&gt;注意到，笔记本中一个细节是：Using Theano backend&lt;/li&gt;
 &lt;li&gt;而，虚拟机中显示的是：Using tensorflow backend&lt;/li&gt;
 &lt;li&gt;在&lt;a href=&#34;https://keras.io/backend/&#34;&gt;keras/backend主页&lt;/a&gt;找到问题所在,是keras的配置问题&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;打开~/.keras/keras.json，把backend选项，修改Theano为tensorflow，然后wq，退出即可。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;        {
-            &amp;quot;image_dim_ordering&amp;quot;: &amp;quot;tf&amp;quot;,
-            &amp;quot;epsilon&amp;quot;: 1e-07,
-            &amp;quot;floatx&amp;quot;: &amp;quot;float32&amp;quot;,
-            &amp;quot;backend&amp;quot;: &amp;quot;tensorflow&amp;quot;
-        }
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;li&gt;打开~/.keras/keras.json，把backend选项，修改Theano为tensorflow，然后wq，退出即可。&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+    &amp;quot;image_dim_ordering&amp;quot;: &amp;quot;tf&amp;quot;,
+    &amp;quot;epsilon&amp;quot;: 1e-07,
+    &amp;quot;floatx&amp;quot;: &amp;quot;float32&amp;quot;,
+    &amp;quot;backend&amp;quot;: &amp;quot;tensorflow&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;h4 id=&#34;修改默认python&#34;&gt;修改默认python&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;删除系统自带的python软链接&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;        rm /user/bin/python
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;p&gt;&lt;code&gt;rm /user/bin/python&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;建立新安装的python 的软链接&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;        ln -s ~/anaconda2/bin/python /user/bin/python
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;p&gt;&lt;code&gt;ln -s ~/anaconda2/bin/python /user/bin/python&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;现在打开命令行python 即是安装在~/anaconda2/bin/python 的python程序&lt;/p&gt;
@@ -1274,9 +1266,9 @@ if (isnan((float)(car-&amp;gt;ctrl-&amp;gt;gear)) || isinf(((float)(car-&amp;gt;
       <pubDate>Mon, 10 Oct 2016 08:40:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
       <guid>https://tmhm.github.io/2016/10/10/%E4%B8%80%E4%BA%9B%E4%B9%A6%E5%8D%95/</guid>
-      <description>&lt;p&gt;&lt;em&gt;&lt;strong&gt;仅对近来的学习做些回顾吧&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;学习永无止境--&amp;gt;&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;em&gt;仅对近来的学习做些回顾吧&lt;/em&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;学习永无止境&amp;ndash;&amp;gt;&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;&lt;/p&gt;
+
 &lt;p&gt;&lt;strong&gt;2015年已完成书单：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;文学：&lt;/p&gt;
 &lt;ol&gt;
@@ -1293,10 +1285,11 @@ if (isnan((float)(car-&amp;gt;ctrl-&amp;gt;gear)) || isinf(((float)(car-&amp;gt;
 &lt;/ol&gt;
 &lt;p&gt;&amp;nbsp;专业类：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;C++ Primer（中文第五版）　　匆忙过了一遍，未实现代码。&lt;/li&gt;
+&lt;li&gt;C++ Primer（中文第五版）匆忙过了一遍，未实现代码。&lt;/li&gt;
 &lt;li&gt;ios 游戏开发：创意与实现&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+
 &lt;p&gt;&lt;strong&gt;2016年书单：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;文学：&lt;/p&gt;
 &lt;ol&gt;
@@ -1312,7 +1305,7 @@ if (isnan((float)(car-&amp;gt;ctrl-&amp;gt;gear)) || isinf(((float)(car-&amp;gt;
 &lt;li&gt;人类简史&lt;/li&gt;
 &lt;li&gt;智能时代（吴军著）&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
 &lt;p&gt;专业类：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;C++语言的设计与演化&lt;/li&gt;
@@ -1326,14 +1319,14 @@ if (isnan((float)(car-&amp;gt;ctrl-&amp;gt;gear)) || isinf(((float)(car-&amp;gt;
 &lt;li&gt;Reinforcement learning: An&amp;nbsp;induction.&amp;nbsp;Richard S. Sutton（-ing）&lt;/li&gt;
 &lt;li&gt;无人驾驶车辆模型预测控制.北京理工大学出版社（-ing）（发现战线好长，得收敛到某个方向）&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;16的专业书籍还有很多在继续。。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&amp;nbsp;2017年书单：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;16年的专业书籍还有很多在继续。。&lt;/p&gt;
+
+&lt;p&gt;&lt;p&gt;&lt;strong&gt;&amp;nbsp;2017年书单：&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Google 未来之镜&lt;/li&gt;
 &lt;li&gt;创新者的窘境 （-ing）&lt;/li&gt;
 &lt;li&gt;围城（-ing）&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;/ol&gt;&lt;/p&gt;
 </description>
     </item>
     

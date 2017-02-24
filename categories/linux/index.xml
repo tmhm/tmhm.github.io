@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Well</title>
+    <link>https://tmhm.github.io/categories/linux/index.xml</link>
+    <description>Recent content in Linux on Well</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <managingEditor>wells217@163.com (Well)</managingEditor>
+    <webMaster>wells217@163.com (Well)</webMaster>
+    <copyright>(c) 2017 Well.</copyright>
+    <atom:link href="https://tmhm.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>linux多线程并发</title>
+      <link>https://tmhm.github.io/2016/01/08/linux%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91/</link>
+      <pubDate>Fri, 08 Jan 2016 09:40:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/01/08/linux%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91/</guid>
+      <description>
+
+&lt;h3 id=&#34;进程和线程的概念&#34;&gt;进程和线程的概念&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;进程&lt;/p&gt;
+
+&lt;p&gt;进程包括程序映象、地址空间等要素。内核采用PCB来管理进程。进程是内核进行调度的基本单元，每个独立的进程都有自己的代码段、数据段以及堆栈，它们有自己的虚拟地址空间，多个进程间互不影响。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;线程&lt;/p&gt;
+
+&lt;p&gt;在linux系统中，实际上，线程和进程都是以统一的方式来管理的。线程也是内核进行调度的基本单元。&lt;/p&gt;
+
+&lt;p&gt;不同点在于:
+&amp;gt; 线程没有自己独立的地址空间，创建出来的新线程将和创建它的进程
+&amp;gt;（或线程)共享同一个虚拟地址空间，它们被置于同一个线程组中。线程的代码段、全局数据段、堆及其他一些诸如文件描述符表等内核管理的东西在同一组内是共享的，
+&amp;gt; 但是每个线程都有自己独立的栈空间。&lt;/p&gt;
+
+&lt;p&gt;因此，多线程环境下多全局变量的访问有可能需要同步，但是局部变量仍然有各自的存储空间，互不影响。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;与多进程相比，多线程具有的优点：
+&amp;gt;1，线程适合多任务通信环境。多线程间的通信比多进程的更简单，但是需要注意同步问题&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;2，线程的创建和调度更高效。创建线程时，无需单独复制进程的内存空间或文件描述符等；切换线程时不需要更换整个页表。&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>嵌入式linux问题杂锦</title>
+      <link>https://tmhm.github.io/2016/01/08/%E5%B5%8C%E5%85%A5%E5%BC%8Flinux%E9%97%AE%E9%A2%98%E6%9D%82%E9%94%A6/</link>
+      <pubDate>Fri, 08 Jan 2016 08:35:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/01/08/%E5%B5%8C%E5%85%A5%E5%BC%8Flinux%E9%97%AE%E9%A2%98%E6%9D%82%E9%94%A6/</guid>
+      <description>&lt;p&gt;&lt;li&gt;&lt;strong&gt;&lt;strong&gt;tftp 在开发板上不能获取共享文件，出现：&lt;/strong&gt;&lt;/strong&gt;&amp;nbsp;Permission denied&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;cnblogs_code&#34;&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;是因为，我在/sys目录下执行的，&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;cnblogs_Highlighter&#34;&gt;
+&lt;pre class=&#34;brush:cpp;gutter:true;&#34;&gt;root@am437x-evm:/sys# tftp -g -r myTcpTest 172.20.9.59
+tftp: can&amp;rsquo;t open &amp;lsquo;myTcpTest&amp;rsquo;: Permission denied
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;　　回到～ 主文件夹，既可以获取：&lt;/p&gt;
+&lt;div class=&#34;cnblogs_code&#34;&gt;
+&lt;pre&gt;root@am437x-evm:~# tftp -g -r myTcpTest &lt;span style=&#34;color: #800080;&#34;&gt;172.20&lt;/span&gt;.&lt;span style=&#34;color: #800080;&#34;&gt;9.59&lt;/span&gt; &lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

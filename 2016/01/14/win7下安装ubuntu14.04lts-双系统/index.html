@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="description" content=" " />
+<meta name="description" content=" win7 安装 ubuntu 双系统时，硬盘的格式化问题" />
 
 <meta name="keywords" content="">
 
@@ -24,7 +24,7 @@
 
 
 <meta property="og:type" content="article" />
-<meta property="og:description" content=" "/>
+<meta property="og:description" content=" win7 安装 ubuntu 双系统时，硬盘的格式化问题"/>
 <meta property="og:article:published_time" content="2016-01-14T16:11:00Z" />
 <meta property="og:article:modified_time" content="2016-01-14T16:11:00Z" />
 
@@ -35,7 +35,7 @@
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@" />
 <meta name="twitter:title" content="win7下安装ubuntu14.04lts 双系统" />
-<meta name="twitter:description" content=" " />
+<meta name="twitter:description" content=" win7 安装 ubuntu 双系统时，硬盘的格式化问题" />
 <meta name="twitter:url" content="https://tmhm.github.io/2016/01/14/win7%E4%B8%8B%E5%AE%89%E8%A3%85ubuntu14.04lts-%E5%8F%8C%E7%B3%BB%E7%BB%9F/" />
 <meta name="twitter:domain" content="https://tmhm.github.io/">
   
@@ -50,8 +50,8 @@
       "name": "http://profiles.google.com/+?rel=author"
     },
     "datePublished": "2016-01-14",
-    "description": " ",
-    "wordCount":  20 
+    "description": " win7 安装 ubuntu 双系统时，硬盘的格式化问题",
+    "wordCount":  17 
   }
 </script>
 
@@ -182,7 +182,7 @@
 
   
   &middot; Read in about 1 min
-  &middot; (20 Words)
+  &middot; (17 Words)
   <br>
   
 
@@ -205,7 +205,7 @@
     
 
     
-    <a class="next" href="https://tmhm.github.io/2016/02/18/ubuntu-12.04lts-%E5%AE%89%E8%A3%85mysql-%E5%B9%B6%E9%80%9A%E8%BF%87qt%E8%BF%9E%E6%8E%A5/" title="ubuntu 12.04lts 安装mysql ，并通过QT连接">
+    <a class="next" href="https://tmhm.github.io/2016/02/18/ubuntu-12.04lts-%E5%AE%89%E8%A3%85-mysql%E9%80%9A%E8%BF%87qt%E8%AE%BF%E9%97%AE/" title="ubuntu 12.04lts 安装 mysql，通过QT访问">
       Next
     </a>
     
@@ -218,42 +218,40 @@
 </header>
 
   <div class="container content">
-  <p><ul>
+  <ul>
 <li>首先，在win7下的硬盘管理</li>
-</ul>
+
+<li><p>压缩出一块空闲的分区，即压缩卷之后，不做任何操作。</p>
+
 <ul>
-<ul>
-<li>　　并且确保<span style="color: #ff0000;">该空闲卷是&ldquo;基本&rdquo;类型</span></li>
+<li>并且确保该空闲卷是“基本”类型
+　　　    　不是的话，<a href="http://www.jianshu.com/p/2f0731274ee6">参考</a></li>
 </ul>
-</li>
+
+<ol>
+<li>下载免费的分区助手
+注：一定要下载分区助手3.0版本，其它的高版本如4.0没有包含动态磁盘转换器这个工具</li>
+<li>安装并运行。在主界面的左上边，点击“动态磁盘转换器”来运行这个程序。</li>
+<li>然后你将看动态磁盘转换器的欢迎界面，你可以读一下它的简介，然后直接点击“下一步”按钮以进入下一个向导页</li>
+<li>在这儿的“操作选择”页里，请选择“转换动态磁盘到基本磁盘”选项，并点击“下一步”按钮</li>
+<li>然后进入“动态磁盘列表”页，在这里程序要求你选择一个你想转换到基本磁盘的动态磁盘</li>
+<li>操作确认，请在“我已经决定好执行这个转换”上打勾，然后点击“执行”按钮开始转换这个动态磁盘到基本磁盘。</li>
+<li>在几秒后，这个转换将完成，同时程序可能要求你重启电脑，在重启电脑之后，你在进入Windows的磁盘管理器中查看磁盘时，它已经被成功改变到基本磁盘了</li>
+</ol></li>
+
+<li><p>分区空闲，不可用！！问题</p>
+
+<p>如果显示的未识别，则需要将windows硬盘转换成逻辑分区。用上面的分区工具即可。3.0版本没有转换逻辑分区的功能，我用的是6.1版本的。</p>
+
+<p>原因是，<strong>主分区只能最多有4个</strong>，故要将其中一个主分区转换为逻辑分区，然后才可以通过u盘安装ubuntu。</div>
+<div class="zm-editable-content clearfix"><strong>最后得到用来装ubuntu的分区应该是：<span style="color: #ff0000;">基本的、主分区。</p>
+
+<p></span></strong></div>
+<div class="zm-editable-content clearfix"><span style="color: #ff0000;"><img src="http://images2015.cnblogs.com/blog/781469/201601/781469-20160118095823654-340201817.jpg" alt="" /></span></div></p></li>
+
+<li><p>用做好的u盘ubuntu14.04LTS直接进行多系统安装即可。如下图选项所示。
+<img src="http://images2015.cnblogs.com/blog/781469/201601/781469-20160118095918216-1458262544.jpg" alt="" width="533" height="456" /></p></p></li>
 </ul>
-<p>&nbsp;　　　 &nbsp; &nbsp;　不是的话，参考<a href="http://www.jianshu.com/p/2f0731274ee6">http://www.jianshu.com/p/2f0731274ee6</a></p>
-<ol><ol>
-<li>下载免费的分区助手<br />注：一定要下载分区助手3.0版本，其它的高版本如4.0没有包含动态磁盘转换器这个工具</li>
-<li>安装并运行。在主界面的左上边，点击&ldquo;动态磁盘转换器&rdquo;来运行这个程序。</li>
-<li>然后你将看动态磁盘转换器的欢迎界面，你可以读一下它的简介，然后直接点击&ldquo;下一步&rdquo;按钮以进入下一个向导页</li>
-<li>在这儿的&ldquo;操作选择&rdquo;页里，请选择&ldquo;转换动态磁盘到基本磁盘&rdquo;选项，并点击&ldquo;下一步&rdquo;按钮</li>
-<li>然后进入&ldquo;动态磁盘列表&rdquo;页，在这里程序要求你选择一个你想转换到基本磁盘的动态磁盘</li>
-<li>操作确认，请在&ldquo;我已经决定好执行这个转换&rdquo;上打勾，然后点击&ldquo;执行&rdquo;按钮开始转换这个动态磁盘到基本磁盘。</li>
-<li>在几秒后，这个转换将完成，同时程序可能要求你重启电脑，在重启电脑之后，你在进入Windows的磁盘管理器中查看磁盘时，它已经被成功改变到基本磁盘了</li></p>
-
-<p></ol></ol>
-<p>&nbsp;</p>
-<ul>
-<li>
-<div><span style="color: #ff0000;">分区空闲，不可用！！</span>
-<div class="zm-editable-content clearfix">如果显示的未识别，则需要将windows硬盘转换成逻辑分区。用上面的分区工具即可。3.0版本没有转换逻辑分区的功能，我用的是6.1版本的。</div>
-<div class="zm-editable-content clearfix">原因是，<strong>主分区只能最多有4个</strong>，故要将其中一个主分区转换为逻辑分区，然后才可以通过u盘安装ubuntu。</div>
-<div class="zm-editable-content clearfix"><strong>最后得到用来装ubuntu的分区应该是：<span style="color: #ff0000;">基本的、主分区。</span></strong></div>
-<div class="zm-editable-content clearfix"><span style="color: #ff0000;"><img src="http://images2015.cnblogs.com/blog/781469/201601/781469-20160118095823654-340201817.jpg" alt="" /></span></div></p>
-
-<p></div></p>
-
-<p></li>
-<li>用做好的u盘ubuntu14.04LTS直接进行多系统安装即可。如下图选项所示。</li></p>
-
-<p></ul>
-<p style="margin-left: 30px;"><img src="http://images2015.cnblogs.com/blog/781469/201601/781469-20160118095918216-1458262544.jpg" alt="" width="533" height="456" /></p></p>
 
 </div>
 
@@ -271,7 +269,7 @@
     
 
     
-    <a class="next" href="https://tmhm.github.io/2016/02/18/ubuntu-12.04lts-%E5%AE%89%E8%A3%85mysql-%E5%B9%B6%E9%80%9A%E8%BF%87qt%E8%BF%9E%E6%8E%A5/" title="ubuntu 12.04lts 安装mysql ，并通过QT连接">
+    <a class="next" href="https://tmhm.github.io/2016/02/18/ubuntu-12.04lts-%E5%AE%89%E8%A3%85-mysql%E9%80%9A%E8%BF%87qt%E8%AE%BF%E9%97%AE/" title="ubuntu 12.04lts 安装 mysql，通过QT访问">
       Next
     </a>
     

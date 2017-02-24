@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="description" content=" " />
+<meta name="description" content="统计学习方法的基本概念回顾" />
 
 <meta name="keywords" content="">
 
@@ -24,7 +24,7 @@
 
 
 <meta property="og:type" content="article" />
-<meta property="og:description" content=" "/>
+<meta property="og:description" content="统计学习方法的基本概念回顾"/>
 <meta property="og:article:published_time" content="2016-04-20T15:26:00Z" />
 <meta property="og:article:modified_time" content="2016-04-20T15:26:00Z" />
 
@@ -35,7 +35,7 @@
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@" />
 <meta name="twitter:title" content="统计学习笔记（0）" />
-<meta name="twitter:description" content=" " />
+<meta name="twitter:description" content="统计学习方法的基本概念回顾" />
 <meta name="twitter:url" content="https://tmhm.github.io/2016/04/20/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B00/" />
 <meta name="twitter:domain" content="https://tmhm.github.io/">
   
@@ -50,8 +50,8 @@
       "name": "http://profiles.google.com/+?rel=author"
     },
     "datePublished": "2016-04-20",
-    "description": " ",
-    "wordCount":  159 
+    "description": "统计学习方法的基本概念回顾",
+    "wordCount":  132 
   }
 </script>
 
@@ -182,7 +182,7 @@
 
   
   &middot; Read in about 1 min
-  &middot; (159 Words)
+  &middot; (132 Words)
   <br>
   
 
@@ -239,9 +239,12 @@
 <li>有时，输入空间会和特征空间一致；有时会不同，输入空间往往会经过某些变换将输入空间映射到特征空间；</li>
 <li>模型实际是都是定义在特征空间上的；</li>
 <li>人们根据输入和输出变量的不同类型来*区分不同的预测任务*：
-    - 输入和输出均为连续变量的预测问题称之为<strong>回归问题</strong>；
-    - 输出为有限个离散变量的预测问题称之为<strong>分类问题</strong>；
-    - 输入和输出均为变量序列的预测问题称之为<strong>标注问题</strong>。</li>
+
+<ul>
+<li>输入和输出均为连续变量的预测问题称之为<strong>回归问题</strong>；</li>
+<li>输出为有限个离散变量的预测问题称之为<strong>分类问题</strong>；</li>
+<li>输入和输出均为变量序列的预测问题称之为<strong>标注问题</strong>。</li>
+</ul></li>
 </ul>
 
 <h4 id="联合概率分布">联合概率分布</h4>
@@ -265,24 +268,39 @@
 
 <ul>
 <li>模型
-    * 模型的假设空间包含所有可能的条件概率或决策函数
-    * 参数空间</li>
+
+<ul>
+<li>模型的假设空间包含所有可能的条件概率或决策函数</li>
+<li>参数空间</li>
+</ul></li>
 
 <li><p>策略
-    <em>学习的准则</em>
-    * 损失函数和风险函数
-            * 0-1、 平方、 绝对、 对数损失函数
-            * 损失函数的期望，即平均意义下的损失，称之为风险函数或期望损失
-    * 经验风险最小化与结构风险最小化
-            * 经验最小化的策略认为经验最小的模型是最优的，当样本数量很小时会出现“过拟合”
-            * 结构最小化是为了防止“过拟合”提出，其等价于正则化。结构风险在经验风险上加上表示模型复杂度的正则项或者惩罚项
-            * $\frac{1}{N} \sum_{i=1}^{N} L(y_i,f(x_i)) +\lambda \ast J(f)$</p>
+（学习的准则）</p>
 
-<pre><code>        *$J(f)$为模型的复杂度，模型越复杂，复杂度越大，即复杂度表示了对复杂模型的惩罚，$\lambda$系数 大于0， 用以权衡经验风险和模型复杂度。结构风险小需要经验风险与模型复杂度同时小。*
-</code></pre></li>
+<ul>
+<li>损失函数和风险函数<br />
 
-<li><p>算法
-    * 统计学习问题归结为最优化问题</p></li>
+<ul>
+<li>0-1、 平方、 绝对、 对数损失函数</li>
+<li>损失函数的期望，即平均意义下的损失，称之为风险函数或期望损失</li>
+</ul></li>
+
+<li><p>经验风险最小化与结构风险最小化</p>
+
+<ul>
+<li>经验最小化的策略认为经验最小的模型是最优的，当样本数量很小时会出现“过拟合”</li>
+<li>结构最小化是为了防止“过拟合”提出，其等价于正则化。结构风险在经验风险上加上表示模型复杂度的正则项或者惩罚项</li>
+<li>$\frac{1}{N} \sum_{i=1}^{N} L(y_i,f(x_i)) +\lambda \ast J(f)$</li>
+</ul>
+
+<p><em>$J(f)$为模型的复杂度，模型越复杂，复杂度越大，即复杂度表示了对复杂模型的惩罚，$\lambda$系数 大于0， 用以权衡经验风险和模型复杂度。结构风险小需要经验风险与模型复杂度同时小。</em></p></li>
+
+<li><p>算法</p>
+
+<ul>
+<li>统计学习问题归结为最优化问题</li>
+</ul></li>
+</ul></li>
 </ul>
 
 <h3 id="模型的评估与模型选择">模型的评估与模型选择</h3>
@@ -297,12 +315,15 @@
 <ul>
 <li>正则项一般有1-范数和2-范数</li>
 
-<li><p>交叉验证
-    * 简单交叉验证，即随机将已知数据分2部分，分别作为训练和测试，然后将训练集在各种参数条件下训练，最后在测试集上评估，选出测试误差最小的模型；</p>
+<li><p>交叉验证</p>
 
-<pre><code>* S折交叉验证，首先随机将数据切分为S个互不相交的大小相同的子集，然后用S-1个子集用于训练，余下的作为测试，重复选择S次，最后选择S次测试中平均测试误差最小的模型
-* 留一交叉验证，S折交叉验证的特殊情形S=N，N为给定数据集的容量，即每次只有一个数据样本用于测试。
-</code></pre></li>
+<ul>
+<li><p>简单交叉验证，即随机将已知数据分2部分，分别作为训练和测试，然后将训练集在各种参数条件下训练，最后在测试集上评估，选出测试误差最小的模型；</p></li>
+
+<li><p>S折交叉验证，首先随机将数据切分为S个互不相交的大小相同的子集，然后用S-1个子集用于训练，余下的作为测试，重复选择S次，最后选择S次测试中平均测试误差最小的模型</p></li>
+
+<li><p>留一交叉验证，S折交叉验证的特殊情形S=N，N为给定数据集的容量，即每次只有一个数据样本用于测试。</p></li>
+</ul></li>
 </ul>
 
 <h3 id="泛化能力">泛化能力</h3>
@@ -334,24 +355,35 @@
 <h3 id="面向问题">面向问题</h3>
 
 <ul>
-<li><p>分类问题
-    - 指标：
-            - TP&ndash;将正类分为正的；
-            - FN&ndash;将正类分为负的；
-            - FP&ndash;将负类分为正的；
-            - TN&ndash;将负类分为负的。</p>
+<li><p>分类问题</p>
 
-<pre><code>        - 精确率 P = TP/(TP+FP)
-        - 召回率 R = TP/(TP+FN)
-        - 以上两者的调和均值 2/F = 1/P + 1/R
-</code></pre></li>
+<ul>
+<li><p>指标:</p>
+
+<ul>
+<li>TP&ndash;将正类分为正的；</li>
+<li>FN&ndash;将正类分为负的；</li>
+<li>FP&ndash;将负类分为正的；</li>
+
+<li><p>TN&ndash;将负类分为负的。</p></li>
+
+<li><p>精确率 P = TP/(TP+FP)</p></li>
+
+<li><p>召回率 R = TP/(TP+FN)</p></li>
+
+<li><p>以上两者的调和均值 2/F = 1/P + 1/R</p></li>
+</ul></li>
+</ul></li>
 
 <li><p>标注问题</p></li>
 
-<li><p>回归问题
-    - 一元回归和多元回归
-    - 线性和非线性
-    - 常用损失函数&ndash;平方损失函数</p></li>
+<li><p>回归问题</p>
+
+<ul>
+<li>一元回归和多元回归</li>
+<li>线性和非线性</li>
+<li>常用损失函数&ndash;平方损失函数</li>
+</ul></li>
 </ul>
 
 <h3 id="非监督学习">非监督学习</h3>

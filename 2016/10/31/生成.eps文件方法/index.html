@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="description" content=" " />
+<meta name="description" content="LaTeX 写文章必备" />
 
 <meta name="keywords" content="">
 
@@ -24,7 +24,7 @@
 
 
 <meta property="og:type" content="article" />
-<meta property="og:description" content=" "/>
+<meta property="og:description" content="LaTeX 写文章必备"/>
 <meta property="og:article:published_time" content="2016-10-31T10:15:00Z" />
 <meta property="og:article:modified_time" content="2016-10-31T10:15:00Z" />
 
@@ -35,7 +35,7 @@
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@" />
 <meta name="twitter:title" content="生成.eps文件方法" />
-<meta name="twitter:description" content=" " />
+<meta name="twitter:description" content="LaTeX 写文章必备" />
 <meta name="twitter:url" content="https://tmhm.github.io/2016/10/31/%E7%94%9F%E6%88%90.eps%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/" />
 <meta name="twitter:domain" content="https://tmhm.github.io/">
   
@@ -50,7 +50,7 @@
       "name": "http://profiles.google.com/+?rel=author"
     },
     "datePublished": "2016-10-31",
-    "description": " ",
+    "description": "LaTeX 写文章必备",
     "wordCount":  105 
   }
 </script>
@@ -253,14 +253,14 @@
 
 <p>eg.</p>
 
-<pre><code>    import matplotlib.pyplot as plt
-    from math import sin
-    i = [x for x in xrange(-10,10,1)]
-    j = [x**2 for x in i]
+<pre><code>import matplotlib.pyplot as plt
+from math import sin
+i = [x for x in xrange(-10,10,1)]
+j = [x**2 for x in i]
 
-    plt.plot(i, j, linewidth=2.0, color='r')
-    # plt.show()
-    plt.savefig('./plteps.eps', format='eps', dpi=1000)
+plt.plot(i, j, linewidth=2.0, color='r')
+# plt.show()
+plt.savefig('./plteps.eps', format='eps', dpi=1000)
 </code></pre>
 
 <p><strong>不能打开plt.show 否则，生成不了有效的eps文件</strong></p>
@@ -272,11 +272,11 @@
 
 <p>e.g.</p>
 
-<pre><code>    font = {'family' : 'Times New Roman', #'serif',
-            'color'  : 'black',
-            'weight' : 'normal',
-            'size'   : 35,
-            }
+<pre><code>font = {'family' : 'Times New Roman', #'serif',
+                'color'  : 'black',
+                'weight' : 'normal',
+                'size'   : 35,
+                }
 </code></pre>
 
 <h3 id="截图图片转换-eps">截图图片转换.eps</h3>

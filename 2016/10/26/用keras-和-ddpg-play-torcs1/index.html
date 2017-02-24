@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="description" content=" " />
+<meta name="description" content="DDPG算法的学习记录之配置篇" />
 
 <meta name="keywords" content="">
 
@@ -24,7 +24,7 @@
 
 
 <meta property="og:type" content="article" />
-<meta property="og:description" content=" "/>
+<meta property="og:description" content="DDPG算法的学习记录之配置篇"/>
 <meta property="og:article:published_time" content="2016-10-26T12:06:00Z" />
 <meta property="og:article:modified_time" content="2016-10-26T12:06:00Z" />
 
@@ -35,7 +35,7 @@
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@" />
 <meta name="twitter:title" content="用Keras 和 DDPG play TORCS（1）" />
-<meta name="twitter:description" content=" " />
+<meta name="twitter:description" content="DDPG算法的学习记录之配置篇" />
 <meta name="twitter:url" content="https://tmhm.github.io/2016/10/26/%E7%94%A8keras-%E5%92%8C-ddpg-play-torcs1/" />
 <meta name="twitter:domain" content="https://tmhm.github.io/">
   
@@ -50,7 +50,7 @@
       "name": "http://profiles.google.com/+?rel=author"
     },
     "datePublished": "2016-10-26",
-    "description": " ",
+    "description": "DDPG算法的学习记录之配置篇",
     "wordCount":  126 
   }
 </script>
@@ -228,23 +228,23 @@
 <p>由于使用的环境是ubuntu 14.04 desktop版，故不需要安装opencv。</p>
 
 <h4 id="安装一些依赖包">安装一些依赖包：</h4>
-
-<pre><code>    sudo apt-get install xautomation
-    sudo pip install numpy
-    sudo pip install gym
-</code></pre>
 </blockquote>
+
+<pre><code>sudo apt-get install xautomation
+sudo pip install numpy
+sudo pip install gym
+</code></pre>
 
 <h4 id="下载-gym-torcs源码-https-github-com-ugo-nama-kun-gym-torcs">下载<a href="https://github.com/ugo-nama-kun/gym_torcs">gym_torcs源码</a></h4>
 
 <ul>
-<li><p>然后将</p>
+<li>然后将</li>
+</ul>
 
 <pre><code>gym_torcs/vtorcs-RL-color/src/modules/simu/simuv2/simu.cpp
 中第64行替换为
 if (isnan((float)(car-&gt;ctrl-&gt;gear)) || isinf(((float)(car-&gt;ctrl-&gt;gear)))) car-&gt;ctrl-&gt;gear = 0;
-</code></pre></li>
-</ul>
+</code></pre>
 
 <p>即添加两个（float），否则，下一步make的时候会出现error，安转失败</p>
 
@@ -254,19 +254,19 @@ if (isnan((float)(car-&gt;ctrl-&gt;gear)) || isinf(((float)(car-&gt;ctrl-&gt;gea
 
 <p>执行以下命令：</p>
 
-<pre><code>    sudo apt-get install libglib2.0-dev  libgl1-mesa-dev libglu1-mesa-dev  freeglut3-dev  libplib-dev  libopenal-dev libalut-dev libxi-dev libxmu-dev libxrender-dev  libxrandr-dev libpng12-dev
+<pre><code>sudo apt-get install libglib2.0-dev  libgl1-mesa-dev libglu1-mesa-dev  freeglut3-dev  libplib-dev  libopenal-dev libalut-dev libxi-dev libxmu-dev libxrender-dev  libxrandr-dev libpng12-dev
 
-    ./configure
+./configure
 
-    make
+make
 
-    sudo make install
+sudo make install
 
-    sudo make datainstall
+sudo make datainstall
 </code></pre>
 
 <p>输入命令
-        torcs</p>
+        <code>torcs</code></p>
 
 <p>即将打开，熟悉的TORCS 界面， 已打patch scr</p>
 
@@ -274,19 +274,18 @@ if (isnan((float)(car-&gt;ctrl-&gt;gear)) || isinf(((float)(car-&gt;ctrl-&gt;gea
 
 <h3 id="ddpg源码-https-github-com-yanpanlau-ddpg-keras-torcs"><a href="https://github.com/yanpanlau/DDPG-Keras-Torcs">DDPG源码</a></h3>
 
-<pre><code>    pip install keras
-    pip install tensorflow
+<pre><code>pip install keras
+pip install tensorflow
 
-    git clone https://github.com/yanpanlau/DDPG-Keras-Torcs.git
-    cd DDPG-Keras-Torcs
-    cp *.* ../gym_torcs
-    cd ../gym_torcs
+git clone https://github.com/yanpanlau/DDPG-Keras-Torcs.git
+cd DDPG-Keras-Torcs
+cp *.* ../gym_torcs
+cd ../gym_torcs
 </code></pre>
 
 <p>下面运行ddpg.py</p>
 
-<pre><code>    python ddpg.py
-</code></pre>
+<p><code>python ddpg.py</code></p>
 
 <p>开始看到漂亮的训练过程啦</p>
 
@@ -298,30 +297,27 @@ if (isnan((float)(car-&gt;ctrl-&gt;gear)) || isinf(((float)(car-&gt;ctrl-&gt;gea
 <li>注意到，笔记本中一个细节是：Using Theano backend</li>
 <li>而，虚拟机中显示的是：Using tensorflow backend</li>
 <li>在<a href="https://keras.io/backend/">keras/backend主页</a>找到问题所在,是keras的配置问题</li>
-
-<li><p>打开~/.keras/keras.json，把backend选项，修改Theano为tensorflow，然后wq，退出即可。</p>
-
-<pre><code>        {
-            &quot;image_dim_ordering&quot;: &quot;tf&quot;,
-            &quot;epsilon&quot;: 1e-07,
-            &quot;floatx&quot;: &quot;float32&quot;,
-            &quot;backend&quot;: &quot;tensorflow&quot;
-        }
-</code></pre></li>
+<li>打开~/.keras/keras.json，把backend选项，修改Theano为tensorflow，然后wq，退出即可。</li>
 </ul>
+
+<pre><code>{
+    &quot;image_dim_ordering&quot;: &quot;tf&quot;,
+    &quot;epsilon&quot;: 1e-07,
+    &quot;floatx&quot;: &quot;float32&quot;,
+    &quot;backend&quot;: &quot;tensorflow&quot;
+}
+</code></pre>
 
 <h4 id="修改默认python">修改默认python</h4>
 
 <ul>
 <li><p>删除系统自带的python软链接</p>
 
-<pre><code>        rm /user/bin/python
-</code></pre></li>
+<p><code>rm /user/bin/python</code></p></li>
 
 <li><p>建立新安装的python 的软链接</p>
 
-<pre><code>        ln -s ~/anaconda2/bin/python /user/bin/python
-</code></pre></li>
+<p><code>ln -s ~/anaconda2/bin/python /user/bin/python</code></p></li>
 </ul>
 
 <p>现在打开命令行python 即是安装在~/anaconda2/bin/python 的python程序</p>

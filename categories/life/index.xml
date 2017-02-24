@@ -116,13 +116,13 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
       <pubDate>Wed, 30 Nov 2016 07:25:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
       <guid>https://tmhm.github.io/2016/11/30/%E8%AF%BB%E5%BE%AE%E8%BD%AF%E7%9A%84%E6%A2%A6%E5%B7%A5%E5%8E%82/</guid>
-      <description>&lt;p&gt;　　前段时间看了扎克伯格和李叔同的传记，最近在看《&lt;span style=&#34;font-family: 隶书;&#34;&gt;微软的梦工厂&lt;/span&gt;》。&lt;/p&gt;
+      <description>&lt;p&gt;前段时间看了扎克伯格和李叔同的传记，最近在看《&lt;span style=&#34;font-family: 隶书;&#34;&gt;微软的梦工厂&lt;/span&gt;》。
 &lt;p&gt;看的过程总是会让我想起一些人，想起一些事情。。。&lt;/p&gt;
 &lt;p&gt;文字在我的嘴里总是略带苦涩：&lt;/p&gt;
-&lt;p&gt;也许这就是环境的影响，MSRA从一开始，就塑造了一个优秀的环境。&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;也许这就是环境的影响，MSRA从一开始，就塑造了一个优秀的环境。&lt;/p&gt;&lt;/p&gt;
+
 &lt;p&gt;同时也让我看到自己的渺小，其实曾经我总是会把自己看成&amp;ldquo;全能&amp;rdquo;的，一直活在自己的小世界里，突然不断地让我接触了越来越大的世界，这也是我总是爱多想的次因。&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
 &lt;p&gt;还有原因是，不愿接受过去的自己，不愿接受依次放大的阶梯，其实我也是在不断成长中，知足，&lt;/p&gt;
 &lt;p&gt;沉淀，时间需要沉淀，成长更需要沉淀。&lt;/p&gt;
 &lt;p&gt;我总是希望急于求成，希望一下就能学会所有，做到所有，&lt;/p&gt;
@@ -187,101 +187,14 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
     </item>
     
     <item>
-      <title>生成.eps文件方法</title>
-      <link>https://tmhm.github.io/2016/10/31/%E7%94%9F%E6%88%90.eps%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/</link>
-      <pubDate>Mon, 31 Oct 2016 10:15:00 +0000</pubDate>
-      <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/10/31/%E7%94%9F%E6%88%90.eps%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/</guid>
-      <description>
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;背景：&lt;/strong&gt;
-要写论文了，图像的分辨率是一大痛点&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&#34;方法一&#34;&gt;方法一：&lt;/h3&gt;
-
-&lt;p&gt;两步生成.eps文件&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;用visio 制作图形，保存为pdf格式；&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;直接用adobe acrobat 打开pdf，然后保存为.eps 格式即可。&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;方法二&#34;&gt;方法二：&lt;/h3&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;参考：&lt;a href=&#34;http://chrisalbon.com/python/matplotlib_save_a_plot_as_vector.html&#34;&gt;Save A Matplotlib Plot As A Vector&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;可以用python直接生成.eps文件&lt;/p&gt;
-
-&lt;p&gt;plt.savefig(&amp;laquo;./plteps.eps&amp;raquo;, format=&amp;lsquo;eps&amp;rsquo;, dpi=1000)&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;有网友说，需要安装 &lt;a href=&#34;http://www.ghostscript.com/&#34;&gt;Ghostscript&lt;/a&gt;,&lt;/p&gt;
-
-&lt;p&gt;亲测，不需要&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;eg.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    import matplotlib.pyplot as plt
-    from math import sin
-    i = [x for x in xrange(-10,10,1)]
-    j = [x**2 for x in i]
-
-    plt.plot(i, j, linewidth=2.0, color=&#39;r&#39;)
-    # plt.show()
-    plt.savefig(&#39;./plteps.eps&#39;, format=&#39;eps&#39;, dpi=1000)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;不能打开plt.show 否则，生成不了有效的eps文件&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;注释掉show，即可以正常生成eps文件。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;note:&lt;/strong&gt;
-图形不能设置字体为Times New Roman，否则，生成不了。&lt;/p&gt;
-
-&lt;p&gt;e.g.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    font = {&#39;family&#39; : &#39;Times New Roman&#39;, #&#39;serif&#39;,
-            &#39;color&#39;  : &#39;black&#39;,
-            &#39;weight&#39; : &#39;normal&#39;,
-            &#39;size&#39;   : 35,
-            }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;截图图片转换-eps&#34;&gt;截图图片转换.eps&lt;/h3&gt;
-
-&lt;h4 id=&#34;方法1&#34;&gt;方法1&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;用FastStone capture 截图，然后直接生成pdf；&lt;/li&gt;
-&lt;li&gt;用adobe acrobat 打开pdf，然后保存为.eps 格式即可。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;方法2&#34;&gt;方法2&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;上述方法1，当图片比较大的时候，会出现生成的eps文件只有一部分，会有黑色框。&lt;/li&gt;
-&lt;li&gt;然后，尝试用jpg转eps的&lt;a href=&#34;http://www.tlhiv.org/rast2vec/&#34;&gt;在线工具&lt;/a&gt;，以及&lt;a href=&#34;http://blog.sina.com.cn/s/blog_5410e7b50101lme2.html&#34;&gt;该博文中的方法&lt;/a&gt;皆只生成部分。&lt;/li&gt;
-&lt;li&gt;可以采用corel draw 中的photo point 另存为eps 文件，即可以得到大分辨率，大张图片的eps文件了。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;NOTE：&lt;/strong&gt;从视频中截图的时候用faststone capture 截图要比视频播放软件（e.g qq影音）自带生成截图功能略差。&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
       <title>一些书单</title>
       <link>https://tmhm.github.io/2016/10/10/%E4%B8%80%E4%BA%9B%E4%B9%A6%E5%8D%95/</link>
       <pubDate>Mon, 10 Oct 2016 08:40:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
       <guid>https://tmhm.github.io/2016/10/10/%E4%B8%80%E4%BA%9B%E4%B9%A6%E5%8D%95/</guid>
-      <description>&lt;p&gt;&lt;em&gt;&lt;strong&gt;仅对近来的学习做些回顾吧&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;学习永无止境--&amp;gt;&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+      <description>&lt;p&gt;&lt;em&gt;仅对近来的学习做些回顾吧&lt;/em&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;学习永无止境&amp;ndash;&amp;gt;&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;&lt;/p&gt;
+
 &lt;p&gt;&lt;strong&gt;2015年已完成书单：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;文学：&lt;/p&gt;
 &lt;ol&gt;
@@ -298,10 +211,11 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 &lt;/ol&gt;
 &lt;p&gt;&amp;nbsp;专业类：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;C++ Primer（中文第五版）　　匆忙过了一遍，未实现代码。&lt;/li&gt;
+&lt;li&gt;C++ Primer（中文第五版）匆忙过了一遍，未实现代码。&lt;/li&gt;
 &lt;li&gt;ios 游戏开发：创意与实现&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+
 &lt;p&gt;&lt;strong&gt;2016年书单：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;文学：&lt;/p&gt;
 &lt;ol&gt;
@@ -317,7 +231,7 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 &lt;li&gt;人类简史&lt;/li&gt;
 &lt;li&gt;智能时代（吴军著）&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
 &lt;p&gt;专业类：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;C++语言的设计与演化&lt;/li&gt;
@@ -331,14 +245,14 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 &lt;li&gt;Reinforcement learning: An&amp;nbsp;induction.&amp;nbsp;Richard S. Sutton（-ing）&lt;/li&gt;
 &lt;li&gt;无人驾驶车辆模型预测控制.北京理工大学出版社（-ing）（发现战线好长，得收敛到某个方向）&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;16的专业书籍还有很多在继续。。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&amp;nbsp;2017年书单：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;16年的专业书籍还有很多在继续。。&lt;/p&gt;
+
+&lt;p&gt;&lt;p&gt;&lt;strong&gt;&amp;nbsp;2017年书单：&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Google 未来之镜&lt;/li&gt;
 &lt;li&gt;创新者的窘境 （-ing）&lt;/li&gt;
 &lt;li&gt;围城（-ing）&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;/ol&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -376,40 +290,6 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
     </item>
     
     <item>
-      <title>按位操作</title>
-      <link>https://tmhm.github.io/2016/08/30/%E6%8C%89%E4%BD%8D%E6%93%8D%E4%BD%9C/</link>
-      <pubDate>Tue, 30 Aug 2016 10:54:00 +0000</pubDate>
-      <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/08/30/%E6%8C%89%E4%BD%8D%E6%93%8D%E4%BD%9C/</guid>
-      <description>
-
-&lt;h3 id=&#34;异或&#34;&gt;异或&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;异或自己 变成零&lt;/li&gt;
-&lt;li&gt;异或零，值不变&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;与&#34;&gt;与 &amp;amp;&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;递归与自己的减一按位与，返回的是该数化为二进制数后，数字1的个数&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;int fun(int x){
-    int c = 0;
-    while(x){
-        c++;
-        x = x&amp;amp;(x-1);
-        cout&amp;lt;&amp;lt; x &amp;lt;&amp;lt; endl;
-    }
-    return c;
-}
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Microsoft Visual Studio小技巧</title>
       <link>https://tmhm.github.io/2016/08/30/microsoft-visual-studio%E5%B0%8F%E6%8A%80%E5%B7%A7/</link>
       <pubDate>Tue, 30 Aug 2016 10:51:00 +0000</pubDate>
@@ -420,411 +300,6 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 &lt;/ul&gt;
 &lt;p&gt;　　Project -&amp;gt; Properties -&amp;gt; Configuration Properties -&amp;gt; Debugging&lt;/p&gt;
 &lt;p&gt;　　在Command Arguments里填上即可。&lt;/p&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>数学随记（转）</title>
-      <link>https://tmhm.github.io/2016/08/30/%E6%95%B0%E5%AD%A6%E9%9A%8F%E8%AE%B0%E8%BD%AC/</link>
-      <pubDate>Tue, 30 Aug 2016 10:50:00 +0000</pubDate>
-      <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/08/30/%E6%95%B0%E5%AD%A6%E9%9A%8F%E8%AE%B0%E8%BD%AC/</guid>
-      <description>
-
-&lt;h3 id=&#34;数学随记&#34;&gt;数学随记&lt;/h3&gt;
-
-&lt;p&gt;转载自：&lt;a href=&#34;http://www.matrix67.com/blog/archives/4294&#34;&gt;随记：我们需要怎样的数学教育？&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;虚数i&#34;&gt;虚数i&lt;/h3&gt;
-
-&lt;p&gt;虚数是什么？&lt;/p&gt;
-
-&lt;p&gt;为什么要承认虚数？&lt;/p&gt;
-
-&lt;p&gt;虚数怎么就表示旋转了？&lt;/p&gt;
-
-&lt;p&gt;其实，人们建立复数理论，并不是因为人们有时需要处理根号里是负数的情况，而是因为下面这个不可抗拒的理由：如果承认虚数，那么 n 次多项式就会有恰好 n 个根，数系一下子就如同水晶球一般的完美了。&lt;/p&gt;
-
-&lt;p&gt;但复数并不能形象地反映在数轴上，这不仅是因为实数在数轴上已经完备了，还有另外一个原因：没有什么几何操作连做两次就能实现取相反数。比如，“乘以 3”就代表数轴上的点离原点的距离扩大到原来的三倍，“3 的平方”，也就是“乘以 3 再乘以 3”，就是把上述操作连做两次，即扩大到 9 倍。同样地，“乘以 -1”表示把点翻折到数轴另一侧，“-1 的平方”就会把这个点又翻回来。&lt;/p&gt;
-
-&lt;p&gt;但是，怎么在数轴上表示“乘以 i ”的操作？换句话说，什么操作连做两次能够把 1 变成 -1 ？一个颇具革命性的创意答案便是，把这个点绕着原点旋转 90 度。转 90 度转两次，自然就跑到数轴的另一侧了。&lt;/p&gt;
-
-&lt;p&gt;没错，这就把数轴扩展到了整个平面，正好解决了复数没地方表示的问题。于是，复数的乘法可以解释为缩放加旋转，复数本身自然也就有了 z = r (cosθ + sinθi) 的表示方式。顺着这个道理推下去，一切都顺理成章了。复数不但有了几何解释，有时还能更便捷地处理几何问题&lt;/p&gt;
-
-&lt;h2 id=&#34;线性代数&#34;&gt;线性代数&lt;/h2&gt;
-
-&lt;p&gt;此处&lt;a href=&#34;http://mathoverflow.net/questions/7584/what-are-the-most-misleading-alternate-definitions-in-taught-mathematics&#34;&gt;网页&lt;/a&gt;，有人一语道破线性代数的真谛。
-就好像把 x 变成 2 x 一样，我们经常需要把 (x, y) 变成 (2 x + y, x – 3 y) 之类的东西，这就叫做线性变换。&lt;/p&gt;
-
-&lt;p&gt;于是才想到定义矩阵乘法，用于表示一切线性变换。几何上看，把平面上的每个点 (x, y) 都变到 (2 x + y, x – 3 y) 的位置上去，效果就相当于对这个平面进行了一个“线性的拉扯”。&lt;/p&gt;
-
-&lt;p&gt;矩阵的乘法，其实就是多个线性变换叠加的效果，它显然满足结合律，但不满足交换律。&lt;/p&gt;
-
-&lt;p&gt;主对角线全是 1 的矩阵所对应的线性变换其实就是不变的意思，因此它叫做单位矩阵。&lt;/p&gt;
-
-&lt;p&gt;矩阵 A 乘以矩阵 B 得单位矩阵，就是做完线性变换 A 后再做一次线性变换 B 就又变回去了的意思，难怪我们说矩阵 B 是矩阵 A 的逆矩阵。&lt;/p&gt;
-
-&lt;p&gt;课本上对行列式的定义千奇百怪，又是什么递归，又是什么逆序对，还编写口诀帮助大家记忆。&lt;/p&gt;
-
-&lt;p&gt;其实，行列式的真正定义就一句话：&lt;strong&gt;每个单位正方形在线性变换之后的面积&lt;/strong&gt;。因此，单位矩阵的行列式当然就为 1，某行全为 0 的行列式显然为 0 （因为某一维度会被无视掉，线性变换会把整个平面压扁）， |A·B| 显然等于 |A|·|B| 。行列式为 0 ，对应的矩阵当然不可逆，因为这样的线性变换已经把平面压成一条线了，什么都不能把它变回去了。当然，更高阶的矩阵就对应了更高维的空间。&lt;/p&gt;
-
-&lt;p&gt;一瞬间，所有东西都解释清楚了。&lt;/p&gt;
-
-&lt;p&gt;最近看到李泽湘教授的一句话，“很多工业界用的算法是错的，所以很难做到质量标准的提升，和工匠的定位。”&lt;/p&gt;
-
-&lt;p&gt;做技术研究，做到最后发现都是数学问题。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>数据的对齐</title>
-      <link>https://tmhm.github.io/2016/08/30/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AF%B9%E9%BD%90/</link>
-      <pubDate>Tue, 30 Aug 2016 10:50:00 +0000</pubDate>
-      <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/08/30/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AF%B9%E9%BD%90/</guid>
-      <description>
-
-&lt;p&gt;cpu在读写内存的时候，如果所给的地址是机器字长的整数倍，则操作效率会比较高，这可以称之为地址的对齐。&lt;/p&gt;
-
-&lt;p&gt;在一般的32bits机器上，地址对齐的界线默认是4的整数倍。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    struct my_struct {
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;char ch1;  //1字节
-            char ch2; //1字节
-            int n; //4字节
-            char ch3; 1字节
-};//整个结构体在32bits系统占12个字节
-对结构体类型采用sizeof操作符，得到的是结构体占用的内存字节数，包括所有的空闲字节，显然，这个值并不一定等于它的所有成员的大小之和。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    #pragma pack(1) //将地址对齐界线改为1的整数
-    struct my_struct {
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;char ch1;  //1字节
-            char ch2; //1字节
-            int n; //4字节
-            char ch3; 1字节
-};//整个结构体占7个字节
-        #pragma pack() //将地址对齐界线改回原来的值&lt;/p&gt;
-
-&lt;h4 id=&#34;对齐规则-参考-http-www-cnblogs-com-graphics-archive-2010-08-12-1797953-html&#34;&gt;对齐规则&lt;a href=&#34;http://www.cnblogs.com/graphics/archive/2010/08/12/1797953.html&#34;&gt;参考&lt;/a&gt;&lt;/h4&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;该博文也给出了#pragma pack(show) 和#pragma pack(num)的说明以及在VS中的设置；默认num＝8.&lt;/p&gt;
-
-&lt;p&gt;这内存宝贵的应用场合，比如嵌入式系统，一般要考虑对齐，一般原则，可以是从小到大排，把多个小字节变量放一起，并且跟对齐的大小对齐。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;一般来说，&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;结构体的对齐规则是先按数据类型自身进行对齐，这里需要比较＃pragma pack(num)中num的数值和数据类型的大小，取小的作为基准；&lt;/li&gt;
-&lt;li&gt;然后再按整个结构体进行对齐，对齐值必须是2的幂，比如1，2， 4， 8， 16。准确来讲，&lt;strong&gt;结构的总大小是其成员中最大类型的sizeof(该类型)整数倍。&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;如果一个类型按n字节对齐，那么该类型的变量起始地址必须是n的倍数。比如int按四字节对齐，那么int类型的变量起始地址一定是4的倍数，比如0x0012ff60，0x0012ff48等。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;查看系统是多少位的&#34;&gt;查看系统是多少位的&lt;/h4&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;file /sbin/init&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;pre&gt;&lt;code&gt;    /sbin/init: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.24, BuildID[sha1]=7a4c688d009fc1f06ffc692f5f42ab09e68582b2, stripped
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;file /bin/ls&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;pre&gt;&lt;code&gt;    /bin/ls: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.32, BuildID[sha1]=3bf9ca54ea5e261943509c2e47bc814bb1248921, stripped
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;uname -a&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;pre&gt;&lt;code&gt;    Linux ubuntu 3.13.0-79-generic #123-Ubuntu SMP Fri Feb 19 14:27:58 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;cat /proc/version&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;pre&gt;&lt;code&gt;    Linux version 3.13.0-79-generic (buildd@lcy01-24) (gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) ) #123-Ubuntu SMP Fri Feb 19 14:27:58 UTC 2016
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;cat /etc/issue&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;pre&gt;&lt;code&gt;    Ubuntu 15.04 \n \l
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;测试数据所占字节&#34;&gt;测试数据所占字节&lt;/h4&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;因为在数据对齐的时候需要考虑是在什么系统下，各数据类型所占字节大小，纠正网上一些有问题的解答，比如long是只占4bits的。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;pre&gt;&lt;code&gt;    cout &amp;lt;&amp;lt; &amp;quot;char: &amp;quot; &amp;lt;&amp;lt; sizeof(char) &amp;lt;&amp;lt; endl;
-    cout &amp;lt;&amp;lt; &amp;quot;short: &amp;quot; &amp;lt;&amp;lt; sizeof(short) &amp;lt;&amp;lt; endl;
-    cout &amp;lt;&amp;lt; &amp;quot;int: &amp;quot; &amp;lt;&amp;lt; sizeof(int) &amp;lt;&amp;lt; endl;
-    cout &amp;lt;&amp;lt; &amp;quot;long: &amp;quot; &amp;lt;&amp;lt; sizeof(long) &amp;lt;&amp;lt; endl;
-    cout &amp;lt;&amp;lt; &amp;quot;unsigned long: &amp;quot; &amp;lt;&amp;lt; sizeof(unsigned long) &amp;lt;&amp;lt; endl;
-    cout &amp;lt;&amp;lt; &amp;quot;long long: &amp;quot; &amp;lt;&amp;lt; sizeof(long long) &amp;lt;&amp;lt; endl;
-    //在vc6.0下不支持 long long 数据类型。
-    cout &amp;lt;&amp;lt; &amp;quot;double: &amp;quot; &amp;lt;&amp;lt; sizeof(double) &amp;lt;&amp;lt; endl;
-    cout &amp;lt;&amp;lt; &amp;quot;char*: &amp;quot; &amp;lt;&amp;lt; sizeof(char*) &amp;lt;&amp;lt; endl;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;32bit windows xp (VC6.0 IDE 32bits) 测试：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    char: 1
-    short: 2
-    int: 4
-    long: 4
-    unsigned long: 4
-    double: 8
-    char*: 4
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;64bit windows 10 (Dev-C++ 5.11 64bits的)测试：&lt;/strong&gt;
-&amp;gt; Window系统下的MinGW，总是编译为32位代码。因为MinGW只支持32位代码。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    char: 1
-    short: 2
-    int: 4
-    long: 4             // 不知道为什指针又是8字节的！！！
-    unsigned long: 4
-    long long: 8
-    double: 8
-    char*: 8            //指针所占内存大小有区别，每字节8位，跟总线搭配
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;64bit ubuntu15.04 (g++ 4.8.4)测试：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    char: 1
-    short: 2
-    int: 4
-    long: 8         // 8 !!
-    unsigned long: 8
-    long long: 8
-    double: 8
-    char*: 8    //指针所占内存大小有区别，每字节8位，跟总线搭配
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;地址对齐&lt;/strong&gt;的概念：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;由于硬件设计的特点，CPU在读写内存时，如果所给的地址是机器字长的整数倍，则操作效率会比较高。&lt;/li&gt;
-&lt;li&gt;有的CPU甚至不支持读写地址不对齐的内存单元。&lt;/li&gt;
-&lt;li&gt;为了提高程序运行的效率，编译器会尽量避免一个变量（包括结构体成员）的存储空间跨越地址对齐的界线。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-&lt;li&gt;实验（64bits 环境）&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code&gt;
-#include &amp;lt;iostream&amp;gt;
-using namespace std;
-typedef struct{ 
-
-}test_null;          // test 1
-
-typedef struct{
-    double d1;  //8
-    char c1;    //1
-    short s1;   //补1+2
-    char ch2;   //1
-    int i1;     //补3+4+补4  =&amp;gt; 24
-}testdouble;        // test 2   
-
-typedef struct{
-    int d1;     //4
-    char c1;    //1
-    short s1;   //fill 1 + 2
-    char ch2;   //1
-    int i1;     //fill 3 + 4  =&amp;gt; 16
-}testint;           // test 3
-
-#pragma pack(2)
-typedef struct{
-    int d1;     //4
-    char c1;    //1
-    short s1;   //fill 1 +2
-    char ch2;   //1
-    int i1;     //fill 1 + 4  =&amp;gt; 14
-}testint2; 
-
-class BU{
-     int number;                //4
-     union UBffer{
-         char buffer[13];//13
-         int number;    //4
-     }ubuf;                     //-&amp;gt;13  
-     void foo(){}               //0
-     typedef char*(*f)(void*);  //0
-     enum{hdd,ssd,blueray}disk; //fill 1 + 4
-     int* a;                    //8         =&amp;gt; 30
-}bu;                // test 4
-#pragma(4)
-
-#pragma pack(1) //
- typedef struct {
-    char ch1;   //1
-    char ch2;   //1
-    int n;      //4
-    char ch3;   //1
-}stch3_1;   // -&amp;gt; 7
-
-class clt_1{
-    char ch1;   //1
-    int a;      //4
-    short b;    //2
-    char c;     //1
-    stch3_1 st1;//7 =&amp;gt; 15
-}st_inside;         // test 5
-#pragma pack(4) //
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;输出控制:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;64bits win10（GCC 4.9.2）测试结果：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;        test null struct: 1
-        sizeof(bu): 30
-        sizeof(testdouble):24
-        sizeof(testint):16
-        sizeof(testint2):14
-        st_inside: 15,  inside stch3_1: 7
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;64bits ubuntu (gcc version 4.8.4 ) 测试结果：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;        test null struct: 1
-        sizeof(bu): 30
-        sizeof(testdouble):24
-        sizeof(testint):16
-        sizeof(testint2):14
-        st_inside: 15,  inside stch3_1: 7
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;空的结构体在linux系统中并不是0，它和windows 一样，均是占一个字节；&lt;/li&gt;
-&lt;li&gt;long类型在32bits 是占4个字节，64bits 编译器中是8字节；&lt;/li&gt;
-&lt;li&gt;在32bits 系统中指针是4字节，64bits系统占8字节，由于总线物理跟指针的空间是一样大的：4*8 -&amp;gt; 32 ; 8*8 -&amp;gt; 64 .&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>比较字符串（包含以及变位词）</title>
-      <link>https://tmhm.github.io/2016/06/04/%E6%AF%94%E8%BE%83%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%85%E5%90%AB%E4%BB%A5%E5%8F%8A%E5%8F%98%E4%BD%8D%E8%AF%8D/</link>
-      <pubDate>Sat, 04 Jun 2016 09:48:00 +0000</pubDate>
-      <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/06/04/%E6%AF%94%E8%BE%83%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%85%E5%90%AB%E4%BB%A5%E5%8F%8A%E5%8F%98%E4%BD%8D%E8%AF%8D/</guid>
-      <description>
-
-&lt;h5 id=&#34;description&#34;&gt;Description&lt;/h5&gt;
-
-&lt;p&gt;Write a method anagram(s,t) to decide if two strings are anagrams or not.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;What is Anagram?&lt;/strong&gt;
-- Two strings are anagram if they can be the same after change the order of characters.&lt;/p&gt;
-
-&lt;h5 id=&#34;example&#34;&gt;Example&lt;/h5&gt;
-
-&lt;p&gt;Given s = &amp;laquo;abcd&amp;raquo;, t = &amp;laquo;dcab&amp;raquo;, return true.
-Given s = &amp;laquo;ab&amp;raquo;, t = &amp;laquo;ab&amp;raquo;, return true.
-Given s = &amp;laquo;ab&amp;raquo;, t = &amp;laquo;ac&amp;raquo;, return false.&lt;/p&gt;
-
-&lt;h5 id=&#34;solution&#34;&gt;solution：&lt;/h5&gt;
-
-&lt;pre&gt;&lt;code&gt;class Solution:
-    &amp;quot;&amp;quot;&amp;quot;
-    @param s: The first string
-    @param b: The second string
-    @return true or false
-    &amp;quot;&amp;quot;&amp;quot;
-    def countchar(self,ch):
-        result = {}
-        for item in ch:
-            ikey = ord(item)
-            if result.has_key(ikey):
-                result[ikey] +=1
-            else:
-                result.setdefault(ikey,0)
-        return result
-
-    def anagram(self, s, t):
-        # write your code here
-        dicS = self.countchar(s)
-        dicT = self.countchar(t)
-        if not cmp(dicS,dicT):
-             return True
-        else:
-            return False
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;compare-strings&#34;&gt;Compare Strings&lt;/h4&gt;
-
-&lt;h5 id=&#34;description-1&#34;&gt;Description&lt;/h5&gt;
-
-&lt;p&gt;Compare two strings A and B, determine whether A contains all of the characters in B.&lt;/p&gt;
-
-&lt;p&gt;The characters in string A and B are all Upper Case letters.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Notice&lt;/strong&gt;
-&amp;gt;The characters of B in A are not necessary continuous or ordered.&lt;/p&gt;
-
-&lt;h5 id=&#34;example-1&#34;&gt;Example&lt;/h5&gt;
-
-&lt;p&gt;For A = &amp;laquo;ABCD&amp;raquo;, B = &amp;laquo;ACD&amp;raquo;, return true.&lt;/p&gt;
-
-&lt;p&gt;For A = &amp;laquo;ABCD&amp;raquo;, B = &amp;laquo;AABC&amp;raquo;, return false.&lt;/p&gt;
-
-&lt;h5 id=&#34;solution-1&#34;&gt;solution&lt;/h5&gt;
-
-&lt;pre&gt;&lt;code&gt;class Solution:
-    &amp;quot;&amp;quot;&amp;quot;
-    @param A : A string includes Upper Case letters
-    @param B : A string includes Upper Case letters
-    @return :  if string A contains all of the characters in B return True else return False
-    &amp;quot;&amp;quot;&amp;quot;
-    # used a list with 26 iterm to save the number of each alphabet
-
-    def compareStrings(self, A, B):
-        # write your code here
-        if B is None:
-            return True
-        elif A is None:
-            return False
-
-        CntA = self.countString(A)
-        CntB = self.countString(B)
-
-        for order in range(ord(&amp;quot;Z&amp;quot;)-ord(&amp;quot;A&amp;quot;) + 1):
-            if CntA[order] &amp;lt; CntB[order]:
-                return False
-
-        return True
-
-    def countString(self,string):
-        count = []
-        for item in range(ord(&amp;quot;Z&amp;quot;)-ord(&amp;quot;A&amp;quot;) + 1):
-            count.append(0)
-        for item in string:
-            count[ord(item) - ord(&amp;quot;A&amp;quot;)] +=1
-        return count
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
@@ -955,6 +430,363 @@ Given s = &amp;laquo;ab&amp;raquo;, t = &amp;laquo;ac&amp;raquo;, return false.&
 &lt;pre&gt;gdbtui --args ./future_net test-&lt;span style=&#34;color: #0000ff;&#34;&gt;case&lt;/span&gt;/case0/topo.csv test-&lt;span style=&#34;color: #0000ff;&#34;&gt;case&lt;/span&gt;/case0/demand.csv test-&lt;span style=&#34;color: #0000ff;&#34;&gt;case&lt;/span&gt;/case0/sample_result.csv &lt;/pre&gt;
 &lt;/div&gt;
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>vim初探</title>
+      <link>https://tmhm.github.io/2016/05/21/vim%E5%88%9D%E6%8E%A2/</link>
+      <pubDate>Sat, 21 May 2016 01:49:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/05/21/vim%E5%88%9D%E6%8E%A2/</guid>
+      <description>&lt;p&gt;https://github.com/spf13/spf13-vim&lt;/p&gt;
+&lt;p&gt;安装了此博主的开源项目。&lt;/p&gt;
+&lt;p&gt;：vsp &amp;nbsp; &amp;mdash;&amp;mdash;竖分屏&lt;/p&gt;
+&lt;p&gt;：sp &amp;nbsp;　&amp;mdash;&amp;mdash;横分屏&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>spss v21.0 使用笔记</title>
+      <link>https://tmhm.github.io/2016/05/14/spss-v21.0-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sat, 14 May 2016 14:50:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/05/14/spss-v21.0-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
+      <description>
+
+&lt;p&gt;有问题，戳&lt;a href=&#34;http://www.ibm.com/support/knowledgecenter/SSLVMB_23.0.0/spss/base/chart_creation_dualy.dita?lang=zh&#34;&gt;官方帮助文档&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;神经网络&#34;&gt;神经网络&lt;/h4&gt;
+
+&lt;p&gt;&lt;em&gt;分析-神经网络-多层感知机&lt;/em&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;变量&#34;&gt;变量。&lt;/h5&gt;
+
+&lt;p&gt;&lt;em&gt;分析-神经网络-多层感知机-变量&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;预测变量可指定为因子（分类）或协变量（刻度）。&lt;/li&gt;
+&lt;li&gt;在因变量框输入&lt;strong&gt;预测Y&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;因子框 必须是&lt;strong&gt;分类的数据&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;协变量允许各种类型的数据&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;频率分析&#34;&gt;频率分析&lt;/h4&gt;
+
+&lt;p&gt;&lt;em&gt;分析-描述统计-频率&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在统计量里面可以添加选择中位数、众数等&lt;/li&gt;
+&lt;li&gt;在图表选项可以添加直方图等&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;画图&#34;&gt;画图&lt;/h4&gt;
+
+&lt;p&gt;&lt;em&gt;图形-旧对话框-&amp;gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;画双y轴图&#34;&gt;画双y轴图&lt;/h4&gt;
+
+&lt;p&gt;&lt;em&gt;图形-图表构建程序- 在选择范围框里面选：双轴&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>i.e 和e.g 的区别</title>
+      <link>https://tmhm.github.io/2016/04/12/i.e-%E5%92%8Ce.g-%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Tue, 12 Apr 2016 02:09:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/04/12/i.e-%E5%92%8Ce.g-%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;两者都是拉丁文缩写&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;i.e是*id est*的缩写，意思是that is.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;e.g是*exempli gration*的缩写,意思是for example;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>求解路由路径问题（华为挑战赛小思）</title>
+      <link>https://tmhm.github.io/2016/04/11/%E6%B1%82%E8%A7%A3%E8%B7%AF%E7%94%B1%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98%E5%8D%8E%E4%B8%BA%E6%8C%91%E6%88%98%E8%B5%9B%E5%B0%8F%E6%80%9D/</link>
+      <pubDate>Mon, 11 Apr 2016 13:47:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/04/11/%E6%B1%82%E8%A7%A3%E8%B7%AF%E7%94%B1%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98%E5%8D%8E%E4%B8%BA%E6%8C%91%E6%88%98%E8%B5%9B%E5%B0%8F%E6%80%9D/</guid>
+      <description>&lt;nav&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#问题定义&#34;&gt;问题定义&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#说明&#34;&gt;说明：&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#最终得分机制&#34;&gt;最终得分机制&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#思&#34;&gt;思：&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#初衷&#34;&gt;初衷：&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#于是-开始慢慢地折腾和实现了&#34;&gt;于是，开始慢慢地折腾和实现了 :-)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#算法描述&#34;&gt;算法描述&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#缺陷-反思&#34;&gt;缺陷-反思&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;p&gt;赛题源自“未来网络”业务发放中的路由计算问题。&lt;/p&gt;
+
+&lt;h6 id=&#34;问题定义&#34;&gt;问题定义&lt;/h6&gt;
+
+&lt;p&gt;给定一个带权重的有向图G=(V,E)，V为顶点集，E为有向边集，每一条有向边均有一个权重。对于给定的顶点s、t，以及V的子集V&amp;rsquo;，寻找从s到t的不成环有向路径P，使得P经过V&amp;rsquo;中所有的顶点(对经过V&amp;rsquo;中节点的顺序不做要求)。
+若不存在这样的有向路径P，则输出无解，程序运行时间越短，则视为结果越优；若存在这样的有向路径P，则输出所得到的路径，路径的权重越小，则视为结果越优，在输出路径权重一样的前提下，程序运行时间越短，则视为结果越优。&lt;/p&gt;
+
+&lt;h6 id=&#34;说明&#34;&gt;说明：&lt;/h6&gt;
+
+&lt;ul&gt;
+&lt;li&gt;1）图中所有权重均为[1，20]内的整数；&lt;/li&gt;
+&lt;li&gt;2）任一有向边的起点不等于终点；&lt;/li&gt;
+&lt;li&gt;3）连接顶点A至顶点B的有向边可能超过一条，其权重可能一样，也可能不一样；&lt;/li&gt;
+&lt;li&gt;4）该有向图的顶点不会超过600个，每个顶点出度(以该点为起点的有向边的数量)不超过8；&lt;/li&gt;
+&lt;li&gt;5）V&amp;rsquo;中元素个数不超过50；&lt;/li&gt;
+&lt;li&gt;6）从s到t的不成环有向路径P是指，P为由一系列有向边组成的从s至t的有向连通路径，且不允许重复经过任一节点；&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;7）路径的权重是指所有组成该路径的所有有向边的权重之和。&lt;/p&gt;
+
+&lt;h6 id=&#34;最终得分机制&#34;&gt;最终得分机制&lt;/h6&gt;
+
+&lt;p&gt;华为后台会使用N个测试用例判题，该N个测试用例分为初级、中级、高级三个等级，参赛者对于每个测试用例都会得到一个百分制分数，使用加权平均分(初级权重为0.2，中级权重为0.3，高级权重为0.5)作为该参赛者的最终得分。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;输入输出采用文件的形式。&lt;/p&gt;
+
+&lt;h5 id=&#34;思&#34;&gt;思：&lt;/h5&gt;
+
+&lt;p&gt;对于上述，这么一个问题，
+最初的想法是根据dijkstra最短路径算法中贪心的思想，结合剪枝进行求解，但是对于复杂图节点的情况，主要是在于当必经节点变多，这个规则感觉就太多，没法继续下去。&lt;/p&gt;
+
+&lt;p&gt;然后，接触到蚁群算法。
+我从旅行商问题（TSP）开始学习这个算法，但是对于我们这个要求经过给定必经点的问题，跟TSP还是有比较大的差距。
+TSP问题得以求解的核心思想在于：
+&lt;em&gt;每只蚂蚁经过所有的节点，蚂蚁行走相对于cpu总的频率是一样的，当路径越短，其蚂蚁行走的次数就会增大&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;然后，突然有了一个这样类蚂蚁的想法，接下来就是围绕这个想法在实现了。
+此处，仅仅是自己的一个思路的回顾，可能会存在一些问题。仅供讨论。&lt;/p&gt;
+
+&lt;h6 id=&#34;初衷&#34;&gt;初衷：&lt;/h6&gt;
+
+&lt;p&gt;&lt;strong&gt;将所有蚂蚁丢在 起点和必经点上，然后再让他们自己去走，走到另一必经点，其信息素增大， 如果走到终点，信息素更大，直到某只蚂蚁找到终点。每次信息素更新时，信息素更新量的大小跟该蚂蚁走过的node数量和是否经过必经点有关。 这样来，理想情况下，每次更新时，经过必经点的路径信息素应该是比较大的，每次更新信息素后，进行一次从起点开始贪心搜，每次走信息素最大的，看是否可以走到终点，如果走到终点，本次路径即是一个解。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;因为，我们蚂蚁在每个节点，可供选择的节点是很少的， 最多才8个，而tsp问题是可以去任意个节点的 ，这样更新一遍信息素，就可以去类贪心一次，看是否可以找到解。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h6 id=&#34;于是-开始慢慢地折腾和实现了&#34;&gt;于是，开始慢慢地折腾和实现了 :-)&lt;/h6&gt;
+
+&lt;p&gt;####### 类邻接表的图表结构&lt;/p&gt;
+
+&lt;p&gt;头结点表&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    struct AlGraph{
+EdgeNode *adjacencyNode[8];  //
+AlGraph *algacency_alGraph[8];  //point to the adjacencyNode struct !!!
+short int edgecnt;   // the num of node link to this head node
+short int vertexNum;
+long distToSource;    // distance from start to this node  ,default = 0;
+                        // due to the pre cost among [1:20]
+bool known;         // degault = false,  become to true when parse it.
+short int path;    //default = -1  // due to the pre node value among [0:600], yes , are node
+/*这样的缺点是,不能同时找多条路径,一个点只能记录一个它的path,一个node有多个入度的时候,就会出问题了!
+    此path成员只在dijkstra里面用，到后面类蚁群算法并没有用，它通过每只蚂蚁走过的路径来体现*/
+    };
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;边节点，它也可能是一个头结点&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    struct EdgeNode   //边表节点
+    {
+       short int adjvex;  //bian jiedian hao
+       short int cost;   //cost
+       short int linkID;  //the edge id :  point to this node
+
+       /** ant  */
+       float pheromone; //
+       //short int pheromone_delta;  //改写到蚂蚁身上
+       long long nth_antPathVisited;  //nth bits;   all 64  ,实际上只是用来确定该蚂蚁走过这条边, 这样可以尝试走通往该节点的多条边.
+       /**
+       * 1111 ... ... 1111
+       *64,63,... , 3,2,1 nth ant
+       **/
+    };
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;必经节点结构&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    struct demandIncNode{
+        short int demandID;
+        bool gotStatus;
+    };
+    struct demandNode{
+        short int source_id;
+        short int destination_id;
+        bool reachEndFlag;
+        short int includingCnt;
+        demandIncNode *includingNode[50];
+    };
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;蚂蚁结构&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    struct sAnt{
+        long int ant_pheromone_Q;   // the gross about pheromone of each ant need to different!
+        float pheromone_delta ;
+
+        long l_pathMoved_length ;         //the all length of this ant moved from &amp;lt;their&amp;gt; source!!
+        short int CommonNode_movedCount ;         //the number of node had moved
+        short int DemandNode_movedCount;    //the number of demand node had moved
+        short int cakeOnFront ;
+
+        //float prob[8];    // to my own choose
+        float  prob[8];              //the temp for calculate probability to choose
+        short int curCandidacyNodeNum; //the number of node can be select to move
+        short int passedNodeId;//
+        short int curNodeId;  //the node now
+        short int nextNodeId; // select node
+        short int antStartId;
+
+        bool antDie_status;  // this ant may little value
+        bool gotDestination;    //pass some demandNode and got destination.
+        bool gotDestFromMidway;
+        short int timeCnt;  //let this ant stop ,or they run how much
+
+    };
+
+    struct sAntResult{
+        short int toNode;
+        short int linkId;
+       // sAntResult *next;
+       // sAntResult *pre;
+        //sAntResult(short int n, short int id) : toNode(n) ,linkId(id) {}
+    };
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;为了方便查找索引，建立了一个头结点索引数组，来存储已经读入头结点的值，来防止访问第一个图表，出现野指针的情况。当需要查找某个头结点的相关信息时，先在头结点数组确认存在后， 再去图*graph[600]里面直接按头结点id值等于图索引号获取。&lt;/p&gt;
+
+&lt;h6 id=&#34;算法描述&#34;&gt;算法描述&lt;/h6&gt;
+
+&lt;ol&gt;
+&lt;li&gt;将图文件中的节点读进来，按照上面的图表格式存储，然后将有出度的头结点用指针联系起来，方便后面的访问。&lt;/li&gt;
+&lt;li&gt;根据demand节点的个数，初始化蚂蚁的个数，并置位ant相关数据。选择每一只蚂蚁第一次的初始位置（起点+所有必经点+随机的非终点）。&lt;/li&gt;
+&lt;li&gt;开始进入ant_run的主程序
+    1. 将记录蚂蚁经过的路径信息复位；
+    2. 让每个蚂蚁run，直到终点，或者没法继续；
+            1. 根据当前节点和上一步访问的节点情况，计算本节点出度节点各自的概率，用轮盘选择下一个出度节点（避免一些可推倒的不行解）
+            2. 每步记录蚂蚁获得的一些报酬（跟必经点，普通节点，终点，前方有蛋糕的概率等有关），当该蚂蚁停下来时，计算其身上有的信息总量
+            3. 待所有蚂蚁都跑完一代，更新他们的信息素到各自走过的路经上
+    3. check每只蚂蚁的信息素，并计算各自的增量，叠加到路径的信息素上去；
+    4. check本次迭代是否找到解：
+            1. 找到一个解（暂时只考虑了一代中多种可行解的优化，和初步环避免）存到一个队列中，返回
+            2. 没有找到完整的解，记录返回调试用。目前的路径上的信息素可能有问题，将当次不完整解走过的路径上的信息素，用台风吹吹:-)
+    5. 清掉本次迭代图上和ant的各种状态标识等
+    6. 直到迭代次数，结束&lt;/li&gt;
+&lt;li&gt;善后工作，写结果文件，以及调试打印输出等&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;上述为程序的主要框架，均按照自己某时想法，一步步累积起来的，更多细节部分细节处理&lt;/strong&gt;
+相比蚁群算法的核心收敛机制在于cpu的频率，上述方法应该收敛的条件是：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;经过更多的必经点，蚂蚁报酬更多，从起点达到终点，经过所有必经点，报酬甚之(理想解);&lt;/li&gt;
+&lt;li&gt;可能上一点不完备，有某些问题；&lt;/li&gt;
+&lt;li&gt;结合了强化学习正反馈的报酬机制。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h6 id=&#34;缺陷-反思&#34;&gt;缺陷-反思&lt;/h6&gt;
+
+&lt;p&gt;缺少完备的理论证明。 并没有证明求解空间在这些规则下，是完备的，并且会收敛到最优(目前来看，收敛性不太好)。
+因此，实践起来，发现并不如我心意。
+需要在一些规则的限制下才能得到较简单问题的解，目前只能得到case0和case1的解，偶尔会出现次优解。因为，我只在一个地方优化了解&lt;em&gt;一次迭代中，当出现多个解得时候，即有多只蚂蚁同时获得解，才会去优化次优的信息素&lt;/em&gt;
+所以当代与代之间有时不收敛的时候就只能通过其他的规则才能得到解，我一直在想，这个问题，估计我还有某些方面没考虑到，是不完备的解，所以导致不收敛。理论基础好生重要！&lt;/p&gt;
+
+&lt;p&gt;软件系统规划仍比较薄弱。 没有学过程序设计模式和架构，都是按照自己的一些想法实现的，当遇到问题的时候，再在这上面添加补充和完善。一开始没有很好的布局式设计，如果一开始能把所有的想明白了，做好整体框架，程序的结构性就会好一些。耦合程度也会低一些。当然在实现的过程中，我也尽量使相关性程度比较高的在一起，为了以后更好地维护。&lt;/p&gt;
+
+&lt;p&gt;整个工程的总共时间不长，应该算是我认真做过的项目中最短的了，两个隔离的周末（4天）加基本一周（6天），总共十天（满满的），包括了所有的构思和编码。总共编码在1700行左右，后期并未优化，想想，曾经一个五子棋也写了5000行，当时写dos下的界面花了不少行，当时的AI做的还挺好的，放在班群上也能得到很好的胜率。（当时也实现了自己的一个小想法，不但考虑自己胜算大小，还考虑了对方的，还有梯度的思想，哈哈~）&lt;/p&gt;
+
+&lt;p&gt;此处仅当做学习的一个总结，全是自己一行一行码的代码，勿拍砖，不足之处敬请指正与讨论。：-)&lt;/p&gt;
+
+&lt;p&gt;其实当每一次认真地做一个project，只要能单纯实现自己的一些想法，也是一件很美妙的事情，目前来看，至少也有6个这样的项目了吧
+- 第一块电路板和自制电源
+- 独角兽&amp;lt;一代,历时半年多，收货也大大&amp;gt;
+- 倒立摆&amp;lt;惊喜之作&amp;gt;
+- 四轴&amp;lt;历时也整整半年多，但不太尽人意&amp;gt;
+- 五子棋&amp;lt;琢磨&amp;gt;
+- 此次也算吧&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;感受码代码过程中的&amp;mdash;-那份喜悦与微妙&amp;gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;独角兽，幸运；更需要实力
+2016.4.11晚&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>删除链表中的元素</title>
+      <link>https://tmhm.github.io/2016/03/16/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0/</link>
+      <pubDate>Wed, 16 Mar 2016 07:20:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/03/16/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0/</guid>
+      <description>&lt;p&gt;删除链表中等于给定值&lt;code&gt;val&lt;/code&gt;的所有节点。&lt;/p&gt;
+
+&lt;p&gt;给出链表&amp;nbsp;&lt;code&gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;3&lt;/code&gt;, 和 val =&amp;nbsp;&lt;code&gt;3&lt;/code&gt;, 你需要返回删除3之后的链表：&lt;code&gt;1-&amp;gt;2-&amp;gt;4-&amp;gt;5&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;p&gt;迷惑点：陷入没有表头的陷阱，总是想记下删除节点的先驱，导致折腾了很久，其实只要人为加一个表头就简单很多了！!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/*
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    /*
+     * @param head a ListNode
+     * @param val an integer
+     * @return a ListNode
+     */
+    ListNode *removeElements(ListNode *head, int val) {
+        // Write your code here
+        //meiyou ya ba jie dian!!!???  自己加一个表头
+        //static int cnt = 0;
+        //kong biao!!就不是问题了。
+        ListNode *temp=new ListNode(0);
+        temp-&amp;gt;next= head;
+        head=temp;
+        
+        while(head-&amp;gt;next != NULL){
+            if(head-&amp;gt;next-&amp;gt;val == val){
+                head-&amp;gt;next = head-&amp;gt;next-&amp;gt;next;
+            }else{
+                head = head-&amp;gt;next;
+            }
+        }
+        return temp-&amp;gt;next;
+	
+    }
+};
+	
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

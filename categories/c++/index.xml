@@ -12,6 +12,40 @@
     <atom:link href="https://tmhm.github.io/categories/c&#43;&#43;/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>按位操作</title>
+      <link>https://tmhm.github.io/2016/08/30/%E6%8C%89%E4%BD%8D%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Tue, 30 Aug 2016 10:54:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/08/30/%E6%8C%89%E4%BD%8D%E6%93%8D%E4%BD%9C/</guid>
+      <description>
+
+&lt;h3 id=&#34;异或&#34;&gt;异或&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;异或自己 变成零&lt;/li&gt;
+&lt;li&gt;异或零，值不变&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;与&#34;&gt;与 &amp;amp;&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;递归与自己的减一按位与，返回的是该数化为二进制数后，数字1的个数&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;int fun(int x){
+    int c = 0;
+    while(x){
+        c++;
+        x = x&amp;amp;(x-1);
+        cout&amp;lt;&amp;lt; x &amp;lt;&amp;lt; endl;
+    }
+    return c;
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>C_Cplus程序设计涉及的一些知识点</title>
       <link>https://tmhm.github.io/2016/08/30/c_cplus%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%B6%89%E5%8F%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9/</link>
       <pubDate>Tue, 30 Aug 2016 10:47:00 +0000</pubDate>
@@ -21,15 +55,14 @@
 
 &lt;h3 id=&#34;c中的printf函数&#34;&gt;c中的printf函数&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code&gt;        main() {
-int b = 3;
-                int arr[]= {6,7,8,9,10
-};
+&lt;pre&gt;&lt;code&gt;main() {
+	int b = 3;
+	int arr[]= {6,7,8,9,10};
 
-int * ptr = arr;
-                *(ptr++) += 123;
-                printf(&amp;quot;%d,%d\n&amp;quot;,*ptr,*(++ptr));
-                return 0;
+	int * ptr = arr;
+    *(ptr++) += 123;
+    printf(&amp;quot;%d,%d\n&amp;quot;,*ptr,*(++ptr));
+    return 0;
 }
 
 &lt;/code&gt;&lt;/pre&gt;
@@ -61,53 +94,55 @@ int * ptr = arr;
 
 &lt;h3 id=&#34;传递动态内存&#34;&gt;传递动态内存&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code&gt;        void swap3(int *p, int *q) {
-int *tmp;
-                tmp = p;
-                p = q;
-                q = tmp;//仅仅交换了指针的值，并没有改变两块内存的值
+&lt;pre&gt;&lt;code&gt;void swap3(int *p, int *q) {
+	int *tmp;
+    tmp = p;
+    p = q;
+    q = tmp;//仅仅交换了指针的值，并没有改变两块内存的值
 }
 
 void swap4(int *p, int *q) {
-int tmp;
-                tmp = *p;  //获取p指向内存的值
-                *p = *q;
-                *q = tmp;
+	int tmp;
+    tmp = *p;  //获取p指向内存的值
+    *p = *q;
+    *q = tmp;
 }
 
 void swap5(int &amp;amp;p, int &amp;amp;q) {
-int tmp;
-                tmp = p; //获取p指向内存的值
-                p = q;
-                q = tmp;
+	int tmp;
+    tmp = p; //获取p指向内存的值
+    p = q;
+    q = tmp;
 }
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;//&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;        int t1 = 1,t2 = 2;
-        cout &amp;lt;&amp;lt; t1 &amp;lt;&amp;lt; &amp;quot;&amp;quot;&amp;lt;&amp;lt; t2 &amp;lt;&amp;lt; endl;
-        swap3(&amp;amp;t1,&amp;amp;t2); //仅仅交换了指针的值，并没有改变两块内存的值
-        cout &amp;lt;&amp;lt; t1 &amp;lt;&amp;lt; &amp;quot;&amp;quot;&amp;lt;&amp;lt; t2 &amp;lt;&amp;lt; endl;
-        // 后面两个函数分别用指针和引用交换成功
-        swap4(&amp;amp;t1,&amp;amp;t2);
-        cout &amp;lt;&amp;lt; t1 &amp;lt;&amp;lt; &amp;quot;&amp;quot;&amp;lt;&amp;lt; t2 &amp;lt;&amp;lt; endl;
-        swap5(t1,t2);
-        cout &amp;lt;&amp;lt; t1 &amp;lt;&amp;lt; &amp;quot;&amp;quot;&amp;lt;&amp;lt; t2 &amp;lt;&amp;lt; endl;
+&lt;pre&gt;&lt;code&gt;    int t1 = 1,t2 = 2;
+    cout &amp;lt;&amp;lt; t1 &amp;lt;&amp;lt; &amp;quot;&amp;quot;&amp;lt;&amp;lt; t2 &amp;lt;&amp;lt; endl;
+    swap3(&amp;amp;t1,&amp;amp;t2); //仅仅交换了指针的值，并没有改变两块内存的值
+    cout &amp;lt;&amp;lt; t1 &amp;lt;&amp;lt; &amp;quot;&amp;quot;&amp;lt;&amp;lt; t2 &amp;lt;&amp;lt; endl;
+    // 后面两个函数分别用指针和引用交换成功
+    swap4(&amp;amp;t1,&amp;amp;t2);
+    cout &amp;lt;&amp;lt; t1 &amp;lt;&amp;lt; &amp;quot;&amp;quot;&amp;lt;&amp;lt; t2 &amp;lt;&amp;lt; endl;
+    swap5(t1,t2);
+    cout &amp;lt;&amp;lt; t1 &amp;lt;&amp;lt; &amp;quot;&amp;quot;&amp;lt;&amp;lt; t2 &amp;lt;&amp;lt; endl;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&#34;malloc-申请内存&#34;&gt;malloc 申请内存&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code&gt;        void getMemory_err(char *p, int num) {
+&lt;pre&gt;&lt;code&gt;void getMemory_err(char *p, int num) {
 p = (char *)malloc(sizeof(char )* num);
-                // 没有return 指针，不能传递动态内存
+        // 没有return 指针，不能传递动态内存
 }
-        //返回指针变量
+
+//返回指针变量
 char *pGetMemory(char *p, int num) {
 p = (char *)malloc(sizeof(char )* num);
-                return p;
+        return p;
 }
-        // 用指针的指针，
+
+// 用指针的指针，
 void getMemory(char **p, int num) {
 *p = (char *)malloc(sizeof(char )* num);
 }
@@ -115,111 +150,111 @@ void getMemory(char **p, int num) {
 
 &lt;p&gt;//&amp;mdash;&amp;mdash;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;        char *str = NULL;
-        getMemory(&amp;amp;str,10);
-        strcpy(str,&amp;quot;hello&amp;quot;);
+&lt;pre&gt;&lt;code&gt;char *str = NULL;
+getMemory(&amp;amp;str,10);
+strcpy(str,&amp;quot;hello&amp;quot;);
 
-        char *str2 = NULL;
-        str2 = pGetMemory(str2,10);
-        strcpy(str2,&amp;quot;test&amp;quot;);
+char *str2 = NULL;
+str2 = pGetMemory(str2,10);
+strcpy(str2,&amp;quot;test&amp;quot;);
 
-        cout&amp;lt;&amp;lt; *str &amp;lt;&amp;lt;endl;
-        cout&amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;
-        cout&amp;lt;&amp;lt; &amp;amp;str &amp;lt;&amp;lt; endl;
+cout&amp;lt;&amp;lt; *str &amp;lt;&amp;lt;endl;
+cout&amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;
+cout&amp;lt;&amp;lt; &amp;amp;str &amp;lt;&amp;lt; endl;
 
-        cout&amp;lt;&amp;lt; *str2 &amp;lt;&amp;lt;endl;
-        cout&amp;lt;&amp;lt; str2 &amp;lt;&amp;lt; endl;
-        cout&amp;lt;&amp;lt; &amp;amp;str2 &amp;lt;&amp;lt; endl;
+cout&amp;lt;&amp;lt; *str2 &amp;lt;&amp;lt;endl;
+cout&amp;lt;&amp;lt; str2 &amp;lt;&amp;lt; endl;
+cout&amp;lt;&amp;lt; &amp;amp;str2 &amp;lt;&amp;lt; endl;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;output:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;        h
-        hello
-        012FF774
-        t
-        test
-        012FF768
+&lt;pre&gt;&lt;code&gt;    h
+    hello
+    012FF774
+    t
+    test
+    012FF768
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&#34;字符串变量存储问题&#34;&gt;字符串变量存储问题&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code&gt;        int a = 0; //全局初始化区
-        char *p1; //全局未初始化区
-        int _tmain(int argc, _TCHAR* argv[]) {
+&lt;pre&gt;&lt;code&gt;int a = 0; //全局初始化区
+char *p1; //全局未初始化区
+int _tmain(int argc, _TCHAR* argv[]) {
 int b; //栈
-                char s[] = &amp;quot;abc&amp;quot;; //s在栈上， 常量区会存储一份&amp;quot;abc\0&amp;quot;，用于共享，s[]初始化的时候拷贝过来放到栈上
-                char *p2; //栈
-                char *p3 = &amp;quot;123456&amp;quot;; //123456\0在常量区，p3在栈上。
-                const char *m = &amp;quot;123456&amp;quot;; //m在栈上， “123456” 在常量区
-                static int c =0; //全局（静态）初始化区
-                p1 = (char *)malloc(10);
-                p2 = (char *)malloc(20);
-                //分配得来得10和20字节的区域就在堆区。
-                strcpy(p1, &amp;quot;123456&amp;quot;); //123456\0放在常量区，编译器可能会将它与p3所指向的&amp;quot;123456&amp;quot; 优化成一个地方。
+char s[] = &amp;quot;abc&amp;quot;; //s在栈上， 常量区会存储一份&amp;quot;abc\0&amp;quot;，用于共享，s[]初始化的时候拷贝过来放到栈上
+char *p2; //栈
+char *p3 = &amp;quot;123456&amp;quot;; //123456\0在常量区，p3在栈上。
+const char *m = &amp;quot;123456&amp;quot;; //m在栈上， “123456” 在常量区
+static int c =0; //全局（静态）初始化区
+p1 = (char *)malloc(10);
+p2 = (char *)malloc(20);
+//分配得来得10和20字节的区域就在堆区。
+strcpy(p1, &amp;quot;123456&amp;quot;); //123456\0放在常量区，编译器可能会将它与p3所指向的&amp;quot;123456&amp;quot; 优化成一个地方。
 
-                cout &amp;lt;&amp;lt; (m == p3 ? 1: 0) &amp;lt;&amp;lt; endl;
+cout &amp;lt;&amp;lt; (m == p3 ? 1: 0) &amp;lt;&amp;lt; endl;
 // out 1,
-                cout &amp;lt;&amp;lt; (p1 == p3? 1: 0) &amp;lt;&amp;lt; endl;
+cout &amp;lt;&amp;lt; (p1 == p3? 1: 0) &amp;lt;&amp;lt; endl;
 // out 0;
-                cout &amp;lt;&amp;lt; p1 &amp;lt;&amp;lt; &amp;quot;———&amp;quot; &amp;lt;&amp;lt; p3 &amp;lt;&amp;lt; endl; // out 123456---123456
+cout &amp;lt;&amp;lt; p1 &amp;lt;&amp;lt; &amp;quot;———&amp;quot; &amp;lt;&amp;lt; p3 &amp;lt;&amp;lt; endl; // out 123456---123456
 
-                return 0;
+return 0;
 }
 
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;//&amp;mdash;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;        char *strA() {
-char str[] = &amp;quot;hello world&amp;quot;;
-                cout &amp;lt;&amp;lt; &amp;quot;in str[] &amp;quot;&amp;lt;&amp;lt;endl;
-                cout &amp;lt;&amp;lt; &amp;quot;before: &amp;quot;&amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;
-                str[0] = &#39;t&#39;;
-                cout &amp;lt;&amp;lt;&amp;quot;After:&amp;quot; &amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;
-                return str;
+&lt;pre&gt;&lt;code&gt;char *strA() {
+	char str[] = &amp;quot;hello world&amp;quot;;
+    cout &amp;lt;&amp;lt; &amp;quot;in str[] &amp;quot;&amp;lt;&amp;lt;endl;
+    cout &amp;lt;&amp;lt; &amp;quot;before: &amp;quot;&amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;
+    str[0] = &#39;t&#39;;
+    cout &amp;lt;&amp;lt;&amp;quot;After:&amp;quot; &amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;
+    return str;
 }
 
 char *pStrA_err() {
-char *str = &amp;quot;hello world&amp;quot;;
-                cout &amp;lt;&amp;lt; &amp;quot;in *str &amp;quot;&amp;lt;&amp;lt;endl;
-                cout &amp;lt;&amp;lt; &amp;quot;before: &amp;quot;&amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;
-                //*str = &#39;P&#39;; // !!!!!!------runtime error 字符串常量保存在只读数据段
-                cout &amp;lt;&amp;lt;&amp;quot;After:&amp;quot; &amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;
-                return str;
-        }
-        char *pStrA(){
-                static char *str = &amp;quot;hello world&amp;quot;;
-                cout &amp;lt;&amp;lt; &amp;quot;in *str &amp;quot;&amp;lt;&amp;lt;endl;
-                cout &amp;lt;&amp;lt; &amp;quot;before: &amp;quot;&amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;
-                //*str = &#39;P&#39;; // !!!!!!------runtime error  ,字符串常量保存在只读数据段
-                cout &amp;lt;&amp;lt;&amp;quot;After:&amp;quot; &amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;
-                return str;
-        }
+	char *str = &amp;quot;hello world&amp;quot;;
+    cout &amp;lt;&amp;lt; &amp;quot;in *str &amp;quot;&amp;lt;&amp;lt;endl;
+    cout &amp;lt;&amp;lt; &amp;quot;before: &amp;quot;&amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;
+    //*str = &#39;P&#39;; // !!!!!!------runtime error 字符串常量保存在只读数据段
+    cout &amp;lt;&amp;lt;&amp;quot;After:&amp;quot; &amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;
+    return str;
+}
+char *pStrA(){
+    static char *str = &amp;quot;hello world&amp;quot;;
+    cout &amp;lt;&amp;lt; &amp;quot;in *str &amp;quot;&amp;lt;&amp;lt;endl;
+    cout &amp;lt;&amp;lt; &amp;quot;before: &amp;quot;&amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;
+    //*str = &#39;P&#39;; // !!!!!!------runtime error  ,字符串常量保存在只读数据段
+    cout &amp;lt;&amp;lt;&amp;quot;After:&amp;quot; &amp;lt;&amp;lt; str &amp;lt;&amp;lt; endl;
+    return str;
+}
 
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;main:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;        char *c = strA();
-        char *c2 = pStrA_err();
-        char *c3 = pStrA();
+&lt;pre&gt;&lt;code&gt;char *c = strA();
+char *c2 = pStrA_err();
+char *c3 = pStrA();
 
-        cout &amp;lt;&amp;lt; &amp;quot;After fun return:&amp;quot; &amp;lt;&amp;lt; &amp;quot;--c:&amp;quot; &amp;lt;&amp;lt; c &amp;lt;&amp;lt; &amp;quot;--c2:&amp;quot; &amp;lt;&amp;lt; c2 &amp;lt;&amp;lt; &amp;quot;--c3&amp;quot; &amp;lt;&amp;lt; c3 &amp;lt;&amp;lt; endl;
+cout &amp;lt;&amp;lt; &amp;quot;After fun return:&amp;quot; &amp;lt;&amp;lt; &amp;quot;--c:&amp;quot; &amp;lt;&amp;lt; c &amp;lt;&amp;lt; &amp;quot;--c2:&amp;quot; &amp;lt;&amp;lt; c2 &amp;lt;&amp;lt; &amp;quot;--c3&amp;quot; &amp;lt;&amp;lt; c3 &amp;lt;&amp;lt; endl;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;output:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;        in str[]
-        before: hello world
-        After:tello world
-        in *str
-        before: hello world
-        After:hello world
-        in *str
-        before: hello world
-        After:hello world
-        After fun return:--c:@?--c2:hello world--c3hello world
+&lt;pre&gt;&lt;code&gt;    in str[]
+    before: hello world
+    After:tello world
+    in *str
+    before: hello world
+    After:hello world
+    in *str
+    before: hello world
+    After:hello world
+    After fun return:--c:@?--c2:hello world--c3hello world
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;strong&gt;结论：&lt;/strong&gt;
@@ -228,34 +263,34 @@ char *str = &amp;quot;hello world&amp;quot;;
 
 &lt;h3 id=&#34;构造函数&#34;&gt;构造函数&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code&gt;        class tA{
-        public:
-                int _a;
-                tA(){
-                        _a = 1;
-                }
-                void print(){
-                        printf(&amp;quot;%d&amp;quot;,_a);
-                }
-        };
-        class tB :public tA{
-        public:
-                int _a;
-                tB(){
-                        _a = 2;
-                }
+&lt;pre&gt;&lt;code&gt;class tA{
+public:
+        int _a;
+        tA(){
+                _a = 1;
+        }
+        void print(){
+                printf(&amp;quot;%d&amp;quot;,_a);
+        }
+};
+class tB :public tA{
+public:
+        int _a;
+        tB(){
+                _a = 2;
+        }
 
-        };
+};
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;//&amp;ndash;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;        tB b;
-        tB b;
-        b.print(); // 在构造B类之前，先调用A的构造函数，在A类中_a =1,
-        printf(&amp;quot;%d&amp;quot;,b._a); // B类中 _a = 2;
-        return 0;
-        
+&lt;pre&gt;&lt;code&gt;tB b;
+tB b;
+b.print(); // 在构造B类之前，先调用A的构造函数，在A类中_a =1,
+printf(&amp;quot;%d&amp;quot;,b._a); // B类中 _a = 2;
+return 0;
+    
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;blockquote&gt;
@@ -378,18 +413,19 @@ char *str = &amp;quot;hello world&amp;quot;;
       <pubDate>Sun, 21 Feb 2016 13:10:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
       <guid>https://tmhm.github.io/2016/02/21/dev-c-%E5%B0%8F%E9%97%AE%E9%A2%98%E9%94%A6%E9%9B%86/</guid>
-      <description>&lt;p&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;C++ project cann&amp;rsquo;t debug&lt;/strong&gt;&lt;/li&gt;
+      <description>&lt;ul&gt;
+&lt;li&gt;C++ project cann&amp;rsquo;t debug&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;cnblogs_Highlighter&#34;&gt;
-&lt;pre class=&#34;brush:csharp;gutter:true;&#34;&gt;Your project does not have debugging information, do you want to enable debugging and rebuild your project?
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;　　&lt;strong&gt;解决办法：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;　　在tools 菜单下的compiler项中，勾选：Add the following commands when calling compiler:&lt;/p&gt;
-&lt;p&gt;　　并在框内添加参数：-g&lt;/p&gt;
-&lt;p&gt;（版本：Dev-C++ 4.9.9.2.）&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Your project does not have debugging information, do you want to enable debugging and rebuild your project?
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;解决办法：&lt;/p&gt;
+
+&lt;p&gt;在tools 菜单下的compiler项中，勾选：&lt;code&gt;Add the following commands when calling compiler:&lt;/code&gt;
+&lt;p&gt;并在框内添加参数：-g&lt;/p&gt;
+&lt;p&gt;（版本：Dev-C++ 4.9.9.2.）&lt;/p&gt;&lt;/p&gt;
 </description>
     </item>
     
