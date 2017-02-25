@@ -18,19 +18,22 @@
       <author>wells217@163.com (Well)</author>
       <guid>https://tmhm.github.io/2016/09/17/stacks-and-queues--codility/</guid>
       <description>&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#1.7.1&#34;&gt;1. Nesting&lt;/a&gt;
-    * &lt;a href=&#34;#1.7.2&#34;&gt;2. StoneWall&lt;/a&gt;
-    * &lt;a href=&#34;#1.7.3&#34;&gt;3. Brackets&lt;/a&gt;
-    * &lt;a href=&#34;#1.7.4&#34;&gt;4. Finsh&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.7.1&#34;&gt;1. Nesting&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.7.2&#34;&gt;2. StoneWall&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.7.3&#34;&gt;3. Brackets&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.7.4&#34;&gt;4. Finsh&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id = &#34;1.7&#34;&gt;
+&lt;h3 id = &#34;1.7&#34;&gt;
 lesson 7: &lt;i&gt;stacks and queues&lt;/i&gt;
-&lt;/h2&gt;
-
-&lt;h3 id = &#34;1.7.1&#34;&gt;
-1. Nesting
 &lt;/h3&gt;
+
+&lt;h4 id = &#34;1.7.1&#34;&gt;
+1. Nesting
+&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Determine whether given string of parentheses is properly nested.&lt;/p&gt;
@@ -84,9 +87,9 @@ lesson 7: &lt;i&gt;stacks and queues&lt;/i&gt;
         return 0
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id = &#34;1.7.2&#34;&gt;
+&lt;h4 id = &#34;1.7.2&#34;&gt;
 2. StoneWall
-&lt;/h3&gt;
+&lt;/h4&gt;
 
 &lt;p&gt;You are going to build a stone wall. The wall should be straight and N meters long, and its thickness should be constant; however, it should have different heights in different places. The height of the wall is specified by a zero-indexed array H of N positive integers. H[I] is the height of the wall from I to I+1 meters to the right of its left end. In particular, H[0] is the height of the wall&amp;rsquo;s left end and H[N−1] is the height of the wall&amp;rsquo;s right end.&lt;/p&gt;
 
@@ -135,10 +138,10 @@ lesson 7: &lt;i&gt;stacks and queues&lt;/i&gt;
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id = &#34;1.7.3&#34;&gt;
+&lt;h4 id = &#34;1.7.3&#34;&gt;
 3. Brackets
 
-&lt;/h3&gt;
+&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Determine whether a given string of parentheses is properly nested.&lt;/p&gt;
@@ -211,11 +214,11 @@ def solution(S):
         return 0
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id = &#34;1.7.4&#34;&gt;
+&lt;h4 id = &#34;1.7.4&#34;&gt;
 
 4. Fish
 
-&lt;/h3&gt;
+&lt;/h4&gt;
 
 &lt;p&gt;Given two non-empty zero-indexed arrays A and B consisting of N integers. Arrays A and B represent N voracious fish in a river, ordered downstream along the flow of the river.&lt;/p&gt;
 
@@ -387,15 +390,18 @@ def solution(S):
       <description>
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#1.6.1&#34;&gt;1. Distinct&lt;/a&gt;
-    * &lt;a href=&#34;#1.6.2&#34;&gt;2. Triangle&lt;/a&gt;
-    * &lt;a href=&#34;#1.6.3&#34;&gt;2. MaxProductOfThree&lt;/a&gt;
-    * &lt;a href=&#34;#1.6.4&#34;&gt;4. NumberOfDiscIntersections&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.6.1&#34;&gt;1. Distinct&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.6.2&#34;&gt;2. Triangle&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.6.3&#34;&gt;2. MaxProductOfThree&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.6.4&#34;&gt;4. NumberOfDiscIntersections&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id = &#34;1.6&#34;&gt;
+&lt;h3 id = &#34;1.6&#34;&gt;
 lesson 6: &lt;i&gt;sorting&lt;/i&gt;
-&lt;/h2&gt;
+&lt;/h3&gt;
 
 &lt;h4 id=&#34;exercise&#34;&gt;exercise&lt;/h4&gt;
 
@@ -407,62 +413,54 @@ lesson 6: &lt;i&gt;sorting&lt;/i&gt;
 
 &lt;p&gt;First, sort array A; similar values will then be next to each other. Finally, just count the number of distinct pairs in adjacent cells.&lt;/p&gt;
 
-&lt;p&gt;```The number of distinct values — O(nlogn).
+&lt;pre&gt;&lt;code&gt;The number of distinct values — O(nlogn).
 def distinct(A):
         n = len(A)
         A.sort()
         result = 1
         for k in xrange(1, n):
                 if A[k] != A[k - 1]: result += 1
-        return result&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;
-&amp;gt; The time complexity is O(n log n), in view of the sorting time.
-
-
-
-
-&amp;lt;h3 id = &amp;quot;1.6.1&amp;quot;&amp;gt;
-1. Distinct
-&amp;lt;/h3&amp;gt;
-
-
-
-&amp;gt; Compute number of distinct values in an array.
-
-
-- 将list保存为set 即可
-- Test score 100%
-- 也可以排序，然后对不同数进行计数，如exercise那样
-
-
+        return result
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;def solution(A):
+&lt;blockquote&gt;
+&lt;p&gt;The time complexity is O(n log n), in view of the sorting time.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id = &#34;1.6.1&#34;&gt;
+1. Distinct
+&lt;/h4&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Compute number of distinct values in an array.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;将list保存为set 即可&lt;/li&gt;
+&lt;li&gt;Test score 100%&lt;/li&gt;
+&lt;li&gt;也可以排序，然后对不同数进行计数，如exercise那样&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;def solution(A):
     # write your code in Python 2.7
     Aset = set(A)
-    return len(Aset)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;
-
-&amp;lt;h3 id = &amp;quot;1.6.2&amp;quot;&amp;gt;
-2. Triangle
-&amp;lt;/h3&amp;gt;
-
-
-&amp;gt; Determine whether a triangle can be built from a given set of edges.
-[https://codesays.com/2014/solution-to-triangle-by-codility/](https://codesays.com/2014/solution-to-triangle-by-codility/)
-&amp;gt;
-&amp;gt;On one hand, there is no false triangular. Since the array is sorted, we already know A[index] &amp;lt; = A[index+1] &amp;lt;= A[index+2], and all values are positive. A[index] &amp;lt;= A[index+2], so it must be true that A[index] &amp;lt; A[index+1] + A[index+2]. Similarly, A[index+1] &amp;lt; A[index] + A[index+2]. Finally, we ONLY need to check **A[index]+A[index+1] &amp;gt; A[index+2]** to confirm the existence of triangular.
-
-&amp;gt; On the other hand, there is no underreporting triangular. If the inequality can hold for three out-of-order elements, to say, A[index]+A[index+m] &amp;gt; A[index+n], where n&amp;gt;m&amp;gt;1. Again, because the array is sorted, we must have A[index] &amp;lt; = A[index+m-1] and A[index+m+1] &amp;lt;= A[index + n]. So A[index+m-1] +A[index+m] &amp;gt;= A[index]+A[index+m] &amp;gt; A[index+n] &amp;gt;= A[index+m+1]. After simplification, A[index+m-1] +A[index+m] &amp;gt; A[index+m+1]. In other words, if we have any inequality holding for out-of-order elements, we MUST have AT LEAST an inequality holding for three consecutive elements.
-&amp;gt;
-
-
-
+    return len(Aset)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;def solution(A):
+&lt;h4 id = &#34;1.6.2&#34;&gt;
+2. Triangle
+&lt;/h4&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Determine whether a triangle can be built from a given set of edges.
+&lt;a href=&#34;https://codesays.com/2014/solution-to-triangle-by-codility/&#34;&gt;https://codesays.com/2014/solution-to-triangle-by-codility/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;On one hand, there is no false triangular. Since the array is sorted, we already know A[index] &amp;lt; = A[index+1] &amp;lt;= A[index+2], and all values are positive. A[index] &amp;lt;= A[index+2], so it must be true that A[index] &amp;lt; A[index+1] + A[index+2]. Similarly, A[index+1] &amp;lt; A[index] + A[index+2]. Finally, we ONLY need to check &lt;strong&gt;A[index]+A[index+1] &amp;gt; A[index+2]&lt;/strong&gt; to confirm the existence of triangular.&lt;/p&gt;
+
+&lt;p&gt;On the other hand, there is no underreporting triangular. If the inequality can hold for three out-of-order elements, to say, A[index]+A[index+m] &amp;gt; A[index+n], where n&amp;gt;m&amp;gt;1. Again, because the array is sorted, we must have A[index] &amp;lt; = A[index+m-1] and A[index+m+1] &amp;lt;= A[index + n]. So A[index+m-1] +A[index+m] &amp;gt;= A[index]+A[index+m] &amp;gt; A[index+n] &amp;gt;= A[index+m+1]. After simplification, A[index+m-1] +A[index+m] &amp;gt; A[index+m+1]. In other words, if we have any inequality holding for out-of-order elements, we MUST have AT LEAST an inequality holding for three consecutive elements.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;def solution(A):
     # write your code in Python 2.7
     length = len(A)
     if length &amp;lt; 3:
@@ -471,32 +469,31 @@ def distinct(A):
     for idx in xrange(0,length -2):
         if A[idx]+A[idx + 1] &amp;gt; A[idx + 2]:
             return 1
-    return 0&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;
-
-
-&amp;lt;h3 id = &amp;quot;1.6.3&amp;quot;&amp;gt;
-3. MaxProductOfThree
-&amp;lt;/h3&amp;gt;
-
-
-
-
-&amp;gt;
-Maximize A[P] * A[Q] * A[R] for any triplet (P, Q, R).
-
-#####  solution 1
-- O(N)
-- Test score  100% OJ test is O(N * log(N))
-- 考虑到有负数存在， 故乘积最大的三个数，会出现在两种情况：
-        - 三个数均是正数，且是三个最大的数
-        - 两个负数和一个正数，最大正数和最小的两个负数
-
-
+    return 0
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;def solution(A):
+&lt;h4 id = &#34;1.6.3&#34;&gt;
+3. MaxProductOfThree
+&lt;/h4&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Maximize A[P] * A[Q] * A[R] for any triplet (P, Q, R).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h5 id=&#34;solution-1&#34;&gt;solution 1&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;O(N)&lt;/li&gt;
+&lt;li&gt;Test score  100% OJ test is O(N * log(N))&lt;/li&gt;
+&lt;li&gt;考虑到有负数存在， 故乘积最大的三个数，会出现在两种情况：
+
+&lt;ul&gt;
+&lt;li&gt;三个数均是正数，且是三个最大的数&lt;/li&gt;
+&lt;li&gt;两个负数和一个正数，最大正数和最小的两个负数&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;def solution(A):
     ma1, ma2, ma3 = -1000, -1000, -1000
     mi1, mi2 = 1000, 1000
     for elem in A:
@@ -505,102 +502,113 @@ Maximize A[P] * A[Q] * A[R] for any triplet (P, Q, R).
         elif elem &amp;gt; ma2:
             ma2, ma3 = elem, ma2
         elif elem &amp;gt; ma3:
-            ma3 = elem&lt;/p&gt;
+            ma3 = elem
 
-&lt;pre&gt;&lt;code&gt;    if elem &amp;lt; mi1:
-        mi1,mi2 = elem, mi1
-    elif elem &amp;lt; mi2:
-        mi2 = elem
-a, b = ma1*ma2*ma3, ma1*mi1*mi2
-return a if a &amp;gt; b else b
+        if elem &amp;lt; mi1:
+            mi1,mi2 = elem, mi1
+        elif elem &amp;lt; mi2:
+            mi2 = elem
+    a, b = ma1*ma2*ma3, ma1*mi1*mi2
+    return a if a &amp;gt; b else b
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;pre&gt;&lt;code&gt;
-#####  solution 2
+&lt;h5 id=&#34;solution-2&#34;&gt;solution 2&lt;/h5&gt;
 
-**note:**
+&lt;p&gt;&lt;strong&gt;note:&lt;/strong&gt;&lt;/p&gt;
 
-- just need return the value of the max product,
-- 基于解法一，我们可以先排序，然后直接取，不需要每个比较，相对来说，时间成本稍大
-- so, we can just consider the first or last teiplet, after sort
+&lt;ul&gt;
+&lt;li&gt;just need return the value of the max product,&lt;/li&gt;
+&lt;li&gt;基于解法一，我们可以先排序，然后直接取，不需要每个比较，相对来说，时间成本稍大&lt;/li&gt;
 
-- Detected time complexity: O(N * log(N))
+&lt;li&gt;&lt;p&gt;so, we can just consider the first or last teiplet, after sort&lt;/p&gt;&lt;/li&gt;
 
-&lt;/code&gt;&lt;/pre&gt;
+&lt;li&gt;&lt;p&gt;Detected time complexity: O(N * log(N))&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;p&gt;def solution(A):
+&lt;pre&gt;&lt;code&gt;def solution(A):
     A.sort()
-    return max(A[0]*A[1]*A[-1], A[-1]*A[-2]*A[-3])&lt;/p&gt;
+    return max(A[0]*A[1]*A[-1], A[-1]*A[-2]*A[-3])
 
-&lt;pre&gt;&lt;code&gt;
-&amp;lt;h3 id = &amp;quot;1.6.4&amp;quot;&amp;gt;
-4. NumberOfDiscIntersections
-&amp;lt;/h3&amp;gt;
-
-&amp;gt;We draw N discs on a plane. The discs are numbered from 0 to N − 1. A zero-indexed array A of N non-negative integers, specifying the radiuses of the discs, is given. The J-th disc is drawn with its center at (J, 0) and radius A[J].
-
-&amp;gt;We say that the J-th disc and K-th disc intersect if J ≠ K and the J-th and K-th discs have at least one common point (assuming that the discs contain their borders).
-
-&amp;gt;The figure below shows discs drawn for N = 6 and A as follows:
-
-
-          A[0] = 1
-          A[1] = 5
-          A[2] = 2
-          A[3] = 1
-          A[4] = 4
-          A[5] = 0
-
-![](https://codility-frontend-prod.s3.amazonaws.com/media/task_img/number_of_disc_intersections/media/auto/mpaecfada7c1e52a7b01b04916c859b15d.png)
-
-
-&amp;gt;
-&amp;gt;There are eleven (unordered) pairs of discs that intersect, namely:
-
-- discs 1 and 4 intersect, and both intersect with all the other discs;
-- disc 2 also intersects with discs 0 and 3.
-
-**problem:**
-&amp;gt;
-Compute the number of intersections in a sequence of discs.
-&amp;gt;
-given an array A describing N discs as explained above, returns the number of (unordered) pairs of intersecting discs. The function should return −1 if the number of intersecting pairs exceeds 10,000,000.
-
-**Assume that:**
-
-- N is an integer within the range [0..100,000];
-- each element of array A is an integer within the range [0..2,147,483,647].
-
-**Complexity:**
-
-- expected worst-case time complexity is O(N*log(N));
-- expected worst-case space complexity is O(N).
-
-**思路：**
-
-
-
-- [参考csdn](http://blog.csdn.net/dear0607/article/details/42671621)
-- [stackoverflow](http://stackoverflow.com/questions/4801242/algorithm-to-calculate-number-of-intersecting-discs#)
-
-        &amp;gt;initially we calculate all start and end points of discs. After go by all line and check count of discs inside current point. If in current point started some discs and intersection count increased by: already active distsc multiplied by count of started in current point (result += t * dps[i]) and count of intersections of started(result += dps[i] * (dps[i] - 1) / 2) eg. if started 5 discs in one of point it will increased by(1+2+3+4+5 intersections, or 5*(5-1) / 2[sum formula]).
-
-
-
-- 构造成区间，[i-A[i],i+A[i]]
-        - e.g. A ＝ ［1，5，2，1，4，0］
-        - =&amp;gt; [－1,1],[-4,6],[0,4],[2,4],[0,8],[5,5]
-- 因为我们圆的中心位置在［0，len(A)],e.g. 在上例中 [0,5], 所以起点数组dps计算［0，i-A[i]］的范围，故有max(0,i-A[i])
-- 终点数组不要超过每个圆心的最大值，即小于len（A）－1， 故有min（length－1，i+A［i］）
-
-
-
-
-
-#####  sloution:[100%]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;def solution(A):
+&lt;h4 id = &#34;1.6.4&#34;&gt;
+4. NumberOfDiscIntersections
+&lt;/h4&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;We draw N discs on a plane. The discs are numbered from 0 to N − 1. A zero-indexed array A of N non-negative integers, specifying the radiuses of the discs, is given. The J-th disc is drawn with its center at (J, 0) and radius A[J].&lt;/p&gt;
+
+&lt;p&gt;We say that the J-th disc and K-th disc intersect if J ≠ K and the J-th and K-th discs have at least one common point (assuming that the discs contain their borders).&lt;/p&gt;
+
+&lt;p&gt;The figure below shows discs drawn for N = 6 and A as follows:&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;      A[0] = 1
+      A[1] = 5
+      A[2] = 2
+      A[3] = 1
+      A[4] = 4
+      A[5] = 0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://codility-frontend-prod.s3.amazonaws.com/media/task_img/number_of_disc_intersections/media/auto/mpaecfada7c1e52a7b01b04916c859b15d.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;There are eleven (unordered) pairs of discs that intersect, namely:&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;discs 1 and 4 intersect, and both intersect with all the other discs;&lt;/li&gt;
+&lt;li&gt;disc 2 also intersects with discs 0 and 3.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;problem:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Compute the number of intersections in a sequence of discs.&lt;/p&gt;
+
+&lt;p&gt;given an array A describing N discs as explained above, returns the number of (unordered) pairs of intersecting discs. The function should return −1 if the number of intersecting pairs exceeds 10,000,000.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Assume that:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;N is an integer within the range [0..100,000];&lt;/li&gt;
+&lt;li&gt;each element of array A is an integer within the range [0..2,147,483,647].&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Complexity:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;expected worst-case time complexity is O(N*log(N));&lt;/li&gt;
+&lt;li&gt;expected worst-case space complexity is O(N).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;思路：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.csdn.net/dear0607/article/details/42671621&#34;&gt;参考csdn&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://stackoverflow.com/questions/4801242/algorithm-to-calculate-number-of-intersecting-discs#&#34;&gt;stackoverflow&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;initially we calculate all start and end points of discs. After go by all line and check count of discs inside current point. If in current point started some discs and intersection count increased by: already active distsc multiplied by count of started in current point (result += t * dps[i]) and count of intersections of started(result += dps[i] * (dps[i] - 1) / 2) eg. if started 5 discs in one of point it will increased by(1+2+3+4+5 intersections, or 5*(5-1) / 2[sum formula]).&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;构造成区间，[i-A[i],i+A[i]]
+
+&lt;ul&gt;
+&lt;li&gt;e.g. A ＝ ［1，5，2，1，4，0］&lt;/li&gt;
+&lt;li&gt;=&amp;gt; [－1,1],[-4,6],[0,4],[2,4],[0,8],[5,5]&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;因为我们圆的中心位置在［0，len(A)],e.g. 在上例中 [0,5], 所以起点数组dps计算［0，i-A[i]］的范围，故有max(0,i-A[i])&lt;/li&gt;
+&lt;li&gt;终点数组不要超过每个圆心的最大值，即小于len（A）－1， 故有min（length－1，i+A［i］）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;sloution-100&#34;&gt;sloution:[100%]&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;def solution(A):
     result = 0
     length = len(A)
     dps = [0]*length
@@ -618,7 +626,7 @@ given an array A describing N discs as explained above, returns the number of (u
             tmp += dps[i]
         tmp -= dpe[i]
     return result
-```&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
@@ -1354,9 +1362,9 @@ O(N + M)&lt;/p&gt;&lt;/li&gt;
       <pubDate>Thu, 01 Sep 2016 15:44:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
       <guid>https://tmhm.github.io/2016/09/01/time-complexity--codility/</guid>
-      <description>&lt;h2 id = &#34;1.3&#34;&gt;
+      <description>&lt;h3 id = &#34;1.3&#34;&gt;
 lesson 3: &lt;i&gt;Time complexity&lt;/i&gt;
-&lt;/h2&gt;
+&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;exercise:&lt;/li&gt;
@@ -1368,9 +1376,9 @@ lesson 3: &lt;i&gt;Time complexity&lt;/i&gt;
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id = &#34;1.3.1&#34;&gt;
+&lt;h4 id = &#34;1.3.1&#34;&gt;
 1. TapeEquilibrium -----[100%]
-&lt;/h3&gt;
+&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Minimize the value
@@ -1401,9 +1409,9 @@ lesson 3: &lt;i&gt;Time complexity&lt;/i&gt;
     return result
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id = &#34;1.3.2&#34;&gt;
+&lt;h4 id = &#34;1.3.2&#34;&gt;
 2. FrogJmp -----[100%]
-&lt;/h3&gt;
+&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Count minimal number of jumps from position X to Y.&lt;/p&gt;
@@ -1425,9 +1433,9 @@ lesson 3: &lt;i&gt;Time complexity&lt;/i&gt;
         return ret if flag == 0 else ret + 1
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id = &#34;1.3.3&#34;&gt;
+&lt;h4 id = &#34;1.3.3&#34;&gt;
 3. PermMissingElem -----[100%]
-&lt;/h3&gt;
+&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Find the missing element in a given permutation.&lt;/p&gt;

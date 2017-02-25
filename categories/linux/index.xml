@@ -12,6 +12,77 @@
     <atom:link href="https://tmhm.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>shell学习</title>
+      <link>https://tmhm.github.io/2016/03/10/shell%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Thu, 10 Mar 2016 08:36:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/03/10/shell%E5%AD%A6%E4%B9%A0/</guid>
+      <description>
+
+&lt;ul&gt;
+&lt;li&gt;readlink是linux系统中一个常用工具，主要用来找出符号链接所指向的位置。&lt;/li&gt;
+&lt;li&gt;定义变量“=”两边不能有空格，否则会被shell解析错误。&lt;/li&gt;
+&lt;li&gt;tee 同时将输出内容显示在屏幕上、记录在文件里&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;三种引号‘’，“”，``。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;rm -rf ‘my document’  &amp;mdash;-当命令行里面包含空格时，用单引号包含起来&lt;/li&gt;
+&lt;li&gt;这时也可由用双引号，区别在于双引号的值会被变量的之替换，单引号保持原样。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ABC=hello
+$ echo &#39;string is ${ABC}&#39;
+string is ${ABC}
+$ echo &amp;quot;string is ${ABC}&amp;quot;
+string is hello
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;反引号实际上就是命令替换&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;echo `uname`  #等价 echo $(uname)
+$ echo `uname -a`
+Linux ubuntu 3.13.0-24-generic #46-Ubuntu SMP Thu Apr 10 19:11:08 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+$ uname -a
+Linux ubuntu 3.13.0-24-generic #46-Ubuntu SMP Thu Apr 10 19:11:08 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;脚本的执行&#34;&gt;脚本的执行&lt;/h4&gt;
+
+&lt;p&gt;&lt;div class=&#34;cnblogs_code&#34;&gt;
+&lt;pre&gt;&lt;span style=&#34;color: #000000;&#34;&gt;$ vi test.sh
+$ cat test.sh
+echo &lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&amp;laquo;&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt; this is a test&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&amp;laquo;&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;$ ls &lt;/span&gt;-&lt;span style=&#34;color: #000000;&#34;&gt;al
+total &lt;/span&gt;&lt;span style=&#34;color: #800080;&#34;&gt;12&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;
+drwxr&lt;/span&gt;-xr-x  &lt;span style=&#34;color: #800080;&#34;&gt;2&lt;/span&gt; xwei xwei &lt;span style=&#34;color: #800080;&#34;&gt;4096&lt;/span&gt; Mar &lt;span style=&#34;color: #800080;&#34;&gt;10&lt;/span&gt; &lt;span style=&#34;color: #800080;&#34;&gt;16&lt;/span&gt;:&lt;span style=&#34;color: #800080;&#34;&gt;49&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt; .
+drwxr&lt;/span&gt;-xr-x &lt;span style=&#34;color: #800080;&#34;&gt;16&lt;/span&gt; xwei xwei &lt;span style=&#34;color: #800080;&#34;&gt;4096&lt;/span&gt; Mar &lt;span style=&#34;color: #800080;&#34;&gt;10&lt;/span&gt; &lt;span style=&#34;color: #800080;&#34;&gt;15&lt;/span&gt;:&lt;span style=&#34;color: #800080;&#34;&gt;28&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt; ..
+&lt;/span&gt;-rw-rw-r&amp;ndash;  &lt;span style=&#34;color: #800080;&#34;&gt;1&lt;/span&gt; xwei xwei   &lt;span style=&#34;color: #800080;&#34;&gt;26&lt;/span&gt; Mar &lt;span style=&#34;color: #800080;&#34;&gt;10&lt;/span&gt; &lt;span style=&#34;color: #800080;&#34;&gt;16&lt;/span&gt;:&lt;span style=&#34;color: #800080;&#34;&gt;49&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt; test.sh
+$ . test.sh  #以source test.sh 方式执行，读入文件中的命令，在当前shell执行，source内置命令，无需执行权限，其可以缩写为一个小数点
+ &lt;/span&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color: #0000ff;&#34;&gt;is&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt; a test
+$ .&lt;/span&gt;/&lt;span style=&#34;color: #000000;&#34;&gt;test.sh  #
+bash: .&lt;/span&gt;/&lt;span style=&#34;color: #000000;&#34;&gt;test.sh: Permission denied&lt;/p&gt;
+
+&lt;p&gt;xwei@ubuntu:&lt;/span&gt;~/Desktop$ chmod a+&lt;span style=&#34;color: #000000;&#34;&gt;x test.sh
+xwei@ubuntu:&lt;/span&gt;~/Desktop$ ls -&lt;span style=&#34;color: #000000;&#34;&gt;al
+total &lt;/span&gt;&lt;span style=&#34;color: #800080;&#34;&gt;12&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;
+drwxr&lt;/span&gt;-xr-x  &lt;span style=&#34;color: #800080;&#34;&gt;2&lt;/span&gt; xwei xwei &lt;span style=&#34;color: #800080;&#34;&gt;4096&lt;/span&gt; Mar &lt;span style=&#34;color: #800080;&#34;&gt;10&lt;/span&gt; &lt;span style=&#34;color: #800080;&#34;&gt;16&lt;/span&gt;:&lt;span style=&#34;color: #800080;&#34;&gt;49&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt; .
+drwxr&lt;/span&gt;-xr-x &lt;span style=&#34;color: #800080;&#34;&gt;16&lt;/span&gt; xwei xwei &lt;span style=&#34;color: #800080;&#34;&gt;4096&lt;/span&gt; Mar &lt;span style=&#34;color: #800080;&#34;&gt;10&lt;/span&gt; &lt;span style=&#34;color: #800080;&#34;&gt;15&lt;/span&gt;:&lt;span style=&#34;color: #800080;&#34;&gt;28&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt; ..
+&lt;/span&gt;-rwxrwxr-x  &lt;span style=&#34;color: #800080;&#34;&gt;1&lt;/span&gt; xwei xwei   &lt;span style=&#34;color: #800080;&#34;&gt;26&lt;/span&gt; Mar &lt;span style=&#34;color: #800080;&#34;&gt;10&lt;/span&gt; &lt;span style=&#34;color: #800080;&#34;&gt;16&lt;/span&gt;:&lt;span style=&#34;color: #800080;&#34;&gt;49&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt; test.sh
+$ .&lt;/span&gt;/&lt;span style=&#34;color: #000000;&#34;&gt;test.sh  #在一个子shell中执行命令
+ &lt;/span&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color: #0000ff;&#34;&gt;is&lt;/span&gt; a test&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Debian初识（选择最佳镜像发布站点加入source.list文件）</title>
       <link>https://tmhm.github.io/2016/03/08/debian%E5%88%9D%E8%AF%86%E9%80%89%E6%8B%A9%E6%9C%80%E4%BD%B3%E9%95%9C%E5%83%8F%E5%8F%91%E5%B8%83%E7%AB%99%E7%82%B9%E5%8A%A0%E5%85%A5source.list%E6%96%87%E4%BB%B6/</link>
       <pubDate>Tue, 08 Mar 2016 07:28:00 +0000</pubDate>

@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="description" content=" " />
+<meta name="description" content="QT环境下的全局变量共享" />
 
 <meta name="keywords" content="">
 
@@ -24,7 +24,7 @@
 
 
 <meta property="og:type" content="article" />
-<meta property="og:description" content=" "/>
+<meta property="og:description" content="QT环境下的全局变量共享"/>
 <meta property="og:article:published_time" content="2016-03-08T12:47:00Z" />
 <meta property="og:article:modified_time" content="2016-03-08T12:47:00Z" />
 
@@ -35,7 +35,7 @@
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@" />
 <meta name="twitter:title" content="QT环境下，全局变量共享问题" />
-<meta name="twitter:description" content=" " />
+<meta name="twitter:description" content="QT环境下的全局变量共享" />
 <meta name="twitter:url" content="https://tmhm.github.io/2016/03/08/qt%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%85%B1%E4%BA%AB%E9%97%AE%E9%A2%98/" />
 <meta name="twitter:domain" content="https://tmhm.github.io/">
   
@@ -50,8 +50,8 @@
       "name": "http://profiles.google.com/+?rel=author"
     },
     "datePublished": "2016-03-08",
-    "description": " ",
-    "wordCount":  90 
+    "description": "QT环境下的全局变量共享",
+    "wordCount":  84 
   }
 </script>
 
@@ -182,7 +182,7 @@
 
   
   &middot; Read in about 1 min
-  &middot; (90 Words)
+  &middot; (84 Words)
   <br>
   
 
@@ -223,28 +223,30 @@
 <p>　　1，gui线程</p>
 <p>　　2，等待客户端socket连接用的，listen线程</p>
 <p>　　（当有客户端连接时，即creat一个新的线程2用来跟客户端通信，再来新的客户端，继续creat新的work线程3用于通信，以此类推，目前最多可以creat5个线程，即可以同时跟5台客户端通信，设置了监听的socket服务器最多监听5个队列。线程2继续listen）</p>
-<p>&nbsp;</p>
+
 <p><strong>出现的问题是：</strong></p>
 <p>　　用来通信的work线程3，收到一个来自客户端的xml文件，然后解析文件，并将其数据放在一个全局的静态struct数组里。数据正常，线程2和线程3均可以看到已经更新的数据值。但是，</p>
-<p>　　当gui线程去访问时，发现数据并没有更新到其线程，在gui线程下改变该全局变量的数值，也并没有更新到线程2和3，不知何解？</p>
-<p>&nbsp;</p>
+<p>　　当gui线程去访问时，发现数据并没有更新到其线程，在gui线程下改变该全局变量的数值，也并没有更新到
+
 <p><em>一博主，有如此解释</em>：</p>
 <div id="article_content" class="article_content"><a href="http://blog.csdn.net/lmh12506/article/details/8452700" target="_blank">其实在Linux 中，新建的线程并不是在原先的进程中，而是系统通过一个系统调用clone() 。该系统copy 了一个和原先进程完全一样的进程，并在这个进程中执行线程函数。不过这个copy 过程和fork 不一样。copy 后的进程和原先的进程共享了所有的变量，运行环境（clone的实现是可以指定新进程与老进程之间的共享关系，100%共享就表示创建了一个线程）。这样，原先进程中的变量变动在copy 后的进程中便能体现出来。</a></div>
 <div class="bdsharebuttonbox tracking-ad bdshare-button-style0-16" data-mod="popu_172" data-bd-bind="1457096202549">&nbsp;</div>
 <div id="digg">&nbsp;不过，问题并没有清晰化。</div>
-<div>&nbsp;</div>
+
+
 <div>想到的解决方案暂时有两种：</div>
 <div>　　1，不在work线程里面解析数据，直接在gui线程里面解析数据。</div>
 <div>&nbsp;　　2，采用<a href="https://www.ibm.com/developerworks/cn/linux/thread/posix_threadapi/part2/" target="_blank">线程私有数据</a></div>
-<div>&nbsp;</div>
+
+
 <p>（此处出现过，小插曲：QT的变量查看器，在调试时不太稳定，更新过后的值在窗口中查看，并没有得到及时更新，需要通过程序判定验证！）</p>
-<p>　</p>
+
 <p><img src="http://images2015.cnblogs.com/blog/781469/201603/781469-20160309170140991-312431222.png" alt="" /></p>
-<p>&nbsp;</p>
+
 <p>由于程序需要在线程创建之后必须返回到gui主线程，所以采用创建两次线程的方式：创建线程A，返回，然后在线程A里面创建</p>
 <p>在多线程POSIX标准下，主线程（1），即是GUI线程。它初始化一个类，并调用其一个成员函数创建一个线程3（ininlistenThred）【不知，为什么不从2开始？】，然后在线程3里面一直循环检测是否有新的客户端发来socket连接。当有新的客户端连接上时，即创建一个新的线程专门用于socket通信。</p>
 <p>此时有一客户端连接上，创建了通信工作线程4（listenthreadwork）。</p>
-<p>&nbsp;</p>
+
 <p>输出g_buf[0].carid的代码位置分别为：</p>
 <p>1，initlistenthread线程在进入循环入口 即打印出：</p>
 <div class="cnblogs_code">

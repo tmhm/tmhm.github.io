@@ -12,6 +12,20 @@
     <atom:link href="https://tmhm.github.io/categories/%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>win10禁用自动更新服务</title>
+      <link>https://tmhm.github.io/2017/02/13/win10%E7%A6%81%E7%94%A8%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E6%9C%8D%E5%8A%A1/</link>
+      <pubDate>Mon, 13 Feb 2017 00:48:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2017/02/13/win10%E7%A6%81%E7%94%A8%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E6%9C%8D%E5%8A%A1/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;按Win+R，打开运行，输入“services.msc&amp;raquo;打开服务；&lt;/li&gt;
+&lt;li&gt;找到“Windows Update”，选择属性，修改为禁用即可；&lt;/li&gt;
+&lt;li&gt;开启，反之亦然.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Python 中logging 模块的配置和使用</title>
       <link>https://tmhm.github.io/2016/12/25/python-%E4%B8%ADlogging-%E6%A8%A1%E5%9D%97%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Sun, 25 Dec 2016 04:49:00 +0000</pubDate>
@@ -136,6 +150,31 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
 &lt;li&gt;在文件里面保存每次迭代完成的数据，用于分析画图，不要太多的中间数据，应该用info level。&lt;/li&gt;
 &lt;li&gt;logging 可以配置&lt;a href=&#34;http://python.usyiyi.cn/python_278/library/logging.handlers.html#&#34;&gt;RotatingFileHandler保留循环文件的大小以及个数&lt;/a&gt;，不想保存太多的log信息。&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>shadowsocks 在win10下无法使用的问题</title>
+      <link>https://tmhm.github.io/2016/11/25/shadowsocks-%E5%9C%A8win10%E4%B8%8B%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 25 Nov 2016 04:38:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/11/25/shadowsocks-%E5%9C%A8win10%E4%B8%8B%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;问题描述：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;按照&lt;a href=&#34;http://my.yizhihongxing.com/knowledgebase.php?action=displayarticle&amp;amp;id=3&#34;&gt;帮助中心&lt;/a&gt;的配置设置好之后.&lt;/li&gt;
+&lt;li&gt;启用代理,显示了start，但是就是不能上google，卸载了迅雷也是没用。&lt;/li&gt;
+&lt;li&gt;在mac下能正常使用。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;解决问题：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;问题在于本地的端口有问题，将默认的1080端口修改为1081，&lt;/li&gt;
+&lt;li&gt;即可以打开google，youtobe&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;有时是3.3.5不能用，换会用低版本2.5.8的即可以&lt;/p&gt;
 </description>
     </item>
     
