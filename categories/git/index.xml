@@ -21,8 +21,8 @@
 
 &lt;h5 id=&#34;1-创建ssh-key&#34;&gt;1.创建SSH Key&lt;/h5&gt;
 
-&lt;pre&gt;&lt;code&gt;    ssh-keygen -t rsa -C &amp;quot;5733*****@qq.com&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;ssh-keygen -t rsa -C &amp;quot;5733*****@qq.com&amp;quot;
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;在主用户目录下生成 &lt;em&gt;.ssh&lt;/em&gt; 文件夹，该目录下有 &lt;em&gt;id_rsa&lt;/em&gt; 和 &lt;em&gt;id_rsa.pub&lt;/em&gt; 两个文件。&lt;/p&gt;
 
@@ -38,31 +38,32 @@
 
 &lt;p&gt;&lt;strong&gt;or create a new repository on the command line&lt;/strong&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    echo &amp;quot;# swrd&amp;quot; &amp;gt;&amp;gt; README.md
-    git init
-    git add README.md
-    git commit -m &amp;quot;first commit&amp;quot;
-    git remote add origin git@github.com:tmhm/swrd.git
-    git push -u origin master
+&lt;pre&gt;&lt;code&gt;echo &amp;quot;# swrd&amp;quot; &amp;gt;&amp;gt; README.md
+git init
+git add README.md
+git commit -m &amp;quot;first commit&amp;quot;
+git remote add origin git@github.com:tmhm/swrd.git
+git push -u origin master
+
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;strong&gt;or push an existing repository from the command line&lt;/strong&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    git remote add origin git@github.com:tmhm/swrd.git
-    git push -u origin master
+&lt;pre&gt;&lt;code&gt;git remote add origin git@github.com:tmhm/swrd.git
+git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h5 id=&#34;4-在本地-git-init并连接远程&#34;&gt;4.在本地 git init并连接远程&lt;/h5&gt;
 
-&lt;pre&gt;&lt;code&gt;    git init
-    git add --all
-    git commit -m &amp;quot;init commit&amp;quot;
-    git remote add origin git@github.com:tmhm/swrd.git
+&lt;pre&gt;&lt;code&gt;git init
+git add --all
+git commit -m &amp;quot;init commit&amp;quot;
+git remote add origin git@github.com:tmhm/swrd.git
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h5 id=&#34;5-push-到远程&#34;&gt;5.push 到远程&lt;/h5&gt;
 
-&lt;pre&gt;&lt;code&gt;    git push -u origin master
+&lt;pre&gt;&lt;code&gt;git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h5 id=&#34;gitingore文件&#34;&gt;.gitingore文件&lt;/h5&gt;

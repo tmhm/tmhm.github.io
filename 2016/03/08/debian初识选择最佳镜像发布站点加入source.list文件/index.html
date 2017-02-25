@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="description" content=" " />
+<meta name="description" content="镜像源source.list配置" />
 
 <meta name="keywords" content="">
 
@@ -24,7 +24,7 @@
 
 
 <meta property="og:type" content="article" />
-<meta property="og:description" content=" "/>
+<meta property="og:description" content="镜像源source.list配置"/>
 <meta property="og:article:published_time" content="2016-03-08T07:28:00Z" />
 <meta property="og:article:modified_time" content="2016-03-08T07:28:00Z" />
 
@@ -35,7 +35,7 @@
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@" />
 <meta name="twitter:title" content="Debian初识（选择最佳镜像发布站点加入source.list文件）" />
-<meta name="twitter:description" content=" " />
+<meta name="twitter:description" content="镜像源source.list配置" />
 <meta name="twitter:url" content="https://tmhm.github.io/2016/03/08/debian%E5%88%9D%E8%AF%86%E9%80%89%E6%8B%A9%E6%9C%80%E4%BD%B3%E9%95%9C%E5%83%8F%E5%8F%91%E5%B8%83%E7%AB%99%E7%82%B9%E5%8A%A0%E5%85%A5source.list%E6%96%87%E4%BB%B6/" />
 <meta name="twitter:domain" content="https://tmhm.github.io/">
   
@@ -50,8 +50,8 @@
       "name": "http://profiles.google.com/+?rel=author"
     },
     "datePublished": "2016-03-08",
-    "description": " ",
-    "wordCount":  97 
+    "description": "镜像源source.list配置",
+    "wordCount":  93 
   }
 </script>
 
@@ -182,7 +182,7 @@
 
   
   &middot; Read in about 1 min
-  &middot; (97 Words)
+  &middot; (93 Words)
   <br>
   
 
@@ -226,12 +226,10 @@
 
 <p>要安装netselect，通常使用：</p>
 
-<pre><code>
-# apt-get install netselect
+<pre><code># apt-get install netselect
 
 # sudo netselect ftp.debian.org http.us.debian.org ftp.at.debian.org download.unesp.br ftp.debian.org.br ftp.hk.debian.org ftp.tw.debian.org debian.linux.org.tw ftp.sjtu.edu.cn mirrors.163.com
   150 mirrors.163.com
-  
 </code></pre>
 
 <p>表示，在netselect后列出的所有主机中，mirrors.163.com是下载速 度最快的主机，其得分为150。(注意！！这是在我电脑上的测试结果，不同的网络 节点网速会大不相同，所以这个分值不一定适用于其它电脑)</p>
@@ -249,7 +247,7 @@
  #</span></pre>
 </div>
 <p><strong>记住：</strong><samp>sources.list</samp>生成在当前目录下，必须将其移 至<samp>/etc/apt</samp>目录。 根据文档内提示：打开注释deb-src。</p>
-<p>&nbsp;</p>
+
 <ul>
 <li><strong>putty在win10下面访问不了debian8.2，可能原因有：</strong></li>
 </ul>
@@ -263,25 +261,25 @@
 <p>man whereis</p>
 <p>NAME<br />       whereis  -  locate the binary, source, and manual page files for a com‐<br />       mand</p>
 
-<p></div>
-<p>&nbsp;</p></p>
+</div>
 
-<p></li></p>
 
-<p></ul>
+
+</li>
+
+</ul>
 <ul>
 <li><strong>查看软件运行位置</strong>
 <div class="cnblogs_code">
 <pre>which torcs  </pre>
-<p>man which<br />NAME<br />       which - locate a command</p></p>
+<p>man which<br />NAME<br />       which - locate a command</p>
 
-<p></div>
-<p>&nbsp;</p></p>
+</div>
 
-<p></li></p>
 
-<p></ul>
-<p>&nbsp;</p></p>
+</li>
+
+</ul>
 
 </div>
 

@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="description" content=" " />
+<meta name="description" content="python之继承思想" />
 
 <meta name="keywords" content="">
 
@@ -24,7 +24,7 @@
 
 
 <meta property="og:type" content="article" />
-<meta property="og:description" content=" "/>
+<meta property="og:description" content="python之继承思想"/>
 <meta property="og:article:published_time" content="2016-05-26T09:53:00Z" />
 <meta property="og:article:modified_time" content="2016-05-26T09:53:00Z" />
 
@@ -35,7 +35,7 @@
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@" />
 <meta name="twitter:title" content="python之面向对象（继承）" />
-<meta name="twitter:description" content=" " />
+<meta name="twitter:description" content="python之继承思想" />
 <meta name="twitter:url" content="https://tmhm.github.io/2016/05/26/python%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BB%A7%E6%89%BF/" />
 <meta name="twitter:domain" content="https://tmhm.github.io/">
   
@@ -50,7 +50,7 @@
       "name": "http://profiles.google.com/+?rel=author"
     },
     "datePublished": "2016-05-26",
-    "description": " ",
+    "description": "python之继承思想",
     "wordCount":  137 
   }
 </script>
@@ -238,34 +238,34 @@
 
 <hr />
 
-<pre><code>    class animal(object):
-        def __init__(self):
-            print 'animal init'
+<pre><code>class animal(object):
+    def __init__(self):
+        print 'animal init'
 
-        def say(self):
-            print 'animal say'
+    def say(self):
+        print 'animal say'
 
-    class dog(animal):
-        def __init__(self):
-            #animal.__init__(self)
-            print 'dog init'
+class dog(animal):
+    def __init__(self):
+        #animal.__init__(self)
+        print 'dog init'
 
-        def say(self):
-            animal.say(self)
-            print 'dog say'
+    def say(self):
+        animal.say(self)
+        print 'dog say'
 </code></pre>
 
 <p>In [23]:</p>
 
-<pre><code>    d = dog()
-    d.say()
+<pre><code>d = dog()
+d.say()
 </code></pre>
 
 <p>out:</p>
 
-<pre><code>    dog init
-    animal say
-    dog say
+<pre><code>dog init
+animal say
+dog say
 </code></pre>
 
 <p>如果在继承元组中列了一个以上的类，那么它就被称作&raquo;多重继承&raquo; 。
@@ -273,63 +273,64 @@
 
 <p>比如，下面的例子不行。</p>
 
-<pre><code>    class A:
-    class B(A):
-    class C(A,B)
+<pre><code>        class A:
+        class B(A):
+        class C(A,B)
 </code></pre>
 
 <p>下面是，多重继承逐个查找的示例：</p>
 
-<pre><code>    class animal(object):
-        def __init__(self):
-            print 'animal init'
+<pre><code>class animal(object):
+    def __init__(self):
+        print 'animal init'
 
-        def say(self):
-            print 'animal say'
+    def say(self):
+        print 'animal say'
 
-    class dog(animal):
-        def __init__(self):
-            #animal.__init__(self)
-            print 'dog init'
+class dog(animal):
+    def __init__(self):
+        #animal.__init__(self)
+        print 'dog init'
 
-        def say(self):
-            animal.say(self)
-            print 'dog say'
+    def say(self):
+        animal.say(self)
+        print 'dog say'
 
-    class cat(animal):
-        def __init__(self):
-            #animal.__init__(self)
-            print 'cat init'
+class cat(animal):
+    def __init__(self):
+        #animal.__init__(self)
+        print 'cat init'
 
-        def say(self):
-            #animal.say(self)
-            print 'cat say'
+    def say(self):
+        #animal.say(self)
+        print 'cat say'
 
-    class wolfhound(cat,dog):  #先继承cat，后面测试案例只输出了cat say。
-        def __init__(self):
-            print &quot;wolfhound init.&quot;
+class wolfhound(cat,dog):  #先继承cat，后面测试案例只输出了cat say。
+    def __init__(self):
+        print &quot;wolfhound init.&quot;
 
-        def run(self):
-            print &quot;wolfhound run&quot;
+    def run(self):
+        print &quot;wolfhound run&quot;
 </code></pre>
 
 <p>in：</p>
 
-<pre><code>    d = dog()
-    d.say()
-    w = wolfhound()
-    w.run()
-    w.say()
+<pre><code>d = dog()
+d.say()
+w = wolfhound()
+w.run()
+w.say()
 </code></pre>
 
 <p>out：</p>
 
-<pre><code>    dog init
-    animal say
-    dog say
-    wolfhound init.
-    wolfhound run
-    cat say
+<pre><code>dog init
+animal say
+dog say
+wolfhound init.
+wolfhound run
+cat say
+
 </code></pre>
 
 </div>

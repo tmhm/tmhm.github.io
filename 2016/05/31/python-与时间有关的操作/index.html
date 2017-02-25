@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="description" content=" " />
+<meta name="description" content="time 模块" />
 
 <meta name="keywords" content="">
 
@@ -24,7 +24,7 @@
 
 
 <meta property="og:type" content="article" />
-<meta property="og:description" content=" "/>
+<meta property="og:description" content="time 模块"/>
 <meta property="og:article:published_time" content="2016-05-31T10:46:00Z" />
 <meta property="og:article:modified_time" content="2016-05-31T10:46:00Z" />
 
@@ -35,7 +35,7 @@
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@" />
 <meta name="twitter:title" content="python 与时间有关的操作" />
-<meta name="twitter:description" content=" " />
+<meta name="twitter:description" content="time 模块" />
 <meta name="twitter:url" content="https://tmhm.github.io/2016/05/31/python-%E4%B8%8E%E6%97%B6%E9%97%B4%E6%9C%89%E5%85%B3%E7%9A%84%E6%93%8D%E4%BD%9C/" />
 <meta name="twitter:domain" content="https://tmhm.github.io/">
   
@@ -50,8 +50,8 @@
       "name": "http://profiles.google.com/+?rel=author"
     },
     "datePublished": "2016-05-31",
-    "description": " ",
-    "wordCount":  69 
+    "description": "time 模块",
+    "wordCount":  70 
   }
 </script>
 
@@ -182,7 +182,7 @@
 
   
   &middot; Read in about 1 min
-  &middot; (69 Words)
+  &middot; (70 Words)
   <br>
   
 
@@ -220,34 +220,37 @@
   <div class="container content">
   
 
-<p>import time
-        # ISOTIMEFORMAT=&lsquo;%Y-%m-%d %X&rsquo;
-        ISOTIMEFORMAT=&lsquo;%Y-%m-%d&rsquo;
-        t= time.strftime( ISOTIMEFORMAT, time.gmtime( time.time() ) )
-        f = open( t + &laquo;test.txt&raquo;,&lsquo;wb&rsquo;)
-        f.write(&laquo;hello,\n This is a test file&raquo;)
-        f.close()</p>
+<p>源代码：</p>
+
+<pre><code>import time
+# ISOTIMEFORMAT='%Y-%m-%d %X'
+ISOTIMEFORMAT='%Y-%m-%d'
+t= time.strftime( ISOTIMEFORMAT, time.gmtime( time.time() ) )
+f = open( t + &quot;test.txt&quot;,'wb')
+f.write(&quot;hello,\n This is a test file&quot;)
+f.close()
+</code></pre>
 
 <h3 id="计算程序运行时间">计算程序运行时间</h3>
 
-<pre><code>    import time
-    # ISOTIMEFORMAT='%Y-%m-%d %X'
-    start = time.time()
-    ISOTIMEFORMAT='%Y-%m-%d'
-    t= time.strftime( ISOTIMEFORMAT, time.gmtime( time.time() ) )
-    f = open( t + &quot;test.txt&quot;,'wb')
-    f.write(&quot;hello,\n This is a test file&quot;)
-    f.close()
-    print t
-    elapsed = time.time() - start
-    print elapsed
+<pre><code>import time
+# ISOTIMEFORMAT='%Y-%m-%d %X'
+start = time.time()
+ISOTIMEFORMAT='%Y-%m-%d'
+t= time.strftime( ISOTIMEFORMAT, time.gmtime( time.time() ) )
+f = open( t + &quot;test.txt&quot;,'wb')
+f.write(&quot;hello,\n This is a test file&quot;)
+f.close()
+print t
+elapsed = time.time() - start
+print elapsed
 </code></pre>
 
 <p>out：
 ​</p>
 
-<pre><code>    2016-05-31
-    0.00300002098083
+<pre><code>2016-05-31
+0.00300002098083
 </code></pre>
 
 </div>

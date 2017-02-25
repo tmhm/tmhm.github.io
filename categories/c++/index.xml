@@ -360,42 +360,42 @@ return 0;
 
 &lt;h4 id=&#34;运算操作符&#34;&gt;运算操作符&lt;/h4&gt;
 
-&lt;pre&gt;&lt;code&gt;    int i,t;
-    t = (i=1)+(++i);
+&lt;pre&gt;&lt;code&gt;int i,t;
+t = (i=1)+(++i);
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;输出&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    t= 4
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;输出
+&lt;code&gt;t= 4
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;i首先被赋值1，随后++i，使i的值变为2，到做加法的操作的时候，两个操作数都要读i此时的值，结果是两个2相加，等于4.&lt;/p&gt;
 
 &lt;p&gt;其汇编程序（基于vs2010），如下：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    int i,t;
-    t = (i=1)+(++i);
-    011413FE  mov         dword ptr [i],1
-    01141405  mov         eax,dword ptr [i]
-    01141408  add         eax,1
-    0114140B  mov         dword ptr [i],eax
-    0114140E  mov         ecx,dword ptr [i]
-    01141411  add         ecx,dword ptr [i]
-    01141414  mov         dword ptr [t],ecx
+&lt;pre&gt;&lt;code&gt;int i,t;
+t = (i=1)+(++i);
+011413FE  mov         dword ptr [i],1
+01141405  mov         eax,dword ptr [i]
+01141408  add         eax,1
+0114140B  mov         dword ptr [i],eax
+0114140E  mov         ecx,dword ptr [i]
+01141411  add         ecx,dword ptr [i]
+01141414  mov         dword ptr [t],ecx
+
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;i自加后，只保留在eax 寄存器里，然后将eax的2赋给i，所以，i 就变成2了。此处和动态语言的引用似乎有所类似。&lt;/p&gt;
 
 &lt;h4 id=&#34;sizeof操作符与数组&#34;&gt;sizeof操作符与数组&lt;/h4&gt;
 
-&lt;pre&gt;&lt;code&gt;    int t,tt,num;
-    int array[5];
-    int *p = array;
+&lt;pre&gt;&lt;code&gt;int t,tt,num;
+int array[5];
+int *p = array;
 
-    t= sizeof(p); //t =4
-    t= sizeof(int [5]);     // t= 20
-    tt = sizeof(array);     // tt = 20
-    num = sizeof(array)/sizeof(array[0]);  // get the number of array .  num =5
+t= sizeof(p); //t =4
+t= sizeof(int [5]);     // t= 20
+tt = sizeof(array);     // tt = 20
+num = sizeof(array)/sizeof(array[0]);  // get the number of array .  num =5
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;开始自以为，数组名不是首地址嘛。 应该是一个指针，然后对指针sizeof ，应该是4
@@ -404,6 +404,27 @@ return 0;
 &lt;p&gt;此时&lt;strong&gt;sizeof的是整个数组，而非首指针&lt;/strong&gt;。
 要学会多查看&lt;a href=&#34;https://msdn.microsoft.com/en-us/library/0w557fh7.aspx&#34;&gt;MSDN&lt;/a&gt;，解释如下：
 &amp;gt; When you apply the sizeof operator to an array identifier, the result is the size of the entire array rather than the size of the pointer represented by the array identifier.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>CMake尝鲜</title>
+      <link>https://tmhm.github.io/2016/05/21/cmake%E5%B0%9D%E9%B2%9C/</link>
+      <pubDate>Sat, 21 May 2016 01:50:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/05/21/cmake%E5%B0%9D%E9%B2%9C/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;安装gcc，cmake，g++,gdb
+&lt;div class=&#34;cnblogs_code&#34;&gt;
+&lt;/div&gt;
+&lt;div class=&#34;cnblogs_code&#34;&gt;
+&lt;pre&gt;sudo apt-&lt;span style=&#34;color: #0000ff;&#34;&gt;get&lt;/span&gt; update &amp;amp;&amp;amp; sudo apt-&lt;span style=&#34;color: #0000ff;&#34;&gt;get&lt;/span&gt; install build-essential&lt;/pre&gt;
+&lt;/div&gt;&lt;/p&gt;
+
+&lt;div class=&#34;cnblogs_code&#34;&gt;
+&lt;pre&gt;gdbtui --args ./future_net test-&lt;span style=&#34;color: #0000ff;&#34;&gt;case&lt;/span&gt;/case0/topo.csv test-&lt;span style=&#34;color: #0000ff;&#34;&gt;case&lt;/span&gt;/case0/demand.csv test-&lt;span style=&#34;color: #0000ff;&#34;&gt;case&lt;/span&gt;/case0/sample_result.csv &lt;/pre&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     

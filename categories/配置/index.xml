@@ -12,11 +12,11 @@
     <atom:link href="https://tmhm.github.io/categories/%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>logging 的配置和使用</title>
-      <link>https://tmhm.github.io/2016/12/25/logging-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/</link>
+      <title>Python 中logging 模块的配置和使用</title>
+      <link>https://tmhm.github.io/2016/12/25/python-%E4%B8%ADlogging-%E6%A8%A1%E5%9D%97%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Sun, 25 Dec 2016 04:49:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/12/25/logging-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://tmhm.github.io/2016/12/25/python-%E4%B8%ADlogging-%E6%A8%A1%E5%9D%97%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/</guid>
       <description>
 
 &lt;p&gt;reference :&lt;/p&gt;
@@ -162,6 +162,66 @@ sudo chmod +x /usr/local/bin/macdown
 &lt;li&gt;选择打开方式子选项&lt;/li&gt;
 &lt;li&gt;选择默认打开的程序，并设置全部更改。&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>adobe reader DC 字体设置</title>
+      <link>https://tmhm.github.io/2016/08/31/adobe-reader-dc-%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE/</link>
+      <pubDate>Wed, 31 Aug 2016 07:51:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/08/31/adobe-reader-dc-%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE/</guid>
+      <description>&lt;p&gt;一直使用adobe reader阅读pdf文档，系统提醒我升级一个reader助手，&lt;/p&gt;
+
+&lt;p&gt;升级之后：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;感觉字体颜色变浅，笔画也变细了，整体有些模糊不清。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;google了一下，原来是设置的&lt;a href=&#34;http://www.itcao.com/post_1058.html&#34;&gt;问题&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;在菜单中依次可以找到如下的设置：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;edit-&amp;gt;preferences-&amp;gt;page display-&amp;gt;rendering：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;将Smooth Text 设置为：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;for laptop/LCD screens&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;如下所示：
+&lt;img src=&#34;http://i.imgur.com/CWH0aHI.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;问题解决完毕。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Microsoft Visual Studio小技巧</title>
+      <link>https://tmhm.github.io/2016/08/30/microsoft-visual-studio%E5%B0%8F%E6%8A%80%E5%B7%A7/</link>
+      <pubDate>Tue, 30 Aug 2016 10:51:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/08/30/microsoft-visual-studio%E5%B0%8F%E6%8A%80%E5%B7%A7/</guid>
+      <description>&lt;p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;main函数调试参数：&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;     Project -&amp;gt; Properties -&amp;gt; Configuration Properties -&amp;gt; Debugging&lt;/p&gt;
+&lt;p&gt;在Command Arguments里填上即可。&lt;/p&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>PyCharm小技巧</title>
+      <link>https://tmhm.github.io/2016/03/08/pycharm%E5%B0%8F%E6%8A%80%E5%B7%A7/</link>
+      <pubDate>Tue, 08 Mar 2016 13:57:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/03/08/pycharm%E5%B0%8F%E6%8A%80%E5%B7%A7/</guid>
+      <description>&lt;p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;pycharm中配置main函数执行输入参数：&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;　　&amp;nbsp;&lt;a class=&#34;baidu-highlight&#34; href=&#34;https://www.baidu.com/s?wd=Run&amp;amp;tn=44039180_cpr&amp;amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1dBuj-bmW6srAD3ujDYnW6z0ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EPHTknjbkn1cv&#34; rel=&#34;nofollow&#34; target=&#34;_blank&#34;&gt;Run&lt;/a&gt;-&amp;gt;Edit Configurations-&amp;gt;Script Parames&lt;/p&gt;&lt;/p&gt;
 </description>
     </item>
     

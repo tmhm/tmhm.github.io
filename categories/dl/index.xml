@@ -38,27 +38,26 @@
 
 &lt;p&gt;Ctrl+alt+F1进入字符界面，关闭图形界面&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    sudo service lightdm stop //必须有，不然会安装失败
-    sudo /etc/init.d/lightdm stop //一样的命令
+&lt;pre&gt;&lt;code&gt;sudo service lightdm stop //必须有，不然会安装失败
+sudo /etc/init.d/lightdm stop //一样的命令
 
-    sudo chmod 755 NVIDIA-Linux-x86_64-367.27.run  //获取权限
-    sudo ./NVIDIA-Linux-x86_64-367.27.run  //安装驱动
+sudo chmod 755 NVIDIA-Linux-x86_64-367.27.run  //获取权限
+sudo ./NVIDIA-Linux-x86_64-367.27.run  //安装驱动
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Accept
 Continue installation
 安装完成之后&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    sudo service lightdm start
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;sudo service lightdm start&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;图形界面出现，然后关机，由让人重复输入密码，登录不了&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://nemesisdesign.net/blog/coding/how-reinstall-nvidia-drivers-linux-ubuntu/&#34;&gt;博主&lt;/a&gt;说&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    $ sudo /etc/init.d/gdm stop
-    $ sudo nvidia-installer --update
-    $ sudo /etc/init.d/gdm start
+&lt;pre&gt;&lt;code&gt;$ sudo /etc/init.d/gdm stop
+$ sudo nvidia-installer --update
+$ sudo /etc/init.d/gdm start
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;升级到375版本， 还是没用，启动进入不了桌面，重复登录&lt;/p&gt;
@@ -67,54 +66,53 @@ Continue installation
 
 &lt;p&gt;Uninstall previous nvidia drivers.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    $ sudo apt-get purge nvidia-*
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;$ sudo apt-get purge nvidia-*
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Stop light gdm (graphical interface)&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    $ sudo service lightgdm
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;$ sudo service lightgdm
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Go to tty (CTRL+ALT+F1). Set your init state to 3 (text only mode). It is important to do this. Note these commands on a paper or something. I experienced sometimes the tty does not show with the newest driver. I just ssh to my PC as a way around.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    $ sudo init 3
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;$ sudo init 3
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Log in to tty and cd to the directory where your have downloaded the driver.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    $ sudo ./NVIDIA-Linux-x86_64-367.35.run
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;$ sudo ./NVIDIA-Linux-x86_64-367.35.run
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;It will ask if you want to install 32-bit libraries, say no (assuming you do not have a 32-bit OS, hopefully. If you do have a 32-bit OS it is a good idea to upgrade…)&lt;/p&gt;
 
-&lt;p&gt;In a few minutes it is done….smooth. Reboot your PC&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    $ sudo reboot
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In a few minutes it is done….smooth. Reboot your PC
+&lt;code&gt;$ sudo reboot
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;update 之后还是不能进 图形界面&lt;/p&gt;
 
 &lt;p&gt;Uninstall previous nvidia drivers.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    sudo apt-get purge nvidia-*
-    sudo apt-get autoremove
-    sudo apt-get --purge remove nvidia-*
+&lt;pre&gt;&lt;code&gt;sudo apt-get purge nvidia-*
+sudo apt-get autoremove
+sudo apt-get --purge remove nvidia-*
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;remove 之后，&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    nvidia-smi
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;nvidia-smi
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;还是能看到gpu的。why？&lt;/p&gt;
 
 &lt;p&gt;卸载不了？&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    sudo apt-get install nvidia-prime
+&lt;pre&gt;&lt;code&gt;sudo apt-get install nvidia-prime
 
-    $ sudo /etc/init.d/lightdm stop
-    $ sudo nvidia-installer --update
-    $ sudo /etc/init.d/lightdm start
+$ sudo /etc/init.d/lightdm stop
+$ sudo nvidia-installer --update
+$ sudo /etc/init.d/lightdm start
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;strong&gt;升级到375版本， 还是没用，启动进入不了桌面，重复登录&lt;/strong&gt;&lt;/p&gt;
@@ -127,29 +125,28 @@ Continue installation
 
 &lt;p&gt;利用sudo gedit /etc/modprobe.d/blacklist-nouveau.conf新建blacklist-nouveau.conf文件，输入命令&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    blacklist nouveau
+&lt;pre&gt;&lt;code&gt;blacklist nouveau
 
-    blacklist lbm-nouveau
+blacklist lbm-nouveau
 
-    options nouveau modeset=0
+options nouveau modeset=0
 
-    alias nouveau off
+alias nouveau off
 
-    alias lbm-nouveau off
+alias lbm-nouveau off
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;保存并退出。这一步是为了禁掉Ubuntu自带开源驱动nouveau。之后sudo reboot重启系统。在终端执行命令&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    lsmod | grep nouveau
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;保存并退出。这一步是为了禁掉Ubuntu自带开源驱动nouveau。之后sudo reboot重启系统。在终端执行命令
+&lt;code&gt;lsmod | grep nouveau
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;查看nouveau模块是否被加载。如果什么都没输出，则执行下一步。&lt;/p&gt;
 
 &lt;p&gt;根本问题在于 参数：  &lt;strong&gt;&amp;ndash;no-opengl-files&lt;/strong&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    sudo /etc/init.d/lightdm stop
-    sudo ./NVIDIA-Linux-x86_64-375.20.run --no-opengl-files
-    sudo /etc/init.d/lightdm start
+&lt;pre&gt;&lt;code&gt;sudo /etc/init.d/lightdm stop
+sudo ./NVIDIA-Linux-x86_64-375.20.run --no-opengl-files
+sudo /etc/init.d/lightdm start
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;即可以正常登录界面了！！&lt;/p&gt;
@@ -183,93 +180,94 @@ Continue installation
 
 &lt;p&gt;运行&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    sudo sh cuda_8.0.44_linux.run
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;sudo sh cuda_8.0.44_linux.run
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;选项如下所示：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    Description
+&lt;pre&gt;&lt;code&gt;Description
 
-    This package includes over 100+ CUDA examples that demonstrate
-    various CUDA programming principles, and efficient CUDA
-    implementation of algorithms in specific application domains.
-    The NVIDIA CUDA Samples License Agreement is available in
-    Do you accept the previously read EULA?
-    accept/decline/quit: accept
+This package includes over 100+ CUDA examples that demonstrate
+various CUDA programming principles, and efficient CUDA
+implementation of algorithms in specific application domains.
+The NVIDIA CUDA Samples License Agreement is available in
+Do you accept the previously read EULA?
+accept/decline/quit: accept
 
-    Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 367.48?
-    (y)es/(n)o/(q)uit: n
+Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 367.48?
+(y)es/(n)o/(q)uit: n
 
-    Install the CUDA 8.0 Toolkit?
-    (y)es/(n)o/(q)uit: y
+Install the CUDA 8.0 Toolkit?
+(y)es/(n)o/(q)uit: y
 
-    Enter Toolkit Location
-     [ default is /usr/local/cuda-8.0 ]:
+Enter Toolkit Location
+ [ default is /usr/local/cuda-8.0 ]:
 
-    Do you want to install a symbolic link at /usr/local/cuda?
-    (y)es/(n)o/(q)uit: y
+Do you want to install a symbolic link at /usr/local/cuda?
+(y)es/(n)o/(q)uit: y
 
-    Install the CUDA 8.0 Samples?
-    (y)es/(n)o/(q)uit: y
+Install the CUDA 8.0 Samples?
+(y)es/(n)o/(q)uit: y
 
-    Enter CUDA Samples Location
-     [ default is /home/c302 ]:
+Enter CUDA Samples Location
+ [ default is /home/c302 ]:
 
-    Installing the CUDA Toolkit in /usr/local/cuda-8.0 ...
-    Installing the CUDA Samples in /home/c302 ...
-    Copying samples to /home/c302/NVIDIA_CUDA-8.0_Samples now...
-    Finished copying samples.
+Installing the CUDA Toolkit in /usr/local/cuda-8.0 ...
+Installing the CUDA Samples in /home/c302 ...
+Copying samples to /home/c302/NVIDIA_CUDA-8.0_Samples now...
+Finished copying samples.
 
-    ===========
-    = Summary =
-    ===========
+===========
+= Summary =
+===========
 
-    Driver:   Not Selected
-    Toolkit:  Installed in /usr/local/cuda-8.0
-    Samples:  Installed in /home/c302
+Driver:   Not Selected
+Toolkit:  Installed in /usr/local/cuda-8.0
+Samples:  Installed in /home/c302
 
-    Please make sure that
-     -   PATH includes /usr/local/cuda-8.0/bin
-     -   LD_LIBRARY_PATH includes /usr/local/cuda-8.0/lib64, or, add /usr/local/cuda-8.0/lib64 to /etc/ld.so.conf and run ldconfig as root
+Please make sure that
+ -   PATH includes /usr/local/cuda-8.0/bin
+ -   LD_LIBRARY_PATH includes /usr/local/cuda-8.0/lib64, or, add /usr/local/cuda-8.0/lib64 to /etc/ld.so.conf and run ldconfig as root
 
-    To uninstall the CUDA Toolkit, run the uninstall script in /usr/local/cuda-8.0/bin
+To uninstall the CUDA Toolkit, run the uninstall script in /usr/local/cuda-8.0/bin
 
-    Please see CUDA_Installation_Guide_Linux.pdf in /usr/local/cuda-8.0/doc/pdf for detailed information on setting up CUDA.
+Please see CUDA_Installation_Guide_Linux.pdf in /usr/local/cuda-8.0/doc/pdf for detailed information on setting up CUDA.
 
-    ***WARNING: Incomplete installation! This installation did not install the CUDA Driver. A driver of version at least 361.00 is required for CUDA 8.0 functionality to work.
-    To install the driver using this installer, run the following command, replacing &amp;lt;CudaInstaller&amp;gt; with the name of this run file:
-        sudo &amp;lt;CudaInstaller&amp;gt;.run -silent -driver
+***WARNING: Incomplete installation! This installation did not install the CUDA Driver. A driver of version at least 361.00 is required for CUDA 8.0 functionality to work.
+To install the driver using this installer, run the following command, replacing &amp;lt;CudaInstaller&amp;gt; with the name of this run file:
+    sudo &amp;lt;CudaInstaller&amp;gt;.run -silent -driver
 
-    Logfile is /tmp/cuda_install_9045.log
+Logfile is /tmp/cuda_install_9045.log
+    
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h4 id=&#34;设置环境变量&#34;&gt;设置环境变量&lt;/h4&gt;
 
-&lt;pre&gt;&lt;code&gt;    export PATH=/usr/local/cuda-8.0/bin:$PATH
-    export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
+&lt;pre&gt;&lt;code&gt;export PATH=/usr/local/cuda-8.0/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;添加系统变量修改到系统文件
-        sudo vi /etc/profile&lt;/p&gt;
+&lt;code&gt;sudo vi /etc/profile
+&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;在最后添加上面两句，然后保存。使立即生效&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    sudo ldconfig //环境变量立即生效
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;在最后添加上面两句，然后保存。使立即生效
+&lt;code&gt;sudo ldconfig //环境变量立即生效
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;h4 id=&#34;验证-cuda&#34;&gt;验证 cuda&lt;/h4&gt;
 
-&lt;pre&gt;&lt;code&gt;    c302@c302-dl:~/Downloads$ nvcc -V
-    nvcc: NVIDIA (R) Cuda compiler driver
-    Copyright (c) 2005-2016 NVIDIA Corporation
-    Built on Sun_Sep__4_22:14:01_CDT_2016
-    Cuda compilation tools, release 8.0, V8.0.44
+&lt;pre&gt;&lt;code&gt;c302@c302-dl:~/Downloads$ nvcc -V
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2016 NVIDIA Corporation
+Built on Sun_Sep__4_22:14:01_CDT_2016
+Cuda compilation tools, release 8.0, V8.0.44
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;h3 id=&#34;测试cuda的samples&#34;&gt;测试cuda的samples&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code&gt;    cd ‘/home/zhou/NVIDIA_CUDA-8.0_Samples’
-    make  //这里需要点时间
+&lt;pre&gt;&lt;code&gt;cd ‘/home/zhou/NVIDIA_CUDA-8.0_Samples’
+make  //这里需要点时间
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;最后显示：
@@ -279,22 +277,24 @@ Continue installation
 &lt;p&gt;Finished building CUDA samples&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;pre&gt;&lt;code&gt;    cd 0_Simple/matrixMul
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;
+        cd 0_Simple/matrixMul
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;运行测试如下：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;    c302@c302-dl:~/NVIDIA_CUDA-8.0_Samples/0_Simple/matrixMul$ ./matrixMul
-    [Matrix Multiply Using CUDA] - Starting...
-    GPU Device 0: &amp;quot;GeForce GTX 1080&amp;quot; with compute capability 6.1
+&lt;pre&gt;&lt;code&gt;c302@c302-dl:~/NVIDIA_CUDA-8.0_Samples/0_Simple/matrixMul$ ./matrixMul
+[Matrix Multiply Using CUDA] - Starting...
+GPU Device 0: &amp;quot;GeForce GTX 1080&amp;quot; with compute capability 6.1
 
-    MatrixA(320,320), MatrixB(640,320)
-    Computing result using CUDA Kernel...
-    done
-    Performance= 1109.06 GFlop/s, Time= 0.118 msec, Size= 131072000 Ops, WorkgroupSize= 1024 threads/block
-    Checking computed result for correctness: Result = PASS
+MatrixA(320,320), MatrixB(640,320)
+Computing result using CUDA Kernel...
+done
+Performance= 1109.06 GFlop/s, Time= 0.118 msec, Size= 131072000 Ops, WorkgroupSize= 1024 threads/block
+Checking computed result for correctness: Result = PASS
 
-    NOTE: The CUDA Samples are not meant for performance measurements. Results may vary when GPU Boost is enabled.
+NOTE: The CUDA Samples are not meant for performance measurements. Results may vary when GPU Boost is enabled.
+
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://i.imgur.com/iRwuetR.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;

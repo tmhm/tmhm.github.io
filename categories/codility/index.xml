@@ -631,21 +631,22 @@ given an array A describing N discs as explained above, returns the number of (u
       <description>
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#1.5.1&#34;&gt;1. PassingCars&lt;/a&gt;
-    * &lt;a href=&#34;#1.5.2&#34;&gt;2. CountDiv&lt;/a&gt;
-    * &lt;a href=&#34;#1.5.3&#34;&gt;3. GenomicRangeQuery&lt;/a&gt;
-    * &lt;a href=&#34;#1.5.4&#34;&gt;4. MinAvgTwoSlice&lt;/a&gt;
-&lt;h3 id = &#34;1.5.1&#34;&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.5.1&#34;&gt;1. PassingCars&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.5.2&#34;&gt;2. CountDiv&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.5.3&#34;&gt;3. GenomicRangeQuery&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.5.4&#34;&gt;4. MinAvgTwoSlice&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id = &#34;1.5&#34;&gt;
+&lt;h3 id = &#34;1.5&#34;&gt;
 lesson 5: &lt;i&gt;prefix sums&lt;/i&gt;
-&lt;/h2&gt;
+&lt;/h3&gt;
 
-&lt;ol&gt;
-&lt;li&gt;&lt;i&gt; PassingCars&lt;/i&gt;
-&lt;/h3&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;h4 id = &#34;1.5.1&#34;&gt;
+1. &lt;i&gt; PassingCars&lt;/i&gt;
+&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Count the number of passing cars on the road.&lt;/p&gt;
@@ -661,11 +662,11 @@ The goal is to count passing cars. We say that a pair of cars (P, Q), where 0 �
 
 &lt;p&gt;For example, consider array A such that:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;      A[0] = 0
-      A[1] = 1
-      A[2] = 0
-      A[3] = 1
-      A[4] = 1
+&lt;pre&gt;&lt;code&gt;  A[0] = 0
+  A[1] = 1
+  A[2] = 0
+  A[3] = 1
+  A[4] = 1
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;We have five pairs of passing cars: (0, 1), (0, 3), (0, 4), (2, 3), (2, 4).&lt;/p&gt;
@@ -711,9 +712,9 @@ The goal is to count passing cars. We say that a pair of cars (P, Q), where 0 �
     return result
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id = &#34;1.5.2&#34;&gt;
+&lt;h4 id = &#34;1.5.2&#34;&gt;
 2. &lt;i&gt; CountDiv &lt;/i&gt;
-&lt;/h3&gt;
+&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Compute number of integers divisible by k in range [a..b].&lt;/p&gt;
@@ -773,9 +774,9 @@ A ≤ B.&lt;/li&gt;
     return (B/K - A/K) if (A%K != 0 ) else (B/K - A/K + 1)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id = &#34;1.5.3&#34;&gt;
+&lt;h4 id = &#34;1.5.3&#34;&gt;
 3. GenomicRangeQuery
-&lt;/h3&gt;
+&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Find the minimal nucleotide from a range of sequence DNA.&lt;/p&gt;
@@ -787,9 +788,9 @@ A ≤ B.&lt;/li&gt;
 
 &lt;p&gt;For example, consider string S = CAGCCTA and arrays P, Q such that:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;P[0] = 2    Q[0] = 4
-P[1] = 5    Q[1] = 5
-P[2] = 0    Q[2] = 6
+&lt;pre&gt;&lt;code&gt;    P[0] = 2    Q[0] = 4
+    P[1] = 5    Q[1] = 5
+    P[2] = 0    Q[2] = 6
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;The answers to these M = 3 queries are as follows:&lt;/p&gt;
@@ -904,9 +905,9 @@ pG = [0, 0, 0, 1, 1, 1, 1, 1]
 故，是下标［j＋1］－［i］
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id = &#34;1.5.4&#34;&gt;
+&lt;h4 id = &#34;1.5.4&#34;&gt;
 4. MinAvgTwoSlice
-&lt;/h3&gt;
+&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Find the minimal average of any slice containing at least two elements.&lt;/p&gt;
@@ -916,13 +917,13 @@ pG = [0, 0, 0, 1, 1, 1, 1, 1]
 
 &lt;p&gt;For example, array A such that:&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;A[0] = 4
-A[1] = 2
-A[2] = 2
-A[3] = 5
-A[4] = 1
-A[5] = 5
-A[6] = 8
+&lt;pre&gt;&lt;code&gt;    A[0] = 4
+    A[1] = 2
+    A[2] = 2
+    A[3] = 5
+    A[4] = 1
+    A[5] = 5
+    A[6] = 8
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;contains the following example slices:&lt;/p&gt;
@@ -984,10 +985,13 @@ A[6] = 8
       <description>
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#1.4.1&#34;&gt;1. FrogRiverOne&lt;/a&gt;
-    * &lt;a href=&#34;#1.4.2&#34;&gt;2. PermCheck&lt;/a&gt;
-    * &lt;a href=&#34;#1.4.3&#34;&gt;3. MissingInteger&lt;/a&gt;
-    * &lt;a href=&#34;#1.4.4&#34;&gt;4. MaxCounters&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.4.1&#34;&gt;1. FrogRiverOne&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.4.2&#34;&gt;2. PermCheck&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.4.3&#34;&gt;3. MissingInteger&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.4.4&#34;&gt;4. MaxCounters&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h2 id = &#34;1.4&#34;&gt;
@@ -1646,13 +1650,13 @@ def solution(A, K):
       <pubDate>Thu, 01 Sep 2016 15:35:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
       <guid>https://tmhm.github.io/2016/09/01/iterations---codility/</guid>
-      <description>&lt;h2 id = &#34;1.1&#34;&gt;
+      <description>&lt;h3 id = &#34;1.1&#34;&gt;
 lesson 1：&lt;i&gt;Iterations&lt;/i&gt;
-&lt;/h2&gt;
-
-&lt;h3 id = &#34;1.1.1&#34;&gt;
-1. BinaryGap-----[100%]
 &lt;/h3&gt;
+
+&lt;h4 id = &#34;1.1.1&#34;&gt;
+1. BinaryGap-----[100%]
+&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Find longest sequence of zeros in binary representation of an integer.&lt;/p&gt;
@@ -1730,41 +1734,63 @@ def solution(N):
 &lt;p&gt;&lt;a href=&#34;#1&#34;&gt;codility lessons&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#1.1&#34;&gt;lesson 1: &lt;em&gt;Iterations&lt;/em&gt;&lt;/a&gt;
-    * &lt;a href=&#34;#1.1.1&#34;&gt;1. BinaryGap&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.1&#34;&gt;lesson 1: &lt;em&gt;Iterations&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.2&#34;&gt;lesson 2: &lt;em&gt;Arrays&lt;/em&gt;&lt;/a&gt;
-    * &lt;a href=&#34;#1.2.1&#34;&gt;1. CyclicRotation&lt;/a&gt;
-    * &lt;a href=&#34;#1.2.2&#34;&gt;2. OddOccurrencesInArray&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#1.1.1&#34;&gt;1. BinaryGap&lt;/a&gt;
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.3&#34;&gt;lesson 3: &lt;em&gt;Time complexity&lt;/em&gt;&lt;/a&gt;
-    * &lt;a href=&#34;#1.3.1&#34;&gt;1. TapeEquilibrium&lt;/a&gt;
-    * &lt;a href=&#34;#1.3.2&#34;&gt;2. FrogJmp&lt;/a&gt;
-    * &lt;a href=&#34;#1.3.3&#34;&gt;3. PermMissingElem&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.2&#34;&gt;lesson 2: &lt;em&gt;Arrays&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.4&#34;&gt;lesson 4: &lt;em&gt;counting elements&lt;/em&gt;&lt;/a&gt;
-    * &lt;a href=&#34;#1.4.1&#34;&gt;1. FrogRiverOne&lt;/a&gt;
-    * &lt;a href=&#34;#1.4.2&#34;&gt;2. PermCheck&lt;/a&gt;
-    * &lt;a href=&#34;#1.4.3&#34;&gt;3. MissingInteger&lt;/a&gt;
-    * &lt;a href=&#34;#1.4.4&#34;&gt;4. MaxCounters&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#1.2.1&#34;&gt;1. CyclicRotation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#1.2.2&#34;&gt;2. OddOccurrencesInArray&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.5&#34;&gt;lesson 5: &lt;em&gt;prefix sums&lt;/em&gt;&lt;/a&gt;
-    * &lt;a href=&#34;#1.5.1&#34;&gt;1. PassingCars&lt;/a&gt;
-    * &lt;a href=&#34;#1.5.2&#34;&gt;2. CountDiv&lt;/a&gt;
-    * &lt;a href=&#34;#1.5.3&#34;&gt;3. GenomicRangeQuery&lt;/a&gt;
-    * &lt;a href=&#34;#1.5.4&#34;&gt;4. MinAvgTwoSlice&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.3&#34;&gt;lesson 3: &lt;em&gt;Time complexity&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.6&#34;&gt;lesson 6: &lt;em&gt;sorting&lt;/em&gt;&lt;/a&gt;
-    * &lt;a href=&#34;#1.6.1&#34;&gt;1. Distinct&lt;/a&gt;
-    * &lt;a href=&#34;#1.6.2&#34;&gt;2. MaxProductOfThree&lt;/a&gt;
-    * &lt;a href=&#34;#1.6.3&#34;&gt;3. Triangle&lt;/a&gt;
-    * &lt;a href=&#34;#1.6.4&#34;&gt;4. none&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#1.3.1&#34;&gt;1. TapeEquilibrium&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#1.3.2&#34;&gt;2. FrogJmp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#1.3.3&#34;&gt;3. PermMissingElem&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.7&#34;&gt;lesson 7: &lt;em&gt;stacks and queues&lt;/em&gt;&lt;/a&gt;
-    * &lt;a href=&#34;#1.7.1&#34;&gt;1. none&lt;/a&gt;
-    * &lt;a href=&#34;#1.7.2&#34;&gt;2. Nesting&lt;/a&gt;
-    * &lt;a href=&#34;#1.7.3&#34;&gt;3. none&lt;/a&gt;
-    * &lt;a href=&#34;#1.4.4&#34;&gt;4. MaxCounters&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.4&#34;&gt;lesson 4: &lt;em&gt;counting elements&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#1.4.1&#34;&gt;1. FrogRiverOne&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#1.4.2&#34;&gt;2. PermCheck&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#1.4.3&#34;&gt;3. MissingInteger&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#1.4.4&#34;&gt;4. MaxCounters&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.5&#34;&gt;lesson 5: &lt;em&gt;prefix sums&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#1.5.1&#34;&gt;1. PassingCars&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#1.5.2&#34;&gt;2. CountDiv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#1.5.3&#34;&gt;3. GenomicRangeQuery&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#1.5.4&#34;&gt;4. MinAvgTwoSlice&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.6&#34;&gt;lesson 6: &lt;em&gt;sorting&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#1.6.1&#34;&gt;1. Distinct&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#1.6.2&#34;&gt;2. MaxProductOfThree&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#1.6.3&#34;&gt;3. Triangle&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#1.6.4&#34;&gt;4. none&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.7&#34;&gt;lesson 7: &lt;em&gt;stacks and queues&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#1.7.1&#34;&gt;1. none&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#1.7.2&#34;&gt;2. Nesting&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#1.7.3&#34;&gt;3. none&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#1.4.4&#34;&gt;4. MaxCounters&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id = &#34;1&#34;&gt;

@@ -5,28 +5,28 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>PyBrain库的example之NFQ流程图分析  &middot; Well</title>
+  <title>Python 中logging 模块的配置和使用  &middot; Well</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="description" content="PyBrain 库中NFQ算法的流程图分析" />
+<meta name="description" content="Python 中logging 模块的使用记录" />
 
 <meta name="keywords" content="">
 
 
-<meta property="og:title" content="PyBrain库的example之NFQ流程图分析  &middot; Well ">
+<meta property="og:title" content="Python 中logging 模块的配置和使用  &middot; Well ">
 <meta property="og:site_name" content="Well"/>
-<meta property="og:url" content="https://tmhm.github.io/2016/05/27/pybrain%E5%BA%93%E7%9A%84example%E4%B9%8Bnfq%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%88%86%E6%9E%90/" />
+<meta property="og:url" content="https://tmhm.github.io/2016/12/25/python-%E4%B8%ADlogging-%E6%A8%A1%E5%9D%97%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/" />
 <meta property="og:locale" content="en-EN">
 
 
 <meta property="og:type" content="article" />
-<meta property="og:description" content="PyBrain 库中NFQ算法的流程图分析"/>
-<meta property="og:article:published_time" content="2016-05-27T11:43:00Z" />
-<meta property="og:article:modified_time" content="2016-05-27T11:43:00Z" />
+<meta property="og:description" content="Python 中logging 模块的使用记录"/>
+<meta property="og:article:published_time" content="2016-12-25T04:49:00Z" />
+<meta property="og:article:modified_time" content="2016-12-25T04:49:00Z" />
 
   
 
@@ -34,9 +34,9 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@" />
-<meta name="twitter:title" content="PyBrain库的example之NFQ流程图分析" />
-<meta name="twitter:description" content="PyBrain 库中NFQ算法的流程图分析" />
-<meta name="twitter:url" content="https://tmhm.github.io/2016/05/27/pybrain%E5%BA%93%E7%9A%84example%E4%B9%8Bnfq%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%88%86%E6%9E%90/" />
+<meta name="twitter:title" content="Python 中logging 模块的配置和使用" />
+<meta name="twitter:description" content="Python 中logging 模块的使用记录" />
+<meta name="twitter:url" content="https://tmhm.github.io/2016/12/25/python-%E4%B8%ADlogging-%E6%A8%A1%E5%9D%97%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/" />
 <meta name="twitter:domain" content="https://tmhm.github.io/">
   
 
@@ -44,20 +44,20 @@
   {
     "@context": "http://schema.org",
     "@type": "Article",
-    "headline": "PyBrain库的example之NFQ流程图分析",
+    "headline": "Python 中logging 模块的配置和使用",
     "author": {
       "@type": "Person",
       "name": "http://profiles.google.com/+?rel=author"
     },
-    "datePublished": "2016-05-27",
-    "description": "PyBrain 库中NFQ算法的流程图分析",
-    "wordCount":  260 
+    "datePublished": "2016-12-25",
+    "description": "Python 中logging 模块的使用记录",
+    "wordCount":  230 
   }
 </script>
 
 
 
-<link rel="canonical" href="https://tmhm.github.io/2016/05/27/pybrain%E5%BA%93%E7%9A%84example%E4%B9%8Bnfq%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%88%86%E6%9E%90/" />
+<link rel="canonical" href="https://tmhm.github.io/2016/12/25/python-%E4%B8%ADlogging-%E6%A8%A1%E5%9D%97%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/" />
 
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://tmhm.github.io/v2.png">
 <link href="https://tmhm.github.io/v2.png" rel="icon">
@@ -173,16 +173,16 @@
 
 <article id="main-content" class="container main_content single">
   <header class="container hat">
-  <h1>PyBrain库的example之NFQ流程图分析
+  <h1>Python 中logging 模块的配置和使用
 </h1>
 
   <div class="metas">
-<time datetime="2016-05-27">27 May, 2016</time>
+<time datetime="2016-12-25">25 Dec, 2016</time>
 
 
   
   &middot; Read in about 2 min
-  &middot; (260 Words)
+  &middot; (230 Words)
   <br>
   
 
@@ -199,13 +199,13 @@
   
 
     
-    <a class="prev" href="https://tmhm.github.io/2016/05/26/python%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BB%A7%E6%89%BF/" title="python之面向对象（继承）">
+    <a class="prev" href="https://tmhm.github.io/2016/12/23/matplotlib-y%E8%BD%B4%E6%A0%87%E6%B3%A8%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8%E4%BB%A5%E5%8F%8Asubplot%E8%B0%83%E6%95%B4%E7%9A%84%E9%97%AE%E9%A2%98/" title="matplotlib y轴标注显示不全以及subplot调整的问题">
       Previous
     </a>
     
 
     
-    <a class="next" href="https://tmhm.github.io/2016/05/31/python-%E4%B8%8E%E6%97%B6%E9%97%B4%E6%9C%89%E5%85%B3%E7%9A%84%E6%93%8D%E4%BD%9C/" title="python 与时间有关的操作">
+    <a class="next" href="https://tmhm.github.io/2017/02/08/%E5%9F%BA%E4%BA%8Edrl%E5%92%8Ctorcs%E7%9A%84%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E4%BB%BF%E7%9C%9F%E7%B3%BB%E7%BB%9F%E4%B9%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title="基于DRL和TORCS的自动驾驶仿真系统——之环境配置">
       Next
     </a>
     
@@ -220,107 +220,122 @@
   <div class="container content">
   
 
-<h4 id="pybrain库的example之nfq流程图分析">PyBrain库的example之NFQ流程图分析</h4>
+<p>reference :</p>
 
-<p>如下是测试程序。主要分析<strong>doEpisode和learn</strong>两个函数。</p>
+<ul>
+<li><a href="http://python.usyiyi.cn/python_278/library/logging.handlers.html#">logging cookbook</a></li>
+<li><a href="http://python.usyiyi.cn/translate/python_278/howto/logging.html#logging-advanced-tutorial">logging HOWTO</a></li>
+</ul>
 
-<pre><code>__author__ = 'Thomas Rueckstiess, ruecksti@in.tum.de'
+<p>测试源码，example</p>
 
-from pybrain.rl.environments.cartpole import CartPoleEnvironment, DiscreteBalanceTask, CartPoleRenderer
-from pybrain.rl.agents import LearningAgent
-from pybrain.rl.experiments import EpisodicExperiment
-from pybrain.rl.learners.valuebased import NFQ, ActionValueNetwork
-#,ActionValueLSTMNetwork
-from pybrain.rl.explorers import BoltzmannExplorer
+<pre><code>import logging
 
-from numpy import array, arange, meshgrid, pi, zeros, mean
-from matplotlib import pyplot as plt
+nt = 'xwei'
+# logging.basicConfig(filename='log/log_test.log',
+#                     format='%(asctime)s, %(levelname)s:%(message)s', datefmt='%m/%d/%Y %I:%M:%S %p',
+#                     filemode='w', level=logging.INFO)
 
-# switch this to True if you want to see the cart balancing the pole (slower)
-render = False  #True #
+# set up logging to file - see previous section for more details
+# w ,new file
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
+                    datefmt='%m/%d/%Y %H:%M:%S %p',
+                    filename='log/log_test.log',
+                    filemode='w')
+# define a Handler which writes INFO messages or higher to the sys.stderr
+console = logging.StreamHandler()
+console.setLevel(logging.INFO)
+# set a format which is simpler for console use
+formatter = logging.Formatter('%(name)-12s: %(levelname)-8s %(message)s')
+# tell the handler to use this format
+console.setFormatter(formatter)
+# add the handler to the root logger
+logging.getLogger('').addHandler(console)
 
-plt.ion()
+# Now, we can log to the root logger, or any other logger. First the root...
+logging.info('Jackdaws love my big sphinx of quartz.')
 
-env = CartPoleEnvironment()
-if render:
-    renderer = CartPoleRenderer()
-    env.setRenderer(renderer)
-    renderer.start()
+# Now, define a couple of other loggers which might represent areas in your
+# application:
+logger1 = logging.getLogger('myapp.area1')
+logger2 = logging.getLogger('myapp.area2')
 
+logger1.debug('Quick zephyrs blow, vexing daft Jim.')
+logger1.info('How quickly daft jumping zebras vex.')
+logger2.warning('Jail zesty vixen who grabbed pay from quack.')
+logger2.error('The five boxing wizards jump quickly.')
 
-# balancetask. py inside only used 2 sensors, so here can't use(4,3), just use (2,3)
-# there is a debug in vesion 0.30, now, new version 0.33 had correct it!!
-module = ActionValueNetwork(4,3)  #(4,3) #  0.33 had correct it
-#module = ActionValueLSTMNetwork(2,3)
-
-task = DiscreteBalanceTask(env, 100)
-learner = NFQ()
-learner.explorer.epsilon = 0.4
-
-agent = LearningAgent(module, learner)
-testagent = LearningAgent(module, None)
-experiment = EpisodicExperiment(task, agent)
-
-
-def plotPerformance(values, fig):
-    plt.figure(fig.number)
-    plt.clf()
-    plt.plot(values, 'o-')
-    plt.gcf().canvas.draw()
-
-
-performance = []
-
-if not render:
-    pf_fig = plt.figure()
-
-#while (True):
-for _ in xrange(60): #60
-    # one learning step after one episode of world-interaction!!!
-    experiment.doEpisodes(1)
-    agent.learn(2)  # 5
-
-    # test performance (these real-world experiences are not used for training)
-    if render:
-        env.delay = True
-    experiment.agent = testagent
-    #r = mean([sum(x) for x in experiment.doEpisodes(5)])
-    env.delay = False
-    testagent.reset()
-    experiment.agent = agent
-
-    #performance.append(r)
-    print &quot;update step&quot;, len(performance)
-
-    #print &quot;reward avg&quot;, r
-    print &quot;explorer epsilon&quot;, learner.explorer.epsilon
-    print &quot;num episodes&quot;, agent.history.getNumSequences()
-    print &quot;update step&quot;, len(performance)
-
-if not render:
-    plotPerformance(performance, pf_fig)
-
-str = raw_input(&quot;please input sth to end!&quot;)
-print &quot;you put :&quot;,str
+# 'application' code
+logging.debug(&quot;this is debug.&quot;)
+logging.info(&quot;this is info form %s.&quot; % nt)
+logging.warning(&quot;this is warning from %s.&quot; % nt)
 
 </code></pre>
 
-<p>experiment.doEpisodes(1)
-<img src="http://i.imgur.com/Un1ow9B.png" alt="" /></p>
+<p>默认设置文件的level 是debug，基础上再设置console的格式。</p>
 
-<p>agent.learn(2)
-<img src="http://i.imgur.com/TQ2YO9y.png" alt="" /></p>
-
-<p>图2的注释2部分，可以参考该博文<a href="http://lamda.nju.edu.cn/yangjw/project/drlintro.html">深度强化学习初探</a> ,但是他文中的公式应该有点问题。应该把Qm+1改为Qm，进一步参考维基百科<a href="https://en.wikipedia.org/wiki/Q-learning">Q-learning</a> ,如下所示。</p>
-
-<p>Qm+1(st,at)=Qm(st,at)+α[rt+1+γQm(st+1,at+1)−Qm(st,at)]</p>
-
-<p>推荐所用的画图软件<a href="https://www.processon.com/i/56873407e4b0b5afb309e00c">process on</a></p>
+<p>程序分别在文件中和console里面保留了对应level的信息：</p>
 
 <ul>
-<li>用起来挺方便的，在线用谷歌浏览器运行，用户体验挺佳，比visio2010快多了；</li>
-<li>可以多用户协作；</li>
-<li>目前有一个缺点就是一个框里面的字体格式必须是一样的，不可以修改一个框里面部分的文字的格式。有点类似PS的思想。</li>
+<li>console 记录显示大于info level的信息</li>
+<li>文件中记录level 超过 debug 的信息</li>
+</ul>
+
+<h4 id="level设计">level设计</h4>
+
+<p>logging函数根据它们用来跟踪的事件的级别或严重程度来命名。<a href="http://python.usyiyi.cn/translate/python_278/howto/logging.html#logging-advanced-tutorial">标准级别及其适用性描述</a>如下（以严重程度递增排序）：</p>
+
+<table>
+<thead>
+<tr>
+<th>级别</th>
+<th>数字值</th>
+<th>何时使用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>DEBUG</td>
+<td>10</td>
+<td>详细信息，典型地调试问题时会感兴趣。</td>
+</tr>
+
+<tr>
+<td>INFO</td>
+<td>20</td>
+<td>证明事情按预期工作。</td>
+</tr>
+
+<tr>
+<td>WARNING</td>
+<td>30</td>
+<td>表明发生了一些意外，或者不久的将来会发生问题（如‘磁盘满了’）。软件还是在正常工作。</td>
+</tr>
+
+<tr>
+<td>ERROR</td>
+<td>40</td>
+<td>由于更严重的问题，软件已不能执行一些功能了。</td>
+</tr>
+
+<tr>
+<td>CRITICAL</td>
+<td>50</td>
+<td>严重错误，表明软件已不能继续运行了。</td>
+</tr>
+</tbody>
+</table>
+
+<p>默认级别为 WARNING，表示只有该级别及其以上的事件会被跟踪，除非另外配置了logging包。</p>
+
+<p>我希望：</p>
+
+<ul>
+<li>在console里面输出所有的交互信息，用debug level；</li>
+<li>在文件里面保存每次迭代完成的数据，用于分析画图，不要太多的中间数据，应该用info level。</li>
+<li>logging 可以配置<a href="http://python.usyiyi.cn/python_278/library/logging.handlers.html#">RotatingFileHandler保留循环文件的大小以及个数</a>，不想保存太多的log信息。</li>
 </ul>
 
 </div>
@@ -333,13 +348,13 @@ print &quot;you put :&quot;,str
   
 
     
-    <a class="prev" href="https://tmhm.github.io/2016/05/26/python%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BB%A7%E6%89%BF/" title="python之面向对象（继承）">
+    <a class="prev" href="https://tmhm.github.io/2016/12/23/matplotlib-y%E8%BD%B4%E6%A0%87%E6%B3%A8%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8%E4%BB%A5%E5%8F%8Asubplot%E8%B0%83%E6%95%B4%E7%9A%84%E9%97%AE%E9%A2%98/" title="matplotlib y轴标注显示不全以及subplot调整的问题">
       Previous
     </a>
     
 
     
-    <a class="next" href="https://tmhm.github.io/2016/05/31/python-%E4%B8%8E%E6%97%B6%E9%97%B4%E6%9C%89%E5%85%B3%E7%9A%84%E6%93%8D%E4%BD%9C/" title="python 与时间有关的操作">
+    <a class="next" href="https://tmhm.github.io/2017/02/08/%E5%9F%BA%E4%BA%8Edrl%E5%92%8Ctorcs%E7%9A%84%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E4%BB%BF%E7%9C%9F%E7%B3%BB%E7%BB%9F%E4%B9%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" title="基于DRL和TORCS的自动驾驶仿真系统——之环境配置">
       Next
     </a>
     

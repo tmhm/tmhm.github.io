@@ -26,91 +26,6 @@
     </item>
     
     <item>
-      <title>matplotlib y轴标注显示不全以及subplot调整的问题</title>
-      <link>https://tmhm.github.io/2016/12/23/matplotlib-y%E8%BD%B4%E6%A0%87%E6%B3%A8%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8%E4%BB%A5%E5%8F%8Asubplot%E8%B0%83%E6%95%B4%E7%9A%84%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Fri, 23 Dec 2016 08:32:00 +0000</pubDate>
-      <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/12/23/matplotlib-y%E8%BD%B4%E6%A0%87%E6%B3%A8%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8%E4%BB%A5%E5%8F%8Asubplot%E8%B0%83%E6%95%B4%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-      <description>
-
-&lt;p&gt;问题：
-我想在y轴显示的标注太长，想把它变成两行显示，发现生成的图形只显示的第二行的字，把第一行的字&lt;strong&gt;挤出去&lt;/strong&gt;了&lt;/p&gt;
-
-&lt;p&gt;想要的是&lt;strong&gt;显示两行&lt;/strong&gt;这样子的
-&lt;img src=&#34;http://i.imgur.com/6fxUwHR.jpg&#34; alt=&#34;&#34; /&gt;
-现实却是这样子
-&lt;img src=&#34;http://i.imgur.com/XZmJtEF.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;主要相关的api有&#34;&gt;主要相关的api有：&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;plt.subplots_adjust&lt;/li&gt;
-&lt;li&gt;set_ylabel&lt;/li&gt;
-&lt;li&gt;plt.text&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;解决思路&#34;&gt;解决思路&lt;/h4&gt;
-
-&lt;p&gt;来自matplotlib的&lt;a href=&#34;http://matplotlib.org/gallery.html&#34;&gt;官网&lt;/a&gt;,以及&lt;a href=&#34;http://matplotlib.org/examples/images_contours_and_fields/interpolation_none_vs_nearest.html&#34;&gt;图示&lt;/a&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;当出现右边显示不全的时候，第一感觉是：应该可以通过set_ylabel 来设置y轴标注的位置和大小，发现set_ylabel只能设置labelpad ，没有位置的参数；&lt;/li&gt;
-&lt;li&gt;然后找到了可以用text设置标注字体的位置和方向，但是要多次定位，尝试，发现不方便；&lt;/li&gt;
-&lt;li&gt;那么想到的是应该可以设置plot的位置吧，用ax1.plot?找了下，也没看到，不爽；&lt;/li&gt;
-&lt;li&gt;在show的图形界面发现一个移动的按钮&lt;img src=&#34;http://i.imgur.com/VThZrvx.jpg&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;
-&lt;li&gt;移动left亦可以显示出y轴的标注了，那么我应该只需要在程序中设置一下left的参数既可以了吧，在上面[matplotlib的example]()中，找到了我想要的subplots_adjust&lt;/li&gt;
-&lt;li&gt;即有了下面的源代码，满足设置要求。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;源代码如下：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    import matplotlib.pyplot as plt
-    import numpy as np
-    from numpy import abs
-
-    size=[5,10,20,30,50,100]
-    avg=[-0.2896,0.073865632,0.034858287,-0.092241705,-0.022924236,0.016541661]
-    avr=[0.032,0.077757872,0.090351641,0.036522663,0.034413038,0.096587464]
-
-    fig = plt.figure()
-
-    ax1 = fig.add_subplot(211)
-    lns1 = ax1.plot(size, trackPos_avg,color=&#39;blue&#39;,label=&#39;error average&#39;,linestyle=&#39;-&#39;,linewidth=1.9)
-    ax1.set_ylabel(&#39;deviation from\ncentral line ($m$)&#39;,fontsize=18, labelpad = 0.5)
-
-    plt.xticks(fontsize = 17)#对坐标的值数值，大小限制
-    plt.yticks(fontsize = 17)
-
-    ax2 = fig.add_subplot(212)
-    ax2.set_ylabel(&#39;standard \nvariance ($m^2$)&#39;,fontsize=18,labelpad = 12.5)
-    lns2 = ax2.plot(size, avr, color=&#39;red&#39;,label=&#39;mean square error&#39;,linestyle=&#39;-&#39;,linewidth=1.9)
-
-    plt.xticks(fontsize = 17)#对坐标的值数值，大小限制
-    plt.yticks(fontsize = 17)
-    ax2.set_xlabel(&#39;replay size&#39;,fontsize=18)
-
-    plt.subplots_adjust(left=0.18, wspace=0.25, hspace=0.25,
-                        bottom=0.13, top=0.91)
-
-    \#plt.text(0.4, 0.4, &#39;deviation from\n central line ($m$)&#39;, rotation=90, ha=&#39;left&#39;)
-
-    \#plt.legend(prop={&#39;size&#39;:18})  # loc=&#39;upper left&#39;,
-
-    \#fig.savefig(&#39;./figure/error_paper.eps&#39;, format=&#39;eps&#39;, dpi=1000)
-    fig.savefig(&#39;./figure/error_paper.png&#39;, dpi=1000)
-
-    plt.show()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;可以下面的yticks，限制横纵坐标的值&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;plt.xticks(fontsize = 17)#对坐标的值数值，大小限制
-plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
       <title>读《微软的梦工厂》</title>
       <link>https://tmhm.github.io/2016/11/30/%E8%AF%BB%E5%BE%AE%E8%BD%AF%E7%9A%84%E6%A2%A6%E5%B7%A5%E5%8E%82/</link>
       <pubDate>Wed, 30 Nov 2016 07:25:00 +0000</pubDate>
@@ -257,183 +172,6 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
     </item>
     
     <item>
-      <title>adobe reader DC 字体设置</title>
-      <link>https://tmhm.github.io/2016/08/31/adobe-reader-dc-%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE/</link>
-      <pubDate>Wed, 31 Aug 2016 07:51:00 +0000</pubDate>
-      <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/08/31/adobe-reader-dc-%E5%AD%97%E4%BD%93%E8%AE%BE%E7%BD%AE/</guid>
-      <description>&lt;p&gt;一直使用adobe reader阅读pdf文档，系统提醒我升级一个reader助手，&lt;/p&gt;
-
-&lt;p&gt;升级之后：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;感觉字体颜色变浅，笔画也变细了，整体有些模糊不清。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;google了一下，原来是设置的&lt;a href=&#34;http://www.itcao.com/post_1058.html&#34;&gt;问题&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;在菜单中依次可以找到如下的设置：&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;edit-&amp;gt;preferences-&amp;gt;page display-&amp;gt;rendering：&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;将Smooth Text 设置为：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;for laptop/LCD screens&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;如下所示：
-&lt;img src=&#34;http://i.imgur.com/CWH0aHI.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;问题解决完毕。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Microsoft Visual Studio小技巧</title>
-      <link>https://tmhm.github.io/2016/08/30/microsoft-visual-studio%E5%B0%8F%E6%8A%80%E5%B7%A7/</link>
-      <pubDate>Tue, 30 Aug 2016 10:51:00 +0000</pubDate>
-      <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/08/30/microsoft-visual-studio%E5%B0%8F%E6%8A%80%E5%B7%A7/</guid>
-      <description>&lt;p&gt;&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;main函数调试参数：&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;　　Project -&amp;gt; Properties -&amp;gt; Configuration Properties -&amp;gt; Debugging&lt;/p&gt;
-&lt;p&gt;　　在Command Arguments里填上即可。&lt;/p&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>PyBrain库的example之NFQ流程图分析</title>
-      <link>https://tmhm.github.io/2016/05/27/pybrain%E5%BA%93%E7%9A%84example%E4%B9%8Bnfq%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%88%86%E6%9E%90/</link>
-      <pubDate>Fri, 27 May 2016 11:43:00 +0000</pubDate>
-      <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/05/27/pybrain%E5%BA%93%E7%9A%84example%E4%B9%8Bnfq%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%88%86%E6%9E%90/</guid>
-      <description>&lt;p&gt;PyBrain库的example之NFQ流程图分析&lt;/p&gt;
-
-&lt;p&gt;如下是测试程序。主要分析&lt;strong&gt;doEpisode和learn&lt;/strong&gt;两个函数。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    __author__ = &#39;Thomas Rueckstiess, ruecksti@in.tum.de&#39;
-
-    from pybrain.rl.environments.cartpole import CartPoleEnvironment, DiscreteBalanceTask, CartPoleRenderer
-    from pybrain.rl.agents import LearningAgent
-    from pybrain.rl.experiments import EpisodicExperiment
-    from pybrain.rl.learners.valuebased import NFQ, ActionValueNetwork
-    #,ActionValueLSTMNetwork
-    from pybrain.rl.explorers import BoltzmannExplorer
-
-    from numpy import array, arange, meshgrid, pi, zeros, mean
-    from matplotlib import pyplot as plt
-
-    # switch this to True if you want to see the cart balancing the pole (slower)
-    render = False  #True #
-
-    plt.ion()
-
-    env = CartPoleEnvironment()
-    if render:
-        renderer = CartPoleRenderer()
-        env.setRenderer(renderer)
-        renderer.start()
-
-
-    # balancetask. py inside only used 2 sensors, so here can&#39;t use(4,3), just use (2,3)
-    # there is a debug in vesion 0.30, now, new version 0.33 had correct it!!
-    module = ActionValueNetwork(4,3)  #(4,3) #  0.33 had correct it
-    #module = ActionValueLSTMNetwork(2,3)
-
-    task = DiscreteBalanceTask(env, 100)
-    learner = NFQ()
-    learner.explorer.epsilon = 0.4
-
-    agent = LearningAgent(module, learner)
-    testagent = LearningAgent(module, None)
-    experiment = EpisodicExperiment(task, agent)
-
-
-    def plotPerformance(values, fig):
-        plt.figure(fig.number)
-        plt.clf()
-        plt.plot(values, &#39;o-&#39;)
-        plt.gcf().canvas.draw()
-
-
-    performance = []
-
-    if not render:
-        pf_fig = plt.figure()
-
-    #while (True):
-    for _ in xrange(60): #60
-        # one learning step after one episode of world-interaction!!!
-        experiment.doEpisodes(1)
-        agent.learn(2)  # 5
-
-        # test performance (these real-world experiences are not used for training)
-        if render:
-            env.delay = True
-        experiment.agent = testagent
-        #r = mean([sum(x) for x in experiment.doEpisodes(5)])
-        env.delay = False
-        testagent.reset()
-        experiment.agent = agent
-
-        #performance.append(r)
-        print &amp;quot;update step&amp;quot;, len(performance)
-
-        #print &amp;quot;reward avg&amp;quot;, r
-        print &amp;quot;explorer epsilon&amp;quot;, learner.explorer.epsilon
-        print &amp;quot;num episodes&amp;quot;, agent.history.getNumSequences()
-        print &amp;quot;update step&amp;quot;, len(performance)
-
-    if not render:
-        plotPerformance(performance, pf_fig)
-
-    str = raw_input(&amp;quot;please input sth to end!&amp;quot;)
-    print &amp;quot;you put :&amp;quot;,str
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;experiment.doEpisodes(1)
-&lt;img src=&#34;http://i.imgur.com/Un1ow9B.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;agent.learn(2)
-&lt;img src=&#34;http://i.imgur.com/TQ2YO9y.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;图2的注释2部分，可以参考该博文&lt;a href=&#34;http://lamda.nju.edu.cn/yangjw/project/drlintro.html&#34;&gt;深度强化学习初探&lt;/a&gt; ,但是他文中的公式应该有点问题。应该把Qm+1改为Qm，进一步参考维基百科&lt;a href=&#34;https://en.wikipedia.org/wiki/Q-learning&#34;&gt;Q-learning&lt;/a&gt; ,如下所示。&lt;/p&gt;
-
-&lt;p&gt;Qm+1(st,at)=Qm(st,at)+α[rt+1+γQm(st+1,at+1)−Qm(st,at)]&lt;/p&gt;
-
-&lt;p&gt;推荐所用的画图软件&lt;a href=&#34;https://www.processon.com/i/56873407e4b0b5afb309e00c&#34;&gt;process on&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;用起来挺方便的，在线用谷歌浏览器运行，用户体验挺佳，比visio2010快多了；&lt;/li&gt;
-&lt;li&gt;可以多用户协作；&lt;/li&gt;
-&lt;li&gt;目前有一个缺点就是一个框里面的字体格式必须是一样的，不可以修改一个框里面部分的文字的格式。有点类似PS的思想。&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>CMake尝鲜</title>
-      <link>https://tmhm.github.io/2016/05/21/cmake%E5%B0%9D%E9%B2%9C/</link>
-      <pubDate>Sat, 21 May 2016 01:50:00 +0000</pubDate>
-      <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/05/21/cmake%E5%B0%9D%E9%B2%9C/</guid>
-      <description>&lt;p&gt;安装gcc，cmake，g++,gdb&lt;/p&gt;
-&lt;div class=&#34;cnblogs_code&#34;&gt;
-&lt;/div&gt;
-&lt;div class=&#34;cnblogs_code&#34;&gt;
-&lt;pre&gt;sudo apt-&lt;span style=&#34;color: #0000ff;&#34;&gt;get&lt;/span&gt; update &amp;amp;&amp;amp; sudo apt-&lt;span style=&#34;color: #0000ff;&#34;&gt;get&lt;/span&gt; install build-essential&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;div class=&#34;cnblogs_code&#34;&gt;
-&lt;pre&gt;gdbtui --args ./future_net test-&lt;span style=&#34;color: #0000ff;&#34;&gt;case&lt;/span&gt;/case0/topo.csv test-&lt;span style=&#34;color: #0000ff;&#34;&gt;case&lt;/span&gt;/case0/demand.csv test-&lt;span style=&#34;color: #0000ff;&#34;&gt;case&lt;/span&gt;/case0/sample_result.csv &lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>vim初探</title>
       <link>https://tmhm.github.io/2016/05/21/vim%E5%88%9D%E6%8E%A2/</link>
       <pubDate>Sat, 21 May 2016 01:49:00 +0000</pubDate>
@@ -488,22 +226,6 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 &lt;h4 id=&#34;画双y轴图&#34;&gt;画双y轴图&lt;/h4&gt;
 
 &lt;p&gt;&lt;em&gt;图形-图表构建程序- 在选择范围框里面选：双轴&lt;/em&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>i.e 和e.g 的区别</title>
-      <link>https://tmhm.github.io/2016/04/12/i.e-%E5%92%8Ce.g-%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
-      <pubDate>Tue, 12 Apr 2016 02:09:00 +0000</pubDate>
-      <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/04/12/i.e-%E5%92%8Ce.g-%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
-      <description>&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;两者都是拉丁文缩写&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;i.e是*id est*的缩写，意思是that is.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;e.g是*exempli gration*的缩写,意思是for example;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     
@@ -739,54 +461,236 @@ short int path;    //default = -1  // due to the pre node value among [0:600], y
     </item>
     
     <item>
-      <title>删除链表中的元素</title>
-      <link>https://tmhm.github.io/2016/03/16/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0/</link>
-      <pubDate>Wed, 16 Mar 2016 07:20:00 +0000</pubDate>
+      <title>shell学习</title>
+      <link>https://tmhm.github.io/2016/03/10/shell%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Thu, 10 Mar 2016 08:36:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/03/16/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0/</guid>
-      <description>&lt;p&gt;删除链表中等于给定值&lt;code&gt;val&lt;/code&gt;的所有节点。&lt;/p&gt;
+      <guid>https://tmhm.github.io/2016/03/10/shell%E5%AD%A6%E4%B9%A0/</guid>
+      <description>
 
-&lt;p&gt;给出链表&amp;nbsp;&lt;code&gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;3&lt;/code&gt;, 和 val =&amp;nbsp;&lt;code&gt;3&lt;/code&gt;, 你需要返回删除3之后的链表：&lt;code&gt;1-&amp;gt;2-&amp;gt;4-&amp;gt;5&lt;/code&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;readlink是linux系统中一个常用工具，主要用来找出符号链接所指向的位置。&lt;/li&gt;
+&lt;li&gt;定义变量“=”两边不能有空格，否则会被shell解析错误。&lt;/li&gt;
+&lt;li&gt;tee 同时将输出内容显示在屏幕上、记录在文件里&lt;/li&gt;
 
-&lt;p&gt;&lt;p&gt;迷惑点：陷入没有表头的陷阱，总是想记下删除节点的先驱，导致折腾了很久，其实只要人为加一个表头就简单很多了！!&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;三种引号‘’，“”，``。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;/*
- * Definition for singly-linked list.
- * struct ListNode {
- *     int val;
- *     ListNode *next;
- *     ListNode(int x) : val(x), next(NULL) {}
- * };
- */
-class Solution {
-public:
-    /*
-     * @param head a ListNode
-     * @param val an integer
-     * @return a ListNode
-     */
-    ListNode *removeElements(ListNode *head, int val) {
-        // Write your code here
-        //meiyou ya ba jie dian!!!???  自己加一个表头
-        //static int cnt = 0;
-        //kong biao!!就不是问题了。
-        ListNode *temp=new ListNode(0);
-        temp-&amp;gt;next= head;
-        head=temp;
-        
-        while(head-&amp;gt;next != NULL){
-            if(head-&amp;gt;next-&amp;gt;val == val){
-                head-&amp;gt;next = head-&amp;gt;next-&amp;gt;next;
-            }else{
-                head = head-&amp;gt;next;
-            }
-        }
-        return temp-&amp;gt;next;
-	
-    }
-};
-	
+&lt;ul&gt;
+&lt;li&gt;rm -rf ‘my document’  &amp;mdash;-当命令行里面包含空格时，用单引号包含起来&lt;/li&gt;
+&lt;li&gt;这时也可由用双引号，区别在于双引号的值会被变量的之替换，单引号保持原样。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ABC=hello
+$ echo &#39;string is ${ABC}&#39;
+string is ${ABC}
+$ echo &amp;quot;string is ${ABC}&amp;quot;
+string is hello
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;反引号实际上就是命令替换&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;echo `uname`  #等价 echo $(uname)
+$ echo `uname -a`
+Linux ubuntu 3.13.0-24-generic #46-Ubuntu SMP Thu Apr 10 19:11:08 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+$ uname -a
+Linux ubuntu 3.13.0-24-generic #46-Ubuntu SMP Thu Apr 10 19:11:08 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;脚本的执行&#34;&gt;脚本的执行&lt;/h4&gt;
+
+&lt;p&gt;&lt;div class=&#34;cnblogs_code&#34;&gt;
+&lt;pre&gt;&lt;span style=&#34;color: #000000;&#34;&gt;$ vi test.sh
+$ cat test.sh
+echo &lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&amp;laquo;&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt; this is a test&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&amp;laquo;&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;$ ls &lt;/span&gt;-&lt;span style=&#34;color: #000000;&#34;&gt;al
+total &lt;/span&gt;&lt;span style=&#34;color: #800080;&#34;&gt;12&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;
+drwxr&lt;/span&gt;-xr-x  &lt;span style=&#34;color: #800080;&#34;&gt;2&lt;/span&gt; xwei xwei &lt;span style=&#34;color: #800080;&#34;&gt;4096&lt;/span&gt; Mar &lt;span style=&#34;color: #800080;&#34;&gt;10&lt;/span&gt; &lt;span style=&#34;color: #800080;&#34;&gt;16&lt;/span&gt;:&lt;span style=&#34;color: #800080;&#34;&gt;49&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt; .
+drwxr&lt;/span&gt;-xr-x &lt;span style=&#34;color: #800080;&#34;&gt;16&lt;/span&gt; xwei xwei &lt;span style=&#34;color: #800080;&#34;&gt;4096&lt;/span&gt; Mar &lt;span style=&#34;color: #800080;&#34;&gt;10&lt;/span&gt; &lt;span style=&#34;color: #800080;&#34;&gt;15&lt;/span&gt;:&lt;span style=&#34;color: #800080;&#34;&gt;28&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt; ..
+&lt;/span&gt;-rw-rw-r&amp;ndash;  &lt;span style=&#34;color: #800080;&#34;&gt;1&lt;/span&gt; xwei xwei   &lt;span style=&#34;color: #800080;&#34;&gt;26&lt;/span&gt; Mar &lt;span style=&#34;color: #800080;&#34;&gt;10&lt;/span&gt; &lt;span style=&#34;color: #800080;&#34;&gt;16&lt;/span&gt;:&lt;span style=&#34;color: #800080;&#34;&gt;49&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt; test.sh
+$ . test.sh  #以source test.sh 方式执行，读入文件中的命令，在当前shell执行，source内置命令，无需执行权限，其可以缩写为一个小数点
+ &lt;/span&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color: #0000ff;&#34;&gt;is&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt; a test
+$ .&lt;/span&gt;/&lt;span style=&#34;color: #000000;&#34;&gt;test.sh  #
+bash: .&lt;/span&gt;/&lt;span style=&#34;color: #000000;&#34;&gt;test.sh: Permission denied&lt;/p&gt;
+
+&lt;p&gt;xwei@ubuntu:&lt;/span&gt;~/Desktop$ chmod a+&lt;span style=&#34;color: #000000;&#34;&gt;x test.sh
+xwei@ubuntu:&lt;/span&gt;~/Desktop$ ls -&lt;span style=&#34;color: #000000;&#34;&gt;al
+total &lt;/span&gt;&lt;span style=&#34;color: #800080;&#34;&gt;12&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;
+drwxr&lt;/span&gt;-xr-x  &lt;span style=&#34;color: #800080;&#34;&gt;2&lt;/span&gt; xwei xwei &lt;span style=&#34;color: #800080;&#34;&gt;4096&lt;/span&gt; Mar &lt;span style=&#34;color: #800080;&#34;&gt;10&lt;/span&gt; &lt;span style=&#34;color: #800080;&#34;&gt;16&lt;/span&gt;:&lt;span style=&#34;color: #800080;&#34;&gt;49&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt; .
+drwxr&lt;/span&gt;-xr-x &lt;span style=&#34;color: #800080;&#34;&gt;16&lt;/span&gt; xwei xwei &lt;span style=&#34;color: #800080;&#34;&gt;4096&lt;/span&gt; Mar &lt;span style=&#34;color: #800080;&#34;&gt;10&lt;/span&gt; &lt;span style=&#34;color: #800080;&#34;&gt;15&lt;/span&gt;:&lt;span style=&#34;color: #800080;&#34;&gt;28&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt; ..
+&lt;/span&gt;-rwxrwxr-x  &lt;span style=&#34;color: #800080;&#34;&gt;1&lt;/span&gt; xwei xwei   &lt;span style=&#34;color: #800080;&#34;&gt;26&lt;/span&gt; Mar &lt;span style=&#34;color: #800080;&#34;&gt;10&lt;/span&gt; &lt;span style=&#34;color: #800080;&#34;&gt;16&lt;/span&gt;:&lt;span style=&#34;color: #800080;&#34;&gt;49&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt; test.sh
+$ .&lt;/span&gt;/&lt;span style=&#34;color: #000000;&#34;&gt;test.sh  #在一个子shell中执行命令
+ &lt;/span&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color: #0000ff;&#34;&gt;is&lt;/span&gt; a test&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>QT环境下，全局变量共享问题</title>
+      <link>https://tmhm.github.io/2016/03/08/qt%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%85%B1%E4%BA%AB%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 08 Mar 2016 12:47:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/03/08/qt%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%85%B1%E4%BA%AB%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;开始的技术路线是：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;首先有两个主线程：&lt;/p&gt;
+&lt;p&gt;　　1，gui线程&lt;/p&gt;
+&lt;p&gt;　　2，等待客户端socket连接用的，listen线程&lt;/p&gt;
+&lt;p&gt;　　（当有客户端连接时，即creat一个新的线程2用来跟客户端通信，再来新的客户端，继续creat新的work线程3用于通信，以此类推，目前最多可以creat5个线程，即可以同时跟5台客户端通信，设置了监听的socket服务器最多监听5个队列。线程2继续listen）&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;出现的问题是：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;　　用来通信的work线程3，收到一个来自客户端的xml文件，然后解析文件，并将其数据放在一个全局的静态struct数组里。数据正常，线程2和线程3均可以看到已经更新的数据值。但是，&lt;/p&gt;
+&lt;p&gt;　　当gui线程去访问时，发现数据并没有更新到其线程，在gui线程下改变该全局变量的数值，也并没有更新到线程2和3，不知何解？&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;一博主，有如此解释&lt;/em&gt;：&lt;/p&gt;
+&lt;div id=&#34;article_content&#34; class=&#34;article_content&#34;&gt;&lt;a href=&#34;http://blog.csdn.net/lmh12506/article/details/8452700&#34; target=&#34;_blank&#34;&gt;其实在Linux 中，新建的线程并不是在原先的进程中，而是系统通过一个系统调用clone() 。该系统copy 了一个和原先进程完全一样的进程，并在这个进程中执行线程函数。不过这个copy 过程和fork 不一样。copy 后的进程和原先的进程共享了所有的变量，运行环境（clone的实现是可以指定新进程与老进程之间的共享关系，100%共享就表示创建了一个线程）。这样，原先进程中的变量变动在copy 后的进程中便能体现出来。&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&#34;bdsharebuttonbox tracking-ad bdshare-button-style0-16&#34; data-mod=&#34;popu_172&#34; data-bd-bind=&#34;1457096202549&#34;&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div id=&#34;digg&#34;&gt;&amp;nbsp;不过，问题并没有清晰化。&lt;/div&gt;
+&lt;div&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;想到的解决方案暂时有两种：&lt;/div&gt;
+&lt;div&gt;　　1，不在work线程里面解析数据，直接在gui线程里面解析数据。&lt;/div&gt;
+&lt;div&gt;&amp;nbsp;　　2，采用&lt;a href=&#34;https://www.ibm.com/developerworks/cn/linux/thread/posix_threadapi/part2/&#34; target=&#34;_blank&#34;&gt;线程私有数据&lt;/a&gt;&lt;/div&gt;
+&lt;div&gt;&amp;nbsp;&lt;/div&gt;
+&lt;p&gt;（此处出现过，小插曲：QT的变量查看器，在调试时不太稳定，更新过后的值在窗口中查看，并没有得到及时更新，需要通过程序判定验证！）&lt;/p&gt;
+&lt;p&gt;　&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201603/781469-20160309170140991-312431222.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;由于程序需要在线程创建之后必须返回到gui主线程，所以采用创建两次线程的方式：创建线程A，返回，然后在线程A里面创建&lt;/p&gt;
+&lt;p&gt;在多线程POSIX标准下，主线程（1），即是GUI线程。它初始化一个类，并调用其一个成员函数创建一个线程3（ininlistenThred）【不知，为什么不从2开始？】，然后在线程3里面一直循环检测是否有新的客户端发来socket连接。当有新的客户端连接上时，即创建一个新的线程专门用于socket通信。&lt;/p&gt;
+&lt;p&gt;此时有一客户端连接上，创建了通信工作线程4（listenthreadwork）。&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;输出g_buf[0].carid的代码位置分别为：&lt;/p&gt;
+&lt;p&gt;1，initlistenthread线程在进入循环入口 即打印出：&lt;/p&gt;
+&lt;div class=&#34;cnblogs_code&#34;&gt;
+&lt;p&gt;for( ; ; )&lt;br /&gt;    {&lt;/p&gt;
+&lt;p&gt;　　 &amp;nbsp;qDebug(&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;listenthread g_buf[0].carid: %s &lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;,g_buf[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;&lt;span&gt;].carid);&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em id=&#34;__mceDel&#34;&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;&amp;nbsp; 　　char&lt;/span&gt; *t = &amp;amp;(g_buf[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;].carid[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;&lt;span&gt;]);&lt;/span&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;em id=&#34;__mceDel&#34;&gt;&lt;em id=&#34;__mceDel&#34;&gt;&lt;span style=&#34;color: #000000;&#34;&gt;　　qDebug(&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;dizhi: %d&lt;/span&gt;&lt;/em&gt;&lt;span style=&#34;color: #800000;&#34;&gt; \n\n&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;,&amp;amp;t);&lt;br /&gt;//......&lt;br /&gt;}&lt;/em&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;2，gui主线程在点击按钮的时候，即打印：&lt;/p&gt;
+&lt;div class=&#34;cnblogs_code&#34;&gt;
+&lt;pre&gt;qDebug(&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;mainwindow g_buf[0].carid: %s&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;,g_buf[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;].carid);
+&lt;/span&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;char&lt;/span&gt; *t = &amp;amp;(g_buf[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;].carid[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;]);
+qDebug(&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;dizhi: %d \n\n&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;,&amp;amp;t);&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;3，listenthreadwork线程在循环工作的时候开始就打印信息：（一进去此线程就会先打印一次值，然后每次收到文件就会打印一次）&lt;/p&gt;
+&lt;div class=&#34;cnblogs_code&#34;&gt;
+&lt;pre&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;( ; ; )
+    {
+        qDebug(&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;listenthreadwork g_buf[0].carid: %s&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;,g_buf[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;].carid);
+        &lt;/span&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;char&lt;/span&gt; *t = &amp;amp;(g_buf[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;].carid[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;]);
+        qDebug(&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;dizhi: %d \n\n&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;,&amp;amp;&lt;span style=&#34;color: #000000;&#34;&gt;t);
+&lt;/span&gt;&lt;span style=&#34;color: #008000;&#34;&gt;//&lt;/span&gt;&lt;span style=&#34;color: #008000;&#34;&gt;.........&lt;/span&gt;
+}&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;线程3和4的值一样的！&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;线程1跟另外两个线程是不同的值！&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;nbsp;跟类没关系的两个线程值一样&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201603/781469-20160309171434179-548213179.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201603/781469-20160309191531804-530669003.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201603/781469-20160309191541944-1721815549.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>流形学习笔记</title>
+      <link>https://tmhm.github.io/2015/09/18/%E6%B5%81%E5%BD%A2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Fri, 18 Sep 2015 14:50:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2015/09/18/%E6%B5%81%E5%BD%A2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description>&lt;p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;维数约简&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;特征选择，依据某一标准选择性质最突出的特征&lt;/li&gt;
+&lt;li&gt;特征抽取，经已有特征的某种变换获取约简特征&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;增加特征数：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;可以增加信息量，进而提高准确度&lt;/li&gt;
+&lt;li&gt;增加训练分类器的难度，进而带来维数灾难。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;解决办法：&lt;/p&gt;
+&lt;p&gt;　　选取尽可能多的、可能有用的特征，然后根据需要进行特征约简。&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;主成分分析（PCA）&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong style=&#34;line-height: 1.5;&#34;&gt;&lt;img style=&#34;display: block; margin-left: auto; margin-right: auto;&#34; src=&#34;http://images2015.cnblogs.com/blog/781469/201509/781469-20150918214617414-906516153.png&#34; alt=&#34;&#34; /&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;目的：&lt;/p&gt;
+&lt;p&gt;　　寻找能够表示采样数据的最好投影子空间。&lt;/p&gt;
+&lt;p&gt;求解：&lt;/p&gt;
+&lt;p&gt;　　对样本的散布矩阵（scatter matrix）进行特征值分解，所求之空间为过样本均值，（何为过样本均值？）&lt;/p&gt;
+&lt;p&gt;以最大特征值所对应的特征向量为方向的之空间。&lt;/p&gt;
+&lt;p&gt;特点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;对椭球状分布的样本集具有很好的效果，理论上，学习到的主方向就是椭圆的主轴方向。&lt;/li&gt;
+&lt;li&gt;非监督学习算法，能找到很好地代表所有样本的方向，但是，对于分类未必是最有利的，如下图：　　&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img style=&#34;display: block; margin-left: auto; margin-right: auto;&#34; src=&#34;http://images2015.cnblogs.com/blog/781469/201509/781469-20150918215131414-1106255874.png&#34; alt=&#34;&#34; width=&#34;451&#34; height=&#34;260&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;线性判别分析（LDA）&lt;/p&gt;
+&lt;p&gt;思想：&lt;/p&gt;
+&lt;p&gt;　　寻找最能把两类样本分开的投影直线&lt;/p&gt;
+&lt;p&gt;特点：&lt;/p&gt;
+&lt;p&gt;　　监督的维数约简&lt;/p&gt;
+&lt;p&gt;目标：&lt;/p&gt;
+&lt;p&gt;　　是投影后两类样本的均值之差与投影样本的总类散步的比值最大。&lt;/p&gt;
+&lt;p&gt;&lt;img style=&#34;display: block; margin-left: auto; margin-right: auto;&#34; src=&#34;http://images2015.cnblogs.com/blog/781469/201509/781469-20150918215637336-153431327.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;求解：&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;多重判别分析（MDA）&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;　　LDA往多类情况的推广&lt;/p&gt;
+&lt;p&gt;　　解法与LDA类似，对于C－类问题，把样本投影到C－１维之空间。&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;线性方法的缺点：&lt;/p&gt;
+&lt;p&gt;线性方法对于某些数据不能进行有效的处理，这类数据，在现实中，往往很多。比如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img style=&#34;display: block; margin-left: auto; margin-right: auto;&#34; src=&#34;http://images2015.cnblogs.com/blog/781469/201509/781469-20150918220506773-237605601.jpg&#34; alt=&#34;&#34; width=&#34;389&#34; height=&#34;292&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;另外，现实中的数据往往并不是特征的线性组合。&lt;/p&gt;
+&lt;p&gt;比如　paper：A Global Geometric Framework　for Nonlinear Dimensionality　Reduction　所提到的人脸模型&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;流形学习&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;是线性之空间的一种非线性推广；&lt;/li&gt;
+&lt;li&gt;一种局部可坐标话的拓扑空间结构；&lt;/li&gt;
+&lt;li&gt;一种非线性额维数约简方法。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;基本思想：&lt;/p&gt;
+&lt;p&gt;　　高维观测空间中的点是由少数独立变量的共同作用在观测空间张成一个流形，如果能有效地展开观测空间卷曲的流形或者发现其内在的主要变量，就可以对该数据集进行降维。&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;可行性分析：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;许多高维采样数据都是由少数几个隐含变量所决定的, 如人脸采样由光线亮度, 人离相机的距离, 人的头部姿势, 人的脸部肌肉等因素决定；&lt;/li&gt;
+&lt;li&gt;从认知心理学的角度来看, 心理学家认为人的认知过程是基于认知流形和拓扑连续性的。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;几种经典的流形学习方法：&lt;/p&gt;
+&lt;p&gt;　　局部线性嵌入（LLE）　Nonlinear dimensionality reduction by locally linear embedding. Science&lt;/p&gt;
+&lt;p&gt;　　等距映射（IsoMap）A global geometric framework for nonlinear dimensionality reduction. Science,&lt;/p&gt;
+&lt;p&gt;　　拉普拉斯特征映射（Laplacian　Eigenmap）Laplacian Eigenmaps for Dimensionality Reduction and Data Representation. Neural Computation,&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;参考：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;自动化所　流形学习　课件。&lt;/li&gt;
+&lt;li&gt;paper：A Global Geometric Framework　for Nonlinear Dimensionality　Reduction，　ｓｃｉｅｎｃｅ，２０００&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/p&gt;
 </description>
     </item>
     

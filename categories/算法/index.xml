@@ -510,5 +510,56 @@ public:
 </description>
     </item>
     
+    <item>
+      <title>删除链表中的元素</title>
+      <link>https://tmhm.github.io/2016/03/16/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0/</link>
+      <pubDate>Wed, 16 Mar 2016 07:20:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/03/16/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0/</guid>
+      <description>&lt;p&gt;删除链表中等于给定值&lt;code&gt;val&lt;/code&gt;的所有节点。&lt;/p&gt;
+
+&lt;p&gt;给出链表&amp;nbsp;&lt;code&gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;3-&amp;gt;4-&amp;gt;5-&amp;gt;3&lt;/code&gt;, 和 val =&amp;nbsp;&lt;code&gt;3&lt;/code&gt;, 你需要返回删除3之后的链表：&lt;code&gt;1-&amp;gt;2-&amp;gt;4-&amp;gt;5&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;p&gt;迷惑点：陷入没有表头的陷阱，总是想记下删除节点的先驱，导致折腾了很久，其实只要人为加一个表头就简单很多了！!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/*
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    /*
+     * @param head a ListNode
+     * @param val an integer
+     * @return a ListNode
+     */
+    ListNode *removeElements(ListNode *head, int val) {
+        // Write your code here
+        //meiyou ya ba jie dian!!!???  自己加一个表头
+        //static int cnt = 0;
+        //kong biao!!就不是问题了。
+        ListNode *temp=new ListNode(0);
+        temp-&amp;gt;next= head;
+        head=temp;
+        
+        while(head-&amp;gt;next != NULL){
+            if(head-&amp;gt;next-&amp;gt;val == val){
+                head-&amp;gt;next = head-&amp;gt;next-&amp;gt;next;
+            }else{
+                head = head-&amp;gt;next;
+            }
+        }
+        return temp-&amp;gt;next;
+	
+    }
+};
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
   </channel>
 </rss>
