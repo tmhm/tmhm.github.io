@@ -2,15 +2,77 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Well</title>
-    <link>https://tmhm.github.io/post/index.xml</link>
+    <link>https://tmhm.github.io/post/</link>
     <description>Recent content in Posts on Well</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
     <managingEditor>wells217@163.com (Well)</managingEditor>
     <webMaster>wells217@163.com (Well)</webMaster>
     <copyright>(c) 2017 Well.</copyright>
-    <lastBuildDate>Mon, 13 Feb 2017 00:48:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 27 Feb 2017 13:55:22 +0800</lastBuildDate>
     <atom:link href="https://tmhm.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hugo在Ubuntu14.4系统下的配置 </title>
+      <link>https://tmhm.github.io/2017/02/27/hugo%E5%9C%A8ubuntu14.4%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Mon, 27 Feb 2017 13:55:22 +0800</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2017/02/27/hugo%E5%9C%A8ubuntu14.4%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E9%85%8D%E7%BD%AE/</guid>
+      <description>
+
+&lt;h3 id=&#34;安装hugo&#34;&gt;安装Hugo&lt;/h3&gt;
+
+&lt;p&gt;Ubuntu14.04 下面直接用apt-get安装貌似不行，参考&lt;a href=&#34;https://vexxhost.com/resources/tutorials/how-to-install-and-use-hugo-the-static-site-generator-on-ubuntu-14-04/&#34;&gt;博主&lt;/a&gt;,直接下载源文件安装：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;wget https://github.com/spf13/hugo/releases/download/v0.15/hugo_0.15_amd64.deb
+
+sudo dpkg -i hugo_0.15_amd64.deb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;即可，测试一下版本&lt;code&gt;hugo version&lt;/code&gt;，成功输出版本号即安装成功。&lt;/p&gt;
+
+&lt;h3 id=&#34;安装markdown编辑工具-remarkable&#34;&gt;安装Markdown编辑工具（remarkable）&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;从&lt;a href=&#34;http://locez.com/translation/best-markdown-editors-for-linux/&#34;&gt;此篇文章&lt;/a&gt;了解到 Remarkable，貌似apt-get也木有直接安装的，于是在&lt;a href=&#34;https://remarkableapp.github.io/linux/download.html&#34;&gt;官网&lt;/a&gt;下载.deb文件；&lt;/li&gt;
+&lt;li&gt;按照Hugo类似的命令&lt;code&gt;sudo dpkg -i ****.deb&lt;/code&gt;安装之。&lt;/li&gt;
+&lt;li&gt;可以在终端直接用命令&lt;code&gt;remarkable&lt;/code&gt; 打开.md文件&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;安装搜狗输入法for-linux&#34;&gt;安装搜狗输入法for Linux&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://pinyin.sogou.com/linux/help.php&#34;&gt;搜狗输入法官网&lt;/a&gt;下载安装文件；&lt;/li&gt;
+&lt;li&gt;双击直接跳出更新管理器安装之；&lt;/li&gt;
+&lt;li&gt;安装后，需要在语言支持里面，keyboard input method system改为fcitx，此&lt;strong&gt;步骤重要&lt;/strong&gt;；&lt;/li&gt;
+&lt;li&gt;重启，输入法生效。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;配置github&#34;&gt;配置github&lt;/h3&gt;
+
+&lt;p&gt;由于hugo文件在另一台电脑已经配置好config.toml文件，所以只需要将整个文件夹copy过来，配置好Ubuntu本地的github即可&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git init
+git add -A
+git commit -m &amp;quot;first commit&amp;quot;
+git remote add origin git@github.com:tmhm/blog_well.git
+git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;hugo-命令note&#34;&gt;Hugo 命令Note&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;本地服务器，看样式：
+hugo server --baseURL=http://127.0.0.1:1313/ -t hyde-y -D --bind=&amp;quot;0.0.0.0&amp;quot;
+
+在myblog根目录执行，生成静态网页，生成文件放在public文件夹：  
+
+hugo -t hyde-y --baseURL &amp;quot;https://tmhm.github.io/&amp;quot; -D
+
+生成新文件：
+hugo new post/second.md
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>win10禁用自动更新服务</title>
@@ -354,7 +416,7 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 
 &lt;p&gt;根据听的一些讲座和看的书籍，个人感觉：目前现在的自动驾驶，根本问题还是在于感知（路况，周边物体，交通标识等等)，控制的方法论问题并没有根本性的改变。&lt;/p&gt;
 
-&lt;h3 id=&#34;激光雷达与摄像头性能对比&#34;&gt;激光雷达与摄像头性能对比&lt;/h3&gt;
+&lt;h3 id=&#34;激光雷达与摄像头性能对比:3e3bf4b5c88b61a8c1c4ce97ea3b93c3&#34;&gt;激光雷达与摄像头性能对比&lt;/h3&gt;
 
 &lt;p&gt;摄像头的优点是成本低廉，技术上相对比较成熟。&lt;/p&gt;
 
@@ -368,7 +430,7 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 
 &lt;p&gt;&lt;strong&gt;从这里来看，激光雷达主要还是提供动态性能，但是，激光雷达对于信号的连续性又缺乏支持，需要摄像头来标定前后帧。&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;激光雷达和摄像头分别完成什么工作&#34;&gt;激光雷达和摄像头分别完成什么工作？&lt;/h3&gt;
+&lt;h3 id=&#34;激光雷达和摄像头分别完成什么工作:3e3bf4b5c88b61a8c1c4ce97ea3b93c3&#34;&gt;激光雷达和摄像头分别完成什么工作？&lt;/h3&gt;
 
 &lt;p&gt;无人驾驶过程中，环境感知信息主要有：&lt;/p&gt;
 
@@ -376,7 +438,7 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 
 &lt;p&gt;周边物体感知，就是可能影响车辆通行性、安全性的静态物体和动态物体的识别，包括车辆，行人以及交通标志的识别，包括红绿灯识别和限速牌识别。&lt;/p&gt;
 
-&lt;h3 id=&#34;对于环境感知所需要的传感器-我们把它分成三类&#34;&gt;对于环境感知所需要的传感器，我们把它分成三类：&lt;/h3&gt;
+&lt;h3 id=&#34;对于环境感知所需要的传感器-我们把它分成三类:3e3bf4b5c88b61a8c1c4ce97ea3b93c3&#34;&gt;对于环境感知所需要的传感器，我们把它分成三类：&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;感知周围物体的传感器，包括激光雷达、摄像头和毫米波雷达这三类；&lt;/li&gt;
@@ -386,7 +448,7 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 
 &lt;p&gt;感觉，跟移动机器人并没有本质上的区别。&lt;/p&gt;
 
-&lt;h4 id=&#34;车道线检测&#34;&gt;车道线检测：&lt;/h4&gt;
+&lt;h4 id=&#34;车道线检测:3e3bf4b5c88b61a8c1c4ce97ea3b93c3&#34;&gt;车道线检测：&lt;/h4&gt;
 
 &lt;p&gt;图像一般实际处理的是灰度图像，没用到彩色的作用，&lt;/p&gt;
 
@@ -394,24 +456,24 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 
 &lt;p&gt;直线拟合&lt;/p&gt;
 
-&lt;h4 id=&#34;无人驾驶环境感知中摄像头的用处&#34;&gt;无人驾驶环境感知中摄像头的用处：&lt;/h4&gt;
+&lt;h4 id=&#34;无人驾驶环境感知中摄像头的用处:3e3bf4b5c88b61a8c1c4ce97ea3b93c3&#34;&gt;无人驾驶环境感知中摄像头的用处：&lt;/h4&gt;
 
 &lt;p&gt;车道线检测，障碍物检测，交通标识识别&lt;/p&gt;
 
-&lt;h4 id=&#34;无人驾驶环境感知中激光雷达的用处&#34;&gt;无人驾驶环境感知中激光雷达的用处：&lt;/h4&gt;
+&lt;h4 id=&#34;无人驾驶环境感知中激光雷达的用处:3e3bf4b5c88b61a8c1c4ce97ea3b93c3&#34;&gt;无人驾驶环境感知中激光雷达的用处：&lt;/h4&gt;
 
 &lt;p&gt;1.路沿检测，包括车道线
 2.障碍物识别，对静态物体和动态物体的识别
 3.定位以及地图构建&lt;/p&gt;
 
-&lt;h5 id=&#34;路沿检测大致分三个步骤&#34;&gt;路沿检测大致分三个步骤：&lt;/h5&gt;
+&lt;h5 id=&#34;路沿检测大致分三个步骤:3e3bf4b5c88b61a8c1c4ce97ea3b93c3&#34;&gt;路沿检测大致分三个步骤：&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code&gt;1. 拿到原始点云，
 2. 地面店检测、提取路沿点
 3. 通过路沿点的直线拟合，可以把路沿检测出来
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;障碍物的检测-大致包括&#34;&gt;障碍物的检测，大致包括：&lt;/h5&gt;
+&lt;h5 id=&#34;障碍物的检测-大致包括:3e3bf4b5c88b61a8c1c4ce97ea3b93c3&#34;&gt;障碍物的检测，大致包括：&lt;/h5&gt;
 
 &lt;ol&gt;
 &lt;li&gt;获取三维点云数据后，对障碍物进行聚类&lt;/li&gt;
@@ -419,7 +481,7 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 &lt;li&gt;获取到新物体之后，把这个物体放到训练集里面，然后用SVM分类器把物体时别出来。（看来svm还是经典中的稳定战斗机），此处，选择特征也非常重要吧，对于每一个物体，可能包括它的反射强度，横纵向的宽度，以及位置姿态。（速腾的方法）&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h5 id=&#34;辅助定位&#34;&gt;辅助定位：&lt;/h5&gt;
+&lt;h5 id=&#34;辅助定位:3e3bf4b5c88b61a8c1c4ce97ea3b93c3&#34;&gt;辅助定位：&lt;/h5&gt;
 
 &lt;p&gt;利用激光雷达进行辅助定位。定位理论有两种：基于已知地图的定位方法以及基于未知地图的定位方法。&lt;/p&gt;
 
@@ -435,7 +497,7 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 
 &lt;p&gt;现在对高精度地图的定义，不同地图厂家有不同定义的方式。做高精度地图是为了辅助无人驾驶，所谓高精度地图就是相比之前的导航地图，前者精确度更高，可以达到厘米级；另一个就是高精度地图包含更多的信息量，比如说车道的宽度、倾斜度等信息。&lt;/p&gt;
 
-&lt;h3 id=&#34;摄像头和激光雷达的融合&#34;&gt;摄像头和激光雷达的融合&lt;/h3&gt;
+&lt;h3 id=&#34;摄像头和激光雷达的融合:3e3bf4b5c88b61a8c1c4ce97ea3b93c3&#34;&gt;摄像头和激光雷达的融合&lt;/h3&gt;
 
 &lt;p&gt;第一步，标定&lt;/p&gt;
 
@@ -577,7 +639,7 @@ $ sudo /etc/init.d/gdm start
 
 &lt;p&gt;升级到375版本， 还是没用，启动进入不了桌面，重复登录&lt;/p&gt;
 
-&lt;h3 id=&#34;install-driver-367-https-kusemanohar-wordpress-com-2016-07-29-gtx-1080-on-ubuntu-14-04-trusty&#34;&gt;&lt;a href=&#34;https://kusemanohar.wordpress.com/2016/07/29/gtx-1080-on-ubuntu-14-04-trusty/&#34;&gt;Install driver 367&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;install-driver-367-https-kusemanohar-wordpress-com-2016-07-29-gtx-1080-on-ubuntu-14-04-trusty:d68e03665ec87076c808379f00c3c33a&#34;&gt;&lt;a href=&#34;https://kusemanohar.wordpress.com/2016/07/29/gtx-1080-on-ubuntu-14-04-trusty/&#34;&gt;Install driver 367&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;Uninstall previous nvidia drivers.&lt;/p&gt;
 
@@ -636,7 +698,7 @@ $ sudo /etc/init.d/lightdm start
 &lt;p&gt;有人说，安装必须要在安装桌面前安装GTX 1080 driver，后面方案验证来看， 那个参数才是关键。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;解决方法&#34;&gt;解决方法&lt;/h3&gt;
+&lt;h3 id=&#34;解决方法:d68e03665ec87076c808379f00c3c33a&#34;&gt;解决方法&lt;/h3&gt;
 
 &lt;p&gt;利用sudo gedit /etc/modprobe.d/blacklist-nouveau.conf新建blacklist-nouveau.conf文件，输入命令&lt;/p&gt;
 
@@ -691,7 +753,7 @@ sudo /etc/init.d/lightdm start
 &lt;p&gt;NO
 &lt;img src=&#34;http://i.imgur.com/5DHQbMl.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;cuda8-0安装&#34;&gt;cuda8.0安装&lt;/h3&gt;
+&lt;h3 id=&#34;cuda8-0安装:d68e03665ec87076c808379f00c3c33a&#34;&gt;cuda8.0安装&lt;/h3&gt;
 
 &lt;p&gt;运行&lt;/p&gt;
 
@@ -716,7 +778,6 @@ Install the CUDA 8.0 Toolkit?
 (y)es/(n)o/(q)uit: y
 
 Enter Toolkit Location
- [ default is /usr/local/cuda-8.0 ]:
 
 Do you want to install a symbolic link at /usr/local/cuda?
 (y)es/(n)o/(q)uit: y
@@ -725,7 +786,6 @@ Install the CUDA 8.0 Samples?
 (y)es/(n)o/(q)uit: y
 
 Enter CUDA Samples Location
- [ default is /home/c302 ]:
 
 Installing the CUDA Toolkit in /usr/local/cuda-8.0 ...
 Installing the CUDA Samples in /home/c302 ...
@@ -756,7 +816,7 @@ Logfile is /tmp/cuda_install_9045.log
     
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;设置环境变量&#34;&gt;设置环境变量&lt;/h4&gt;
+&lt;h4 id=&#34;设置环境变量:d68e03665ec87076c808379f00c3c33a&#34;&gt;设置环境变量&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;export PATH=/usr/local/cuda-8.0/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
@@ -770,7 +830,7 @@ export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
 &lt;code&gt;sudo ldconfig //环境变量立即生效
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;验证-cuda&#34;&gt;验证 cuda&lt;/h4&gt;
+&lt;h4 id=&#34;验证-cuda:d68e03665ec87076c808379f00c3c33a&#34;&gt;验证 cuda&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;c302@c302-dl:~/Downloads$ nvcc -V
 nvcc: NVIDIA (R) Cuda compiler driver
@@ -779,7 +839,7 @@ Built on Sun_Sep__4_22:14:01_CDT_2016
 Cuda compilation tools, release 8.0, V8.0.44
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;测试cuda的samples&#34;&gt;测试cuda的samples&lt;/h3&gt;
+&lt;h3 id=&#34;测试cuda的samples:d68e03665ec87076c808379f00c3c33a&#34;&gt;测试cuda的samples&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;cd ‘/home/zhou/NVIDIA_CUDA-8.0_Samples’
 make  //这里需要点时间
@@ -826,7 +886,7 @@ NOTE: The CUDA Samples are not meant for performance measurements. Results may v
       <guid>https://tmhm.github.io/2016/11/21/gpu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E4%B8%AD%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80note/</guid>
       <description>
 
-&lt;h3 id=&#34;gpu-服务器&#34;&gt;GPU 服务器：&lt;/h3&gt;
+&lt;h3 id=&#34;gpu-服务器:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;GPU 服务器：&lt;/h3&gt;
 
 &lt;p&gt;添加组，用户，并为之新建主目录。&lt;/p&gt;
 
@@ -841,7 +901,7 @@ c302@c302-dl:~$ sudo useradd testuser -g testgroup -m
 &lt;p&gt;&lt;code&gt;passwd testuser
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;安装anaconda环境&#34;&gt;安装anaconda环境&lt;/h3&gt;
+&lt;h3 id=&#34;安装anaconda环境:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;安装anaconda环境&lt;/h3&gt;
 
 &lt;p&gt;官网下载之，&lt;a href=&#34;https://www.continuum.io/downloads&#34;&gt;https://www.continuum.io/downloads&lt;/a&gt;&lt;/p&gt;
 
@@ -849,7 +909,7 @@ c302@c302-dl:~$ sudo useradd testuser -g testgroup -m
 &lt;code&gt;export PATH=/home/c302/anaconda2/bin:$PATH
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;ubuntu-linux系统环境变量配置文件&#34;&gt;Ubuntu Linux系统环境变量配置文件：&lt;/h3&gt;
+&lt;h3 id=&#34;ubuntu-linux系统环境变量配置文件:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;Ubuntu Linux系统环境变量配置文件：&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;/etc/profile : 在登录时,操作系统定制用户环境时使用的第一个文件 ,此文件为系统的每个用户设置环境信息,当用户第一次登录时,该文件被执行。&lt;/p&gt;
@@ -865,7 +925,7 @@ c302@c302-dl:~$ sudo useradd testuser -g testgroup -m
 
 &lt;p&gt;修改~/.profile 文件，添加export PATH=/home/c302/anaconda2/bin:$PATH&lt;/p&gt;
 
-&lt;h3 id=&#34;安装pybrain-0-33&#34;&gt;安装pybrain 0.33&lt;/h3&gt;
+&lt;h3 id=&#34;安装pybrain-0-33:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;安装pybrain 0.33&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;
 pip install pybrain
@@ -901,7 +961,7 @@ pip install pybrain
 &lt;p&gt;&lt;code&gt;conda install -c https://conda.anaconda.org/mq pybrain
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;挂载硬盘&#34;&gt;挂载硬盘&lt;/h3&gt;
+&lt;h3 id=&#34;挂载硬盘:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;挂载硬盘&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;mount  /dev/sdb1 /data1
 mount  /dev/sdc1 /data2
@@ -921,7 +981,7 @@ mount  /dev/sdd1 /data3
 
 &lt;p&gt;这样重启后会自动挂载&lt;/p&gt;
 
-&lt;h3 id=&#34;安装-nvidia-gtx-1080-驱动-367-27&#34;&gt;安装 Nvidia GTX 1080 驱动 367.27&lt;/h3&gt;
+&lt;h3 id=&#34;安装-nvidia-gtx-1080-驱动-367-27:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;安装 Nvidia GTX 1080 驱动 367.27&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;sudo add-apt-repository ppa:graphics-drivers/ppa
 &lt;/code&gt;&lt;/p&gt;
@@ -945,7 +1005,7 @@ sudo apt-get install freeglut3-dev
 
 &lt;p&gt;重启进不了ubuntu 的桌面，输入密码又返回登陆界面，但是可以用ssh远程登陆。&lt;/p&gt;
 
-&lt;h3 id=&#34;新安装的系统-14-04-输入密码后又返回登录界面&#34;&gt;新安装的系统，14.04。输入密码后又返回登录界面&lt;/h3&gt;
+&lt;h3 id=&#34;新安装的系统-14-04-输入密码后又返回登录界面:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;新安装的系统，14.04。输入密码后又返回登录界面&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;sudo rm -r .Xauthority*  （Xauthority文件在/home/用户名/.Xauthority）&lt;/p&gt;
@@ -980,7 +1040,7 @@ sudo shutdown -r now
 &lt;p&gt;删除了nvidia的驱动，重启之后Unity桌面成功恢复了。
 nvidia-smi 已经无效。&lt;/p&gt;
 
-&lt;h3 id=&#34;teamviewer-安装&#34;&gt;teamviewer 安装&lt;/h3&gt;
+&lt;h3 id=&#34;teamviewer-安装:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;teamviewer 安装&lt;/h3&gt;
 
 &lt;p&gt;在网站下载teamviewer &lt;a href=&#34;https://www.teamviewer.com/zhcn/download/linux/&#34;&gt;https://www.teamviewer.com/zhcn/download/linux/&lt;/a&gt;&lt;/p&gt;
 
@@ -1002,7 +1062,7 @@ nvidia-smi 已经无效。&lt;/p&gt;
 
 &lt;p&gt;即可以通过teamviewer 远程访问图形界面&lt;/p&gt;
 
-&lt;h3 id=&#34;安装torcs-gym等相关环境&#34;&gt;安装TORCS_gym等相关环境&lt;/h3&gt;
+&lt;h3 id=&#34;安装torcs-gym等相关环境:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;安装TORCS_gym等相关环境&lt;/h3&gt;
 
 &lt;p&gt;请参考上一文章记录&lt;a href=&#34;http://www.cnblogs.com/Qwells/p/6001699.html&#34;&gt;用Keras 和 DDPG play TORCS（环境配置篇）&lt;/a&gt;&lt;/p&gt;
 
@@ -1062,7 +1122,7 @@ nvidia-smi 已经无效。&lt;/p&gt;
 sudo chmod +x /usr/local/bin/macdown
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;设置文件默认打开方式&#34;&gt;设置文件默认打开方式&lt;/h3&gt;
+&lt;h3 id=&#34;设置文件默认打开方式:3a6b96174248857516852c98312790f0&#34;&gt;设置文件默认打开方式&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;选定文件&lt;/li&gt;
@@ -1086,7 +1146,7 @@ sudo chmod +x /usr/local/bin/macdown
 要写论文了，图像的分辨率是一大痛点&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;方法一&#34;&gt;方法一：&lt;/h3&gt;
+&lt;h3 id=&#34;方法一:7fbf3a2b0b5857d5e743d063f4b00457&#34;&gt;方法一：&lt;/h3&gt;
 
 &lt;p&gt;两步生成.eps文件&lt;/p&gt;
 
@@ -1096,7 +1156,7 @@ sudo chmod +x /usr/local/bin/macdown
 &lt;li&gt;&lt;p&gt;直接用adobe acrobat 打开pdf，然后保存为.eps 格式即可。&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&#34;方法二&#34;&gt;方法二：&lt;/h3&gt;
+&lt;h3 id=&#34;方法二:7fbf3a2b0b5857d5e743d063f4b00457&#34;&gt;方法二：&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;参考：&lt;a href=&#34;http://chrisalbon.com/python/matplotlib_save_a_plot_as_vector.html&#34;&gt;Save A Matplotlib Plot As A Vector&lt;/a&gt;&lt;/p&gt;
@@ -1140,16 +1200,16 @@ plt.savefig(&#39;./plteps.eps&#39;, format=&#39;eps&#39;, dpi=1000)
                 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;截图图片转换-eps&#34;&gt;截图图片转换.eps&lt;/h3&gt;
+&lt;h3 id=&#34;截图图片转换-eps:7fbf3a2b0b5857d5e743d063f4b00457&#34;&gt;截图图片转换.eps&lt;/h3&gt;
 
-&lt;h4 id=&#34;方法1&#34;&gt;方法1&lt;/h4&gt;
+&lt;h4 id=&#34;方法1:7fbf3a2b0b5857d5e743d063f4b00457&#34;&gt;方法1&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;用FastStone capture 截图，然后直接生成pdf；&lt;/li&gt;
 &lt;li&gt;用adobe acrobat 打开pdf，然后保存为.eps 格式即可。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;方法2&#34;&gt;方法2&lt;/h4&gt;
+&lt;h4 id=&#34;方法2:7fbf3a2b0b5857d5e743d063f4b00457&#34;&gt;方法2&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;上述方法1，当图片比较大的时候，会出现生成的eps文件只有一部分，会有黑色框。&lt;/li&gt;
@@ -1269,76 +1329,6 @@ cd ../gym_torcs
 &lt;/ul&gt;
 
 &lt;p&gt;现在打开命令行python 即是安装在~/anaconda2/bin/python 的python程序&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>一些书单</title>
-      <link>https://tmhm.github.io/2016/10/10/%E4%B8%80%E4%BA%9B%E4%B9%A6%E5%8D%95/</link>
-      <pubDate>Mon, 10 Oct 2016 08:40:00 +0000</pubDate>
-      <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/10/10/%E4%B8%80%E4%BA%9B%E4%B9%A6%E5%8D%95/</guid>
-      <description>&lt;p&gt;&lt;em&gt;仅对近来的学习做些回顾吧&lt;/em&gt;
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;学习永无止境&amp;ndash;&amp;gt;&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;2015年已完成书单：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;文学：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;硅谷之火&lt;/li&gt;
-&lt;li&gt;浪潮之巅&lt;/li&gt;
-&lt;li&gt;天才在左疯子在右&lt;/li&gt;
-&lt;li&gt;从0到1&lt;/li&gt;
-&lt;li&gt;生命咖啡馆&lt;/li&gt;
-&lt;li&gt;黑客与画家&lt;/li&gt;
-&lt;li&gt;奇思妙想：15位计算机天才及其重大发现&lt;/li&gt;
-&lt;li&gt;乔布斯传&lt;/li&gt;
-&lt;li&gt;平凡的世界（三部全）&lt;/li&gt;
-&lt;li&gt;一只iphone的全球旅行&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&amp;nbsp;专业类：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;C++ Primer（中文第五版）匆忙过了一遍，未实现代码。&lt;/li&gt;
-&lt;li&gt;ios 游戏开发：创意与实现&lt;/li&gt;
-&lt;/ol&gt;
-
-
-&lt;p&gt;&lt;strong&gt;2016年书单：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;文学：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;历史的教训&lt;/li&gt;
-&lt;li&gt;硅谷之谜&lt;/li&gt;
-&lt;li&gt;文明之光&lt;/li&gt;
-&lt;li&gt;facebook 马克 扎克伯格传记：后乔布斯时代的传奇&lt;/li&gt;
-&lt;li&gt;弘一大师新传&lt;/li&gt;
-&lt;li&gt;三体（未完成，过半后，吸引力下降）&lt;/li&gt;
-&lt;li&gt;微软的梦工厂（一口气读完了）&lt;/li&gt;
-&lt;li&gt;数学之美（第二版）&lt;/li&gt;
-&lt;li&gt;富爸爸穷爸爸&lt;/li&gt;
-&lt;li&gt;人类简史&lt;/li&gt;
-&lt;li&gt;智能时代（吴军著）&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;专业类：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;C++语言的设计与演化&lt;/li&gt;
-&lt;li&gt;数据结构与算法分析（C语言描述） &amp;nbsp; &amp;nbsp;缺代码实现&lt;/li&gt;
-&lt;li&gt;统计学习方法. 李航&lt;/li&gt;
-&lt;li&gt;控制系统设计指南（第三版）&lt;/li&gt;
-&lt;li&gt;嵌入式Linux系统使用开发（主要包括完成linux系统，c/c++的回顾，多线程等）&lt;/li&gt;
-&lt;li&gt;机器学习实践（-ing）&lt;/li&gt;
-&lt;li&gt;机器学习.周志华（-ing）&lt;/li&gt;
-&lt;li&gt;算法（第四版）. Robert Sedgewick（-ing，看进去以后，相见恨晚）&lt;/li&gt;
-&lt;li&gt;Reinforcement learning: An&amp;nbsp;induction.&amp;nbsp;Richard S. Sutton（-ing）&lt;/li&gt;
-&lt;li&gt;无人驾驶车辆模型预测控制.北京理工大学出版社（-ing）（发现战线好长，得收敛到某个方向）&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;16年的专业书籍还有很多在继续。。&lt;/p&gt;
-
-&lt;p&gt;&lt;p&gt;&lt;strong&gt;&amp;nbsp;2017年书单：&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Google 未来之镜&lt;/li&gt;
-&lt;li&gt;创新者的窘境 （-ing）&lt;/li&gt;
-&lt;li&gt;围城（-ing）&lt;/li&gt;
-&lt;/ol&gt;&lt;/p&gt;
 </description>
     </item>
     
