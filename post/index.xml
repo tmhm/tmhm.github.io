@@ -20,7 +20,7 @@
       <guid>https://tmhm.github.io/2017/02/27/hugo%E5%9C%A8ubuntu14.4%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E9%85%8D%E7%BD%AE/</guid>
       <description>
 
-&lt;h3 id=&#34;安装hugo&#34;&gt;安装Hugo&lt;/h3&gt;
+&lt;h3 id=&#34;安装hugo:f3924a03658d093f4458df00ee75a55f&#34;&gt;安装Hugo&lt;/h3&gt;
 
 &lt;p&gt;Ubuntu14.04 下面直接用apt-get安装貌似不行，参考&lt;a href=&#34;https://vexxhost.com/resources/tutorials/how-to-install-and-use-hugo-the-static-site-generator-on-ubuntu-14-04/&#34;&gt;博主&lt;/a&gt;,直接下载源文件安装：&lt;/p&gt;
 
@@ -31,7 +31,7 @@ sudo dpkg -i hugo_0.15_amd64.deb
 
 &lt;p&gt;即可，测试一下版本&lt;code&gt;hugo version&lt;/code&gt;，成功输出版本号即安装成功。&lt;/p&gt;
 
-&lt;h3 id=&#34;安装markdown编辑工具-remarkable&#34;&gt;安装Markdown编辑工具（remarkable）&lt;/h3&gt;
+&lt;h3 id=&#34;安装markdown编辑工具-remarkable:f3924a03658d093f4458df00ee75a55f&#34;&gt;安装Markdown编辑工具（remarkable）&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;从&lt;a href=&#34;http://locez.com/translation/best-markdown-editors-for-linux/&#34;&gt;此篇文章&lt;/a&gt;了解到 Remarkable，貌似apt-get也木有直接安装的，于是在&lt;a href=&#34;https://remarkableapp.github.io/linux/download.html&#34;&gt;官网&lt;/a&gt;下载.deb文件；&lt;/li&gt;
@@ -39,7 +39,7 @@ sudo dpkg -i hugo_0.15_amd64.deb
 &lt;li&gt;可以在终端直接用命令&lt;code&gt;remarkable&lt;/code&gt; 打开.md文件&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;安装搜狗输入法for-linux&#34;&gt;安装搜狗输入法for Linux&lt;/h3&gt;
+&lt;h3 id=&#34;安装搜狗输入法for-linux:f3924a03658d093f4458df00ee75a55f&#34;&gt;安装搜狗输入法for Linux&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://pinyin.sogou.com/linux/help.php&#34;&gt;搜狗输入法官网&lt;/a&gt;下载安装文件；&lt;/li&gt;
@@ -48,7 +48,7 @@ sudo dpkg -i hugo_0.15_amd64.deb
 &lt;li&gt;重启，输入法生效。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;配置github&#34;&gt;配置github&lt;/h3&gt;
+&lt;h3 id=&#34;配置github:f3924a03658d093f4458df00ee75a55f&#34;&gt;配置github&lt;/h3&gt;
 
 &lt;p&gt;由于hugo文件在另一台电脑已经配置好config.toml文件，所以只需要将整个文件夹copy过来，配置好Ubuntu本地的github即可&lt;/p&gt;
 
@@ -59,7 +59,7 @@ git remote add origin git@github.com:tmhm/blog_well.git
 git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;hugo-命令note&#34;&gt;Hugo 命令Note&lt;/h3&gt;
+&lt;h3 id=&#34;hugo-命令note:f3924a03658d093f4458df00ee75a55f&#34;&gt;Hugo 命令Note&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;本地服务器，看样式：
 hugo server --baseURL=http://127.0.0.1:1313/ -t hyde-y -D --bind=&amp;quot;0.0.0.0&amp;quot;
@@ -98,11 +98,11 @@ hugo new post/second.md
 
 &lt;p&gt;&lt;em&gt;玩TORCS和DRL差不多有一整年了，开始的摸爬滚打都是不断碰壁过来的，近来在参与&lt;a href=&#34;https://katefvision.github.io/&#34;&gt;CMU的DRL10703课程&lt;/a&gt;学习和翻译志愿者工作，也将自己以前的一些工作做一些备忘，以作为有兴趣同学的参考。&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;torcs仿真器平台安装&#34;&gt;TORCS仿真器平台安装&lt;/h3&gt;
+&lt;h3 id=&#34;torcs仿真器平台安装:1793684d767565b415bdf28945fbfe28&#34;&gt;TORCS仿真器平台安装&lt;/h3&gt;
 
 &lt;p&gt;仿真器平台主要包括两步：安装TORCS，然后添加锦标赛用的patch。&lt;/p&gt;
 
-&lt;h4 id=&#34;torcs仿真器的安装&#34;&gt;TORCS仿真器的安装&lt;/h4&gt;
+&lt;h4 id=&#34;torcs仿真器的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;TORCS仿真器的安装&lt;/h4&gt;
 
 &lt;p&gt;The open racing car simulator（TORCS）&lt;a href=&#34;http://torcs.sourceforge.net/&#34;&gt;主页&lt;/a&gt;&lt;/p&gt;
 
@@ -125,7 +125,7 @@ hugo new post/second.md
 &lt;p&gt;如何在仿真器上一步步实现一个简单ROBOT，教程可见：
 &lt;a href=&#34;http://www.berniw.org/tutorials/robot/&#34;&gt;http://www.berniw.org/tutorials/robot/&lt;/a&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;championship-platform的安装&#34;&gt;Championship Platform的安装&lt;/h4&gt;
+&lt;h4 id=&#34;championship-platform的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;Championship Platform的安装&lt;/h4&gt;
 
 &lt;p&gt;为扩展仿真器平台用于我们的智能驾驶AI程序的开发，我们采用的是锦标赛平台的接口。在安装torcs之后，可以直接安装patch。实现安装源文件下载地址：
 &lt;a href=&#34;https://sourceforge.net/projects/cig/files/SCR%20Championship/&#34;&gt;https://sourceforge.net/projects/cig/files/SCR%20Championship/&lt;/a&gt;&lt;/p&gt;
@@ -149,16 +149,16 @@ Manual的官方文件: &lt;a href=&#34;http://arxiv.org/abs/1304.1672&#34;&gt;ht
 
 &lt;p&gt;至此，TORCS仿真器平台安装完毕，下面搭建配套的软件IDE环境。&lt;/p&gt;
 
-&lt;h3 id=&#34;软件ide环境搭建&#34;&gt;软件IDE环境搭建&lt;/h3&gt;
+&lt;h3 id=&#34;软件ide环境搭建:1793684d767565b415bdf28945fbfe28&#34;&gt;软件IDE环境搭建&lt;/h3&gt;
 
-&lt;h4 id=&#34;anaconda-的安装&#34;&gt;Anaconda 的安装&lt;/h4&gt;
+&lt;h4 id=&#34;anaconda-的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;Anaconda 的安装&lt;/h4&gt;
 
 &lt;p&gt;Anaconda 是一个开源的，基于python的跨平台（windows，osx，liunx）科学计算平台，支持python2和python3，示例用的是基于python2的anaconda2-4.0.0&lt;/p&gt;
 
 &lt;p&gt;安装后，会创建一个Anaconda Prompt（一个类似DOS的命令行窗口），它可以像linux一样来通过命令管理各种科学计算包，执行命令等。
 比如可以用conda ，pip等工具管理包&lt;/p&gt;
 
-&lt;h4 id=&#34;pybrain的安装&#34;&gt;PyBrain的安装&lt;/h4&gt;
+&lt;h4 id=&#34;pybrain的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;PyBrain的安装&lt;/h4&gt;
 
 &lt;p&gt;Pybrain是一个基于python的机器学习模块，对强化学习的支持比较好，2015年底的时候，还只有很少的模块是专门做强化学习的，Pybrain就是定位在强化学习和神经网络，由于是个人的项目，维护更新比较慢，目前使用的是0.33版本。&lt;/p&gt;
 
@@ -180,7 +180,7 @@ Manual的官方文件: &lt;a href=&#34;http://arxiv.org/abs/1304.1672&#34;&gt;ht
 
 &lt;p&gt;&lt;em&gt;Note： mq 是指包的发布者&lt;/em&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;pycharm-的安装&#34;&gt;PyCharm 的安装&lt;/h4&gt;
+&lt;h4 id=&#34;pycharm-的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;PyCharm 的安装&lt;/h4&gt;
 
 &lt;p&gt;尽管Anaconda包含了一个Spyder 的IDE，个人感觉不太友好，故还是额外安装&lt;a href=&#34;https://www.jetbrains.com/pycharm/download/#section=windows&#34;&gt;PyCharm&lt;/a&gt;。PyCharm是JetBrains公司推出的一套基于python的跨平台工具。包含免费的社区版和收费的专业版，示例的是专业版，由于近期修改系统时间的漏洞已经修护（貌似最多就一年有效），建议直接安装社区版即可。与TORCS的接口程序在下一篇代码部分给出。&lt;/p&gt;
 </description>
@@ -333,7 +333,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
 
 &lt;p&gt;&lt;img src=&#34;http://i.imgur.com/XZmJtEF.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;主要相关的api有&#34;&gt;主要相关的api有：&lt;/h4&gt;
+&lt;h4 id=&#34;主要相关的api有:b3b8e334f38c5d0729b510697772171d&#34;&gt;主要相关的api有：&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;plt.subplots_adjust&lt;/li&gt;
@@ -341,7 +341,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
 &lt;li&gt;plt.text&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;解决思路&#34;&gt;解决思路&lt;/h4&gt;
+&lt;h4 id=&#34;解决思路:b3b8e334f38c5d0729b510697772171d&#34;&gt;解决思路&lt;/h4&gt;
 
 &lt;p&gt;来自matplotlib的&lt;a href=&#34;http://matplotlib.org/gallery.html&#34;&gt;官网&lt;/a&gt;,以及&lt;a href=&#34;http://matplotlib.org/examples/images_contours_and_fields/interpolation_none_vs_nearest.html&#34;&gt;图示&lt;/a&gt;&lt;/p&gt;
 
@@ -1235,7 +1235,7 @@ plt.savefig(&#39;./plteps.eps&#39;, format=&#39;eps&#39;, dpi=1000)
 &lt;blockquote&gt;
 &lt;p&gt;由于使用的环境是ubuntu 14.04 desktop版，故不需要安装opencv。&lt;/p&gt;
 
-&lt;h4 id=&#34;安装一些依赖包&#34;&gt;安装一些依赖包：&lt;/h4&gt;
+&lt;h4 id=&#34;安装一些依赖包:8ddac1d36b1af55faa891d2975711062&#34;&gt;安装一些依赖包：&lt;/h4&gt;
 &lt;/blockquote&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo apt-get install xautomation
@@ -1243,7 +1243,7 @@ sudo pip install numpy
 sudo pip install gym
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;下载-gym-torcs源码-https-github-com-ugo-nama-kun-gym-torcs&#34;&gt;下载&lt;a href=&#34;https://github.com/ugo-nama-kun/gym_torcs&#34;&gt;gym_torcs源码&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;下载-gym-torcs源码-https-github-com-ugo-nama-kun-gym-torcs:8ddac1d36b1af55faa891d2975711062&#34;&gt;下载&lt;a href=&#34;https://github.com/ugo-nama-kun/gym_torcs&#34;&gt;gym_torcs源码&lt;/a&gt;&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;然后将&lt;/li&gt;
@@ -1280,7 +1280,7 @@ sudo make datainstall
 
 &lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201611/781469-20161121150329987-1053577076.bmp&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;ddpg源码-https-github-com-yanpanlau-ddpg-keras-torcs&#34;&gt;&lt;a href=&#34;https://github.com/yanpanlau/DDPG-Keras-Torcs&#34;&gt;DDPG源码&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;ddpg源码-https-github-com-yanpanlau-ddpg-keras-torcs:8ddac1d36b1af55faa891d2975711062&#34;&gt;&lt;a href=&#34;https://github.com/yanpanlau/DDPG-Keras-Torcs&#34;&gt;DDPG源码&lt;/a&gt;&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;pip install keras
 pip install tensorflow
@@ -1316,7 +1316,7 @@ cd ../gym_torcs
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;修改默认python&#34;&gt;修改默认python&lt;/h4&gt;
+&lt;h4 id=&#34;修改默认python:8ddac1d36b1af55faa891d2975711062&#34;&gt;修改默认python&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;删除系统自带的python软链接&lt;/p&gt;
