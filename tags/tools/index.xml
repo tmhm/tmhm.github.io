@@ -61,16 +61,25 @@ git push -u origin master
 
 &lt;h3 id=&#34;hugo-命令note:f3924a03658d093f4458df00ee75a55f&#34;&gt;Hugo 命令Note&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code&gt;本地服务器，看样式：
+&lt;pre&gt;&lt;code&gt;本地服务器，看样式
 hugo server --baseURL=http://127.0.0.1:1313/ -t hyde-y -D --bind=&amp;quot;0.0.0.0&amp;quot;
 
-在myblog根目录执行，生成静态网页，生成文件放在public文件夹：  
+在myblog根目录执行，生成静态网页，生成文件放在public文件夹
 
 hugo -t hyde-y --baseURL &amp;quot;https://tmhm.github.io/&amp;quot; -D
 
-生成新文件：
+生成新文件
 hugo new post/second.md
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;写blog操作步骤:f3924a03658d093f4458df00ee75a55f&#34;&gt;写blog操作步骤&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;用hugo new 生成新文件test.md；&lt;/li&gt;
+&lt;li&gt;编辑my_blog/content/post/test.md，添加各种属性内容，用单引号&lt;code&gt;‘’&lt;/code&gt;；&lt;/li&gt;
+&lt;li&gt;在本地服务器打开的状态下，是可以实时的看到网页的变化的，若满足要求，用&lt;code&gt;hugo -t hyde-y --baseURL &amp;quot;https://****.github.io/&amp;quot; -D&lt;/code&gt;生成静态网页，然后在public目录下面再用git命令：add，commit，push 到 &lt;code&gt;****.github.io/&lt;/code&gt;仓库，现在既可以在玩个上看到新的内容了。&lt;/li&gt;
+&lt;li&gt;cd 到上一目录&lt;code&gt;my_blog/&lt;/code&gt;, 在此也可以将源文件放到一个仓库。&lt;/li&gt;
+&lt;/ol&gt;
 </description>
     </item>
     

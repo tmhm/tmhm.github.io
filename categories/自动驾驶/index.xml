@@ -22,11 +22,11 @@
 
 &lt;p&gt;&lt;em&gt;玩TORCS和DRL差不多有一整年了，开始的摸爬滚打都是不断碰壁过来的，近来在参与&lt;a href=&#34;https://katefvision.github.io/&#34;&gt;CMU的DRL10703课程&lt;/a&gt;学习和翻译志愿者工作，也将自己以前的一些工作做一些备忘，以作为有兴趣同学的参考。&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;torcs仿真器平台安装:1793684d767565b415bdf28945fbfe28&#34;&gt;TORCS仿真器平台安装&lt;/h3&gt;
+&lt;h3 id=&#34;torcs仿真器平台安装&#34;&gt;TORCS仿真器平台安装&lt;/h3&gt;
 
 &lt;p&gt;仿真器平台主要包括两步：安装TORCS，然后添加锦标赛用的patch。&lt;/p&gt;
 
-&lt;h4 id=&#34;torcs仿真器的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;TORCS仿真器的安装&lt;/h4&gt;
+&lt;h4 id=&#34;torcs仿真器的安装&#34;&gt;TORCS仿真器的安装&lt;/h4&gt;
 
 &lt;p&gt;The open racing car simulator（TORCS）&lt;a href=&#34;http://torcs.sourceforge.net/&#34;&gt;主页&lt;/a&gt;&lt;/p&gt;
 
@@ -49,7 +49,7 @@
 &lt;p&gt;如何在仿真器上一步步实现一个简单ROBOT，教程可见：
 &lt;a href=&#34;http://www.berniw.org/tutorials/robot/&#34;&gt;http://www.berniw.org/tutorials/robot/&lt;/a&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;championship-platform的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;Championship Platform的安装&lt;/h4&gt;
+&lt;h4 id=&#34;championship-platform的安装&#34;&gt;Championship Platform的安装&lt;/h4&gt;
 
 &lt;p&gt;为扩展仿真器平台用于我们的智能驾驶AI程序的开发，我们采用的是锦标赛平台的接口。在安装torcs之后，可以直接安装patch。实现安装源文件下载地址：
 &lt;a href=&#34;https://sourceforge.net/projects/cig/files/SCR%20Championship/&#34;&gt;https://sourceforge.net/projects/cig/files/SCR%20Championship/&lt;/a&gt;&lt;/p&gt;
@@ -73,16 +73,16 @@ Manual的官方文件: &lt;a href=&#34;http://arxiv.org/abs/1304.1672&#34;&gt;ht
 
 &lt;p&gt;至此，TORCS仿真器平台安装完毕，下面搭建配套的软件IDE环境。&lt;/p&gt;
 
-&lt;h3 id=&#34;软件ide环境搭建:1793684d767565b415bdf28945fbfe28&#34;&gt;软件IDE环境搭建&lt;/h3&gt;
+&lt;h3 id=&#34;软件ide环境搭建&#34;&gt;软件IDE环境搭建&lt;/h3&gt;
 
-&lt;h4 id=&#34;anaconda-的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;Anaconda 的安装&lt;/h4&gt;
+&lt;h4 id=&#34;anaconda-的安装&#34;&gt;Anaconda 的安装&lt;/h4&gt;
 
 &lt;p&gt;Anaconda 是一个开源的，基于python的跨平台（windows，osx，liunx）科学计算平台，支持python2和python3，示例用的是基于python2的anaconda2-4.0.0&lt;/p&gt;
 
 &lt;p&gt;安装后，会创建一个Anaconda Prompt（一个类似DOS的命令行窗口），它可以像linux一样来通过命令管理各种科学计算包，执行命令等。
 比如可以用conda ，pip等工具管理包&lt;/p&gt;
 
-&lt;h4 id=&#34;pybrain的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;PyBrain的安装&lt;/h4&gt;
+&lt;h4 id=&#34;pybrain的安装&#34;&gt;PyBrain的安装&lt;/h4&gt;
 
 &lt;p&gt;Pybrain是一个基于python的机器学习模块，对强化学习的支持比较好，2015年底的时候，还只有很少的模块是专门做强化学习的，Pybrain就是定位在强化学习和神经网络，由于是个人的项目，维护更新比较慢，目前使用的是0.33版本。&lt;/p&gt;
 
@@ -104,7 +104,7 @@ Manual的官方文件: &lt;a href=&#34;http://arxiv.org/abs/1304.1672&#34;&gt;ht
 
 &lt;p&gt;&lt;em&gt;Note： mq 是指包的发布者&lt;/em&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;pycharm-的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;PyCharm 的安装&lt;/h4&gt;
+&lt;h4 id=&#34;pycharm-的安装&#34;&gt;PyCharm 的安装&lt;/h4&gt;
 
 &lt;p&gt;尽管Anaconda包含了一个Spyder 的IDE，个人感觉不太友好，故还是额外安装&lt;a href=&#34;https://www.jetbrains.com/pycharm/download/#section=windows&#34;&gt;PyCharm&lt;/a&gt;。PyCharm是JetBrains公司推出的一套基于python的跨平台工具。包含免费的社区版和收费的专业版，示例的是专业版，由于近期修改系统时间的漏洞已经修护（貌似最多就一年有效），建议直接安装社区版即可。与TORCS的接口程序在下一篇代码部分给出。&lt;/p&gt;
 </description>

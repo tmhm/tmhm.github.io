@@ -61,16 +61,25 @@ git push -u origin master
 
 &lt;h3 id=&#34;hugo-命令note:f3924a03658d093f4458df00ee75a55f&#34;&gt;Hugo 命令Note&lt;/h3&gt;
 
-&lt;pre&gt;&lt;code&gt;本地服务器，看样式：
+&lt;pre&gt;&lt;code&gt;本地服务器，看样式
 hugo server --baseURL=http://127.0.0.1:1313/ -t hyde-y -D --bind=&amp;quot;0.0.0.0&amp;quot;
 
-在myblog根目录执行，生成静态网页，生成文件放在public文件夹：  
+在myblog根目录执行，生成静态网页，生成文件放在public文件夹
 
 hugo -t hyde-y --baseURL &amp;quot;https://tmhm.github.io/&amp;quot; -D
 
-生成新文件：
+生成新文件
 hugo new post/second.md
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;写blog操作步骤:f3924a03658d093f4458df00ee75a55f&#34;&gt;写blog操作步骤&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;用hugo new 生成新文件test.md；&lt;/li&gt;
+&lt;li&gt;编辑my_blog/content/post/test.md，添加各种属性内容，用单引号&lt;code&gt;‘’&lt;/code&gt;；&lt;/li&gt;
+&lt;li&gt;在本地服务器打开的状态下，是可以实时的看到网页的变化的，若满足要求，用&lt;code&gt;hugo -t hyde-y --baseURL &amp;quot;https://****.github.io/&amp;quot; -D&lt;/code&gt;生成静态网页，然后在public目录下面再用git命令：add，commit，push 到 &lt;code&gt;****.github.io/&lt;/code&gt;仓库，现在既可以在玩个上看到新的内容了。&lt;/li&gt;
+&lt;li&gt;cd 到上一目录&lt;code&gt;my_blog/&lt;/code&gt;, 在此也可以将源文件放到一个仓库。&lt;/li&gt;
+&lt;/ol&gt;
 </description>
     </item>
     
@@ -98,11 +107,11 @@ hugo new post/second.md
 
 &lt;p&gt;&lt;em&gt;玩TORCS和DRL差不多有一整年了，开始的摸爬滚打都是不断碰壁过来的，近来在参与&lt;a href=&#34;https://katefvision.github.io/&#34;&gt;CMU的DRL10703课程&lt;/a&gt;学习和翻译志愿者工作，也将自己以前的一些工作做一些备忘，以作为有兴趣同学的参考。&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;torcs仿真器平台安装:1793684d767565b415bdf28945fbfe28&#34;&gt;TORCS仿真器平台安装&lt;/h3&gt;
+&lt;h3 id=&#34;torcs仿真器平台安装&#34;&gt;TORCS仿真器平台安装&lt;/h3&gt;
 
 &lt;p&gt;仿真器平台主要包括两步：安装TORCS，然后添加锦标赛用的patch。&lt;/p&gt;
 
-&lt;h4 id=&#34;torcs仿真器的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;TORCS仿真器的安装&lt;/h4&gt;
+&lt;h4 id=&#34;torcs仿真器的安装&#34;&gt;TORCS仿真器的安装&lt;/h4&gt;
 
 &lt;p&gt;The open racing car simulator（TORCS）&lt;a href=&#34;http://torcs.sourceforge.net/&#34;&gt;主页&lt;/a&gt;&lt;/p&gt;
 
@@ -125,7 +134,7 @@ hugo new post/second.md
 &lt;p&gt;如何在仿真器上一步步实现一个简单ROBOT，教程可见：
 &lt;a href=&#34;http://www.berniw.org/tutorials/robot/&#34;&gt;http://www.berniw.org/tutorials/robot/&lt;/a&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;championship-platform的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;Championship Platform的安装&lt;/h4&gt;
+&lt;h4 id=&#34;championship-platform的安装&#34;&gt;Championship Platform的安装&lt;/h4&gt;
 
 &lt;p&gt;为扩展仿真器平台用于我们的智能驾驶AI程序的开发，我们采用的是锦标赛平台的接口。在安装torcs之后，可以直接安装patch。实现安装源文件下载地址：
 &lt;a href=&#34;https://sourceforge.net/projects/cig/files/SCR%20Championship/&#34;&gt;https://sourceforge.net/projects/cig/files/SCR%20Championship/&lt;/a&gt;&lt;/p&gt;
@@ -149,16 +158,16 @@ Manual的官方文件: &lt;a href=&#34;http://arxiv.org/abs/1304.1672&#34;&gt;ht
 
 &lt;p&gt;至此，TORCS仿真器平台安装完毕，下面搭建配套的软件IDE环境。&lt;/p&gt;
 
-&lt;h3 id=&#34;软件ide环境搭建:1793684d767565b415bdf28945fbfe28&#34;&gt;软件IDE环境搭建&lt;/h3&gt;
+&lt;h3 id=&#34;软件ide环境搭建&#34;&gt;软件IDE环境搭建&lt;/h3&gt;
 
-&lt;h4 id=&#34;anaconda-的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;Anaconda 的安装&lt;/h4&gt;
+&lt;h4 id=&#34;anaconda-的安装&#34;&gt;Anaconda 的安装&lt;/h4&gt;
 
 &lt;p&gt;Anaconda 是一个开源的，基于python的跨平台（windows，osx，liunx）科学计算平台，支持python2和python3，示例用的是基于python2的anaconda2-4.0.0&lt;/p&gt;
 
 &lt;p&gt;安装后，会创建一个Anaconda Prompt（一个类似DOS的命令行窗口），它可以像linux一样来通过命令管理各种科学计算包，执行命令等。
 比如可以用conda ，pip等工具管理包&lt;/p&gt;
 
-&lt;h4 id=&#34;pybrain的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;PyBrain的安装&lt;/h4&gt;
+&lt;h4 id=&#34;pybrain的安装&#34;&gt;PyBrain的安装&lt;/h4&gt;
 
 &lt;p&gt;Pybrain是一个基于python的机器学习模块，对强化学习的支持比较好，2015年底的时候，还只有很少的模块是专门做强化学习的，Pybrain就是定位在强化学习和神经网络，由于是个人的项目，维护更新比较慢，目前使用的是0.33版本。&lt;/p&gt;
 
@@ -180,7 +189,7 @@ Manual的官方文件: &lt;a href=&#34;http://arxiv.org/abs/1304.1672&#34;&gt;ht
 
 &lt;p&gt;&lt;em&gt;Note： mq 是指包的发布者&lt;/em&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;pycharm-的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;PyCharm 的安装&lt;/h4&gt;
+&lt;h4 id=&#34;pycharm-的安装&#34;&gt;PyCharm 的安装&lt;/h4&gt;
 
 &lt;p&gt;尽管Anaconda包含了一个Spyder 的IDE，个人感觉不太友好，故还是额外安装&lt;a href=&#34;https://www.jetbrains.com/pycharm/download/#section=windows&#34;&gt;PyCharm&lt;/a&gt;。PyCharm是JetBrains公司推出的一套基于python的跨平台工具。包含免费的社区版和收费的专业版，示例的是专业版，由于近期修改系统时间的漏洞已经修护（貌似最多就一年有效），建议直接安装社区版即可。与TORCS的接口程序在下一篇代码部分给出。&lt;/p&gt;
 </description>
@@ -333,7 +342,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
 
 &lt;p&gt;&lt;img src=&#34;http://i.imgur.com/XZmJtEF.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;主要相关的api有:b3b8e334f38c5d0729b510697772171d&#34;&gt;主要相关的api有：&lt;/h4&gt;
+&lt;h4 id=&#34;主要相关的api有&#34;&gt;主要相关的api有：&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;plt.subplots_adjust&lt;/li&gt;
@@ -341,7 +350,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
 &lt;li&gt;plt.text&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;解决思路:b3b8e334f38c5d0729b510697772171d&#34;&gt;解决思路&lt;/h4&gt;
+&lt;h4 id=&#34;解决思路&#34;&gt;解决思路&lt;/h4&gt;
 
 &lt;p&gt;来自matplotlib的&lt;a href=&#34;http://matplotlib.org/gallery.html&#34;&gt;官网&lt;/a&gt;,以及&lt;a href=&#34;http://matplotlib.org/examples/images_contours_and_fields/interpolation_none_vs_nearest.html&#34;&gt;图示&lt;/a&gt;&lt;/p&gt;
 
@@ -886,7 +895,7 @@ NOTE: The CUDA Samples are not meant for performance measurements. Results may v
       <guid>https://tmhm.github.io/2016/11/21/gpu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E4%B8%AD%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80note/</guid>
       <description>
 
-&lt;h3 id=&#34;gpu-服务器:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;GPU 服务器：&lt;/h3&gt;
+&lt;h3 id=&#34;gpu-服务器&#34;&gt;GPU 服务器：&lt;/h3&gt;
 
 &lt;p&gt;添加组，用户，并为之新建主目录。&lt;/p&gt;
 
@@ -901,7 +910,7 @@ c302@c302-dl:~$ sudo useradd testuser -g testgroup -m
 &lt;p&gt;&lt;code&gt;passwd testuser
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;安装anaconda环境:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;安装anaconda环境&lt;/h3&gt;
+&lt;h3 id=&#34;安装anaconda环境&#34;&gt;安装anaconda环境&lt;/h3&gt;
 
 &lt;p&gt;官网下载之，&lt;a href=&#34;https://www.continuum.io/downloads&#34;&gt;https://www.continuum.io/downloads&lt;/a&gt;&lt;/p&gt;
 
@@ -909,7 +918,7 @@ c302@c302-dl:~$ sudo useradd testuser -g testgroup -m
 &lt;code&gt;export PATH=/home/c302/anaconda2/bin:$PATH
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;ubuntu-linux系统环境变量配置文件:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;Ubuntu Linux系统环境变量配置文件：&lt;/h3&gt;
+&lt;h3 id=&#34;ubuntu-linux系统环境变量配置文件&#34;&gt;Ubuntu Linux系统环境变量配置文件：&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;/etc/profile : 在登录时,操作系统定制用户环境时使用的第一个文件 ,此文件为系统的每个用户设置环境信息,当用户第一次登录时,该文件被执行。&lt;/p&gt;
@@ -925,7 +934,7 @@ c302@c302-dl:~$ sudo useradd testuser -g testgroup -m
 
 &lt;p&gt;修改~/.profile 文件，添加export PATH=/home/c302/anaconda2/bin:$PATH&lt;/p&gt;
 
-&lt;h3 id=&#34;安装pybrain-0-33:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;安装pybrain 0.33&lt;/h3&gt;
+&lt;h3 id=&#34;安装pybrain-0-33&#34;&gt;安装pybrain 0.33&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;
 pip install pybrain
@@ -961,7 +970,7 @@ pip install pybrain
 &lt;p&gt;&lt;code&gt;conda install -c https://conda.anaconda.org/mq pybrain
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;挂载硬盘:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;挂载硬盘&lt;/h3&gt;
+&lt;h3 id=&#34;挂载硬盘&#34;&gt;挂载硬盘&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;mount  /dev/sdb1 /data1
 mount  /dev/sdc1 /data2
@@ -981,7 +990,7 @@ mount  /dev/sdd1 /data3
 
 &lt;p&gt;这样重启后会自动挂载&lt;/p&gt;
 
-&lt;h3 id=&#34;安装-nvidia-gtx-1080-驱动-367-27:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;安装 Nvidia GTX 1080 驱动 367.27&lt;/h3&gt;
+&lt;h3 id=&#34;安装-nvidia-gtx-1080-驱动-367-27&#34;&gt;安装 Nvidia GTX 1080 驱动 367.27&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;sudo add-apt-repository ppa:graphics-drivers/ppa
 &lt;/code&gt;&lt;/p&gt;
@@ -1005,7 +1014,7 @@ sudo apt-get install freeglut3-dev
 
 &lt;p&gt;重启进不了ubuntu 的桌面，输入密码又返回登陆界面，但是可以用ssh远程登陆。&lt;/p&gt;
 
-&lt;h3 id=&#34;新安装的系统-14-04-输入密码后又返回登录界面:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;新安装的系统，14.04。输入密码后又返回登录界面&lt;/h3&gt;
+&lt;h3 id=&#34;新安装的系统-14-04-输入密码后又返回登录界面&#34;&gt;新安装的系统，14.04。输入密码后又返回登录界面&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;sudo rm -r .Xauthority*  （Xauthority文件在/home/用户名/.Xauthority）&lt;/p&gt;
@@ -1040,7 +1049,7 @@ sudo shutdown -r now
 &lt;p&gt;删除了nvidia的驱动，重启之后Unity桌面成功恢复了。
 nvidia-smi 已经无效。&lt;/p&gt;
 
-&lt;h3 id=&#34;teamviewer-安装:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;teamviewer 安装&lt;/h3&gt;
+&lt;h3 id=&#34;teamviewer-安装&#34;&gt;teamviewer 安装&lt;/h3&gt;
 
 &lt;p&gt;在网站下载teamviewer &lt;a href=&#34;https://www.teamviewer.com/zhcn/download/linux/&#34;&gt;https://www.teamviewer.com/zhcn/download/linux/&lt;/a&gt;&lt;/p&gt;
 
@@ -1062,7 +1071,7 @@ nvidia-smi 已经无效。&lt;/p&gt;
 
 &lt;p&gt;即可以通过teamviewer 远程访问图形界面&lt;/p&gt;
 
-&lt;h3 id=&#34;安装torcs-gym等相关环境:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;安装TORCS_gym等相关环境&lt;/h3&gt;
+&lt;h3 id=&#34;安装torcs-gym等相关环境&#34;&gt;安装TORCS_gym等相关环境&lt;/h3&gt;
 
 &lt;p&gt;请参考上一文章记录&lt;a href=&#34;http://www.cnblogs.com/Qwells/p/6001699.html&#34;&gt;用Keras 和 DDPG play TORCS（环境配置篇）&lt;/a&gt;&lt;/p&gt;
 
