@@ -96,7 +96,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
 &lt;li&gt;文件中记录level 超过 debug 的信息&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;level设计&#34;&gt;level设计&lt;/h4&gt;
+&lt;h4 id=&#34;level设计:ab6ecea521d440c8d06d82d2c5fdae84&#34;&gt;level设计&lt;/h4&gt;
 
 &lt;p&gt;logging函数根据它们用来跟踪的事件的级别或严重程度来命名。&lt;a href=&#34;http://python.usyiyi.cn/translate/python_278/howto/logging.html#logging-advanced-tutorial&#34;&gt;标准级别及其适用性描述&lt;/a&gt;如下（以严重程度递增排序）：&lt;/p&gt;
 
@@ -194,7 +194,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
 sudo chmod +x /usr/local/bin/macdown
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;设置文件默认打开方式:3a6b96174248857516852c98312790f0&#34;&gt;设置文件默认打开方式&lt;/h3&gt;
+&lt;h3 id=&#34;设置文件默认打开方式&#34;&gt;设置文件默认打开方式&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;选定文件&lt;/li&gt;

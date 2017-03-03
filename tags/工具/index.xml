@@ -20,11 +20,11 @@
       <guid>https://tmhm.github.io/2017/03/03/teamviewer%E6%97%A0%E6%B3%95%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</guid>
       <description>
 
-&lt;h3 id=&#34;问题描述:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;问题描述&lt;/h3&gt;
+&lt;h3 id=&#34;问题描述&#34;&gt;问题描述&lt;/h3&gt;
 
 &lt;p&gt;win10 升级后，Teamviewer无法远程登录账户，防火墙已关闭，无人值守访问不了&lt;/p&gt;
 
-&lt;h3 id=&#34;解决方式:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;解决方式：&lt;/h3&gt;
+&lt;h3 id=&#34;解决方式&#34;&gt;解决方式：&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;注意主从机的版本一致&lt;/li&gt;
