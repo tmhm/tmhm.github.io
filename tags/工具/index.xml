@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>工具 on Well</title>
+    <link>https://tmhm.github.io/tags/%E5%B7%A5%E5%85%B7/</link>
+    <description>Recent content in 工具 on Well</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <managingEditor>wells217@163.com (Well)</managingEditor>
+    <webMaster>wells217@163.com (Well)</webMaster>
+    <copyright>(c) 2017 Well.</copyright>
+    <lastBuildDate>Fri, 03 Mar 2017 12:05:02 +0800</lastBuildDate>
+    <atom:link href="https://tmhm.github.io/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Teamviewer无法远程登录</title>
+      <link>https://tmhm.github.io/2017/03/03/teamviewer%E6%97%A0%E6%B3%95%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</link>
+      <pubDate>Fri, 03 Mar 2017 12:05:02 +0800</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2017/03/03/teamviewer%E6%97%A0%E6%B3%95%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</guid>
+      <description>
+
+&lt;h3 id=&#34;问题描述:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;问题描述&lt;/h3&gt;
+
+&lt;p&gt;win10 升级后，Teamviewer无法远程登录账户，防火墙已关闭，无人值守访问不了&lt;/p&gt;
+
+&lt;h3 id=&#34;解决方式:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;解决方式：&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;注意主从机的版本一致&lt;/li&gt;
+&lt;li&gt;注意开启了“授权轻松访问”，用金山毒霸查杀系统之后，会修复使Teamviewer 不具有管理员权限，导致开启轻松访问，并不能远程登录，出现的情况就是可以连接，就是登录不了，输入键盘没反应。&lt;/li&gt;
+&lt;li&gt;重装，装的时候开启无人值守，轻松访问，即帮你自动设置好了。如下示图。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tmhm.github.io/home/xwei/myblog/static/无人值守访问.jpg&#34; alt=&#34; &#34; title=&#34;示图&#34; /&gt;
+&lt;img src=&#34;https://tmhm.github.io/home/xwei/myblog/static/授权轻松访问.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

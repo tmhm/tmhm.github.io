@@ -31,7 +31,7 @@
 
 &lt;p&gt;&lt;img src=&#34;http://i.imgur.com/XZmJtEF.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;主要相关的api有:b3b8e334f38c5d0729b510697772171d&#34;&gt;主要相关的api有：&lt;/h4&gt;
+&lt;h4 id=&#34;主要相关的api有&#34;&gt;主要相关的api有：&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;plt.subplots_adjust&lt;/li&gt;
@@ -39,7 +39,7 @@
 &lt;li&gt;plt.text&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;解决思路:b3b8e334f38c5d0729b510697772171d&#34;&gt;解决思路&lt;/h4&gt;
+&lt;h4 id=&#34;解决思路&#34;&gt;解决思路&lt;/h4&gt;
 
 &lt;p&gt;来自matplotlib的&lt;a href=&#34;http://matplotlib.org/gallery.html&#34;&gt;官网&lt;/a&gt;,以及&lt;a href=&#34;http://matplotlib.org/examples/images_contours_and_fields/interpolation_none_vs_nearest.html&#34;&gt;图示&lt;/a&gt;&lt;/p&gt;
 
@@ -119,7 +119,7 @@ f.write(&amp;quot;hello,\n This is a test file&amp;quot;)
 f.close()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;计算程序运行时间:209ae7a9d321a421a49117ff5988f512&#34;&gt;计算程序运行时间&lt;/h3&gt;
+&lt;h3 id=&#34;计算程序运行时间&#34;&gt;计算程序运行时间&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;import time
 # ISOTIMEFORMAT=&#39;%Y-%m-%d %X&#39;
