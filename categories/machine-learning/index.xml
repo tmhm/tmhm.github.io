@@ -1,0 +1,1234 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine Learning on Well</title>
+    <link>https://tmhm.github.io/categories/machine-learning/</link>
+    <description>Recent content in Machine Learning on Well</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <managingEditor>wells217@163.com (Well)</managingEditor>
+    <webMaster>wells217@163.com (Well)</webMaster>
+    <copyright>(c) 2017 Well.</copyright>
+    <lastBuildDate>Wed, 08 Feb 2017 09:13:00 +0000</lastBuildDate>
+    <atom:link href="https://tmhm.github.io/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>基于DRL和TORCS的自动驾驶仿真系统——之环境配置</title>
+      <link>https://tmhm.github.io/2017/02/08/%E5%9F%BA%E4%BA%8Edrl%E5%92%8Ctorcs%E7%9A%84%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E4%BB%BF%E7%9C%9F%E7%B3%BB%E7%BB%9F%E4%B9%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Wed, 08 Feb 2017 09:13:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2017/02/08/%E5%9F%BA%E4%BA%8Edrl%E5%92%8Ctorcs%E7%9A%84%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E4%BB%BF%E7%9C%9F%E7%B3%BB%E7%BB%9F%E4%B9%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
+      <description>
+
+&lt;p&gt;&lt;em&gt;玩TORCS和DRL差不多有一整年了，开始的摸爬滚打都是不断碰壁过来的，近来在参与&lt;a href=&#34;https://katefvision.github.io/&#34;&gt;CMU的DRL10703课程&lt;/a&gt;学习和翻译志愿者工作，也将自己以前的一些工作做一些备忘，以作为有兴趣同学的参考。&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;torcs仿真器平台安装:1793684d767565b415bdf28945fbfe28&#34;&gt;TORCS仿真器平台安装&lt;/h3&gt;
+
+&lt;p&gt;仿真器平台主要包括两步：安装TORCS，然后添加锦标赛用的patch。&lt;/p&gt;
+
+&lt;h4 id=&#34;torcs仿真器的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;TORCS仿真器的安装&lt;/h4&gt;
+
+&lt;p&gt;The open racing car simulator（TORCS）&lt;a href=&#34;http://torcs.sourceforge.net/&#34;&gt;主页&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;仿真器源文件&lt;a href=&#34;https://sourceforge.net/projects/torcs/files/all-in-one/&#34;&gt;下载地址&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;支持windows和linux，windows下面的安装有集成的安装源文件包；linux系统下则需要自己编译安装一些依赖库，否则在下一步打patch的时候不成功，原因是linux的包是编译后的文件，不包括源文件，windows无此问题。&lt;/p&gt;
+
+&lt;p&gt;示例是在win-64bits系统下安装torcs-1.3.4。&lt;/p&gt;
+
+&lt;p&gt;跟普通应用安装类似，安装后，可在桌面创建快捷方式 。
+打开安装好的TORCS，如下图所示。
+&lt;img src=&#34;http://i.imgur.com/kJvZTvr.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;某些简单问题，在这里可能可以找到答案：
+&lt;a href=&#34;http://torcs.sourceforge.net/index.php?name=Sections&amp;amp;op=viewarticle&amp;amp;artid=30&#34;&gt;http://torcs.sourceforge.net/index.php?name=Sections&amp;amp;op=viewarticle&amp;amp;artid=30&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;简单配置How-to教程可参考（开始使用默认配置即可）：
+&lt;a href=&#34;http://torcs.sourceforge.net/index.php?name=Sections&amp;amp;op=listarticles&amp;amp;secid=4&#34;&gt;http://torcs.sourceforge.net/index.php?name=Sections&amp;amp;op=listarticles&amp;amp;secid=4&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;如何在仿真器上一步步实现一个简单ROBOT，教程可见：
+&lt;a href=&#34;http://www.berniw.org/tutorials/robot/&#34;&gt;http://www.berniw.org/tutorials/robot/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;championship-platform的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;Championship Platform的安装&lt;/h4&gt;
+
+&lt;p&gt;为扩展仿真器平台用于我们的智能驾驶AI程序的开发，我们采用的是锦标赛平台的接口。在安装torcs之后，可以直接安装patch。实现安装源文件下载地址：
+&lt;a href=&#34;https://sourceforge.net/projects/cig/files/SCR%20Championship/&#34;&gt;https://sourceforge.net/projects/cig/files/SCR%20Championship/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;示例安装的是windows server patch2.0. 文件链接：
+&lt;a href=&#34;https://sourceforge.net/projects/cig/files/SCR%20Championship/Server%20Windows/2.0/&#34;&gt;https://sourceforge.net/projects/cig/files/SCR%20Championship/Server%20Windows/2.0/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;解压下载的patch.zip覆盖上一步安装torcs的安装文件，即可搭建一个服务器端。
+ &lt;img src=&#34;http://i.imgur.com/Cx5dk9y.png&#34; alt=&#34;&#34; /&gt;
+上图中的wtorcs.exe即平台的入口地址。可将其快捷方式发送到桌面。打开该程序，现在可以配置我们的drivers。&lt;/p&gt;
+
+&lt;p&gt;路径是： Race &amp;ndash;&amp;gt; Quick Race/ Practice &amp;ndash;&amp;gt; Configure Race &amp;ndash;&amp;gt; Select Track (Accept)&amp;ndash;&amp;gt; Select Drivers (如1，用上下方向键选择scr…，然后点击select(选择和删除是同一按钮)，最后Accept即可)，如下图所示。
+然后accept， New Race 即可以进入仿真器。
+ &lt;img src=&#34;http://i.imgur.com/JQwQQXD.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;我们的程序即可以通过scr车手来模拟控制，一些有用的配置可以参考。
+Manual的官方文件: &lt;a href=&#34;http://arxiv.org/abs/1304.1672&#34;&gt;http://arxiv.org/abs/1304.1672&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;若有墙，可参考：
+&lt;a href=&#34;https://www.yumpu.com/en/document/view/48269886/simulated-car-racing-championship-competition-software-manual&#34;&gt;https://www.yumpu.com/en/document/view/48269886/simulated-car-racing-championship-competition-software-manual&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;至此，TORCS仿真器平台安装完毕，下面搭建配套的软件IDE环境。&lt;/p&gt;
+
+&lt;h3 id=&#34;软件ide环境搭建:1793684d767565b415bdf28945fbfe28&#34;&gt;软件IDE环境搭建&lt;/h3&gt;
+
+&lt;h4 id=&#34;anaconda-的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;Anaconda 的安装&lt;/h4&gt;
+
+&lt;p&gt;Anaconda 是一个开源的，基于python的跨平台（windows，osx，liunx）科学计算平台，支持python2和python3，示例用的是基于python2的anaconda2-4.0.0&lt;/p&gt;
+
+&lt;p&gt;安装后，会创建一个Anaconda Prompt（一个类似DOS的命令行窗口），它可以像linux一样来通过命令管理各种科学计算包，执行命令等。
+比如可以用conda ，pip等工具管理包&lt;/p&gt;
+
+&lt;h4 id=&#34;pybrain的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;PyBrain的安装&lt;/h4&gt;
+
+&lt;p&gt;Pybrain是一个基于python的机器学习模块，对强化学习的支持比较好，2015年底的时候，还只有很少的模块是专门做强化学习的，Pybrain就是定位在强化学习和神经网络，由于是个人的项目，维护更新比较慢，目前使用的是0.33版本。&lt;/p&gt;
+
+&lt;p&gt;在已安装的系统上运行&lt;strong&gt;conda install pybrain&lt;/strong&gt;会显示是否已安装。&lt;/p&gt;
+
+&lt;p&gt;由于使用的台式机已经安装pybrain 0.33，故用笔记本示意安装过程，如下图所示.
+&lt;img src=&#34;http://i.imgur.com/D651H7i.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://i.imgur.com/MHxTMPH.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://i.imgur.com/eZVuF0d.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;主要命令包括（字母均为小些形式）：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    1.      conda install pybrain
+    2.      anaconda search -t conda pybrain
+    3.      conda install -c https://conda.anaconda.org/mq pybrain
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;Note： mq 是指包的发布者&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;pycharm-的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;PyCharm 的安装&lt;/h4&gt;
+
+&lt;p&gt;尽管Anaconda包含了一个Spyder 的IDE，个人感觉不太友好，故还是额外安装&lt;a href=&#34;https://www.jetbrains.com/pycharm/download/#section=windows&#34;&gt;PyCharm&lt;/a&gt;。PyCharm是JetBrains公司推出的一套基于python的跨平台工具。包含免费的社区版和收费的专业版，示例的是专业版，由于近期修改系统时间的漏洞已经修护（貌似最多就一年有效），建议直接安装社区版即可。与TORCS的接口程序在下一篇代码部分给出。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>无人驾驶之激光雷达&amp;摄像头</title>
+      <link>https://tmhm.github.io/2016/12/02/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E4%B9%8B%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E6%91%84%E5%83%8F%E5%A4%B4/</link>
+      <pubDate>Fri, 02 Dec 2016 05:03:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/12/02/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E4%B9%8B%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E6%91%84%E5%83%8F%E5%A4%B4/</guid>
+      <description>
+
+&lt;blockquote&gt;
+&lt;p&gt;（from 速腾CEO 邱纯鑫公开课分享）&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;根据听的一些讲座和看的书籍，个人感觉：目前现在的自动驾驶，根本问题还是在于感知（路况，周边物体，交通标识等等)，控制的方法论问题并没有根本性的改变。&lt;/p&gt;
+
+&lt;h3 id=&#34;激光雷达与摄像头性能对比:3e3bf4b5c88b61a8c1c4ce97ea3b93c3&#34;&gt;激光雷达与摄像头性能对比&lt;/h3&gt;
+
+&lt;p&gt;摄像头的优点是成本低廉，技术上相对比较成熟。&lt;/p&gt;
+
+&lt;p&gt;摄像头的劣势，第一，获取准确三维信息非常难（单目摄像头几乎不可能，也有人提出双目或三目摄像头去做）；另一个缺点是受环境光限制比较大。&lt;/p&gt;
+
+&lt;p&gt;激光雷达的优点在于，其探测距离较远，而且能够准确获取物体的三维信息；&lt;/p&gt;
+
+&lt;p&gt;另外它的稳定性相当高，鲁棒性好。但重要的缺点是，目前激光雷达成本较高，而且产品的最终形态也还未确定。百度车上顶的一个就50W+。&lt;/p&gt;
+
+&lt;p&gt;就两种传感器应用特点来讲，摄像头和激光雷达摄像头都可用于进行车道线检测。除此之外，激光雷达还可用于路牙检测。对于车牌识别以及道路两边，比如限速牌和红绿灯的识别，主要还是用摄像头来完成。如果对障碍物的识别，摄像头可以很容易通过深度学习把障碍物进行细致分类。但对激光雷达而言，它对障碍物只能分一些大类，但对物体运动状态的判断主要靠激光雷达完成。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;从这里来看，激光雷达主要还是提供动态性能，但是，激光雷达对于信号的连续性又缺乏支持，需要摄像头来标定前后帧。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;激光雷达和摄像头分别完成什么工作:3e3bf4b5c88b61a8c1c4ce97ea3b93c3&#34;&gt;激光雷达和摄像头分别完成什么工作？&lt;/h3&gt;
+
+&lt;p&gt;无人驾驶过程中，环境感知信息主要有：&lt;/p&gt;
+
+&lt;p&gt;一是行驶路径上的感知，对于结构化道路可能要感知的是行车线，就是我们所说的车道线以及道路的边缘、道路隔离物以及恶劣路况的识别；对非结构道路而言，其实会更加复杂。&lt;/p&gt;
+
+&lt;p&gt;周边物体感知，就是可能影响车辆通行性、安全性的静态物体和动态物体的识别，包括车辆，行人以及交通标志的识别，包括红绿灯识别和限速牌识别。&lt;/p&gt;
+
+&lt;h3 id=&#34;对于环境感知所需要的传感器-我们把它分成三类:3e3bf4b5c88b61a8c1c4ce97ea3b93c3&#34;&gt;对于环境感知所需要的传感器，我们把它分成三类：&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;感知周围物体的传感器，包括激光雷达、摄像头和毫米波雷达这三类；&lt;/li&gt;
+&lt;li&gt;实现无人驾驶汽车定位的传感器，就是 GPS 、IMU 和 Encoder；&lt;/li&gt;
+&lt;li&gt;其他传感器，指的是感知天气情况及温、湿度的传感器。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;感觉，跟移动机器人并没有本质上的区别。&lt;/p&gt;
+
+&lt;h4 id=&#34;车道线检测:3e3bf4b5c88b61a8c1c4ce97ea3b93c3&#34;&gt;车道线检测：&lt;/h4&gt;
+
+&lt;p&gt;图像一般实际处理的是灰度图像，没用到彩色的作用，&lt;/p&gt;
+
+&lt;p&gt;车道线，特征提取，图像增强，二值化，变成黑白，然后做边缘提取，&lt;/p&gt;
+
+&lt;p&gt;直线拟合&lt;/p&gt;
+
+&lt;h4 id=&#34;无人驾驶环境感知中摄像头的用处:3e3bf4b5c88b61a8c1c4ce97ea3b93c3&#34;&gt;无人驾驶环境感知中摄像头的用处：&lt;/h4&gt;
+
+&lt;p&gt;车道线检测，障碍物检测，交通标识识别&lt;/p&gt;
+
+&lt;h4 id=&#34;无人驾驶环境感知中激光雷达的用处:3e3bf4b5c88b61a8c1c4ce97ea3b93c3&#34;&gt;无人驾驶环境感知中激光雷达的用处：&lt;/h4&gt;
+
+&lt;p&gt;1.路沿检测，包括车道线
+2.障碍物识别，对静态物体和动态物体的识别
+3.定位以及地图构建&lt;/p&gt;
+
+&lt;h5 id=&#34;路沿检测大致分三个步骤:3e3bf4b5c88b61a8c1c4ce97ea3b93c3&#34;&gt;路沿检测大致分三个步骤：&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;1. 拿到原始点云，
+2. 地面店检测、提取路沿点
+3. 通过路沿点的直线拟合，可以把路沿检测出来
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;障碍物的检测-大致包括:3e3bf4b5c88b61a8c1c4ce97ea3b93c3&#34;&gt;障碍物的检测，大致包括：&lt;/h5&gt;
+
+&lt;ol&gt;
+&lt;li&gt;获取三维点云数据后，对障碍物进行聚类&lt;/li&gt;
+&lt;li&gt;聚类后，提取三维物体信息（最难）&lt;/li&gt;
+&lt;li&gt;获取到新物体之后，把这个物体放到训练集里面，然后用SVM分类器把物体时别出来。（看来svm还是经典中的稳定战斗机），此处，选择特征也非常重要吧，对于每一个物体，可能包括它的反射强度，横纵向的宽度，以及位置姿态。（速腾的方法）&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5 id=&#34;辅助定位:3e3bf4b5c88b61a8c1c4ce97ea3b93c3&#34;&gt;辅助定位：&lt;/h5&gt;
+
+&lt;p&gt;利用激光雷达进行辅助定位。定位理论有两种：基于已知地图的定位方法以及基于未知地图的定位方法。&lt;/p&gt;
+
+&lt;p&gt;基于已知地图定位方法，顾名思义，就是事先获取无人驾驶车的工作环境地图（高精度地图），然后根据高精度地图结合激光雷达及其它传感器通过无人驾驶定位算法获得准确的位置估计。现在大家普遍采用的是基于已知地图的定位方法。&lt;/p&gt;
+
+&lt;p&gt;制作高精度地图也是一件非常困难的事情。举个例子，探月车在月球上，原来不知道月球的地图，只能靠机器人在月球上边走边定位，然后感知环境，相当于在过程中既完成了定位又完成了制图，也就是我们在业界所说的 SLAM 技术。（Google 开源的slam 值得研究下）&lt;/p&gt;
+
+&lt;p&gt;激光雷达是获取高精度地图非常重要的传感器。通过 GPS、IMU 和 Encoder 对汽车做一个初步位置的估计，然后再结合激光雷达和高精度地图，通过无人驾驶定位算法最终得到汽车的位置信息。&lt;/p&gt;
+
+&lt;p&gt;高精地图可分为基础层、道路信息层、周围环境信息层和其他信息层。&lt;/p&gt;
+
+&lt;p&gt;比如基础层，有车道的宽度、坡度、倾斜角、航向、高程、车道线信息、人行道和隔离带等等。之后还有信息层，相当于告诉每一个道路上限速的标记、红绿灯标记，还有一个就是环境信息层，相当于周围建筑物的三维模型。其他信息层，比如说天气信息、施工信息等等，天气信息非常重要，它提供一个场景信息，比如说天气非常恶劣的时候，比如下雨天，如果高精度地图能提供天气信息，或者无人驾驶汽车车身所携带的传感器，能够感知到下雨信息，这时非常有利于指导无人驾驶汽车做一些决策。&lt;/p&gt;
+
+&lt;p&gt;现在对高精度地图的定义，不同地图厂家有不同定义的方式。做高精度地图是为了辅助无人驾驶，所谓高精度地图就是相比之前的导航地图，前者精确度更高，可以达到厘米级；另一个就是高精度地图包含更多的信息量，比如说车道的宽度、倾斜度等信息。&lt;/p&gt;
+
+&lt;h3 id=&#34;摄像头和激光雷达的融合:3e3bf4b5c88b61a8c1c4ce97ea3b93c3&#34;&gt;摄像头和激光雷达的融合&lt;/h3&gt;
+
+&lt;p&gt;第一步，标定&lt;/p&gt;
+
+&lt;p&gt;激光雷达与摄像头融合，其实相当于是激光雷达发挥激光雷达的优势，摄像头发挥摄像头的优势，他们在某些地方是做得不够好，需要两个传感器甚至多个传感器信息进行底层的融合。&lt;/p&gt;
+
+&lt;p&gt;在融合的时候，首先第一步，标定。比如说左上角（上图），我看到凳子，左下角激光雷达也看到的是凳子，那么我通过标定的方式告诉它，其实两个是同一个物体。&lt;/p&gt;
+
+&lt;p&gt;其实摄像头发现同一个物体是非常容易的，比如做人的跟踪或车的跟踪。对于激光雷达而言， 要去识别前后帧是否同一辆车和同一个行人是非常困难的。&lt;/p&gt;
+
+&lt;p&gt;第二步，根据目标设计融合算法&lt;/p&gt;
+
+&lt;p&gt;激光雷达有一个好处：如果可以通过摄像头告诉它前后两帧是同一个物体，那么通过激光雷达就可以知道物体在这前后两帧间隔内：运动速度和运动位移是多少。这是非常关键的，因为只有做运动物体的跟踪才能做一些预测。&lt;/p&gt;
+
+&lt;p&gt;人在驾驶的过程中，他得时刻知道周围物体的运动状态。对于无人驾驶，除了对车辆进行位置的估计以及导航之外，其实还需要对周边物体、运动物体的跟踪和预测，这是非常有意义的。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;问：相机和激光雷达融合中还有哪些要去解决的技术问题？&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;邱纯鑫：首先是标定，如何标定才更好？再有一个就是时间戳的问题。相机在这一时刻获取到的图片跟激光雷达获取到的三维信息如何很好匹配下来。算法融合，运动物体跟踪，通过摄像获取同一个物体，通过激光雷达去识别同一个物体的距离信息。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>GPU驱动兼容性问题</title>
+      <link>https://tmhm.github.io/2016/11/30/gpu%E9%A9%B1%E5%8A%A8%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 30 Nov 2016 01:12:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/11/30/gpu%E9%A9%B1%E5%8A%A8%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;问题描述：&lt;/strong&gt;
+将笔记本的GTX860M 的驱动升级到了376.09版本，出现登陆界面，输入密码后黑屏。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;解决思路：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;由于正常显示登陆窗口，且可以输入密码，基本排除硬件问题和集成显卡的问题，&lt;/li&gt;
+&lt;li&gt;问题应该是出在独立显卡上，&lt;/li&gt;
+&lt;li&gt;用U盘启动一个ubuntu系统（u盘内有一个ubuntu系统），使用正常，再次说明硬件没问题。&lt;/li&gt;
+&lt;li&gt;重启多次，输入密码后偶尔有一次可以进入。进入系统后，插入U盘，有弹窗的程序可以打开，并且可以播放U盘中的ppt。&lt;/li&gt;
+&lt;li&gt;此问题与安转ubuntu14.04在&lt;a href=&#34;http://www.cnblogs.com/Qwells/p/6086773.html&#34;&gt;GPU服务器上的时候类似&lt;/a&gt;，输入登陆密码，反复出现登陆界面，进不了系统，类似。当时就是由于GPU显卡不兼容的原因。&lt;/li&gt;
+&lt;li&gt;在一次进入系统后，下载了driver 359.12版本。安装后，重启即可以正常进入系统。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;完毕。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>DL服务器主机环境配置 ubuntu14.04 &amp;&amp;  GTX1080 &amp;&amp; Cuda8.0 解决桌面重复登录</title>
+      <link>https://tmhm.github.io/2016/11/21/dl%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%BB%E6%9C%BA%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-ubuntu14.04---gtx1080--cuda8.0-%E8%A7%A3%E5%86%B3%E6%A1%8C%E9%9D%A2%E9%87%8D%E5%A4%8D%E7%99%BB%E5%BD%95/</link>
+      <pubDate>Mon, 21 Nov 2016 12:15:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/11/21/dl%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%BB%E6%9C%BA%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-ubuntu14.04---gtx1080--cuda8.0-%E8%A7%A3%E5%86%B3%E6%A1%8C%E9%9D%A2%E9%87%8D%E5%A4%8D%E7%99%BB%E5%BD%95/</guid>
+      <description>
+
+&lt;p&gt;&lt;em&gt;前面部分是自己的记录，后面方案部分是成功安装驱动+桌面的正解&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;问题的开始在于：&lt;strong&gt;登录不了桌面，停留在重复输入密码界面&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://blog.csdn.net/nothinglefttosay/article/details/45095125&#34;&gt;博文中&lt;/a&gt;分析的&lt;strong&gt;结论：&lt;/strong&gt;
+&lt;strong&gt;虚拟机中不能直接调用物理显卡进行 CUDA 编程；虚拟机中运行 CUDA 需要硬件和软件的配合才能使用，对于一般使用者可能暂时不太可能的。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;参考博文：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.52nlp.cn/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%BB%E6%9C%BA%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-ubuntu-16-04-nvidia-gtx-1080-cuda-8&#34;&gt;深度学习主机环境配置: Ubuntu16.04+Nvidia GTX 1080+CUDA8.0&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.52nlp.cn/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%BB%E6%9C%BA%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-ubuntu16-04-geforce-gtx1080-tensorflow&#34;&gt;深度学习主机环境配置: Ubuntu16.04+GeForce GTX 1080+TensorFlow&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.codexiu.cn/linux/blog/27993/&#34;&gt;ubuntu14.04+cuda8.0（GTX1080）+caffe安装&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.r-bloggers.com/lang/chinese/2042&#34;&gt;如何搭建一台深度学习服务器&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Ctrl+alt+F1进入字符界面，关闭图形界面&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo service lightdm stop //必须有，不然会安装失败
+sudo /etc/init.d/lightdm stop //一样的命令
+
+sudo chmod 755 NVIDIA-Linux-x86_64-367.27.run  //获取权限
+sudo ./NVIDIA-Linux-x86_64-367.27.run  //安装驱动
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Accept
+Continue installation
+安装完成之后&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;sudo service lightdm start&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;图形界面出现，然后关机，由让人重复输入密码，登录不了&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://nemesisdesign.net/blog/coding/how-reinstall-nvidia-drivers-linux-ubuntu/&#34;&gt;博主&lt;/a&gt;说&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo /etc/init.d/gdm stop
+$ sudo nvidia-installer --update
+$ sudo /etc/init.d/gdm start
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;升级到375版本， 还是没用，启动进入不了桌面，重复登录&lt;/p&gt;
+
+&lt;h3 id=&#34;install-driver-367-https-kusemanohar-wordpress-com-2016-07-29-gtx-1080-on-ubuntu-14-04-trusty:d68e03665ec87076c808379f00c3c33a&#34;&gt;&lt;a href=&#34;https://kusemanohar.wordpress.com/2016/07/29/gtx-1080-on-ubuntu-14-04-trusty/&#34;&gt;Install driver 367&lt;/a&gt;&lt;/h3&gt;
+
+&lt;p&gt;Uninstall previous nvidia drivers.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ sudo apt-get purge nvidia-*
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Stop light gdm (graphical interface)&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ sudo service lightgdm
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Go to tty (CTRL+ALT+F1). Set your init state to 3 (text only mode). It is important to do this. Note these commands on a paper or something. I experienced sometimes the tty does not show with the newest driver. I just ssh to my PC as a way around.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ sudo init 3
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Log in to tty and cd to the directory where your have downloaded the driver.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;$ sudo ./NVIDIA-Linux-x86_64-367.35.run
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;It will ask if you want to install 32-bit libraries, say no (assuming you do not have a 32-bit OS, hopefully. If you do have a 32-bit OS it is a good idea to upgrade…)&lt;/p&gt;
+
+&lt;p&gt;In a few minutes it is done….smooth. Reboot your PC
+&lt;code&gt;$ sudo reboot
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;update 之后还是不能进 图形界面&lt;/p&gt;
+
+&lt;p&gt;Uninstall previous nvidia drivers.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get purge nvidia-*
+sudo apt-get autoremove
+sudo apt-get --purge remove nvidia-*
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;remove 之后，&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;nvidia-smi
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;还是能看到gpu的。why？&lt;/p&gt;
+
+&lt;p&gt;卸载不了？&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install nvidia-prime
+
+$ sudo /etc/init.d/lightdm stop
+$ sudo nvidia-installer --update
+$ sudo /etc/init.d/lightdm start
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;升级到375版本， 还是没用，启动进入不了桌面，重复登录&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;有人说，安装必须要在安装桌面前安装GTX 1080 driver，后面方案验证来看， 那个参数才是关键。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;解决方法:d68e03665ec87076c808379f00c3c33a&#34;&gt;解决方法&lt;/h3&gt;
+
+&lt;p&gt;利用sudo gedit /etc/modprobe.d/blacklist-nouveau.conf新建blacklist-nouveau.conf文件，输入命令&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;blacklist nouveau
+
+blacklist lbm-nouveau
+
+options nouveau modeset=0
+
+alias nouveau off
+
+alias lbm-nouveau off
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;保存并退出。这一步是为了禁掉Ubuntu自带开源驱动nouveau。之后sudo reboot重启系统。在终端执行命令
+&lt;code&gt;lsmod | grep nouveau
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;查看nouveau模块是否被加载。如果什么都没输出，则执行下一步。&lt;/p&gt;
+
+&lt;p&gt;根本问题在于 参数：  &lt;strong&gt;&amp;ndash;no-opengl-files&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo /etc/init.d/lightdm stop
+sudo ./NVIDIA-Linux-x86_64-375.20.run --no-opengl-files
+sudo /etc/init.d/lightdm start
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;即可以正常登录界面了！！&lt;/p&gt;
+
+&lt;p&gt;在安装过程中的选项：&lt;/p&gt;
+
+&lt;p&gt;Accept&lt;/p&gt;
+
+&lt;p&gt;Continue installation&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;register the kernel moudle sources with DKMS?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;NO&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Would you like to run the nvidia-xconfig utility to automatically update your X Configuration file so set the NVIDIA X driver will be used when you restart X?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;NO&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Install 32-Bit compatibility &lt;a href=&#34;https://elementaryforums.com/index.php?threads/howto-install-latest-nvidia-driver-on-linux-without-getting-black-screen.7/&#34;&gt;libraries?参考&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;NO
+&lt;img src=&#34;http://i.imgur.com/5DHQbMl.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;cuda8-0安装:d68e03665ec87076c808379f00c3c33a&#34;&gt;cuda8.0安装&lt;/h3&gt;
+
+&lt;p&gt;运行&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;sudo sh cuda_8.0.44_linux.run
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;选项如下所示：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Description
+
+This package includes over 100+ CUDA examples that demonstrate
+various CUDA programming principles, and efficient CUDA
+implementation of algorithms in specific application domains.
+The NVIDIA CUDA Samples License Agreement is available in
+Do you accept the previously read EULA?
+accept/decline/quit: accept
+
+Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 367.48?
+(y)es/(n)o/(q)uit: n
+
+Install the CUDA 8.0 Toolkit?
+(y)es/(n)o/(q)uit: y
+
+Enter Toolkit Location
+
+Do you want to install a symbolic link at /usr/local/cuda?
+(y)es/(n)o/(q)uit: y
+
+Install the CUDA 8.0 Samples?
+(y)es/(n)o/(q)uit: y
+
+Enter CUDA Samples Location
+
+Installing the CUDA Toolkit in /usr/local/cuda-8.0 ...
+Installing the CUDA Samples in /home/c302 ...
+Copying samples to /home/c302/NVIDIA_CUDA-8.0_Samples now...
+Finished copying samples.
+
+===========
+= Summary =
+===========
+
+Driver:   Not Selected
+Toolkit:  Installed in /usr/local/cuda-8.0
+Samples:  Installed in /home/c302
+
+Please make sure that
+ -   PATH includes /usr/local/cuda-8.0/bin
+ -   LD_LIBRARY_PATH includes /usr/local/cuda-8.0/lib64, or, add /usr/local/cuda-8.0/lib64 to /etc/ld.so.conf and run ldconfig as root
+
+To uninstall the CUDA Toolkit, run the uninstall script in /usr/local/cuda-8.0/bin
+
+Please see CUDA_Installation_Guide_Linux.pdf in /usr/local/cuda-8.0/doc/pdf for detailed information on setting up CUDA.
+
+***WARNING: Incomplete installation! This installation did not install the CUDA Driver. A driver of version at least 361.00 is required for CUDA 8.0 functionality to work.
+To install the driver using this installer, run the following command, replacing &amp;lt;CudaInstaller&amp;gt; with the name of this run file:
+    sudo &amp;lt;CudaInstaller&amp;gt;.run -silent -driver
+
+Logfile is /tmp/cuda_install_9045.log
+    
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;设置环境变量:d68e03665ec87076c808379f00c3c33a&#34;&gt;设置环境变量&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;export PATH=/usr/local/cuda-8.0/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;添加系统变量修改到系统文件
+&lt;code&gt;sudo vi /etc/profile
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;在最后添加上面两句，然后保存。使立即生效
+&lt;code&gt;sudo ldconfig //环境变量立即生效
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;验证-cuda:d68e03665ec87076c808379f00c3c33a&#34;&gt;验证 cuda&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;c302@c302-dl:~/Downloads$ nvcc -V
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2016 NVIDIA Corporation
+Built on Sun_Sep__4_22:14:01_CDT_2016
+Cuda compilation tools, release 8.0, V8.0.44
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;测试cuda的samples:d68e03665ec87076c808379f00c3c33a&#34;&gt;测试cuda的samples&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;cd ‘/home/zhou/NVIDIA_CUDA-8.0_Samples’
+make  //这里需要点时间
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;最后显示：
+&amp;gt; make[1]: Leaving directory `/home/c302/NVIDIA_CUDA-8.0_Samples/7_CUDALibraries/MersenneTwisterGP11213&amp;rsquo;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Finished building CUDA samples&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code&gt;
+        cd 0_Simple/matrixMul
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;运行测试如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;c302@c302-dl:~/NVIDIA_CUDA-8.0_Samples/0_Simple/matrixMul$ ./matrixMul
+[Matrix Multiply Using CUDA] - Starting...
+GPU Device 0: &amp;quot;GeForce GTX 1080&amp;quot; with compute capability 6.1
+
+MatrixA(320,320), MatrixB(640,320)
+Computing result using CUDA Kernel...
+done
+Performance= 1109.06 GFlop/s, Time= 0.118 msec, Size= 131072000 Ops, WorkgroupSize= 1024 threads/block
+Checking computed result for correctness: Result = PASS
+
+NOTE: The CUDA Samples are not meant for performance measurements. Results may vary when GPU Boost is enabled.
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://i.imgur.com/iRwuetR.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;下一篇将会是安装cuDNN、tensorflow等lib&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>GPU 服务器环境安装中一些基础note</title>
+      <link>https://tmhm.github.io/2016/11/21/gpu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E4%B8%AD%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80note/</link>
+      <pubDate>Mon, 21 Nov 2016 06:29:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/11/21/gpu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E4%B8%AD%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80note/</guid>
+      <description>
+
+&lt;h3 id=&#34;gpu-服务器&#34;&gt;GPU 服务器：&lt;/h3&gt;
+
+&lt;p&gt;添加组，用户，并为之新建主目录。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;c302@c302-dl:~$ sudo addgroup testgroup
+Adding group `testgroup&#39; (GID 1001) ...
+Done.
+c302@c302-dl:~$ sudo useradd testuser -g testgroup -m
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;新建密码&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;passwd testuser
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;安装anaconda环境&#34;&gt;安装anaconda环境&lt;/h3&gt;
+
+&lt;p&gt;官网下载之，&lt;a href=&#34;https://www.continuum.io/downloads&#34;&gt;https://www.continuum.io/downloads&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;安装，修改环境变量
+&lt;code&gt;export PATH=/home/c302/anaconda2/bin:$PATH
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;ubuntu-linux系统环境变量配置文件&#34;&gt;Ubuntu Linux系统环境变量配置文件：&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;/etc/profile : 在登录时,操作系统定制用户环境时使用的第一个文件 ,此文件为系统的每个用户设置环境信息,当用户第一次登录时,该文件被执行。&lt;/p&gt;
+
+&lt;p&gt;/etc /environment : 在登录时操作系统使用的第二个文件, 系统在读取你自己的profile前,设置环境文件的环境变量。&lt;/p&gt;
+
+&lt;p&gt;~/.profile :  在登录时用到的第三个文件 是.profile文件,每个用户都可使用该文件输入专用于自己使用的shell信息,当用户登录时,该文件仅仅执行一次!默认情况下,他设置一些环境变量,执行用户的.bashrc文件。&lt;/p&gt;
+
+&lt;p&gt;/etc/bashrc : 为每一个运行bash shell的用户执行此文件.当bash shell被打开时,该文件被读取.&lt;/p&gt;
+
+&lt;p&gt;~/.bashrc : 该文件包含专用于你的bash shell的bash信息,当登录时以及每次打开新的shell时,该该文件被读取。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;修改~/.profile 文件，添加export PATH=/home/c302/anaconda2/bin:$PATH&lt;/p&gt;
+
+&lt;h3 id=&#34;安装pybrain-0-33&#34;&gt;安装pybrain 0.33&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;
+pip install pybrain
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;pip安装的是0.3版本的，我想要0.33的&lt;/p&gt;
+
+&lt;p&gt;卸之，运行：&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;pip uninstall pybrain
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;用conda安装，&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;conda install pybrain
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;提示：anaconda search -t conda pybrain&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;运行：&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;anaconda search -t conda pybrain
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;mq/pybrain                |    0.3.3 | conda           | linux-64, win-32, win-64, linux-32, osx-64&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;运行：&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;conda install -c https://conda.anaconda.org/mq pybrain
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;挂载硬盘&#34;&gt;挂载硬盘&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;mount  /dev/sdb1 /data1
+mount  /dev/sdc1 /data2
+mount  /dev/sdd1 /data3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;上面是手动挂载&lt;/p&gt;
+
+&lt;p&gt;编辑 vi /etc/fstab 添加：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/dev/sdb1 /data1 xfs defaults 0 0
+/dev/sdc1 /data2 xfs defaults 0 0
+/dev/sdd1 /data3 xfs defaults 0 0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;保存退出&lt;/p&gt;
+
+&lt;p&gt;这样重启后会自动挂载&lt;/p&gt;
+
+&lt;h3 id=&#34;安装-nvidia-gtx-1080-驱动-367-27&#34;&gt;安装 Nvidia GTX 1080 驱动 367.27&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;sudo add-apt-repository ppa:graphics-drivers/ppa
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;出现警告，enter继续&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get update
+sudo apt-get install nvidia-367
+sudo apt-get install mesa-common-dev
+sudo apt-get install freeglut3-dev
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;之后重启系统让GTX1080显卡驱动生效。&lt;/p&gt;
+
+&lt;p&gt;运行：&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;nvidia-smi
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://i.imgur.com/TUlwTFw.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;重启进不了ubuntu 的桌面，输入密码又返回登陆界面，但是可以用ssh远程登陆。&lt;/p&gt;
+
+&lt;h3 id=&#34;新安装的系统-14-04-输入密码后又返回登录界面&#34;&gt;新安装的系统，14.04。输入密码后又返回登录界面&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;sudo rm -r .Xauthority*  （Xauthority文件在/home/用户名/.Xauthority）&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; reboot之后, .Xauthorit 文件会再次自动生成。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;想起在/etc/profile 文件添加的export PATH=/home/c302/anaconda2/bin:$PATH
+删除之， 再次reboot，没用，还是不能登录&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;有博主说，将.Xauthority 文件修改拥有者变为用户。按下shift + ctrl + F7切换回图形登陆界面登陆即可。但是实测还是不行。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;安装gdm，sudo apt-get install gdm， 在安转的过程中会出现选择默认启动顺序，选择gdm。，启动直接黑屏了。小白无奈，再次卸载gdm。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;重新安装Unity，依次运行下面命令，尝试解决系统冻结的问题， 貌似对我还是没用&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get update
+sudo apt-get install --reinstall ubuntu-desktop
+sudo apt-get install unity
+sudo shutdown -r now
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;粗暴的方案，卸之，成功解决Nvidia显卡的Unity冻结问题&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get update
+sudo apt-get install --reinstall ubuntu-desktop
+sudo apt-get install unity
+sudo apt-get remove --purge nvidia*
+sudo shutdown -r now
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;删除了nvidia的驱动，重启之后Unity桌面成功恢复了。
+nvidia-smi 已经无效。&lt;/p&gt;
+
+&lt;h3 id=&#34;teamviewer-安装&#34;&gt;teamviewer 安装&lt;/h3&gt;
+
+&lt;p&gt;在网站下载teamviewer &lt;a href=&#34;https://www.teamviewer.com/zhcn/download/linux/&#34;&gt;https://www.teamviewer.com/zhcn/download/linux/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;或者直接用wget下之，&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;wget http://download.teamviewer.com/download/teamviewer_linux_x64.deb
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;然后执行&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;sudo dpkg -i teamviewer_linux*.deb;
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;会有提示需要执行：&lt;code&gt;sudo apt-get -f install&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;执行之，&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;sudo apt-get -f install&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;即可以通过teamviewer 远程访问图形界面&lt;/p&gt;
+
+&lt;h3 id=&#34;安装torcs-gym等相关环境&#34;&gt;安装TORCS_gym等相关环境&lt;/h3&gt;
+
+&lt;p&gt;请参考上一文章记录&lt;a href=&#34;http://www.cnblogs.com/Qwells/p/6001699.html&#34;&gt;用Keras 和 DDPG play TORCS（环境配置篇）&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;注意权限问题，用sudo;&lt;/li&gt;
+&lt;li&gt;添加两个float;&lt;/li&gt;
+&lt;li&gt;安装keras 和tensorflow的时候，注意pip以及其他的一些版本依赖问题，一劳永逸的做法是将anaconda 组件升级到最新，即可。否则按照提示将pip升级，然后用sudo pip安装。&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>用Keras 和 DDPG play TORCS（1）</title>
+      <link>https://tmhm.github.io/2016/10/26/%E7%94%A8keras-%E5%92%8C-ddpg-play-torcs1/</link>
+      <pubDate>Wed, 26 Oct 2016 12:06:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/10/26/%E7%94%A8keras-%E5%92%8C-ddpg-play-torcs1/</guid>
+      <description>
+
+&lt;p&gt;原作者&lt;a href=&#34;https://yanpanlau.github.io/2016/10/11/Torcs-Keras.html&#34;&gt;Using Keras and Deep Deterministic Policy Gradient to play TORCS&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;配置gym-torcs，&lt;a href=&#34;http://www.jianshu.com/p/a3432c0e1ef2&#34;&gt;参考&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;由于使用的环境是ubuntu 14.04 desktop版，故不需要安装opencv。&lt;/p&gt;
+
+&lt;h4 id=&#34;安装一些依赖包:8ddac1d36b1af55faa891d2975711062&#34;&gt;安装一些依赖包：&lt;/h4&gt;
+&lt;/blockquote&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install xautomation
+sudo pip install numpy
+sudo pip install gym
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;下载-gym-torcs源码-https-github-com-ugo-nama-kun-gym-torcs:8ddac1d36b1af55faa891d2975711062&#34;&gt;下载&lt;a href=&#34;https://github.com/ugo-nama-kun/gym_torcs&#34;&gt;gym_torcs源码&lt;/a&gt;&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;然后将&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;gym_torcs/vtorcs-RL-color/src/modules/simu/simuv2/simu.cpp
+中第64行替换为
+if (isnan((float)(car-&amp;gt;ctrl-&amp;gt;gear)) || isinf(((float)(car-&amp;gt;ctrl-&amp;gt;gear)))) car-&amp;gt;ctrl-&amp;gt;gear = 0;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;即添加两个（float），否则，下一步make的时候会出现error，安转失败&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;cd 到 gym_torcs/vtorcs-Rl-color目录，&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;执行以下命令：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install libglib2.0-dev  libgl1-mesa-dev libglu1-mesa-dev  freeglut3-dev  libplib-dev  libopenal-dev libalut-dev libxi-dev libxmu-dev libxrender-dev  libxrandr-dev libpng12-dev
+
+./configure
+
+make
+
+sudo make install
+
+sudo make datainstall
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;输入命令
+        &lt;code&gt;torcs&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;即将打开，熟悉的TORCS 界面， 已打patch scr&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201611/781469-20161121150329987-1053577076.bmp&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;ddpg源码-https-github-com-yanpanlau-ddpg-keras-torcs:8ddac1d36b1af55faa891d2975711062&#34;&gt;&lt;a href=&#34;https://github.com/yanpanlau/DDPG-Keras-Torcs&#34;&gt;DDPG源码&lt;/a&gt;&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;pip install keras
+pip install tensorflow
+
+git clone https://github.com/yanpanlau/DDPG-Keras-Torcs.git
+cd DDPG-Keras-Torcs
+cp *.* ../gym_torcs
+cd ../gym_torcs
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;下面运行ddpg.py&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;python ddpg.py&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;开始看到漂亮的训练过程啦&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201611/781469-20161121150308612-1273258933.bmp&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;在笔记本上运行ddpg.py的时候会出现 keras.backecd中没有set_session模块，初步猜想应该是GPU的问题，在带GPU台式机的虚拟机ubuntu14.04上，即可以正常运行。&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;注意到，笔记本中一个细节是：Using Theano backend&lt;/li&gt;
+&lt;li&gt;而，虚拟机中显示的是：Using tensorflow backend&lt;/li&gt;
+&lt;li&gt;在&lt;a href=&#34;https://keras.io/backend/&#34;&gt;keras/backend主页&lt;/a&gt;找到问题所在,是keras的配置问题&lt;/li&gt;
+&lt;li&gt;打开~/.keras/keras.json，把backend选项，修改Theano为tensorflow，然后wq，退出即可。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;{
+    &amp;quot;image_dim_ordering&amp;quot;: &amp;quot;tf&amp;quot;,
+    &amp;quot;epsilon&amp;quot;: 1e-07,
+    &amp;quot;floatx&amp;quot;: &amp;quot;float32&amp;quot;,
+    &amp;quot;backend&amp;quot;: &amp;quot;tensorflow&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;修改默认python:8ddac1d36b1af55faa891d2975711062&#34;&gt;修改默认python&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;删除系统自带的python软链接&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;rm /user/bin/python&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;建立新安装的python 的软链接&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ln -s ~/anaconda2/bin/python /user/bin/python&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;现在打开命令行python 即是安装在~/anaconda2/bin/python 的python程序&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>PyBrain库的example之NFQ流程图分析</title>
+      <link>https://tmhm.github.io/2016/05/27/pybrain%E5%BA%93%E7%9A%84example%E4%B9%8Bnfq%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%88%86%E6%9E%90/</link>
+      <pubDate>Fri, 27 May 2016 11:43:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/05/27/pybrain%E5%BA%93%E7%9A%84example%E4%B9%8Bnfq%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%88%86%E6%9E%90/</guid>
+      <description>
+
+&lt;h4 id=&#34;pybrain库的example之nfq流程图分析:ee4d46bb0f922990b5099f1ed9a24c21&#34;&gt;PyBrain库的example之NFQ流程图分析&lt;/h4&gt;
+
+&lt;p&gt;如下是测试程序。主要分析&lt;strong&gt;doEpisode和learn&lt;/strong&gt;两个函数。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;__author__ = &#39;Thomas Rueckstiess, ruecksti@in.tum.de&#39;
+
+from pybrain.rl.environments.cartpole import CartPoleEnvironment, DiscreteBalanceTask, CartPoleRenderer
+from pybrain.rl.agents import LearningAgent
+from pybrain.rl.experiments import EpisodicExperiment
+from pybrain.rl.learners.valuebased import NFQ, ActionValueNetwork
+#,ActionValueLSTMNetwork
+from pybrain.rl.explorers import BoltzmannExplorer
+
+from numpy import array, arange, meshgrid, pi, zeros, mean
+from matplotlib import pyplot as plt
+
+# switch this to True if you want to see the cart balancing the pole (slower)
+render = False  #True #
+
+plt.ion()
+
+env = CartPoleEnvironment()
+if render:
+    renderer = CartPoleRenderer()
+    env.setRenderer(renderer)
+    renderer.start()
+
+
+# balancetask. py inside only used 2 sensors, so here can&#39;t use(4,3), just use (2,3)
+# there is a debug in vesion 0.30, now, new version 0.33 had correct it!!
+module = ActionValueNetwork(4,3)  #(4,3) #  0.33 had correct it
+#module = ActionValueLSTMNetwork(2,3)
+
+task = DiscreteBalanceTask(env, 100)
+learner = NFQ()
+learner.explorer.epsilon = 0.4
+
+agent = LearningAgent(module, learner)
+testagent = LearningAgent(module, None)
+experiment = EpisodicExperiment(task, agent)
+
+
+def plotPerformance(values, fig):
+    plt.figure(fig.number)
+    plt.clf()
+    plt.plot(values, &#39;o-&#39;)
+    plt.gcf().canvas.draw()
+
+
+performance = []
+
+if not render:
+    pf_fig = plt.figure()
+
+#while (True):
+for _ in xrange(60): #60
+    # one learning step after one episode of world-interaction!!!
+    experiment.doEpisodes(1)
+    agent.learn(2)  # 5
+
+    # test performance (these real-world experiences are not used for training)
+    if render:
+        env.delay = True
+    experiment.agent = testagent
+    #r = mean([sum(x) for x in experiment.doEpisodes(5)])
+    env.delay = False
+    testagent.reset()
+    experiment.agent = agent
+
+    #performance.append(r)
+    print &amp;quot;update step&amp;quot;, len(performance)
+
+    #print &amp;quot;reward avg&amp;quot;, r
+    print &amp;quot;explorer epsilon&amp;quot;, learner.explorer.epsilon
+    print &amp;quot;num episodes&amp;quot;, agent.history.getNumSequences()
+    print &amp;quot;update step&amp;quot;, len(performance)
+
+if not render:
+    plotPerformance(performance, pf_fig)
+
+str = raw_input(&amp;quot;please input sth to end!&amp;quot;)
+print &amp;quot;you put :&amp;quot;,str
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;experiment.doEpisodes(1)
+&lt;img src=&#34;http://i.imgur.com/Un1ow9B.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;agent.learn(2)
+&lt;img src=&#34;http://i.imgur.com/TQ2YO9y.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;图2的注释2部分，可以参考该博文&lt;a href=&#34;http://lamda.nju.edu.cn/yangjw/project/drlintro.html&#34;&gt;深度强化学习初探&lt;/a&gt; ,但是他文中的公式应该有点问题。应该把Qm+1改为Qm，进一步参考维基百科&lt;a href=&#34;https://en.wikipedia.org/wiki/Q-learning&#34;&gt;Q-learning&lt;/a&gt; ,如下所示。&lt;/p&gt;
+
+&lt;p&gt;Qm+1(st,at)=Qm(st,at)+α[rt+1+γQm(st+1,at+1)−Qm(st,at)]&lt;/p&gt;
+
+&lt;p&gt;推荐所用的画图软件&lt;a href=&#34;https://www.processon.com/i/56873407e4b0b5afb309e00c&#34;&gt;process on&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;用起来挺方便的，在线用谷歌浏览器运行，用户体验挺佳，比visio2010快多了；&lt;/li&gt;
+&lt;li&gt;可以多用户协作；&lt;/li&gt;
+&lt;li&gt;目前有一个缺点就是一个框里面的字体格式必须是一样的，不可以修改一个框里面部分的文字的格式。有点类似PS的思想。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>spss v21.0 使用笔记</title>
+      <link>https://tmhm.github.io/2016/05/14/spss-v21.0-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sat, 14 May 2016 14:50:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/05/14/spss-v21.0-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
+      <description>
+
+&lt;p&gt;有问题，戳&lt;a href=&#34;http://www.ibm.com/support/knowledgecenter/SSLVMB_23.0.0/spss/base/chart_creation_dualy.dita?lang=zh&#34;&gt;官方帮助文档&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;神经网络&#34;&gt;神经网络&lt;/h4&gt;
+
+&lt;p&gt;&lt;em&gt;分析-神经网络-多层感知机&lt;/em&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;变量&#34;&gt;变量。&lt;/h5&gt;
+
+&lt;p&gt;&lt;em&gt;分析-神经网络-多层感知机-变量&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;预测变量可指定为因子（分类）或协变量（刻度）。&lt;/li&gt;
+&lt;li&gt;在因变量框输入&lt;strong&gt;预测Y&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;因子框 必须是&lt;strong&gt;分类的数据&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;协变量允许各种类型的数据&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;频率分析&#34;&gt;频率分析&lt;/h4&gt;
+
+&lt;p&gt;&lt;em&gt;分析-描述统计-频率&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在统计量里面可以添加选择中位数、众数等&lt;/li&gt;
+&lt;li&gt;在图表选项可以添加直方图等&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;画图&#34;&gt;画图&lt;/h4&gt;
+
+&lt;p&gt;&lt;em&gt;图形-旧对话框-&amp;gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;画双y轴图&#34;&gt;画双y轴图&lt;/h4&gt;
+
+&lt;p&gt;&lt;em&gt;图形-图表构建程序- 在选择范围框里面选：双轴&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>强化学习之路（0）</title>
+      <link>https://tmhm.github.io/2016/03/31/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF0/</link>
+      <pubDate>Thu, 31 Mar 2016 08:18:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/03/31/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF0/</guid>
+      <description>
+
+&lt;p&gt;开始接触强化学习是在回到所里开始找课题研究方向的时候，偶然查到&lt;a href=&#34;http://news.berkeley.edu/2015/05/21/deep-learning-robot-masters-skills-via-trial-and-error/&#34;&gt;伯克利的机器人视频&lt;/a&gt;,给我比较惊艳的感觉。陆续开始查找强化学习的一些资料。最近看到一篇有关强化学习的&lt;a href=&#34;http://blog.exbot.net/archives/223&#34;&gt;博文&lt;/a&gt;，瞬时，想把自己接触到强化学习的过程也做一个简单梳理，为接下来准备在强化学习方向完成毕业论文做一个初略安排。&lt;/p&gt;
+
+&lt;h5 id=&#34;有关强化学习的资料&#34;&gt;有关强化学习的资料：&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Tom M. Mitchell的《机器学习》最后一章讲reinforcement learning，算是入门&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www.andrewng.org/&#34;&gt;吴恩达&lt;/a&gt;公开课中的强化学习部分，他们&lt;a href=&#34;http://heli.stanford.edu/&#34;&gt;自动直升机实验室&lt;/a&gt;做的项目。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;吴恩达的博士生&lt;a href=&#34;http://www.cs.berkeley.edu/~pabbeel/&#34;&gt;Pieter Abbeel&lt;/a&gt;(现任教于伯克利，上面的机器人即是他们实验室)，他的博士论文Apprenticeship Learning and Reinforcement Learning with Application to Robotic Control值得一看,还有其在伯克利的&lt;a href=&#34;http://rll.berkeley.edu/deeprlcourse/&#34;&gt;DRL课程&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://webdocs.cs.ualberta.ca/~sutton/index.html&#34;&gt;Richard S.Sutton&lt;/a&gt; and &lt;a href=&#34;http://www-anw.cs.umass.edu/~barto/&#34;&gt;Andrew G.Barto&lt;/a&gt;的RL的经典之作&lt;a href=&#34;http://webdocs.cs.ualberta.ca/~sutton/book/the-book.html&#34;&gt;Reinforcement Learning: An Introduction&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Marco Wiering Martijn van Otterlo (Eds.)写的 Reinforcement Learning State-Of-the-Art&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;2015 nature上的 一篇关于 reinforcement learning 的综述: &lt;a href=&#34;http://valser.org/thread-246-1-1.html&#34;&gt;Reinforcement learning improves behaviour from evaluative feedback（Michael L. Littman）&lt;/a&gt;（链接还包括2015年机器学习专栏其他5篇综述，如下：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Machine intelligence  （Tanguy Chouard &amp;amp; Liesbeth Venema）&lt;/li&gt;
+&lt;li&gt;Deep learning（Yann LeCun, Yoshua Bengio &amp;amp; Geoffrey Hinton）&lt;/li&gt;
+&lt;li&gt;Reinforcement learning improves behaviour from evaluative feedback
+（Michael L. Littman）&lt;/li&gt;
+&lt;li&gt;Probabilistic machine learning and artificial intelligence（Zoubin Ghahramani）&lt;/li&gt;
+&lt;li&gt;Science, technology and the future of small autonomous drone（Dario Floreano &amp;amp; Robert J. Wood）&lt;/li&gt;
+&lt;li&gt;Design, fabrication and control of soft robots（Daniela Rus &amp;amp; Michael T. Tolley）&lt;/li&gt;
+&lt;li&gt;From evolutionary computation to the evolution of things（Agoston E. Eiben &amp;amp; Jim Smith）&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;应该关注的实验室&#34;&gt;应该关注的实验室：&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cs.york.ac.uk/rl/research.php&#34;&gt;Knowledge-Based Reinforcement Learning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;MIT飞行控制实验室&lt;a href=&#34;http://acl.mit.edu/projects/iFDD.htm&#34;&gt;Scaling Reinforcement Learning Methods by Incremental Feature Dependency Discovery&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.cs.colostate.edu/~anderson/res/rl/&#34;&gt;Reinforcement Learning and Control&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;代码工具框架&#34;&gt;代码工具框架:&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;最近找到一个&lt;a href=&#34;http://pybrain.org/&#34;&gt;PyBrain&lt;/a&gt;的python开源库，不错,准备前期就用它了&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;看&lt;a href=&#34;http://www.cs.berkeley.edu/~pabbeel/&#34;&gt;Pieter Abbeel&lt;/a&gt;视频中提到的，他们的库&lt;a href=&#34;http://rll.berkeley.edu/cgt/&#34;&gt;Computation Graph Toolkit&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;RL-Glue framework&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;网友提到的：
+    * ROS的RL
+    * 其他：
+            * &lt;a href=&#34;http://www.cse.unsw.edu.au/~cs9417ml/RL1/sourcecode.html&#34;&gt;http://www.cse.unsw.edu.au/~cs9417ml/RL1/sourcecode.html&lt;/a&gt;
+            * &lt;a href=&#34;http://www.igi.tugraz.at/ril-toolbox/links/&#34;&gt;http://www.igi.tugraz.at/ril-toolbox/links/&lt;/a&gt;
+            * &lt;a href=&#34;http://en.wikipedia.org/wiki/Reinforcement_learning&#34;&gt;http://en.wikipedia.org/wiki/Reinforcement_learning&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;一些相关会议&#34;&gt;一些相关会议：&lt;/h5&gt;
+
+&lt;p&gt;&lt;em&gt;(from reinforcement learning State of the art)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;A large portion of papers appears every year (or two year) at the established top conferences&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;artificial intelligence, such as IJCAI, ECAI and AAAI&lt;/li&gt;
+&lt;li&gt;top conferences with a particular focus on statistical machine learning , such as UAI, ICML, ECML and NIPS.&lt;/li&gt;
+&lt;li&gt;In addition, conferences on artificial life (Alife), adaptive behavior
+(SAB), robotics (ICRA, IROS, RSS) and neural networks and evolutionary computation(e.g. IJCNN and ICANN) feature much reinforcement learning work.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;workshop:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The European workshop on reinforcement learning (EWRL)&lt;/li&gt;
+&lt;li&gt;IEEE Symposium on Adaptive Dynamic Programming and Reinforcement Learning (ADPRL)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;competitions:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.rl-competition.org/&#34;&gt;RL-Competition&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to install torcs package in Debian</title>
+      <link>https://tmhm.github.io/2016/03/08/how-to-install-torcs-package-in-debian/</link>
+      <pubDate>Tue, 08 Mar 2016 13:19:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/03/08/how-to-install-torcs-package-in-debian/</guid>
+      <description>&lt;p&gt;&lt;h3&gt;Installation instructions&lt;/h3&gt;
+&lt;p&gt;Installing torcs package in Debian Wheezy is as easy as running:&lt;/p&gt;
+&lt;p&gt;没想到在debian上安装TORCS，如此简单：一句命令，所有的依赖全装好了！nice～&lt;/p&gt;
+&lt;div class=&#34;cnblogs_code&#34;&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201603/781469-20160308213204257-180526658.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>torcs代码</title>
+      <link>https://tmhm.github.io/2016/01/06/torcs%E4%BB%A3%E7%A0%81/</link>
+      <pubDate>Wed, 06 Jan 2016 11:10:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/01/06/torcs%E4%BB%A3%E7%A0%81/</guid>
+      <description>&lt;pre&gt;&lt;code&gt;/** Info returned by driver during the race */
+typedef struct {
+    tdble   steer;      /**&amp;lt; Steer command [-1.0, 1.0]  */
+    tdble   accelCmd;   /**&amp;lt; Accelerator command [0.0, 1.0] */
+    tdble   brakeCmd;   /**&amp;lt; Brake command [0.0, 1.0] */
+    tdble   clutchCmd;  /**&amp;lt; Clutch command [0.0, 1.0] */
+    int     gear;       /**&amp;lt; [-1,6] for gear selection */
+    int     raceCmd;    /**&amp;lt; command issued by the driver */
+#define RM_CMD_NONE     0   /**&amp;lt; No race command */
+#define RM_CMD_PIT_ASKED    1   /**&amp;lt; Race command: Pit asked */
+    char    msg[4][32];     /**&amp;lt; 4 lines of 31 characters 0-1 from car 2-3 from race engine */
+#define RM_MSG_LEN  31
+    float   msgColor[4]; /**&amp;lt; RGBA of text */
+    int     lightCmd;    /**&amp;lt; Lights command */
+#define RM_LIGHT_HEAD1      0x00000001  /**&amp;lt; head light 1 */
+#define RM_LIGHT_HEAD2      0x00000002  /**&amp;lt; head light 2 */
+} tCarCtrl;
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>流形学习笔记</title>
+      <link>https://tmhm.github.io/2015/09/18/%E6%B5%81%E5%BD%A2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Fri, 18 Sep 2015 14:50:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2015/09/18/%E6%B5%81%E5%BD%A2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description>&lt;p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;维数约简&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;特征选择，依据某一标准选择性质最突出的特征&lt;/li&gt;
+&lt;li&gt;特征抽取，经已有特征的某种变换获取约简特征&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;增加特征数：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;可以增加信息量，进而提高准确度&lt;/li&gt;
+&lt;li&gt;增加训练分类器的难度，进而带来维数灾难。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;解决办法：&lt;/p&gt;
+&lt;p&gt;　　选取尽可能多的、可能有用的特征，然后根据需要进行特征约简。&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;主成分分析（PCA）&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong style=&#34;line-height: 1.5;&#34;&gt;&lt;img style=&#34;display: block; margin-left: auto; margin-right: auto;&#34; src=&#34;http://images2015.cnblogs.com/blog/781469/201509/781469-20150918214617414-906516153.png&#34; alt=&#34;&#34; /&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;目的：&lt;/p&gt;
+&lt;p&gt;　　寻找能够表示采样数据的最好投影子空间。&lt;/p&gt;
+&lt;p&gt;求解：&lt;/p&gt;
+&lt;p&gt;　　对样本的散布矩阵（scatter matrix）进行特征值分解，所求之空间为过样本均值，（何为过样本均值？）&lt;/p&gt;
+&lt;p&gt;以最大特征值所对应的特征向量为方向的之空间。&lt;/p&gt;
+&lt;p&gt;特点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;对椭球状分布的样本集具有很好的效果，理论上，学习到的主方向就是椭圆的主轴方向。&lt;/li&gt;
+&lt;li&gt;非监督学习算法，能找到很好地代表所有样本的方向，但是，对于分类未必是最有利的，如下图：　　&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img style=&#34;display: block; margin-left: auto; margin-right: auto;&#34; src=&#34;http://images2015.cnblogs.com/blog/781469/201509/781469-20150918215131414-1106255874.png&#34; alt=&#34;&#34; width=&#34;451&#34; height=&#34;260&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;线性判别分析（LDA）&lt;/p&gt;
+&lt;p&gt;思想：&lt;/p&gt;
+&lt;p&gt;　　寻找最能把两类样本分开的投影直线&lt;/p&gt;
+&lt;p&gt;特点：&lt;/p&gt;
+&lt;p&gt;　　监督的维数约简&lt;/p&gt;
+&lt;p&gt;目标：&lt;/p&gt;
+&lt;p&gt;　　是投影后两类样本的均值之差与投影样本的总类散步的比值最大。&lt;/p&gt;
+&lt;p&gt;&amp;lt;img style=&amp;laquo;display: block; margin-left: auto; margin-right: auto;&amp;raquo; src=&amp;laquo;&lt;a href=&#34;http://images2015.cnblogs.com/blog/781469/201509/781469-20150918215637336-153&#34;&gt;http://images2015.cnblogs.com/blog/781469/201509/781469-20150918215637336-153&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;求解：&lt;/p&gt;
+
+&lt;p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;多重判别分析（MDA）&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;　　LDA往多类情况的推广&lt;/p&gt;
+&lt;p&gt;　　解法与LDA类似，对于C－类问题，把样本投影到C－１维之空间。&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;线性方法的缺点：&lt;/p&gt;
+&lt;p&gt;线性方法对于某些数据不能进行有效的处理，这类数据，在现实中，往往很多。比如下图：&lt;/p&gt;
+&lt;p&gt;&lt;img style=&#34;display: block; margin-left: auto; margin-right: auto;&#34; src=&#34;http://images2015.cnblogs.com/blog/781469/201509/781469-20150918220506773-237605601.jpg&#34; alt=&#34;&#34; width=&#34;389&#34; height=&#34;292&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;另外，现实中的数据往往并不是特征的线性组合。&lt;/p&gt;
+&lt;p&gt;比如　paper：A Global Geometric Framework　for Nonlinear Dimensionality　Reduction　所提到的人脸模型&lt;/p&gt;
+
+&lt;p&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;流形学习&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;是线性之空间的一种非线性推广；&lt;/li&gt;
+&lt;li&gt;一种局部可坐标话的拓扑空间结构；&lt;/li&gt;
+&lt;li&gt;一种非线性额维数约简方法。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;基本思想：&lt;/p&gt;
+&lt;p&gt;　　高维观测空间中的点是由少数独立变量的共同作用在观测空间张成一个流形，如果能有效地展开观测空间卷曲的流形或者发现其内在的主要变量，就可以对该数据集进行降维。&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;可行性分析：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;许多高维采样数据都是由少数几个隐含变量所决定的, 如人脸采样由光线亮度, 人离相机的距离, 人的头部姿势, 人的脸部肌肉等因素决定；&lt;/li&gt;
+&lt;li&gt;从认知心理学的角度来看, 心理学家认为人的认知过程是基于认知流形和拓扑连续性的。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;几种经典的流形学习方法：&lt;/p&gt;
+&lt;p&gt;　　局部线性嵌入（LLE）　Nonlinear dimensionality reduction by locally linear embedding. Science&lt;/p&gt;
+&lt;p&gt;　　等距映射（IsoMap）A global geometric framework for nonlinear dimensionality reduction. Science,&lt;/p&gt;
+&lt;p&gt;　　拉普拉斯特征映射（Laplacian　Eigenmap）Laplacian Eigenmaps for Dimensionality Reduction and Data Representation. Neural Computation,&lt;/p&gt;
+
+&lt;p&gt;&lt;p&gt;参考：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;自动化所　流形学习　课件。&lt;/li&gt;
+&lt;li&gt;paper：A Global Geometric Framework　for Nonlinear Dimensionality　Reduction，　ｓｃｉｅｎｃｅ，２０００&lt;/li&gt;
+&lt;/ol&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

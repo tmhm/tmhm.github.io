@@ -9,77 +9,71 @@
     <managingEditor>wells217@163.com (Well)</managingEditor>
     <webMaster>wells217@163.com (Well)</webMaster>
     <copyright>(c) 2017 Well.</copyright>
-    <lastBuildDate>Mon, 27 Feb 2017 13:55:22 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 08 Aug 2016 09:13:00 +0000</lastBuildDate>
     <atom:link href="https://tmhm.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Hugo在Ubuntu14.04系统下的配置 </title>
-      <link>https://tmhm.github.io/2017/02/27/hugo%E5%9C%A8ubuntu14.04%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E9%85%8D%E7%BD%AE/</link>
-      <pubDate>Mon, 27 Feb 2017 13:55:22 +0800</pubDate>
+      <title>git的使用</title>
+      <link>https://tmhm.github.io/2016/08/08/git%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Mon, 08 Aug 2016 09:13:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2017/02/27/hugo%E5%9C%A8ubuntu14.04%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://tmhm.github.io/2016/08/08/git%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
       <description>
 
-&lt;h3 id=&#34;安装hugo:f3924a03658d093f4458df00ee75a55f&#34;&gt;安装Hugo&lt;/h3&gt;
+&lt;h5 id=&#34;1-创建ssh-key&#34;&gt;1.创建SSH Key&lt;/h5&gt;
 
-&lt;p&gt;Ubuntu14.04 下面直接用apt-get安装貌似不行，参考&lt;a href=&#34;https://vexxhost.com/resources/tutorials/how-to-install-and-use-hugo-the-static-site-generator-on-ubuntu-14-04/&#34;&gt;博主&lt;/a&gt;,直接下载源文件安装：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ssh-keygen -t rsa -C &amp;quot;5733*****@qq.com&amp;quot;
+&lt;/code&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;wget https://github.com/spf13/hugo/releases/download/v0.15/hugo_0.15_amd64.deb
+&lt;p&gt;在主用户目录下生成 &lt;em&gt;.ssh&lt;/em&gt; 文件夹，该目录下有 &lt;em&gt;id_rsa&lt;/em&gt; 和 &lt;em&gt;id_rsa.pub&lt;/em&gt; 两个文件。&lt;/p&gt;
 
-sudo dpkg -i hugo_0.15_amd64.deb
+&lt;p&gt;&lt;em&gt;id_rsa&lt;/em&gt; 是私钥， &lt;em&gt;id_rsa.pub&lt;/em&gt; 是公钥&lt;/p&gt;
+
+&lt;h5 id=&#34;2-add-ssh-key&#34;&gt;2.Add SSH Key&lt;/h5&gt;
+
+&lt;p&gt;登陆GitHub，打开 Account settings &amp;ndash;&amp;gt; SSH and GPG Keys页面：Add SSH Key, 填上Title， 在Key文本框粘贴&lt;em&gt;id_rsa.pub&lt;/em&gt; 的内容。&lt;/p&gt;
+
+&lt;h5 id=&#34;3-在远程服务器初始化仓库-swrd&#34;&gt;3.在远程服务器初始化仓库 swrd&lt;/h5&gt;
+
+&lt;p&gt;之后它会给出如下提示：&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;or create a new repository on the command line&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;echo &amp;quot;# swrd&amp;quot; &amp;gt;&amp;gt; README.md
+git init
+git add README.md
+git commit -m &amp;quot;first commit&amp;quot;
+git remote add origin git@github.com:tmhm/swrd.git
+git push -u origin master
+
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;即可，测试一下版本&lt;code&gt;hugo version&lt;/code&gt;，成功输出版本号即安装成功。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;or push an existing repository from the command line&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;安装markdown编辑工具-remarkable:f3924a03658d093f4458df00ee75a55f&#34;&gt;安装Markdown编辑工具（remarkable）&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;从&lt;a href=&#34;http://locez.com/translation/best-markdown-editors-for-linux/&#34;&gt;此篇文章&lt;/a&gt;了解到 Remarkable，貌似apt-get也木有直接安装的，于是在&lt;a href=&#34;https://remarkableapp.github.io/linux/download.html&#34;&gt;官网&lt;/a&gt;下载.deb文件；&lt;/li&gt;
-&lt;li&gt;按照Hugo类似的命令&lt;code&gt;sudo dpkg -i ****.deb&lt;/code&gt;安装之。&lt;/li&gt;
-&lt;li&gt;可以在终端直接用命令&lt;code&gt;remarkable&lt;/code&gt; 打开.md文件&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;安装搜狗输入法for-linux:f3924a03658d093f4458df00ee75a55f&#34;&gt;安装搜狗输入法for Linux&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://pinyin.sogou.com/linux/help.php&#34;&gt;搜狗输入法官网&lt;/a&gt;下载安装文件；&lt;/li&gt;
-&lt;li&gt;双击直接跳出更新管理器安装之；&lt;/li&gt;
-&lt;li&gt;安装后，需要在语言支持里面，keyboard input method system改为fcitx，此&lt;strong&gt;步骤重要&lt;/strong&gt;；&lt;/li&gt;
-&lt;li&gt;重启，输入法生效。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;配置github:f3924a03658d093f4458df00ee75a55f&#34;&gt;配置github&lt;/h3&gt;
-
-&lt;p&gt;由于hugo文件在另一台电脑已经配置好config.toml文件，所以只需要将整个文件夹copy过来，配置好Ubuntu本地的github即可&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git init
-git add -A
-git commit -m &amp;quot;first commit&amp;quot;
-git remote add origin git@github.com:tmhm/blog_well.git
+&lt;pre&gt;&lt;code&gt;git remote add origin git@github.com:tmhm/swrd.git
 git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;hugo-命令note:f3924a03658d093f4458df00ee75a55f&#34;&gt;Hugo 命令Note&lt;/h3&gt;
+&lt;h5 id=&#34;4-在本地-git-init并连接远程&#34;&gt;4.在本地 git init并连接远程&lt;/h5&gt;
 
-&lt;pre&gt;&lt;code&gt;本地服务器，看样式：
-hugo server --baseURL=http://127.0.0.1:1313/ -t hyde-y -D --bind=&amp;quot;0.0.0.0&amp;quot;
-
-在myblog根目录执行，生成静态网页，生成文件放在public文件夹：  
-
-hugo -t hyde-y --baseURL &amp;quot;https://tmhm.github.io/&amp;quot; -D
-
-生成新文件：
-hugo new post/second.md
+&lt;pre&gt;&lt;code&gt;git init
+git add --all
+git commit -m &amp;quot;init commit&amp;quot;
+git remote add origin git@github.com:tmhm/swrd.git
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;写blog操作步骤:f3924a03658d093f4458df00ee75a55f&#34;&gt;写blog操作步骤&lt;/h3&gt;
+&lt;h5 id=&#34;5-push-到远程&#34;&gt;5.push 到远程&lt;/h5&gt;
 
-&lt;ol&gt;
-&lt;li&gt;用hugo new 生成新文件test.md；&lt;/li&gt;
-&lt;li&gt;编辑my_blog/content/post/test.md，添加各种属性内容，用单引号‘’；&lt;/li&gt;
-&lt;li&gt;在本地服务器打开的状态下，是可以实时的看到网页的变化的，若满足要求，用hugo -t hyde-y &amp;ndash;baseURL &amp;laquo;https://****.github.io/&amp;raquo; -D生成静态网页，然后在public目录下面再用git命令：add，commit，push 到 ****.github.io/仓库，现在既可以在玩个上看到新的内容了。&lt;/li&gt;
-&lt;li&gt;cd 到上一目录my_blog/, 在此也可以将源文件放到一个仓库。&lt;/li&gt;
-&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;git push -u origin master
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;gitingore文件&#34;&gt;.gitingore文件&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;不想把所有的文件都track到远程库，可以通过添加.gitignore文件忽略（全局有效，可以忽略文件本身）&lt;/li&gt;
+&lt;li&gt;或者通过vi ./.git/info/exclude（只在本地库有效，他不会影响到其他人。也不会提交到版本库中去 ）&lt;/li&gt;
+&lt;li&gt;参考github的轮子： &lt;a href=&#34;https://github.com/github/gitignore&#34;&gt;https://github.com/github/gitignore&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
