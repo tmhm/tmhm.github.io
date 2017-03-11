@@ -20,11 +20,11 @@
       <guid>https://tmhm.github.io/2016/08/30/%E6%95%B0%E5%AD%A6%E9%9A%8F%E8%AE%B0%E8%BD%AC/</guid>
       <description>
 
-&lt;h3 id=&#34;数学随记:f15f8ddb13e5e15f5ca6ebf995658e96&#34;&gt;数学随记&lt;/h3&gt;
+&lt;h3 id=&#34;数学随记&#34;&gt;数学随记&lt;/h3&gt;
 
 &lt;p&gt;转载自：&lt;a href=&#34;http://www.matrix67.com/blog/archives/4294&#34;&gt;随记：我们需要怎样的数学教育？&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;虚数i:f15f8ddb13e5e15f5ca6ebf995658e96&#34;&gt;虚数i&lt;/h3&gt;
+&lt;h3 id=&#34;虚数i&#34;&gt;虚数i&lt;/h3&gt;
 
 &lt;p&gt;虚数是什么？&lt;/p&gt;
 
@@ -40,7 +40,7 @@
 
 &lt;p&gt;没错，这就把数轴扩展到了整个平面，正好解决了复数没地方表示的问题。于是，复数的乘法可以解释为缩放加旋转，复数本身自然也就有了 z = r (cosθ + sinθi) 的表示方式。顺着这个道理推下去，一切都顺理成章了。复数不但有了几何解释，有时还能更便捷地处理几何问题&lt;/p&gt;
 
-&lt;h2 id=&#34;线性代数:f15f8ddb13e5e15f5ca6ebf995658e96&#34;&gt;线性代数&lt;/h2&gt;
+&lt;h2 id=&#34;线性代数&#34;&gt;线性代数&lt;/h2&gt;
 
 &lt;p&gt;此处&lt;a href=&#34;http://mathoverflow.net/questions/7584/what-are-the-most-misleading-alternate-definitions-in-taught-mathematics&#34;&gt;网页&lt;/a&gt;，有人一语道破线性代数的真谛。
 就好像把 x 变成 2 x 一样，我们经常需要把 (x, y) 变成 (2 x + y, x – 3 y) 之类的东西，这就叫做线性变换。&lt;/p&gt;

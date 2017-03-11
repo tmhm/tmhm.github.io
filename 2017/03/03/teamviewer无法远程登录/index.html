@@ -53,7 +53,7 @@
     },
     "datePublished": "2017-03-03",
     "description": "win10 升级后，Teamviewer无法远程登录账户，防火墙已关闭，无人值守访问不了",
-    "wordCount":  8 
+    "wordCount":  10 
   }
 </script>
 
@@ -184,7 +184,7 @@
 
   
   &middot; Read in about 1 min
-  &middot; (8 Words)
+  &middot; (10 Words)
   <br>
   
 
@@ -232,6 +232,12 @@
 
 <p><img src="/images/无人值守访问.jpg" alt="" title="示图" />
 <img src="/images/授权轻松访问.jpg" alt="" /></p>
+
+<p>重点应该在于开启<strong>授权轻松访问</strong>，而跟windows登录的关系不在于此处。如图</p>
+
+<p><img src="/images/teamviewer配置原因.jpg" alt="" /></p>
+
+<p>当主机重启之后，Teamviewer的授权轻松访问的钩被去掉了，所以远程不能登录主机，即当主机锁屏的时候，Teamviewer可以连接到主机，但是远程不能登录主机账号。</p>
 
 </div>
 

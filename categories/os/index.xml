@@ -261,7 +261,7 @@ Linux ubuntu 3.13.0-24-generic #46-Ubuntu SMP Thu Apr 10 19:11:08 UTC 2014 x86_6
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;脚本的执行:c5abba0e23a7a162976717fee4dc4fc9&#34;&gt;脚本的执行&lt;/h4&gt;
+&lt;h4 id=&#34;脚本的执行&#34;&gt;脚本的执行&lt;/h4&gt;
 
 &lt;p&gt;&lt;div class=&#34;cnblogs_code&#34;&gt;
 &lt;pre&gt;&lt;span style=&#34;color: #000000;&#34;&gt;$ vi test.sh
@@ -303,7 +303,7 @@ $ .&lt;/span&gt;/&lt;span style=&#34;color: #000000;&#34;&gt;test.sh  #在一个
       <guid>https://tmhm.github.io/2016/03/08/debian%E5%88%9D%E8%AF%86%E9%80%89%E6%8B%A9%E6%9C%80%E4%BD%B3%E9%95%9C%E5%83%8F%E5%8F%91%E5%B8%83%E7%AB%99%E7%82%B9%E5%8A%A0%E5%85%A5source.list%E6%96%87%E4%BB%B6/</guid>
       <description>
 
-&lt;h4 id=&#34;选择最佳镜像发布站点加入source-list文件-netselect-netselect-apt&#34;&gt;选择最佳镜像发布站点加入source.list文件：netselect，netselect-apt&lt;/h4&gt;
+&lt;h4 id=&#34;选择最佳镜像发布站点加入source-list文件-netselect-netselect-apt:b791b82c299c95c84172ca2fade3d33a&#34;&gt;选择最佳镜像发布站点加入source.list文件：netselect，netselect-apt&lt;/h4&gt;
 
 &lt;p&gt;该将哪个Debian镜像发布站点加入&lt;samp&gt;source.list&lt;/samp&gt;文件？&amp;rdquo;。有很多方法来选择镜像发布站点，专家们可能会写一个脚本去测试 不同站点的ping时间。不过其实有一个程序可以帮你：&amp;nbsp;&lt;strong&gt;netselect&lt;/strong&gt;。&lt;/p&gt;
 

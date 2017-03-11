@@ -13,18 +13,18 @@
     <atom:link href="https://tmhm.github.io/categories/tools/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Teamviewer无法远程登录</title>
-      <link>https://tmhm.github.io/2017/03/03/teamviewer%E6%97%A0%E6%B3%95%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</link>
+      <title>Teamviewer无法远程登录主机用户</title>
+      <link>https://tmhm.github.io/2017/03/03/teamviewer%E6%97%A0%E6%B3%95%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E4%B8%BB%E6%9C%BA%E7%94%A8%E6%88%B7/</link>
       <pubDate>Fri, 03 Mar 2017 12:05:02 +0800</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2017/03/03/teamviewer%E6%97%A0%E6%B3%95%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</guid>
+      <guid>https://tmhm.github.io/2017/03/03/teamviewer%E6%97%A0%E6%B3%95%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E4%B8%BB%E6%9C%BA%E7%94%A8%E6%88%B7/</guid>
       <description>
 
-&lt;h3 id=&#34;问题描述&#34;&gt;问题描述&lt;/h3&gt;
+&lt;h3 id=&#34;问题描述:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;问题描述&lt;/h3&gt;
 
-&lt;p&gt;win10 升级后，Teamviewer无法远程登录账户，防火墙已关闭，无人值守访问不了&lt;/p&gt;
+&lt;p&gt;win10 升级后，主机在锁屏状态下，Teamviewer无法远程登录账户，防火墙已关闭，无人值守访问不了&lt;/p&gt;
 
-&lt;h3 id=&#34;解决方式&#34;&gt;解决方式：&lt;/h3&gt;
+&lt;h3 id=&#34;解决方式:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;解决方式：&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;注意主从机的版本一致&lt;/li&gt;
@@ -32,8 +32,35 @@
 &lt;li&gt;重装，装的时候开启无人值守，轻松访问，即帮你自动设置好了。如下示图。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://tmhm.github.io/images/无人值守访问.jpg&#34; alt=&#34;&#34; title=&#34;示图&#34; /&gt;
-&lt;img src=&#34;https://tmhm.github.io/images/授权轻松访问.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://tmhm.github.io/images/无人值守访问.jpg&#34; alt=&#34;&#34; title=&#34;示图1&#34; /&gt;
+&lt;img src=&#34;https://tmhm.github.io/images/授权轻松访问.jpg&#34; alt=&#34;&#34; title=&#34;示图2&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;问题并未终结:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;问题并未终结&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;当主机重启之后，Teamviewer的授权轻松访问的钩被去掉了，所以远程不能登录主机，即当主机锁屏的时候，Teamviewer可以连接到主机，但是远程不能登录主机账号。&lt;/li&gt;
+&lt;li&gt;重点应该在于开启&lt;strong&gt;授权轻松访问&lt;/strong&gt;，而跟windows登录的关系不在于此处。如图&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tmhm.github.io/images/teamviewer配置原因.jpg&#34; alt=&#34;&#34; title=&#34;示图3&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;尝试方案:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;尝试方案&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;不能直接勾选【授权轻松访问】选项，显示需要管理员登录，于是设置程序的【兼容性】属性，“以管理员身份运行程序”。&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;并且勾选了随计算机开机启动，总是不能自动启动，可能是win10的安全配置所致，于是手动加入启动项：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Win+R打开运行程序，运行&lt;code&gt;shell:startup&lt;/code&gt;，&lt;/li&gt;
+&lt;li&gt;将teamviewer的快捷方式，拉入该文件目录。&lt;/li&gt;
+&lt;li&gt;手动加入启动设置完毕。然而，重启，并不能启动teamviewer12.并且&lt;strong&gt;设置里面的授权轻松访问&lt;/strong&gt;已被清零！,现在&lt;strong&gt;锁屏状态下再次不能访问登录!&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;尝试&lt;strong&gt;再次重装&lt;/strong&gt;后，在首页，将随windows 一同启动Teamviewer，分配设备，授权轻松访问全部选上，既可以在设置选项里面看到打开了授权访问。并且&lt;strong&gt;重装后的teamviewer是可以锁屏登录的！&lt;/strong&gt;，可恶的win10设置！&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;待解决:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;待解决&lt;/h3&gt;
 </description>
     </item>
     
@@ -236,7 +263,7 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 sudo chmod +x /usr/local/bin/macdown
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;设置文件默认打开方式:3a6b96174248857516852c98312790f0&#34;&gt;设置文件默认打开方式&lt;/h3&gt;
+&lt;h3 id=&#34;设置文件默认打开方式&#34;&gt;设置文件默认打开方式&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;选定文件&lt;/li&gt;
@@ -389,7 +416,7 @@ plt.savefig(&#39;./plteps.eps&#39;, format=&#39;eps&#39;, dpi=1000)
       <guid>https://tmhm.github.io/2016/08/08/git%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
       <description>
 
-&lt;h5 id=&#34;1-创建ssh-key&#34;&gt;1.创建SSH Key&lt;/h5&gt;
+&lt;h5 id=&#34;1-创建ssh-key:97f2f1754c6e43aa005550a1d94d9e6b&#34;&gt;1.创建SSH Key&lt;/h5&gt;
 
 &lt;p&gt;&lt;code&gt;ssh-keygen -t rsa -C &amp;quot;5733*****@qq.com&amp;quot;
 &lt;/code&gt;&lt;/p&gt;
@@ -398,11 +425,11 @@ plt.savefig(&#39;./plteps.eps&#39;, format=&#39;eps&#39;, dpi=1000)
 
 &lt;p&gt;&lt;em&gt;id_rsa&lt;/em&gt; 是私钥， &lt;em&gt;id_rsa.pub&lt;/em&gt; 是公钥&lt;/p&gt;
 
-&lt;h5 id=&#34;2-add-ssh-key&#34;&gt;2.Add SSH Key&lt;/h5&gt;
+&lt;h5 id=&#34;2-add-ssh-key:97f2f1754c6e43aa005550a1d94d9e6b&#34;&gt;2.Add SSH Key&lt;/h5&gt;
 
 &lt;p&gt;登陆GitHub，打开 Account settings &amp;ndash;&amp;gt; SSH and GPG Keys页面：Add SSH Key, 填上Title， 在Key文本框粘贴&lt;em&gt;id_rsa.pub&lt;/em&gt; 的内容。&lt;/p&gt;
 
-&lt;h5 id=&#34;3-在远程服务器初始化仓库-swrd&#34;&gt;3.在远程服务器初始化仓库 swrd&lt;/h5&gt;
+&lt;h5 id=&#34;3-在远程服务器初始化仓库-swrd:97f2f1754c6e43aa005550a1d94d9e6b&#34;&gt;3.在远程服务器初始化仓库 swrd&lt;/h5&gt;
 
 &lt;p&gt;之后它会给出如下提示：&lt;/p&gt;
 
@@ -423,7 +450,7 @@ git push -u origin master
 git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;4-在本地-git-init并连接远程&#34;&gt;4.在本地 git init并连接远程&lt;/h5&gt;
+&lt;h5 id=&#34;4-在本地-git-init并连接远程:97f2f1754c6e43aa005550a1d94d9e6b&#34;&gt;4.在本地 git init并连接远程&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code&gt;git init
 git add --all
@@ -431,12 +458,12 @@ git commit -m &amp;quot;init commit&amp;quot;
 git remote add origin git@github.com:tmhm/swrd.git
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;5-push-到远程&#34;&gt;5.push 到远程&lt;/h5&gt;
+&lt;h5 id=&#34;5-push-到远程:97f2f1754c6e43aa005550a1d94d9e6b&#34;&gt;5.push 到远程&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code&gt;git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;gitingore文件&#34;&gt;.gitingore文件&lt;/h5&gt;
+&lt;h5 id=&#34;gitingore文件:97f2f1754c6e43aa005550a1d94d9e6b&#34;&gt;.gitingore文件&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;不想把所有的文件都track到远程库，可以通过添加.gitignore文件忽略（全局有效，可以忽略文件本身）&lt;/li&gt;

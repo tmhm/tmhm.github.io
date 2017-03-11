@@ -44,7 +44,7 @@ struct my_struct {
 #pragma pack() //将地址对齐界线改回原来的值
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;对齐规则-参考-http-www-cnblogs-com-graphics-archive-2010-08-12-1797953-html:6e1b40b8b57ee22a0af6a446d958a932&#34;&gt;对齐规则&lt;a href=&#34;http://www.cnblogs.com/graphics/archive/2010/08/12/1797953.html&#34;&gt;参考&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;对齐规则-参考-http-www-cnblogs-com-graphics-archive-2010-08-12-1797953-html&#34;&gt;对齐规则&lt;a href=&#34;http://www.cnblogs.com/graphics/archive/2010/08/12/1797953.html&#34;&gt;参考&lt;/a&gt;&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;该博文也给出了#pragma pack(show) 和#pragma pack(num)的说明以及在VS中的设置；默认num＝8.&lt;/p&gt;
@@ -60,7 +60,7 @@ struct my_struct {
 &lt;li&gt;如果一个类型按n字节对齐，那么该类型的变量起始地址必须是n的倍数。比如int按四字节对齐，那么int类型的变量起始地址一定是4的倍数，比如0x0012ff60，0x0012ff48等。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;查看系统是多少位的:6e1b40b8b57ee22a0af6a446d958a932&#34;&gt;查看系统是多少位的&lt;/h4&gt;
+&lt;h4 id=&#34;查看系统是多少位的&#34;&gt;查看系统是多少位的&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;file /sbin/init&lt;/p&gt;
@@ -97,7 +97,7 @@ struct my_struct {
 &lt;p&gt;&lt;code&gt;Ubuntu 15.04 \n \l
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;测试数据所占字节:6e1b40b8b57ee22a0af6a446d958a932&#34;&gt;测试数据所占字节&lt;/h4&gt;
+&lt;h4 id=&#34;测试数据所占字节&#34;&gt;测试数据所占字节&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;因为在数据对齐的时候需要考虑是在什么系统下，各数据类型所占字节大小，纠正网上一些有问题的解答，比如long是只占4bits的。&lt;/p&gt;
@@ -269,7 +269,7 @@ class clt_1{
       <guid>https://tmhm.github.io/2016/06/04/%E6%AF%94%E8%BE%83%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%85%E5%90%AB%E4%BB%A5%E5%8F%8A%E5%8F%98%E4%BD%8D%E8%AF%8D/</guid>
       <description>
 
-&lt;h5 id=&#34;description&#34;&gt;Description&lt;/h5&gt;
+&lt;h5 id=&#34;description:90262507d577af3b6d8bd16478af3fcf&#34;&gt;Description&lt;/h5&gt;
 
 &lt;p&gt;Write a method anagram(s,t) to decide if two strings are anagrams or not.&lt;/p&gt;
 
@@ -279,7 +279,7 @@ class clt_1{
 &lt;li&gt;Two strings are anagram if they can be the same after change the order of characters.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;example&#34;&gt;Example&lt;/h5&gt;
+&lt;h5 id=&#34;example:90262507d577af3b6d8bd16478af3fcf&#34;&gt;Example&lt;/h5&gt;
 
 &lt;p&gt;Given s = &amp;laquo;abcd&amp;raquo;, t = &amp;laquo;dcab&amp;raquo;, return true.&lt;/p&gt;
 
@@ -287,7 +287,7 @@ class clt_1{
 
 &lt;p&gt;Given s = &amp;laquo;ab&amp;raquo;, t = &amp;laquo;ac&amp;raquo;, return false.&lt;/p&gt;
 
-&lt;h5 id=&#34;solution&#34;&gt;solution：&lt;/h5&gt;
+&lt;h5 id=&#34;solution:90262507d577af3b6d8bd16478af3fcf&#34;&gt;solution：&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code&gt;class Solution:
     &amp;quot;&amp;quot;&amp;quot;
@@ -315,9 +315,9 @@ class clt_1{
             return False
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;compare-strings&#34;&gt;Compare Strings&lt;/h4&gt;
+&lt;h4 id=&#34;compare-strings:90262507d577af3b6d8bd16478af3fcf&#34;&gt;Compare Strings&lt;/h4&gt;
 
-&lt;h5 id=&#34;description-1&#34;&gt;Description&lt;/h5&gt;
+&lt;h5 id=&#34;description-1:90262507d577af3b6d8bd16478af3fcf&#34;&gt;Description&lt;/h5&gt;
 
 &lt;p&gt;Compare two strings A and B, determine whether A contains all of the characters in B.&lt;/p&gt;
 
@@ -326,13 +326,13 @@ class clt_1{
 &lt;p&gt;&lt;strong&gt;Notice&lt;/strong&gt;
 &amp;gt;The characters of B in A are not necessary continuous or ordered.&lt;/p&gt;
 
-&lt;h5 id=&#34;example-1&#34;&gt;Example&lt;/h5&gt;
+&lt;h5 id=&#34;example-1:90262507d577af3b6d8bd16478af3fcf&#34;&gt;Example&lt;/h5&gt;
 
 &lt;p&gt;For A = &amp;laquo;ABCD&amp;raquo;, B = &amp;laquo;ACD&amp;raquo;, return true.&lt;/p&gt;
 
 &lt;p&gt;For A = &amp;laquo;ABCD&amp;raquo;, B = &amp;laquo;AABC&amp;raquo;, return false.&lt;/p&gt;
 
-&lt;h5 id=&#34;solution-1&#34;&gt;solution&lt;/h5&gt;
+&lt;h5 id=&#34;solution-1:90262507d577af3b6d8bd16478af3fcf&#34;&gt;solution&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code&gt;class Solution:
     &amp;quot;&amp;quot;&amp;quot;
@@ -443,7 +443,7 @@ class clt_1{
       <guid>https://tmhm.github.io/2016/03/24/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97/</guid>
       <description>
 
-&lt;h4 id=&#34;斐波那契数列&#34;&gt;斐波那契数列&lt;/h4&gt;
+&lt;h4 id=&#34;斐波那契数列:609be1fb4a2d7a4f7dd698e6a9c1079a&#34;&gt;斐波那契数列&lt;/h4&gt;
 
 &lt;p&gt;查找斐波纳契数列中第 N 个数。&lt;/p&gt;
 
