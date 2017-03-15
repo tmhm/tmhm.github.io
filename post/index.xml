@@ -9,8 +9,30 @@
     <managingEditor>wells217@163.com (Well)</managingEditor>
     <webMaster>wells217@163.com (Well)</webMaster>
     <copyright>(c) 2017 Well.</copyright>
-    <lastBuildDate>Fri, 03 Mar 2017 12:05:02 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 15 Mar 2017 16:38:20 +0800</lastBuildDate>
     <atom:link href="https://tmhm.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>一语未尽</title>
+      <link>https://tmhm.github.io/2017/03/15/%E4%B8%80%E8%AF%AD%E6%9C%AA%E5%B0%BD/</link>
+      <pubDate>Wed, 15 Mar 2017 16:38:20 +0800</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2017/03/15/%E4%B8%80%E8%AF%AD%E6%9C%AA%E5%B0%BD/</guid>
+      <description>&lt;p&gt;&lt;em&gt;某些言语，让人若有所思。&lt;/em&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;传奇故事有千万种，但却如此相似。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;&amp;ndash;How Google work&lt;/em&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;幸福的家庭都是相似的，不幸的家庭各有各的不幸。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;&amp;ndash;安娜·卡列尼娜&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Teamviewer无法远程登录主机用户</title>
@@ -761,7 +783,7 @@ $ sudo /etc/init.d/gdm start
 
 &lt;p&gt;升级到375版本， 还是没用，启动进入不了桌面，重复登录&lt;/p&gt;
 
-&lt;h3 id=&#34;install-driver-367-https-kusemanohar-wordpress-com-2016-07-29-gtx-1080-on-ubuntu-14-04-trusty:d68e03665ec87076c808379f00c3c33a&#34;&gt;&lt;a href=&#34;https://kusemanohar.wordpress.com/2016/07/29/gtx-1080-on-ubuntu-14-04-trusty/&#34;&gt;Install driver 367&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;install-driver-367-https-kusemanohar-wordpress-com-2016-07-29-gtx-1080-on-ubuntu-14-04-trusty&#34;&gt;&lt;a href=&#34;https://kusemanohar.wordpress.com/2016/07/29/gtx-1080-on-ubuntu-14-04-trusty/&#34;&gt;Install driver 367&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;Uninstall previous nvidia drivers.&lt;/p&gt;
 
@@ -820,7 +842,7 @@ $ sudo /etc/init.d/lightdm start
 &lt;p&gt;有人说，安装必须要在安装桌面前安装GTX 1080 driver，后面方案验证来看， 那个参数才是关键。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;解决方法:d68e03665ec87076c808379f00c3c33a&#34;&gt;解决方法&lt;/h3&gt;
+&lt;h3 id=&#34;解决方法&#34;&gt;解决方法&lt;/h3&gt;
 
 &lt;p&gt;利用sudo gedit /etc/modprobe.d/blacklist-nouveau.conf新建blacklist-nouveau.conf文件，输入命令&lt;/p&gt;
 
@@ -875,7 +897,7 @@ sudo /etc/init.d/lightdm start
 &lt;p&gt;NO
 &lt;img src=&#34;http://i.imgur.com/5DHQbMl.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;cuda8-0安装:d68e03665ec87076c808379f00c3c33a&#34;&gt;cuda8.0安装&lt;/h3&gt;
+&lt;h3 id=&#34;cuda8-0安装&#34;&gt;cuda8.0安装&lt;/h3&gt;
 
 &lt;p&gt;运行&lt;/p&gt;
 
@@ -938,7 +960,7 @@ Logfile is /tmp/cuda_install_9045.log
     
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;设置环境变量:d68e03665ec87076c808379f00c3c33a&#34;&gt;设置环境变量&lt;/h4&gt;
+&lt;h4 id=&#34;设置环境变量&#34;&gt;设置环境变量&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;export PATH=/usr/local/cuda-8.0/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
@@ -952,7 +974,7 @@ export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
 &lt;code&gt;sudo ldconfig //环境变量立即生效
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;验证-cuda:d68e03665ec87076c808379f00c3c33a&#34;&gt;验证 cuda&lt;/h4&gt;
+&lt;h4 id=&#34;验证-cuda&#34;&gt;验证 cuda&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;c302@c302-dl:~/Downloads$ nvcc -V
 nvcc: NVIDIA (R) Cuda compiler driver
@@ -961,7 +983,7 @@ Built on Sun_Sep__4_22:14:01_CDT_2016
 Cuda compilation tools, release 8.0, V8.0.44
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;测试cuda的samples:d68e03665ec87076c808379f00c3c33a&#34;&gt;测试cuda的samples&lt;/h3&gt;
+&lt;h3 id=&#34;测试cuda的samples&#34;&gt;测试cuda的samples&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;cd ‘/home/zhou/NVIDIA_CUDA-8.0_Samples’
 make  //这里需要点时间
@@ -1251,93 +1273,6 @@ sudo chmod +x /usr/local/bin/macdown
 &lt;li&gt;右击，选择显示简介&lt;/li&gt;
 &lt;li&gt;选择打开方式子选项&lt;/li&gt;
 &lt;li&gt;选择默认打开的程序，并设置全部更改。&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>生成.eps文件方法</title>
-      <link>https://tmhm.github.io/2016/10/31/%E7%94%9F%E6%88%90.eps%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/</link>
-      <pubDate>Mon, 31 Oct 2016 10:15:00 +0000</pubDate>
-      <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/10/31/%E7%94%9F%E6%88%90.eps%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/</guid>
-      <description>
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;背景：&lt;/strong&gt;
-要写论文了，图像的分辨率是一大痛点&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&#34;方法一:7fbf3a2b0b5857d5e743d063f4b00457&#34;&gt;方法一：&lt;/h3&gt;
-
-&lt;p&gt;两步生成.eps文件&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;用visio 制作图形，保存为pdf格式；&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;直接用adobe acrobat 打开pdf，然后保存为.eps 格式即可。&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;方法二:7fbf3a2b0b5857d5e743d063f4b00457&#34;&gt;方法二：&lt;/h3&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;参考：&lt;a href=&#34;http://chrisalbon.com/python/matplotlib_save_a_plot_as_vector.html&#34;&gt;Save A Matplotlib Plot As A Vector&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;可以用python直接生成.eps文件&lt;/p&gt;
-
-&lt;p&gt;plt.savefig(&amp;laquo;./plteps.eps&amp;raquo;, format=&amp;lsquo;eps&amp;rsquo;, dpi=1000)&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;有网友说，需要安装 &lt;a href=&#34;http://www.ghostscript.com/&#34;&gt;Ghostscript&lt;/a&gt;,&lt;/p&gt;
-
-&lt;p&gt;亲测，不需要&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;eg.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;import matplotlib.pyplot as plt
-from math import sin
-i = [x for x in xrange(-10,10,1)]
-j = [x**2 for x in i]
-
-plt.plot(i, j, linewidth=2.0, color=&#39;r&#39;)
-# plt.show()
-plt.savefig(&#39;./plteps.eps&#39;, format=&#39;eps&#39;, dpi=1000)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;不能打开plt.show 否则，生成不了有效的eps文件&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;注释掉show，即可以正常生成eps文件。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;note:&lt;/strong&gt;
-图形不能设置字体为Times New Roman，否则，生成不了。&lt;/p&gt;
-
-&lt;p&gt;e.g.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;font = {&#39;family&#39; : &#39;Times New Roman&#39;, #&#39;serif&#39;,
-                &#39;color&#39;  : &#39;black&#39;,
-                &#39;weight&#39; : &#39;normal&#39;,
-                &#39;size&#39;   : 35,
-                }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;截图图片转换-eps:7fbf3a2b0b5857d5e743d063f4b00457&#34;&gt;截图图片转换.eps&lt;/h3&gt;
-
-&lt;h4 id=&#34;方法1:7fbf3a2b0b5857d5e743d063f4b00457&#34;&gt;方法1&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;用FastStone capture 截图，然后直接生成pdf；&lt;/li&gt;
-&lt;li&gt;用adobe acrobat 打开pdf，然后保存为.eps 格式即可。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;方法2:7fbf3a2b0b5857d5e743d063f4b00457&#34;&gt;方法2&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;上述方法1，当图片比较大的时候，会出现生成的eps文件只有一部分，会有黑色框。&lt;/li&gt;
-&lt;li&gt;然后，尝试用jpg转eps的&lt;a href=&#34;http://www.tlhiv.org/rast2vec/&#34;&gt;在线工具&lt;/a&gt;，以及&lt;a href=&#34;http://blog.sina.com.cn/s/blog_5410e7b50101lme2.html&#34;&gt;该博文中的方法&lt;/a&gt;皆只生成部分。&lt;/li&gt;
-&lt;li&gt;可以采用corel draw 中的photo point 另存为eps 文件，即可以得到大分辨率，大张图片的eps文件了。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;NOTE：&lt;/strong&gt;从视频中截图的时候用faststone capture 截图要比视频播放软件（e.g qq影音）自带生成截图功能略差。&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
