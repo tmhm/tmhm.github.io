@@ -53,7 +53,7 @@
     },
     "datePublished": "2017-03-03",
     "description": "win10 升级后，主机在锁屏状态下，Teamviewer无法远程登录账户，防火墙已关闭，无人值守访问不了",
-    "wordCount":  164 
+    "wordCount":  180 
   }
 </script>
 
@@ -184,7 +184,7 @@
 
   
   &middot; Read in about 1 min
-  &middot; (164 Words)
+  &middot; (180 Words)
   <br>
   
 
@@ -275,7 +275,7 @@ sudo dpkg -i teamviewer_12.0.71510_i386.deb
 
 <pre><code>sudo dpkg --add-architecture i386
 sudo apt-get update
-sudo apt-get -f install
+sudo apt-get install -f
 </code></pre>
 
 <p>在虚拟机ubuntu14.04上安装之。<code>sudo dpkg -i teamviewer_12.0.71510_i386.deb
@@ -301,6 +301,14 @@ Errors were encountered while processing:
  teamviewer
 </code></pre>
 
+<p>前文稍微有点细节【补充】</p>
+
+<pre><code>sudo dpkg --add-architecture i386
+//先执行前面一句，一般会报错，报错之后再执行下面两句，安装依赖
+sudo apt-get update
+sudo apt-get install -f
+</code></pre>
+
 <p>弹出没有启动daemon服务，启动之，
 <code>sudo teamviewer --daemon start</code>， no work.</p>
 
@@ -324,6 +332,11 @@ Errors were encountered while processing:
 </code></li>
 <li>重启服务<code>sudo teamviewer --daemon start</code></li>
 </ol>
+
+<h3 id="粗暴解决:dbdaddbfc7d155c7c6060cf0bee803a5">粗暴解决</h3>
+
+<p>在一台新的win10系统下，发现teamviewer，可以重启使用，突然想起，曾经用驱动精灵和金山毒霸进行过优化，于是，卸载之，并取消他们的优化，再安装teamviewer，发现可以正常使用了。
+<strong>都是过度优化惹得祸！</strong></p>
 
 </div>
 

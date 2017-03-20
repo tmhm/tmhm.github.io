@@ -73,7 +73,7 @@ sudo dpkg -i teamviewer_12.0.71510_i386.deb
 
 &lt;pre&gt;&lt;code&gt;sudo dpkg --add-architecture i386
 sudo apt-get update
-sudo apt-get -f install
+sudo apt-get install -f
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;在虚拟机ubuntu14.04上安装之。&lt;code&gt;sudo dpkg -i teamviewer_12.0.71510_i386.deb
@@ -99,6 +99,14 @@ Errors were encountered while processing:
  teamviewer
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;前文稍微有点细节【补充】&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo dpkg --add-architecture i386
+//先执行前面一句，一般会报错，报错之后再执行下面两句，安装依赖
+sudo apt-get update
+sudo apt-get install -f
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;p&gt;弹出没有启动daemon服务，启动之，
 &lt;code&gt;sudo teamviewer --daemon start&lt;/code&gt;， no work.&lt;/p&gt;
 
@@ -122,6 +130,11 @@ Errors were encountered while processing:
 &lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;重启服务&lt;code&gt;sudo teamviewer --daemon start&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;h3 id=&#34;粗暴解决:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;粗暴解决&lt;/h3&gt;
+
+&lt;p&gt;在一台新的win10系统下，发现teamviewer，可以重启使用，突然想起，曾经用驱动精灵和金山毒霸进行过优化，于是，卸载之，并取消他们的优化，再安装teamviewer，发现可以正常使用了。
+&lt;strong&gt;都是过度优化惹得祸！&lt;/strong&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -133,7 +146,7 @@ Errors were encountered while processing:
       <guid>https://tmhm.github.io/2017/02/27/hugo%E5%9C%A8ubuntu14.04%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E9%85%8D%E7%BD%AE/</guid>
       <description>
 
-&lt;h3 id=&#34;安装hugo&#34;&gt;安装Hugo&lt;/h3&gt;
+&lt;h3 id=&#34;安装hugo:f3924a03658d093f4458df00ee75a55f&#34;&gt;安装Hugo&lt;/h3&gt;
 
 &lt;p&gt;Ubuntu14.04 下面直接用apt-get安装貌似不行，参考&lt;a href=&#34;https://vexxhost.com/resources/tutorials/how-to-install-and-use-hugo-the-static-site-generator-on-ubuntu-14-04/&#34;&gt;博主&lt;/a&gt;,直接下载源文件安装：&lt;/p&gt;
 
@@ -144,7 +157,7 @@ sudo dpkg -i hugo_0.15_amd64.deb
 
 &lt;p&gt;即可，测试一下版本&lt;code&gt;hugo version&lt;/code&gt;，成功输出版本号即安装成功。&lt;/p&gt;
 
-&lt;h3 id=&#34;安装markdown编辑工具-remarkable&#34;&gt;安装Markdown编辑工具（remarkable）&lt;/h3&gt;
+&lt;h3 id=&#34;安装markdown编辑工具-remarkable:f3924a03658d093f4458df00ee75a55f&#34;&gt;安装Markdown编辑工具（remarkable）&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;从&lt;a href=&#34;http://locez.com/translation/best-markdown-editors-for-linux/&#34;&gt;此篇文章&lt;/a&gt;了解到 Remarkable，貌似apt-get也木有直接安装的，于是在&lt;a href=&#34;https://remarkableapp.github.io/linux/download.html&#34;&gt;官网&lt;/a&gt;下载.deb文件；&lt;/li&gt;
@@ -152,7 +165,7 @@ sudo dpkg -i hugo_0.15_amd64.deb
 &lt;li&gt;可以在终端直接用命令&lt;code&gt;remarkable&lt;/code&gt; 打开.md文件&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;安装搜狗输入法for-linux&#34;&gt;安装搜狗输入法for Linux&lt;/h3&gt;
+&lt;h3 id=&#34;安装搜狗输入法for-linux:f3924a03658d093f4458df00ee75a55f&#34;&gt;安装搜狗输入法for Linux&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://pinyin.sogou.com/linux/help.php&#34;&gt;搜狗输入法官网&lt;/a&gt;下载安装文件；&lt;/li&gt;
@@ -161,7 +174,7 @@ sudo dpkg -i hugo_0.15_amd64.deb
 &lt;li&gt;重启，输入法生效。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;配置github&#34;&gt;配置github&lt;/h3&gt;
+&lt;h3 id=&#34;配置github:f3924a03658d093f4458df00ee75a55f&#34;&gt;配置github&lt;/h3&gt;
 
 &lt;p&gt;由于hugo文件在另一台电脑已经配置好config.toml文件，所以只需要将整个文件夹copy过来，配置好Ubuntu本地的github即可&lt;/p&gt;
 
@@ -172,7 +185,7 @@ git remote add origin git@github.com:tmhm/blog_well.git
 git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;hugo-命令note&#34;&gt;Hugo 命令Note&lt;/h3&gt;
+&lt;h3 id=&#34;hugo-命令note:f3924a03658d093f4458df00ee75a55f&#34;&gt;Hugo 命令Note&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;本地服务器，看样式：
 hugo server --baseURL=http://127.0.0.1:1313/ -t hyde-y -D --bind=&amp;quot;0.0.0.0&amp;quot;
@@ -185,7 +198,7 @@ hugo -t hyde-y --baseURL &amp;quot;https://tmhm.github.io/&amp;quot; -D
 hugo new post/second.md
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;写blog操作步骤&#34;&gt;写blog操作步骤&lt;/h3&gt;
+&lt;h3 id=&#34;写blog操作步骤:f3924a03658d093f4458df00ee75a55f&#34;&gt;写blog操作步骤&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;用hugo new 生成新文件test.md；&lt;/li&gt;
@@ -324,7 +337,7 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 sudo chmod +x /usr/local/bin/macdown
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;设置文件默认打开方式:3a6b96174248857516852c98312790f0&#34;&gt;设置文件默认打开方式&lt;/h3&gt;
+&lt;h3 id=&#34;设置文件默认打开方式&#34;&gt;设置文件默认打开方式&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;选定文件&lt;/li&gt;
@@ -348,7 +361,7 @@ sudo chmod +x /usr/local/bin/macdown
 要写论文了，图像的分辨率是一大痛点&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;方法一:7fbf3a2b0b5857d5e743d063f4b00457&#34;&gt;方法一：&lt;/h3&gt;
+&lt;h3 id=&#34;方法一&#34;&gt;方法一：&lt;/h3&gt;
 
 &lt;p&gt;两步生成.eps文件&lt;/p&gt;
 
@@ -358,7 +371,7 @@ sudo chmod +x /usr/local/bin/macdown
 &lt;li&gt;&lt;p&gt;直接用adobe acrobat 打开pdf，然后保存为.eps 格式即可。&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&#34;方法二:7fbf3a2b0b5857d5e743d063f4b00457&#34;&gt;方法二：&lt;/h3&gt;
+&lt;h3 id=&#34;方法二&#34;&gt;方法二：&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;参考：&lt;a href=&#34;http://chrisalbon.com/python/matplotlib_save_a_plot_as_vector.html&#34;&gt;Save A Matplotlib Plot As A Vector&lt;/a&gt;&lt;/p&gt;
@@ -402,16 +415,16 @@ plt.savefig(&#39;./plteps.eps&#39;, format=&#39;eps&#39;, dpi=1000)
                 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;截图图片转换-eps:7fbf3a2b0b5857d5e743d063f4b00457&#34;&gt;截图图片转换.eps&lt;/h3&gt;
+&lt;h3 id=&#34;截图图片转换-eps&#34;&gt;截图图片转换.eps&lt;/h3&gt;
 
-&lt;h4 id=&#34;方法1:7fbf3a2b0b5857d5e743d063f4b00457&#34;&gt;方法1&lt;/h4&gt;
+&lt;h4 id=&#34;方法1&#34;&gt;方法1&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;用FastStone capture 截图，然后直接生成pdf；&lt;/li&gt;
 &lt;li&gt;用adobe acrobat 打开pdf，然后保存为.eps 格式即可。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;方法2:7fbf3a2b0b5857d5e743d063f4b00457&#34;&gt;方法2&lt;/h4&gt;
+&lt;h4 id=&#34;方法2&#34;&gt;方法2&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;上述方法1，当图片比较大的时候，会出现生成的eps文件只有一部分，会有黑色框。&lt;/li&gt;
@@ -477,7 +490,7 @@ plt.savefig(&#39;./plteps.eps&#39;, format=&#39;eps&#39;, dpi=1000)
       <guid>https://tmhm.github.io/2016/08/08/git%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
       <description>
 
-&lt;h5 id=&#34;1-创建ssh-key&#34;&gt;1.创建SSH Key&lt;/h5&gt;
+&lt;h5 id=&#34;1-创建ssh-key:97f2f1754c6e43aa005550a1d94d9e6b&#34;&gt;1.创建SSH Key&lt;/h5&gt;
 
 &lt;p&gt;&lt;code&gt;ssh-keygen -t rsa -C &amp;quot;5733*****@qq.com&amp;quot;
 &lt;/code&gt;&lt;/p&gt;
@@ -486,11 +499,11 @@ plt.savefig(&#39;./plteps.eps&#39;, format=&#39;eps&#39;, dpi=1000)
 
 &lt;p&gt;&lt;em&gt;id_rsa&lt;/em&gt; 是私钥， &lt;em&gt;id_rsa.pub&lt;/em&gt; 是公钥&lt;/p&gt;
 
-&lt;h5 id=&#34;2-add-ssh-key&#34;&gt;2.Add SSH Key&lt;/h5&gt;
+&lt;h5 id=&#34;2-add-ssh-key:97f2f1754c6e43aa005550a1d94d9e6b&#34;&gt;2.Add SSH Key&lt;/h5&gt;
 
 &lt;p&gt;登陆GitHub，打开 Account settings &amp;ndash;&amp;gt; SSH and GPG Keys页面：Add SSH Key, 填上Title， 在Key文本框粘贴&lt;em&gt;id_rsa.pub&lt;/em&gt; 的内容。&lt;/p&gt;
 
-&lt;h5 id=&#34;3-在远程服务器初始化仓库-swrd&#34;&gt;3.在远程服务器初始化仓库 swrd&lt;/h5&gt;
+&lt;h5 id=&#34;3-在远程服务器初始化仓库-swrd:97f2f1754c6e43aa005550a1d94d9e6b&#34;&gt;3.在远程服务器初始化仓库 swrd&lt;/h5&gt;
 
 &lt;p&gt;之后它会给出如下提示：&lt;/p&gt;
 
@@ -511,7 +524,7 @@ git push -u origin master
 git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;4-在本地-git-init并连接远程&#34;&gt;4.在本地 git init并连接远程&lt;/h5&gt;
+&lt;h5 id=&#34;4-在本地-git-init并连接远程:97f2f1754c6e43aa005550a1d94d9e6b&#34;&gt;4.在本地 git init并连接远程&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code&gt;git init
 git add --all
@@ -519,12 +532,12 @@ git commit -m &amp;quot;init commit&amp;quot;
 git remote add origin git@github.com:tmhm/swrd.git
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;5-push-到远程&#34;&gt;5.push 到远程&lt;/h5&gt;
+&lt;h5 id=&#34;5-push-到远程:97f2f1754c6e43aa005550a1d94d9e6b&#34;&gt;5.push 到远程&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code&gt;git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;gitingore文件&#34;&gt;.gitingore文件&lt;/h5&gt;
+&lt;h5 id=&#34;gitingore文件:97f2f1754c6e43aa005550a1d94d9e6b&#34;&gt;.gitingore文件&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;不想把所有的文件都track到远程库，可以通过添加.gitignore文件忽略（全局有效，可以忽略文件本身）&lt;/li&gt;
