@@ -31,7 +31,7 @@
 
 &lt;p&gt;&lt;img src=&#34;http://i.imgur.com/XZmJtEF.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;主要相关的api有:b3b8e334f38c5d0729b510697772171d&#34;&gt;主要相关的api有：&lt;/h4&gt;
+&lt;h4 id=&#34;主要相关的api有&#34;&gt;主要相关的api有：&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;plt.subplots_adjust&lt;/li&gt;
@@ -39,7 +39,7 @@
 &lt;li&gt;plt.text&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;解决思路:b3b8e334f38c5d0729b510697772171d&#34;&gt;解决思路&lt;/h4&gt;
+&lt;h4 id=&#34;解决思路&#34;&gt;解决思路&lt;/h4&gt;
 
 &lt;p&gt;来自matplotlib的&lt;a href=&#34;http://matplotlib.org/gallery.html&#34;&gt;官网&lt;/a&gt;,以及&lt;a href=&#34;http://matplotlib.org/examples/images_contours_and_fields/interpolation_none_vs_nearest.html&#34;&gt;图示&lt;/a&gt;&lt;/p&gt;
 
@@ -151,7 +151,7 @@ print elapsed
       <guid>https://tmhm.github.io/2016/05/27/pybrain%E5%BA%93%E7%9A%84example%E4%B9%8Bnfq%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%88%86%E6%9E%90/</guid>
       <description>
 
-&lt;h4 id=&#34;pybrain库的example之nfq流程图分析&#34;&gt;PyBrain库的example之NFQ流程图分析&lt;/h4&gt;
+&lt;h4 id=&#34;pybrain库的example之nfq流程图分析:ee4d46bb0f922990b5099f1ed9a24c21&#34;&gt;PyBrain库的example之NFQ流程图分析&lt;/h4&gt;
 
 &lt;p&gt;如下是测试程序。主要分析&lt;strong&gt;doEpisode和learn&lt;/strong&gt;两个函数。&lt;/p&gt;
 
@@ -264,7 +264,7 @@ print &amp;quot;you put :&amp;quot;,str
       <guid>https://tmhm.github.io/2016/05/26/python%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BB%A7%E6%89%BF/</guid>
       <description>
 
-&lt;h4 id=&#34;python之面向对象-继承:e35dc34c12c197a04379d91239a97544&#34;&gt;python之面向对象（继承）&lt;/h4&gt;
+&lt;h4 id=&#34;python之面向对象-继承&#34;&gt;python之面向对象（继承）&lt;/h4&gt;
 
 &lt;p&gt;面向对象的编程带来的主要好处之一是代码的重用，实现这种重用的方法之一是通过继承机制。继承完全可以理解成类之间的类型和子类型关系。&lt;/p&gt;
 
@@ -626,7 +626,7 @@ c:  [{&#39;num&#39;: 1, &#39;sqrt&#39;: 1}, {&#39;num&#39;: 2, &#39;sqrt&#39;: 4
       <guid>https://tmhm.github.io/2016/05/19/python%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E9%A1%B9/</guid>
       <description>
 
-&lt;h3 id=&#34;浮点除-和-整除:54b2401234aa813c219ffc6fe8784914&#34;&gt;&amp;rsquo;/&amp;lsquo;浮点除，和&amp;rsquo;//&amp;lsquo;整除&lt;/h3&gt;
+&lt;h3 id=&#34;浮点除-和-整除&#34;&gt;&amp;rsquo;/&amp;lsquo;浮点除，和&amp;rsquo;//&amp;lsquo;整除&lt;/h3&gt;
 
 &lt;p&gt;单个&amp;rsquo;/&amp;lsquo;是浮点除，两个除号&amp;rsquo;//&amp;lsquo;是整除&lt;/p&gt;
 

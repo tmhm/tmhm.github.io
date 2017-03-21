@@ -9,8 +9,33 @@
     <managingEditor>wells217@163.com (Well)</managingEditor>
     <webMaster>wells217@163.com (Well)</webMaster>
     <copyright>(c) 2017 Well.</copyright>
-    <lastBuildDate>Fri, 03 Mar 2017 12:05:02 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 21 Mar 2017 09:34:20 +0800</lastBuildDate>
     <atom:link href="https://tmhm.github.io/categories/tools/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>word每页添加不同的页眉</title>
+      <link>https://tmhm.github.io/2017/03/21/word%E6%AF%8F%E9%A1%B5%E6%B7%BB%E5%8A%A0%E4%B8%8D%E5%90%8C%E7%9A%84%E9%A1%B5%E7%9C%89/</link>
+      <pubDate>Tue, 21 Mar 2017 09:34:20 +0800</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2017/03/21/word%E6%AF%8F%E9%A1%B5%E6%B7%BB%E5%8A%A0%E4%B8%8D%E5%90%8C%E7%9A%84%E9%A1%B5%E7%9C%89/</guid>
+      <description>&lt;p&gt;参考了&lt;a href=&#34;https://zhidao.baidu.com/question/18216054.html&#34;&gt;知道网页&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;设置不同的节，以节为单位添加页眉&lt;/li&gt;
+&lt;li&gt;手动方式：在每一节的第一页添加页眉，然后设置&lt;strong&gt;不要链接到上一页眉&lt;/strong&gt;，依次添加新一节的页眉即可。&lt;/li&gt;
+&lt;li&gt;自动方式：对于很多章节，手动就有点自找麻烦了。用插入&lt;strong&gt;域&lt;/strong&gt;的方法。
+
+&lt;ol&gt;
+&lt;li&gt;word2010为例，在奇数页页眉，依次找到&lt;code&gt;插入-&amp;gt;文档部件-&amp;gt;域&lt;/code&gt;；&lt;/li&gt;
+&lt;li&gt;选择类别&lt;code&gt;链接与引用&lt;/code&gt;，域名&lt;code&gt;StyleRef&lt;/code&gt;，域属性&lt;code&gt;标题1&lt;/code&gt;；&lt;/li&gt;
+&lt;li&gt;确定即可。&lt;/li&gt;
+&lt;li&gt;在偶数页插入&lt;code&gt;论文的题目标题&lt;/code&gt;，注意此处需要选择&lt;strong&gt;链接到上一页眉&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;完毕。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Teamviewer无法远程登录主机用户</title>
@@ -135,6 +160,8 @@ sudo apt-get install -f
 
 &lt;p&gt;在一台新的win10系统下，发现teamviewer，可以重启使用，突然想起，曾经用驱动精灵和金山毒霸进行过优化，于是，卸载之，并取消他们的优化，再安装teamviewer，发现可以正常使用了。
 &lt;strong&gt;都是过度优化惹得祸！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;还原优化后，同时&lt;strong&gt;在win10上也可以正常使用shadowsocks了&lt;/strong&gt;。曾经可用，突然用不了，找各种原因都没解决。&lt;/p&gt;
 </description>
     </item>
     
@@ -201,7 +228,7 @@ hugo new post/second.md
 &lt;h3 id=&#34;写blog操作步骤:f3924a03658d093f4458df00ee75a55f&#34;&gt;写blog操作步骤&lt;/h3&gt;
 
 &lt;ol&gt;
-&lt;li&gt;用hugo new 生成新文件test.md；&lt;/li&gt;
+&lt;li&gt;用&lt;code&gt;hugo new post/test.md&lt;/code&gt;命令在&lt;code&gt;content/post/&lt;/code&gt;路径生成新文件test.md；&lt;/li&gt;
 &lt;li&gt;编辑my_blog/content/post/test.md，添加各种属性内容，用单引号‘’；&lt;/li&gt;
 &lt;li&gt;在本地服务器打开的状态下，是可以实时的看到网页的变化的，若满足要求，用hugo -t hyde-y &amp;ndash;baseURL &amp;laquo;https://****.github.io/&amp;raquo; -D生成静态网页，然后在public目录下面再用git命令：add，commit，push 到 ****.github.io/仓库，现在既可以在玩个上看到新的内容了。&lt;/li&gt;
 &lt;li&gt;cd 到上一目录my_blog/, 在此也可以将源文件放到一个仓库。&lt;/li&gt;
@@ -228,7 +255,7 @@ hugo new post/second.md
 
 &lt;p&gt;&lt;img src=&#34;http://i.imgur.com/XZmJtEF.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;主要相关的api有:b3b8e334f38c5d0729b510697772171d&#34;&gt;主要相关的api有：&lt;/h4&gt;
+&lt;h4 id=&#34;主要相关的api有&#34;&gt;主要相关的api有：&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;plt.subplots_adjust&lt;/li&gt;
@@ -236,7 +263,7 @@ hugo new post/second.md
 &lt;li&gt;plt.text&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;解决思路:b3b8e334f38c5d0729b510697772171d&#34;&gt;解决思路&lt;/h4&gt;
+&lt;h4 id=&#34;解决思路&#34;&gt;解决思路&lt;/h4&gt;
 
 &lt;p&gt;来自matplotlib的&lt;a href=&#34;http://matplotlib.org/gallery.html&#34;&gt;官网&lt;/a&gt;,以及&lt;a href=&#34;http://matplotlib.org/examples/images_contours_and_fields/interpolation_none_vs_nearest.html&#34;&gt;图示&lt;/a&gt;&lt;/p&gt;
 
@@ -490,7 +517,7 @@ plt.savefig(&#39;./plteps.eps&#39;, format=&#39;eps&#39;, dpi=1000)
       <guid>https://tmhm.github.io/2016/08/08/git%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
       <description>
 
-&lt;h5 id=&#34;1-创建ssh-key:97f2f1754c6e43aa005550a1d94d9e6b&#34;&gt;1.创建SSH Key&lt;/h5&gt;
+&lt;h5 id=&#34;1-创建ssh-key&#34;&gt;1.创建SSH Key&lt;/h5&gt;
 
 &lt;p&gt;&lt;code&gt;ssh-keygen -t rsa -C &amp;quot;5733*****@qq.com&amp;quot;
 &lt;/code&gt;&lt;/p&gt;
@@ -499,11 +526,11 @@ plt.savefig(&#39;./plteps.eps&#39;, format=&#39;eps&#39;, dpi=1000)
 
 &lt;p&gt;&lt;em&gt;id_rsa&lt;/em&gt; 是私钥， &lt;em&gt;id_rsa.pub&lt;/em&gt; 是公钥&lt;/p&gt;
 
-&lt;h5 id=&#34;2-add-ssh-key:97f2f1754c6e43aa005550a1d94d9e6b&#34;&gt;2.Add SSH Key&lt;/h5&gt;
+&lt;h5 id=&#34;2-add-ssh-key&#34;&gt;2.Add SSH Key&lt;/h5&gt;
 
 &lt;p&gt;登陆GitHub，打开 Account settings &amp;ndash;&amp;gt; SSH and GPG Keys页面：Add SSH Key, 填上Title， 在Key文本框粘贴&lt;em&gt;id_rsa.pub&lt;/em&gt; 的内容。&lt;/p&gt;
 
-&lt;h5 id=&#34;3-在远程服务器初始化仓库-swrd:97f2f1754c6e43aa005550a1d94d9e6b&#34;&gt;3.在远程服务器初始化仓库 swrd&lt;/h5&gt;
+&lt;h5 id=&#34;3-在远程服务器初始化仓库-swrd&#34;&gt;3.在远程服务器初始化仓库 swrd&lt;/h5&gt;
 
 &lt;p&gt;之后它会给出如下提示：&lt;/p&gt;
 
@@ -524,7 +551,7 @@ git push -u origin master
 git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;4-在本地-git-init并连接远程:97f2f1754c6e43aa005550a1d94d9e6b&#34;&gt;4.在本地 git init并连接远程&lt;/h5&gt;
+&lt;h5 id=&#34;4-在本地-git-init并连接远程&#34;&gt;4.在本地 git init并连接远程&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code&gt;git init
 git add --all
@@ -532,12 +559,12 @@ git commit -m &amp;quot;init commit&amp;quot;
 git remote add origin git@github.com:tmhm/swrd.git
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;5-push-到远程:97f2f1754c6e43aa005550a1d94d9e6b&#34;&gt;5.push 到远程&lt;/h5&gt;
+&lt;h5 id=&#34;5-push-到远程&#34;&gt;5.push 到远程&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code&gt;git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;gitingore文件:97f2f1754c6e43aa005550a1d94d9e6b&#34;&gt;.gitingore文件&lt;/h5&gt;
+&lt;h5 id=&#34;gitingore文件&#34;&gt;.gitingore文件&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;不想把所有的文件都track到远程库，可以通过添加.gitignore文件忽略（全局有效，可以忽略文件本身）&lt;/li&gt;
@@ -764,28 +791,6 @@ qDebug(&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&g
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201603/781469-20160309191541944-1721815549.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Dev-C 小问题锦集</title>
-      <link>https://tmhm.github.io/2016/02/21/dev-c-%E5%B0%8F%E9%97%AE%E9%A2%98%E9%94%A6%E9%9B%86/</link>
-      <pubDate>Sun, 21 Feb 2016 13:10:00 +0000</pubDate>
-      <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/02/21/dev-c-%E5%B0%8F%E9%97%AE%E9%A2%98%E9%94%A6%E9%9B%86/</guid>
-      <description>&lt;ul&gt;
-&lt;li&gt;C++ project cann&amp;rsquo;t debug&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;Your project does not have debugging information, do you want to enable debugging and rebuild your project?
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;解决办法：&lt;/p&gt;
-
-&lt;p&gt;在tools 菜单下的compiler项中，勾选：&lt;code&gt;Add the following commands when calling compiler:&lt;/code&gt;
-&lt;p&gt;并在框内添加参数：-g&lt;/p&gt;
-&lt;p&gt;（版本：Dev-C++ 4.9.9.2.）&lt;/p&gt;&lt;/p&gt;
 </description>
     </item>
     

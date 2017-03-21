@@ -9,8 +9,33 @@
     <managingEditor>wells217@163.com (Well)</managingEditor>
     <webMaster>wells217@163.com (Well)</webMaster>
     <copyright>(c) 2017 Well.</copyright>
-    <lastBuildDate>Wed, 15 Mar 2017 16:38:20 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 21 Mar 2017 09:34:20 +0800</lastBuildDate>
     <atom:link href="https://tmhm.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>word每页添加不同的页眉</title>
+      <link>https://tmhm.github.io/2017/03/21/word%E6%AF%8F%E9%A1%B5%E6%B7%BB%E5%8A%A0%E4%B8%8D%E5%90%8C%E7%9A%84%E9%A1%B5%E7%9C%89/</link>
+      <pubDate>Tue, 21 Mar 2017 09:34:20 +0800</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2017/03/21/word%E6%AF%8F%E9%A1%B5%E6%B7%BB%E5%8A%A0%E4%B8%8D%E5%90%8C%E7%9A%84%E9%A1%B5%E7%9C%89/</guid>
+      <description>&lt;p&gt;参考了&lt;a href=&#34;https://zhidao.baidu.com/question/18216054.html&#34;&gt;知道网页&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;设置不同的节，以节为单位添加页眉&lt;/li&gt;
+&lt;li&gt;手动方式：在每一节的第一页添加页眉，然后设置&lt;strong&gt;不要链接到上一页眉&lt;/strong&gt;，依次添加新一节的页眉即可。&lt;/li&gt;
+&lt;li&gt;自动方式：对于很多章节，手动就有点自找麻烦了。用插入&lt;strong&gt;域&lt;/strong&gt;的方法。
+
+&lt;ol&gt;
+&lt;li&gt;word2010为例，在奇数页页眉，依次找到&lt;code&gt;插入-&amp;gt;文档部件-&amp;gt;域&lt;/code&gt;；&lt;/li&gt;
+&lt;li&gt;选择类别&lt;code&gt;链接与引用&lt;/code&gt;，域名&lt;code&gt;StyleRef&lt;/code&gt;，域属性&lt;code&gt;标题1&lt;/code&gt;；&lt;/li&gt;
+&lt;li&gt;确定即可。&lt;/li&gt;
+&lt;li&gt;在偶数页插入&lt;code&gt;论文的题目标题&lt;/code&gt;，注意此处需要选择&lt;strong&gt;链接到上一页眉&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;完毕。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>一语未尽</title>
@@ -157,6 +182,8 @@ sudo apt-get install -f
 
 &lt;p&gt;在一台新的win10系统下，发现teamviewer，可以重启使用，突然想起，曾经用驱动精灵和金山毒霸进行过优化，于是，卸载之，并取消他们的优化，再安装teamviewer，发现可以正常使用了。
 &lt;strong&gt;都是过度优化惹得祸！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;还原优化后，同时&lt;strong&gt;在win10上也可以正常使用shadowsocks了&lt;/strong&gt;。曾经可用，突然用不了，找各种原因都没解决。&lt;/p&gt;
 </description>
     </item>
     
@@ -223,7 +250,7 @@ hugo new post/second.md
 &lt;h3 id=&#34;写blog操作步骤:f3924a03658d093f4458df00ee75a55f&#34;&gt;写blog操作步骤&lt;/h3&gt;
 
 &lt;ol&gt;
-&lt;li&gt;用hugo new 生成新文件test.md；&lt;/li&gt;
+&lt;li&gt;用&lt;code&gt;hugo new post/test.md&lt;/code&gt;命令在&lt;code&gt;content/post/&lt;/code&gt;路径生成新文件test.md；&lt;/li&gt;
 &lt;li&gt;编辑my_blog/content/post/test.md，添加各种属性内容，用单引号‘’；&lt;/li&gt;
 &lt;li&gt;在本地服务器打开的状态下，是可以实时的看到网页的变化的，若满足要求，用hugo -t hyde-y &amp;ndash;baseURL &amp;laquo;https://****.github.io/&amp;raquo; -D生成静态网页，然后在public目录下面再用git命令：add，commit，push 到 ****.github.io/仓库，现在既可以在玩个上看到新的内容了。&lt;/li&gt;
 &lt;li&gt;cd 到上一目录my_blog/, 在此也可以将源文件放到一个仓库。&lt;/li&gt;
@@ -509,7 +536,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
 &lt;li&gt;文件中记录level 超过 debug 的信息&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;level设计&#34;&gt;level设计&lt;/h4&gt;
+&lt;h4 id=&#34;level设计:ab6ecea521d440c8d06d82d2c5fdae84&#34;&gt;level设计&lt;/h4&gt;
 
 &lt;p&gt;logging函数根据它们用来跟踪的事件的级别或严重程度来命名。&lt;a href=&#34;http://python.usyiyi.cn/translate/python_278/howto/logging.html#logging-advanced-tutorial&#34;&gt;标准级别及其适用性描述&lt;/a&gt;如下（以严重程度递增排序）：&lt;/p&gt;
 
@@ -586,7 +613,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
 
 &lt;p&gt;&lt;img src=&#34;http://i.imgur.com/XZmJtEF.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;主要相关的api有:b3b8e334f38c5d0729b510697772171d&#34;&gt;主要相关的api有：&lt;/h4&gt;
+&lt;h4 id=&#34;主要相关的api有&#34;&gt;主要相关的api有：&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;plt.subplots_adjust&lt;/li&gt;
@@ -594,7 +621,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
 &lt;li&gt;plt.text&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;解决思路:b3b8e334f38c5d0729b510697772171d&#34;&gt;解决思路&lt;/h4&gt;
+&lt;h4 id=&#34;解决思路&#34;&gt;解决思路&lt;/h4&gt;
 
 &lt;p&gt;来自matplotlib的&lt;a href=&#34;http://matplotlib.org/gallery.html&#34;&gt;官网&lt;/a&gt;,以及&lt;a href=&#34;http://matplotlib.org/examples/images_contours_and_fields/interpolation_none_vs_nearest.html&#34;&gt;图示&lt;/a&gt;&lt;/p&gt;
 
@@ -892,7 +919,7 @@ $ sudo /etc/init.d/gdm start
 
 &lt;p&gt;升级到375版本， 还是没用，启动进入不了桌面，重复登录&lt;/p&gt;
 
-&lt;h3 id=&#34;install-driver-367-https-kusemanohar-wordpress-com-2016-07-29-gtx-1080-on-ubuntu-14-04-trusty&#34;&gt;&lt;a href=&#34;https://kusemanohar.wordpress.com/2016/07/29/gtx-1080-on-ubuntu-14-04-trusty/&#34;&gt;Install driver 367&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;install-driver-367-https-kusemanohar-wordpress-com-2016-07-29-gtx-1080-on-ubuntu-14-04-trusty:d68e03665ec87076c808379f00c3c33a&#34;&gt;&lt;a href=&#34;https://kusemanohar.wordpress.com/2016/07/29/gtx-1080-on-ubuntu-14-04-trusty/&#34;&gt;Install driver 367&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;Uninstall previous nvidia drivers.&lt;/p&gt;
 
@@ -951,7 +978,7 @@ $ sudo /etc/init.d/lightdm start
 &lt;p&gt;有人说，安装必须要在安装桌面前安装GTX 1080 driver，后面方案验证来看， 那个参数才是关键。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;解决方法&#34;&gt;解决方法&lt;/h3&gt;
+&lt;h3 id=&#34;解决方法:d68e03665ec87076c808379f00c3c33a&#34;&gt;解决方法&lt;/h3&gt;
 
 &lt;p&gt;利用sudo gedit /etc/modprobe.d/blacklist-nouveau.conf新建blacklist-nouveau.conf文件，输入命令&lt;/p&gt;
 
@@ -1006,7 +1033,7 @@ sudo /etc/init.d/lightdm start
 &lt;p&gt;NO
 &lt;img src=&#34;http://i.imgur.com/5DHQbMl.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;cuda8-0安装&#34;&gt;cuda8.0安装&lt;/h3&gt;
+&lt;h3 id=&#34;cuda8-0安装:d68e03665ec87076c808379f00c3c33a&#34;&gt;cuda8.0安装&lt;/h3&gt;
 
 &lt;p&gt;运行&lt;/p&gt;
 
@@ -1069,7 +1096,7 @@ Logfile is /tmp/cuda_install_9045.log
     
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;设置环境变量&#34;&gt;设置环境变量&lt;/h4&gt;
+&lt;h4 id=&#34;设置环境变量:d68e03665ec87076c808379f00c3c33a&#34;&gt;设置环境变量&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;export PATH=/usr/local/cuda-8.0/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
@@ -1083,7 +1110,7 @@ export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
 &lt;code&gt;sudo ldconfig //环境变量立即生效
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;验证-cuda&#34;&gt;验证 cuda&lt;/h4&gt;
+&lt;h4 id=&#34;验证-cuda:d68e03665ec87076c808379f00c3c33a&#34;&gt;验证 cuda&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;c302@c302-dl:~/Downloads$ nvcc -V
 nvcc: NVIDIA (R) Cuda compiler driver
@@ -1092,7 +1119,7 @@ Built on Sun_Sep__4_22:14:01_CDT_2016
 Cuda compilation tools, release 8.0, V8.0.44
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;测试cuda的samples&#34;&gt;测试cuda的samples&lt;/h3&gt;
+&lt;h3 id=&#34;测试cuda的samples:d68e03665ec87076c808379f00c3c33a&#34;&gt;测试cuda的samples&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;cd ‘/home/zhou/NVIDIA_CUDA-8.0_Samples’
 make  //这里需要点时间
@@ -1128,204 +1155,6 @@ NOTE: The CUDA Samples are not meant for performance measurements. Results may v
 &lt;p&gt;&lt;img src=&#34;http://i.imgur.com/iRwuetR.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;下一篇将会是安装cuDNN、tensorflow等lib&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>GPU 服务器环境安装中一些基础note</title>
-      <link>https://tmhm.github.io/2016/11/21/gpu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E4%B8%AD%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80note/</link>
-      <pubDate>Mon, 21 Nov 2016 06:29:00 +0000</pubDate>
-      <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/11/21/gpu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E4%B8%AD%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80note/</guid>
-      <description>
-
-&lt;h3 id=&#34;gpu-服务器:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;GPU 服务器：&lt;/h3&gt;
-
-&lt;p&gt;添加组，用户，并为之新建主目录。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;c302@c302-dl:~$ sudo addgroup testgroup
-Adding group `testgroup&#39; (GID 1001) ...
-Done.
-c302@c302-dl:~$ sudo useradd testuser -g testgroup -m
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;新建密码&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;passwd testuser
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;安装anaconda环境:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;安装anaconda环境&lt;/h3&gt;
-
-&lt;p&gt;官网下载之，&lt;a href=&#34;https://www.continuum.io/downloads&#34;&gt;https://www.continuum.io/downloads&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;安装，修改环境变量
-&lt;code&gt;export PATH=/home/c302/anaconda2/bin:$PATH
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;ubuntu-linux系统环境变量配置文件:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;Ubuntu Linux系统环境变量配置文件：&lt;/h3&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;/etc/profile : 在登录时,操作系统定制用户环境时使用的第一个文件 ,此文件为系统的每个用户设置环境信息,当用户第一次登录时,该文件被执行。&lt;/p&gt;
-
-&lt;p&gt;/etc /environment : 在登录时操作系统使用的第二个文件, 系统在读取你自己的profile前,设置环境文件的环境变量。&lt;/p&gt;
-
-&lt;p&gt;~/.profile :  在登录时用到的第三个文件 是.profile文件,每个用户都可使用该文件输入专用于自己使用的shell信息,当用户登录时,该文件仅仅执行一次!默认情况下,他设置一些环境变量,执行用户的.bashrc文件。&lt;/p&gt;
-
-&lt;p&gt;/etc/bashrc : 为每一个运行bash shell的用户执行此文件.当bash shell被打开时,该文件被读取.&lt;/p&gt;
-
-&lt;p&gt;~/.bashrc : 该文件包含专用于你的bash shell的bash信息,当登录时以及每次打开新的shell时,该该文件被读取。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;修改~/.profile 文件，添加export PATH=/home/c302/anaconda2/bin:$PATH&lt;/p&gt;
-
-&lt;h3 id=&#34;安装pybrain-0-33:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;安装pybrain 0.33&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;
-pip install pybrain
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;pip安装的是0.3版本的，我想要0.33的&lt;/p&gt;
-
-&lt;p&gt;卸之，运行：&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;pip uninstall pybrain
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;用conda安装，&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;conda install pybrain
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;提示：anaconda search -t conda pybrain&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;运行：&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;anaconda search -t conda pybrain
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;mq/pybrain                |    0.3.3 | conda           | linux-64, win-32, win-64, linux-32, osx-64&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;运行：&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;conda install -c https://conda.anaconda.org/mq pybrain
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;挂载硬盘:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;挂载硬盘&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;mount  /dev/sdb1 /data1
-mount  /dev/sdc1 /data2
-mount  /dev/sdd1 /data3
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;上面是手动挂载&lt;/p&gt;
-
-&lt;p&gt;编辑 vi /etc/fstab 添加：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;/dev/sdb1 /data1 xfs defaults 0 0
-/dev/sdc1 /data2 xfs defaults 0 0
-/dev/sdd1 /data3 xfs defaults 0 0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;保存退出&lt;/p&gt;
-
-&lt;p&gt;这样重启后会自动挂载&lt;/p&gt;
-
-&lt;h3 id=&#34;安装-nvidia-gtx-1080-驱动-367-27:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;安装 Nvidia GTX 1080 驱动 367.27&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;sudo add-apt-repository ppa:graphics-drivers/ppa
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;出现警告，enter继续&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get update
-sudo apt-get install nvidia-367
-sudo apt-get install mesa-common-dev
-sudo apt-get install freeglut3-dev
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;之后重启系统让GTX1080显卡驱动生效。&lt;/p&gt;
-
-&lt;p&gt;运行：&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;nvidia-smi
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://i.imgur.com/TUlwTFw.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;重启进不了ubuntu 的桌面，输入密码又返回登陆界面，但是可以用ssh远程登陆。&lt;/p&gt;
-
-&lt;h3 id=&#34;新安装的系统-14-04-输入密码后又返回登录界面:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;新安装的系统，14.04。输入密码后又返回登录界面&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;sudo rm -r .Xauthority*  （Xauthority文件在/home/用户名/.Xauthority）&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt; reboot之后, .Xauthorit 文件会再次自动生成。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;想起在/etc/profile 文件添加的export PATH=/home/c302/anaconda2/bin:$PATH
-删除之， 再次reboot，没用，还是不能登录&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;有博主说，将.Xauthority 文件修改拥有者变为用户。按下shift + ctrl + F7切换回图形登陆界面登陆即可。但是实测还是不行。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;安装gdm，sudo apt-get install gdm， 在安转的过程中会出现选择默认启动顺序，选择gdm。，启动直接黑屏了。小白无奈，再次卸载gdm。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;重新安装Unity，依次运行下面命令，尝试解决系统冻结的问题， 貌似对我还是没用&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get update
-sudo apt-get install --reinstall ubuntu-desktop
-sudo apt-get install unity
-sudo shutdown -r now
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;粗暴的方案，卸之，成功解决Nvidia显卡的Unity冻结问题&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get update
-sudo apt-get install --reinstall ubuntu-desktop
-sudo apt-get install unity
-sudo apt-get remove --purge nvidia*
-sudo shutdown -r now
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;删除了nvidia的驱动，重启之后Unity桌面成功恢复了。
-nvidia-smi 已经无效。&lt;/p&gt;
-
-&lt;h3 id=&#34;teamviewer-安装:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;teamviewer 安装&lt;/h3&gt;
-
-&lt;p&gt;在网站下载teamviewer &lt;a href=&#34;https://www.teamviewer.com/zhcn/download/linux/&#34;&gt;https://www.teamviewer.com/zhcn/download/linux/&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;或者直接用wget下之，&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;wget http://download.teamviewer.com/download/teamviewer_linux_x64.deb
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;然后执行&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;sudo dpkg -i teamviewer_linux*.deb;
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;会有提示需要执行：&lt;code&gt;sudo apt-get -f install&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;执行之，&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;sudo apt-get -f install&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;即可以通过teamviewer 远程访问图形界面&lt;/p&gt;
-
-&lt;h3 id=&#34;安装torcs-gym等相关环境:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;安装TORCS_gym等相关环境&lt;/h3&gt;
-
-&lt;p&gt;请参考上一文章记录&lt;a href=&#34;http://www.cnblogs.com/Qwells/p/6001699.html&#34;&gt;用Keras 和 DDPG play TORCS（环境配置篇）&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;NOTE:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;注意权限问题，用sudo;&lt;/li&gt;
-&lt;li&gt;添加两个float;&lt;/li&gt;
-&lt;li&gt;安装keras 和tensorflow的时候，注意pip以及其他的一些版本依赖问题，一劳永逸的做法是将anaconda 组件升级到最新，即可。否则按照提示将pip升级，然后用sudo pip安装。&lt;/li&gt;
-&lt;/ol&gt;
 </description>
     </item>
     

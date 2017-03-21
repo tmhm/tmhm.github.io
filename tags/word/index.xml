@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Word on Well</title>
+    <link>https://tmhm.github.io/tags/word/</link>
+    <description>Recent content in Word on Well</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <managingEditor>wells217@163.com (Well)</managingEditor>
+    <webMaster>wells217@163.com (Well)</webMaster>
+    <copyright>(c) 2017 Well.</copyright>
+    <lastBuildDate>Tue, 21 Mar 2017 09:34:20 +0800</lastBuildDate>
+    <atom:link href="https://tmhm.github.io/tags/word/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>word每页添加不同的页眉</title>
+      <link>https://tmhm.github.io/2017/03/21/word%E6%AF%8F%E9%A1%B5%E6%B7%BB%E5%8A%A0%E4%B8%8D%E5%90%8C%E7%9A%84%E9%A1%B5%E7%9C%89/</link>
+      <pubDate>Tue, 21 Mar 2017 09:34:20 +0800</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2017/03/21/word%E6%AF%8F%E9%A1%B5%E6%B7%BB%E5%8A%A0%E4%B8%8D%E5%90%8C%E7%9A%84%E9%A1%B5%E7%9C%89/</guid>
+      <description>&lt;p&gt;参考了&lt;a href=&#34;https://zhidao.baidu.com/question/18216054.html&#34;&gt;知道网页&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;设置不同的节，以节为单位添加页眉&lt;/li&gt;
+&lt;li&gt;手动方式：在每一节的第一页添加页眉，然后设置&lt;strong&gt;不要链接到上一页眉&lt;/strong&gt;，依次添加新一节的页眉即可。&lt;/li&gt;
+&lt;li&gt;自动方式：对于很多章节，手动就有点自找麻烦了。用插入&lt;strong&gt;域&lt;/strong&gt;的方法。
+
+&lt;ol&gt;
+&lt;li&gt;word2010为例，在奇数页页眉，依次找到&lt;code&gt;插入-&amp;gt;文档部件-&amp;gt;域&lt;/code&gt;；&lt;/li&gt;
+&lt;li&gt;选择类别&lt;code&gt;链接与引用&lt;/code&gt;，域名&lt;code&gt;StyleRef&lt;/code&gt;，域属性&lt;code&gt;标题1&lt;/code&gt;；&lt;/li&gt;
+&lt;li&gt;确定即可。&lt;/li&gt;
+&lt;li&gt;在偶数页插入&lt;code&gt;论文的题目标题&lt;/code&gt;，注意此处需要选择&lt;strong&gt;链接到上一页眉&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;完毕。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

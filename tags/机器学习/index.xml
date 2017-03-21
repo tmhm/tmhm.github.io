@@ -29,9 +29,9 @@
 
 &lt;p&gt;&lt;em&gt;一直以为强化学习不属于统计学习的范畴，看来过去臆想了。&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;监督学习基本概念:01aa4df5ab2620b953a14d2f7f42805e&#34;&gt;监督学习基本概念&lt;/h3&gt;
+&lt;h3 id=&#34;监督学习基本概念&#34;&gt;监督学习基本概念&lt;/h3&gt;
 
-&lt;h4 id=&#34;输入-特征-输出空间:01aa4df5ab2620b953a14d2f7f42805e&#34;&gt;输入、特征、输出空间&lt;/h4&gt;
+&lt;h4 id=&#34;输入-特征-输出空间&#34;&gt;输入、特征、输出空间&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;输入与输出的所有值分别称之为&lt;strong&gt;输入空间&lt;/strong&gt;和&lt;strong&gt;输出空间&lt;/strong&gt;；&lt;/li&gt;
@@ -47,24 +47,24 @@
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;联合概率分布:01aa4df5ab2620b953a14d2f7f42805e&#34;&gt;联合概率分布&lt;/h4&gt;
+&lt;h4 id=&#34;联合概率分布&#34;&gt;联合概率分布&lt;/h4&gt;
 
 &lt;p&gt;监督学习假设输入和输出遵循联合概率分布$P(X,Y)$.&lt;/p&gt;
 
-&lt;h4 id=&#34;假设空间:01aa4df5ab2620b953a14d2f7f42805e&#34;&gt;假设空间&lt;/h4&gt;
+&lt;h4 id=&#34;假设空间&#34;&gt;假设空间&lt;/h4&gt;
 
 &lt;p&gt;监督学习的目的在于学习一个有输入到输出的映射，这一映射由模型来表示。
 模型属于由输入空间到输出空间的映射的集合，这一集合就是&lt;strong&gt;假设空间（hypothesis space）&lt;/strong&gt;，假设空间的确定意味着学习范围的确定。&lt;/p&gt;
 
 &lt;p&gt;监督学习的模型可以是概率模型或非概率模型，用条件概率分布或决策函数表示。&lt;/p&gt;
 
-&lt;h4 id=&#34;问题形式化:01aa4df5ab2620b953a14d2f7f42805e&#34;&gt;问题形式化&lt;/h4&gt;
+&lt;h4 id=&#34;问题形式化&#34;&gt;问题形式化&lt;/h4&gt;
 
 &lt;p&gt;监督学习分学习和预测两个过程。学习过程是利用训练数据集学习一个模型，再用学习到的模型对测试样本进行预测，即预测过程。&lt;/p&gt;
 
 &lt;p&gt;一个具体的模型$y=f(x)$,对一个输入$x_i$,可以产生一个输出$f(x_i)$,而训练模型中对应的输出是$y_i$,如果这个模型训练的足够好，有很好的预测能力，则其训练样本的输出$y_i$和模型的输出$f(x_i)$之间的差就应该足够小。学习系统就是通过不断尝试，选取最好的模型，以便对训练数据集具有最好的预测，同时对未知的测试数据集的预测也有尽可能好的推广，即泛化能力。&lt;/p&gt;
 
-&lt;h3 id=&#34;统计学习三要素:01aa4df5ab2620b953a14d2f7f42805e&#34;&gt;统计学习三要素&lt;/h3&gt;
+&lt;h3 id=&#34;统计学习三要素&#34;&gt;统计学习三要素&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;模型
@@ -103,14 +103,14 @@
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;模型的评估与模型选择:01aa4df5ab2620b953a14d2f7f42805e&#34;&gt;模型的评估与模型选择&lt;/h3&gt;
+&lt;h3 id=&#34;模型的评估与模型选择&#34;&gt;模型的评估与模型选择&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;一般考虑到&lt;strong&gt;训练误差&lt;/strong&gt;和&lt;strong&gt;测试误差&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;避免过拟合&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;正则化与交叉验证:01aa4df5ab2620b953a14d2f7f42805e&#34;&gt;正则化与交叉验证&lt;/h3&gt;
+&lt;h3 id=&#34;正则化与交叉验证&#34;&gt;正则化与交叉验证&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;正则项一般有1-范数和2-范数&lt;/li&gt;
@@ -126,14 +126,14 @@
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;泛化能力:01aa4df5ab2620b953a14d2f7f42805e&#34;&gt;泛化能力&lt;/h3&gt;
+&lt;h3 id=&#34;泛化能力&#34;&gt;泛化能力&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;即模型对未知数据的预测能力。&lt;/li&gt;
 &lt;li&gt;理论上可以通过泛化误差上界的大小来进行分析。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;生成模型与判别模型:01aa4df5ab2620b953a14d2f7f42805e&#34;&gt;生成模型与判别模型&lt;/h3&gt;
+&lt;h3 id=&#34;生成模型与判别模型&#34;&gt;生成模型与判别模型&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;根据采用的方式是生成方法和判别方法而来。&lt;/li&gt;
@@ -152,7 +152,7 @@
 &lt;li&gt;判别方法直接学习条件概率或决策函数，直接预测，往往学习的准确率更高；由于直接学习，可以对数据进行各种程度上的抽象、定义特征并使用特征，也可以简化学习问题&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;面向问题:01aa4df5ab2620b953a14d2f7f42805e&#34;&gt;面向问题&lt;/h3&gt;
+&lt;h3 id=&#34;面向问题&#34;&gt;面向问题&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;分类问题&lt;/p&gt;
@@ -186,13 +186,13 @@
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;非监督学习:01aa4df5ab2620b953a14d2f7f42805e&#34;&gt;非监督学习&lt;/h3&gt;
+&lt;h3 id=&#34;非监督学习&#34;&gt;非监督学习&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;数据没有类别信息，也不给定目标值&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h6 id=&#34;典型代表:01aa4df5ab2620b953a14d2f7f42805e&#34;&gt;典型代表：&lt;/h6&gt;
+&lt;h6 id=&#34;典型代表&#34;&gt;典型代表：&lt;/h6&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;聚类&lt;/strong&gt;将数据集合分成由类似的对象组成的多个类&lt;/li&gt;
