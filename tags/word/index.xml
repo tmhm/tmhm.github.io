@@ -13,12 +13,16 @@
     <atom:link href="https://tmhm.github.io/tags/word/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>word每页添加不同的页眉</title>
-      <link>https://tmhm.github.io/2017/03/21/word%E6%AF%8F%E9%A1%B5%E6%B7%BB%E5%8A%A0%E4%B8%8D%E5%90%8C%E7%9A%84%E9%A1%B5%E7%9C%89/</link>
+      <title>word每页添加不同的页眉及目录信息</title>
+      <link>https://tmhm.github.io/2017/03/21/word%E6%AF%8F%E9%A1%B5%E6%B7%BB%E5%8A%A0%E4%B8%8D%E5%90%8C%E7%9A%84%E9%A1%B5%E7%9C%89%E5%8F%8A%E7%9B%AE%E5%BD%95%E4%BF%A1%E6%81%AF/</link>
       <pubDate>Tue, 21 Mar 2017 09:34:20 +0800</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2017/03/21/word%E6%AF%8F%E9%A1%B5%E6%B7%BB%E5%8A%A0%E4%B8%8D%E5%90%8C%E7%9A%84%E9%A1%B5%E7%9C%89/</guid>
-      <description>&lt;p&gt;参考了&lt;a href=&#34;https://zhidao.baidu.com/question/18216054.html&#34;&gt;知道网页&lt;/a&gt;&lt;/p&gt;
+      <guid>https://tmhm.github.io/2017/03/21/word%E6%AF%8F%E9%A1%B5%E6%B7%BB%E5%8A%A0%E4%B8%8D%E5%90%8C%E7%9A%84%E9%A1%B5%E7%9C%89%E5%8F%8A%E7%9B%AE%E5%BD%95%E4%BF%A1%E6%81%AF/</guid>
+      <description>
+
+&lt;h3 id=&#34;添加页眉:a759d9551099bbba97139fa3b52160ee&#34;&gt;添加页眉&lt;/h3&gt;
+
+&lt;p&gt;参考了&lt;a href=&#34;https://zhidao.baidu.com/question/18216054.html&#34;&gt;知道网页&lt;/a&gt;&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;设置不同的节，以节为单位添加页眉&lt;/li&gt;
@@ -33,7 +37,24 @@
 &lt;/ol&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;完毕。&lt;/p&gt;
+&lt;p&gt;页眉添加完毕。&lt;/p&gt;
+
+&lt;h3 id=&#34;添加图表目录:a759d9551099bbba97139fa3b52160ee&#34;&gt;添加图表目录&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;在图下，或者表上位置，点击&lt;code&gt;引用-&amp;gt;插入题注-&amp;gt;选择标签&lt;/code&gt;，确定即可。&lt;/p&gt;
+
+&lt;p&gt;在插入的时候可以在每一章新建标签，比如第二章，设置标签为&lt;code&gt;图2.&lt;/code&gt;，编号选择不包括章节，然后系统会自动给你设置一位数，并且前面加上设置的标签，即&lt;code&gt;图2.1，图2.2，...&lt;/code&gt;这样设置的新标签可能会给后面的插入图表目录带来一个小问题。到时再说明。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;在插入目录的地方，选择&lt;code&gt;引用-&amp;gt;插入表目录&lt;/code&gt;根据设置&lt;code&gt;题注标签&lt;/code&gt;的不同，我们可以依次插入图2，图3标签的目录，但是会出现的问题是，中间出现一行空格。如下图&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tmhm.github.io/images/word目录1.jpg&#34; alt=&#34;&#34; title=&#34;示图1&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;并且只能从后一行删除，删除后会将第一行的格式改变。如下图
+&lt;img src=&#34;https://tmhm.github.io/images/word目录2.jpg&#34; alt=&#34;&#34; title=&#34;示图2&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;用正常格式的目录，使用&lt;strong&gt;格式刷&lt;/strong&gt;，可以刷回正常的格式。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
 </description>
     </item>
     

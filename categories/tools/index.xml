@@ -13,12 +13,16 @@
     <atom:link href="https://tmhm.github.io/categories/tools/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>word每页添加不同的页眉</title>
-      <link>https://tmhm.github.io/2017/03/21/word%E6%AF%8F%E9%A1%B5%E6%B7%BB%E5%8A%A0%E4%B8%8D%E5%90%8C%E7%9A%84%E9%A1%B5%E7%9C%89/</link>
+      <title>word每页添加不同的页眉及目录信息</title>
+      <link>https://tmhm.github.io/2017/03/21/word%E6%AF%8F%E9%A1%B5%E6%B7%BB%E5%8A%A0%E4%B8%8D%E5%90%8C%E7%9A%84%E9%A1%B5%E7%9C%89%E5%8F%8A%E7%9B%AE%E5%BD%95%E4%BF%A1%E6%81%AF/</link>
       <pubDate>Tue, 21 Mar 2017 09:34:20 +0800</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2017/03/21/word%E6%AF%8F%E9%A1%B5%E6%B7%BB%E5%8A%A0%E4%B8%8D%E5%90%8C%E7%9A%84%E9%A1%B5%E7%9C%89/</guid>
-      <description>&lt;p&gt;参考了&lt;a href=&#34;https://zhidao.baidu.com/question/18216054.html&#34;&gt;知道网页&lt;/a&gt;&lt;/p&gt;
+      <guid>https://tmhm.github.io/2017/03/21/word%E6%AF%8F%E9%A1%B5%E6%B7%BB%E5%8A%A0%E4%B8%8D%E5%90%8C%E7%9A%84%E9%A1%B5%E7%9C%89%E5%8F%8A%E7%9B%AE%E5%BD%95%E4%BF%A1%E6%81%AF/</guid>
+      <description>
+
+&lt;h3 id=&#34;添加页眉:a759d9551099bbba97139fa3b52160ee&#34;&gt;添加页眉&lt;/h3&gt;
+
+&lt;p&gt;参考了&lt;a href=&#34;https://zhidao.baidu.com/question/18216054.html&#34;&gt;知道网页&lt;/a&gt;&lt;/p&gt;
 
 &lt;ol&gt;
 &lt;li&gt;设置不同的节，以节为单位添加页眉&lt;/li&gt;
@@ -33,7 +37,24 @@
 &lt;/ol&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;完毕。&lt;/p&gt;
+&lt;p&gt;页眉添加完毕。&lt;/p&gt;
+
+&lt;h3 id=&#34;添加图表目录:a759d9551099bbba97139fa3b52160ee&#34;&gt;添加图表目录&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;在图下，或者表上位置，点击&lt;code&gt;引用-&amp;gt;插入题注-&amp;gt;选择标签&lt;/code&gt;，确定即可。&lt;/p&gt;
+
+&lt;p&gt;在插入的时候可以在每一章新建标签，比如第二章，设置标签为&lt;code&gt;图2.&lt;/code&gt;，编号选择不包括章节，然后系统会自动给你设置一位数，并且前面加上设置的标签，即&lt;code&gt;图2.1，图2.2，...&lt;/code&gt;这样设置的新标签可能会给后面的插入图表目录带来一个小问题。到时再说明。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;在插入目录的地方，选择&lt;code&gt;引用-&amp;gt;插入表目录&lt;/code&gt;根据设置&lt;code&gt;题注标签&lt;/code&gt;的不同，我们可以依次插入图2，图3标签的目录，但是会出现的问题是，中间出现一行空格。如下图&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tmhm.github.io/images/word目录1.jpg&#34; alt=&#34;&#34; title=&#34;示图1&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;并且只能从后一行删除，删除后会将第一行的格式改变。如下图
+&lt;img src=&#34;https://tmhm.github.io/images/word目录2.jpg&#34; alt=&#34;&#34; title=&#34;示图2&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;用正常格式的目录，使用&lt;strong&gt;格式刷&lt;/strong&gt;，可以刷回正常的格式。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
 </description>
     </item>
     
@@ -45,11 +66,11 @@
       <guid>https://tmhm.github.io/2017/03/03/teamviewer%E6%97%A0%E6%B3%95%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E4%B8%BB%E6%9C%BA%E7%94%A8%E6%88%B7/</guid>
       <description>
 
-&lt;h3 id=&#34;问题描述:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;问题描述&lt;/h3&gt;
+&lt;h3 id=&#34;问题描述&#34;&gt;问题描述&lt;/h3&gt;
 
 &lt;p&gt;win10 升级后，主机在锁屏状态下，Teamviewer无法远程登录账户，防火墙已关闭，无人值守访问不了&lt;/p&gt;
 
-&lt;h3 id=&#34;解决方式:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;解决方式：&lt;/h3&gt;
+&lt;h3 id=&#34;解决方式&#34;&gt;解决方式：&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;注意主从机的版本一致&lt;/li&gt;
@@ -60,7 +81,7 @@
 &lt;p&gt;&lt;img src=&#34;https://tmhm.github.io/images/无人值守访问.jpg&#34; alt=&#34;&#34; title=&#34;示图1&#34; /&gt;
 &lt;img src=&#34;https://tmhm.github.io/images/授权轻松访问.jpg&#34; alt=&#34;&#34; title=&#34;示图2&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;问题并未终结:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;问题并未终结&lt;/h3&gt;
+&lt;h3 id=&#34;问题并未终结&#34;&gt;问题并未终结&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;当主机重启之后，Teamviewer的授权轻松访问的钩被去掉了，所以远程不能登录主机，即当主机锁屏的时候，Teamviewer可以连接到主机，但是远程不能登录主机账号。&lt;/li&gt;
@@ -69,7 +90,7 @@
 
 &lt;p&gt;&lt;img src=&#34;https://tmhm.github.io/images/teamviewer配置原因.jpg&#34; alt=&#34;&#34; title=&#34;示图3&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;尝试方案:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;尝试方案&lt;/h3&gt;
+&lt;h3 id=&#34;尝试方案&#34;&gt;尝试方案&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;不能直接勾选【授权轻松访问】选项，显示需要管理员登录，于是设置程序的【兼容性】属性，“以管理员身份运行程序”。&lt;/li&gt;
@@ -85,7 +106,7 @@
 &lt;li&gt;&lt;p&gt;尝试&lt;strong&gt;再次重装&lt;/strong&gt;后，在首页，将随windows 一同启动Teamviewer，分配设备，授权轻松访问全部选上，既可以在设置选项里面看到打开了授权访问。并且&lt;strong&gt;重装后的teamviewer是可以锁屏登录的！&lt;/strong&gt;，可恶的win10设置！&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;待解决:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;待解决&lt;/h3&gt;
+&lt;h3 id=&#34;待解决&#34;&gt;待解决&lt;/h3&gt;
 
 &lt;p&gt;ubuntu 14.04下的Teamviewer也登录不了，本来用着好的Teamviewer，现在却登录不了。苦于不在主机旁，只能用命令重新安装之，参考了&lt;a href=&#34;http://blog.csdn.net/dreamhai/article/details/57080531&#34;&gt;博文&lt;/a&gt;，先在虚拟机上实现，却发现问题。&lt;/p&gt;
 
@@ -137,7 +158,7 @@ sudo apt-get install -f
 
 &lt;p&gt;更加奇怪的是，服务器ubuntu 上的Teamviewer不登录任何账号的时候，可以直接远程访问了。&lt;/p&gt;
 
-&lt;h3 id=&#34;一些有用的命令:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;一些有用的命令&lt;/h3&gt;
+&lt;h3 id=&#34;一些有用的命令&#34;&gt;一些有用的命令&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;获取Teamviewer的ID&lt;code&gt;teamviewer --info&lt;/code&gt;&lt;/li&gt;
@@ -156,7 +177,7 @@ sudo apt-get install -f
 &lt;li&gt;重启服务&lt;code&gt;sudo teamviewer --daemon start&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&#34;粗暴解决:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;粗暴解决&lt;/h3&gt;
+&lt;h3 id=&#34;粗暴解决&#34;&gt;粗暴解决&lt;/h3&gt;
 
 &lt;p&gt;在一台新的win10系统下，发现teamviewer，可以重启使用，突然想起，曾经用驱动精灵和金山毒霸进行过优化，于是，卸载之，并取消他们的优化，再安装teamviewer，发现可以正常使用了。
 &lt;strong&gt;都是过度优化惹得祸！&lt;/strong&gt;&lt;/p&gt;
@@ -173,7 +194,7 @@ sudo apt-get install -f
       <guid>https://tmhm.github.io/2017/02/27/hugo%E5%9C%A8ubuntu14.04%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E9%85%8D%E7%BD%AE/</guid>
       <description>
 
-&lt;h3 id=&#34;安装hugo:f3924a03658d093f4458df00ee75a55f&#34;&gt;安装Hugo&lt;/h3&gt;
+&lt;h3 id=&#34;安装hugo&#34;&gt;安装Hugo&lt;/h3&gt;
 
 &lt;p&gt;Ubuntu14.04 下面直接用apt-get安装貌似不行，参考&lt;a href=&#34;https://vexxhost.com/resources/tutorials/how-to-install-and-use-hugo-the-static-site-generator-on-ubuntu-14-04/&#34;&gt;博主&lt;/a&gt;,直接下载源文件安装：&lt;/p&gt;
 
@@ -184,7 +205,7 @@ sudo dpkg -i hugo_0.15_amd64.deb
 
 &lt;p&gt;即可，测试一下版本&lt;code&gt;hugo version&lt;/code&gt;，成功输出版本号即安装成功。&lt;/p&gt;
 
-&lt;h3 id=&#34;安装markdown编辑工具-remarkable:f3924a03658d093f4458df00ee75a55f&#34;&gt;安装Markdown编辑工具（remarkable）&lt;/h3&gt;
+&lt;h3 id=&#34;安装markdown编辑工具-remarkable&#34;&gt;安装Markdown编辑工具（remarkable）&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;从&lt;a href=&#34;http://locez.com/translation/best-markdown-editors-for-linux/&#34;&gt;此篇文章&lt;/a&gt;了解到 Remarkable，貌似apt-get也木有直接安装的，于是在&lt;a href=&#34;https://remarkableapp.github.io/linux/download.html&#34;&gt;官网&lt;/a&gt;下载.deb文件；&lt;/li&gt;
@@ -192,7 +213,7 @@ sudo dpkg -i hugo_0.15_amd64.deb
 &lt;li&gt;可以在终端直接用命令&lt;code&gt;remarkable&lt;/code&gt; 打开.md文件&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;安装搜狗输入法for-linux:f3924a03658d093f4458df00ee75a55f&#34;&gt;安装搜狗输入法for Linux&lt;/h3&gt;
+&lt;h3 id=&#34;安装搜狗输入法for-linux&#34;&gt;安装搜狗输入法for Linux&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://pinyin.sogou.com/linux/help.php&#34;&gt;搜狗输入法官网&lt;/a&gt;下载安装文件；&lt;/li&gt;
@@ -201,7 +222,7 @@ sudo dpkg -i hugo_0.15_amd64.deb
 &lt;li&gt;重启，输入法生效。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;配置github:f3924a03658d093f4458df00ee75a55f&#34;&gt;配置github&lt;/h3&gt;
+&lt;h3 id=&#34;配置github&#34;&gt;配置github&lt;/h3&gt;
 
 &lt;p&gt;由于hugo文件在另一台电脑已经配置好config.toml文件，所以只需要将整个文件夹copy过来，配置好Ubuntu本地的github即可&lt;/p&gt;
 
@@ -212,7 +233,7 @@ git remote add origin git@github.com:tmhm/blog_well.git
 git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;hugo-命令note:f3924a03658d093f4458df00ee75a55f&#34;&gt;Hugo 命令Note&lt;/h3&gt;
+&lt;h3 id=&#34;hugo-命令note&#34;&gt;Hugo 命令Note&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;本地服务器，看样式：
 hugo server --baseURL=http://127.0.0.1:1313/ -t hyde-y -D --bind=&amp;quot;0.0.0.0&amp;quot;
@@ -225,7 +246,7 @@ hugo -t hyde-y --baseURL &amp;quot;https://tmhm.github.io/&amp;quot; -D
 hugo new post/second.md
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;写blog操作步骤:f3924a03658d093f4458df00ee75a55f&#34;&gt;写blog操作步骤&lt;/h3&gt;
+&lt;h3 id=&#34;写blog操作步骤&#34;&gt;写blog操作步骤&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;用&lt;code&gt;hugo new post/test.md&lt;/code&gt;命令在&lt;code&gt;content/post/&lt;/code&gt;路径生成新文件test.md；&lt;/li&gt;
@@ -255,7 +276,7 @@ hugo new post/second.md
 
 &lt;p&gt;&lt;img src=&#34;http://i.imgur.com/XZmJtEF.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;主要相关的api有&#34;&gt;主要相关的api有：&lt;/h4&gt;
+&lt;h4 id=&#34;主要相关的api有:b3b8e334f38c5d0729b510697772171d&#34;&gt;主要相关的api有：&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;plt.subplots_adjust&lt;/li&gt;
@@ -263,7 +284,7 @@ hugo new post/second.md
 &lt;li&gt;plt.text&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;解决思路&#34;&gt;解决思路&lt;/h4&gt;
+&lt;h4 id=&#34;解决思路:b3b8e334f38c5d0729b510697772171d&#34;&gt;解决思路&lt;/h4&gt;
 
 &lt;p&gt;来自matplotlib的&lt;a href=&#34;http://matplotlib.org/gallery.html&#34;&gt;官网&lt;/a&gt;,以及&lt;a href=&#34;http://matplotlib.org/examples/images_contours_and_fields/interpolation_none_vs_nearest.html&#34;&gt;图示&lt;/a&gt;&lt;/p&gt;
 
@@ -388,7 +409,7 @@ sudo chmod +x /usr/local/bin/macdown
 要写论文了，图像的分辨率是一大痛点&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;方法一&#34;&gt;方法一：&lt;/h3&gt;
+&lt;h3 id=&#34;方法一:7fbf3a2b0b5857d5e743d063f4b00457&#34;&gt;方法一：&lt;/h3&gt;
 
 &lt;p&gt;两步生成.eps文件&lt;/p&gt;
 
@@ -398,7 +419,7 @@ sudo chmod +x /usr/local/bin/macdown
 &lt;li&gt;&lt;p&gt;直接用adobe acrobat 打开pdf，然后保存为.eps 格式即可。&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&#34;方法二&#34;&gt;方法二：&lt;/h3&gt;
+&lt;h3 id=&#34;方法二:7fbf3a2b0b5857d5e743d063f4b00457&#34;&gt;方法二：&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;参考：&lt;a href=&#34;http://chrisalbon.com/python/matplotlib_save_a_plot_as_vector.html&#34;&gt;Save A Matplotlib Plot As A Vector&lt;/a&gt;&lt;/p&gt;
@@ -442,16 +463,16 @@ plt.savefig(&#39;./plteps.eps&#39;, format=&#39;eps&#39;, dpi=1000)
                 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;截图图片转换-eps&#34;&gt;截图图片转换.eps&lt;/h3&gt;
+&lt;h3 id=&#34;截图图片转换-eps:7fbf3a2b0b5857d5e743d063f4b00457&#34;&gt;截图图片转换.eps&lt;/h3&gt;
 
-&lt;h4 id=&#34;方法1&#34;&gt;方法1&lt;/h4&gt;
+&lt;h4 id=&#34;方法1:7fbf3a2b0b5857d5e743d063f4b00457&#34;&gt;方法1&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;用FastStone capture 截图，然后直接生成pdf；&lt;/li&gt;
 &lt;li&gt;用adobe acrobat 打开pdf，然后保存为.eps 格式即可。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;方法2&#34;&gt;方法2&lt;/h4&gt;
+&lt;h4 id=&#34;方法2:7fbf3a2b0b5857d5e743d063f4b00457&#34;&gt;方法2&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;上述方法1，当图片比较大的时候，会出现生成的eps文件只有一部分，会有黑色框。&lt;/li&gt;
@@ -517,7 +538,7 @@ plt.savefig(&#39;./plteps.eps&#39;, format=&#39;eps&#39;, dpi=1000)
       <guid>https://tmhm.github.io/2016/08/08/git%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
       <description>
 
-&lt;h5 id=&#34;1-创建ssh-key&#34;&gt;1.创建SSH Key&lt;/h5&gt;
+&lt;h5 id=&#34;1-创建ssh-key:97f2f1754c6e43aa005550a1d94d9e6b&#34;&gt;1.创建SSH Key&lt;/h5&gt;
 
 &lt;p&gt;&lt;code&gt;ssh-keygen -t rsa -C &amp;quot;5733*****@qq.com&amp;quot;
 &lt;/code&gt;&lt;/p&gt;
@@ -526,11 +547,11 @@ plt.savefig(&#39;./plteps.eps&#39;, format=&#39;eps&#39;, dpi=1000)
 
 &lt;p&gt;&lt;em&gt;id_rsa&lt;/em&gt; 是私钥， &lt;em&gt;id_rsa.pub&lt;/em&gt; 是公钥&lt;/p&gt;
 
-&lt;h5 id=&#34;2-add-ssh-key&#34;&gt;2.Add SSH Key&lt;/h5&gt;
+&lt;h5 id=&#34;2-add-ssh-key:97f2f1754c6e43aa005550a1d94d9e6b&#34;&gt;2.Add SSH Key&lt;/h5&gt;
 
 &lt;p&gt;登陆GitHub，打开 Account settings &amp;ndash;&amp;gt; SSH and GPG Keys页面：Add SSH Key, 填上Title， 在Key文本框粘贴&lt;em&gt;id_rsa.pub&lt;/em&gt; 的内容。&lt;/p&gt;
 
-&lt;h5 id=&#34;3-在远程服务器初始化仓库-swrd&#34;&gt;3.在远程服务器初始化仓库 swrd&lt;/h5&gt;
+&lt;h5 id=&#34;3-在远程服务器初始化仓库-swrd:97f2f1754c6e43aa005550a1d94d9e6b&#34;&gt;3.在远程服务器初始化仓库 swrd&lt;/h5&gt;
 
 &lt;p&gt;之后它会给出如下提示：&lt;/p&gt;
 
@@ -551,7 +572,7 @@ git push -u origin master
 git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;4-在本地-git-init并连接远程&#34;&gt;4.在本地 git init并连接远程&lt;/h5&gt;
+&lt;h5 id=&#34;4-在本地-git-init并连接远程:97f2f1754c6e43aa005550a1d94d9e6b&#34;&gt;4.在本地 git init并连接远程&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code&gt;git init
 git add --all
@@ -559,12 +580,12 @@ git commit -m &amp;quot;init commit&amp;quot;
 git remote add origin git@github.com:tmhm/swrd.git
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;5-push-到远程&#34;&gt;5.push 到远程&lt;/h5&gt;
+&lt;h5 id=&#34;5-push-到远程:97f2f1754c6e43aa005550a1d94d9e6b&#34;&gt;5.push 到远程&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code&gt;git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;gitingore文件&#34;&gt;.gitingore文件&lt;/h5&gt;
+&lt;h5 id=&#34;gitingore文件:97f2f1754c6e43aa005550a1d94d9e6b&#34;&gt;.gitingore文件&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;不想把所有的文件都track到远程库，可以通过添加.gitignore文件忽略（全局有效，可以忽略文件本身）&lt;/li&gt;

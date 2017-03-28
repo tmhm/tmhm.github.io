@@ -20,14 +20,14 @@
       <guid>https://tmhm.github.io/2016/08/30/%E6%8C%89%E4%BD%8D%E6%93%8D%E4%BD%9C/</guid>
       <description>
 
-&lt;h3 id=&#34;异或&#34;&gt;异或&lt;/h3&gt;
+&lt;h3 id=&#34;异或:188da3200f3e3168ec2de8bd611c2110&#34;&gt;异或&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;异或自己 变成零&lt;/li&gt;
 &lt;li&gt;异或零，值不变&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;与&#34;&gt;与 &amp;amp;&lt;/h3&gt;
+&lt;h3 id=&#34;与:188da3200f3e3168ec2de8bd611c2110&#34;&gt;与 &amp;amp;&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;递归与自己的减一按位与，返回的是该数化为二进制数后，数字1的个数&lt;/li&gt;

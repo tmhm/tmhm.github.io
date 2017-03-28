@@ -1260,7 +1260,7 @@ A[6] = 4
 
 &lt;p&gt;The goal is to calculate the value of every counter after all operations.&lt;/p&gt;
 
-&lt;h5 id=&#34;解法一&#34;&gt;解法一：&lt;/h5&gt;
+&lt;h5 id=&#34;解法一:96ab9ad5d66234dff3bc5f35191df08d&#34;&gt;解法一：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Detected time complexity: O(N*M)&lt;/li&gt;
@@ -1288,7 +1288,7 @@ A[6] = 4
     return ret
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;解法二&#34;&gt;解法二&lt;/h5&gt;
+&lt;h5 id=&#34;解法二:96ab9ad5d66234dff3bc5f35191df08d&#34;&gt;解法二&lt;/h5&gt;
 
 &lt;p&gt;[100%] MaxCounters
 &amp;gt;
