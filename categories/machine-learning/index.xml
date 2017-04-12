@@ -9,8 +9,94 @@
     <managingEditor>wells217@163.com (Well)</managingEditor>
     <webMaster>wells217@163.com (Well)</webMaster>
     <copyright>(c) 2017 Well.</copyright>
-    <lastBuildDate>Wed, 08 Feb 2017 09:13:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 12 Apr 2017 15:13:28 +0800</lastBuildDate>
     <atom:link href="https://tmhm.github.io/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>RL_intro_1</title>
+      <link>https://tmhm.github.io/2017/04/12/rl_intro_1/</link>
+      <pubDate>Wed, 12 Apr 2017 15:13:28 +0800</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2017/04/12/rl_intro_1/</guid>
+      <description>
+
+&lt;script type=&#34;text/x-mathjax-config&#34;&gt;
+  MathJax.Hub.Config({
+    extensions: [&#34;tex2jax.js&#34;],
+    jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;],
+    tex2jax: {
+      inlineMath: [ [&#39;$&#39;,&#39;$&#39;], [&#34;\\(&#34;,&#34;\\)&#34;] ],
+      displayMath: [ [&#39;$$&#39;,&#39;$$&#39;], [&#34;\\[&#34;,&#34;\\]&#34;] ],
+      processEscapes: true
+    },
+    &#34;HTML-CSS&#34;: { availableFonts: [&#34;TeX&#34;] }
+  });
+&lt;/script&gt;
+
+&lt;h4 id=&#34;强化学习的定义:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;强化学习的定义&lt;/h4&gt;
+
+&lt;p&gt;强化学习（Reinforcement Learning）本身可以定义为一个广泛的学习问题，学会找到状态（Situation）到动作（Actions）的一个映射关系，以最大化一个数值型的回报（Reward）信号。一个完整的强化学习问题可以用马氏决策过程中的最优控制理论来进行描述。在马氏链中，当前时刻的状态（State） 仅仅与上一时刻的状态有关。如下图1所示，一个智能体（Agent）可以通过某种方式感受环境的状态（State），然后可以通过某一个动作（Action）来改变环境的下一状态。在这个不断交互的过程中，Agent还必须具有一个或者以上的、与此环境状态相关的目标（Goal）。
+&lt;center&gt;
+&lt;img src=&#34;https://tmhm.github.io/images/rl_intro_fig1.png&#34; alt=&#34;&#34; title=&#34;示图1&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;图1 强化学习中智能体与环境的交互
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;与RL问题相对应的任何求解方法，可以称之为一个强化学习方法。&lt;/p&gt;
+
+&lt;h4 id=&#34;rl的两个重要特征:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;RL的两个重要特征&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;试错搜索（trial-and-error）&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;延迟回报（delayed reward）&lt;/p&gt;
+
+&lt;p&gt;可以引出与监督学习的重要区别——评价的方式不同。
+监督学习中通过正确的指示（instruct）来进行反馈；强化学习是依靠整个生命周期所选择的动作来进行评价式的反馈。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;rl系统中的四大主要元素-element:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;Rl系统中的四大主要元素（element）&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;策略（policy）&lt;/p&gt;
+
+&lt;p&gt;其定义是在某时刻下，智能体的行为方式。粗略地说，一个策略可以看做是接收到状态到智能体做出动作的一种映射关系，可以用函数或者表的形式来表现。通常来说，策略可能是随机的。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;奖励/回报函数（reward function）&lt;/p&gt;
+
+&lt;p&gt;奖励函数定义了强化学习问题中的目标。它把当前每个状态（或者状态-动作对）映射到一个评价数值，以表现该Agent当前所做事件的好坏程度。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;值函数（value function）&lt;/p&gt;
+
+&lt;p&gt;奖励函数所表现出的是当前状态或者状态-动作对的立即评价，值函数表征的是对长远意义下的评判。粗略来说，值函数可以表示从当前状态开始到未来（long-term），Agent可以收获到奖励的一种累积和。即值函数是对Agent整个生命周期的一种评价。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;环境的模型（model of the environment）&lt;/p&gt;
+
+&lt;p&gt;即对该Agent生存环境的行为模仿（mimics the behavior of the environment）。举一个例子，给定一个状态和动作，环境模型可以预测相对应的下一状态和奖励。如果模型已知，强化学习问题可以演化为动态规划问题求解。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;探索与利用的权衡:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;探索与利用的权衡&lt;/h4&gt;
+
+&lt;p&gt;&lt;em&gt;trade-off between exploration and exploitation&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Agent 需要根据已知的状态、动作和回报的相关信息，来不断获得最大的回报，即利用（exploit）当前已知的知识；另外，Agent 需要探索（explore）一些未知的知识，以期望在未来实现更好的动作。（由于目前的知识往往并不是最优的）&lt;/p&gt;
+
+&lt;p&gt;因此，在RL中，利用与探索是一个权衡的话题，目前已提出多种方法来尝试解决这个问题。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$ \epsilon $ -greedy action selection（以小概率不贪心的选择方式）&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Softmax action selection（基于Gibbs分布或者称之为玻尔兹曼分布，以概率选择动作）
+$$ \cfrac{e^{Q&lt;em&gt;t(a)/\tau}}{\sum&lt;/em&gt;{b=1}^n e^{Q_t(b)/\tau}}$$&lt;/p&gt;
+
+&lt;p&gt;$\tau &amp;gt; 0 $表示温度（temperature）, 高的温度，选择动作近乎平等；温度趋近0的时候，此法接近于贪心选择。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;refernece:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;refernece&lt;/h4&gt;
+
+&lt;p&gt;[1] Sutton R S, Barto A G. Reinforcement learning: An introduction[M]. MIT press Cambridge, 1998.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>基于DRL和TORCS的自动驾驶仿真系统——之环境配置</title>
@@ -302,7 +388,7 @@ $ sudo /etc/init.d/gdm start
 
 &lt;p&gt;升级到375版本， 还是没用，启动进入不了桌面，重复登录&lt;/p&gt;
 
-&lt;h3 id=&#34;install-driver-367-https-kusemanohar-wordpress-com-2016-07-29-gtx-1080-on-ubuntu-14-04-trusty:d68e03665ec87076c808379f00c3c33a&#34;&gt;&lt;a href=&#34;https://kusemanohar.wordpress.com/2016/07/29/gtx-1080-on-ubuntu-14-04-trusty/&#34;&gt;Install driver 367&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;install-driver-367-https-kusemanohar-wordpress-com-2016-07-29-gtx-1080-on-ubuntu-14-04-trusty&#34;&gt;&lt;a href=&#34;https://kusemanohar.wordpress.com/2016/07/29/gtx-1080-on-ubuntu-14-04-trusty/&#34;&gt;Install driver 367&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;Uninstall previous nvidia drivers.&lt;/p&gt;
 
@@ -361,7 +447,7 @@ $ sudo /etc/init.d/lightdm start
 &lt;p&gt;有人说，安装必须要在安装桌面前安装GTX 1080 driver，后面方案验证来看， 那个参数才是关键。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;解决方法:d68e03665ec87076c808379f00c3c33a&#34;&gt;解决方法&lt;/h3&gt;
+&lt;h3 id=&#34;解决方法&#34;&gt;解决方法&lt;/h3&gt;
 
 &lt;p&gt;利用sudo gedit /etc/modprobe.d/blacklist-nouveau.conf新建blacklist-nouveau.conf文件，输入命令&lt;/p&gt;
 
@@ -416,7 +502,7 @@ sudo /etc/init.d/lightdm start
 &lt;p&gt;NO
 &lt;img src=&#34;http://i.imgur.com/5DHQbMl.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;cuda8-0安装:d68e03665ec87076c808379f00c3c33a&#34;&gt;cuda8.0安装&lt;/h3&gt;
+&lt;h3 id=&#34;cuda8-0安装&#34;&gt;cuda8.0安装&lt;/h3&gt;
 
 &lt;p&gt;运行&lt;/p&gt;
 
@@ -479,7 +565,7 @@ Logfile is /tmp/cuda_install_9045.log
     
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;设置环境变量:d68e03665ec87076c808379f00c3c33a&#34;&gt;设置环境变量&lt;/h4&gt;
+&lt;h4 id=&#34;设置环境变量&#34;&gt;设置环境变量&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;export PATH=/usr/local/cuda-8.0/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
@@ -493,7 +579,7 @@ export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
 &lt;code&gt;sudo ldconfig //环境变量立即生效
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;验证-cuda:d68e03665ec87076c808379f00c3c33a&#34;&gt;验证 cuda&lt;/h4&gt;
+&lt;h4 id=&#34;验证-cuda&#34;&gt;验证 cuda&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;c302@c302-dl:~/Downloads$ nvcc -V
 nvcc: NVIDIA (R) Cuda compiler driver
@@ -502,7 +588,7 @@ Built on Sun_Sep__4_22:14:01_CDT_2016
 Cuda compilation tools, release 8.0, V8.0.44
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;测试cuda的samples:d68e03665ec87076c808379f00c3c33a&#34;&gt;测试cuda的samples&lt;/h3&gt;
+&lt;h3 id=&#34;测试cuda的samples&#34;&gt;测试cuda的samples&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;cd ‘/home/zhou/NVIDIA_CUDA-8.0_Samples’
 make  //这里需要点时间
@@ -754,7 +840,7 @@ nvidia-smi 已经无效。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;由于使用的环境是ubuntu 14.04 desktop版，故不需要安装opencv。&lt;/p&gt;
 
-&lt;h4 id=&#34;安装一些依赖包&#34;&gt;安装一些依赖包：&lt;/h4&gt;
+&lt;h4 id=&#34;安装一些依赖包:8ddac1d36b1af55faa891d2975711062&#34;&gt;安装一些依赖包：&lt;/h4&gt;
 &lt;/blockquote&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo apt-get install xautomation
@@ -762,7 +848,7 @@ sudo pip install numpy
 sudo pip install gym
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;下载-gym-torcs源码-https-github-com-ugo-nama-kun-gym-torcs&#34;&gt;下载&lt;a href=&#34;https://github.com/ugo-nama-kun/gym_torcs&#34;&gt;gym_torcs源码&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;下载-gym-torcs源码-https-github-com-ugo-nama-kun-gym-torcs:8ddac1d36b1af55faa891d2975711062&#34;&gt;下载&lt;a href=&#34;https://github.com/ugo-nama-kun/gym_torcs&#34;&gt;gym_torcs源码&lt;/a&gt;&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;然后将&lt;/li&gt;
@@ -799,7 +885,7 @@ sudo make datainstall
 
 &lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201611/781469-20161121150329987-1053577076.bmp&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;ddpg源码-https-github-com-yanpanlau-ddpg-keras-torcs&#34;&gt;&lt;a href=&#34;https://github.com/yanpanlau/DDPG-Keras-Torcs&#34;&gt;DDPG源码&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;ddpg源码-https-github-com-yanpanlau-ddpg-keras-torcs:8ddac1d36b1af55faa891d2975711062&#34;&gt;&lt;a href=&#34;https://github.com/yanpanlau/DDPG-Keras-Torcs&#34;&gt;DDPG源码&lt;/a&gt;&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;pip install keras
 pip install tensorflow
@@ -835,7 +921,7 @@ cd ../gym_torcs
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;修改默认python&#34;&gt;修改默认python&lt;/h4&gt;
+&lt;h4 id=&#34;修改默认python:8ddac1d36b1af55faa891d2975711062&#34;&gt;修改默认python&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;删除系统自带的python软链接&lt;/p&gt;
@@ -859,7 +945,7 @@ cd ../gym_torcs
       <guid>https://tmhm.github.io/2016/05/27/pybrain%E5%BA%93%E7%9A%84example%E4%B9%8Bnfq%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%88%86%E6%9E%90/</guid>
       <description>
 
-&lt;h4 id=&#34;pybrain库的example之nfq流程图分析&#34;&gt;PyBrain库的example之NFQ流程图分析&lt;/h4&gt;
+&lt;h4 id=&#34;pybrain库的example之nfq流程图分析:ee4d46bb0f922990b5099f1ed9a24c21&#34;&gt;PyBrain库的example之NFQ流程图分析&lt;/h4&gt;
 
 &lt;p&gt;如下是测试程序。主要分析&lt;strong&gt;doEpisode和learn&lt;/strong&gt;两个函数。&lt;/p&gt;
 
@@ -1009,16 +1095,16 @@ print &amp;quot;you put :&amp;quot;,str
     </item>
     
     <item>
-      <title>强化学习之路（0）</title>
-      <link>https://tmhm.github.io/2016/03/31/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF0/</link>
+      <title>强化学习笔记（0）</title>
+      <link>https://tmhm.github.io/2016/03/31/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B00/</link>
       <pubDate>Thu, 31 Mar 2016 08:18:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/03/31/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF0/</guid>
+      <guid>https://tmhm.github.io/2016/03/31/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B00/</guid>
       <description>
 
 &lt;p&gt;开始接触强化学习是在回到所里开始找课题研究方向的时候，偶然查到&lt;a href=&#34;http://news.berkeley.edu/2015/05/21/deep-learning-robot-masters-skills-via-trial-and-error/&#34;&gt;伯克利的机器人视频&lt;/a&gt;,给我比较惊艳的感觉。陆续开始查找强化学习的一些资料。最近看到一篇有关强化学习的&lt;a href=&#34;http://blog.exbot.net/archives/223&#34;&gt;博文&lt;/a&gt;，瞬时，想把自己接触到强化学习的过程也做一个简单梳理，为接下来准备在强化学习方向完成毕业论文做一个初略安排。&lt;/p&gt;
 
-&lt;h5 id=&#34;有关强化学习的资料:64c657aa2c0b01c302013ce584e5b4b8&#34;&gt;有关强化学习的资料：&lt;/h5&gt;
+&lt;h5 id=&#34;有关强化学习的资料:de16989b43bad915dba343b24e25263a&#34;&gt;有关强化学习的资料：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Tom M. Mitchell的《机器学习》最后一章讲reinforcement learning，算是入门&lt;/p&gt;&lt;/li&gt;
@@ -1045,7 +1131,7 @@ print &amp;quot;you put :&amp;quot;,str
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;应该关注的实验室:64c657aa2c0b01c302013ce584e5b4b8&#34;&gt;应该关注的实验室：&lt;/h5&gt;
+&lt;h5 id=&#34;应该关注的实验室:de16989b43bad915dba343b24e25263a&#34;&gt;应该关注的实验室：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.cs.york.ac.uk/rl/research.php&#34;&gt;Knowledge-Based Reinforcement Learning&lt;/a&gt;&lt;/li&gt;
@@ -1053,7 +1139,14 @@ print &amp;quot;you put :&amp;quot;,str
 &lt;li&gt;&lt;a href=&#34;http://www.cs.colostate.edu/~anderson/res/rl/&#34;&gt;Reinforcement Learning and Control&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;代码工具框架:64c657aa2c0b01c302013ce584e5b4b8&#34;&gt;代码工具框架:&lt;/h5&gt;
+&lt;h5 id=&#34;有关课程:de16989b43bad915dba343b24e25263a&#34;&gt;有关课程:&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://rll.berkeley.edu/deeprlcourse/#assignments&#34;&gt;CS 294: Deep Reinforcement Learning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www0.cs.ucl.ac.uk/staff/D.Silver/web/Teaching.html&#34;&gt;Dave Silver’s course on reinforcement learning&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;代码工具框架:de16989b43bad915dba343b24e25263a&#34;&gt;代码工具框架:&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;最近找到一个&lt;a href=&#34;http://pybrain.org/&#34;&gt;PyBrain&lt;/a&gt;的python开源库，不错,准备前期就用它了&lt;/p&gt;&lt;/li&gt;
@@ -1070,7 +1163,7 @@ print &amp;quot;you put :&amp;quot;,str
             * &lt;a href=&#34;http://en.wikipedia.org/wiki/Reinforcement_learning&#34;&gt;http://en.wikipedia.org/wiki/Reinforcement_learning&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;一些相关会议:64c657aa2c0b01c302013ce584e5b4b8&#34;&gt;一些相关会议：&lt;/h5&gt;
+&lt;h5 id=&#34;一些相关会议:de16989b43bad915dba343b24e25263a&#34;&gt;一些相关会议：&lt;/h5&gt;
 
 &lt;p&gt;&lt;em&gt;(from reinforcement learning State of the art)&lt;/em&gt;&lt;/p&gt;
 

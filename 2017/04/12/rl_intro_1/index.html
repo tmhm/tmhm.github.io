@@ -5,32 +5,32 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>比较字符串（包含以及变位词）  &middot; Well</title>
+  <title>RL_intro_1  &middot; Well</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="description" content="Write a method anagram(s,t) to decide if two strings are anagrams or not. Compare two strings A and B, determine whether A contains all of the characters in B." />
+<meta name="description" content="强化学习笔记（1）——RL相关问题的简单介绍" />
 
-<meta name="keywords" content="算法, ">
+<meta name="keywords" content="RL, ">
 
 
-<meta property="og:title" content="比较字符串（包含以及变位词）  &middot; Well ">
+<meta property="og:title" content="RL_intro_1  &middot; Well ">
 <meta property="og:site_name" content="Well"/>
-<meta property="og:url" content="https://tmhm.github.io/2016/06/04/%E6%AF%94%E8%BE%83%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%85%E5%90%AB%E4%BB%A5%E5%8F%8A%E5%8F%98%E4%BD%8D%E8%AF%8D/" />
+<meta property="og:url" content="https://tmhm.github.io/2017/04/12/rl_intro_1/" />
 <meta property="og:locale" content="en-EN">
 
 
 <meta property="og:type" content="article" />
-<meta property="og:description" content="Write a method anagram(s,t) to decide if two strings are anagrams or not. Compare two strings A and B, determine whether A contains all of the characters in B."/>
-<meta property="og:article:published_time" content="2016-06-04T09:48:00Z" />
-<meta property="og:article:modified_time" content="2016-06-04T09:48:00Z" />
+<meta property="og:description" content="强化学习笔记（1）——RL相关问题的简单介绍"/>
+<meta property="og:article:published_time" content="2017-04-12T15:13:28&#43;08:00" />
+<meta property="og:article:modified_time" content="2017-04-12T15:13:28&#43;08:00" />
 
   
     
-<meta property="og:article:tag" content="算法">
+<meta property="og:article:tag" content="RL">
     
   
 
@@ -38,9 +38,9 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@" />
-<meta name="twitter:title" content="比较字符串（包含以及变位词）" />
-<meta name="twitter:description" content="Write a method anagram(s,t) to decide if two strings are anagrams or not. Compare two strings A and B, determine whether A contains all of the characters in B." />
-<meta name="twitter:url" content="https://tmhm.github.io/2016/06/04/%E6%AF%94%E8%BE%83%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%85%E5%90%AB%E4%BB%A5%E5%8F%8A%E5%8F%98%E4%BD%8D%E8%AF%8D/" />
+<meta name="twitter:title" content="RL_intro_1" />
+<meta name="twitter:description" content="强化学习笔记（1）——RL相关问题的简单介绍" />
+<meta name="twitter:url" content="https://tmhm.github.io/2017/04/12/rl_intro_1/" />
 <meta name="twitter:domain" content="https://tmhm.github.io/">
   
 
@@ -48,20 +48,20 @@
   {
     "@context": "http://schema.org",
     "@type": "Article",
-    "headline": "比较字符串（包含以及变位词）",
+    "headline": "RL_intro_1",
     "author": {
       "@type": "Person",
       "name": "http://profiles.google.com/+?rel=author"
     },
-    "datePublished": "2016-06-04",
-    "description": "Write a method anagram(s,t) to decide if two strings are anagrams or not. Compare two strings A and B, determine whether A contains all of the characters in B.",
-    "wordCount":  303 
+    "datePublished": "2017-04-12",
+    "description": "强化学习笔记（1）——RL相关问题的简单介绍",
+    "wordCount":  102 
   }
 </script>
 
 
 
-<link rel="canonical" href="https://tmhm.github.io/2016/06/04/%E6%AF%94%E8%BE%83%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%85%E5%90%AB%E4%BB%A5%E5%8F%8A%E5%8F%98%E4%BD%8D%E8%AF%8D/" />
+<link rel="canonical" href="https://tmhm.github.io/2017/04/12/rl_intro_1/" />
 
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://tmhm.github.io/v2.png">
 <link href="https://tmhm.github.io/v2.png" rel="icon">
@@ -177,19 +177,19 @@
 
 <article id="main-content" class="container main_content single">
   <header class="container hat">
-  <h1>比较字符串（包含以及变位词）
+  <h1>RL_intro_1
 </h1>
 
   <div class="metas">
-<time datetime="2016-06-04">4 Jun, 2016</time>
+<time datetime="2017-04-12">12 Apr, 2017</time>
 
 
   
-  &middot; Read in about 2 min
-  &middot; (303 Words)
+  &middot; Read in about 1 min
+  &middot; (102 Words)
   <br>
   
-<a class="label" href="https://tmhm.github.io/tags/%E7%AE%97%E6%B3%95">算法</a>
+<a class="label" href="https://tmhm.github.io/tags/rl">RL</a>
 
 
 
@@ -205,15 +205,11 @@
   
 
     
-    <a class="prev" href="https://tmhm.github.io/2016/05/31/python-%E4%B8%8E%E6%97%B6%E9%97%B4%E6%9C%89%E5%85%B3%E7%9A%84%E6%93%8D%E4%BD%9C/" title="python 与时间有关的操作">
+    <a class="prev" href="https://tmhm.github.io/2017/04/01/taste-sql/" title="taste SQL">
       Previous
     </a>
     
 
-    
-    <a class="next" href="https://tmhm.github.io/2016/08/08/git%E7%9A%84%E4%BD%BF%E7%94%A8/" title="git的使用">
-      Next
-    </a>
     
 
   
@@ -226,103 +222,81 @@
   <div class="container content">
   
 
-<h5 id="description">Description</h5>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { availableFonts: ["TeX"] }
+  });
+</script>
 
-<p>Write a method anagram(s,t) to decide if two strings are anagrams or not.</p>
+<h4 id="强化学习的定义:877a7354ca4ae72eb3cbf9d53c436c2f">强化学习的定义</h4>
 
-<p><strong>What is Anagram?</strong></p>
+<p>强化学习（Reinforcement Learning）本身可以定义为一个广泛的学习问题，学会找到状态（Situation）到动作（Actions）的一个映射关系，以最大化一个数值型的回报（Reward）信号。一个完整的强化学习问题可以用马氏决策过程中的最优控制理论来进行描述。在马氏链中，当前时刻的状态（State） 仅仅与上一时刻的状态有关。如下图1所示，一个智能体（Agent）可以通过某种方式感受环境的状态（State），然后可以通过某一个动作（Action）来改变环境的下一状态。在这个不断交互的过程中，Agent还必须具有一个或者以上的、与此环境状态相关的目标（Goal）。
+<center>
+<img src="/images/rl_intro_fig1.png" alt="" title="示图1" /></p>
+
+<p>图1 强化学习中智能体与环境的交互
+</center></p>
+
+<p>与RL问题相对应的任何求解方法，可以称之为一个强化学习方法。</p>
+
+<h4 id="rl的两个重要特征:877a7354ca4ae72eb3cbf9d53c436c2f">RL的两个重要特征</h4>
 
 <ul>
-<li>Two strings are anagram if they can be the same after change the order of characters.</li>
+<li>试错搜索（trial-and-error）</li>
+
+<li><p>延迟回报（delayed reward）</p>
+
+<p>可以引出与监督学习的重要区别——评价的方式不同。
+监督学习中通过正确的指示（instruct）来进行反馈；强化学习是依靠整个生命周期所选择的动作来进行评价式的反馈。</p></li>
 </ul>
 
-<h5 id="example">Example</h5>
+<h4 id="rl系统中的四大主要元素-element:877a7354ca4ae72eb3cbf9d53c436c2f">Rl系统中的四大主要元素（element）</h4>
 
-<p>Given s = &laquo;abcd&raquo;, t = &laquo;dcab&raquo;, return true.</p>
+<ul>
+<li><p>策略（policy）</p>
 
-<p>Given s = &laquo;ab&raquo;, t = &laquo;ab&raquo;, return true.</p>
+<p>其定义是在某时刻下，智能体的行为方式。粗略地说，一个策略可以看做是接收到状态到智能体做出动作的一种映射关系，可以用函数或者表的形式来表现。通常来说，策略可能是随机的。</p></li>
 
-<p>Given s = &laquo;ab&raquo;, t = &laquo;ac&raquo;, return false.</p>
+<li><p>奖励/回报函数（reward function）</p>
 
-<h5 id="solution">solution：</h5>
+<p>奖励函数定义了强化学习问题中的目标。它把当前每个状态（或者状态-动作对）映射到一个评价数值，以表现该Agent当前所做事件的好坏程度。</p></li>
 
-<pre><code>class Solution:
-    &quot;&quot;&quot;
-    @param s: The first string
-    @param b: The second string
-    @return true or false
-    &quot;&quot;&quot;
-    def countchar(self,ch):
-        result = {}
-        for item in ch:
-            ikey = ord(item)
-            if result.has_key(ikey):
-                result[ikey] +=1
-            else:
-                result.setdefault(ikey,0)
-        return result
+<li><p>值函数（value function）</p>
 
-    def anagram(self, s, t):
-        # write your code here
-        dicS = self.countchar(s)
-        dicT = self.countchar(t)
-        if not cmp(dicS,dicT):
-             return True
-        else:
-            return False
-</code></pre>
+<p>奖励函数所表现出的是当前状态或者状态-动作对的立即评价，值函数表征的是对长远意义下的评判。粗略来说，值函数可以表示从当前状态开始到未来（long-term），Agent可以收获到奖励的一种累积和。即值函数是对Agent整个生命周期的一种评价。</p></li>
 
-<h4 id="compare-strings">Compare Strings</h4>
+<li><p>环境的模型（model of the environment）</p>
 
-<h5 id="description-1">Description</h5>
+<p>即对该Agent生存环境的行为模仿（mimics the behavior of the environment）。举一个例子，给定一个状态和动作，环境模型可以预测相对应的下一状态和奖励。如果模型已知，强化学习问题可以演化为动态规划问题求解。</p></li>
+</ul>
 
-<p>Compare two strings A and B, determine whether A contains all of the characters in B.</p>
+<h4 id="探索与利用的权衡:877a7354ca4ae72eb3cbf9d53c436c2f">探索与利用的权衡</h4>
 
-<p>The characters in string A and B are all Upper Case letters.</p>
+<p><em>trade-off between exploration and exploitation</em></p>
 
-<p><strong>Notice</strong>
-&gt;The characters of B in A are not necessary continuous or ordered.</p>
+<p>Agent 需要根据已知的状态、动作和回报的相关信息，来不断获得最大的回报，即利用（exploit）当前已知的知识；另外，Agent 需要探索（explore）一些未知的知识，以期望在未来实现更好的动作。（由于目前的知识往往并不是最优的）</p>
 
-<h5 id="example-1">Example</h5>
+<p>因此，在RL中，利用与探索是一个权衡的话题，目前已提出多种方法来尝试解决这个问题。</p>
 
-<p>For A = &laquo;ABCD&raquo;, B = &laquo;ACD&raquo;, return true.</p>
+<ul>
+<li>$ \epsilon $ -greedy action selection（以小概率不贪心的选择方式）</li>
 
-<p>For A = &laquo;ABCD&raquo;, B = &laquo;AABC&raquo;, return false.</p>
+<li><p>Softmax action selection（基于Gibbs分布或者称之为玻尔兹曼分布，以概率选择动作）
+$$ \cfrac{e^{Q<em>t(a)/\tau}}{\sum</em>{b=1}^n e^{Q_t(b)/\tau}}$$</p>
 
-<h5 id="solution-1">solution</h5>
+<p>$\tau &gt; 0 $表示温度（temperature）, 高的温度，选择动作近乎平等；温度趋近0的时候，此法接近于贪心选择。</p></li>
+</ul>
 
-<pre><code>class Solution:
-    &quot;&quot;&quot;
-    @param A : A string includes Upper Case letters
-    @param B : A string includes Upper Case letters
-    @return :  if string A contains all of the characters in B return True else return False
-    &quot;&quot;&quot;
-    # used a list with 26 iterm to save the number of each alphabet
+<h4 id="refernece:877a7354ca4ae72eb3cbf9d53c436c2f">refernece</h4>
 
-    def compareStrings(self, A, B):
-        # write your code here
-        if B is None:
-            return True
-        elif A is None:
-            return False
-
-        CntA = self.countString(A)
-        CntB = self.countString(B)
-
-        for order in range(ord(&quot;Z&quot;)-ord(&quot;A&quot;) + 1):
-            if CntA[order] &lt; CntB[order]:
-                return False
-
-        return True
-
-    def countString(self,string):
-        count = []
-        for item in range(ord(&quot;Z&quot;)-ord(&quot;A&quot;) + 1):
-            count.append(0)
-        for item in string:
-            count[ord(item) - ord(&quot;A&quot;)] +=1
-        return count
-</code></pre>
+<p>[1] Sutton R S, Barto A G. Reinforcement learning: An introduction[M]. MIT press Cambridge, 1998.</p>
 
 </div>
 
@@ -334,15 +308,11 @@
   
 
     
-    <a class="prev" href="https://tmhm.github.io/2016/05/31/python-%E4%B8%8E%E6%97%B6%E9%97%B4%E6%9C%89%E5%85%B3%E7%9A%84%E6%93%8D%E4%BD%9C/" title="python 与时间有关的操作">
+    <a class="prev" href="https://tmhm.github.io/2017/04/01/taste-sql/" title="taste SQL">
       Previous
     </a>
     
 
-    
-    <a class="next" href="https://tmhm.github.io/2016/08/08/git%E7%9A%84%E4%BD%BF%E7%94%A8/" title="git的使用">
-      Next
-    </a>
     
 
   

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sql on Well</title>
+    <link>https://tmhm.github.io/tags/sql/</link>
+    <description>Recent content in Sql on Well</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <managingEditor>wells217@163.com (Well)</managingEditor>
+    <webMaster>wells217@163.com (Well)</webMaster>
+    <copyright>(c) 2017 Well.</copyright>
+    <lastBuildDate>Sat, 01 Apr 2017 22:51:52 +0800</lastBuildDate>
+    <atom:link href="https://tmhm.github.io/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>taste SQL</title>
+      <link>https://tmhm.github.io/2017/04/01/taste-sql/</link>
+      <pubDate>Sat, 01 Apr 2017 22:51:52 +0800</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2017/04/01/taste-sql/</guid>
+      <description>
+
+&lt;h3 id=&#34;事务的四项特性&#34;&gt;事务的四项特性&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ACID&lt;/li&gt;
+&lt;li&gt;A（atomic）原子性
+
+&lt;ul&gt;
+&lt;li&gt;用户a 少 200元－》 用户b 多 200元， 同时成立&lt;/li&gt;
+&lt;li&gt;或者成立，或者回滚&lt;/li&gt;
+&lt;li&gt;加锁，写日志&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;C（consistency）一致性
+
+&lt;ul&gt;
+&lt;li&gt;事务不存在中间状态&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;I（isolation）隔离性
+
+&lt;ul&gt;
+&lt;li&gt;一个事务没有完成，新事务提交请求，为了可以并发，&lt;/li&gt;
+&lt;li&gt;undo－log记录行数据版本信息， 可重复读，&lt;/li&gt;
+&lt;li&gt;序列化读，全部加锁&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;D（durability） 持久性
+
+&lt;ul&gt;
+&lt;li&gt;事务提交，记录到硬盘，&lt;/li&gt;
+&lt;li&gt;刷新机制，时间－》秒， 事务提交即刷新，操作系统决定&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;sql&#34;&gt;SQL&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;四种操作&lt;/li&gt;
+&lt;li&gt;增删改查&lt;/li&gt;
+&lt;li&gt;ddl 数据定义语言，  建库，建表&lt;/li&gt;
+&lt;li&gt;dml 数据操作语言，  增删改查&lt;/li&gt;
+&lt;li&gt;dcl 数据控制语言，  用户授权，权限回收，清空表数据&lt;/li&gt;
+&lt;li&gt;delete 会有redo－log， truncate 里面直接操作，不记日志&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

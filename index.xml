@@ -9,8 +9,146 @@
     <managingEditor>wells217@163.com (Well)</managingEditor>
     <webMaster>wells217@163.com (Well)</webMaster>
     <copyright>(c) 2017 Well.</copyright>
-    <lastBuildDate>Tue, 21 Mar 2017 09:34:20 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 12 Apr 2017 15:13:28 +0800</lastBuildDate>
     <atom:link href="https://tmhm.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>RL_intro_1</title>
+      <link>https://tmhm.github.io/2017/04/12/rl_intro_1/</link>
+      <pubDate>Wed, 12 Apr 2017 15:13:28 +0800</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2017/04/12/rl_intro_1/</guid>
+      <description>
+
+&lt;script type=&#34;text/x-mathjax-config&#34;&gt;
+  MathJax.Hub.Config({
+    extensions: [&#34;tex2jax.js&#34;],
+    jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;],
+    tex2jax: {
+      inlineMath: [ [&#39;$&#39;,&#39;$&#39;], [&#34;\\(&#34;,&#34;\\)&#34;] ],
+      displayMath: [ [&#39;$$&#39;,&#39;$$&#39;], [&#34;\\[&#34;,&#34;\\]&#34;] ],
+      processEscapes: true
+    },
+    &#34;HTML-CSS&#34;: { availableFonts: [&#34;TeX&#34;] }
+  });
+&lt;/script&gt;
+
+&lt;h4 id=&#34;强化学习的定义:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;强化学习的定义&lt;/h4&gt;
+
+&lt;p&gt;强化学习（Reinforcement Learning）本身可以定义为一个广泛的学习问题，学会找到状态（Situation）到动作（Actions）的一个映射关系，以最大化一个数值型的回报（Reward）信号。一个完整的强化学习问题可以用马氏决策过程中的最优控制理论来进行描述。在马氏链中，当前时刻的状态（State） 仅仅与上一时刻的状态有关。如下图1所示，一个智能体（Agent）可以通过某种方式感受环境的状态（State），然后可以通过某一个动作（Action）来改变环境的下一状态。在这个不断交互的过程中，Agent还必须具有一个或者以上的、与此环境状态相关的目标（Goal）。
+&lt;center&gt;
+&lt;img src=&#34;https://tmhm.github.io/images/rl_intro_fig1.png&#34; alt=&#34;&#34; title=&#34;示图1&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;图1 强化学习中智能体与环境的交互
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;与RL问题相对应的任何求解方法，可以称之为一个强化学习方法。&lt;/p&gt;
+
+&lt;h4 id=&#34;rl的两个重要特征:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;RL的两个重要特征&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;试错搜索（trial-and-error）&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;延迟回报（delayed reward）&lt;/p&gt;
+
+&lt;p&gt;可以引出与监督学习的重要区别——评价的方式不同。
+监督学习中通过正确的指示（instruct）来进行反馈；强化学习是依靠整个生命周期所选择的动作来进行评价式的反馈。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;rl系统中的四大主要元素-element:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;Rl系统中的四大主要元素（element）&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;策略（policy）&lt;/p&gt;
+
+&lt;p&gt;其定义是在某时刻下，智能体的行为方式。粗略地说，一个策略可以看做是接收到状态到智能体做出动作的一种映射关系，可以用函数或者表的形式来表现。通常来说，策略可能是随机的。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;奖励/回报函数（reward function）&lt;/p&gt;
+
+&lt;p&gt;奖励函数定义了强化学习问题中的目标。它把当前每个状态（或者状态-动作对）映射到一个评价数值，以表现该Agent当前所做事件的好坏程度。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;值函数（value function）&lt;/p&gt;
+
+&lt;p&gt;奖励函数所表现出的是当前状态或者状态-动作对的立即评价，值函数表征的是对长远意义下的评判。粗略来说，值函数可以表示从当前状态开始到未来（long-term），Agent可以收获到奖励的一种累积和。即值函数是对Agent整个生命周期的一种评价。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;环境的模型（model of the environment）&lt;/p&gt;
+
+&lt;p&gt;即对该Agent生存环境的行为模仿（mimics the behavior of the environment）。举一个例子，给定一个状态和动作，环境模型可以预测相对应的下一状态和奖励。如果模型已知，强化学习问题可以演化为动态规划问题求解。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;探索与利用的权衡:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;探索与利用的权衡&lt;/h4&gt;
+
+&lt;p&gt;&lt;em&gt;trade-off between exploration and exploitation&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Agent 需要根据已知的状态、动作和回报的相关信息，来不断获得最大的回报，即利用（exploit）当前已知的知识；另外，Agent 需要探索（explore）一些未知的知识，以期望在未来实现更好的动作。（由于目前的知识往往并不是最优的）&lt;/p&gt;
+
+&lt;p&gt;因此，在RL中，利用与探索是一个权衡的话题，目前已提出多种方法来尝试解决这个问题。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$ \epsilon $ -greedy action selection（以小概率不贪心的选择方式）&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Softmax action selection（基于Gibbs分布或者称之为玻尔兹曼分布，以概率选择动作）
+$$ \cfrac{e^{Q&lt;em&gt;t(a)/\tau}}{\sum&lt;/em&gt;{b=1}^n e^{Q_t(b)/\tau}}$$&lt;/p&gt;
+
+&lt;p&gt;$\tau &amp;gt; 0 $表示温度（temperature）, 高的温度，选择动作近乎平等；温度趋近0的时候，此法接近于贪心选择。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;refernece:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;refernece&lt;/h4&gt;
+
+&lt;p&gt;[1] Sutton R S, Barto A G. Reinforcement learning: An introduction[M]. MIT press Cambridge, 1998.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>taste SQL</title>
+      <link>https://tmhm.github.io/2017/04/01/taste-sql/</link>
+      <pubDate>Sat, 01 Apr 2017 22:51:52 +0800</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2017/04/01/taste-sql/</guid>
+      <description>
+
+&lt;h3 id=&#34;事务的四项特性&#34;&gt;事务的四项特性&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ACID&lt;/li&gt;
+&lt;li&gt;A（atomic）原子性
+
+&lt;ul&gt;
+&lt;li&gt;用户a 少 200元－》 用户b 多 200元， 同时成立&lt;/li&gt;
+&lt;li&gt;或者成立，或者回滚&lt;/li&gt;
+&lt;li&gt;加锁，写日志&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;C（consistency）一致性
+
+&lt;ul&gt;
+&lt;li&gt;事务不存在中间状态&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;I（isolation）隔离性
+
+&lt;ul&gt;
+&lt;li&gt;一个事务没有完成，新事务提交请求，为了可以并发，&lt;/li&gt;
+&lt;li&gt;undo－log记录行数据版本信息， 可重复读，&lt;/li&gt;
+&lt;li&gt;序列化读，全部加锁&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;D（durability） 持久性
+
+&lt;ul&gt;
+&lt;li&gt;事务提交，记录到硬盘，&lt;/li&gt;
+&lt;li&gt;刷新机制，时间－》秒， 事务提交即刷新，操作系统决定&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;sql&#34;&gt;SQL&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;四种操作&lt;/li&gt;
+&lt;li&gt;增删改查&lt;/li&gt;
+&lt;li&gt;ddl 数据定义语言，  建库，建表&lt;/li&gt;
+&lt;li&gt;dml 数据操作语言，  增删改查&lt;/li&gt;
+&lt;li&gt;dcl 数据控制语言，  用户授权，权限回收，清空表数据&lt;/li&gt;
+&lt;li&gt;delete 会有redo－log， truncate 里面直接操作，不记日志&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>word每页添加不同的页眉及目录信息</title>
@@ -20,7 +158,7 @@
       <guid>https://tmhm.github.io/2017/03/21/word%E6%AF%8F%E9%A1%B5%E6%B7%BB%E5%8A%A0%E4%B8%8D%E5%90%8C%E7%9A%84%E9%A1%B5%E7%9C%89%E5%8F%8A%E7%9B%AE%E5%BD%95%E4%BF%A1%E6%81%AF/</guid>
       <description>
 
-&lt;h3 id=&#34;添加页眉:a759d9551099bbba97139fa3b52160ee&#34;&gt;添加页眉&lt;/h3&gt;
+&lt;h3 id=&#34;添加页眉&#34;&gt;添加页眉&lt;/h3&gt;
 
 &lt;p&gt;参考了&lt;a href=&#34;https://zhidao.baidu.com/question/18216054.html&#34;&gt;知道网页&lt;/a&gt;&lt;/p&gt;
 
@@ -39,7 +177,7 @@
 
 &lt;p&gt;页眉添加完毕。&lt;/p&gt;
 
-&lt;h3 id=&#34;添加图表目录:a759d9551099bbba97139fa3b52160ee&#34;&gt;添加图表目录&lt;/h3&gt;
+&lt;h3 id=&#34;添加图表目录&#34;&gt;添加图表目录&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;在图下，或者表上位置，点击&lt;code&gt;引用-&amp;gt;插入题注-&amp;gt;选择标签&lt;/code&gt;，确定即可。&lt;/p&gt;
@@ -216,7 +354,7 @@ sudo apt-get install -f
       <guid>https://tmhm.github.io/2017/02/27/hugo%E5%9C%A8ubuntu14.04%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E9%85%8D%E7%BD%AE/</guid>
       <description>
 
-&lt;h3 id=&#34;安装hugo&#34;&gt;安装Hugo&lt;/h3&gt;
+&lt;h3 id=&#34;安装hugo:f3924a03658d093f4458df00ee75a55f&#34;&gt;安装Hugo&lt;/h3&gt;
 
 &lt;p&gt;Ubuntu14.04 下面直接用apt-get安装貌似不行，参考&lt;a href=&#34;https://vexxhost.com/resources/tutorials/how-to-install-and-use-hugo-the-static-site-generator-on-ubuntu-14-04/&#34;&gt;博主&lt;/a&gt;,直接下载源文件安装：&lt;/p&gt;
 
@@ -227,7 +365,7 @@ sudo dpkg -i hugo_0.15_amd64.deb
 
 &lt;p&gt;即可，测试一下版本&lt;code&gt;hugo version&lt;/code&gt;，成功输出版本号即安装成功。&lt;/p&gt;
 
-&lt;h3 id=&#34;安装markdown编辑工具-remarkable&#34;&gt;安装Markdown编辑工具（remarkable）&lt;/h3&gt;
+&lt;h3 id=&#34;安装markdown编辑工具-remarkable:f3924a03658d093f4458df00ee75a55f&#34;&gt;安装Markdown编辑工具（remarkable）&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;从&lt;a href=&#34;http://locez.com/translation/best-markdown-editors-for-linux/&#34;&gt;此篇文章&lt;/a&gt;了解到 Remarkable，貌似apt-get也木有直接安装的，于是在&lt;a href=&#34;https://remarkableapp.github.io/linux/download.html&#34;&gt;官网&lt;/a&gt;下载.deb文件；&lt;/li&gt;
@@ -235,7 +373,7 @@ sudo dpkg -i hugo_0.15_amd64.deb
 &lt;li&gt;可以在终端直接用命令&lt;code&gt;remarkable&lt;/code&gt; 打开.md文件&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;安装搜狗输入法for-linux&#34;&gt;安装搜狗输入法for Linux&lt;/h3&gt;
+&lt;h3 id=&#34;安装搜狗输入法for-linux:f3924a03658d093f4458df00ee75a55f&#34;&gt;安装搜狗输入法for Linux&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://pinyin.sogou.com/linux/help.php&#34;&gt;搜狗输入法官网&lt;/a&gt;下载安装文件；&lt;/li&gt;
@@ -244,7 +382,7 @@ sudo dpkg -i hugo_0.15_amd64.deb
 &lt;li&gt;重启，输入法生效。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;配置github&#34;&gt;配置github&lt;/h3&gt;
+&lt;h3 id=&#34;配置github:f3924a03658d093f4458df00ee75a55f&#34;&gt;配置github&lt;/h3&gt;
 
 &lt;p&gt;由于hugo文件在另一台电脑已经配置好config.toml文件，所以只需要将整个文件夹copy过来，配置好Ubuntu本地的github即可&lt;/p&gt;
 
@@ -255,7 +393,7 @@ git remote add origin git@github.com:tmhm/blog_well.git
 git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;hugo-命令note&#34;&gt;Hugo 命令Note&lt;/h3&gt;
+&lt;h3 id=&#34;hugo-命令note:f3924a03658d093f4458df00ee75a55f&#34;&gt;Hugo 命令Note&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;本地服务器，看样式：
 hugo server --baseURL=http://127.0.0.1:1313/ -t hyde-y -D --bind=&amp;quot;0.0.0.0&amp;quot;
@@ -268,7 +406,7 @@ hugo -t hyde-y --baseURL &amp;quot;https://tmhm.github.io/&amp;quot; -D
 hugo new post/second.md
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;写blog操作步骤&#34;&gt;写blog操作步骤&lt;/h3&gt;
+&lt;h3 id=&#34;写blog操作步骤:f3924a03658d093f4458df00ee75a55f&#34;&gt;写blog操作步骤&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;用&lt;code&gt;hugo new post/test.md&lt;/code&gt;命令在&lt;code&gt;content/post/&lt;/code&gt;路径生成新文件test.md；&lt;/li&gt;
@@ -304,7 +442,7 @@ Favorites: ML,AI,DRL
 
 &lt;p&gt;=================================&lt;/p&gt;
 
-&lt;h2 id=&#34;preamble:53e892b8b41cc4caece1cfd5ef21d6e7&#34;&gt;Preamble&lt;/h2&gt;
+&lt;h2 id=&#34;preamble&#34;&gt;Preamble&lt;/h2&gt;
 
 &lt;p&gt;This Simple Public License 2.0 (SimPL-2.0 for short) is a plain language
 implementation of GPL 2.0.  The words are different, but the goal is the
@@ -312,7 +450,7 @@ same - to guarantee for all users the freedom to share and change
 software.  If anyone wonders about the meaning of the SimPL, they should
 interpret it as consistent with GPL 2.0.&lt;/p&gt;
 
-&lt;h1 id=&#34;simple-public-license-simpl-2-0:53e892b8b41cc4caece1cfd5ef21d6e7&#34;&gt;Simple Public License (SimPL) 2.0&lt;/h1&gt;
+&lt;h1 id=&#34;simple-public-license-simpl-2-0&#34;&gt;Simple Public License (SimPL) 2.0&lt;/h1&gt;
 
 &lt;p&gt;The SimPL applies to the software&amp;rsquo;s source and object code and comes
 with any rights that I have in it (other than trademarks). You agree to
@@ -365,7 +503,7 @@ licensees get to keep their rights if they abide);&lt;/li&gt;
 of the SimPL.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;license-for-the-license:53e892b8b41cc4caece1cfd5ef21d6e7&#34;&gt;License for the License&lt;/h2&gt;
+&lt;h2 id=&#34;license-for-the-license&#34;&gt;License for the License&lt;/h2&gt;
 
 &lt;p&gt;You may do anything that you want with the SimPL text; it&amp;rsquo;s a license
 form to use in any way that you find helpful.  To avoid confusion,
@@ -634,7 +772,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
 
 &lt;p&gt;&lt;img src=&#34;http://i.imgur.com/XZmJtEF.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;主要相关的api有:b3b8e334f38c5d0729b510697772171d&#34;&gt;主要相关的api有：&lt;/h4&gt;
+&lt;h4 id=&#34;主要相关的api有&#34;&gt;主要相关的api有：&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;plt.subplots_adjust&lt;/li&gt;
@@ -642,7 +780,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
 &lt;li&gt;plt.text&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;解决思路:b3b8e334f38c5d0729b510697772171d&#34;&gt;解决思路&lt;/h4&gt;
+&lt;h4 id=&#34;解决思路&#34;&gt;解决思路&lt;/h4&gt;
 
 &lt;p&gt;来自matplotlib的&lt;a href=&#34;http://matplotlib.org/gallery.html&#34;&gt;官网&lt;/a&gt;,以及&lt;a href=&#34;http://matplotlib.org/examples/images_contours_and_fields/interpolation_none_vs_nearest.html&#34;&gt;图示&lt;/a&gt;&lt;/p&gt;
 
@@ -861,321 +999,6 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 &lt;/ol&gt;
 
 &lt;p&gt;完毕。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>shadowsocks 在win10下无法使用的问题</title>
-      <link>https://tmhm.github.io/2016/11/25/shadowsocks-%E5%9C%A8win10%E4%B8%8B%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Fri, 25 Nov 2016 04:38:00 +0000</pubDate>
-      <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/11/25/shadowsocks-%E5%9C%A8win10%E4%B8%8B%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
-      <description>&lt;p&gt;问题描述：&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;按照&lt;a href=&#34;http://my.yizhihongxing.com/knowledgebase.php?action=displayarticle&amp;amp;id=3&#34;&gt;帮助中心&lt;/a&gt;的配置设置好之后.&lt;/li&gt;
-&lt;li&gt;启用代理,显示了start，但是就是不能上google，卸载了迅雷也是没用。&lt;/li&gt;
-&lt;li&gt;在mac下能正常使用。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;解决问题：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;问题在于本地的端口有问题，将默认的1080端口修改为1081，&lt;/li&gt;
-&lt;li&gt;即可以打开google，youtobe&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;有时是3.3.5不能用，换会用低版本2.5.8的即可以&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>DL服务器主机环境配置 ubuntu14.04 &amp;&amp;  GTX1080 &amp;&amp; Cuda8.0 解决桌面重复登录</title>
-      <link>https://tmhm.github.io/2016/11/21/dl%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%BB%E6%9C%BA%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-ubuntu14.04---gtx1080--cuda8.0-%E8%A7%A3%E5%86%B3%E6%A1%8C%E9%9D%A2%E9%87%8D%E5%A4%8D%E7%99%BB%E5%BD%95/</link>
-      <pubDate>Mon, 21 Nov 2016 12:15:00 +0000</pubDate>
-      <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/11/21/dl%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%BB%E6%9C%BA%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-ubuntu14.04---gtx1080--cuda8.0-%E8%A7%A3%E5%86%B3%E6%A1%8C%E9%9D%A2%E9%87%8D%E5%A4%8D%E7%99%BB%E5%BD%95/</guid>
-      <description>
-
-&lt;p&gt;&lt;em&gt;前面部分是自己的记录，后面方案部分是成功安装驱动+桌面的正解&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;问题的开始在于：&lt;strong&gt;登录不了桌面，停留在重复输入密码界面&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://blog.csdn.net/nothinglefttosay/article/details/45095125&#34;&gt;博文中&lt;/a&gt;分析的&lt;strong&gt;结论：&lt;/strong&gt;
-&lt;strong&gt;虚拟机中不能直接调用物理显卡进行 CUDA 编程；虚拟机中运行 CUDA 需要硬件和软件的配合才能使用，对于一般使用者可能暂时不太可能的。&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;参考博文：&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.52nlp.cn/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%BB%E6%9C%BA%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-ubuntu-16-04-nvidia-gtx-1080-cuda-8&#34;&gt;深度学习主机环境配置: Ubuntu16.04+Nvidia GTX 1080+CUDA8.0&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.52nlp.cn/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%BB%E6%9C%BA%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-ubuntu16-04-geforce-gtx1080-tensorflow&#34;&gt;深度学习主机环境配置: Ubuntu16.04+GeForce GTX 1080+TensorFlow&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.codexiu.cn/linux/blog/27993/&#34;&gt;ubuntu14.04+cuda8.0（GTX1080）+caffe安装&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.r-bloggers.com/lang/chinese/2042&#34;&gt;如何搭建一台深度学习服务器&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Ctrl+alt+F1进入字符界面，关闭图形界面&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo service lightdm stop //必须有，不然会安装失败
-sudo /etc/init.d/lightdm stop //一样的命令
-
-sudo chmod 755 NVIDIA-Linux-x86_64-367.27.run  //获取权限
-sudo ./NVIDIA-Linux-x86_64-367.27.run  //安装驱动
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Accept
-Continue installation
-安装完成之后&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;sudo service lightdm start&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;图形界面出现，然后关机，由让人重复输入密码，登录不了&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://nemesisdesign.net/blog/coding/how-reinstall-nvidia-drivers-linux-ubuntu/&#34;&gt;博主&lt;/a&gt;说&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ sudo /etc/init.d/gdm stop
-$ sudo nvidia-installer --update
-$ sudo /etc/init.d/gdm start
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;升级到375版本， 还是没用，启动进入不了桌面，重复登录&lt;/p&gt;
-
-&lt;h3 id=&#34;install-driver-367-https-kusemanohar-wordpress-com-2016-07-29-gtx-1080-on-ubuntu-14-04-trusty:d68e03665ec87076c808379f00c3c33a&#34;&gt;&lt;a href=&#34;https://kusemanohar.wordpress.com/2016/07/29/gtx-1080-on-ubuntu-14-04-trusty/&#34;&gt;Install driver 367&lt;/a&gt;&lt;/h3&gt;
-
-&lt;p&gt;Uninstall previous nvidia drivers.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;$ sudo apt-get purge nvidia-*
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Stop light gdm (graphical interface)&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;$ sudo service lightgdm
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Go to tty (CTRL+ALT+F1). Set your init state to 3 (text only mode). It is important to do this. Note these commands on a paper or something. I experienced sometimes the tty does not show with the newest driver. I just ssh to my PC as a way around.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;$ sudo init 3
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Log in to tty and cd to the directory where your have downloaded the driver.&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;$ sudo ./NVIDIA-Linux-x86_64-367.35.run
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;It will ask if you want to install 32-bit libraries, say no (assuming you do not have a 32-bit OS, hopefully. If you do have a 32-bit OS it is a good idea to upgrade…)&lt;/p&gt;
-
-&lt;p&gt;In a few minutes it is done….smooth. Reboot your PC
-&lt;code&gt;$ sudo reboot
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;update 之后还是不能进 图形界面&lt;/p&gt;
-
-&lt;p&gt;Uninstall previous nvidia drivers.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get purge nvidia-*
-sudo apt-get autoremove
-sudo apt-get --purge remove nvidia-*
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;remove 之后，&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;nvidia-smi
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;还是能看到gpu的。why？&lt;/p&gt;
-
-&lt;p&gt;卸载不了？&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get install nvidia-prime
-
-$ sudo /etc/init.d/lightdm stop
-$ sudo nvidia-installer --update
-$ sudo /etc/init.d/lightdm start
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;升级到375版本， 还是没用，启动进入不了桌面，重复登录&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;有人说，安装必须要在安装桌面前安装GTX 1080 driver，后面方案验证来看， 那个参数才是关键。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&#34;解决方法:d68e03665ec87076c808379f00c3c33a&#34;&gt;解决方法&lt;/h3&gt;
-
-&lt;p&gt;利用sudo gedit /etc/modprobe.d/blacklist-nouveau.conf新建blacklist-nouveau.conf文件，输入命令&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;blacklist nouveau
-
-blacklist lbm-nouveau
-
-options nouveau modeset=0
-
-alias nouveau off
-
-alias lbm-nouveau off
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;保存并退出。这一步是为了禁掉Ubuntu自带开源驱动nouveau。之后sudo reboot重启系统。在终端执行命令
-&lt;code&gt;lsmod | grep nouveau
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;查看nouveau模块是否被加载。如果什么都没输出，则执行下一步。&lt;/p&gt;
-
-&lt;p&gt;根本问题在于 参数：  &lt;strong&gt;&amp;ndash;no-opengl-files&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo /etc/init.d/lightdm stop
-sudo ./NVIDIA-Linux-x86_64-375.20.run --no-opengl-files
-sudo /etc/init.d/lightdm start
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;即可以正常登录界面了！！&lt;/p&gt;
-
-&lt;p&gt;在安装过程中的选项：&lt;/p&gt;
-
-&lt;p&gt;Accept&lt;/p&gt;
-
-&lt;p&gt;Continue installation&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;register the kernel moudle sources with DKMS?&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;NO&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Would you like to run the nvidia-xconfig utility to automatically update your X Configuration file so set the NVIDIA X driver will be used when you restart X?&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;NO&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Install 32-Bit compatibility &lt;a href=&#34;https://elementaryforums.com/index.php?threads/howto-install-latest-nvidia-driver-on-linux-without-getting-black-screen.7/&#34;&gt;libraries?参考&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;NO
-&lt;img src=&#34;http://i.imgur.com/5DHQbMl.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;cuda8-0安装:d68e03665ec87076c808379f00c3c33a&#34;&gt;cuda8.0安装&lt;/h3&gt;
-
-&lt;p&gt;运行&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;sudo sh cuda_8.0.44_linux.run
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;选项如下所示：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Description
-
-This package includes over 100+ CUDA examples that demonstrate
-various CUDA programming principles, and efficient CUDA
-implementation of algorithms in specific application domains.
-The NVIDIA CUDA Samples License Agreement is available in
-Do you accept the previously read EULA?
-accept/decline/quit: accept
-
-Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 367.48?
-(y)es/(n)o/(q)uit: n
-
-Install the CUDA 8.0 Toolkit?
-(y)es/(n)o/(q)uit: y
-
-Enter Toolkit Location
-
-Do you want to install a symbolic link at /usr/local/cuda?
-(y)es/(n)o/(q)uit: y
-
-Install the CUDA 8.0 Samples?
-(y)es/(n)o/(q)uit: y
-
-Enter CUDA Samples Location
-
-Installing the CUDA Toolkit in /usr/local/cuda-8.0 ...
-Installing the CUDA Samples in /home/c302 ...
-Copying samples to /home/c302/NVIDIA_CUDA-8.0_Samples now...
-Finished copying samples.
-
-===========
-= Summary =
-===========
-
-Driver:   Not Selected
-Toolkit:  Installed in /usr/local/cuda-8.0
-Samples:  Installed in /home/c302
-
-Please make sure that
- -   PATH includes /usr/local/cuda-8.0/bin
- -   LD_LIBRARY_PATH includes /usr/local/cuda-8.0/lib64, or, add /usr/local/cuda-8.0/lib64 to /etc/ld.so.conf and run ldconfig as root
-
-To uninstall the CUDA Toolkit, run the uninstall script in /usr/local/cuda-8.0/bin
-
-Please see CUDA_Installation_Guide_Linux.pdf in /usr/local/cuda-8.0/doc/pdf for detailed information on setting up CUDA.
-
-***WARNING: Incomplete installation! This installation did not install the CUDA Driver. A driver of version at least 361.00 is required for CUDA 8.0 functionality to work.
-To install the driver using this installer, run the following command, replacing &amp;lt;CudaInstaller&amp;gt; with the name of this run file:
-    sudo &amp;lt;CudaInstaller&amp;gt;.run -silent -driver
-
-Logfile is /tmp/cuda_install_9045.log
-    
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;设置环境变量:d68e03665ec87076c808379f00c3c33a&#34;&gt;设置环境变量&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;export PATH=/usr/local/cuda-8.0/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;添加系统变量修改到系统文件
-&lt;code&gt;sudo vi /etc/profile
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;在最后添加上面两句，然后保存。使立即生效
-&lt;code&gt;sudo ldconfig //环境变量立即生效
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;验证-cuda:d68e03665ec87076c808379f00c3c33a&#34;&gt;验证 cuda&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;c302@c302-dl:~/Downloads$ nvcc -V
-nvcc: NVIDIA (R) Cuda compiler driver
-Copyright (c) 2005-2016 NVIDIA Corporation
-Built on Sun_Sep__4_22:14:01_CDT_2016
-Cuda compilation tools, release 8.0, V8.0.44
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;测试cuda的samples:d68e03665ec87076c808379f00c3c33a&#34;&gt;测试cuda的samples&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;cd ‘/home/zhou/NVIDIA_CUDA-8.0_Samples’
-make  //这里需要点时间
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;最后显示：
-&amp;gt; make[1]: Leaving directory `/home/c302/NVIDIA_CUDA-8.0_Samples/7_CUDALibraries/MersenneTwisterGP11213&amp;rsquo;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Finished building CUDA samples&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;code&gt;
-        cd 0_Simple/matrixMul
-&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;运行测试如下：&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;c302@c302-dl:~/NVIDIA_CUDA-8.0_Samples/0_Simple/matrixMul$ ./matrixMul
-[Matrix Multiply Using CUDA] - Starting...
-GPU Device 0: &amp;quot;GeForce GTX 1080&amp;quot; with compute capability 6.1
-
-MatrixA(320,320), MatrixB(640,320)
-Computing result using CUDA Kernel...
-done
-Performance= 1109.06 GFlop/s, Time= 0.118 msec, Size= 131072000 Ops, WorkgroupSize= 1024 threads/block
-Checking computed result for correctness: Result = PASS
-
-NOTE: The CUDA Samples are not meant for performance measurements. Results may vary when GPU Boost is enabled.
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://i.imgur.com/iRwuetR.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;下一篇将会是安装cuDNN、tensorflow等lib&lt;/p&gt;
 </description>
     </item>
     

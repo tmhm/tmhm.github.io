@@ -9,8 +9,60 @@
     <managingEditor>wells217@163.com (Well)</managingEditor>
     <webMaster>wells217@163.com (Well)</webMaster>
     <copyright>(c) 2017 Well.</copyright>
-    <lastBuildDate>Sun, 25 Dec 2016 04:49:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Apr 2017 22:51:52 +0800</lastBuildDate>
     <atom:link href="https://tmhm.github.io/categories/language/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>taste SQL</title>
+      <link>https://tmhm.github.io/2017/04/01/taste-sql/</link>
+      <pubDate>Sat, 01 Apr 2017 22:51:52 +0800</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2017/04/01/taste-sql/</guid>
+      <description>
+
+&lt;h3 id=&#34;事务的四项特性&#34;&gt;事务的四项特性&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ACID&lt;/li&gt;
+&lt;li&gt;A（atomic）原子性
+
+&lt;ul&gt;
+&lt;li&gt;用户a 少 200元－》 用户b 多 200元， 同时成立&lt;/li&gt;
+&lt;li&gt;或者成立，或者回滚&lt;/li&gt;
+&lt;li&gt;加锁，写日志&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;C（consistency）一致性
+
+&lt;ul&gt;
+&lt;li&gt;事务不存在中间状态&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;I（isolation）隔离性
+
+&lt;ul&gt;
+&lt;li&gt;一个事务没有完成，新事务提交请求，为了可以并发，&lt;/li&gt;
+&lt;li&gt;undo－log记录行数据版本信息， 可重复读，&lt;/li&gt;
+&lt;li&gt;序列化读，全部加锁&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;D（durability） 持久性
+
+&lt;ul&gt;
+&lt;li&gt;事务提交，记录到硬盘，&lt;/li&gt;
+&lt;li&gt;刷新机制，时间－》秒， 事务提交即刷新，操作系统决定&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;sql&#34;&gt;SQL&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;四种操作&lt;/li&gt;
+&lt;li&gt;增删改查&lt;/li&gt;
+&lt;li&gt;ddl 数据定义语言，  建库，建表&lt;/li&gt;
+&lt;li&gt;dml 数据操作语言，  增删改查&lt;/li&gt;
+&lt;li&gt;dcl 数据控制语言，  用户授权，权限回收，清空表数据&lt;/li&gt;
+&lt;li&gt;delete 会有redo－log， truncate 里面直接操作，不记日志&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Python 中logging 模块的配置和使用</title>
@@ -480,7 +532,7 @@ print elapsed
       <guid>https://tmhm.github.io/2016/05/26/python%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BB%A7%E6%89%BF/</guid>
       <description>
 
-&lt;h4 id=&#34;python之面向对象-继承:e35dc34c12c197a04379d91239a97544&#34;&gt;python之面向对象（继承）&lt;/h4&gt;
+&lt;h4 id=&#34;python之面向对象-继承&#34;&gt;python之面向对象（继承）&lt;/h4&gt;
 
 &lt;p&gt;面向对象的编程带来的主要好处之一是代码的重用，实现这种重用的方法之一是通过继承机制。继承完全可以理解成类之间的类型和子类型关系。&lt;/p&gt;
 
@@ -605,7 +657,7 @@ cat say
 
 &lt;p&gt;C/C++小知识点&amp;ndash;[锦集]&lt;/p&gt;
 
-&lt;h4 id=&#34;和-的优先级&#34;&gt;“=”和“&amp;lt;=” 的优先级&lt;/h4&gt;
+&lt;h4 id=&#34;和-的优先级:bb201a2dec2d4d9a2d52c87713e5df85&#34;&gt;“=”和“&amp;lt;=” 的优先级&lt;/h4&gt;
 
 &lt;p&gt;1.(   (file_got_len = recv_str(sock,buf,BUF_SIZE) )    &amp;lt;= 0)&lt;/p&gt;
 
@@ -619,7 +671,7 @@ cat say
 
 &lt;p&gt;所以在多语句写在一起时，最好用（） 明示！！&lt;/p&gt;
 
-&lt;h4 id=&#34;运算操作符&#34;&gt;运算操作符&lt;/h4&gt;
+&lt;h4 id=&#34;运算操作符:bb201a2dec2d4d9a2d52c87713e5df85&#34;&gt;运算操作符&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;int i,t;
 t = (i=1)+(++i);
@@ -647,7 +699,7 @@ t = (i=1)+(++i);
 
 &lt;p&gt;i自加后，只保留在eax 寄存器里，然后将eax的2赋给i，所以，i 就变成2了。此处和动态语言的引用似乎有所类似。&lt;/p&gt;
 
-&lt;h4 id=&#34;sizeof操作符与数组&#34;&gt;sizeof操作符与数组&lt;/h4&gt;
+&lt;h4 id=&#34;sizeof操作符与数组:bb201a2dec2d4d9a2d52c87713e5df85&#34;&gt;sizeof操作符与数组&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;int t,tt,num;
 int array[5];
@@ -684,7 +736,7 @@ Return the identity of an object.  This is guaranteed to be unique among
 simultaneously existing objects.  (Hint: it&#39;s the object&#39;s memory address.)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;python中的引用对象特点&#34;&gt;python中的引用对象特点：&lt;/h4&gt;
+&lt;h4 id=&#34;python中的引用对象特点:6ec06ff8aab68af73d72157c359718c6&#34;&gt;python中的引用对象特点：&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;python不允许程序员选择采用传值还是传引用。
@@ -1177,17 +1229,17 @@ print &amp;quot;max: %s&amp;quot; %c.index(max(c)) # 返回最大值
 &lt;p&gt;&lt;code&gt;$ conda update conda
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;更新pip&#34;&gt;更新pip&lt;/h4&gt;
+&lt;h4 id=&#34;更新pip:6688ab8f41a9d12e2503ffc3d92f68f8&#34;&gt;更新pip&lt;/h4&gt;
 
 &lt;p&gt;&lt;code&gt;python -m pip install --upgrade pip
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;更新所有&#34;&gt;更新所有&lt;/h4&gt;
+&lt;h4 id=&#34;更新所有:6688ab8f41a9d12e2503ffc3d92f68f8&#34;&gt;更新所有&lt;/h4&gt;
 
 &lt;p&gt;&lt;code&gt;conda update --all
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;安装ffmpeg&#34;&gt;安装ffmpeg&lt;/h4&gt;
+&lt;h4 id=&#34;安装ffmpeg:6688ab8f41a9d12e2503ffc3d92f68f8&#34;&gt;安装ffmpeg&lt;/h4&gt;
 
 &lt;p&gt;&lt;code&gt;conda install ffmpeg
 &lt;/code&gt;&lt;/p&gt;
@@ -1203,7 +1255,7 @@ print &amp;quot;max: %s&amp;quot; %c.index(max(c)) # 返回最大值
 
 &lt;p&gt;&lt;code&gt;[Anaconda2] C:\Users\xwei&amp;gt;conda install -c https://conda.anaconda.org/groakat ffmpeg-dev&lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;安装theano&#34;&gt;安装theano&lt;/h4&gt;
+&lt;h4 id=&#34;安装theano:6688ab8f41a9d12e2503ffc3d92f68f8&#34;&gt;安装theano&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://deeplearning.net/software/theano/install_windows.html#install-windows&#34;&gt;source for win-install&lt;/a&gt;&lt;/p&gt;
 
@@ -1231,7 +1283,7 @@ print &amp;quot;max: %s&amp;quot; %c.index(max(c)) # 返回最大值
 &lt;li&gt;运行&lt;a href=&#34;http://www.deeplearning.net/tutorial/lstm.html#lstm&#34;&gt;LSTM Networks for Sentiment Analysis&lt;/a&gt; 明显快了很多很多，直接在cpu下运行纯python代码，一两分钟才出来第一次迭代， 安装之后，运行c代码的时候，基本上两三秒一次迭代。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;安装出现anaconda-python-installation-error&#34;&gt;安装出现Anaconda Python installation error&lt;/h4&gt;
+&lt;h4 id=&#34;安装出现anaconda-python-installation-error:6688ab8f41a9d12e2503ffc3d92f68f8&#34;&gt;安装出现Anaconda Python installation error&lt;/h4&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201606/781469-20160612222301152-884209750.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
