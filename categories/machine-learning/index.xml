@@ -33,7 +33,7 @@
   });
 &lt;/script&gt;
 
-&lt;h4 id=&#34;强化学习的定义:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;强化学习的定义&lt;/h4&gt;
+&lt;h4 id=&#34;强化学习的定义&#34;&gt;强化学习的定义&lt;/h4&gt;
 
 &lt;p&gt;强化学习（Reinforcement Learning）本身可以定义为一个广泛的学习问题，学会找到状态（Situation）到动作（Actions）的一个映射关系，以最大化一个数值型的回报（Reward）信号。一个完整的强化学习问题可以用马氏决策过程中的最优控制理论来进行描述。在马氏链中，当前时刻的状态（State） 仅仅与上一时刻的状态有关。如下图1所示，一个智能体（Agent）可以通过某种方式感受环境的状态（State），然后可以通过某一个动作（Action）来改变环境的下一状态。在这个不断交互的过程中，Agent还必须具有一个或者以上的、与此环境状态相关的目标（Goal）。
 &lt;center&gt;
@@ -44,7 +44,7 @@
 
 &lt;p&gt;与RL问题相对应的任何求解方法，可以称之为一个强化学习方法。&lt;/p&gt;
 
-&lt;h4 id=&#34;rl的两个重要特征:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;RL的两个重要特征&lt;/h4&gt;
+&lt;h4 id=&#34;rl的两个重要特征&#34;&gt;RL的两个重要特征&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;试错搜索（trial-and-error）&lt;/li&gt;
@@ -55,12 +55,12 @@
 监督学习中通过正确的指示（instruct）来进行反馈；强化学习是依靠整个生命周期所选择的动作来进行评价式的反馈。&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;rl系统中的四大主要元素-element:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;Rl系统中的四大主要元素（element）&lt;/h4&gt;
+&lt;h4 id=&#34;rl系统中的四大主要元素-element&#34;&gt;Rl系统中的四大主要元素（element）&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;策略（policy）&lt;/p&gt;
 
-&lt;p&gt;其定义是在某时刻下，智能体的行为方式。粗略地说，一个策略可以看做是接收到状态到智能体做出动作的一种映射关系，可以用函数或者表的形式来表现。通常来说，策略可能是随机的。&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;其定义是在某时刻下，智能体的行为方式。粗略地说，一个策略可以看做是接收到状态到智能体做出动作的一种映射关系，可以用函数或者表的形式来表现。通常来说，策略可以是确定的，也可能是随机的，即可以用条件概率来表示。&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;奖励/回报函数（reward function）&lt;/p&gt;
 
@@ -68,14 +68,25 @@
 
 &lt;li&gt;&lt;p&gt;值函数（value function）&lt;/p&gt;
 
-&lt;p&gt;奖励函数所表现出的是当前状态或者状态-动作对的立即评价，值函数表征的是对长远意义下的评判。粗略来说，值函数可以表示从当前状态开始到未来（long-term），Agent可以收获到奖励的一种累积和。即值函数是对Agent整个生命周期的一种评价。&lt;/p&gt;&lt;/li&gt;
+&lt;p&gt;奖励函数所表现出的是当前状态或者状态-动作对的立即评价，值函数表征的是对长远意义下的评判。粗略来说，值函数可以表示从当前状态开始到未来（long-term），Agent可以收获到奖励的一种累积和。即值函数是对Agent整个生命周期的一种评价。值函数是动作选择的一个标准。&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;环境的模型（model of the environment）&lt;/p&gt;
 
 &lt;p&gt;即对该Agent生存环境的行为模仿（mimics the behavior of the environment）。举一个例子，给定一个状态和动作，环境模型可以预测相对应的下一状态和奖励。如果模型已知，强化学习问题可以演化为动态规划问题求解。&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;探索与利用的权衡:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;探索与利用的权衡&lt;/h4&gt;
+&lt;h4 id=&#34;rl中智能体学习方法的分类&#34;&gt;RL中智能体学习方法的分类&lt;/h4&gt;
+
+&lt;p&gt;根据强化学习问题中所含元素的种类，其Agent的学习方法，可以分之为5大类。如下图2所示。
+&lt;center&gt;
+&lt;!-- [](/images/RL1_agent_taxonomy.jpg &#34;示图2&#34;) --&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tmhm.github.io/images/RL1_agent_taxonomy.jpg&#34; width = &#34;420&#34; height = &#34;280&#34; alt=&#34;示图2&#34; align=center /&gt;&lt;/p&gt;
+
+&lt;p&gt;图2 强化学习中智能体学习方法的分类
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;探索与利用的权衡&#34;&gt;探索与利用的权衡&lt;/h4&gt;
 
 &lt;p&gt;&lt;em&gt;trade-off between exploration and exploitation&lt;/em&gt;&lt;/p&gt;
 
@@ -92,9 +103,12 @@ $$ \cfrac{e^{Q&lt;em&gt;t(a)/\tau}}{\sum&lt;/em&gt;{b=1}^n e^{Q_t(b)/\tau}}$$&lt
 &lt;p&gt;$\tau &amp;gt; 0 $表示温度（temperature）, 高的温度，选择动作近乎平等；温度趋近0的时候，此法接近于贪心选择。&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;refernece:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;refernece&lt;/h4&gt;
+&lt;h4 id=&#34;refernece&#34;&gt;refernece&lt;/h4&gt;
 
 &lt;p&gt;[1] Sutton R S, Barto A G. Reinforcement learning: An introduction[M]. MIT press Cambridge, 1998.&lt;/p&gt;
+
+&lt;p&gt;[2] David Silver. Lecture 1: Introduction to Reinforcement Learning
+Learning&lt;/p&gt;
 </description>
     </item>
     
@@ -108,11 +122,11 @@ $$ \cfrac{e^{Q&lt;em&gt;t(a)/\tau}}{\sum&lt;/em&gt;{b=1}^n e^{Q_t(b)/\tau}}$$&lt
 
 &lt;p&gt;&lt;em&gt;玩TORCS和DRL差不多有一整年了，开始的摸爬滚打都是不断碰壁过来的，近来在参与&lt;a href=&#34;https://katefvision.github.io/&#34;&gt;CMU的DRL10703课程&lt;/a&gt;学习和翻译志愿者工作，也将自己以前的一些工作做一些备忘，以作为有兴趣同学的参考。&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;torcs仿真器平台安装&#34;&gt;TORCS仿真器平台安装&lt;/h3&gt;
+&lt;h3 id=&#34;torcs仿真器平台安装:1793684d767565b415bdf28945fbfe28&#34;&gt;TORCS仿真器平台安装&lt;/h3&gt;
 
 &lt;p&gt;仿真器平台主要包括两步：安装TORCS，然后添加锦标赛用的patch。&lt;/p&gt;
 
-&lt;h4 id=&#34;torcs仿真器的安装&#34;&gt;TORCS仿真器的安装&lt;/h4&gt;
+&lt;h4 id=&#34;torcs仿真器的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;TORCS仿真器的安装&lt;/h4&gt;
 
 &lt;p&gt;The open racing car simulator（TORCS）&lt;a href=&#34;http://torcs.sourceforge.net/&#34;&gt;主页&lt;/a&gt;&lt;/p&gt;
 
@@ -135,7 +149,7 @@ $$ \cfrac{e^{Q&lt;em&gt;t(a)/\tau}}{\sum&lt;/em&gt;{b=1}^n e^{Q_t(b)/\tau}}$$&lt
 &lt;p&gt;如何在仿真器上一步步实现一个简单ROBOT，教程可见：
 &lt;a href=&#34;http://www.berniw.org/tutorials/robot/&#34;&gt;http://www.berniw.org/tutorials/robot/&lt;/a&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;championship-platform的安装&#34;&gt;Championship Platform的安装&lt;/h4&gt;
+&lt;h4 id=&#34;championship-platform的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;Championship Platform的安装&lt;/h4&gt;
 
 &lt;p&gt;为扩展仿真器平台用于我们的智能驾驶AI程序的开发，我们采用的是锦标赛平台的接口。在安装torcs之后，可以直接安装patch。实现安装源文件下载地址：
 &lt;a href=&#34;https://sourceforge.net/projects/cig/files/SCR%20Championship/&#34;&gt;https://sourceforge.net/projects/cig/files/SCR%20Championship/&lt;/a&gt;&lt;/p&gt;
@@ -159,16 +173,16 @@ Manual的官方文件: &lt;a href=&#34;http://arxiv.org/abs/1304.1672&#34;&gt;ht
 
 &lt;p&gt;至此，TORCS仿真器平台安装完毕，下面搭建配套的软件IDE环境。&lt;/p&gt;
 
-&lt;h3 id=&#34;软件ide环境搭建&#34;&gt;软件IDE环境搭建&lt;/h3&gt;
+&lt;h3 id=&#34;软件ide环境搭建:1793684d767565b415bdf28945fbfe28&#34;&gt;软件IDE环境搭建&lt;/h3&gt;
 
-&lt;h4 id=&#34;anaconda-的安装&#34;&gt;Anaconda 的安装&lt;/h4&gt;
+&lt;h4 id=&#34;anaconda-的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;Anaconda 的安装&lt;/h4&gt;
 
 &lt;p&gt;Anaconda 是一个开源的，基于python的跨平台（windows，osx，liunx）科学计算平台，支持python2和python3，示例用的是基于python2的anaconda2-4.0.0&lt;/p&gt;
 
 &lt;p&gt;安装后，会创建一个Anaconda Prompt（一个类似DOS的命令行窗口），它可以像linux一样来通过命令管理各种科学计算包，执行命令等。
 比如可以用conda ，pip等工具管理包&lt;/p&gt;
 
-&lt;h4 id=&#34;pybrain的安装&#34;&gt;PyBrain的安装&lt;/h4&gt;
+&lt;h4 id=&#34;pybrain的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;PyBrain的安装&lt;/h4&gt;
 
 &lt;p&gt;Pybrain是一个基于python的机器学习模块，对强化学习的支持比较好，2015年底的时候，还只有很少的模块是专门做强化学习的，Pybrain就是定位在强化学习和神经网络，由于是个人的项目，维护更新比较慢，目前使用的是0.33版本。&lt;/p&gt;
 
@@ -190,7 +204,7 @@ Manual的官方文件: &lt;a href=&#34;http://arxiv.org/abs/1304.1672&#34;&gt;ht
 
 &lt;p&gt;&lt;em&gt;Note： mq 是指包的发布者&lt;/em&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;pycharm-的安装&#34;&gt;PyCharm 的安装&lt;/h4&gt;
+&lt;h4 id=&#34;pycharm-的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;PyCharm 的安装&lt;/h4&gt;
 
 &lt;p&gt;尽管Anaconda包含了一个Spyder 的IDE，个人感觉不太友好，故还是额外安装&lt;a href=&#34;https://www.jetbrains.com/pycharm/download/#section=windows&#34;&gt;PyCharm&lt;/a&gt;。PyCharm是JetBrains公司推出的一套基于python的跨平台工具。包含免费的社区版和收费的专业版，示例的是专业版，由于近期修改系统时间的漏洞已经修护（貌似最多就一年有效），建议直接安装社区版即可。与TORCS的接口程序在下一篇代码部分给出。&lt;/p&gt;
 </description>
@@ -388,7 +402,7 @@ $ sudo /etc/init.d/gdm start
 
 &lt;p&gt;升级到375版本， 还是没用，启动进入不了桌面，重复登录&lt;/p&gt;
 
-&lt;h3 id=&#34;install-driver-367-https-kusemanohar-wordpress-com-2016-07-29-gtx-1080-on-ubuntu-14-04-trusty&#34;&gt;&lt;a href=&#34;https://kusemanohar.wordpress.com/2016/07/29/gtx-1080-on-ubuntu-14-04-trusty/&#34;&gt;Install driver 367&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;install-driver-367-https-kusemanohar-wordpress-com-2016-07-29-gtx-1080-on-ubuntu-14-04-trusty:d68e03665ec87076c808379f00c3c33a&#34;&gt;&lt;a href=&#34;https://kusemanohar.wordpress.com/2016/07/29/gtx-1080-on-ubuntu-14-04-trusty/&#34;&gt;Install driver 367&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;Uninstall previous nvidia drivers.&lt;/p&gt;
 
@@ -447,7 +461,7 @@ $ sudo /etc/init.d/lightdm start
 &lt;p&gt;有人说，安装必须要在安装桌面前安装GTX 1080 driver，后面方案验证来看， 那个参数才是关键。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;解决方法&#34;&gt;解决方法&lt;/h3&gt;
+&lt;h3 id=&#34;解决方法:d68e03665ec87076c808379f00c3c33a&#34;&gt;解决方法&lt;/h3&gt;
 
 &lt;p&gt;利用sudo gedit /etc/modprobe.d/blacklist-nouveau.conf新建blacklist-nouveau.conf文件，输入命令&lt;/p&gt;
 
@@ -502,7 +516,7 @@ sudo /etc/init.d/lightdm start
 &lt;p&gt;NO
 &lt;img src=&#34;http://i.imgur.com/5DHQbMl.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;cuda8-0安装&#34;&gt;cuda8.0安装&lt;/h3&gt;
+&lt;h3 id=&#34;cuda8-0安装:d68e03665ec87076c808379f00c3c33a&#34;&gt;cuda8.0安装&lt;/h3&gt;
 
 &lt;p&gt;运行&lt;/p&gt;
 
@@ -565,7 +579,7 @@ Logfile is /tmp/cuda_install_9045.log
     
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;设置环境变量&#34;&gt;设置环境变量&lt;/h4&gt;
+&lt;h4 id=&#34;设置环境变量:d68e03665ec87076c808379f00c3c33a&#34;&gt;设置环境变量&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;export PATH=/usr/local/cuda-8.0/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
@@ -579,7 +593,7 @@ export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
 &lt;code&gt;sudo ldconfig //环境变量立即生效
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;验证-cuda&#34;&gt;验证 cuda&lt;/h4&gt;
+&lt;h4 id=&#34;验证-cuda:d68e03665ec87076c808379f00c3c33a&#34;&gt;验证 cuda&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;c302@c302-dl:~/Downloads$ nvcc -V
 nvcc: NVIDIA (R) Cuda compiler driver
@@ -588,7 +602,7 @@ Built on Sun_Sep__4_22:14:01_CDT_2016
 Cuda compilation tools, release 8.0, V8.0.44
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;测试cuda的samples&#34;&gt;测试cuda的samples&lt;/h3&gt;
+&lt;h3 id=&#34;测试cuda的samples:d68e03665ec87076c808379f00c3c33a&#34;&gt;测试cuda的samples&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;cd ‘/home/zhou/NVIDIA_CUDA-8.0_Samples’
 make  //这里需要点时间
@@ -635,7 +649,7 @@ NOTE: The CUDA Samples are not meant for performance measurements. Results may v
       <guid>https://tmhm.github.io/2016/11/21/gpu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E4%B8%AD%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80note/</guid>
       <description>
 
-&lt;h3 id=&#34;gpu-服务器&#34;&gt;GPU 服务器：&lt;/h3&gt;
+&lt;h3 id=&#34;gpu-服务器:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;GPU 服务器：&lt;/h3&gt;
 
 &lt;p&gt;添加组，用户，并为之新建主目录。&lt;/p&gt;
 
@@ -650,7 +664,7 @@ c302@c302-dl:~$ sudo useradd testuser -g testgroup -m
 &lt;p&gt;&lt;code&gt;passwd testuser
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;安装anaconda环境&#34;&gt;安装anaconda环境&lt;/h3&gt;
+&lt;h3 id=&#34;安装anaconda环境:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;安装anaconda环境&lt;/h3&gt;
 
 &lt;p&gt;官网下载之，&lt;a href=&#34;https://www.continuum.io/downloads&#34;&gt;https://www.continuum.io/downloads&lt;/a&gt;&lt;/p&gt;
 
@@ -658,7 +672,7 @@ c302@c302-dl:~$ sudo useradd testuser -g testgroup -m
 &lt;code&gt;export PATH=/home/c302/anaconda2/bin:$PATH
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;ubuntu-linux系统环境变量配置文件&#34;&gt;Ubuntu Linux系统环境变量配置文件：&lt;/h3&gt;
+&lt;h3 id=&#34;ubuntu-linux系统环境变量配置文件:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;Ubuntu Linux系统环境变量配置文件：&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;/etc/profile : 在登录时,操作系统定制用户环境时使用的第一个文件 ,此文件为系统的每个用户设置环境信息,当用户第一次登录时,该文件被执行。&lt;/p&gt;
@@ -674,7 +688,7 @@ c302@c302-dl:~$ sudo useradd testuser -g testgroup -m
 
 &lt;p&gt;修改~/.profile 文件，添加export PATH=/home/c302/anaconda2/bin:$PATH&lt;/p&gt;
 
-&lt;h3 id=&#34;安装pybrain-0-33&#34;&gt;安装pybrain 0.33&lt;/h3&gt;
+&lt;h3 id=&#34;安装pybrain-0-33:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;安装pybrain 0.33&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;
 pip install pybrain
@@ -710,7 +724,7 @@ pip install pybrain
 &lt;p&gt;&lt;code&gt;conda install -c https://conda.anaconda.org/mq pybrain
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;挂载硬盘&#34;&gt;挂载硬盘&lt;/h3&gt;
+&lt;h3 id=&#34;挂载硬盘:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;挂载硬盘&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;mount  /dev/sdb1 /data1
 mount  /dev/sdc1 /data2
@@ -730,7 +744,7 @@ mount  /dev/sdd1 /data3
 
 &lt;p&gt;这样重启后会自动挂载&lt;/p&gt;
 
-&lt;h3 id=&#34;安装-nvidia-gtx-1080-驱动-367-27&#34;&gt;安装 Nvidia GTX 1080 驱动 367.27&lt;/h3&gt;
+&lt;h3 id=&#34;安装-nvidia-gtx-1080-驱动-367-27:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;安装 Nvidia GTX 1080 驱动 367.27&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;sudo add-apt-repository ppa:graphics-drivers/ppa
 &lt;/code&gt;&lt;/p&gt;
@@ -754,7 +768,7 @@ sudo apt-get install freeglut3-dev
 
 &lt;p&gt;重启进不了ubuntu 的桌面，输入密码又返回登陆界面，但是可以用ssh远程登陆。&lt;/p&gt;
 
-&lt;h3 id=&#34;新安装的系统-14-04-输入密码后又返回登录界面&#34;&gt;新安装的系统，14.04。输入密码后又返回登录界面&lt;/h3&gt;
+&lt;h3 id=&#34;新安装的系统-14-04-输入密码后又返回登录界面:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;新安装的系统，14.04。输入密码后又返回登录界面&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;sudo rm -r .Xauthority*  （Xauthority文件在/home/用户名/.Xauthority）&lt;/p&gt;
@@ -789,7 +803,7 @@ sudo shutdown -r now
 &lt;p&gt;删除了nvidia的驱动，重启之后Unity桌面成功恢复了。
 nvidia-smi 已经无效。&lt;/p&gt;
 
-&lt;h3 id=&#34;teamviewer-安装&#34;&gt;teamviewer 安装&lt;/h3&gt;
+&lt;h3 id=&#34;teamviewer-安装:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;teamviewer 安装&lt;/h3&gt;
 
 &lt;p&gt;在网站下载teamviewer &lt;a href=&#34;https://www.teamviewer.com/zhcn/download/linux/&#34;&gt;https://www.teamviewer.com/zhcn/download/linux/&lt;/a&gt;&lt;/p&gt;
 
@@ -811,7 +825,7 @@ nvidia-smi 已经无效。&lt;/p&gt;
 
 &lt;p&gt;即可以通过teamviewer 远程访问图形界面&lt;/p&gt;
 
-&lt;h3 id=&#34;安装torcs-gym等相关环境&#34;&gt;安装TORCS_gym等相关环境&lt;/h3&gt;
+&lt;h3 id=&#34;安装torcs-gym等相关环境:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;安装TORCS_gym等相关环境&lt;/h3&gt;
 
 &lt;p&gt;请参考上一文章记录&lt;a href=&#34;http://www.cnblogs.com/Qwells/p/6001699.html&#34;&gt;用Keras 和 DDPG play TORCS（环境配置篇）&lt;/a&gt;&lt;/p&gt;
 

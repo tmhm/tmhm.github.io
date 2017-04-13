@@ -55,7 +55,7 @@
     },
     "datePublished": "2017-04-12",
     "description": "强化学习笔记（1）——RL相关问题的简单介绍",
-    "wordCount":  102 
+    "wordCount":  116 
   }
 </script>
 
@@ -186,7 +186,7 @@
 
   
   &middot; Read in about 1 min
-  &middot; (102 Words)
+  &middot; (116 Words)
   <br>
   
 <a class="label" href="https://tmhm.github.io/tags/rl">RL</a>
@@ -235,7 +235,7 @@
   });
 </script>
 
-<h4 id="强化学习的定义:877a7354ca4ae72eb3cbf9d53c436c2f">强化学习的定义</h4>
+<h4 id="强化学习的定义">强化学习的定义</h4>
 
 <p>强化学习（Reinforcement Learning）本身可以定义为一个广泛的学习问题，学会找到状态（Situation）到动作（Actions）的一个映射关系，以最大化一个数值型的回报（Reward）信号。一个完整的强化学习问题可以用马氏决策过程中的最优控制理论来进行描述。在马氏链中，当前时刻的状态（State） 仅仅与上一时刻的状态有关。如下图1所示，一个智能体（Agent）可以通过某种方式感受环境的状态（State），然后可以通过某一个动作（Action）来改变环境的下一状态。在这个不断交互的过程中，Agent还必须具有一个或者以上的、与此环境状态相关的目标（Goal）。
 <center>
@@ -246,7 +246,7 @@
 
 <p>与RL问题相对应的任何求解方法，可以称之为一个强化学习方法。</p>
 
-<h4 id="rl的两个重要特征:877a7354ca4ae72eb3cbf9d53c436c2f">RL的两个重要特征</h4>
+<h4 id="rl的两个重要特征">RL的两个重要特征</h4>
 
 <ul>
 <li>试错搜索（trial-and-error）</li>
@@ -257,12 +257,12 @@
 监督学习中通过正确的指示（instruct）来进行反馈；强化学习是依靠整个生命周期所选择的动作来进行评价式的反馈。</p></li>
 </ul>
 
-<h4 id="rl系统中的四大主要元素-element:877a7354ca4ae72eb3cbf9d53c436c2f">Rl系统中的四大主要元素（element）</h4>
+<h4 id="rl系统中的四大主要元素-element">Rl系统中的四大主要元素（element）</h4>
 
 <ul>
 <li><p>策略（policy）</p>
 
-<p>其定义是在某时刻下，智能体的行为方式。粗略地说，一个策略可以看做是接收到状态到智能体做出动作的一种映射关系，可以用函数或者表的形式来表现。通常来说，策略可能是随机的。</p></li>
+<p>其定义是在某时刻下，智能体的行为方式。粗略地说，一个策略可以看做是接收到状态到智能体做出动作的一种映射关系，可以用函数或者表的形式来表现。通常来说，策略可以是确定的，也可能是随机的，即可以用条件概率来表示。</p></li>
 
 <li><p>奖励/回报函数（reward function）</p>
 
@@ -270,14 +270,25 @@
 
 <li><p>值函数（value function）</p>
 
-<p>奖励函数所表现出的是当前状态或者状态-动作对的立即评价，值函数表征的是对长远意义下的评判。粗略来说，值函数可以表示从当前状态开始到未来（long-term），Agent可以收获到奖励的一种累积和。即值函数是对Agent整个生命周期的一种评价。</p></li>
+<p>奖励函数所表现出的是当前状态或者状态-动作对的立即评价，值函数表征的是对长远意义下的评判。粗略来说，值函数可以表示从当前状态开始到未来（long-term），Agent可以收获到奖励的一种累积和。即值函数是对Agent整个生命周期的一种评价。值函数是动作选择的一个标准。</p></li>
 
 <li><p>环境的模型（model of the environment）</p>
 
 <p>即对该Agent生存环境的行为模仿（mimics the behavior of the environment）。举一个例子，给定一个状态和动作，环境模型可以预测相对应的下一状态和奖励。如果模型已知，强化学习问题可以演化为动态规划问题求解。</p></li>
 </ul>
 
-<h4 id="探索与利用的权衡:877a7354ca4ae72eb3cbf9d53c436c2f">探索与利用的权衡</h4>
+<h4 id="rl中智能体学习方法的分类">RL中智能体学习方法的分类</h4>
+
+<p>根据强化学习问题中所含元素的种类，其Agent的学习方法，可以分之为5大类。如下图2所示。
+<center>
+<!-- [](/images/RL1_agent_taxonomy.jpg "示图2") --></p>
+
+<p><img src="/images/RL1_agent_taxonomy.jpg" width = "420" height = "280" alt="示图2" align=center /></p>
+
+<p>图2 强化学习中智能体学习方法的分类
+</center></p>
+
+<h4 id="探索与利用的权衡">探索与利用的权衡</h4>
 
 <p><em>trade-off between exploration and exploitation</em></p>
 
@@ -294,9 +305,12 @@ $$ \cfrac{e^{Q<em>t(a)/\tau}}{\sum</em>{b=1}^n e^{Q_t(b)/\tau}}$$</p>
 <p>$\tau &gt; 0 $表示温度（temperature）, 高的温度，选择动作近乎平等；温度趋近0的时候，此法接近于贪心选择。</p></li>
 </ul>
 
-<h4 id="refernece:877a7354ca4ae72eb3cbf9d53c436c2f">refernece</h4>
+<h4 id="refernece">refernece</h4>
 
 <p>[1] Sutton R S, Barto A G. Reinforcement learning: An introduction[M]. MIT press Cambridge, 1998.</p>
+
+<p>[2] David Silver. Lecture 1: Introduction to Reinforcement Learning
+Learning</p>
 
 </div>
 
