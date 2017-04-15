@@ -2,14 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>算法 on Well</title>
-    <link>https://tmhm.github.io/tags/%E7%AE%97%E6%B3%95/</link>
+    <link>https://tmhm.github.io/tags/%E7%AE%97%E6%B3%95/index.xml</link>
     <description>Recent content in 算法 on Well</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
     <managingEditor>wells217@163.com (Well)</managingEditor>
     <webMaster>wells217@163.com (Well)</webMaster>
     <copyright>(c) 2017 Well.</copyright>
-    <lastBuildDate>Tue, 30 Aug 2016 10:50:00 +0000</lastBuildDate>
     <atom:link href="https://tmhm.github.io/tags/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -44,7 +43,7 @@ struct my_struct {
 #pragma pack() //将地址对齐界线改回原来的值
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;对齐规则-参考-http-www-cnblogs-com-graphics-archive-2010-08-12-1797953-html:6e1b40b8b57ee22a0af6a446d958a932&#34;&gt;对齐规则&lt;a href=&#34;http://www.cnblogs.com/graphics/archive/2010/08/12/1797953.html&#34;&gt;参考&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;对齐规则-参考-http-www-cnblogs-com-graphics-archive-2010-08-12-1797953-html&#34;&gt;对齐规则&lt;a href=&#34;http://www.cnblogs.com/graphics/archive/2010/08/12/1797953.html&#34;&gt;参考&lt;/a&gt;&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;该博文也给出了#pragma pack(show) 和#pragma pack(num)的说明以及在VS中的设置；默认num＝8.&lt;/p&gt;
@@ -60,7 +59,7 @@ struct my_struct {
 &lt;li&gt;如果一个类型按n字节对齐，那么该类型的变量起始地址必须是n的倍数。比如int按四字节对齐，那么int类型的变量起始地址一定是4的倍数，比如0x0012ff60，0x0012ff48等。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;查看系统是多少位的:6e1b40b8b57ee22a0af6a446d958a932&#34;&gt;查看系统是多少位的&lt;/h4&gt;
+&lt;h4 id=&#34;查看系统是多少位的&#34;&gt;查看系统是多少位的&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;file /sbin/init&lt;/p&gt;
@@ -97,7 +96,7 @@ struct my_struct {
 &lt;p&gt;&lt;code&gt;Ubuntu 15.04 \n \l
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;测试数据所占字节:6e1b40b8b57ee22a0af6a446d958a932&#34;&gt;测试数据所占字节&lt;/h4&gt;
+&lt;h4 id=&#34;测试数据所占字节&#34;&gt;测试数据所占字节&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;因为在数据对齐的时候需要考虑是在什么系统下，各数据类型所占字节大小，纠正网上一些有问题的解答，比如long是只占4bits的。&lt;/p&gt;
@@ -155,11 +154,12 @@ cout &amp;lt;&amp;lt; &amp;quot;char*: &amp;quot; &amp;lt;&amp;lt; sizeof(char*)
 &lt;ul&gt;
 &lt;li&gt;由于硬件设计的特点，CPU在读写内存时，如果所给的地址是机器字长的整数倍，则操作效率会比较高。&lt;/li&gt;
 &lt;li&gt;有的CPU甚至不支持读写地址不对齐的内存单元。&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;为了提高程序运行的效率，编译器会尽量避免一个变量（包括结构体成员）的存储空间跨越地址对齐的界线。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;实验（64bits 环境）&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;为了提高程序运行的效率，编译器会尽量避免一个变量（包括结构体成员）的存储空间跨越地址对齐的界线。&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;ol&gt;
+&lt;li&gt;实验（64bits 环境）&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;pre&gt;&lt;code&gt;
 #include &amp;lt;iostream&amp;gt;
@@ -554,7 +554,7 @@ public:
             }
         }
         return temp-&amp;gt;next;
-    
+	
     }
 };
 &lt;/code&gt;&lt;/pre&gt;

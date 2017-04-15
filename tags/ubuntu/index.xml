@@ -2,22 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ubuntu on Well</title>
-    <link>https://tmhm.github.io/tags/ubuntu/</link>
+    <link>https://tmhm.github.io/tags/ubuntu/index.xml</link>
     <description>Recent content in Ubuntu on Well</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
     <managingEditor>wells217@163.com (Well)</managingEditor>
     <webMaster>wells217@163.com (Well)</webMaster>
     <copyright>(c) 2017 Well.</copyright>
-    <lastBuildDate>Mon, 27 Feb 2017 13:55:22 +0800</lastBuildDate>
     <atom:link href="https://tmhm.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Hugo在Ubuntu14.04系统下的配置 </title>
-      <link>https://tmhm.github.io/2017/02/27/hugo%E5%9C%A8ubuntu14.04%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E9%85%8D%E7%BD%AE/</link>
+      <link>https://tmhm.github.io/2017/02/27/use-hugo-under-ubuntu14.04/</link>
       <pubDate>Mon, 27 Feb 2017 13:55:22 +0800</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2017/02/27/hugo%E5%9C%A8ubuntu14.04%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://tmhm.github.io/2017/02/27/use-hugo-under-ubuntu14.04/</guid>
       <description>
 
 &lt;h3 id=&#34;安装hugo&#34;&gt;安装Hugo&lt;/h3&gt;
@@ -93,15 +92,15 @@ hugo new post/second.md
 &lt;li&gt;&lt;strong&gt;在终端界面里面查找，命令：ctrl + shift +f&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;ul&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;VMware 中 Ubuntu 不能全屏：&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol&gt;
-&lt;li&gt;转到虚拟机&amp;ndash;&amp;gt;安装VMware Tools&lt;/li&gt;
+&lt;li&gt;转到虚拟机--&amp;gt;安装VMware Tools&lt;/li&gt;
 &lt;li&gt;把装载的 VMware Tools CD里面的VMwareTools.x.x.x-xxxx.tar.gz文件解压到桌面&lt;/li&gt;
 &lt;li&gt;cd进入解压位置，运行&amp;nbsp;sudo ./vmware-install.pl -d &amp;nbsp;&lt;span style=&#34;font-size: 13px;&#34;&gt;&lt;em&gt;（注意：-d 开关假定您希望接受默认设置。如果不使用 -d，请按 Return 接受默认值或提供您自己的答案。）&lt;/em&gt;&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;重启&lt;/li&gt;
-&lt;li&gt;此时已经安装VMware tools，但是在ubuntu在VMware控制台显示时，四周仍然有黑框，可以在VMware中点击：查看&amp;ndash;&amp;gt;自动调整大小&amp;ndash;&amp;gt;自动适应客户机。&lt;/li&gt;
+&lt;li&gt;此时已经安装VMware tools，但是在ubuntu在VMware控制台显示时，四周仍然有黑框，可以在VMware中点击：查看--&amp;gt;自动调整大小--&amp;gt;自动适应客户机。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;&amp;nbsp;codeblocks 编译开发环境(需要先安装gcc，g++,gdb)&lt;/strong&gt;
@@ -112,25 +111,24 @@ hugo new post/second.md
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;h3&gt;&amp;nbsp;查看ssh服务状态&lt;/h3&gt;
+&lt;h3&gt;查看ssh服务状态&lt;/h3&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;div class=&#34;cnblogs_code&#34;&gt;
 &lt;pre&gt;ps -e |grep ssh&lt;/pre&gt;
 &lt;/div&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>ubuntu 12.04lts 安装 mysql，通过QT访问</title>
-      <link>https://tmhm.github.io/2016/02/18/ubuntu-12.04lts-%E5%AE%89%E8%A3%85-mysql%E9%80%9A%E8%BF%87qt%E8%AE%BF%E9%97%AE/</link>
+      <link>https://tmhm.github.io/2016/02/18/ubuntu-12.04lts-%E5%AE%89%E8%A3%85mysql-%E5%B9%B6%E9%80%9A%E8%BF%87qt%E8%BF%9E%E6%8E%A5/</link>
       <pubDate>Thu, 18 Feb 2016 10:58:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/02/18/ubuntu-12.04lts-%E5%AE%89%E8%A3%85-mysql%E9%80%9A%E8%BF%87qt%E8%AE%BF%E9%97%AE/</guid>
+      <guid>https://tmhm.github.io/2016/02/18/ubuntu-12.04lts-%E5%AE%89%E8%A3%85mysql-%E5%B9%B6%E9%80%9A%E8%BF%87qt%E8%BF%9E%E6%8E%A5/</guid>
       <description>&lt;ol&gt;
 &lt;li&gt;安装server
 &lt;code&gt;$ sudo apt-get install mysql-server&lt;/code&gt;&lt;/li&gt;
@@ -187,24 +185,20 @@ ii  mysql-server-core-5.5                       5.5.47-0ubuntu0.12.04.1         
 &lt;li&gt;&lt;p&gt;压缩出一块空闲的分区，即压缩卷之后，不做任何操作。&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;并且确保该空闲卷是“基本”类型
-　　　    　不是的话，&lt;a href=&#34;http://www.jianshu.com/p/2f0731274ee6&#34;&gt;参考&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;并且确保该空闲卷是“基本”类型
+　　　    　不是的话，&lt;a href=&#34;http://www.jianshu.com/p/2f0731274ee6&#34;&gt;参考&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;li&gt;&lt;p&gt;下载免费的分区助手
-注：一定要下载分区助手3.0版本，其它的高版本如4.0没有包含动态磁盘转换器这个工具&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;安装并运行。在主界面的左上边，点击“动态磁盘转换器”来运行这个程序。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;然后你将看动态磁盘转换器的欢迎界面，你可以读一下它的简介，然后直接点击“下一步”按钮以进入下一个向导页&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;在这儿的“操作选择”页里，请选择“转换动态磁盘到基本磁盘”选项，并点击“下一步”按钮&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;然后进入“动态磁盘列表”页，在这里程序要求你选择一个你想转换到基本磁盘的动态磁盘&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;操作确认，请在“我已经决定好执行这个转换”上打勾，然后点击“执行”按钮开始转换这个动态磁盘到基本磁盘。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;在几秒后，这个转换将完成，同时程序可能要求你重启电脑，在重启电脑之后，你在进入Windows的磁盘管理器中查看磁盘时，它已经被成功改变到基本磁盘了&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;ol&gt;
+&lt;li&gt;下载免费的分区助手
+注：一定要下载分区助手3.0版本，其它的高版本如4.0没有包含动态磁盘转换器这个工具&lt;/li&gt;
+&lt;li&gt;安装并运行。在主界面的左上边，点击“动态磁盘转换器”来运行这个程序。&lt;/li&gt;
+&lt;li&gt;然后你将看动态磁盘转换器的欢迎界面，你可以读一下它的简介，然后直接点击“下一步”按钮以进入下一个向导页&lt;/li&gt;
+&lt;li&gt;在这儿的“操作选择”页里，请选择“转换动态磁盘到基本磁盘”选项，并点击“下一步”按钮&lt;/li&gt;
+&lt;li&gt;然后进入“动态磁盘列表”页，在这里程序要求你选择一个你想转换到基本磁盘的动态磁盘&lt;/li&gt;
+&lt;li&gt;操作确认，请在“我已经决定好执行这个转换”上打勾，然后点击“执行”按钮开始转换这个动态磁盘到基本磁盘。&lt;/li&gt;
+&lt;li&gt;在几秒后，这个转换将完成，同时程序可能要求你重启电脑，在重启电脑之后，你在进入Windows的磁盘管理器中查看磁盘时，它已经被成功改变到基本磁盘了&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;分区空闲，不可用！！问题&lt;/p&gt;
 
@@ -238,10 +232,10 @@ sudo apt-get install kdevelop
     
     <item>
       <title>ubuntu12.04LTS 系统下QT 4.8.6和QT creator 2.5.2的安装</title>
-      <link>https://tmhm.github.io/2016/01/06/ubuntu12.04lts-%E7%B3%BB%E7%BB%9F%E4%B8%8Bqt-4.8.6%E5%92%8Cqt-creator-2.5.2%E7%9A%84%E5%AE%89%E8%A3%85/</link>
+      <link>https://tmhm.github.io/2016/01/06/ubuntu12.04lts%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E5%8D%B8%E8%BD%BD-qt4.8.6%E5%92%8Cqt-creator2.5.2/</link>
       <pubDate>Wed, 06 Jan 2016 10:30:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/01/06/ubuntu12.04lts-%E7%B3%BB%E7%BB%9F%E4%B8%8Bqt-4.8.6%E5%92%8Cqt-creator-2.5.2%E7%9A%84%E5%AE%89%E8%A3%85/</guid>
+      <guid>https://tmhm.github.io/2016/01/06/ubuntu12.04lts%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A%E5%8D%B8%E8%BD%BD-qt4.8.6%E5%92%8Cqt-creator2.5.2/</guid>
       <description>&lt;p&gt;鉴于，下载QT5.5安装，编译总是有问题，可能是配置不正确。
 于是按照论坛的一些资料，就换回QT4版本，具体实施步骤如下：
 在qt官网&lt;code&gt;http://download.qt.io/archive/&lt;/code&gt;下的

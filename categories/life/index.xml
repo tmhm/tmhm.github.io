@@ -2,22 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Life on Well</title>
-    <link>https://tmhm.github.io/categories/life/</link>
+    <link>https://tmhm.github.io/categories/life/index.xml</link>
     <description>Recent content in Life on Well</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
     <managingEditor>wells217@163.com (Well)</managingEditor>
     <webMaster>wells217@163.com (Well)</webMaster>
     <copyright>(c) 2017 Well.</copyright>
-    <lastBuildDate>Wed, 15 Mar 2017 16:38:20 +0800</lastBuildDate>
     <atom:link href="https://tmhm.github.io/categories/life/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>一语未尽</title>
-      <link>https://tmhm.github.io/2017/03/15/%E4%B8%80%E8%AF%AD%E6%9C%AA%E5%B0%BD/</link>
+      <link>https://tmhm.github.io/2017/03/15/%E4%BC%BC%E6%9B%BE%E7%9B%B8%E8%AF%86%E8%AF%AD%E6%9C%AA%E5%B0%BD/</link>
       <pubDate>Wed, 15 Mar 2017 16:38:20 +0800</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2017/03/15/%E4%B8%80%E8%AF%AD%E6%9C%AA%E5%B0%BD/</guid>
+      <guid>https://tmhm.github.io/2017/03/15/%E4%BC%BC%E6%9B%BE%E7%9B%B8%E8%AF%86%E8%AF%AD%E6%9C%AA%E5%B0%BD/</guid>
       <description>&lt;p&gt;&lt;em&gt;某些言语，让人若有所思。&lt;/em&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -87,10 +86,10 @@
     
     <item>
       <title>一些书单</title>
-      <link>https://tmhm.github.io/2016/10/10/%E4%B8%80%E4%BA%9B%E4%B9%A6%E5%8D%95/</link>
+      <link>https://tmhm.github.io/2016/10/10/mybooklist/</link>
       <pubDate>Mon, 10 Oct 2016 08:40:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/10/10/%E4%B8%80%E4%BA%9B%E4%B9%A6%E5%8D%95/</guid>
+      <guid>https://tmhm.github.io/2016/10/10/mybooklist/</guid>
       <description>&lt;p&gt;&lt;em&gt;仅对近来的学习做些回顾吧&lt;/em&gt;
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;学习永无止境&amp;ndash;&amp;gt;&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;&lt;/p&gt;
 

@@ -2,18 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Machine Learning on Well</title>
-    <link>https://tmhm.github.io/categories/machine-learning/</link>
+    <link>https://tmhm.github.io/categories/machine-learning/index.xml</link>
     <description>Recent content in Machine Learning on Well</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
     <managingEditor>wells217@163.com (Well)</managingEditor>
     <webMaster>wells217@163.com (Well)</webMaster>
     <copyright>(c) 2017 Well.</copyright>
-    <lastBuildDate>Wed, 12 Apr 2017 15:13:28 +0800</lastBuildDate>
     <atom:link href="https://tmhm.github.io/categories/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>RL_intro_1</title>
+      <title>RL笔记(1)-introduction</title>
       <link>https://tmhm.github.io/2017/04/12/rl_intro_1/</link>
       <pubDate>Wed, 12 Apr 2017 15:13:28 +0800</pubDate>
       <author>wells217@163.com (Well)</author>
@@ -114,19 +113,19 @@ Learning&lt;/p&gt;
     
     <item>
       <title>基于DRL和TORCS的自动驾驶仿真系统——之环境配置</title>
-      <link>https://tmhm.github.io/2017/02/08/%E5%9F%BA%E4%BA%8Edrl%E5%92%8Ctorcs%E7%9A%84%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E4%BB%BF%E7%9C%9F%E7%B3%BB%E7%BB%9F%E4%B9%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
+      <link>https://tmhm.github.io/2017/02/08/auto-driving-simulation-based-on-drltorcs_configuration/</link>
       <pubDate>Wed, 08 Feb 2017 09:13:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2017/02/08/%E5%9F%BA%E4%BA%8Edrl%E5%92%8Ctorcs%E7%9A%84%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E4%BB%BF%E7%9C%9F%E7%B3%BB%E7%BB%9F%E4%B9%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://tmhm.github.io/2017/02/08/auto-driving-simulation-based-on-drltorcs_configuration/</guid>
       <description>
 
 &lt;p&gt;&lt;em&gt;玩TORCS和DRL差不多有一整年了，开始的摸爬滚打都是不断碰壁过来的，近来在参与&lt;a href=&#34;https://katefvision.github.io/&#34;&gt;CMU的DRL10703课程&lt;/a&gt;学习和翻译志愿者工作，也将自己以前的一些工作做一些备忘，以作为有兴趣同学的参考。&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;torcs仿真器平台安装:1793684d767565b415bdf28945fbfe28&#34;&gt;TORCS仿真器平台安装&lt;/h3&gt;
+&lt;h3 id=&#34;torcs仿真器平台安装&#34;&gt;TORCS仿真器平台安装&lt;/h3&gt;
 
 &lt;p&gt;仿真器平台主要包括两步：安装TORCS，然后添加锦标赛用的patch。&lt;/p&gt;
 
-&lt;h4 id=&#34;torcs仿真器的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;TORCS仿真器的安装&lt;/h4&gt;
+&lt;h4 id=&#34;torcs仿真器的安装&#34;&gt;TORCS仿真器的安装&lt;/h4&gt;
 
 &lt;p&gt;The open racing car simulator（TORCS）&lt;a href=&#34;http://torcs.sourceforge.net/&#34;&gt;主页&lt;/a&gt;&lt;/p&gt;
 
@@ -149,7 +148,7 @@ Learning&lt;/p&gt;
 &lt;p&gt;如何在仿真器上一步步实现一个简单ROBOT，教程可见：
 &lt;a href=&#34;http://www.berniw.org/tutorials/robot/&#34;&gt;http://www.berniw.org/tutorials/robot/&lt;/a&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;championship-platform的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;Championship Platform的安装&lt;/h4&gt;
+&lt;h4 id=&#34;championship-platform的安装&#34;&gt;Championship Platform的安装&lt;/h4&gt;
 
 &lt;p&gt;为扩展仿真器平台用于我们的智能驾驶AI程序的开发，我们采用的是锦标赛平台的接口。在安装torcs之后，可以直接安装patch。实现安装源文件下载地址：
 &lt;a href=&#34;https://sourceforge.net/projects/cig/files/SCR%20Championship/&#34;&gt;https://sourceforge.net/projects/cig/files/SCR%20Championship/&lt;/a&gt;&lt;/p&gt;
@@ -173,16 +172,16 @@ Manual的官方文件: &lt;a href=&#34;http://arxiv.org/abs/1304.1672&#34;&gt;ht
 
 &lt;p&gt;至此，TORCS仿真器平台安装完毕，下面搭建配套的软件IDE环境。&lt;/p&gt;
 
-&lt;h3 id=&#34;软件ide环境搭建:1793684d767565b415bdf28945fbfe28&#34;&gt;软件IDE环境搭建&lt;/h3&gt;
+&lt;h3 id=&#34;软件ide环境搭建&#34;&gt;软件IDE环境搭建&lt;/h3&gt;
 
-&lt;h4 id=&#34;anaconda-的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;Anaconda 的安装&lt;/h4&gt;
+&lt;h4 id=&#34;anaconda-的安装&#34;&gt;Anaconda 的安装&lt;/h4&gt;
 
 &lt;p&gt;Anaconda 是一个开源的，基于python的跨平台（windows，osx，liunx）科学计算平台，支持python2和python3，示例用的是基于python2的anaconda2-4.0.0&lt;/p&gt;
 
 &lt;p&gt;安装后，会创建一个Anaconda Prompt（一个类似DOS的命令行窗口），它可以像linux一样来通过命令管理各种科学计算包，执行命令等。
 比如可以用conda ，pip等工具管理包&lt;/p&gt;
 
-&lt;h4 id=&#34;pybrain的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;PyBrain的安装&lt;/h4&gt;
+&lt;h4 id=&#34;pybrain的安装&#34;&gt;PyBrain的安装&lt;/h4&gt;
 
 &lt;p&gt;Pybrain是一个基于python的机器学习模块，对强化学习的支持比较好，2015年底的时候，还只有很少的模块是专门做强化学习的，Pybrain就是定位在强化学习和神经网络，由于是个人的项目，维护更新比较慢，目前使用的是0.33版本。&lt;/p&gt;
 
@@ -204,7 +203,7 @@ Manual的官方文件: &lt;a href=&#34;http://arxiv.org/abs/1304.1672&#34;&gt;ht
 
 &lt;p&gt;&lt;em&gt;Note： mq 是指包的发布者&lt;/em&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;pycharm-的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;PyCharm 的安装&lt;/h4&gt;
+&lt;h4 id=&#34;pycharm-的安装&#34;&gt;PyCharm 的安装&lt;/h4&gt;
 
 &lt;p&gt;尽管Anaconda包含了一个Spyder 的IDE，个人感觉不太友好，故还是额外安装&lt;a href=&#34;https://www.jetbrains.com/pycharm/download/#section=windows&#34;&gt;PyCharm&lt;/a&gt;。PyCharm是JetBrains公司推出的一套基于python的跨平台工具。包含免费的社区版和收费的专业版，示例的是专业版，由于近期修改系统时间的漏洞已经修护（貌似最多就一年有效），建议直接安装社区版即可。与TORCS的接口程序在下一篇代码部分给出。&lt;/p&gt;
 </description>
@@ -212,10 +211,10 @@ Manual的官方文件: &lt;a href=&#34;http://arxiv.org/abs/1304.1672&#34;&gt;ht
     
     <item>
       <title>无人驾驶之激光雷达&amp;摄像头</title>
-      <link>https://tmhm.github.io/2016/12/02/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E4%B9%8B%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E6%91%84%E5%83%8F%E5%A4%B4/</link>
+      <link>https://tmhm.github.io/2016/12/02/auto-driving_lidarcamera-shared-from-%E9%80%9F%E8%85%BE%E9%82%B1%E7%BA%AF%E9%91%AB/</link>
       <pubDate>Fri, 02 Dec 2016 05:03:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/12/02/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E4%B9%8B%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E6%91%84%E5%83%8F%E5%A4%B4/</guid>
+      <guid>https://tmhm.github.io/2016/12/02/auto-driving_lidarcamera-shared-from-%E9%80%9F%E8%85%BE%E9%82%B1%E7%BA%AF%E9%91%AB/</guid>
       <description>
 
 &lt;blockquote&gt;
@@ -353,10 +352,10 @@ Manual的官方文件: &lt;a href=&#34;http://arxiv.org/abs/1304.1672&#34;&gt;ht
     
     <item>
       <title>DL服务器主机环境配置 ubuntu14.04 &amp;&amp;  GTX1080 &amp;&amp; Cuda8.0 解决桌面重复登录</title>
-      <link>https://tmhm.github.io/2016/11/21/dl%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%BB%E6%9C%BA%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-ubuntu14.04---gtx1080--cuda8.0-%E8%A7%A3%E5%86%B3%E6%A1%8C%E9%9D%A2%E9%87%8D%E5%A4%8D%E7%99%BB%E5%BD%95/</link>
+      <link>https://tmhm.github.io/2016/11/21/dl-serverubuntu14.04&#43;gtx1080&#43;cuda8.0solved-re-login/</link>
       <pubDate>Mon, 21 Nov 2016 12:15:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/11/21/dl%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%BB%E6%9C%BA%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-ubuntu14.04---gtx1080--cuda8.0-%E8%A7%A3%E5%86%B3%E6%A1%8C%E9%9D%A2%E9%87%8D%E5%A4%8D%E7%99%BB%E5%BD%95/</guid>
+      <guid>https://tmhm.github.io/2016/11/21/dl-serverubuntu14.04&#43;gtx1080&#43;cuda8.0solved-re-login/</guid>
       <description>
 
 &lt;p&gt;&lt;em&gt;前面部分是自己的记录，后面方案部分是成功安装驱动+桌面的正解&lt;/em&gt;&lt;/p&gt;
@@ -402,7 +401,7 @@ $ sudo /etc/init.d/gdm start
 
 &lt;p&gt;升级到375版本， 还是没用，启动进入不了桌面，重复登录&lt;/p&gt;
 
-&lt;h3 id=&#34;install-driver-367-https-kusemanohar-wordpress-com-2016-07-29-gtx-1080-on-ubuntu-14-04-trusty:d68e03665ec87076c808379f00c3c33a&#34;&gt;&lt;a href=&#34;https://kusemanohar.wordpress.com/2016/07/29/gtx-1080-on-ubuntu-14-04-trusty/&#34;&gt;Install driver 367&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;install-driver-367-https-kusemanohar-wordpress-com-2016-07-29-gtx-1080-on-ubuntu-14-04-trusty&#34;&gt;&lt;a href=&#34;https://kusemanohar.wordpress.com/2016/07/29/gtx-1080-on-ubuntu-14-04-trusty/&#34;&gt;Install driver 367&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;Uninstall previous nvidia drivers.&lt;/p&gt;
 
@@ -461,7 +460,7 @@ $ sudo /etc/init.d/lightdm start
 &lt;p&gt;有人说，安装必须要在安装桌面前安装GTX 1080 driver，后面方案验证来看， 那个参数才是关键。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;解决方法:d68e03665ec87076c808379f00c3c33a&#34;&gt;解决方法&lt;/h3&gt;
+&lt;h3 id=&#34;解决方法&#34;&gt;解决方法&lt;/h3&gt;
 
 &lt;p&gt;利用sudo gedit /etc/modprobe.d/blacklist-nouveau.conf新建blacklist-nouveau.conf文件，输入命令&lt;/p&gt;
 
@@ -516,7 +515,7 @@ sudo /etc/init.d/lightdm start
 &lt;p&gt;NO
 &lt;img src=&#34;http://i.imgur.com/5DHQbMl.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;cuda8-0安装:d68e03665ec87076c808379f00c3c33a&#34;&gt;cuda8.0安装&lt;/h3&gt;
+&lt;h3 id=&#34;cuda8-0安装&#34;&gt;cuda8.0安装&lt;/h3&gt;
 
 &lt;p&gt;运行&lt;/p&gt;
 
@@ -541,6 +540,7 @@ Install the CUDA 8.0 Toolkit?
 (y)es/(n)o/(q)uit: y
 
 Enter Toolkit Location
+ [ default is /usr/local/cuda-8.0 ]:
 
 Do you want to install a symbolic link at /usr/local/cuda?
 (y)es/(n)o/(q)uit: y
@@ -549,6 +549,7 @@ Install the CUDA 8.0 Samples?
 (y)es/(n)o/(q)uit: y
 
 Enter CUDA Samples Location
+ [ default is /home/c302 ]:
 
 Installing the CUDA Toolkit in /usr/local/cuda-8.0 ...
 Installing the CUDA Samples in /home/c302 ...
@@ -579,7 +580,7 @@ Logfile is /tmp/cuda_install_9045.log
     
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;设置环境变量:d68e03665ec87076c808379f00c3c33a&#34;&gt;设置环境变量&lt;/h4&gt;
+&lt;h4 id=&#34;设置环境变量&#34;&gt;设置环境变量&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;export PATH=/usr/local/cuda-8.0/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
@@ -593,7 +594,7 @@ export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
 &lt;code&gt;sudo ldconfig //环境变量立即生效
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;验证-cuda:d68e03665ec87076c808379f00c3c33a&#34;&gt;验证 cuda&lt;/h4&gt;
+&lt;h4 id=&#34;验证-cuda&#34;&gt;验证 cuda&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;c302@c302-dl:~/Downloads$ nvcc -V
 nvcc: NVIDIA (R) Cuda compiler driver
@@ -602,7 +603,7 @@ Built on Sun_Sep__4_22:14:01_CDT_2016
 Cuda compilation tools, release 8.0, V8.0.44
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;测试cuda的samples:d68e03665ec87076c808379f00c3c33a&#34;&gt;测试cuda的samples&lt;/h3&gt;
+&lt;h3 id=&#34;测试cuda的samples&#34;&gt;测试cuda的samples&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;cd ‘/home/zhou/NVIDIA_CUDA-8.0_Samples’
 make  //这里需要点时间
@@ -649,7 +650,7 @@ NOTE: The CUDA Samples are not meant for performance measurements. Results may v
       <guid>https://tmhm.github.io/2016/11/21/gpu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E4%B8%AD%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80note/</guid>
       <description>
 
-&lt;h3 id=&#34;gpu-服务器:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;GPU 服务器：&lt;/h3&gt;
+&lt;h3 id=&#34;gpu-服务器&#34;&gt;GPU 服务器：&lt;/h3&gt;
 
 &lt;p&gt;添加组，用户，并为之新建主目录。&lt;/p&gt;
 
@@ -664,7 +665,7 @@ c302@c302-dl:~$ sudo useradd testuser -g testgroup -m
 &lt;p&gt;&lt;code&gt;passwd testuser
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;安装anaconda环境:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;安装anaconda环境&lt;/h3&gt;
+&lt;h3 id=&#34;安装anaconda环境&#34;&gt;安装anaconda环境&lt;/h3&gt;
 
 &lt;p&gt;官网下载之，&lt;a href=&#34;https://www.continuum.io/downloads&#34;&gt;https://www.continuum.io/downloads&lt;/a&gt;&lt;/p&gt;
 
@@ -672,7 +673,7 @@ c302@c302-dl:~$ sudo useradd testuser -g testgroup -m
 &lt;code&gt;export PATH=/home/c302/anaconda2/bin:$PATH
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;ubuntu-linux系统环境变量配置文件:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;Ubuntu Linux系统环境变量配置文件：&lt;/h3&gt;
+&lt;h3 id=&#34;ubuntu-linux系统环境变量配置文件&#34;&gt;Ubuntu Linux系统环境变量配置文件：&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;/etc/profile : 在登录时,操作系统定制用户环境时使用的第一个文件 ,此文件为系统的每个用户设置环境信息,当用户第一次登录时,该文件被执行。&lt;/p&gt;
@@ -688,7 +689,7 @@ c302@c302-dl:~$ sudo useradd testuser -g testgroup -m
 
 &lt;p&gt;修改~/.profile 文件，添加export PATH=/home/c302/anaconda2/bin:$PATH&lt;/p&gt;
 
-&lt;h3 id=&#34;安装pybrain-0-33:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;安装pybrain 0.33&lt;/h3&gt;
+&lt;h3 id=&#34;安装pybrain-0-33&#34;&gt;安装pybrain 0.33&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;
 pip install pybrain
@@ -724,7 +725,7 @@ pip install pybrain
 &lt;p&gt;&lt;code&gt;conda install -c https://conda.anaconda.org/mq pybrain
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;挂载硬盘:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;挂载硬盘&lt;/h3&gt;
+&lt;h3 id=&#34;挂载硬盘&#34;&gt;挂载硬盘&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;mount  /dev/sdb1 /data1
 mount  /dev/sdc1 /data2
@@ -744,7 +745,7 @@ mount  /dev/sdd1 /data3
 
 &lt;p&gt;这样重启后会自动挂载&lt;/p&gt;
 
-&lt;h3 id=&#34;安装-nvidia-gtx-1080-驱动-367-27:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;安装 Nvidia GTX 1080 驱动 367.27&lt;/h3&gt;
+&lt;h3 id=&#34;安装-nvidia-gtx-1080-驱动-367-27&#34;&gt;安装 Nvidia GTX 1080 驱动 367.27&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;sudo add-apt-repository ppa:graphics-drivers/ppa
 &lt;/code&gt;&lt;/p&gt;
@@ -768,7 +769,7 @@ sudo apt-get install freeglut3-dev
 
 &lt;p&gt;重启进不了ubuntu 的桌面，输入密码又返回登陆界面，但是可以用ssh远程登陆。&lt;/p&gt;
 
-&lt;h3 id=&#34;新安装的系统-14-04-输入密码后又返回登录界面:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;新安装的系统，14.04。输入密码后又返回登录界面&lt;/h3&gt;
+&lt;h3 id=&#34;新安装的系统-14-04-输入密码后又返回登录界面&#34;&gt;新安装的系统，14.04。输入密码后又返回登录界面&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;sudo rm -r .Xauthority*  （Xauthority文件在/home/用户名/.Xauthority）&lt;/p&gt;
@@ -803,7 +804,7 @@ sudo shutdown -r now
 &lt;p&gt;删除了nvidia的驱动，重启之后Unity桌面成功恢复了。
 nvidia-smi 已经无效。&lt;/p&gt;
 
-&lt;h3 id=&#34;teamviewer-安装:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;teamviewer 安装&lt;/h3&gt;
+&lt;h3 id=&#34;teamviewer-安装&#34;&gt;teamviewer 安装&lt;/h3&gt;
 
 &lt;p&gt;在网站下载teamviewer &lt;a href=&#34;https://www.teamviewer.com/zhcn/download/linux/&#34;&gt;https://www.teamviewer.com/zhcn/download/linux/&lt;/a&gt;&lt;/p&gt;
 
@@ -825,7 +826,7 @@ nvidia-smi 已经无效。&lt;/p&gt;
 
 &lt;p&gt;即可以通过teamviewer 远程访问图形界面&lt;/p&gt;
 
-&lt;h3 id=&#34;安装torcs-gym等相关环境:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;安装TORCS_gym等相关环境&lt;/h3&gt;
+&lt;h3 id=&#34;安装torcs-gym等相关环境&#34;&gt;安装TORCS_gym等相关环境&lt;/h3&gt;
 
 &lt;p&gt;请参考上一文章记录&lt;a href=&#34;http://www.cnblogs.com/Qwells/p/6001699.html&#34;&gt;用Keras 和 DDPG play TORCS（环境配置篇）&lt;/a&gt;&lt;/p&gt;
 
@@ -841,10 +842,10 @@ nvidia-smi 已经无效。&lt;/p&gt;
     
     <item>
       <title>用Keras 和 DDPG play TORCS（1）</title>
-      <link>https://tmhm.github.io/2016/10/26/%E7%94%A8keras-%E5%92%8C-ddpg-play-torcs1/</link>
+      <link>https://tmhm.github.io/2016/10/26/play-torcs-with-keras--ddpg-play-1/</link>
       <pubDate>Wed, 26 Oct 2016 12:06:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/10/26/%E7%94%A8keras-%E5%92%8C-ddpg-play-torcs1/</guid>
+      <guid>https://tmhm.github.io/2016/10/26/play-torcs-with-keras--ddpg-play-1/</guid>
       <description>
 
 &lt;p&gt;原作者&lt;a href=&#34;https://yanpanlau.github.io/2016/10/11/Torcs-Keras.html&#34;&gt;Using Keras and Deep Deterministic Policy Gradient to play TORCS&lt;/a&gt;&lt;/p&gt;
@@ -854,7 +855,7 @@ nvidia-smi 已经无效。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;由于使用的环境是ubuntu 14.04 desktop版，故不需要安装opencv。&lt;/p&gt;
 
-&lt;h4 id=&#34;安装一些依赖包:8ddac1d36b1af55faa891d2975711062&#34;&gt;安装一些依赖包：&lt;/h4&gt;
+&lt;h4 id=&#34;安装一些依赖包&#34;&gt;安装一些依赖包：&lt;/h4&gt;
 &lt;/blockquote&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo apt-get install xautomation
@@ -862,7 +863,7 @@ sudo pip install numpy
 sudo pip install gym
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;下载-gym-torcs源码-https-github-com-ugo-nama-kun-gym-torcs:8ddac1d36b1af55faa891d2975711062&#34;&gt;下载&lt;a href=&#34;https://github.com/ugo-nama-kun/gym_torcs&#34;&gt;gym_torcs源码&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;下载-gym-torcs源码-https-github-com-ugo-nama-kun-gym-torcs&#34;&gt;下载&lt;a href=&#34;https://github.com/ugo-nama-kun/gym_torcs&#34;&gt;gym_torcs源码&lt;/a&gt;&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;然后将&lt;/li&gt;
@@ -899,7 +900,7 @@ sudo make datainstall
 
 &lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201611/781469-20161121150329987-1053577076.bmp&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;ddpg源码-https-github-com-yanpanlau-ddpg-keras-torcs:8ddac1d36b1af55faa891d2975711062&#34;&gt;&lt;a href=&#34;https://github.com/yanpanlau/DDPG-Keras-Torcs&#34;&gt;DDPG源码&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;ddpg源码-https-github-com-yanpanlau-ddpg-keras-torcs&#34;&gt;&lt;a href=&#34;https://github.com/yanpanlau/DDPG-Keras-Torcs&#34;&gt;DDPG源码&lt;/a&gt;&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;pip install keras
 pip install tensorflow
@@ -935,7 +936,7 @@ cd ../gym_torcs
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;修改默认python:8ddac1d36b1af55faa891d2975711062&#34;&gt;修改默认python&lt;/h4&gt;
+&lt;h4 id=&#34;修改默认python&#34;&gt;修改默认python&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;删除系统自带的python软链接&lt;/p&gt;
@@ -953,13 +954,13 @@ cd ../gym_torcs
     
     <item>
       <title>PyBrain库的example之NFQ流程图分析</title>
-      <link>https://tmhm.github.io/2016/05/27/pybrain%E5%BA%93%E7%9A%84example%E4%B9%8Bnfq%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%88%86%E6%9E%90/</link>
+      <link>https://tmhm.github.io/2016/05/27/pybrain-libs_nfq-flowchart/</link>
       <pubDate>Fri, 27 May 2016 11:43:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/05/27/pybrain%E5%BA%93%E7%9A%84example%E4%B9%8Bnfq%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%88%86%E6%9E%90/</guid>
+      <guid>https://tmhm.github.io/2016/05/27/pybrain-libs_nfq-flowchart/</guid>
       <description>
 
-&lt;h4 id=&#34;pybrain库的example之nfq流程图分析:ee4d46bb0f922990b5099f1ed9a24c21&#34;&gt;PyBrain库的example之NFQ流程图分析&lt;/h4&gt;
+&lt;h4 id=&#34;pybrain库的example之nfq流程图分析&#34;&gt;PyBrain库的example之NFQ流程图分析&lt;/h4&gt;
 
 &lt;p&gt;如下是测试程序。主要分析&lt;strong&gt;doEpisode和learn&lt;/strong&gt;两个函数。&lt;/p&gt;
 
@@ -1110,15 +1111,15 @@ print &amp;quot;you put :&amp;quot;,str
     
     <item>
       <title>强化学习笔记（0）</title>
-      <link>https://tmhm.github.io/2016/03/31/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B00/</link>
+      <link>https://tmhm.github.io/2016/03/31/rl0/</link>
       <pubDate>Thu, 31 Mar 2016 08:18:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/03/31/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B00/</guid>
+      <guid>https://tmhm.github.io/2016/03/31/rl0/</guid>
       <description>
 
 &lt;p&gt;开始接触强化学习是在回到所里开始找课题研究方向的时候，偶然查到&lt;a href=&#34;http://news.berkeley.edu/2015/05/21/deep-learning-robot-masters-skills-via-trial-and-error/&#34;&gt;伯克利的机器人视频&lt;/a&gt;,给我比较惊艳的感觉。陆续开始查找强化学习的一些资料。最近看到一篇有关强化学习的&lt;a href=&#34;http://blog.exbot.net/archives/223&#34;&gt;博文&lt;/a&gt;，瞬时，想把自己接触到强化学习的过程也做一个简单梳理，为接下来准备在强化学习方向完成毕业论文做一个初略安排。&lt;/p&gt;
 
-&lt;h5 id=&#34;有关强化学习的资料:de16989b43bad915dba343b24e25263a&#34;&gt;有关强化学习的资料：&lt;/h5&gt;
+&lt;h5 id=&#34;有关强化学习的资料&#34;&gt;有关强化学习的资料：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Tom M. Mitchell的《机器学习》最后一章讲reinforcement learning，算是入门&lt;/p&gt;&lt;/li&gt;
@@ -1145,7 +1146,7 @@ print &amp;quot;you put :&amp;quot;,str
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;应该关注的实验室:de16989b43bad915dba343b24e25263a&#34;&gt;应该关注的实验室：&lt;/h5&gt;
+&lt;h5 id=&#34;应该关注的实验室&#34;&gt;应该关注的实验室：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.cs.york.ac.uk/rl/research.php&#34;&gt;Knowledge-Based Reinforcement Learning&lt;/a&gt;&lt;/li&gt;
@@ -1153,14 +1154,14 @@ print &amp;quot;you put :&amp;quot;,str
 &lt;li&gt;&lt;a href=&#34;http://www.cs.colostate.edu/~anderson/res/rl/&#34;&gt;Reinforcement Learning and Control&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;有关课程:de16989b43bad915dba343b24e25263a&#34;&gt;有关课程:&lt;/h5&gt;
+&lt;h5 id=&#34;有关课程&#34;&gt;有关课程:&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://rll.berkeley.edu/deeprlcourse/#assignments&#34;&gt;CS 294: Deep Reinforcement Learning&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www0.cs.ucl.ac.uk/staff/D.Silver/web/Teaching.html&#34;&gt;Dave Silver’s course on reinforcement learning&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;代码工具框架:de16989b43bad915dba343b24e25263a&#34;&gt;代码工具框架:&lt;/h5&gt;
+&lt;h5 id=&#34;代码工具框架&#34;&gt;代码工具框架:&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;最近找到一个&lt;a href=&#34;http://pybrain.org/&#34;&gt;PyBrain&lt;/a&gt;的python开源库，不错,准备前期就用它了&lt;/p&gt;&lt;/li&gt;
@@ -1177,7 +1178,7 @@ print &amp;quot;you put :&amp;quot;,str
             * &lt;a href=&#34;http://en.wikipedia.org/wiki/Reinforcement_learning&#34;&gt;http://en.wikipedia.org/wiki/Reinforcement_learning&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;一些相关会议:de16989b43bad915dba343b24e25263a&#34;&gt;一些相关会议：&lt;/h5&gt;
+&lt;h5 id=&#34;一些相关会议&#34;&gt;一些相关会议：&lt;/h5&gt;
 
 &lt;p&gt;&lt;em&gt;(from reinforcement learning State of the art)&lt;/em&gt;&lt;/p&gt;
 

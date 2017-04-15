@@ -2,18 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rl on Well</title>
-    <link>https://tmhm.github.io/tags/rl/</link>
+    <link>https://tmhm.github.io/tags/rl/index.xml</link>
     <description>Recent content in Rl on Well</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
     <managingEditor>wells217@163.com (Well)</managingEditor>
     <webMaster>wells217@163.com (Well)</webMaster>
     <copyright>(c) 2017 Well.</copyright>
-    <lastBuildDate>Wed, 12 Apr 2017 15:13:28 +0800</lastBuildDate>
     <atom:link href="https://tmhm.github.io/tags/rl/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>RL_intro_1</title>
+      <title>RL笔记(1)-introduction</title>
       <link>https://tmhm.github.io/2017/04/12/rl_intro_1/</link>
       <pubDate>Wed, 12 Apr 2017 15:13:28 +0800</pubDate>
       <author>wells217@163.com (Well)</author>
@@ -114,15 +113,15 @@ Learning&lt;/p&gt;
     
     <item>
       <title>强化学习笔记（0）</title>
-      <link>https://tmhm.github.io/2016/03/31/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B00/</link>
+      <link>https://tmhm.github.io/2016/03/31/rl0/</link>
       <pubDate>Thu, 31 Mar 2016 08:18:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/03/31/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B00/</guid>
+      <guid>https://tmhm.github.io/2016/03/31/rl0/</guid>
       <description>
 
 &lt;p&gt;开始接触强化学习是在回到所里开始找课题研究方向的时候，偶然查到&lt;a href=&#34;http://news.berkeley.edu/2015/05/21/deep-learning-robot-masters-skills-via-trial-and-error/&#34;&gt;伯克利的机器人视频&lt;/a&gt;,给我比较惊艳的感觉。陆续开始查找强化学习的一些资料。最近看到一篇有关强化学习的&lt;a href=&#34;http://blog.exbot.net/archives/223&#34;&gt;博文&lt;/a&gt;，瞬时，想把自己接触到强化学习的过程也做一个简单梳理，为接下来准备在强化学习方向完成毕业论文做一个初略安排。&lt;/p&gt;
 
-&lt;h5 id=&#34;有关强化学习的资料:de16989b43bad915dba343b24e25263a&#34;&gt;有关强化学习的资料：&lt;/h5&gt;
+&lt;h5 id=&#34;有关强化学习的资料&#34;&gt;有关强化学习的资料：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Tom M. Mitchell的《机器学习》最后一章讲reinforcement learning，算是入门&lt;/p&gt;&lt;/li&gt;
@@ -149,7 +148,7 @@ Learning&lt;/p&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;应该关注的实验室:de16989b43bad915dba343b24e25263a&#34;&gt;应该关注的实验室：&lt;/h5&gt;
+&lt;h5 id=&#34;应该关注的实验室&#34;&gt;应该关注的实验室：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.cs.york.ac.uk/rl/research.php&#34;&gt;Knowledge-Based Reinforcement Learning&lt;/a&gt;&lt;/li&gt;
@@ -157,14 +156,14 @@ Learning&lt;/p&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.cs.colostate.edu/~anderson/res/rl/&#34;&gt;Reinforcement Learning and Control&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;有关课程:de16989b43bad915dba343b24e25263a&#34;&gt;有关课程:&lt;/h5&gt;
+&lt;h5 id=&#34;有关课程&#34;&gt;有关课程:&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://rll.berkeley.edu/deeprlcourse/#assignments&#34;&gt;CS 294: Deep Reinforcement Learning&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www0.cs.ucl.ac.uk/staff/D.Silver/web/Teaching.html&#34;&gt;Dave Silver’s course on reinforcement learning&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;代码工具框架:de16989b43bad915dba343b24e25263a&#34;&gt;代码工具框架:&lt;/h5&gt;
+&lt;h5 id=&#34;代码工具框架&#34;&gt;代码工具框架:&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;最近找到一个&lt;a href=&#34;http://pybrain.org/&#34;&gt;PyBrain&lt;/a&gt;的python开源库，不错,准备前期就用它了&lt;/p&gt;&lt;/li&gt;
@@ -181,7 +180,7 @@ Learning&lt;/p&gt;
             * &lt;a href=&#34;http://en.wikipedia.org/wiki/Reinforcement_learning&#34;&gt;http://en.wikipedia.org/wiki/Reinforcement_learning&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;一些相关会议:de16989b43bad915dba343b24e25263a&#34;&gt;一些相关会议：&lt;/h5&gt;
+&lt;h5 id=&#34;一些相关会议&#34;&gt;一些相关会议：&lt;/h5&gt;
 
 &lt;p&gt;&lt;em&gt;(from reinforcement learning State of the art)&lt;/em&gt;&lt;/p&gt;
 

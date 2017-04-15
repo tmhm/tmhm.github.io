@@ -2,14 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>配置 on Well</title>
-    <link>https://tmhm.github.io/tags/%E9%85%8D%E7%BD%AE/</link>
+    <link>https://tmhm.github.io/tags/%E9%85%8D%E7%BD%AE/index.xml</link>
     <description>Recent content in 配置 on Well</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
     <managingEditor>wells217@163.com (Well)</managingEditor>
     <webMaster>wells217@163.com (Well)</webMaster>
     <copyright>(c) 2017 Well.</copyright>
-    <lastBuildDate>Mon, 13 Feb 2017 00:48:00 +0000</lastBuildDate>
     <atom:link href="https://tmhm.github.io/tags/%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -28,10 +27,10 @@
     
     <item>
       <title>Python 中logging 模块的配置和使用</title>
-      <link>https://tmhm.github.io/2016/12/25/python-%E4%B8%ADlogging-%E6%A8%A1%E5%9D%97%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/</link>
+      <link>https://tmhm.github.io/2016/12/25/logging-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Sun, 25 Dec 2016 04:49:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/12/25/python-%E4%B8%ADlogging-%E6%A8%A1%E5%9D%97%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://tmhm.github.io/2016/12/25/logging-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/</guid>
       <description>
 
 &lt;p&gt;reference :&lt;/p&gt;
@@ -96,7 +95,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
 &lt;li&gt;文件中记录level 超过 debug 的信息&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;level设计:ab6ecea521d440c8d06d82d2c5fdae84&#34;&gt;level设计&lt;/h4&gt;
+&lt;h4 id=&#34;level设计&#34;&gt;level设计&lt;/h4&gt;
 
 &lt;p&gt;logging函数根据它们用来跟踪的事件的级别或严重程度来命名。&lt;a href=&#34;http://python.usyiyi.cn/translate/python_278/howto/logging.html#logging-advanced-tutorial&#34;&gt;标准级别及其适用性描述&lt;/a&gt;如下（以严重程度递增排序）：&lt;/p&gt;
 
@@ -194,7 +193,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
 sudo chmod +x /usr/local/bin/macdown
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;设置文件默认打开方式:3a6b96174248857516852c98312790f0&#34;&gt;设置文件默认打开方式&lt;/h3&gt;
+&lt;h3 id=&#34;设置文件默认打开方式&#34;&gt;设置文件默认打开方式&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;选定文件&lt;/li&gt;
@@ -294,12 +293,10 @@ sudo chmod +x /usr/local/bin/macdown
 
 &lt;pre&gt;&lt;code&gt;conn=database(&#39;xw&#39;,&#39;root&#39;,&#39;key&#39;,&#39;com.mysql.jdbc.Driver&#39;,&#39;jdbc:mysql://localhost:3306/xw&#39;)
 aTemp = exec(conn,&#39;select * from gd_train_data limit 5
-
-
+    
 aTemp = fetch(aTemp)
 curs = aTemp.Data
-
-
+    
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>

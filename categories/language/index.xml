@@ -2,25 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Language on Well</title>
-    <link>https://tmhm.github.io/categories/language/</link>
+    <link>https://tmhm.github.io/categories/language/index.xml</link>
     <description>Recent content in Language on Well</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
     <managingEditor>wells217@163.com (Well)</managingEditor>
     <webMaster>wells217@163.com (Well)</webMaster>
     <copyright>(c) 2017 Well.</copyright>
-    <lastBuildDate>Sat, 01 Apr 2017 22:51:52 +0800</lastBuildDate>
     <atom:link href="https://tmhm.github.io/categories/language/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>taste SQL</title>
-      <link>https://tmhm.github.io/2017/04/01/taste-sql/</link>
+      <title>SQL初识</title>
+      <link>https://tmhm.github.io/2017/04/01/taste_sql/</link>
       <pubDate>Sat, 01 Apr 2017 22:51:52 +0800</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2017/04/01/taste-sql/</guid>
+      <guid>https://tmhm.github.io/2017/04/01/taste_sql/</guid>
       <description>
 
-&lt;h3 id=&#34;事务的四项特性:c90b6d24769a3945b8ac28999f82ce69&#34;&gt;事务的四项特性&lt;/h3&gt;
+&lt;h3 id=&#34;事务的四项特性&#34;&gt;事务的四项特性&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;ACID&lt;/li&gt;
@@ -47,11 +46,14 @@
 
 &lt;ul&gt;
 &lt;li&gt;事务提交，记录到硬盘，&lt;/li&gt;
-&lt;li&gt;刷新机制，时间－》秒， 事务提交即刷新，操作系统决定&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;刷新机制，时间－》秒， 事务提交即刷新，操作系统决定&lt;br /&gt;
+
+&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;sql:c90b6d24769a3945b8ac28999f82ce69&#34;&gt;SQL&lt;/h3&gt;
+&lt;h3 id=&#34;sql&#34;&gt;SQL&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;四种操作&lt;/li&gt;
@@ -66,10 +68,10 @@
     
     <item>
       <title>Python 中logging 模块的配置和使用</title>
-      <link>https://tmhm.github.io/2016/12/25/python-%E4%B8%ADlogging-%E6%A8%A1%E5%9D%97%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/</link>
+      <link>https://tmhm.github.io/2016/12/25/logging-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Sun, 25 Dec 2016 04:49:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/12/25/python-%E4%B8%ADlogging-%E6%A8%A1%E5%9D%97%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://tmhm.github.io/2016/12/25/logging-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/</guid>
       <description>
 
 &lt;p&gt;reference :&lt;/p&gt;
@@ -134,7 +136,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
 &lt;li&gt;文件中记录level 超过 debug 的信息&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;level设计:ab6ecea521d440c8d06d82d2c5fdae84&#34;&gt;level设计&lt;/h4&gt;
+&lt;h4 id=&#34;level设计&#34;&gt;level设计&lt;/h4&gt;
 
 &lt;p&gt;logging函数根据它们用来跟踪的事件的级别或严重程度来命名。&lt;a href=&#34;http://python.usyiyi.cn/translate/python_278/howto/logging.html#logging-advanced-tutorial&#34;&gt;标准级别及其适用性描述&lt;/a&gt;如下（以严重程度递增排序）：&lt;/p&gt;
 
@@ -500,7 +502,7 @@ f.write(&amp;quot;hello,\n This is a test file&amp;quot;)
 f.close()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;计算程序运行时间:209ae7a9d321a421a49117ff5988f512&#34;&gt;计算程序运行时间&lt;/h3&gt;
+&lt;h3 id=&#34;计算程序运行时间&#34;&gt;计算程序运行时间&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;import time
 # ISOTIMEFORMAT=&#39;%Y-%m-%d %X&#39;
@@ -722,10 +724,10 @@ num = sizeof(array)/sizeof(array[0]);  // get the number of array .  num =5
     
     <item>
       <title>python 有关引用的一些问题</title>
-      <link>https://tmhm.github.io/2016/05/21/python-%E6%9C%89%E5%85%B3%E5%BC%95%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</link>
+      <link>https://tmhm.github.io/2016/05/21/python_reference/</link>
       <pubDate>Sat, 21 May 2016 14:24:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/05/21/python-%E6%9C%89%E5%85%B3%E5%BC%95%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://tmhm.github.io/2016/05/21/python_reference/</guid>
       <description>
 
 &lt;pre&gt;&lt;code&gt;print id.__doc__
@@ -736,7 +738,7 @@ Return the identity of an object.  This is guaranteed to be unique among
 simultaneously existing objects.  (Hint: it&#39;s the object&#39;s memory address.)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;python中的引用对象特点:6ec06ff8aab68af73d72157c359718c6&#34;&gt;python中的引用对象特点：&lt;/h4&gt;
+&lt;h4 id=&#34;python中的引用对象特点&#34;&gt;python中的引用对象特点：&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;python不允许程序员选择采用传值还是传引用。
@@ -1001,10 +1003,10 @@ print &amp;quot;3.6//2.1 =&amp;quot;,3.6//2.1
     
     <item>
       <title>python一些内建函数(map,zip,filter,reduce,yield等)</title>
-      <link>https://tmhm.github.io/2016/05/17/python%E4%B8%80%E4%BA%9B%E5%86%85%E5%BB%BA%E5%87%BD%E6%95%B0mapzipfilterreduceyield%E7%AD%89/</link>
+      <link>https://tmhm.github.io/2016/05/17/some-built-in-function-of-python-mapzipfilterreduceyield/</link>
       <pubDate>Tue, 17 May 2016 15:06:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/05/17/python%E4%B8%80%E4%BA%9B%E5%86%85%E5%BB%BA%E5%87%BD%E6%95%B0mapzipfilterreduceyield%E7%AD%89/</guid>
+      <guid>https://tmhm.github.io/2016/05/17/some-built-in-function-of-python-mapzipfilterreduceyield/</guid>
       <description>
 
 &lt;h4 id=&#34;map函数&#34;&gt;map函数&lt;/h4&gt;
@@ -1220,26 +1222,26 @@ print &amp;quot;max: %s&amp;quot; %c.index(max(c)) # 返回最大值
     
     <item>
       <title>python &amp;&amp; anaconda &amp;&amp; pycharm工具包安装</title>
-      <link>https://tmhm.github.io/2016/04/24/python--anaconda--pycharm%E5%B7%A5%E5%85%B7%E5%8C%85%E5%AE%89%E8%A3%85/</link>
+      <link>https://tmhm.github.io/2016/04/24/python--anaconda-pycharm-tools-install/</link>
       <pubDate>Sun, 24 Apr 2016 13:24:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/04/24/python--anaconda--pycharm%E5%B7%A5%E5%85%B7%E5%8C%85%E5%AE%89%E8%A3%85/</guid>
+      <guid>https://tmhm.github.io/2016/04/24/python--anaconda-pycharm-tools-install/</guid>
       <description>
 
 &lt;p&gt;&lt;code&gt;$ conda update conda
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;更新pip:6688ab8f41a9d12e2503ffc3d92f68f8&#34;&gt;更新pip&lt;/h4&gt;
+&lt;h4 id=&#34;更新pip&#34;&gt;更新pip&lt;/h4&gt;
 
 &lt;p&gt;&lt;code&gt;python -m pip install --upgrade pip
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;更新所有:6688ab8f41a9d12e2503ffc3d92f68f8&#34;&gt;更新所有&lt;/h4&gt;
+&lt;h4 id=&#34;更新所有&#34;&gt;更新所有&lt;/h4&gt;
 
 &lt;p&gt;&lt;code&gt;conda update --all
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;安装ffmpeg:6688ab8f41a9d12e2503ffc3d92f68f8&#34;&gt;安装ffmpeg&lt;/h4&gt;
+&lt;h4 id=&#34;安装ffmpeg&#34;&gt;安装ffmpeg&lt;/h4&gt;
 
 &lt;p&gt;&lt;code&gt;conda install ffmpeg
 &lt;/code&gt;&lt;/p&gt;
@@ -1255,7 +1257,7 @@ print &amp;quot;max: %s&amp;quot; %c.index(max(c)) # 返回最大值
 
 &lt;p&gt;&lt;code&gt;[Anaconda2] C:\Users\xwei&amp;gt;conda install -c https://conda.anaconda.org/groakat ffmpeg-dev&lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;安装theano:6688ab8f41a9d12e2503ffc3d92f68f8&#34;&gt;安装theano&lt;/h4&gt;
+&lt;h4 id=&#34;安装theano&#34;&gt;安装theano&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://deeplearning.net/software/theano/install_windows.html#install-windows&#34;&gt;source for win-install&lt;/a&gt;&lt;/p&gt;
 
@@ -1283,7 +1285,7 @@ print &amp;quot;max: %s&amp;quot; %c.index(max(c)) # 返回最大值
 &lt;li&gt;运行&lt;a href=&#34;http://www.deeplearning.net/tutorial/lstm.html#lstm&#34;&gt;LSTM Networks for Sentiment Analysis&lt;/a&gt; 明显快了很多很多，直接在cpu下运行纯python代码，一两分钟才出来第一次迭代， 安装之后，运行c代码的时候，基本上两三秒一次迭代。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;安装出现anaconda-python-installation-error:6688ab8f41a9d12e2503ffc3d92f68f8&#34;&gt;安装出现Anaconda Python installation error&lt;/h4&gt;
+&lt;h4 id=&#34;安装出现anaconda-python-installation-error&#34;&gt;安装出现Anaconda Python installation error&lt;/h4&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201606/781469-20160612222301152-884209750.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 

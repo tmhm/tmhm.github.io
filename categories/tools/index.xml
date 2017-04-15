@@ -2,22 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tools on Well</title>
-    <link>https://tmhm.github.io/categories/tools/</link>
+    <link>https://tmhm.github.io/categories/tools/index.xml</link>
     <description>Recent content in Tools on Well</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
     <managingEditor>wells217@163.com (Well)</managingEditor>
     <webMaster>wells217@163.com (Well)</webMaster>
     <copyright>(c) 2017 Well.</copyright>
-    <lastBuildDate>Tue, 21 Mar 2017 09:34:20 +0800</lastBuildDate>
     <atom:link href="https://tmhm.github.io/categories/tools/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>word每页添加不同的页眉及目录信息</title>
-      <link>https://tmhm.github.io/2017/03/21/word%E6%AF%8F%E9%A1%B5%E6%B7%BB%E5%8A%A0%E4%B8%8D%E5%90%8C%E7%9A%84%E9%A1%B5%E7%9C%89%E5%8F%8A%E7%9B%AE%E5%BD%95%E4%BF%A1%E6%81%AF/</link>
+      <link>https://tmhm.github.io/2017/03/21/word_pageheader/</link>
       <pubDate>Tue, 21 Mar 2017 09:34:20 +0800</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2017/03/21/word%E6%AF%8F%E9%A1%B5%E6%B7%BB%E5%8A%A0%E4%B8%8D%E5%90%8C%E7%9A%84%E9%A1%B5%E7%9C%89%E5%8F%8A%E7%9B%AE%E5%BD%95%E4%BF%A1%E6%81%AF/</guid>
+      <guid>https://tmhm.github.io/2017/03/21/word_pageheader/</guid>
       <description>
 
 &lt;h3 id=&#34;添加页眉&#34;&gt;添加页眉&lt;/h3&gt;
@@ -33,7 +32,8 @@
 &lt;li&gt;word2010为例，在奇数页页眉，依次找到&lt;code&gt;插入-&amp;gt;文档部件-&amp;gt;域&lt;/code&gt;；&lt;/li&gt;
 &lt;li&gt;选择类别&lt;code&gt;链接与引用&lt;/code&gt;，域名&lt;code&gt;StyleRef&lt;/code&gt;，域属性&lt;code&gt;标题1&lt;/code&gt;；&lt;/li&gt;
 &lt;li&gt;确定即可。&lt;/li&gt;
-&lt;li&gt;在偶数页插入&lt;code&gt;论文的题目标题&lt;/code&gt;，注意此处需要选择&lt;strong&gt;链接到上一页眉&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;在偶数页插入&lt;code&gt;论文的题目标题&lt;/code&gt;，注意此处需要选择&lt;strong&gt;链接到上一页眉&lt;/strong&gt;
+&lt;br /&gt;&lt;/li&gt;
 &lt;/ol&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -60,17 +60,17 @@
     
     <item>
       <title>Teamviewer无法远程登录主机用户</title>
-      <link>https://tmhm.github.io/2017/03/03/teamviewer%E6%97%A0%E6%B3%95%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E4%B8%BB%E6%9C%BA%E7%94%A8%E6%88%B7/</link>
+      <link>https://tmhm.github.io/2017/03/03/teamviewer-remote-sign-in/</link>
       <pubDate>Fri, 03 Mar 2017 12:05:02 +0800</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2017/03/03/teamviewer%E6%97%A0%E6%B3%95%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E4%B8%BB%E6%9C%BA%E7%94%A8%E6%88%B7/</guid>
+      <guid>https://tmhm.github.io/2017/03/03/teamviewer-remote-sign-in/</guid>
       <description>
 
-&lt;h3 id=&#34;问题描述:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;问题描述&lt;/h3&gt;
+&lt;h3 id=&#34;问题描述&#34;&gt;问题描述&lt;/h3&gt;
 
 &lt;p&gt;win10 升级后，主机在锁屏状态下，Teamviewer无法远程登录账户，防火墙已关闭，无人值守访问不了&lt;/p&gt;
 
-&lt;h3 id=&#34;解决方式:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;解决方式：&lt;/h3&gt;
+&lt;h3 id=&#34;解决方式&#34;&gt;解决方式：&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;注意主从机的版本一致&lt;/li&gt;
@@ -81,7 +81,7 @@
 &lt;p&gt;&lt;img src=&#34;https://tmhm.github.io/images/无人值守访问.jpg&#34; alt=&#34;&#34; title=&#34;示图1&#34; /&gt;
 &lt;img src=&#34;https://tmhm.github.io/images/授权轻松访问.jpg&#34; alt=&#34;&#34; title=&#34;示图2&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;问题并未终结:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;问题并未终结&lt;/h3&gt;
+&lt;h3 id=&#34;问题并未终结&#34;&gt;问题并未终结&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;当主机重启之后，Teamviewer的授权轻松访问的钩被去掉了，所以远程不能登录主机，即当主机锁屏的时候，Teamviewer可以连接到主机，但是远程不能登录主机账号。&lt;/li&gt;
@@ -90,7 +90,7 @@
 
 &lt;p&gt;&lt;img src=&#34;https://tmhm.github.io/images/teamviewer配置原因.jpg&#34; alt=&#34;&#34; title=&#34;示图3&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;尝试方案:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;尝试方案&lt;/h3&gt;
+&lt;h3 id=&#34;尝试方案&#34;&gt;尝试方案&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;不能直接勾选【授权轻松访问】选项，显示需要管理员登录，于是设置程序的【兼容性】属性，“以管理员身份运行程序”。&lt;/li&gt;
@@ -106,7 +106,7 @@
 &lt;li&gt;&lt;p&gt;尝试&lt;strong&gt;再次重装&lt;/strong&gt;后，在首页，将随windows 一同启动Teamviewer，分配设备，授权轻松访问全部选上，既可以在设置选项里面看到打开了授权访问。并且&lt;strong&gt;重装后的teamviewer是可以锁屏登录的！&lt;/strong&gt;，可恶的win10设置！&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;待解决:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;待解决&lt;/h3&gt;
+&lt;h3 id=&#34;待解决&#34;&gt;待解决&lt;/h3&gt;
 
 &lt;p&gt;ubuntu 14.04下的Teamviewer也登录不了，本来用着好的Teamviewer，现在却登录不了。苦于不在主机旁，只能用命令重新安装之，参考了&lt;a href=&#34;http://blog.csdn.net/dreamhai/article/details/57080531&#34;&gt;博文&lt;/a&gt;，先在虚拟机上实现，却发现问题。&lt;/p&gt;
 
@@ -158,7 +158,7 @@ sudo apt-get install -f
 
 &lt;p&gt;更加奇怪的是，服务器ubuntu 上的Teamviewer不登录任何账号的时候，可以直接远程访问了。&lt;/p&gt;
 
-&lt;h3 id=&#34;一些有用的命令:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;一些有用的命令&lt;/h3&gt;
+&lt;h3 id=&#34;一些有用的命令&#34;&gt;一些有用的命令&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;获取Teamviewer的ID&lt;code&gt;teamviewer --info&lt;/code&gt;&lt;/li&gt;
@@ -177,7 +177,7 @@ sudo apt-get install -f
 &lt;li&gt;重启服务&lt;code&gt;sudo teamviewer --daemon start&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&#34;粗暴解决:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;粗暴解决&lt;/h3&gt;
+&lt;h3 id=&#34;粗暴解决&#34;&gt;粗暴解决&lt;/h3&gt;
 
 &lt;p&gt;在一台新的win10系统下，发现teamviewer，可以重启使用，突然想起，曾经用驱动精灵和金山毒霸进行过优化，于是，卸载之，并取消他们的优化，再安装teamviewer，发现可以正常使用了。
 &lt;strong&gt;都是过度优化惹得祸！&lt;/strong&gt;&lt;/p&gt;
@@ -188,10 +188,10 @@ sudo apt-get install -f
     
     <item>
       <title>Hugo在Ubuntu14.04系统下的配置 </title>
-      <link>https://tmhm.github.io/2017/02/27/hugo%E5%9C%A8ubuntu14.04%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E9%85%8D%E7%BD%AE/</link>
+      <link>https://tmhm.github.io/2017/02/27/use-hugo-under-ubuntu14.04/</link>
       <pubDate>Mon, 27 Feb 2017 13:55:22 +0800</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2017/02/27/hugo%E5%9C%A8ubuntu14.04%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://tmhm.github.io/2017/02/27/use-hugo-under-ubuntu14.04/</guid>
       <description>
 
 &lt;h3 id=&#34;安装hugo&#34;&gt;安装Hugo&lt;/h3&gt;
@@ -259,10 +259,10 @@ hugo new post/second.md
     
     <item>
       <title>matplotlib y轴标注显示不全以及subplot调整的问题</title>
-      <link>https://tmhm.github.io/2016/12/23/matplotlib-y%E8%BD%B4%E6%A0%87%E6%B3%A8%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8%E4%BB%A5%E5%8F%8Asubplot%E8%B0%83%E6%95%B4%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>https://tmhm.github.io/2016/12/23/matplotlib-y-show-incomplete-subplot/</link>
       <pubDate>Fri, 23 Dec 2016 08:32:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/12/23/matplotlib-y%E8%BD%B4%E6%A0%87%E6%B3%A8%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8%E4%BB%A5%E5%8F%8Asubplot%E8%B0%83%E6%95%B4%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://tmhm.github.io/2016/12/23/matplotlib-y-show-incomplete-subplot/</guid>
       <description>
 
 &lt;p&gt;问题：
@@ -385,7 +385,7 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 sudo chmod +x /usr/local/bin/macdown
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;设置文件默认打开方式:3a6b96174248857516852c98312790f0&#34;&gt;设置文件默认打开方式&lt;/h3&gt;
+&lt;h3 id=&#34;设置文件默认打开方式&#34;&gt;设置文件默认打开方式&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;选定文件&lt;/li&gt;

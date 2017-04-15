@@ -2,25 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sql on Well</title>
-    <link>https://tmhm.github.io/tags/sql/</link>
+    <link>https://tmhm.github.io/tags/sql/index.xml</link>
     <description>Recent content in Sql on Well</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
     <managingEditor>wells217@163.com (Well)</managingEditor>
     <webMaster>wells217@163.com (Well)</webMaster>
     <copyright>(c) 2017 Well.</copyright>
-    <lastBuildDate>Sat, 01 Apr 2017 22:51:52 +0800</lastBuildDate>
     <atom:link href="https://tmhm.github.io/tags/sql/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>taste SQL</title>
-      <link>https://tmhm.github.io/2017/04/01/taste-sql/</link>
+      <title>SQL初识</title>
+      <link>https://tmhm.github.io/2017/04/01/taste_sql/</link>
       <pubDate>Sat, 01 Apr 2017 22:51:52 +0800</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2017/04/01/taste-sql/</guid>
+      <guid>https://tmhm.github.io/2017/04/01/taste_sql/</guid>
       <description>
 
-&lt;h3 id=&#34;事务的四项特性:c90b6d24769a3945b8ac28999f82ce69&#34;&gt;事务的四项特性&lt;/h3&gt;
+&lt;h3 id=&#34;事务的四项特性&#34;&gt;事务的四项特性&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;ACID&lt;/li&gt;
@@ -47,11 +46,14 @@
 
 &lt;ul&gt;
 &lt;li&gt;事务提交，记录到硬盘，&lt;/li&gt;
-&lt;li&gt;刷新机制，时间－》秒， 事务提交即刷新，操作系统决定&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;刷新机制，时间－》秒， 事务提交即刷新，操作系统决定&lt;br /&gt;
+
+&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;sql:c90b6d24769a3945b8ac28999f82ce69&#34;&gt;SQL&lt;/h3&gt;
+&lt;h3 id=&#34;sql&#34;&gt;SQL&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;四种操作&lt;/li&gt;
