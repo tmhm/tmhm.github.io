@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Time complexity--codility  &middot; Well</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="时间复杂度小试" />
+
+<meta name="keywords" content="codility, ">
+
+
+<meta property="og:title" content="Time complexity--codility  &middot; Well ">
+<meta property="og:site_name" content="Well"/>
+<meta property="og:url" content="https://tmhm.github.io/2016/09/01/time-complexity--codility/" />
+<meta property="og:locale" content="en-EN">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content="时间复杂度小试"/>
+<meta property="og:article:published_time" content="2016-09-01T15:44:00Z" />
+<meta property="og:article:modified_time" content="2016-09-01T15:44:00Z" />
+
+  
+    
+<meta property="og:article:tag" content="codility">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta name="twitter:title" content="Time complexity--codility" />
+<meta name="twitter:description" content="时间复杂度小试" />
+<meta name="twitter:url" content="https://tmhm.github.io/2016/09/01/time-complexity--codility/" />
+<meta name="twitter:domain" content="https://tmhm.github.io/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "Time complexity--codility",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2016-09-01",
+    "description": "时间复杂度小试",
+    "wordCount":  461 
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://tmhm.github.io/2016/09/01/time-complexity--codility/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://tmhm.github.io/v2.png">
+<link href="https://tmhm.github.io/v2.png" rel="icon">
+
+<meta name="generator" content="Hugo 0.15" />
+
+  
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://tmhm.github.io/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://tmhm.github.io/css/style.css">
+<link rel="stylesheet" href="https://tmhm.github.io/css/highlight/default.css">
+
+  
+  
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'Your Google Analytics tracking code', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+</head>
+<body>
+  <main id="main-wrapper" class="container main_wrapper has-sidebar">
+    <header id="main-header" class="container main_header">
+  <div class="container brand">
+  <div class="container title h1-like">
+  <a class="baselink" href="https://tmhm.github.io/">
+  芝麻无花
+
+</a>
+
+</div>
+
+  
+<div class="container topline">
+  
+  修行在当下
+
+
+</div>
+
+
+</div>
+
+  <nav class="container nav primary no-print">
+  
+
+<a class="homelink" href="https://tmhm.github.io/">home</a>
+
+
+  
+<a href="https://tmhm.github.io/about">About</a>
+
+<a href="https://tmhm.github.io/categories" title="Show list of categories">Categories</a>
+
+<a href="https://tmhm.github.io/post" title="Show list of posts">Posts</a>
+
+<a href="https://tmhm.github.io/tags" title="show list of tags">Tags</a>
+
+
+</nav>
+
+<div class="container nav secondary no-print">
+  
+<a id="contact-link-email" class="contact_link" href="mailto:wells217@163.com">
+  <span class="fa fa-envelope-square"></span><span>email</span></a>
+
+
+
+<a id="contact-link-github" class="contact_link" href="https://github.com/tmhm">
+  <span class="fa fa-github-square"></span><span>github</span></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+  
+
+</header>
+
+
+<article id="main-content" class="container main_content single">
+  <header class="container hat">
+  <h1>Time complexity--codility
+</h1>
+
+  <div class="metas">
+<time datetime="2016-09-01">1 Sep, 2016</time>
+
+
+  
+  &middot; Read in about 3 min
+  &middot; (461 Words)
+  <br>
+  
+<a class="label" href="https://tmhm.github.io/tags/codility">codility</a>
+
+
+
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+</div>
+
+  <br/>
+  <div class="container navigation no-print">
+  <h2>Navigation</h2>
+  
+  
+
+    
+    <a class="prev" href="https://tmhm.github.io/2016/09/01/arrays--codility/" title="Arrays--codility">
+      Previous
+    </a>
+    
+
+    
+    <a class="next" href="https://tmhm.github.io/2016/09/01/counting-elements--codility/" title="counting elements--codility">
+      Next
+    </a>
+    
+
+  
+
+
+</div>
+
+</header>
+
+  <div class="container content">
+  <h3 id = "1.3">
+lesson 3: <i>Time complexity</i>
+</h3>
+
+<ul>
+<li>exercise:</li>
+<li>Problem: You are given an integer n. Count the total of 1+2+&hellip;+n.</li>
+</ul>
+
+<pre><code>def sumN(N):
+    return N*(N+1)//2
+
+</code></pre>
+
+<h4 id = "1.3.1">
+1. TapeEquilibrium -----[100%]
+</h4>
+
+<blockquote>
+<p>Minimize the value
+|(A[0] + &hellip; + A[P-1]) - (A[P] + &hellip; + A[N-1])|.</p>
+</blockquote>
+
+<p>A non-empty zero-indexed array A consisting of N integers is given. Array A represents numbers on a tape.</p>
+
+<p>Any integer P, such that 0 &lt; P &lt; N, splits this tape into two non-empty parts: A[0], A[1], &hellip;, A[P − 1] and A[P], A[P + 1], &hellip;, A[N − 1].</p>
+
+<p>The difference between the two parts is the value of: |(A[0] + A[1] + &hellip; + A[P − 1]) − (A[P] + A[P + 1] + &hellip; + A[N − 1])|</p>
+
+<p>In other words, it is the absolute difference between the sum of the first part and the sum of the second part.</p>
+
+<p><strong>note:</strong> 依次求sum</p>
+
+<pre><code>def solution(A):
+
+    #left,right =A[0], sum(A)-A[0]
+    left,right =A[0], sum(A[1:])
+    result = abs(right - left)
+
+    for elem in A[1:-1]:
+        left,right = left + elem, right - elem
+        retmp = abs(right - left)
+        if retmp &lt; result:
+            result = retmp
+    return result
+</code></pre>
+
+<h4 id = "1.3.2">
+2. FrogJmp -----[100%]
+</h4>
+
+<blockquote>
+<p>Count minimal number of jumps from position X to Y.</p>
+</blockquote>
+
+<p>A small frog wants to get to the other side of the road. The frog is currently located at position X and wants to get to a position greater than or equal to Y. The small frog always jumps a fixed distance, D.</p>
+
+<p>Count the minimal number of jumps that the small frog must perform to reach its target.</p>
+
+<p><strong>note:</strong> O(1) time complexity, 注意是否在边界上，否则加1即可。</p>
+
+<pre><code>def solution(X, Y, D):
+    # write your code in Python 2.7
+    if X == Y:
+        return 0
+    else:
+        flag = (Y - X)%D
+        ret = (Y - X)/D
+        return ret if flag == 0 else ret + 1
+</code></pre>
+
+<h4 id = "1.3.3">
+3. PermMissingElem -----[100%]
+</h4>
+
+<blockquote>
+<p>Find the missing element in a given permutation.</p>
+</blockquote>
+
+<p>A zero-indexed array A consisting of N different integers is given. The array contains integers in the range [1..(N + 1)], which means that exactly one element is missing.</p>
+
+<p>Your goal is to find that missing element.</p>
+
+<p><strong>note:</strong></p>
+
+<ul>
+<li>简单思路是排序，然后依此比较是否是增1关系，也可以用求sum的方式</li>
+<li>注意边界条件，N取值［0，100，000］， 元素取值［1，N+1］，</li>
+<li>故当没有元素的时候，返回1；当只有一个元素的时候，需要考虑元素是否是1</li>
+<li>当全部有序的时候，考虑最后元素＋1返回。</li>
+</ul>
+
+<pre><code>def solution(A):
+    # write your code in Python 2.7
+    if len(A) == 0:
+        return 1
+    elif len(A) == 1:
+        return A[0]+1 if A[0] == 1 else A[0] -1
+    A.sort()
+    left = A[0]
+    for elem in A[1:]:
+        if elem == left + 1:
+            left = elem
+            continue
+        else:
+            return left + 1
+
+    return A[-1]+1 if A[0] == 1 else A[0]-1
+</code></pre>
+
+<hr />
+
+<pre><code>def solution(A):
+    # write your code in Python 2.7
+    length = len(A)
+    if length &lt; 1:
+        return 1
+    #elif length &lt; 2:  # can belong to the next tatal_sum
+    #    return 1 if A[0]==2 else 2
+
+    tatal = sum([i for i in xrange(1,length+2,1) ])
+    tmp = sum(A)
+    return tatal - tmp
+
+</code></pre>
+
+</div>
+
+
+  <footer class="container">
+  <div class="container navigation no-print">
+  <h2>Navigation</h2>
+  
+  
+
+    
+    <a class="prev" href="https://tmhm.github.io/2016/09/01/arrays--codility/" title="Arrays--codility">
+      Previous
+    </a>
+    
+
+    
+    <a class="next" href="https://tmhm.github.io/2016/09/01/counting-elements--codility/" title="counting elements--codility">
+      Next
+    </a>
+    
+
+  
+
+
+</div>
+
+  <div class="container comments">
+  <h2>Comments</h2>
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//wells217-github-io.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+</footer>
+
+</article>
+      <footer id="main-footer" class="container main_footer">
+  
+
+  <div class="container nav foot no-print">
+  
+<a href="https://tmhm.github.io/license">license</a>
+
+
+  
+<script src="/js/jquery.min.js" type="text/javascript"></script>
+<script>
+        $(window).on("scroll",function(e){
+        if($('body').scrollTop() >= 200  ){
+                $('#gotop').show();
+
+
+        }else{
+                $('#gotop').hide();
+        }
+});
+</script>
+<div class="ctrolPanel" id="gotop" style="display:none;width:50px;height:50px;position:fixed;right:25px;top:85%;overflow:hidden;z-index:10000;">
+  <a href="#"><img title="back to top" src="/top2.png" /></a>
+</div>
+
+</div>
+
+  <div class="container credits">
+  
+<div class="container footline">
+  
+  code with <i class='fa fa-heart'></i>
+
+
+</div>
+
+
+  
+<div class="container copyright">
+  
+  &copy; 2017 Well.
+
+ &nbsp; &nbsp;
+</div>
+
+
+</div>
+
+</footer>
+
+    </main>
+    
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//wells217-github-io.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+
+<script src="https://tmhm.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+    
+  </body>
+</html>
+

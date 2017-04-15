@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rl on Well</title>
+    <link>https://tmhm.github.io/categories/rl/</link>
+    <description>Recent content in Rl on Well</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <managingEditor>wells217@163.com (Well)</managingEditor>
+    <webMaster>wells217@163.com (Well)</webMaster>
+    <copyright>(c) 2017 Well.</copyright>
+    <lastBuildDate>Thu, 31 Mar 2016 08:18:00 +0000</lastBuildDate>
+    <atom:link href="https://tmhm.github.io/categories/rl/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>强化学习之路（0）</title>
+      <link>https://tmhm.github.io/2016/03/31/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF0/</link>
+      <pubDate>Thu, 31 Mar 2016 08:18:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/03/31/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF0/</guid>
+      <description>
+
+&lt;p&gt;开始接触强化学习是在回到所里开始找课题研究方向的时候，偶然查到&lt;a href=&#34;http://news.berkeley.edu/2015/05/21/deep-learning-robot-masters-skills-via-trial-and-error/&#34;&gt;伯克利的机器人视频&lt;/a&gt;,给我比较惊艳的感觉。陆续开始查找强化学习的一些资料。最近看到一篇有关强化学习的&lt;a href=&#34;http://blog.exbot.net/archives/223&#34;&gt;博文&lt;/a&gt;，瞬时，想把自己接触到强化学习的过程也做一个简单梳理，为接下来准备在强化学习方向完成毕业论文做一个初略安排。&lt;/p&gt;
+
+&lt;h5 id=&#34;有关强化学习的资料:64c657aa2c0b01c302013ce584e5b4b8&#34;&gt;有关强化学习的资料：&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Tom M. Mitchell的《机器学习》最后一章讲reinforcement learning，算是入门&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www.andrewng.org/&#34;&gt;吴恩达&lt;/a&gt;公开课中的强化学习部分，他们&lt;a href=&#34;http://heli.stanford.edu/&#34;&gt;自动直升机实验室&lt;/a&gt;做的项目。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;吴恩达的博士生&lt;a href=&#34;http://www.cs.berkeley.edu/~pabbeel/&#34;&gt;Pieter Abbeel&lt;/a&gt;(现任教于伯克利，上面的机器人即是他们实验室)，他的博士论文Apprenticeship Learning and Reinforcement Learning with Application to Robotic Control值得一看,还有其在伯克利的&lt;a href=&#34;http://rll.berkeley.edu/deeprlcourse/&#34;&gt;DRL课程&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://webdocs.cs.ualberta.ca/~sutton/index.html&#34;&gt;Richard S.Sutton&lt;/a&gt; and &lt;a href=&#34;http://www-anw.cs.umass.edu/~barto/&#34;&gt;Andrew G.Barto&lt;/a&gt;的RL的经典之作&lt;a href=&#34;http://webdocs.cs.ualberta.ca/~sutton/book/the-book.html&#34;&gt;Reinforcement Learning: An Introduction&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Marco Wiering Martijn van Otterlo (Eds.)写的 Reinforcement Learning State-Of-the-Art&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;2015 nature上的 一篇关于 reinforcement learning 的综述: &lt;a href=&#34;http://valser.org/thread-246-1-1.html&#34;&gt;Reinforcement learning improves behaviour from evaluative feedback（Michael L. Littman）&lt;/a&gt;（链接还包括2015年机器学习专栏其他5篇综述，如下：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Machine intelligence  （Tanguy Chouard &amp;amp; Liesbeth Venema）&lt;/li&gt;
+&lt;li&gt;Deep learning（Yann LeCun, Yoshua Bengio &amp;amp; Geoffrey Hinton）&lt;/li&gt;
+&lt;li&gt;Reinforcement learning improves behaviour from evaluative feedback
+（Michael L. Littman）&lt;/li&gt;
+&lt;li&gt;Probabilistic machine learning and artificial intelligence（Zoubin Ghahramani）&lt;/li&gt;
+&lt;li&gt;Science, technology and the future of small autonomous drone（Dario Floreano &amp;amp; Robert J. Wood）&lt;/li&gt;
+&lt;li&gt;Design, fabrication and control of soft robots（Daniela Rus &amp;amp; Michael T. Tolley）&lt;/li&gt;
+&lt;li&gt;From evolutionary computation to the evolution of things（Agoston E. Eiben &amp;amp; Jim Smith）&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;应该关注的实验室:64c657aa2c0b01c302013ce584e5b4b8&#34;&gt;应该关注的实验室：&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cs.york.ac.uk/rl/research.php&#34;&gt;Knowledge-Based Reinforcement Learning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;MIT飞行控制实验室&lt;a href=&#34;http://acl.mit.edu/projects/iFDD.htm&#34;&gt;Scaling Reinforcement Learning Methods by Incremental Feature Dependency Discovery&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.cs.colostate.edu/~anderson/res/rl/&#34;&gt;Reinforcement Learning and Control&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;代码工具框架:64c657aa2c0b01c302013ce584e5b4b8&#34;&gt;代码工具框架:&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;最近找到一个&lt;a href=&#34;http://pybrain.org/&#34;&gt;PyBrain&lt;/a&gt;的python开源库，不错,准备前期就用它了&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;看&lt;a href=&#34;http://www.cs.berkeley.edu/~pabbeel/&#34;&gt;Pieter Abbeel&lt;/a&gt;视频中提到的，他们的库&lt;a href=&#34;http://rll.berkeley.edu/cgt/&#34;&gt;Computation Graph Toolkit&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;RL-Glue framework&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;网友提到的：
+    * ROS的RL
+    * 其他：
+            * &lt;a href=&#34;http://www.cse.unsw.edu.au/~cs9417ml/RL1/sourcecode.html&#34;&gt;http://www.cse.unsw.edu.au/~cs9417ml/RL1/sourcecode.html&lt;/a&gt;
+            * &lt;a href=&#34;http://www.igi.tugraz.at/ril-toolbox/links/&#34;&gt;http://www.igi.tugraz.at/ril-toolbox/links/&lt;/a&gt;
+            * &lt;a href=&#34;http://en.wikipedia.org/wiki/Reinforcement_learning&#34;&gt;http://en.wikipedia.org/wiki/Reinforcement_learning&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;一些相关会议:64c657aa2c0b01c302013ce584e5b4b8&#34;&gt;一些相关会议：&lt;/h5&gt;
+
+&lt;p&gt;&lt;em&gt;(from reinforcement learning State of the art)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;A large portion of papers appears every year (or two year) at the established top conferences&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;artificial intelligence, such as IJCAI, ECAI and AAAI&lt;/li&gt;
+&lt;li&gt;top conferences with a particular focus on statistical machine learning , such as UAI, ICML, ECML and NIPS.&lt;/li&gt;
+&lt;li&gt;In addition, conferences on artificial life (Alife), adaptive behavior
+(SAB), robotics (ICRA, IROS, RSS) and neural networks and evolutionary computation(e.g. IJCNN and ICANN) feature much reinforcement learning work.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;workshop:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The European workshop on reinforcement learning (EWRL)&lt;/li&gt;
+&lt;li&gt;IEEE Symposium on Adaptive Dynamic Programming and Reinforcement Learning (ADPRL)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;competitions:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.rl-competition.org/&#34;&gt;RL-Competition&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

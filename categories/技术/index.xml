@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>技术 on Well</title>
+    <link>https://tmhm.github.io/categories/%E6%8A%80%E6%9C%AF/</link>
+    <description>Recent content in 技术 on Well</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <managingEditor>wells217@163.com (Well)</managingEditor>
+    <webMaster>wells217@163.com (Well)</webMaster>
+    <copyright>(c) 2017 Well.</copyright>
+    <lastBuildDate>Tue, 08 Mar 2016 12:47:00 +0000</lastBuildDate>
+    <atom:link href="https://tmhm.github.io/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>QT环境下，全局变量共享问题</title>
+      <link>https://tmhm.github.io/2016/03/08/qt%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%85%B1%E4%BA%AB%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 08 Mar 2016 12:47:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/03/08/qt%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%85%B1%E4%BA%AB%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;开始的技术路线是：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;首先有两个主线程：&lt;/p&gt;
+&lt;p&gt;　　1，gui线程&lt;/p&gt;
+&lt;p&gt;　　2，等待客户端socket连接用的，listen线程&lt;/p&gt;
+&lt;p&gt;　　（当有客户端连接时，即creat一个新的线程2用来跟客户端通信，再来新的客户端，继续creat新的work线程3用于通信，以此类推，目前最多可以creat5个线程，即可以同时跟5台客户端通信，设置了监听的socket服务器最多监听5个队列。线程2继续listen）&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;出现的问题是：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;　　用来通信的work线程3，收到一个来自客户端的xml文件，然后解析文件，并将其数据放在一个全局的静态struct数组里。数据正常，线程2和线程3均可以看到已经更新的数据值。但是，&lt;/p&gt;
+&lt;p&gt;　　当gui线程去访问时，发现数据并没有更新到其线程，在gui线程下改变该全局变量的数值，也并没有更新到
+
+&lt;p&gt;&lt;em&gt;一博主，有如此解释&lt;/em&gt;：&lt;/p&gt;
+&lt;div id=&#34;article_content&#34; class=&#34;article_content&#34;&gt;&lt;a href=&#34;http://blog.csdn.net/lmh12506/article/details/8452700&#34; target=&#34;_blank&#34;&gt;其实在Linux 中，新建的线程并不是在原先的进程中，而是系统通过一个系统调用clone() 。该系统copy 了一个和原先进程完全一样的进程，并在这个进程中执行线程函数。不过这个copy 过程和fork 不一样。copy 后的进程和原先的进程共享了所有的变量，运行环境（clone的实现是可以指定新进程与老进程之间的共享关系，100%共享就表示创建了一个线程）。这样，原先进程中的变量变动在copy 后的进程中便能体现出来。&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&#34;bdsharebuttonbox tracking-ad bdshare-button-style0-16&#34; data-mod=&#34;popu_172&#34; data-bd-bind=&#34;1457096202549&#34;&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div id=&#34;digg&#34;&gt;&amp;nbsp;不过，问题并没有清晰化。&lt;/div&gt;
+
+
+&lt;div&gt;想到的解决方案暂时有两种：&lt;/div&gt;
+&lt;div&gt;　　1，不在work线程里面解析数据，直接在gui线程里面解析数据。&lt;/div&gt;
+&lt;div&gt;&amp;nbsp;　　2，采用&lt;a href=&#34;https://www.ibm.com/developerworks/cn/linux/thread/posix_threadapi/part2/&#34; target=&#34;_blank&#34;&gt;线程私有数据&lt;/a&gt;&lt;/div&gt;
+
+
+&lt;p&gt;（此处出现过，小插曲：QT的变量查看器，在调试时不太稳定，更新过后的值在窗口中查看，并没有得到及时更新，需要通过程序判定验证！）&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201603/781469-20160309170140991-312431222.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;由于程序需要在线程创建之后必须返回到gui主线程，所以采用创建两次线程的方式：创建线程A，返回，然后在线程A里面创建&lt;/p&gt;
+&lt;p&gt;在多线程POSIX标准下，主线程（1），即是GUI线程。它初始化一个类，并调用其一个成员函数创建一个线程3（ininlistenThred）【不知，为什么不从2开始？】，然后在线程3里面一直循环检测是否有新的客户端发来socket连接。当有新的客户端连接上时，即创建一个新的线程专门用于socket通信。&lt;/p&gt;
+&lt;p&gt;此时有一客户端连接上，创建了通信工作线程4（listenthreadwork）。&lt;/p&gt;
+
+&lt;p&gt;输出g_buf[0].carid的代码位置分别为：&lt;/p&gt;
+&lt;p&gt;1，initlistenthread线程在进入循环入口 即打印出：&lt;/p&gt;
+&lt;div class=&#34;cnblogs_code&#34;&gt;
+&lt;p&gt;for( ; ; )&lt;br /&gt;    {&lt;/p&gt;
+&lt;p&gt;　　 &amp;nbsp;qDebug(&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;listenthread g_buf[0].carid: %s &lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;,g_buf[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;&lt;span&gt;].carid);&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em id=&#34;__mceDel&#34;&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;&amp;nbsp; 　　char&lt;/span&gt; *t = &amp;amp;(g_buf[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;].carid[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;&lt;span&gt;]);&lt;/span&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;em id=&#34;__mceDel&#34;&gt;&lt;em id=&#34;__mceDel&#34;&gt;&lt;span style=&#34;color: #000000;&#34;&gt;　　qDebug(&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;dizhi: %d&lt;/span&gt;&lt;/em&gt;&lt;span style=&#34;color: #800000;&#34;&gt; \n\n&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;,&amp;amp;t);&lt;br /&gt;//......&lt;br /&gt;}&lt;/em&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;2，gui主线程在点击按钮的时候，即打印：&lt;/p&gt;
+&lt;div class=&#34;cnblogs_code&#34;&gt;
+&lt;pre&gt;qDebug(&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;mainwindow g_buf[0].carid: %s&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;,g_buf[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;].carid);
+&lt;/span&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;char&lt;/span&gt; *t = &amp;amp;(g_buf[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;].carid[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;]);
+qDebug(&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;dizhi: %d \n\n&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;,&amp;amp;t);&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;3，listenthreadwork线程在循环工作的时候开始就打印信息：（一进去此线程就会先打印一次值，然后每次收到文件就会打印一次）&lt;/p&gt;
+&lt;div class=&#34;cnblogs_code&#34;&gt;
+&lt;pre&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;( ; ; )
+    {
+        qDebug(&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;listenthreadwork g_buf[0].carid: %s&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;,g_buf[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;].carid);
+        &lt;/span&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;char&lt;/span&gt; *t = &amp;amp;(g_buf[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;].carid[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;]);
+        qDebug(&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;dizhi: %d \n\n&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;,&amp;amp;&lt;span style=&#34;color: #000000;&#34;&gt;t);
+&lt;/span&gt;&lt;span style=&#34;color: #008000;&#34;&gt;//&lt;/span&gt;&lt;span style=&#34;color: #008000;&#34;&gt;.........&lt;/span&gt;
+}&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;线程3和4的值一样的！&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;线程1跟另外两个线程是不同的值！&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;nbsp;跟类没关系的两个线程值一样&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201603/781469-20160309171434179-548213179.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201603/781469-20160309191531804-530669003.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201603/781469-20160309191541944-1721815549.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

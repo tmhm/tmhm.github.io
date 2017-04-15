@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Well</title>
+    <link>https://tmhm.github.io/tags/linux/</link>
+    <description>Recent content in Linux on Well</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <managingEditor>wells217@163.com (Well)</managingEditor>
+    <webMaster>wells217@163.com (Well)</webMaster>
+    <copyright>(c) 2017 Well.</copyright>
+    <lastBuildDate>Thu, 10 Mar 2016 08:36:00 +0000</lastBuildDate>
+    <atom:link href="https://tmhm.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>shell学习</title>
+      <link>https://tmhm.github.io/2016/03/10/shell%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Thu, 10 Mar 2016 08:36:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/03/10/shell%E5%AD%A6%E4%B9%A0/</guid>
+      <description>
+
+&lt;ul&gt;
+&lt;li&gt;readlink是linux系统中一个常用工具，主要用来找出符号链接所指向的位置。&lt;/li&gt;
+&lt;li&gt;定义变量“=”两边不能有空格，否则会被shell解析错误。&lt;/li&gt;
+&lt;li&gt;tee 同时将输出内容显示在屏幕上、记录在文件里&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;三种引号‘’，“”，``。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;rm -rf ‘my document’  &amp;mdash;-当命令行里面包含空格时，用单引号包含起来&lt;/li&gt;
+&lt;li&gt;这时也可由用双引号，区别在于双引号的值会被变量的之替换，单引号保持原样。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ABC=hello
+$ echo &#39;string is ${ABC}&#39;
+string is ${ABC}
+$ echo &amp;quot;string is ${ABC}&amp;quot;
+string is hello
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;反引号实际上就是命令替换&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;echo `uname`  #等价 echo $(uname)
+$ echo `uname -a`
+Linux ubuntu 3.13.0-24-generic #46-Ubuntu SMP Thu Apr 10 19:11:08 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+$ uname -a
+Linux ubuntu 3.13.0-24-generic #46-Ubuntu SMP Thu Apr 10 19:11:08 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;脚本的执行:c5abba0e23a7a162976717fee4dc4fc9&#34;&gt;脚本的执行&lt;/h4&gt;
+
+&lt;p&gt;&lt;div class=&#34;cnblogs_code&#34;&gt;
+&lt;pre&gt;&lt;span style=&#34;color: #000000;&#34;&gt;$ vi test.sh
+$ cat test.sh
+echo &lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&amp;laquo;&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt; this is a test&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&amp;laquo;&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;$ ls &lt;/span&gt;-&lt;span style=&#34;color: #000000;&#34;&gt;al
+total &lt;/span&gt;&lt;span style=&#34;color: #800080;&#34;&gt;12&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;
+drwxr&lt;/span&gt;-xr-x  &lt;span style=&#34;color: #800080;&#34;&gt;2&lt;/span&gt; xwei xwei &lt;span style=&#34;color: #800080;&#34;&gt;4096&lt;/span&gt; Mar &lt;span style=&#34;color: #800080;&#34;&gt;10&lt;/span&gt; &lt;span style=&#34;color: #800080;&#34;&gt;16&lt;/span&gt;:&lt;span style=&#34;color: #800080;&#34;&gt;49&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt; .
+drwxr&lt;/span&gt;-xr-x &lt;span style=&#34;color: #800080;&#34;&gt;16&lt;/span&gt; xwei xwei &lt;span style=&#34;color: #800080;&#34;&gt;4096&lt;/span&gt; Mar &lt;span style=&#34;color: #800080;&#34;&gt;10&lt;/span&gt; &lt;span style=&#34;color: #800080;&#34;&gt;15&lt;/span&gt;:&lt;span style=&#34;color: #800080;&#34;&gt;28&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt; ..
+&lt;/span&gt;-rw-rw-r&amp;ndash;  &lt;span style=&#34;color: #800080;&#34;&gt;1&lt;/span&gt; xwei xwei   &lt;span style=&#34;color: #800080;&#34;&gt;26&lt;/span&gt; Mar &lt;span style=&#34;color: #800080;&#34;&gt;10&lt;/span&gt; &lt;span style=&#34;color: #800080;&#34;&gt;16&lt;/span&gt;:&lt;span style=&#34;color: #800080;&#34;&gt;49&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt; test.sh
+$ . test.sh  #以source test.sh 方式执行，读入文件中的命令，在当前shell执行，source内置命令，无需执行权限，其可以缩写为一个小数点
+ &lt;/span&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color: #0000ff;&#34;&gt;is&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt; a test
+$ .&lt;/span&gt;/&lt;span style=&#34;color: #000000;&#34;&gt;test.sh  #
+bash: .&lt;/span&gt;/&lt;span style=&#34;color: #000000;&#34;&gt;test.sh: Permission denied&lt;/p&gt;
+
+&lt;p&gt;xwei@ubuntu:&lt;/span&gt;~/Desktop$ chmod a+&lt;span style=&#34;color: #000000;&#34;&gt;x test.sh
+xwei@ubuntu:&lt;/span&gt;~/Desktop$ ls -&lt;span style=&#34;color: #000000;&#34;&gt;al
+total &lt;/span&gt;&lt;span style=&#34;color: #800080;&#34;&gt;12&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;
+drwxr&lt;/span&gt;-xr-x  &lt;span style=&#34;color: #800080;&#34;&gt;2&lt;/span&gt; xwei xwei &lt;span style=&#34;color: #800080;&#34;&gt;4096&lt;/span&gt; Mar &lt;span style=&#34;color: #800080;&#34;&gt;10&lt;/span&gt; &lt;span style=&#34;color: #800080;&#34;&gt;16&lt;/span&gt;:&lt;span style=&#34;color: #800080;&#34;&gt;49&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt; .
+drwxr&lt;/span&gt;-xr-x &lt;span style=&#34;color: #800080;&#34;&gt;16&lt;/span&gt; xwei xwei &lt;span style=&#34;color: #800080;&#34;&gt;4096&lt;/span&gt; Mar &lt;span style=&#34;color: #800080;&#34;&gt;10&lt;/span&gt; &lt;span style=&#34;color: #800080;&#34;&gt;15&lt;/span&gt;:&lt;span style=&#34;color: #800080;&#34;&gt;28&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt; ..
+&lt;/span&gt;-rwxrwxr-x  &lt;span style=&#34;color: #800080;&#34;&gt;1&lt;/span&gt; xwei xwei   &lt;span style=&#34;color: #800080;&#34;&gt;26&lt;/span&gt; Mar &lt;span style=&#34;color: #800080;&#34;&gt;10&lt;/span&gt; &lt;span style=&#34;color: #800080;&#34;&gt;16&lt;/span&gt;:&lt;span style=&#34;color: #800080;&#34;&gt;49&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt; test.sh
+$ .&lt;/span&gt;/&lt;span style=&#34;color: #000000;&#34;&gt;test.sh  #在一个子shell中执行命令
+ &lt;/span&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;this&lt;/span&gt; &lt;span style=&#34;color: #0000ff;&#34;&gt;is&lt;/span&gt; a test&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Debian初识（选择最佳镜像发布站点加入source.list文件）</title>
+      <link>https://tmhm.github.io/2016/03/08/debian%E5%88%9D%E8%AF%86%E9%80%89%E6%8B%A9%E6%9C%80%E4%BD%B3%E9%95%9C%E5%83%8F%E5%8F%91%E5%B8%83%E7%AB%99%E7%82%B9%E5%8A%A0%E5%85%A5source.list%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Tue, 08 Mar 2016 07:28:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/03/08/debian%E5%88%9D%E8%AF%86%E9%80%89%E6%8B%A9%E6%9C%80%E4%BD%B3%E9%95%9C%E5%83%8F%E5%8F%91%E5%B8%83%E7%AB%99%E7%82%B9%E5%8A%A0%E5%85%A5source.list%E6%96%87%E4%BB%B6/</guid>
+      <description>
+
+&lt;h4 id=&#34;选择最佳镜像发布站点加入source-list文件-netselect-netselect-apt&#34;&gt;选择最佳镜像发布站点加入source.list文件：netselect，netselect-apt&lt;/h4&gt;
+
+&lt;p&gt;该将哪个Debian镜像发布站点加入&lt;samp&gt;source.list&lt;/samp&gt;文件？&amp;rdquo;。有很多方法来选择镜像发布站点，专家们可能会写一个脚本去测试 不同站点的ping时间。不过其实有一个程序可以帮你：&amp;nbsp;&lt;strong&gt;netselect&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;要安装netselect，通常使用：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# apt-get install netselect
+
+# sudo netselect ftp.debian.org http.us.debian.org ftp.at.debian.org download.unesp.br ftp.debian.org.br ftp.hk.debian.org ftp.tw.debian.org debian.linux.org.tw ftp.sjtu.edu.cn mirrors.163.com
+  150 mirrors.163.com
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;表示，在netselect后列出的所有主机中，mirrors.163.com是下载速 度最快的主机，其得分为150。(注意！！这是在我电脑上的测试结果，不同的网络 节点网速会大不相同，所以这个分值不一定适用于其它电脑)&lt;/p&gt;
+&lt;div class=&#34;cnblogs_code&#34;&gt;
+&lt;pre&gt;# apt-&lt;span style=&#34;color: #0000ff;&#34;&gt;get&lt;/span&gt; install netselect-apt&lt;br /&gt;# netselect-apt stable&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;从0.3.ds1版开始，netselect源码包中包含了&lt;strong&gt;netselect-apt&lt;/strong&gt;二 进制包，它使上述操作自动完成。只需将发布目录树做为参数(默认为stable)输入，&amp;nbsp;&lt;samp&gt;sources.list&lt;/samp&gt;文件就会生成速度最快的main和non-US镜像站点列表，并保 存在当前目录下。下面的例子生成一个包含stable发布镜像站点列表的sources.list：&lt;/p&gt;
+&lt;div class=&#34;cnblogs_code&#34;&gt;
+&lt;pre&gt;&lt;span style=&#34;color: #000000;&#34;&gt; # ls sources.list
+     ls: sources.list: File or directory not found
+ # netselect&lt;/span&gt;-&lt;span style=&#34;color: #000000;&#34;&gt;apt stable
+     (...)
+ # ls &lt;/span&gt;-&lt;span style=&#34;color: #000000;&#34;&gt;l sources.list
+     sources.list
+ #&lt;/span&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;记住：&lt;/strong&gt;&lt;samp&gt;sources.list&lt;/samp&gt;生成在当前目录下，必须将其移 至&lt;samp&gt;/etc/apt&lt;/samp&gt;目录。 根据文档内提示：打开注释deb-src。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;putty在win10下面访问不了debian8.2，可能原因有：&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;　　　　1，防火墙&lt;/p&gt;
+&lt;p&gt;　　　　2，网卡驱动不支持！！这点需注意，升级电脑，被坑！&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&amp;nbsp;查看软件安装位置&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;div class=&#34;cnblogs_code&#34;&gt;
+&lt;pre&gt;whereis torcs&lt;/pre&gt;
+&lt;p&gt;man whereis&lt;/p&gt;
+&lt;p&gt;NAME&lt;br /&gt;       whereis  -  locate the binary, source, and manual page files for a com‐&lt;br /&gt;       mand&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;/li&gt;
+
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;查看软件运行位置&lt;/strong&gt;
+&lt;div class=&#34;cnblogs_code&#34;&gt;
+&lt;pre&gt;which torcs  &lt;/pre&gt;
+&lt;p&gt;man which&lt;br /&gt;NAME&lt;br /&gt;       which - locate a command&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+&lt;/li&gt;
+
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>linux多线程并发</title>
+      <link>https://tmhm.github.io/2016/01/08/linux%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91/</link>
+      <pubDate>Fri, 08 Jan 2016 09:40:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/01/08/linux%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91/</guid>
+      <description>
+
+&lt;h3 id=&#34;进程和线程的概念&#34;&gt;进程和线程的概念&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;进程&lt;/p&gt;
+
+&lt;p&gt;进程包括程序映象、地址空间等要素。内核采用PCB来管理进程。进程是内核进行调度的基本单元，每个独立的进程都有自己的代码段、数据段以及堆栈，它们有自己的虚拟地址空间，多个进程间互不影响。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;线程&lt;/p&gt;
+
+&lt;p&gt;在linux系统中，实际上，线程和进程都是以统一的方式来管理的。线程也是内核进行调度的基本单元。&lt;/p&gt;
+
+&lt;p&gt;不同点在于:
+&amp;gt; 线程没有自己独立的地址空间，创建出来的新线程将和创建它的进程
+&amp;gt;（或线程)共享同一个虚拟地址空间，它们被置于同一个线程组中。线程的代码段、全局数据段、堆及其他一些诸如文件描述符表等内核管理的东西在同一组内是共享的，
+&amp;gt; 但是每个线程都有自己独立的栈空间。&lt;/p&gt;
+
+&lt;p&gt;因此，多线程环境下多全局变量的访问有可能需要同步，但是局部变量仍然有各自的存储空间，互不影响。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;与多进程相比，多线程具有的优点：
+&amp;gt;1，线程适合多任务通信环境。多线程间的通信比多进程的更简单，但是需要注意同步问题&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;2，线程的创建和调度更高效。创建线程时，无需单独复制进程的内存空间或文件描述符等；切换线程时不需要更换整个页表。&lt;/p&gt;
+&lt;/blockquote&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>嵌入式linux问题杂锦</title>
+      <link>https://tmhm.github.io/2016/01/08/%E5%B5%8C%E5%85%A5%E5%BC%8Flinux%E9%97%AE%E9%A2%98%E6%9D%82%E9%94%A6/</link>
+      <pubDate>Fri, 08 Jan 2016 08:35:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/01/08/%E5%B5%8C%E5%85%A5%E5%BC%8Flinux%E9%97%AE%E9%A2%98%E6%9D%82%E9%94%A6/</guid>
+      <description>&lt;p&gt;&lt;li&gt;&lt;strong&gt;&lt;strong&gt;tftp 在开发板上不能获取共享文件，出现：&lt;/strong&gt;&lt;/strong&gt;&amp;nbsp;Permission denied&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;cnblogs_code&#34;&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;是因为，我在/sys目录下执行的，&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;cnblogs_Highlighter&#34;&gt;
+&lt;pre class=&#34;brush:cpp;gutter:true;&#34;&gt;root@am437x-evm:/sys# tftp -g -r myTcpTest 172.20.9.59
+tftp: can&amp;rsquo;t open &amp;lsquo;myTcpTest&amp;rsquo;: Permission denied
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;　　回到～ 主文件夹，既可以获取：&lt;/p&gt;
+&lt;div class=&#34;cnblogs_code&#34;&gt;
+&lt;pre&gt;root@am437x-evm:~# tftp -g -r myTcpTest &lt;span style=&#34;color: #800080;&#34;&gt;172.20&lt;/span&gt;.&lt;span style=&#34;color: #800080;&#34;&gt;9.59&lt;/span&gt; &lt;/pre&gt;
+&lt;/div&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

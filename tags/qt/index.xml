@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Qt on Well</title>
+    <link>https://tmhm.github.io/tags/qt/</link>
+    <description>Recent content in Qt on Well</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <managingEditor>wells217@163.com (Well)</managingEditor>
+    <webMaster>wells217@163.com (Well)</webMaster>
+    <copyright>(c) 2017 Well.</copyright>
+    <lastBuildDate>Fri, 08 Jan 2016 07:45:00 +0000</lastBuildDate>
+    <atom:link href="https://tmhm.github.io/tags/qt/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>QT creator 调试问题</title>
+      <link>https://tmhm.github.io/2016/01/08/qt-creator-%E8%B0%83%E8%AF%95%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 08 Jan 2016 07:45:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/01/08/qt-creator-%E8%B0%83%E8%AF%95%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;问题：debug出现&amp;ldquo;ptrace：不允许的操作。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;解决办法：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# may not be appropriate for developers or servers with only admin accounts.
+kernel.yama.ptrace_scope = 1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;修改为：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;kernel.yama.ptrace_scope = 0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后终端输入，重启：&lt;/p&gt;
+&lt;div class=&#34;cnblogs_code&#34;&gt;
+&lt;pre&gt;sudo reboot&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;完毕。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;问题：During startup program exited with code 126.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img style=&#34;line-height: 1.5;&#34; src=&#34;http://images2015.cnblogs.com/blog/781469/201601/781469-20160111204605007-2048896612.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;原因：编译的是基于嵌入式开发板的二进制文件，在ubuntu上运行不了，放到开发板上能正常运行。&lt;/p&gt;
+
+&lt;p&gt;&lt;li&gt;&lt;strong&gt;问题：打开Qt creator出现&amp;ldquo;无法写入文件 qtversion.xml.磁盘已满？&amp;rdquo;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201601/781469-20160115153807366-1882790920.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;原因：权限不够&lt;/p&gt;
+&lt;div class=&#34;cnblogs_Highlighter&#34;&gt;
+&lt;pre class=&#34;brush:cpp;gutter:true;&#34;&gt;-rwx&amp;ndash;x&amp;ndash;x  1 tl tl  1592  1月 15 15:30 qtversion.xml
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;解决办法：添加读写权限&lt;/p&gt;
+&lt;p&gt;　　&lt;/p&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rl on Well</title>
+    <link>https://tmhm.github.io/tags/rl/</link>
+    <description>Recent content in Rl on Well</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <managingEditor>wells217@163.com (Well)</managingEditor>
+    <webMaster>wells217@163.com (Well)</webMaster>
+    <copyright>(c) 2017 Well.</copyright>
+    <lastBuildDate>Wed, 12 Apr 2017 15:13:28 +0800</lastBuildDate>
+    <atom:link href="https://tmhm.github.io/tags/rl/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>RL_intro_1</title>
+      <link>https://tmhm.github.io/2017/04/12/rl_intro_1/</link>
+      <pubDate>Wed, 12 Apr 2017 15:13:28 +0800</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2017/04/12/rl_intro_1/</guid>
+      <description>
+
+&lt;script type=&#34;text/x-mathjax-config&#34;&gt;
+  MathJax.Hub.Config({
+    extensions: [&#34;tex2jax.js&#34;],
+    jax: [&#34;input/TeX&#34;, &#34;output/HTML-CSS&#34;],
+    tex2jax: {
+      inlineMath: [ [&#39;$&#39;,&#39;$&#39;], [&#34;\\(&#34;,&#34;\\)&#34;] ],
+      displayMath: [ [&#39;$$&#39;,&#39;$$&#39;], [&#34;\\[&#34;,&#34;\\]&#34;] ],
+      processEscapes: true
+    },
+    &#34;HTML-CSS&#34;: { availableFonts: [&#34;TeX&#34;] }
+  });
+&lt;/script&gt;
+
+&lt;h4 id=&#34;强化学习的定义&#34;&gt;强化学习的定义&lt;/h4&gt;
+
+&lt;p&gt;强化学习（Reinforcement Learning）本身可以定义为一个广泛的学习问题，学会找到状态（Situation）到动作（Actions）的一个映射关系，以最大化一个数值型的回报（Reward）信号。一个完整的强化学习问题可以用马氏决策过程中的最优控制理论来进行描述。在马氏链中，当前时刻的状态（State） 仅仅与上一时刻的状态有关。如下图1所示，一个智能体（Agent）可以通过某种方式感受环境的状态（State），然后可以通过某一个动作（Action）来改变环境的下一状态。在这个不断交互的过程中，Agent还必须具有一个或者以上的、与此环境状态相关的目标（Goal）。
+&lt;center&gt;
+&lt;img src=&#34;https://tmhm.github.io/images/rl_intro_fig1.png&#34; alt=&#34;&#34; title=&#34;示图1&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;图1 强化学习中智能体与环境的交互
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;p&gt;与RL问题相对应的任何求解方法，可以称之为一个强化学习方法。&lt;/p&gt;
+
+&lt;h4 id=&#34;rl的两个重要特征&#34;&gt;RL的两个重要特征&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;试错搜索（trial-and-error）&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;延迟回报（delayed reward）&lt;/p&gt;
+
+&lt;p&gt;可以引出与监督学习的重要区别——评价的方式不同。
+监督学习中通过正确的指示（instruct）来进行反馈；强化学习是依靠整个生命周期所选择的动作来进行评价式的反馈。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;rl系统中的四大主要元素-element&#34;&gt;Rl系统中的四大主要元素（element）&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;策略（policy）&lt;/p&gt;
+
+&lt;p&gt;其定义是在某时刻下，智能体的行为方式。粗略地说，一个策略可以看做是接收到状态到智能体做出动作的一种映射关系，可以用函数或者表的形式来表现。通常来说，策略可以是确定的，也可能是随机的，即可以用条件概率来表示。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;奖励/回报函数（reward function）&lt;/p&gt;
+
+&lt;p&gt;奖励函数定义了强化学习问题中的目标。它把当前每个状态（或者状态-动作对）映射到一个评价数值，以表现该Agent当前所做事件的好坏程度。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;值函数（value function）&lt;/p&gt;
+
+&lt;p&gt;奖励函数所表现出的是当前状态或者状态-动作对的立即评价，值函数表征的是对长远意义下的评判。粗略来说，值函数可以表示从当前状态开始到未来（long-term），Agent可以收获到奖励的一种累积和。即值函数是对Agent整个生命周期的一种评价。值函数是动作选择的一个标准。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;环境的模型（model of the environment）&lt;/p&gt;
+
+&lt;p&gt;即对该Agent生存环境的行为模仿（mimics the behavior of the environment）。举一个例子，给定一个状态和动作，环境模型可以预测相对应的下一状态和奖励。如果模型已知，强化学习问题可以演化为动态规划问题求解。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;rl中智能体学习方法的分类&#34;&gt;RL中智能体学习方法的分类&lt;/h4&gt;
+
+&lt;p&gt;根据强化学习问题中所含元素的种类，其Agent的学习方法，可以分之为5大类。如下图2所示。
+&lt;center&gt;
+&lt;!-- [](/images/RL1_agent_taxonomy.jpg &#34;示图2&#34;) --&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tmhm.github.io/images/RL1_agent_taxonomy.jpg&#34; width = &#34;420&#34; height = &#34;280&#34; alt=&#34;示图2&#34; align=center /&gt;&lt;/p&gt;
+
+&lt;p&gt;图2 强化学习中智能体学习方法的分类
+&lt;/center&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;探索与利用的权衡&#34;&gt;探索与利用的权衡&lt;/h4&gt;
+
+&lt;p&gt;&lt;em&gt;trade-off between exploration and exploitation&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Agent 需要根据已知的状态、动作和回报的相关信息，来不断获得最大的回报，即利用（exploit）当前已知的知识；另外，Agent 需要探索（explore）一些未知的知识，以期望在未来实现更好的动作。（由于目前的知识往往并不是最优的）&lt;/p&gt;
+
+&lt;p&gt;因此，在RL中，利用与探索是一个权衡的话题，目前已提出多种方法来尝试解决这个问题。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;$ \epsilon $ -greedy action selection（以小概率不贪心的选择方式）&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Softmax action selection（基于Gibbs分布或者称之为玻尔兹曼分布，以概率选择动作）
+$$ \cfrac{e^{Q&lt;em&gt;t(a)/\tau}}{\sum&lt;/em&gt;{b=1}^n e^{Q_t(b)/\tau}}$$&lt;/p&gt;
+
+&lt;p&gt;$\tau &amp;gt; 0 $表示温度（temperature）, 高的温度，选择动作近乎平等；温度趋近0的时候，此法接近于贪心选择。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;refernece&#34;&gt;refernece&lt;/h4&gt;
+
+&lt;p&gt;[1] Sutton R S, Barto A G. Reinforcement learning: An introduction[M]. MIT press Cambridge, 1998.&lt;/p&gt;
+
+&lt;p&gt;[2] David Silver. Lecture 1: Introduction to Reinforcement Learning
+Learning&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>强化学习笔记（0）</title>
+      <link>https://tmhm.github.io/2016/03/31/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B00/</link>
+      <pubDate>Thu, 31 Mar 2016 08:18:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/03/31/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B00/</guid>
+      <description>
+
+&lt;p&gt;开始接触强化学习是在回到所里开始找课题研究方向的时候，偶然查到&lt;a href=&#34;http://news.berkeley.edu/2015/05/21/deep-learning-robot-masters-skills-via-trial-and-error/&#34;&gt;伯克利的机器人视频&lt;/a&gt;,给我比较惊艳的感觉。陆续开始查找强化学习的一些资料。最近看到一篇有关强化学习的&lt;a href=&#34;http://blog.exbot.net/archives/223&#34;&gt;博文&lt;/a&gt;，瞬时，想把自己接触到强化学习的过程也做一个简单梳理，为接下来准备在强化学习方向完成毕业论文做一个初略安排。&lt;/p&gt;
+
+&lt;h5 id=&#34;有关强化学习的资料:de16989b43bad915dba343b24e25263a&#34;&gt;有关强化学习的资料：&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Tom M. Mitchell的《机器学习》最后一章讲reinforcement learning，算是入门&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www.andrewng.org/&#34;&gt;吴恩达&lt;/a&gt;公开课中的强化学习部分，他们&lt;a href=&#34;http://heli.stanford.edu/&#34;&gt;自动直升机实验室&lt;/a&gt;做的项目。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;吴恩达的博士生&lt;a href=&#34;http://www.cs.berkeley.edu/~pabbeel/&#34;&gt;Pieter Abbeel&lt;/a&gt;(现任教于伯克利，上面的机器人即是他们实验室)，他的博士论文Apprenticeship Learning and Reinforcement Learning with Application to Robotic Control值得一看,还有其在伯克利的&lt;a href=&#34;http://rll.berkeley.edu/deeprlcourse/&#34;&gt;DRL课程&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://webdocs.cs.ualberta.ca/~sutton/index.html&#34;&gt;Richard S.Sutton&lt;/a&gt; and &lt;a href=&#34;http://www-anw.cs.umass.edu/~barto/&#34;&gt;Andrew G.Barto&lt;/a&gt;的RL的经典之作&lt;a href=&#34;http://webdocs.cs.ualberta.ca/~sutton/book/the-book.html&#34;&gt;Reinforcement Learning: An Introduction&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Marco Wiering Martijn van Otterlo (Eds.)写的 Reinforcement Learning State-Of-the-Art&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;2015 nature上的 一篇关于 reinforcement learning 的综述: &lt;a href=&#34;http://valser.org/thread-246-1-1.html&#34;&gt;Reinforcement learning improves behaviour from evaluative feedback（Michael L. Littman）&lt;/a&gt;（链接还包括2015年机器学习专栏其他5篇综述，如下：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Machine intelligence  （Tanguy Chouard &amp;amp; Liesbeth Venema）&lt;/li&gt;
+&lt;li&gt;Deep learning（Yann LeCun, Yoshua Bengio &amp;amp; Geoffrey Hinton）&lt;/li&gt;
+&lt;li&gt;Reinforcement learning improves behaviour from evaluative feedback
+（Michael L. Littman）&lt;/li&gt;
+&lt;li&gt;Probabilistic machine learning and artificial intelligence（Zoubin Ghahramani）&lt;/li&gt;
+&lt;li&gt;Science, technology and the future of small autonomous drone（Dario Floreano &amp;amp; Robert J. Wood）&lt;/li&gt;
+&lt;li&gt;Design, fabrication and control of soft robots（Daniela Rus &amp;amp; Michael T. Tolley）&lt;/li&gt;
+&lt;li&gt;From evolutionary computation to the evolution of things（Agoston E. Eiben &amp;amp; Jim Smith）&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;应该关注的实验室:de16989b43bad915dba343b24e25263a&#34;&gt;应该关注的实验室：&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cs.york.ac.uk/rl/research.php&#34;&gt;Knowledge-Based Reinforcement Learning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;MIT飞行控制实验室&lt;a href=&#34;http://acl.mit.edu/projects/iFDD.htm&#34;&gt;Scaling Reinforcement Learning Methods by Incremental Feature Dependency Discovery&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.cs.colostate.edu/~anderson/res/rl/&#34;&gt;Reinforcement Learning and Control&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;有关课程:de16989b43bad915dba343b24e25263a&#34;&gt;有关课程:&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://rll.berkeley.edu/deeprlcourse/#assignments&#34;&gt;CS 294: Deep Reinforcement Learning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www0.cs.ucl.ac.uk/staff/D.Silver/web/Teaching.html&#34;&gt;Dave Silver’s course on reinforcement learning&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;代码工具框架:de16989b43bad915dba343b24e25263a&#34;&gt;代码工具框架:&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;最近找到一个&lt;a href=&#34;http://pybrain.org/&#34;&gt;PyBrain&lt;/a&gt;的python开源库，不错,准备前期就用它了&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;看&lt;a href=&#34;http://www.cs.berkeley.edu/~pabbeel/&#34;&gt;Pieter Abbeel&lt;/a&gt;视频中提到的，他们的库&lt;a href=&#34;http://rll.berkeley.edu/cgt/&#34;&gt;Computation Graph Toolkit&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;RL-Glue framework&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;网友提到的：
+    * ROS的RL
+    * 其他：
+            * &lt;a href=&#34;http://www.cse.unsw.edu.au/~cs9417ml/RL1/sourcecode.html&#34;&gt;http://www.cse.unsw.edu.au/~cs9417ml/RL1/sourcecode.html&lt;/a&gt;
+            * &lt;a href=&#34;http://www.igi.tugraz.at/ril-toolbox/links/&#34;&gt;http://www.igi.tugraz.at/ril-toolbox/links/&lt;/a&gt;
+            * &lt;a href=&#34;http://en.wikipedia.org/wiki/Reinforcement_learning&#34;&gt;http://en.wikipedia.org/wiki/Reinforcement_learning&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&#34;一些相关会议:de16989b43bad915dba343b24e25263a&#34;&gt;一些相关会议：&lt;/h5&gt;
+
+&lt;p&gt;&lt;em&gt;(from reinforcement learning State of the art)&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;A large portion of papers appears every year (or two year) at the established top conferences&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;artificial intelligence, such as IJCAI, ECAI and AAAI&lt;/li&gt;
+&lt;li&gt;top conferences with a particular focus on statistical machine learning , such as UAI, ICML, ECML and NIPS.&lt;/li&gt;
+&lt;li&gt;In addition, conferences on artificial life (Alife), adaptive behavior
+(SAB), robotics (ICRA, IROS, RSS) and neural networks and evolutionary computation(e.g. IJCNN and ICANN) feature much reinforcement learning work.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;workshop:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The European workshop on reinforcement learning (EWRL)&lt;/li&gt;
+&lt;li&gt;IEEE Symposium on Adaptive Dynamic Programming and Reinforcement Learning (ADPRL)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;competitions:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.rl-competition.org/&#34;&gt;RL-Competition&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,989 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Well</title>
+    <link>https://tmhm.github.io/tags/python/</link>
+    <description>Recent content in Python on Well</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <managingEditor>wells217@163.com (Well)</managingEditor>
+    <webMaster>wells217@163.com (Well)</webMaster>
+    <copyright>(c) 2017 Well.</copyright>
+    <lastBuildDate>Fri, 23 Dec 2016 08:32:00 +0000</lastBuildDate>
+    <atom:link href="https://tmhm.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>matplotlib y轴标注显示不全以及subplot调整的问题</title>
+      <link>https://tmhm.github.io/2016/12/23/matplotlib-y%E8%BD%B4%E6%A0%87%E6%B3%A8%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8%E4%BB%A5%E5%8F%8Asubplot%E8%B0%83%E6%95%B4%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Fri, 23 Dec 2016 08:32:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/12/23/matplotlib-y%E8%BD%B4%E6%A0%87%E6%B3%A8%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8%E4%BB%A5%E5%8F%8Asubplot%E8%B0%83%E6%95%B4%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <description>
+
+&lt;p&gt;问题：
+我想在y轴显示的标注太长，想把它变成两行显示，发现生成的图形只显示的第二行的字，把第一行的字&lt;strong&gt;挤出去&lt;/strong&gt;了&lt;/p&gt;
+
+&lt;p&gt;想要的是&lt;strong&gt;显示两行&lt;/strong&gt;这样子的&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://i.imgur.com/6fxUwHR.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;现实却是这样子&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://i.imgur.com/XZmJtEF.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;主要相关的api有&#34;&gt;主要相关的api有：&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;plt.subplots_adjust&lt;/li&gt;
+&lt;li&gt;set_ylabel&lt;/li&gt;
+&lt;li&gt;plt.text&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;解决思路&#34;&gt;解决思路&lt;/h4&gt;
+
+&lt;p&gt;来自matplotlib的&lt;a href=&#34;http://matplotlib.org/gallery.html&#34;&gt;官网&lt;/a&gt;,以及&lt;a href=&#34;http://matplotlib.org/examples/images_contours_and_fields/interpolation_none_vs_nearest.html&#34;&gt;图示&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;当出现右边显示不全的时候，第一感觉是：应该可以通过set_ylabel 来设置y轴标注的位置和大小，发现set_ylabel只能设置labelpad ，没有位置的参数；&lt;/li&gt;
+&lt;li&gt;然后找到了可以用text设置标注字体的位置和方向，但是要多次定位，尝试，发现不方便；&lt;/li&gt;
+&lt;li&gt;那么想到的是应该可以设置plot的位置吧，用ax1.plot?找了下，也没看到，不爽；&lt;/li&gt;
+&lt;li&gt;在show的图形界面发现一个移动的按钮&lt;img src=&#34;http://i.imgur.com/VThZrvx.jpg&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;
+&lt;li&gt;移动left亦可以显示出y轴的标注了，那么我应该只需要在程序中设置一下left的参数既可以了吧，在上面[matplotlib的example]()中，找到了我想要的subplots_adjust&lt;/li&gt;
+&lt;li&gt;即有了下面的源代码，满足设置要求。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;源代码如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import matplotlib.pyplot as plt
+import numpy as np
+from numpy import abs
+
+size=[5,10,20,30,50,100]
+avg=[-0.2896,0.073865632,0.034858287,-0.092241705,-0.022924236,0.016541661]
+avr=[0.032,0.077757872,0.090351641,0.036522663,0.034413038,0.096587464]
+
+fig = plt.figure()
+
+ax1 = fig.add_subplot(211)
+lns1 = ax1.plot(size, trackPos_avg,color=&#39;blue&#39;,label=&#39;error average&#39;,linestyle=&#39;-&#39;,linewidth=1.9)
+ax1.set_ylabel(&#39;deviation from\ncentral line ($m$)&#39;,fontsize=18, labelpad = 0.5)
+
+plt.xticks(fontsize = 17)#对坐标的值数值，大小限制
+plt.yticks(fontsize = 17)
+
+ax2 = fig.add_subplot(212)
+ax2.set_ylabel(&#39;standard \nvariance ($m^2$)&#39;,fontsize=18,labelpad = 12.5)
+lns2 = ax2.plot(size, avr, color=&#39;red&#39;,label=&#39;mean square error&#39;,linestyle=&#39;-&#39;,linewidth=1.9)
+
+plt.xticks(fontsize = 17)#对坐标的值数值，大小限制
+plt.yticks(fontsize = 17)
+ax2.set_xlabel(&#39;replay size&#39;,fontsize=18)
+
+plt.subplots_adjust(left=0.18, wspace=0.25, hspace=0.25,
+                    bottom=0.13, top=0.91)
+
+\#plt.text(0.4, 0.4, &#39;deviation from\n central line ($m$)&#39;, rotation=90, ha=&#39;left&#39;)
+
+\#plt.legend(prop={&#39;size&#39;:18})  # loc=&#39;upper left&#39;,
+
+\#fig.savefig(&#39;./figure/error_paper.eps&#39;, format=&#39;eps&#39;, dpi=1000)
+fig.savefig(&#39;./figure/error_paper.png&#39;, dpi=1000)
+
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;可以下面的yticks，限制横纵坐标的值&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;plt.xticks(fontsize = 17)#对坐标的值数值，大小限制
+plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>python 与时间有关的操作</title>
+      <link>https://tmhm.github.io/2016/05/31/python-%E4%B8%8E%E6%97%B6%E9%97%B4%E6%9C%89%E5%85%B3%E7%9A%84%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Tue, 31 May 2016 10:46:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/05/31/python-%E4%B8%8E%E6%97%B6%E9%97%B4%E6%9C%89%E5%85%B3%E7%9A%84%E6%93%8D%E4%BD%9C/</guid>
+      <description>
+
+&lt;p&gt;源代码：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import time
+# ISOTIMEFORMAT=&#39;%Y-%m-%d %X&#39;
+ISOTIMEFORMAT=&#39;%Y-%m-%d&#39;
+t= time.strftime( ISOTIMEFORMAT, time.gmtime( time.time() ) )
+f = open( t + &amp;quot;test.txt&amp;quot;,&#39;wb&#39;)
+f.write(&amp;quot;hello,\n This is a test file&amp;quot;)
+f.close()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;计算程序运行时间:209ae7a9d321a421a49117ff5988f512&#34;&gt;计算程序运行时间&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;import time
+# ISOTIMEFORMAT=&#39;%Y-%m-%d %X&#39;
+start = time.time()
+ISOTIMEFORMAT=&#39;%Y-%m-%d&#39;
+t= time.strftime( ISOTIMEFORMAT, time.gmtime( time.time() ) )
+f = open( t + &amp;quot;test.txt&amp;quot;,&#39;wb&#39;)
+f.write(&amp;quot;hello,\n This is a test file&amp;quot;)
+f.close()
+print t
+elapsed = time.time() - start
+print elapsed
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;out：
+​&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;2016-05-31
+0.00300002098083
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>PyBrain库的example之NFQ流程图分析</title>
+      <link>https://tmhm.github.io/2016/05/27/pybrain%E5%BA%93%E7%9A%84example%E4%B9%8Bnfq%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%88%86%E6%9E%90/</link>
+      <pubDate>Fri, 27 May 2016 11:43:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/05/27/pybrain%E5%BA%93%E7%9A%84example%E4%B9%8Bnfq%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%88%86%E6%9E%90/</guid>
+      <description>
+
+&lt;h4 id=&#34;pybrain库的example之nfq流程图分析:ee4d46bb0f922990b5099f1ed9a24c21&#34;&gt;PyBrain库的example之NFQ流程图分析&lt;/h4&gt;
+
+&lt;p&gt;如下是测试程序。主要分析&lt;strong&gt;doEpisode和learn&lt;/strong&gt;两个函数。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;__author__ = &#39;Thomas Rueckstiess, ruecksti@in.tum.de&#39;
+
+from pybrain.rl.environments.cartpole import CartPoleEnvironment, DiscreteBalanceTask, CartPoleRenderer
+from pybrain.rl.agents import LearningAgent
+from pybrain.rl.experiments import EpisodicExperiment
+from pybrain.rl.learners.valuebased import NFQ, ActionValueNetwork
+#,ActionValueLSTMNetwork
+from pybrain.rl.explorers import BoltzmannExplorer
+
+from numpy import array, arange, meshgrid, pi, zeros, mean
+from matplotlib import pyplot as plt
+
+# switch this to True if you want to see the cart balancing the pole (slower)
+render = False  #True #
+
+plt.ion()
+
+env = CartPoleEnvironment()
+if render:
+    renderer = CartPoleRenderer()
+    env.setRenderer(renderer)
+    renderer.start()
+
+
+# balancetask. py inside only used 2 sensors, so here can&#39;t use(4,3), just use (2,3)
+# there is a debug in vesion 0.30, now, new version 0.33 had correct it!!
+module = ActionValueNetwork(4,3)  #(4,3) #  0.33 had correct it
+#module = ActionValueLSTMNetwork(2,3)
+
+task = DiscreteBalanceTask(env, 100)
+learner = NFQ()
+learner.explorer.epsilon = 0.4
+
+agent = LearningAgent(module, learner)
+testagent = LearningAgent(module, None)
+experiment = EpisodicExperiment(task, agent)
+
+
+def plotPerformance(values, fig):
+    plt.figure(fig.number)
+    plt.clf()
+    plt.plot(values, &#39;o-&#39;)
+    plt.gcf().canvas.draw()
+
+
+performance = []
+
+if not render:
+    pf_fig = plt.figure()
+
+#while (True):
+for _ in xrange(60): #60
+    # one learning step after one episode of world-interaction!!!
+    experiment.doEpisodes(1)
+    agent.learn(2)  # 5
+
+    # test performance (these real-world experiences are not used for training)
+    if render:
+        env.delay = True
+    experiment.agent = testagent
+    #r = mean([sum(x) for x in experiment.doEpisodes(5)])
+    env.delay = False
+    testagent.reset()
+    experiment.agent = agent
+
+    #performance.append(r)
+    print &amp;quot;update step&amp;quot;, len(performance)
+
+    #print &amp;quot;reward avg&amp;quot;, r
+    print &amp;quot;explorer epsilon&amp;quot;, learner.explorer.epsilon
+    print &amp;quot;num episodes&amp;quot;, agent.history.getNumSequences()
+    print &amp;quot;update step&amp;quot;, len(performance)
+
+if not render:
+    plotPerformance(performance, pf_fig)
+
+str = raw_input(&amp;quot;please input sth to end!&amp;quot;)
+print &amp;quot;you put :&amp;quot;,str
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;experiment.doEpisodes(1)
+&lt;img src=&#34;http://i.imgur.com/Un1ow9B.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;agent.learn(2)
+&lt;img src=&#34;http://i.imgur.com/TQ2YO9y.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;图2的注释2部分，可以参考该博文&lt;a href=&#34;http://lamda.nju.edu.cn/yangjw/project/drlintro.html&#34;&gt;深度强化学习初探&lt;/a&gt; ,但是他文中的公式应该有点问题。应该把Qm+1改为Qm，进一步参考维基百科&lt;a href=&#34;https://en.wikipedia.org/wiki/Q-learning&#34;&gt;Q-learning&lt;/a&gt; ,如下所示。&lt;/p&gt;
+
+&lt;p&gt;Qm+1(st,at)=Qm(st,at)+α[rt+1+γQm(st+1,at+1)−Qm(st,at)]&lt;/p&gt;
+
+&lt;p&gt;推荐所用的画图软件&lt;a href=&#34;https://www.processon.com/i/56873407e4b0b5afb309e00c&#34;&gt;process on&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;用起来挺方便的，在线用谷歌浏览器运行，用户体验挺佳，比visio2010快多了；&lt;/li&gt;
+&lt;li&gt;可以多用户协作；&lt;/li&gt;
+&lt;li&gt;目前有一个缺点就是一个框里面的字体格式必须是一样的，不可以修改一个框里面部分的文字的格式。有点类似PS的思想。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>python之面向对象（继承）</title>
+      <link>https://tmhm.github.io/2016/05/26/python%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BB%A7%E6%89%BF/</link>
+      <pubDate>Thu, 26 May 2016 09:53:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/05/26/python%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BB%A7%E6%89%BF/</guid>
+      <description>
+
+&lt;h4 id=&#34;python之面向对象-继承&#34;&gt;python之面向对象（继承）&lt;/h4&gt;
+
+&lt;p&gt;面向对象的编程带来的主要好处之一是代码的重用，实现这种重用的方法之一是通过继承机制。继承完全可以理解成类之间的类型和子类型关系。&lt;/p&gt;
+
+&lt;p&gt;需要注意的地方：继承语法 class 派生类名（基类名）：//&amp;hellip; 基类名写作括号里，基本类是在类定义的时候，在元组之中指明的。&lt;/p&gt;
+
+&lt;p&gt;在python中继承中的一些特点：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;在继承中&lt;strong&gt;基类的构造（&lt;strong&gt;init&lt;/strong&gt;()方法）不会被自动调用&lt;/strong&gt;，它需要在其派生类的构造中亲自专门调用。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;在调用基类的方法时，需要加上基类的类名前缀，且需要带上self参数变量。区别于在类中调用普通函数时并不需要带上self参数.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Python总是首先查找对应类型的方法，如果它不能在派生类中找到对应的方法，它才开始到基类中&lt;strong&gt;逐个查找&lt;/strong&gt;。（先在本类中查找调用的方法，找不到才去基类中找）。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;pre&gt;&lt;code&gt;class animal(object):
+    def __init__(self):
+        print &#39;animal init&#39;
+
+    def say(self):
+        print &#39;animal say&#39;
+
+class dog(animal):
+    def __init__(self):
+        #animal.__init__(self)
+        print &#39;dog init&#39;
+
+    def say(self):
+        animal.say(self)
+        print &#39;dog say&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In [23]:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;d = dog()
+d.say()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;out:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;dog init
+animal say
+dog say
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果在继承元组中列了一个以上的类，那么它就被称作&amp;raquo;多重继承&amp;raquo; 。
+当多个类之间有包含关系，不能继承。&lt;/p&gt;
+
+&lt;p&gt;比如，下面的例子不行。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;        class A:
+        class B(A):
+        class C(A,B)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;下面是，多重继承逐个查找的示例：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;class animal(object):
+    def __init__(self):
+        print &#39;animal init&#39;
+
+    def say(self):
+        print &#39;animal say&#39;
+
+class dog(animal):
+    def __init__(self):
+        #animal.__init__(self)
+        print &#39;dog init&#39;
+
+    def say(self):
+        animal.say(self)
+        print &#39;dog say&#39;
+
+class cat(animal):
+    def __init__(self):
+        #animal.__init__(self)
+        print &#39;cat init&#39;
+
+    def say(self):
+        #animal.say(self)
+        print &#39;cat say&#39;
+
+class wolfhound(cat,dog):  #先继承cat，后面测试案例只输出了cat say。
+    def __init__(self):
+        print &amp;quot;wolfhound init.&amp;quot;
+
+    def run(self):
+        print &amp;quot;wolfhound run&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;in：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;d = dog()
+d.say()
+w = wolfhound()
+w.run()
+w.say()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;out：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;dog init
+animal say
+dog say
+wolfhound init.
+wolfhound run
+cat say
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>python 有关引用的一些问题</title>
+      <link>https://tmhm.github.io/2016/05/21/python-%E6%9C%89%E5%85%B3%E5%BC%95%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sat, 21 May 2016 14:24:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/05/21/python-%E6%9C%89%E5%85%B3%E5%BC%95%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</guid>
+      <description>
+
+&lt;pre&gt;&lt;code&gt;print id.__doc__
+​
+id(object) -&amp;gt; integer
+
+Return the identity of an object.  This is guaranteed to be unique among
+simultaneously existing objects.  (Hint: it&#39;s the object&#39;s memory address.)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;python中的引用对象特点:6ec06ff8aab68af73d72157c359718c6&#34;&gt;python中的引用对象特点：&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;python不允许程序员选择采用传值还是传引用。
+    - Python参数传递采用的肯定是“传对象引用”的方式。实际上，这种方式相当于传值和传引用的一种综合。如果函数收到的是一个可变对象（比如字典或者列表）的引用，就能修改对象的原始值——相当于通过“传引用”来传递对象。
+    - 如果函数收到的是一个不可变对象（比如数字、字符或者元组）的引用，就不能直接修改原始对象——相当于通过“传值&amp;rsquo;来传递对象。&lt;/li&gt;
+&lt;li&gt;当人们复制列表或字典时，就复制了对象列表的引用，如果改变引用的值，则修改了原始的参数。&lt;/li&gt;
+&lt;li&gt;为了简化内存管理，Python通过引用计数机制实现自动垃圾回收功能，Python中的每个对象都有一个引用计数，用来计数该对象在不同场所分别被引用了多少次。每当引用一次Python对象，相应的引用计数就增1，每当消毁一次Python对象，则相应的引用就减1，只有当引用计数为零时，才真正从内存中删除Python对象。
+&lt;a href=&#34;http://www.cnblogs.com/yuyan/archive/2012/04/21/2461673.html&#34;&gt;参考&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;以下是一些例子：&lt;/p&gt;
+
+&lt;p&gt;In [19]:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# variable 动态创建一个新的变量，但是，list，tuple，dictionary 却不会创建新的实例
+a= 1
+b = a
+print id(a)
+print id(b)
+​
+b = 3
+print &amp;quot;change b to 3 &amp;quot;
+print  &amp;quot;a: %s, b: %s&amp;quot; %(a ,b)
+print &amp;quot;a id is : %s; b id is : %s&amp;quot; %(id(a),id(b))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;out:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;42295960
+42295960
+change b to 3
+a: 1, b: 3
+a id is : 42295960; b id is : 42295912
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In [25]:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# list
+a= [1,2,3]
+b = a   # 引用
+print id(a)
+print id(b)
+​
+b[2] = 6
+print &amp;quot;change b to 3 &amp;quot;
+print  &amp;quot;a: %s, b: %s&amp;quot; %(a ,b)
+print &amp;quot;a id is : %s; b id is : %s&amp;quot; %(id(a),id(b))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;out：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;66189960
+66189960
+change b to 3
+a: [1, 2, 6], b: [1, 2, 6]
+a id is : 66189960; b id is : 66189960
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In [38]:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# list
+a= [1,2,3]
+b = a[:] # 值拷贝， 创建了新的对象实例
+print id(a)
+print id(b)
+​
+b[2] = 6
+print &amp;quot;change b to 3 &amp;quot;
+print  &amp;quot;a: %s, b: %s&amp;quot; %(a ,b)
+print &amp;quot;a id is : %s; b id is : %s&amp;quot; %(id(a),id(b))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;out：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;65422344
+65421832
+change b to 3
+a: [1, 2, 3], b: [1, 2, 6]
+a id is : 65422344; b id is : 65421832
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In [32]:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# dictionary
+a= {&#39;ta&#39;:11,&#39;tb&#39;:22,&#39;tc&#39;:33}
+b = a # 引用，改变的是原实例的值
+print id(a)
+print id(b)
+​
+b[&#39;tb&#39;] = 6
+print &amp;quot;change b to 3 &amp;quot;
+print  &amp;quot;a: %s,\n b: %s&amp;quot; %(a ,b)
+print &amp;quot;a id is : %s;\n b id is : %s&amp;quot; %(id(a),id(b))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;out：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;66214904
+66214904
+change b to 3
+a: {&#39;tb&#39;: 6, &#39;tc&#39;: 33, &#39;ta&#39;: 11},
+ b: {&#39;tb&#39;: 6, &#39;tc&#39;: 33, &#39;ta&#39;: 11}
+a id is : 66214904;
+ b id is : 66214904
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In [36]:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# tuple 元组用&amp;quot;()&amp;quot;标识。内部元素用逗号隔开。但是元组不能二次赋值，相当于只读列表。
+a= (1,2,3)
+b = a
+print id(a)
+print id(b)
+​
+# b[0] = 6
+print &amp;quot;change b to 3 &amp;quot;
+print  &amp;quot;a: %s,\n b: %s&amp;quot; %(a ,b)
+print &amp;quot;a id is : %s;\n b id is : %s&amp;quot; %(id(a),id(b))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;out：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;66132296
+66132296
+change b to 3
+a: (1, 2, 3),
+ b: (1, 2, 3)
+a id is : 66132296;
+ b id is : 66132296
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In [9]:此案例的问题来自&lt;a href=&#34;http://www.cnblogs.com/yuyan/archive/2012/04/21/2461673.html&#34;&gt;博文&lt;/a&gt; ，经改进。如下&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def add_list(p):
+    pt = p +[5,6]  # 1
+    p = p + [5,6]  # 2   1 和2 是等价的，没有将值返回， ‘=’左边的变量，都是函数内部生成的局部临时对象，并没有返回，故不会修改传入参数的值。
+    # 此处和静态语言的理解方式是一样的。
+​
+p1 = [1,2,3]
+add_list(p1)  #1 和2 是等价的，没有改变返回值
+print p1
+​
+​
+def add_list2(p):
+    p += [5,6]
+p2 = [1,2,3]
+add_list2(p2)
+print p2
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;out：​&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[1, 2, 3]
+[1, 2, 3, 5, 6]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;此处‘=’号左边的p 应该是一个函数新建的一个局部的、临时的对象实例，等号的右边的p是才是函数传进来的，由于临时的“P”并没有返回，故肯定不会改变传入list的值。此处和静态语言应该是一致的。 所以，它并没有修改原来的p引用。&lt;/p&gt;
+
+&lt;p&gt;In [6]:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;help(&#39;+=&#39;)
+
+An augmented assignment expression like &amp;quot;x += 1&amp;quot; can be rewritten as
+&amp;quot;x = x + 1&amp;quot; to achieve a similar, but not exactly equal effect. In the
+augmented version, &amp;quot;x&amp;quot; is only evaluated once. Also, when possible,
+the actual operation is performed *in-place*, meaning that rather than
+creating a new object and assigning that to the target, the old object
+is modified instead.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In [11]:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# 字典引用
+a = []
+b = {&#39;num&#39;:0, &#39;sqrt&#39;:0}
+resurse = [1,2,3]
+for i in resurse:
+  b[&#39;num&#39;] = i
+  b[&#39;sqrt&#39;] = i * i
+  a.append(b)
+print &amp;quot;a: &amp;quot;,a
+​
+d=[]
+for i in resurse:
+    b[&#39;num&#39;] = i
+    b[&#39;sqrt&#39;] = i * i
+    d1 = b.copy()
+    d.append(d1)
+print &amp;quot;d: &amp;quot;,d
+​
+c=[]
+for i in resurse:
+    c.append({&amp;quot;num&amp;quot;:i, &amp;quot;sqrt&amp;quot;:i*i})
+print &amp;quot;c: &amp;quot;,c
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;out：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;​a:  [{&#39;num&#39;: 3, &#39;sqrt&#39;: 9}, {&#39;num&#39;: 3, &#39;sqrt&#39;: 9}, {&#39;num&#39;: 3, &#39;sqrt&#39;: 9}]
+d:  [{&#39;num&#39;: 1, &#39;sqrt&#39;: 1}, {&#39;num&#39;: 2, &#39;sqrt&#39;: 4}, {&#39;num&#39;: 3, &#39;sqrt&#39;: 9}]
+c:  [{&#39;num&#39;: 1, &#39;sqrt&#39;: 1}, {&#39;num&#39;: 2, &#39;sqrt&#39;: 4}, {&#39;num&#39;: 3, &#39;sqrt&#39;: 9}]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;b[&amp;lsquo;num&amp;rsquo;] = i  和 b[&amp;lsquo;sqrt&amp;rsquo;] = i * i  中的 b[&amp;lsquo;num&amp;rsquo;] 和 b[&amp;lsquo;sqrt&amp;rsquo;] 是已经&lt;strong&gt;压入list a 中元素的一个引用&lt;/strong&gt;，故它可以在不断地改变list 内部变量的值。&lt;/p&gt;
+
+&lt;p&gt;单步调试可以看到，&lt;/p&gt;
+
+&lt;p&gt;a中值的变化情况：*以执行完语句a.append(b)为节点 *&lt;/p&gt;
+
+&lt;p&gt;[{&amp;lsquo;num&amp;rsquo;: 1, &amp;lsquo;sqrt&amp;rsquo;: 1}]&lt;/p&gt;
+
+&lt;p&gt;&amp;ndash;&amp;gt; [{&amp;lsquo;num&amp;rsquo;: 2, &amp;lsquo;sqrt&amp;rsquo;: 4},{&amp;lsquo;num&amp;rsquo;: 2, &amp;lsquo;sqrt&amp;rsquo;: 4}]&lt;/p&gt;
+
+&lt;p&gt;&amp;ndash;&amp;gt;  [{&amp;lsquo;num&amp;rsquo;: 3, &amp;lsquo;sqrt&amp;rsquo;: 9}, {&amp;lsquo;num&amp;rsquo;: 3, &amp;lsquo;sqrt&amp;rsquo;: 9}, {&amp;lsquo;num&amp;rsquo;: 3, &amp;lsquo;sqrt&amp;rsquo;: 9}]&lt;/p&gt;
+
+&lt;p&gt;在append(b)到list a之前获得b的值拷贝，将值append 到list a 也可以达到目标。如&lt;strong&gt;示例d&lt;/strong&gt;所示。&lt;/p&gt;
+
+&lt;p&gt;​
+当然，示例C是更加简洁的一个版本，这里应该还有迭代器的知识点，暂时还没折腾内部，待到下次和生成器一起分析。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>python运算符一些注意项</title>
+      <link>https://tmhm.github.io/2016/05/19/python%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E9%A1%B9/</link>
+      <pubDate>Thu, 19 May 2016 06:07:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/05/19/python%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E9%A1%B9/</guid>
+      <description>
+
+&lt;h3 id=&#34;浮点除-和-整除&#34;&gt;&amp;rsquo;/&amp;lsquo;浮点除，和&amp;rsquo;//&amp;lsquo;整除&lt;/h3&gt;
+
+&lt;p&gt;单个&amp;rsquo;/&amp;lsquo;是浮点除，两个除号&amp;rsquo;//&amp;lsquo;是整除&lt;/p&gt;
+
+&lt;p&gt;整除也适用于浮点数。但是，用整除计算浮点除的结果只是在整除的结果上*浮点化*，比如3.6//2.1,结果是1.0。&lt;/p&gt;
+
+&lt;p&gt;例子：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;a = 5
+for i in [1.0,1.5,2,3,4,5,6]:
+        b= 5//i
+        c = 5/i
+        print a, b,c
+print &amp;quot;3.6/2.1 =&amp;quot;,3.6/2.1
+print &amp;quot;3.6//2.1 =&amp;quot;,3.6//2.1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;out：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;5 5.0 5.0
+5 3.0 3.33333333333
+5 2 2
+5 1 1
+5 1 1
+5 1 1
+5 0 0
+3.6/2.1 = 1.71428571429
+3.6//2.1 = 1.0
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>python一些内建函数(map,zip,filter,reduce,yield等)</title>
+      <link>https://tmhm.github.io/2016/05/17/python%E4%B8%80%E4%BA%9B%E5%86%85%E5%BB%BA%E5%87%BD%E6%95%B0mapzipfilterreduceyield%E7%AD%89/</link>
+      <pubDate>Tue, 17 May 2016 15:06:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/05/17/python%E4%B8%80%E4%BA%9B%E5%86%85%E5%BB%BA%E5%87%BD%E6%95%B0mapzipfilterreduceyield%E7%AD%89/</guid>
+      <description>
+
+&lt;h4 id=&#34;map函数&#34;&gt;map函数&lt;/h4&gt;
+
+&lt;p&gt;Python实际上提供了一个内置的工具，map函数。这个函数的主要功能是对一个序列对象中的每一个元素应用被传入的函数，并且返回一个包含了所有函数调用结果的一个列表。&lt;/p&gt;
+
+&lt;p&gt;map?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Docstring:
+map(function, sequence[, sequence, ...]) -&amp;gt; list
+
+Return a list of the results of applying the function to the items of
+the argument sequence(s).  If more than one sequence is given, the
+function is called with an argument list consisting of the corresponding
+item of each sequence, substituting None for missing values when not all
+sequences have the same length.  If the function is None, return a list of
+the items of the sequence (or a list of tuples if more than one sequence).
+Type:      builtin_function_or_method
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;下面三个例子参考了&lt;a href=&#34;http://my.oschina.net/zyzzy/blog/115096&#34;&gt;该博文&lt;/a&gt;
+​
+对可迭代函数&amp;rsquo;iterable&amp;rsquo;中的每一个元素应用‘function’方法，将结果作为list返回。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def add100(x):
+    return x+100
+hh = [11,22,33]
+map(add100,hh)
+Out[2]:
+[111, 122, 133]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果给出了额外的可迭代参数，则对每个可迭代参数中的元素‘并行’的应用‘function’。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;def abc(a, b, c):
+    return a*10000 + b*100 + c
+​
+list1 = [11,22,33]
+list2 = [44,55,66]
+list3 = [77,88,99]
+map(abc,list1,list2,list3)
+Out[3]:
+[114477, 225588, 336699]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果&amp;rsquo;function&amp;rsquo;给出的是‘None’，自动假定一个‘identity’函数（这个‘identity’不知道怎么解释，看例子吧）&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;list1 = [11,22,33]
+map(None,list1)
+Out[5]:
+[11, 22, 33]
+
+
+list1 = [11,22,33]
+list2 = [44,55,66]
+list3 = [77,88,99]
+map(None,list1,list2,list3)
+Out[6]:
+[(11, 44, 77), (22, 55, 88), (33, 66, 99)]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;zip函数&#34;&gt;zip函数&lt;/h4&gt;
+
+&lt;p&gt;以下参考了&lt;a href=&#34;http://www.bkjia.com/Pythonjc/664161.html&#34;&gt;博文&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;函式说明：zip(seq1[,seq2 [&amp;hellip;]])-&amp;gt;[(seq1(0),seq2(0)&amp;hellip;,(&amp;hellip;)]。 同时循环两个一样长的函数，返回一个包含每个参数元组对应元素的元组。若不一致，采取截取方式，使得返回的结果元组的长度为各参数元组长度最小值。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;for x,y in zip([1,2,3],[4,5,6]):
+    print x,y
+for x,y in zip([1,2,3],[4,5,6]):
+    print x,y
+1 4
+2 5
+3 6
+
+
+for x,y in zip([1,2,3],[5,6]):
+    print x,y
+1 5
+2 6
+        
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;filter函数&#34;&gt;filter函数&lt;/h4&gt;
+
+&lt;p&gt;filter(bool_func,seq)：此函数的功能相当于过滤器。 调用一个布尔函数bool_func来迭代遍历每个seq中的元素，返回一个使bool_seq返回值为true的元素的序列。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;filter(lambda x:x%2==0,[1,2,3,4,6,5,7])
+Out[15]:
+[2, 4, 6]   
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;reduce函数&#34;&gt;reduce函数&lt;/h4&gt;
+
+&lt;p&gt;reduce(func,seq[,init])：func为二元函数，将func作用于seq序列的元素，每次携带一对（先前的结果以及下一个序列的元素），连续的将现有的结果和下一个值作用在获得的随后的结果上，最后减少我们的序列为一个单一的返回值：如果初始值init给定，第一个比较会是init和第一个序列元素而不是序列的头两个元素。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;reduce(lambda x,y:x+y,[1,2,3,4])
+Out[22]:
+10
+
+reduce(lambda x,y: x-y,[1,2,3,4,5],19)
+reduce(lambda x,y: x-y,[1,2,3,4,5],19)
+Out[23]:
+4
+
+reduce(lambda x,y: x-y,[1,2,3,5],5)
+Out[21]:
+-6
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;isinstance&#34;&gt;isinstance&lt;/h4&gt;
+
+&lt;p&gt;isinstance(object, classinfo)  判断一个对象是否是一个已知的类型。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;isinstance(object, class-or-type-or-tuple) -&amp;gt; bool
+
+Return whether an object is an instance of a class or of a subclass thereof.
+With a type as second argument, return whether that is the object&#39;s type.
+The form using a tuple, isinstance(x, (A, B, ...)), is a shortcut for
+isinstance(x, A) or isinstance(x, B) or ... (etc.).
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;其第一个参数为对象，第二个为类型名或类型名的一个列表。其返回值为布尔型。若对象的类型与参数二的类型相同则返回True。若参数二为一个元组，则若对象类型与元组中类型名之一相同即返回True。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tes = list()
+tes.append(3)
+ta= &#39;a&#39;,&#39;b&#39;
+print tes
+print isinstance(tes, list)
+print isinstance(ta, tuple)
+
+print isinstance(tes,(int, tuple, list))
+print isinstance(tes,(int, tuple))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Out:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    [3]
+    True
+    True
+    True
+    False
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;id&#34;&gt;id&lt;/h4&gt;
+
+&lt;p&gt;查看object 地址&lt;/p&gt;
+
+&lt;p&gt;in：
+&lt;code&gt;print id.__doc__
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Out：​
+ &lt;code&gt;id(object) -&amp;gt; integer
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    Return the identity of an object.  This is guaranteed to be unique among
+    simultaneously existing objects.  (Hint: it&#39;s the object&#39;s memory address.)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;assert&#34;&gt;assert&lt;/h4&gt;
+
+&lt;p&gt;断言&lt;/p&gt;
+
+&lt;p&gt;Python中assert用来判断语句的真假，如果&lt;strong&gt;为假的时候，将触发AssertionError错误&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;a = None
+assert a != None
+print a
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;out：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language----------------------------------------------------------------------------&#34;&gt;AssertionError                            Traceback (most recent call last)
+&amp;lt;ipython-input-1-4165ca7bb901&amp;gt; in &amp;lt;module&amp;gt;()
+      1
+      2 a = None
+----&amp;gt; 3 assert a != None
+      4 print a
+
+AssertionError:
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;另一例子：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;a=[1,2,3]
+# a = None
+assert len(a) &amp;lt; 5  # 为真通过
+assert a != None
+print a
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;out：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[1, 2, 3]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;min-max&#34;&gt;min &amp;amp;&amp;amp; max&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;c = [-10, -45, 0, 5, 3, 50, 15, -20, 25]
+
+print &amp;quot;min: %s&amp;quot; %c.index(min(c))  # 返回最小值
+print &amp;quot;max: %s&amp;quot; %c.index(max(c)) # 返回最大值
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;out:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;        min: 1
+        max: 5
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>python &amp;&amp; anaconda &amp;&amp; pycharm工具包安装</title>
+      <link>https://tmhm.github.io/2016/04/24/python--anaconda--pycharm%E5%B7%A5%E5%85%B7%E5%8C%85%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Sun, 24 Apr 2016 13:24:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/04/24/python--anaconda--pycharm%E5%B7%A5%E5%85%B7%E5%8C%85%E5%AE%89%E8%A3%85/</guid>
+      <description>
+
+&lt;p&gt;&lt;code&gt;$ conda update conda
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;更新pip:6688ab8f41a9d12e2503ffc3d92f68f8&#34;&gt;更新pip&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;python -m pip install --upgrade pip
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;更新所有:6688ab8f41a9d12e2503ffc3d92f68f8&#34;&gt;更新所有&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;conda update --all
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;安装ffmpeg:6688ab8f41a9d12e2503ffc3d92f68f8&#34;&gt;安装ffmpeg&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;conda install ffmpeg
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;不存在该包，用&lt;code&gt;anaconda search&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+[Anaconda2] C:\Users\xwei&amp;gt;anaconda search -t conda ffmpeg
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;groakat/ffmpeg-dev        |    2.4.3 | conda           | linux-64, win-64,osx-64
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;[Anaconda2] C:\Users\xwei&amp;gt;conda install -c https://conda.anaconda.org/groakat ffmpeg-dev&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;安装theano:6688ab8f41a9d12e2503ffc3d92f68f8&#34;&gt;安装theano&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://deeplearning.net/software/theano/install_windows.html#install-windows&#34;&gt;source for win-install&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://deeplearning.net/software/theano/install.html&#34;&gt;source for install&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://stackoverflow.com/questions/33671453/g-not-detected-while-data-set-goes-larger-is-there-any-limit-to-matrix-size&#34;&gt;stack overflow&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;[Anaconda2] C:\Users\xwei\Desktop\lstm-test&amp;gt;
+&amp;gt;anaconda search -t conda theano&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;jaikumarm/theano          |    0.8.2 | conda           | linux-64, win-32, win-64, linux-32, osx-64  : Optimizing compiler for evaluating mathematical expressions on CPUs and GPUs.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;[Anaconda2] C:\Users\xwei\Desktop\lstm-test&amp;gt;
+&amp;gt;conda install -c &lt;a href=&#34;https://conda.anaconda.org/jaikumarm&#34;&gt;https://conda.anaconda.org/jaikumarm&lt;/a&gt; theano&lt;/p&gt;
+
+&lt;p&gt;[Anaconda2] C:\Users\xwei\Desktop\lstm-test&amp;gt;python lstm.py&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;WARNING (theano.configdefaults): g++ not detected ! Theano will be unable to execute optimized C-implementations (for both CPU and GPU) and will default to Python implementations. Performance will be severely degraded. To remove this warning, set Theano flags cxx to an empty string.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+&lt;li&gt;[Anaconda2] C:\Users\xwei&amp;gt; &lt;strong&gt;conda install mingw libpython&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;之后即可以在anaconda Prompt 里面直接调用theano ，包括g++&lt;/li&gt;
+&lt;li&gt;运行&lt;a href=&#34;http://www.deeplearning.net/tutorial/lstm.html#lstm&#34;&gt;LSTM Networks for Sentiment Analysis&lt;/a&gt; 明显快了很多很多，直接在cpu下运行纯python代码，一两分钟才出来第一次迭代， 安装之后，运行c代码的时候，基本上两三秒一次迭代。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;安装出现anaconda-python-installation-error:6688ab8f41a9d12e2503ffc3d92f68f8&#34;&gt;安装出现Anaconda Python installation error&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201606/781469-20160612222301152-884209750.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;解决参考&lt;a href=&#34;http://stackoverflow.com/questions/34780267/anaconda-python-installation-error&#34;&gt;stackoverflow&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;First, open a DOS prompt and admin rights. Then, go to your Anaconda2\Scripts folder.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;conda update conda&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;and allow all updates. One of the updates should be menuinst.&lt;/p&gt;
+
+&lt;p&gt;Then, change to the Anaconda2\Lib directory, and type in the following command:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;..\python _nsis.py mkmenus&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Wait for this to complete, then check your Start menu for the new shortcuts.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Ipython notebook 一些技巧</title>
+      <link>https://tmhm.github.io/2016/04/20/ipython-notebook-%E4%B8%80%E4%BA%9B%E6%8A%80%E5%B7%A7/</link>
+      <pubDate>Wed, 20 Apr 2016 09:40:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/04/20/ipython-notebook-%E4%B8%80%E4%BA%9B%E6%8A%80%E5%B7%A7/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;在模块后面输入：？，运行可以显示说明；&lt;/li&gt;
+&lt;li&gt;输入：？？，运行可以显示源代码。&lt;/li&gt;
+&lt;li&gt;输入%matplotlib inline将matplotlib库导入，要显示的图片就可以嵌入到网页中了&lt;/li&gt;
+&lt;li&gt;%prun用于代码的执行性能分析，可以作为行命令和单元命令使用&lt;/li&gt;
+&lt;li&gt;在网页中输入%pylab inline，将自动导入SciPy、NumPy、Matplotlib模块&lt;/li&gt;
+&lt;li&gt;显示行号：在编辑模式，esc键启用之后，按键盘L键，即可开启当前单元格行号&lt;/li&gt;
+&lt;li&gt;esc进入命令模式，然后按h键进入快捷键帮助界面。&lt;/li&gt;
+&lt;li&gt;多查看&lt;a href=&#34;https://plot.ly/python/ipython-notebook-tutorial/&#34;&gt;Ipython notebook tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

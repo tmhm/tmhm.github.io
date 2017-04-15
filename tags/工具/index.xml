@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>工具 on Well</title>
+    <link>https://tmhm.github.io/tags/%E5%B7%A5%E5%85%B7/</link>
+    <description>Recent content in 工具 on Well</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-EN</language>
+    <managingEditor>wells217@163.com (Well)</managingEditor>
+    <webMaster>wells217@163.com (Well)</webMaster>
+    <copyright>(c) 2017 Well.</copyright>
+    <lastBuildDate>Tue, 21 Mar 2017 09:34:20 +0800</lastBuildDate>
+    <atom:link href="https://tmhm.github.io/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>word每页添加不同的页眉及目录信息</title>
+      <link>https://tmhm.github.io/2017/03/21/word%E6%AF%8F%E9%A1%B5%E6%B7%BB%E5%8A%A0%E4%B8%8D%E5%90%8C%E7%9A%84%E9%A1%B5%E7%9C%89%E5%8F%8A%E7%9B%AE%E5%BD%95%E4%BF%A1%E6%81%AF/</link>
+      <pubDate>Tue, 21 Mar 2017 09:34:20 +0800</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2017/03/21/word%E6%AF%8F%E9%A1%B5%E6%B7%BB%E5%8A%A0%E4%B8%8D%E5%90%8C%E7%9A%84%E9%A1%B5%E7%9C%89%E5%8F%8A%E7%9B%AE%E5%BD%95%E4%BF%A1%E6%81%AF/</guid>
+      <description>
+
+&lt;h3 id=&#34;添加页眉&#34;&gt;添加页眉&lt;/h3&gt;
+
+&lt;p&gt;参考了&lt;a href=&#34;https://zhidao.baidu.com/question/18216054.html&#34;&gt;知道网页&lt;/a&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;设置不同的节，以节为单位添加页眉&lt;/li&gt;
+&lt;li&gt;手动方式：在每一节的第一页添加页眉，然后设置&lt;strong&gt;不要链接到上一页眉&lt;/strong&gt;，依次添加新一节的页眉即可。&lt;/li&gt;
+&lt;li&gt;自动方式：对于很多章节，手动就有点自找麻烦了。用插入&lt;strong&gt;域&lt;/strong&gt;的方法。
+
+&lt;ol&gt;
+&lt;li&gt;word2010为例，在奇数页页眉，依次找到&lt;code&gt;插入-&amp;gt;文档部件-&amp;gt;域&lt;/code&gt;；&lt;/li&gt;
+&lt;li&gt;选择类别&lt;code&gt;链接与引用&lt;/code&gt;，域名&lt;code&gt;StyleRef&lt;/code&gt;，域属性&lt;code&gt;标题1&lt;/code&gt;；&lt;/li&gt;
+&lt;li&gt;确定即可。&lt;/li&gt;
+&lt;li&gt;在偶数页插入&lt;code&gt;论文的题目标题&lt;/code&gt;，注意此处需要选择&lt;strong&gt;链接到上一页眉&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;页眉添加完毕。&lt;/p&gt;
+
+&lt;h3 id=&#34;添加图表目录&#34;&gt;添加图表目录&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;在图下，或者表上位置，点击&lt;code&gt;引用-&amp;gt;插入题注-&amp;gt;选择标签&lt;/code&gt;，确定即可。&lt;/p&gt;
+
+&lt;p&gt;在插入的时候可以在每一章新建标签，比如第二章，设置标签为&lt;code&gt;图2.&lt;/code&gt;，编号选择不包括章节，然后系统会自动给你设置一位数，并且前面加上设置的标签，即&lt;code&gt;图2.1，图2.2，...&lt;/code&gt;这样设置的新标签可能会给后面的插入图表目录带来一个小问题。到时再说明。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;在插入目录的地方，选择&lt;code&gt;引用-&amp;gt;插入表目录&lt;/code&gt;根据设置&lt;code&gt;题注标签&lt;/code&gt;的不同，我们可以依次插入图2，图3标签的目录，但是会出现的问题是，中间出现一行空格。如下图&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tmhm.github.io/images/word目录1.jpg&#34; alt=&#34;&#34; title=&#34;示图1&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;并且只能从后一行删除，删除后会将第一行的格式改变。如下图
+&lt;img src=&#34;https://tmhm.github.io/images/word目录2.jpg&#34; alt=&#34;&#34; title=&#34;示图2&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;用正常格式的目录，使用&lt;strong&gt;格式刷&lt;/strong&gt;，可以刷回正常的格式。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Teamviewer无法远程登录主机用户</title>
+      <link>https://tmhm.github.io/2017/03/03/teamviewer%E6%97%A0%E6%B3%95%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E4%B8%BB%E6%9C%BA%E7%94%A8%E6%88%B7/</link>
+      <pubDate>Fri, 03 Mar 2017 12:05:02 +0800</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2017/03/03/teamviewer%E6%97%A0%E6%B3%95%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E4%B8%BB%E6%9C%BA%E7%94%A8%E6%88%B7/</guid>
+      <description>
+
+&lt;h3 id=&#34;问题描述:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;问题描述&lt;/h3&gt;
+
+&lt;p&gt;win10 升级后，主机在锁屏状态下，Teamviewer无法远程登录账户，防火墙已关闭，无人值守访问不了&lt;/p&gt;
+
+&lt;h3 id=&#34;解决方式:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;解决方式：&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;注意主从机的版本一致&lt;/li&gt;
+&lt;li&gt;注意开启了“授权轻松访问”，用金山毒霸查杀系统之后，会修复使Teamviewer 不具有管理员权限，导致开启轻松访问，并不能远程登录，出现的情况就是可以连接，就是登录不了，输入键盘没反应。&lt;/li&gt;
+&lt;li&gt;重装，装的时候开启无人值守，轻松访问，即帮你自动设置好了。如下示图。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tmhm.github.io/images/无人值守访问.jpg&#34; alt=&#34;&#34; title=&#34;示图1&#34; /&gt;
+&lt;img src=&#34;https://tmhm.github.io/images/授权轻松访问.jpg&#34; alt=&#34;&#34; title=&#34;示图2&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;问题并未终结:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;问题并未终结&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;当主机重启之后，Teamviewer的授权轻松访问的钩被去掉了，所以远程不能登录主机，即当主机锁屏的时候，Teamviewer可以连接到主机，但是远程不能登录主机账号。&lt;/li&gt;
+&lt;li&gt;重点应该在于开启&lt;strong&gt;授权轻松访问&lt;/strong&gt;，而跟windows登录的关系不在于此处。如图&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://tmhm.github.io/images/teamviewer配置原因.jpg&#34; alt=&#34;&#34; title=&#34;示图3&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;尝试方案:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;尝试方案&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;不能直接勾选【授权轻松访问】选项，显示需要管理员登录，于是设置程序的【兼容性】属性，“以管理员身份运行程序”。&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;并且勾选了随计算机开机启动，总是不能自动启动，可能是win10的安全配置所致，于是手动加入启动项：&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Win+R打开运行程序，运行&lt;code&gt;shell:startup&lt;/code&gt;，&lt;/li&gt;
+&lt;li&gt;将teamviewer的快捷方式，拉入该文件目录。&lt;/li&gt;
+&lt;li&gt;手动加入启动设置完毕。然而，重启，并不能启动teamviewer12.并且&lt;strong&gt;设置里面的授权轻松访问&lt;/strong&gt;已被清零！,现在&lt;strong&gt;锁屏状态下再次不能访问登录!&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;尝试&lt;strong&gt;再次重装&lt;/strong&gt;后，在首页，将随windows 一同启动Teamviewer，分配设备，授权轻松访问全部选上，既可以在设置选项里面看到打开了授权访问。并且&lt;strong&gt;重装后的teamviewer是可以锁屏登录的！&lt;/strong&gt;，可恶的win10设置！&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;待解决:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;待解决&lt;/h3&gt;
+
+&lt;p&gt;ubuntu 14.04下的Teamviewer也登录不了，本来用着好的Teamviewer，现在却登录不了。苦于不在主机旁，只能用命令重新安装之，参考了&lt;a href=&#34;http://blog.csdn.net/dreamhai/article/details/57080531&#34;&gt;博文&lt;/a&gt;，先在虚拟机上实现，却发现问题。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;wget https://downloadus1.teamviewer.com/download/version_12x/teamviewer_12.0.71510_i386.deb
+
+sudo dpkg -i teamviewer_12.0.71510_i386.deb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;由于64bits系统和32bits程序的不兼容性，故需要添加32bits 架构&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo dpkg --add-architecture i386
+sudo apt-get update
+sudo apt-get install -f
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在虚拟机ubuntu14.04上安装之。&lt;code&gt;sudo dpkg -i teamviewer_12.0.71510_i386.deb
+&lt;/code&gt;
+总是显示安装错误！&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(Reading database ... 324209 files and directories currently installed.)
+Preparing to unpack teamviewer_12.0.71510_i386.deb ...
+Unpacking teamviewer (12.0.71510) over (12.0.71510) ...
+dpkg: dependency problems prevent configuration of teamviewer:
+ teamviewer depends on libdbus-1-3.
+ teamviewer depends on libsm6.
+
+dpkg: error processing package teamviewer (--install):
+ dependency problems - leaving unconfigured
+Processing triggers for mime-support (3.54ubuntu1.1) ...
+Processing triggers for gnome-menus (3.10.1-0ubuntu2) ...
+Processing triggers for desktop-file-utils (0.22-1ubuntu1) ...
+Processing triggers for bamfdaemon (0.5.1+14.04.20140409-0ubuntu1) ...
+Rebuilding /usr/share/applications/bamf-2.index...
+Processing triggers for hicolor-icon-theme (0.13-1) ...
+Errors were encountered while processing:
+ teamviewer
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;前文稍微有点细节【补充】&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo dpkg --add-architecture i386
+//先执行前面一句，一般会报错，报错之后再执行下面两句，安装依赖
+sudo apt-get update
+sudo apt-get install -f
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;弹出没有启动daemon服务，启动之，
+&lt;code&gt;sudo teamviewer --daemon start&lt;/code&gt;， no work.&lt;/p&gt;
+
+&lt;p&gt;更加奇怪的是，服务器ubuntu 上的Teamviewer不登录任何账号的时候，可以直接远程访问了。&lt;/p&gt;
+
+&lt;h3 id=&#34;一些有用的命令:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;一些有用的命令&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;获取Teamviewer的ID&lt;code&gt;teamviewer --info&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;设置密码&lt;code&gt;sudo teamviewer --passwd [newpw]&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;修改配置文件以接受licence&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;停止服务&lt;code&gt;sudo teamviewer --daemon stop&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;在&lt;code&gt;/opt/teamviewer/config/global.conf&lt;/code&gt;文件最后添加两行
+&lt;code&gt;
+[int32] EulaAccepted = 1 
+[int32] EulaAcceptedRevision = 6 
+&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;重启服务&lt;code&gt;sudo teamviewer --daemon start&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;粗暴解决:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;粗暴解决&lt;/h3&gt;
+
+&lt;p&gt;在一台新的win10系统下，发现teamviewer，可以重启使用，突然想起，曾经用驱动精灵和金山毒霸进行过优化，于是，卸载之，并取消他们的优化，再安装teamviewer，发现可以正常使用了。
+&lt;strong&gt;都是过度优化惹得祸！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;还原优化后，同时&lt;strong&gt;在win10上也可以正常使用shadowsocks了&lt;/strong&gt;。曾经可用，突然用不了，找各种原因都没解决。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>生成.eps文件方法</title>
+      <link>https://tmhm.github.io/2016/10/31/%E7%94%9F%E6%88%90.eps%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Mon, 31 Oct 2016 10:15:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/10/31/%E7%94%9F%E6%88%90.eps%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95/</guid>
+      <description>
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;背景：&lt;/strong&gt;
+要写论文了，图像的分辨率是一大痛点&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;方法一&#34;&gt;方法一：&lt;/h3&gt;
+
+&lt;p&gt;两步生成.eps文件&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;用visio 制作图形，保存为pdf格式；&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;直接用adobe acrobat 打开pdf，然后保存为.eps 格式即可。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;方法二&#34;&gt;方法二：&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;参考：&lt;a href=&#34;http://chrisalbon.com/python/matplotlib_save_a_plot_as_vector.html&#34;&gt;Save A Matplotlib Plot As A Vector&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;可以用python直接生成.eps文件&lt;/p&gt;
+
+&lt;p&gt;plt.savefig(&amp;laquo;./plteps.eps&amp;raquo;, format=&amp;lsquo;eps&amp;rsquo;, dpi=1000)&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;有网友说，需要安装 &lt;a href=&#34;http://www.ghostscript.com/&#34;&gt;Ghostscript&lt;/a&gt;,&lt;/p&gt;
+
+&lt;p&gt;亲测，不需要&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;eg.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import matplotlib.pyplot as plt
+from math import sin
+i = [x for x in xrange(-10,10,1)]
+j = [x**2 for x in i]
+
+plt.plot(i, j, linewidth=2.0, color=&#39;r&#39;)
+# plt.show()
+plt.savefig(&#39;./plteps.eps&#39;, format=&#39;eps&#39;, dpi=1000)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;不能打开plt.show 否则，生成不了有效的eps文件&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;注释掉show，即可以正常生成eps文件。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;note:&lt;/strong&gt;
+图形不能设置字体为Times New Roman，否则，生成不了。&lt;/p&gt;
+
+&lt;p&gt;e.g.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;font = {&#39;family&#39; : &#39;Times New Roman&#39;, #&#39;serif&#39;,
+                &#39;color&#39;  : &#39;black&#39;,
+                &#39;weight&#39; : &#39;normal&#39;,
+                &#39;size&#39;   : 35,
+                }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;截图图片转换-eps&#34;&gt;截图图片转换.eps&lt;/h3&gt;
+
+&lt;h4 id=&#34;方法1&#34;&gt;方法1&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;用FastStone capture 截图，然后直接生成pdf；&lt;/li&gt;
+&lt;li&gt;用adobe acrobat 打开pdf，然后保存为.eps 格式即可。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;方法2&#34;&gt;方法2&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;上述方法1，当图片比较大的时候，会出现生成的eps文件只有一部分，会有黑色框。&lt;/li&gt;
+&lt;li&gt;然后，尝试用jpg转eps的&lt;a href=&#34;http://www.tlhiv.org/rast2vec/&#34;&gt;在线工具&lt;/a&gt;，以及&lt;a href=&#34;http://blog.sina.com.cn/s/blog_5410e7b50101lme2.html&#34;&gt;该博文中的方法&lt;/a&gt;皆只生成部分。&lt;/li&gt;
+&lt;li&gt;可以采用corel draw 中的photo point 另存为eps 文件，即可以得到大分辨率，大张图片的eps文件了。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;NOTE：&lt;/strong&gt;从视频中截图的时候用faststone capture 截图要比视频播放软件（e.g qq影音）自带生成截图功能略差。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>再探VIM配置</title>
+      <link>https://tmhm.github.io/2016/09/02/%E5%86%8D%E6%8E%A2vim%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Fri, 02 Sep 2016 16:13:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/09/02/%E5%86%8D%E6%8E%A2vim%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;最初找到这个发行版&lt;a href=&#34;https://github.com/spf13/spf13-vim&#34;&gt;spf13-vim&lt;/a&gt;，在ubuntu上用的还比较方便，有很多插件；最近在mac上用，总是不兼容vim，用brew安装了最新的vim，还是跟系统不兼容，总是有问题，于是就找到了下面第二个配置。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/j1z0/vim-config&#34;&gt;vim－config&lt;/a&gt;，这哥们基于vundle配置了一些有用的插件，国内有某君翻译了&lt;a href=&#34;http://codingpy.com/article/vim-and-python-match-in-heaven/&#34;&gt;他的博文&lt;/a&gt;.美中不足的是，安装有问题，有几处安装不成功。使用的时候也是有问题。在翻译的文章最后，编者才告知有问题，但是并没有给出解决的办法。于是我又开始自己造轮子了。&lt;/li&gt;
+&lt;li&gt;拷贝默认的配置文件 &lt;code&gt;$ cp /usr/sh are/vim/vimrc ~/.vimrc&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;编辑文件 &lt;code&gt;$ vim ~/.vimrc&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;安装Vundle: &lt;code&gt;$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;将插件管理器&lt;a href=&#34;https://github.com/VundleVim/Vundle.vim&#34;&gt;vundle&lt;/a&gt;的Configure Plugins:拿过来&lt;/li&gt;
+&lt;li&gt;再借用了上面&lt;a href=&#34;https://github.com/j1z0/vim-config&#34;&gt;vim－config&lt;/a&gt;中的高亮颜色插件，折叠等,并参考了该&lt;a href=&#34;http://www.jianshu.com/p/a0b901307b76&#34;&gt;博文&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;于是得到下面的配置文件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;set nocompatible              &amp;quot; be iMproved, required
+filetype off                  &amp;quot; required
+
+&amp;quot; set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+&amp;quot; alternatively, pass a path where Vundle should install plugins
+&amp;quot;call vundle#begin(&#39;~/some/path/here&#39;)
+
+&amp;quot; let Vundle manage Vundle, required
+Plugin &#39;VundleVim/Vundle.vim&#39;
+
+&amp;quot; The following are examples of different formats supported.
+&amp;quot; Keep Plugin commands between vundle#begin/end.
+&amp;quot; plugin on GitHub repo
+&amp;quot;Plugin &#39;tpope/vim-fugitive&#39;
+&amp;quot; plugin from http://vim-scripts.org/vim/scripts.html
+&amp;quot;Plugin &#39;L9&#39;
+&amp;quot; Git plugin not hosted on GitHub
+&amp;quot;Plugin &#39;git://git.wincent.com/command-t.git&#39;
+&amp;quot; git repos on your local machine (i.e. when working on your own plugin)
+&amp;quot;Plugin &#39;file:///home/gmarik/path/to/plugin&#39;
+&amp;quot; The sparkup vim script is in a subdirectory of this repo called vim.
+&amp;quot; Pass the path to set the runtimepath properly.
+&amp;quot;Plugin &#39;rstacruz/sparkup&#39;, {
+&#39;rtp&#39;
+        : &#39;vim/&#39;
+}
+&amp;quot; Install L9 and avoid a Naming conflict if you&#39;ve already installed a
+&amp;quot;different version somewhere else.
+&amp;quot;Plugin &#39;ascenator/L9&#39;, {&#39;name&#39;: &#39;newL9&#39;}
+
+&amp;quot;&amp;quot;code folding
+Plugin &#39;tmhedberg/SimpylFold&#39;
+
+&amp;quot;Colors!!!
+Plugin &#39;altercation/vim-colors-solarized&#39;
+Plugin &#39;jnurmine/Zenburn&#39;
+
+
+&amp;quot; All of your Plugins must be added before the following line
+call vundle#end()            &amp;quot; required
+filetype plugin indent on    &amp;quot; required
+&amp;quot; To ignore plugin indent changes, instead use:
+&amp;quot;filetype plugin on
+&amp;quot;
+&amp;quot; Brief help
+&amp;quot; :PluginList       - lists configured plugins
+&amp;quot; :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+&amp;quot; :PluginSearch foo - searches for foo; append `!` to refresh local cache
+&amp;quot; :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+&amp;quot;
+&amp;quot; see :h vundle for more details or wiki for FAQ
+&amp;quot; Put your non-Plugin stuff after this line
+
+&amp;quot; ==================
+
+&amp;quot; Configuration file for vim
+set modelines=0         &amp;quot; CVE-2007-2438
+
+&amp;quot; Normally we use vim-extensions. If you want true vi-compatibility
+&amp;quot; remove change the following statements
+&amp;quot;set nocompatible       &amp;quot; Use Vim defaults instead of 100% vi compatibility
+set backspace=2         &amp;quot; more powerful backspacing
+
+&amp;quot; Don&#39;t write backup file if vim is being called by &amp;quot;crontab -e&amp;quot;
+au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
+&amp;quot; Don&#39;t write backup file if vim is being called by &amp;quot;chpass&amp;quot;
+au BufWrite /private/etc/pw.* set nowritebackup nobackup
+
+set number
+
+&amp;quot;filetype on
+
+set history=1000
+
+&amp;quot; 启动的时候黑色背景，关闭，启动的时候彩色，后面有设置F5切换
+&amp;quot;set background=dark
+
+&amp;quot;语法高亮
+&amp;quot; For full syntax highlighting:
+let python_highlight_all=1
+syntax on
+
+set autoindent
+
+set smartindent
+
+set tabstop=4
+
+set shiftwidth=4
+
+set showmatch
+
+&amp;quot;当vim进行编辑时，如果命令错误，会发出一个响声，该设置去掉响声
+set vb t_vb=
+
+&amp;quot;在编辑过程中，在右下角显示光标位置的状态行
+set ruler
+
+set incsearch
+
+&amp;quot;默认情况下，寻找匹配是高亮度显示的，该设置关闭高亮显示
+
+&amp;quot;set nohls
+
+&amp;quot;custom keys
+let mapleader=&amp;quot; &amp;quot;
+map &amp;lt;leader&amp;gt;g  :YcmCompleter GoToDefinitionElseDeclaration&amp;lt;CR&amp;gt;
+&amp;quot;&amp;quot;
+call togglebg#map(&amp;quot;&amp;lt;F5&amp;gt;&amp;quot;)
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;最后别忘了
+在vim界面输入&lt;code&gt;:PluginInstall&lt;/code&gt;安装&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201609/781469-20160903112937168-1853675546.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;为方便有兴趣的同学使用，我将配置文件放到&lt;a href=&#34;https://github.com/tmhm/vim-config&#34;&gt;github&lt;/a&gt;上了,只要clone下来，进入该文件目录下，执行&lt;code&gt;setup_vim.sh&lt;/code&gt;即可。&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Enjoy it～&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>vim初探</title>
+      <link>https://tmhm.github.io/2016/05/21/vim%E5%88%9D%E6%8E%A2/</link>
+      <pubDate>Sat, 21 May 2016 01:49:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/05/21/vim%E5%88%9D%E6%8E%A2/</guid>
+      <description>&lt;p&gt;https://github.com/spf13/spf13-vim&lt;/p&gt;
+&lt;p&gt;安装了此博主的开源项目。&lt;/p&gt;
+&lt;p&gt;：vsp &amp;nbsp; &amp;mdash;&amp;mdash;竖分屏&lt;/p&gt;
+&lt;p&gt;：sp &amp;nbsp;　&amp;mdash;&amp;mdash;横分屏&amp;nbsp;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>spss v21.0 使用笔记</title>
+      <link>https://tmhm.github.io/2016/05/14/spss-v21.0-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sat, 14 May 2016 14:50:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/05/14/spss-v21.0-%E4%BD%BF%E7%94%A8%E7%AC%94%E8%AE%B0/</guid>
+      <description>
+
+&lt;p&gt;有问题，戳&lt;a href=&#34;http://www.ibm.com/support/knowledgecenter/SSLVMB_23.0.0/spss/base/chart_creation_dualy.dita?lang=zh&#34;&gt;官方帮助文档&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;神经网络&#34;&gt;神经网络&lt;/h4&gt;
+
+&lt;p&gt;&lt;em&gt;分析-神经网络-多层感知机&lt;/em&gt;&lt;/p&gt;
+
+&lt;h5 id=&#34;变量&#34;&gt;变量。&lt;/h5&gt;
+
+&lt;p&gt;&lt;em&gt;分析-神经网络-多层感知机-变量&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;预测变量可指定为因子（分类）或协变量（刻度）。&lt;/li&gt;
+&lt;li&gt;在因变量框输入&lt;strong&gt;预测Y&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;因子框 必须是&lt;strong&gt;分类的数据&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;协变量允许各种类型的数据&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;频率分析&#34;&gt;频率分析&lt;/h4&gt;
+
+&lt;p&gt;&lt;em&gt;分析-描述统计-频率&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;在统计量里面可以添加选择中位数、众数等&lt;/li&gt;
+&lt;li&gt;在图表选项可以添加直方图等&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;画图&#34;&gt;画图&lt;/h4&gt;
+
+&lt;p&gt;&lt;em&gt;图形-旧对话框-&amp;gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;画双y轴图&#34;&gt;画双y轴图&lt;/h4&gt;
+
+&lt;p&gt;&lt;em&gt;图形-图表构建程序- 在选择范围框里面选：双轴&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

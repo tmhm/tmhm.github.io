@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>数据的对齐  &middot; Well</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<meta name="description" content="数据的对齐在嵌入式开发中很重要，当然，很多软件公司喜欢用来面试之用。" />
+
+<meta name="keywords" content="算法, ">
+
+
+<meta property="og:title" content="数据的对齐  &middot; Well ">
+<meta property="og:site_name" content="Well"/>
+<meta property="og:url" content="https://tmhm.github.io/2016/08/30/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AF%B9%E9%BD%90/" />
+<meta property="og:locale" content="en-EN">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:description" content="数据的对齐在嵌入式开发中很重要，当然，很多软件公司喜欢用来面试之用。"/>
+<meta property="og:article:published_time" content="2016-08-30T10:50:00Z" />
+<meta property="og:article:modified_time" content="2016-08-30T10:50:00Z" />
+
+  
+    
+<meta property="og:article:tag" content="算法">
+    
+  
+
+  
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@" />
+<meta name="twitter:title" content="数据的对齐" />
+<meta name="twitter:description" content="数据的对齐在嵌入式开发中很重要，当然，很多软件公司喜欢用来面试之用。" />
+<meta name="twitter:url" content="https://tmhm.github.io/2016/08/30/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AF%B9%E9%BD%90/" />
+<meta name="twitter:domain" content="https://tmhm.github.io/">
+  
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Article",
+    "headline": "数据的对齐",
+    "author": {
+      "@type": "Person",
+      "name": "http://profiles.google.com/+?rel=author"
+    },
+    "datePublished": "2016-08-30",
+    "description": "数据的对齐在嵌入式开发中很重要，当然，很多软件公司喜欢用来面试之用。",
+    "wordCount":  525 
+  }
+</script>
+
+
+
+<link rel="canonical" href="https://tmhm.github.io/2016/08/30/%E6%95%B0%E6%8D%AE%E7%9A%84%E5%AF%B9%E9%BD%90/" />
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://tmhm.github.io/v2.png">
+<link href="https://tmhm.github.io/v2.png" rel="icon">
+
+<meta name="generator" content="Hugo 0.15" />
+
+  
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+<link href='https://fonts.googleapis.com/css?family=Merriweather:300%7CRaleway%7COpen+Sans' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://tmhm.github.io/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://tmhm.github.io/css/style.css">
+<link rel="stylesheet" href="https://tmhm.github.io/css/highlight/default.css">
+
+  
+  
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'Your Google Analytics tracking code', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+</head>
+<body>
+  <main id="main-wrapper" class="container main_wrapper has-sidebar">
+    <header id="main-header" class="container main_header">
+  <div class="container brand">
+  <div class="container title h1-like">
+  <a class="baselink" href="https://tmhm.github.io/">
+  芝麻无花
+
+</a>
+
+</div>
+
+  
+<div class="container topline">
+  
+  修行在当下
+
+
+</div>
+
+
+</div>
+
+  <nav class="container nav primary no-print">
+  
+
+<a class="homelink" href="https://tmhm.github.io/">home</a>
+
+
+  
+<a href="https://tmhm.github.io/about">About</a>
+
+<a href="https://tmhm.github.io/categories" title="Show list of categories">Categories</a>
+
+<a href="https://tmhm.github.io/post" title="Show list of posts">Posts</a>
+
+<a href="https://tmhm.github.io/tags" title="show list of tags">Tags</a>
+
+
+</nav>
+
+<div class="container nav secondary no-print">
+  
+<a id="contact-link-email" class="contact_link" href="mailto:wells217@163.com">
+  <span class="fa fa-envelope-square"></span><span>email</span></a>
+
+
+
+<a id="contact-link-github" class="contact_link" href="https://github.com/tmhm">
+  <span class="fa fa-github-square"></span><span>github</span></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+  
+
+</header>
+
+
+<article id="main-content" class="container main_content single">
+  <header class="container hat">
+  <h1>数据的对齐
+</h1>
+
+  <div class="metas">
+<time datetime="2016-08-30">30 Aug, 2016</time>
+
+
+  
+  &middot; Read in about 3 min
+  &middot; (525 Words)
+  <br>
+  
+<a class="label" href="https://tmhm.github.io/tags/%E7%AE%97%E6%B3%95">算法</a>
+
+
+
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+</div>
+
+  <br/>
+  <div class="container navigation no-print">
+  <h2>Navigation</h2>
+  
+  
+
+    
+    <a class="prev" href="https://tmhm.github.io/2016/08/30/c_cplus%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%B6%89%E5%8F%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9/" title="C_Cplus程序设计涉及的一些知识点">
+      Previous
+    </a>
+    
+
+    
+    <a class="next" href="https://tmhm.github.io/2016/08/30/%E6%95%B0%E5%AD%A6%E9%9A%8F%E8%AE%B0%E8%BD%AC/" title="数学随记（转）">
+      Next
+    </a>
+    
+
+  
+
+
+</div>
+
+</header>
+
+  <div class="container content">
+  
+
+<p>cpu在读写内存的时候，如果所给的地址是机器字长的整数倍，则操作效率会比较高，这可以称之为地址的对齐。</p>
+
+<p>在一般的32bits机器上，地址对齐的界线默认是4的整数倍。</p>
+
+<pre><code>struct my_struct {
+char ch1;  //1字节
+            char ch2; //1字节
+            int n; //4字节
+            char ch3; 1字节
+};//整个结构体在32bits系统占12个字节
+</code></pre>
+
+<p>对结构体类型采用sizeof操作符，得到的是结构体占用的内存字节数，包括所有的空闲字节，显然，这个值并不一定等于它的所有成员的大小之和。</p>
+
+<pre><code>#pragma pack(1) //将地址对齐界线改为1的整数
+struct my_struct {
+	char ch1;  //1字节
+	char ch2; //1字节
+	int n; //4字节
+	char ch3; 1字节
+};//整个结构体占7个字节
+#pragma pack() //将地址对齐界线改回原来的值
+</code></pre>
+
+<h4 id="对齐规则-参考-http-www-cnblogs-com-graphics-archive-2010-08-12-1797953-html:6e1b40b8b57ee22a0af6a446d958a932">对齐规则<a href="http://www.cnblogs.com/graphics/archive/2010/08/12/1797953.html">参考</a></h4>
+
+<blockquote>
+<p>该博文也给出了#pragma pack(show) 和#pragma pack(num)的说明以及在VS中的设置；默认num＝8.</p>
+
+<p>这内存宝贵的应用场合，比如嵌入式系统，一般要考虑对齐，一般原则，可以是从小到大排，把多个小字节变量放一起，并且跟对齐的大小对齐。</p>
+</blockquote>
+
+<p>一般来说，</p>
+
+<ul>
+<li>结构体的对齐规则是先按数据类型自身进行对齐，这里需要比较＃pragma pack(num)中num的数值和数据类型的大小，取小的作为基准；</li>
+<li>然后再按整个结构体进行对齐，对齐值必须是2的幂，比如1，2， 4， 8， 16。准确来讲，<strong>结构的总大小是其成员中最大类型的sizeof(该类型)整数倍。</strong></li>
+<li>如果一个类型按n字节对齐，那么该类型的变量起始地址必须是n的倍数。比如int按四字节对齐，那么int类型的变量起始地址一定是4的倍数，比如0x0012ff60，0x0012ff48等。</li>
+</ul>
+
+<h4 id="查看系统是多少位的:6e1b40b8b57ee22a0af6a446d958a932">查看系统是多少位的</h4>
+
+<blockquote>
+<p>file /sbin/init</p>
+</blockquote>
+
+<p><code>/sbin/init: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.24, BuildID[sha1]=7a4c688d009fc1f06ffc692f5f42ab09e68582b2, stripped
+</code></p>
+
+<blockquote>
+<p>file /bin/ls</p>
+</blockquote>
+
+<p><code>/bin/ls: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked (uses shared libs), for GNU/Linux 2.6.32, BuildID[sha1]=3bf9ca54ea5e261943509c2e47bc814bb1248921, stripped
+</code></p>
+
+<blockquote>
+<p>uname -a</p>
+</blockquote>
+
+<p><code>Linux ubuntu 3.13.0-79-generic #123-Ubuntu SMP Fri Feb 19 14:27:58 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
+</code></p>
+
+<blockquote>
+<p>cat /proc/version</p>
+</blockquote>
+
+<p><code>Linux version 3.13.0-79-generic (buildd@lcy01-24) (gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) ) #123-Ubuntu SMP Fri Feb 19 14:27:58 UTC 2016
+</code></p>
+
+<blockquote>
+<p>cat /etc/issue</p>
+</blockquote>
+
+<p><code>Ubuntu 15.04 \n \l
+</code></p>
+
+<h4 id="测试数据所占字节:6e1b40b8b57ee22a0af6a446d958a932">测试数据所占字节</h4>
+
+<blockquote>
+<p>因为在数据对齐的时候需要考虑是在什么系统下，各数据类型所占字节大小，纠正网上一些有问题的解答，比如long是只占4bits的。</p>
+</blockquote>
+
+<pre><code>cout &lt;&lt; &quot;char: &quot; &lt;&lt; sizeof(char) &lt;&lt; endl;
+cout &lt;&lt; &quot;short: &quot; &lt;&lt; sizeof(short) &lt;&lt; endl;
+cout &lt;&lt; &quot;int: &quot; &lt;&lt; sizeof(int) &lt;&lt; endl;
+cout &lt;&lt; &quot;long: &quot; &lt;&lt; sizeof(long) &lt;&lt; endl;
+cout &lt;&lt; &quot;unsigned long: &quot; &lt;&lt; sizeof(unsigned long) &lt;&lt; endl;
+cout &lt;&lt; &quot;long long: &quot; &lt;&lt; sizeof(long long) &lt;&lt; endl;
+//在vc6.0下不支持 long long 数据类型。
+cout &lt;&lt; &quot;double: &quot; &lt;&lt; sizeof(double) &lt;&lt; endl;
+cout &lt;&lt; &quot;char*: &quot; &lt;&lt; sizeof(char*) &lt;&lt; endl;
+</code></pre>
+
+<p><strong>32bit windows xp (VC6.0 IDE 32bits) 测试：</strong></p>
+
+<pre><code>    char: 1
+    short: 2
+    int: 4
+    long: 4
+    unsigned long: 4
+    double: 8
+    char*: 4
+</code></pre>
+
+<p><strong>64bit windows 10 (Dev-C++ 5.11 64bits的)测试：</strong>
+&gt; Window系统下的MinGW，总是编译为32位代码。因为MinGW只支持32位代码。</p>
+
+<pre><code>    char: 1
+    short: 2
+    int: 4
+    long: 4             // 不知道为什指针又是8字节的！！！
+    unsigned long: 4
+    long long: 8
+    double: 8
+    char*: 8            //指针所占内存大小有区别，每字节8位，跟总线搭配
+</code></pre>
+
+<p><strong>64bit ubuntu15.04 (g++ 4.8.4)测试：</strong></p>
+
+<pre><code>    char: 1
+    short: 2
+    int: 4
+    long: 8         // 8 !!
+    unsigned long: 8
+    long long: 8
+    double: 8
+    char*: 8    //指针所占内存大小有区别，每字节8位，跟总线搭配
+</code></pre>
+
+<p><strong>地址对齐</strong>的概念：</p>
+
+<ul>
+<li>由于硬件设计的特点，CPU在读写内存时，如果所给的地址是机器字长的整数倍，则操作效率会比较高。</li>
+<li>有的CPU甚至不支持读写地址不对齐的内存单元。</li>
+
+<li><p>为了提高程序运行的效率，编译器会尽量避免一个变量（包括结构体成员）的存储空间跨越地址对齐的界线。</p></li>
+
+<li><p>实验（64bits 环境）</p></li>
+</ul>
+
+<pre><code>
+#include &lt;iostream&gt;
+using namespace std;
+typedef struct{ 
+
+}test_null;          // test 1
+
+typedef struct{
+    double d1;  //8
+    char c1;    //1
+    short s1;   //补1+2
+    char ch2;   //1
+    int i1;     //补3+4+补4  =&gt; 24
+}testdouble;        // test 2   
+
+typedef struct{
+    int d1;     //4
+    char c1;    //1
+    short s1;   //fill 1 + 2
+    char ch2;   //1
+    int i1;     //fill 3 + 4  =&gt; 16
+}testint;           // test 3
+
+#pragma pack(2)
+typedef struct{
+    int d1;     //4
+    char c1;    //1
+    short s1;   //fill 1 +2
+    char ch2;   //1
+    int i1;     //fill 1 + 4  =&gt; 14
+}testint2; 
+
+class BU{
+     int number;                //4
+     union UBffer{
+         char buffer[13];//13
+         int number;    //4
+     }ubuf;                     //-&gt;13  
+     void foo(){}               //0
+     typedef char*(*f)(void*);  //0
+     enum{hdd,ssd,blueray}disk; //fill 1 + 4
+     int* a;                    //8         =&gt; 30
+}bu;                // test 4
+#pragma(4)
+
+#pragma pack(1) //
+ typedef struct {
+    char ch1;   //1
+    char ch2;   //1
+    int n;      //4
+    char ch3;   //1
+}stch3_1;   // -&gt; 7
+
+class clt_1{
+    char ch1;   //1
+    int a;      //4
+    short b;    //2
+    char c;     //1
+    stch3_1 st1;//7 =&gt; 15
+}st_inside;         // test 5
+#pragma pack(4) //
+
+</code></pre>
+
+<p><strong>输出控制:</strong></p>
+
+<ul>
+<li>64bits win10（GCC 4.9.2）测试结果：</li>
+</ul>
+
+<pre><code>    test null struct: 1
+    sizeof(bu): 30
+    sizeof(testdouble):24
+    sizeof(testint):16
+    sizeof(testint2):14
+    st_inside: 15,  inside stch3_1: 7
+</code></pre>
+
+<ul>
+<li>64bits ubuntu (gcc version 4.8.4 ) 测试结果：</li>
+</ul>
+
+<pre><code>    test null struct: 1
+    sizeof(bu): 30
+    sizeof(testdouble):24
+    sizeof(testint):16
+    sizeof(testint2):14
+    st_inside: 15,  inside stch3_1: 7
+</code></pre>
+
+<p><strong>注意：</strong></p>
+
+<ul>
+<li>空的结构体在linux系统中并不是0，它和windows 一样，均是占一个字节；</li>
+<li>long类型在32bits 是占4个字节，64bits 编译器中是8字节；</li>
+<li>在32bits 系统中指针是4字节，64bits系统占8字节，由于总线物理跟指针的空间是一样大的：4*8 -&gt; 32 ; 8*8 -&gt; 64 .</li>
+</ul>
+
+</div>
+
+
+  <footer class="container">
+  <div class="container navigation no-print">
+  <h2>Navigation</h2>
+  
+  
+
+    
+    <a class="prev" href="https://tmhm.github.io/2016/08/30/c_cplus%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%B6%89%E5%8F%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9/" title="C_Cplus程序设计涉及的一些知识点">
+      Previous
+    </a>
+    
+
+    
+    <a class="next" href="https://tmhm.github.io/2016/08/30/%E6%95%B0%E5%AD%A6%E9%9A%8F%E8%AE%B0%E8%BD%AC/" title="数学随记（转）">
+      Next
+    </a>
+    
+
+  
+
+
+</div>
+
+  <div class="container comments">
+  <h2>Comments</h2>
+  
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//wells217-github-io.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+</footer>
+
+</article>
+      <footer id="main-footer" class="container main_footer">
+  
+
+  <div class="container nav foot no-print">
+  
+<a href="https://tmhm.github.io/license">license</a>
+
+
+  
+<script src="/js/jquery.min.js" type="text/javascript"></script>
+<script>
+        $(window).on("scroll",function(e){
+        if($('body').scrollTop() >= 200  ){
+                $('#gotop').show();
+
+
+        }else{
+                $('#gotop').hide();
+        }
+});
+</script>
+<div class="ctrolPanel" id="gotop" style="display:none;width:50px;height:50px;position:fixed;right:25px;top:85%;overflow:hidden;z-index:10000;">
+  <a href="#"><img title="back to top" src="/top2.png" /></a>
+</div>
+
+</div>
+
+  <div class="container credits">
+  
+<div class="container footline">
+  
+  code with <i class='fa fa-heart'></i>
+
+
+</div>
+
+
+  
+<div class="container copyright">
+  
+  &copy; 2017 Well.
+
+ &nbsp; &nbsp;
+</div>
+
+
+</div>
+
+</footer>
+
+    </main>
+    
+<script type="text/javascript">
+  (function() {
+    
+    
+    if (window.location.hostname == "localhost")
+      return;
+
+    var dsq = document.createElement('script'); dsq.async = true; dsq.type = 'text/javascript';
+    dsq.src = '//wells217-github-io.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+
+<script src="https://tmhm.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+    
+  </body>
+</html>
+
