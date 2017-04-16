@@ -55,7 +55,7 @@
     },
     "datePublished": "2017-04-12",
     "description": "强化学习笔记（1）——RL相关问题的简单介绍",
-    "wordCount":  116 
+    "wordCount":  114 
   }
 </script>
 
@@ -175,6 +175,7 @@
 </header>
 
 
+
 <article id="main-content" class="container main_content single">
   <header class="container hat">
   <h1>RL笔记(1)-introduction
@@ -186,7 +187,7 @@
 
   
   &middot; Read in about 1 min
-  &middot; (116 Words)
+  &middot; (114 Words)
   <br>
   
 <a class="label" href="https://tmhm.github.io/tags/rl">RL</a>
@@ -300,17 +301,19 @@
 <li>$ \epsilon $ -greedy action selection（以小概率不贪心的选择方式）</li>
 
 <li><p>Softmax action selection（基于Gibbs分布或者称之为玻尔兹曼分布，以概率选择动作）
-$$ \cfrac{e^{Q<em>t(a)/\tau}}{\sum</em>{b=1}^n e^{Q_t(b)/\tau}}$$</p>
+<div>$$ \cfrac{e^{Q<em>t(a)/\tau}}{\sum</em>{b=1}^n e^{Q_t(b)/\tau}}$$</div></p>
 
 <p>$\tau &gt; 0 $表示温度（temperature）, 高的温度，选择动作近乎平等；温度趋近0的时候，此法接近于贪心选择。</p></li>
 </ul>
 
 <h4 id="refernece">refernece</h4>
 
-<p>[1] Sutton R S, Barto A G. Reinforcement learning: An introduction[M]. MIT press Cambridge, 1998.</p>
+<ol>
+<li><p>Sutton R S, Barto A G. Reinforcement learning: An introduction[M]. MIT press Cambridge, 1998.</p></li>
 
-<p>[2] David Silver. Lecture 1: Introduction to Reinforcement Learning
-Learning</p>
+<li><p>David Silver. Lecture 1: Introduction to Reinforcement Learning
+Learning</p></li>
+</ol>
 
 </div>
 
@@ -407,6 +410,10 @@ Learning</p>
 </div>
 
 </footer>
+<script type="text/javascript"
+	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
+
 
     </main>
     
