@@ -1260,7 +1260,7 @@ A[6] = 4
 
 &lt;p&gt;The goal is to calculate the value of every counter after all operations.&lt;/p&gt;
 
-&lt;h5 id=&#34;解法一:96ab9ad5d66234dff3bc5f35191df08d&#34;&gt;解法一：&lt;/h5&gt;
+&lt;h5 id=&#34;解法一&#34;&gt;解法一：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Detected time complexity: O(N*M)&lt;/li&gt;
@@ -1288,7 +1288,7 @@ A[6] = 4
     return ret
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;解法二:96ab9ad5d66234dff3bc5f35191df08d&#34;&gt;解法二&lt;/h5&gt;
+&lt;h5 id=&#34;解法二&#34;&gt;解法二&lt;/h5&gt;
 
 &lt;p&gt;[100%] MaxCounters
 &amp;gt;
@@ -2513,14 +2513,14 @@ lesson 7: &lt;i&gt;stacks and queues&lt;/i&gt;
       <guid>https://tmhm.github.io/2016/08/30/%E6%8C%89%E4%BD%8D%E6%93%8D%E4%BD%9C/</guid>
       <description>
 
-&lt;h3 id=&#34;异或:188da3200f3e3168ec2de8bd611c2110&#34;&gt;异或&lt;/h3&gt;
+&lt;h3 id=&#34;异或&#34;&gt;异或&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;异或自己 变成零&lt;/li&gt;
 &lt;li&gt;异或零，值不变&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;与:188da3200f3e3168ec2de8bd611c2110&#34;&gt;与 &amp;amp;&lt;/h3&gt;
+&lt;h3 id=&#34;与&#34;&gt;与 &amp;amp;&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;递归与自己的减一按位与，返回的是该数化为二进制数后，数字1的个数&lt;/li&gt;
@@ -2547,11 +2547,11 @@ lesson 7: &lt;i&gt;stacks and queues&lt;/i&gt;
       <guid>https://tmhm.github.io/2016/08/30/%E6%95%B0%E5%AD%A6%E9%9A%8F%E8%AE%B0%E8%BD%AC%E8%BD%BD/</guid>
       <description>
 
-&lt;h3 id=&#34;数学随记:f15f8ddb13e5e15f5ca6ebf995658e96&#34;&gt;数学随记&lt;/h3&gt;
+&lt;h3 id=&#34;数学随记&#34;&gt;数学随记&lt;/h3&gt;
 
 &lt;p&gt;转载自：&lt;a href=&#34;http://www.matrix67.com/blog/archives/4294&#34;&gt;随记：我们需要怎样的数学教育？&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;虚数i:f15f8ddb13e5e15f5ca6ebf995658e96&#34;&gt;虚数i&lt;/h3&gt;
+&lt;h3 id=&#34;虚数i&#34;&gt;虚数i&lt;/h3&gt;
 
 &lt;p&gt;虚数是什么？&lt;/p&gt;
 
@@ -2567,7 +2567,7 @@ lesson 7: &lt;i&gt;stacks and queues&lt;/i&gt;
 
 &lt;p&gt;没错，这就把数轴扩展到了整个平面，正好解决了复数没地方表示的问题。于是，复数的乘法可以解释为缩放加旋转，复数本身自然也就有了 z = r (cosθ + sinθi) 的表示方式。顺着这个道理推下去，一切都顺理成章了。复数不但有了几何解释，有时还能更便捷地处理几何问题&lt;/p&gt;
 
-&lt;h2 id=&#34;线性代数:f15f8ddb13e5e15f5ca6ebf995658e96&#34;&gt;线性代数&lt;/h2&gt;
+&lt;h2 id=&#34;线性代数&#34;&gt;线性代数&lt;/h2&gt;
 
 &lt;p&gt;此处&lt;a href=&#34;http://mathoverflow.net/questions/7584/what-are-the-most-misleading-alternate-definitions-in-taught-mathematics&#34;&gt;网页&lt;/a&gt;，有人一语道破线性代数的真谛。
 就好像把 x 变成 2 x 一样，我们经常需要把 (x, y) 变成 (2 x + y, x – 3 y) 之类的东西，这就叫做线性变换。&lt;/p&gt;
@@ -2624,7 +2624,7 @@ struct my_struct {
 #pragma pack() //将地址对齐界线改回原来的值
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;对齐规则-参考-http-www-cnblogs-com-graphics-archive-2010-08-12-1797953-html&#34;&gt;对齐规则&lt;a href=&#34;http://www.cnblogs.com/graphics/archive/2010/08/12/1797953.html&#34;&gt;参考&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;对齐规则-参考-http-www-cnblogs-com-graphics-archive-2010-08-12-1797953-html:6e1b40b8b57ee22a0af6a446d958a932&#34;&gt;对齐规则&lt;a href=&#34;http://www.cnblogs.com/graphics/archive/2010/08/12/1797953.html&#34;&gt;参考&lt;/a&gt;&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;该博文也给出了#pragma pack(show) 和#pragma pack(num)的说明以及在VS中的设置；默认num＝8.&lt;/p&gt;
@@ -2640,7 +2640,7 @@ struct my_struct {
 &lt;li&gt;如果一个类型按n字节对齐，那么该类型的变量起始地址必须是n的倍数。比如int按四字节对齐，那么int类型的变量起始地址一定是4的倍数，比如0x0012ff60，0x0012ff48等。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;查看系统是多少位的&#34;&gt;查看系统是多少位的&lt;/h4&gt;
+&lt;h4 id=&#34;查看系统是多少位的:6e1b40b8b57ee22a0af6a446d958a932&#34;&gt;查看系统是多少位的&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;file /sbin/init&lt;/p&gt;
@@ -2677,7 +2677,7 @@ struct my_struct {
 &lt;p&gt;&lt;code&gt;Ubuntu 15.04 \n \l
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;测试数据所占字节&#34;&gt;测试数据所占字节&lt;/h4&gt;
+&lt;h4 id=&#34;测试数据所占字节:6e1b40b8b57ee22a0af6a446d958a932&#34;&gt;测试数据所占字节&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;因为在数据对齐的时候需要考虑是在什么系统下，各数据类型所占字节大小，纠正网上一些有问题的解答，比如long是只占4bits的。&lt;/p&gt;
@@ -2849,7 +2849,7 @@ class clt_1{
       <guid>https://tmhm.github.io/2016/06/04/%E6%AF%94%E8%BE%83%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%85%E5%90%AB%E4%BB%A5%E5%8F%8A%E5%8F%98%E4%BD%8D%E8%AF%8D/</guid>
       <description>
 
-&lt;h5 id=&#34;description&#34;&gt;Description&lt;/h5&gt;
+&lt;h5 id=&#34;description:90262507d577af3b6d8bd16478af3fcf&#34;&gt;Description&lt;/h5&gt;
 
 &lt;p&gt;Write a method anagram(s,t) to decide if two strings are anagrams or not.&lt;/p&gt;
 
@@ -2859,7 +2859,7 @@ class clt_1{
 &lt;li&gt;Two strings are anagram if they can be the same after change the order of characters.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;example&#34;&gt;Example&lt;/h5&gt;
+&lt;h5 id=&#34;example:90262507d577af3b6d8bd16478af3fcf&#34;&gt;Example&lt;/h5&gt;
 
 &lt;p&gt;Given s = &amp;laquo;abcd&amp;raquo;, t = &amp;laquo;dcab&amp;raquo;, return true.&lt;/p&gt;
 
@@ -2867,7 +2867,7 @@ class clt_1{
 
 &lt;p&gt;Given s = &amp;laquo;ab&amp;raquo;, t = &amp;laquo;ac&amp;raquo;, return false.&lt;/p&gt;
 
-&lt;h5 id=&#34;solution&#34;&gt;solution：&lt;/h5&gt;
+&lt;h5 id=&#34;solution:90262507d577af3b6d8bd16478af3fcf&#34;&gt;solution：&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code&gt;class Solution:
     &amp;quot;&amp;quot;&amp;quot;
@@ -2895,9 +2895,9 @@ class clt_1{
             return False
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;compare-strings&#34;&gt;Compare Strings&lt;/h4&gt;
+&lt;h4 id=&#34;compare-strings:90262507d577af3b6d8bd16478af3fcf&#34;&gt;Compare Strings&lt;/h4&gt;
 
-&lt;h5 id=&#34;description-1&#34;&gt;Description&lt;/h5&gt;
+&lt;h5 id=&#34;description-1:90262507d577af3b6d8bd16478af3fcf&#34;&gt;Description&lt;/h5&gt;
 
 &lt;p&gt;Compare two strings A and B, determine whether A contains all of the characters in B.&lt;/p&gt;
 
@@ -2906,13 +2906,13 @@ class clt_1{
 &lt;p&gt;&lt;strong&gt;Notice&lt;/strong&gt;
 &amp;gt;The characters of B in A are not necessary continuous or ordered.&lt;/p&gt;
 
-&lt;h5 id=&#34;example-1&#34;&gt;Example&lt;/h5&gt;
+&lt;h5 id=&#34;example-1:90262507d577af3b6d8bd16478af3fcf&#34;&gt;Example&lt;/h5&gt;
 
 &lt;p&gt;For A = &amp;laquo;ABCD&amp;raquo;, B = &amp;laquo;ACD&amp;raquo;, return true.&lt;/p&gt;
 
 &lt;p&gt;For A = &amp;laquo;ABCD&amp;raquo;, B = &amp;laquo;AABC&amp;raquo;, return false.&lt;/p&gt;
 
-&lt;h5 id=&#34;solution-1&#34;&gt;solution&lt;/h5&gt;
+&lt;h5 id=&#34;solution-1:90262507d577af3b6d8bd16478af3fcf&#34;&gt;solution&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code&gt;class Solution:
     &amp;quot;&amp;quot;&amp;quot;
@@ -3173,16 +3173,16 @@ class clt_1{
 &lt;ul&gt;
 &lt;li&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#问题定义:0ba0c5309010af3a84f484f67a82e239&#34;&gt;问题定义&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#说明:0ba0c5309010af3a84f484f67a82e239&#34;&gt;说明：&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#最终得分机制:0ba0c5309010af3a84f484f67a82e239&#34;&gt;最终得分机制&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#问题定义&#34;&gt;问题定义&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#说明&#34;&gt;说明：&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#最终得分机制&#34;&gt;最终得分机制&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#思:0ba0c5309010af3a84f484f67a82e239&#34;&gt;思：&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;#思&#34;&gt;思：&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#初衷:0ba0c5309010af3a84f484f67a82e239&#34;&gt;初衷：&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#于是-开始慢慢地折腾和实现了:0ba0c5309010af3a84f484f67a82e239&#34;&gt;于是，开始慢慢地折腾和实现了 :-)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#算法描述:0ba0c5309010af3a84f484f67a82e239&#34;&gt;算法描述&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#缺陷-反思:0ba0c5309010af3a84f484f67a82e239&#34;&gt;缺陷-反思&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#初衷&#34;&gt;初衷：&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#于是-开始慢慢地折腾和实现了&#34;&gt;于是，开始慢慢地折腾和实现了 :-)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#算法描述&#34;&gt;算法描述&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#缺陷-反思&#34;&gt;缺陷-反思&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
@@ -3193,12 +3193,12 @@ class clt_1{
 
 &lt;p&gt;赛题源自“未来网络”业务发放中的路由计算问题。&lt;/p&gt;
 
-&lt;h6 id=&#34;问题定义:0ba0c5309010af3a84f484f67a82e239&#34;&gt;问题定义&lt;/h6&gt;
+&lt;h6 id=&#34;问题定义&#34;&gt;问题定义&lt;/h6&gt;
 
 &lt;p&gt;给定一个带权重的有向图G=(V,E)，V为顶点集，E为有向边集，每一条有向边均有一个权重。对于给定的顶点s、t，以及V的子集V&amp;rsquo;，寻找从s到t的不成环有向路径P，使得P经过V&amp;rsquo;中所有的顶点(对经过V&amp;rsquo;中节点的顺序不做要求)。
 若不存在这样的有向路径P，则输出无解，程序运行时间越短，则视为结果越优；若存在这样的有向路径P，则输出所得到的路径，路径的权重越小，则视为结果越优，在输出路径权重一样的前提下，程序运行时间越短，则视为结果越优。&lt;/p&gt;
 
-&lt;h6 id=&#34;说明:0ba0c5309010af3a84f484f67a82e239&#34;&gt;说明：&lt;/h6&gt;
+&lt;h6 id=&#34;说明&#34;&gt;说明：&lt;/h6&gt;
 
 &lt;ul&gt;
 &lt;li&gt;1）图中所有权重均为[1，20]内的整数；&lt;/li&gt;
@@ -3210,14 +3210,14 @@ class clt_1{
 
 &lt;li&gt;&lt;p&gt;7）路径的权重是指所有组成该路径的所有有向边的权重之和。&lt;/p&gt;
 
-&lt;h6 id=&#34;最终得分机制:0ba0c5309010af3a84f484f67a82e239&#34;&gt;最终得分机制&lt;/h6&gt;
+&lt;h6 id=&#34;最终得分机制&#34;&gt;最终得分机制&lt;/h6&gt;
 
 &lt;p&gt;华为后台会使用N个测试用例判题，该N个测试用例分为初级、中级、高级三个等级，参赛者对于每个测试用例都会得到一个百分制分数，使用加权平均分(初级权重为0.2，中级权重为0.3，高级权重为0.5)作为该参赛者的最终得分。&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;输入输出采用文件的形式。&lt;/p&gt;
 
-&lt;h5 id=&#34;思:0ba0c5309010af3a84f484f67a82e239&#34;&gt;思：&lt;/h5&gt;
+&lt;h5 id=&#34;思&#34;&gt;思：&lt;/h5&gt;
 
 &lt;p&gt;对于上述，这么一个问题，
 最初的想法是根据dijkstra最短路径算法中贪心的思想，结合剪枝进行求解，但是对于复杂图节点的情况，主要是在于当必经节点变多，这个规则感觉就太多，没法继续下去。&lt;/p&gt;
@@ -3230,13 +3230,13 @@ TSP问题得以求解的核心思想在于：
 &lt;p&gt;然后，突然有了一个这样类蚂蚁的想法，接下来就是围绕这个想法在实现了。
 此处，仅仅是自己的一个思路的回顾，可能会存在一些问题。仅供讨论。&lt;/p&gt;
 
-&lt;h6 id=&#34;初衷:0ba0c5309010af3a84f484f67a82e239&#34;&gt;初衷：&lt;/h6&gt;
+&lt;h6 id=&#34;初衷&#34;&gt;初衷：&lt;/h6&gt;
 
 &lt;p&gt;&lt;strong&gt;将所有蚂蚁丢在 起点和必经点上，然后再让他们自己去走，走到另一必经点，其信息素增大， 如果走到终点，信息素更大，直到某只蚂蚁找到终点。每次信息素更新时，信息素更新量的大小跟该蚂蚁走过的node数量和是否经过必经点有关。 这样来，理想情况下，每次更新时，经过必经点的路径信息素应该是比较大的，每次更新信息素后，进行一次从起点开始贪心搜，每次走信息素最大的，看是否可以走到终点，如果走到终点，本次路径即是一个解。&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;因为，我们蚂蚁在每个节点，可供选择的节点是很少的， 最多才8个，而tsp问题是可以去任意个节点的 ，这样更新一遍信息素，就可以去类贪心一次，看是否可以找到解。&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h6 id=&#34;于是-开始慢慢地折腾和实现了:0ba0c5309010af3a84f484f67a82e239&#34;&gt;于是，开始慢慢地折腾和实现了 :-)&lt;/h6&gt;
+&lt;h6 id=&#34;于是-开始慢慢地折腾和实现了&#34;&gt;于是，开始慢慢地折腾和实现了 :-)&lt;/h6&gt;
 
 &lt;p&gt;####### 类邻接表的图表结构&lt;/p&gt;
 
@@ -3327,7 +3327,7 @@ short int path;    //default = -1  // due to the pre node value among [0:600], y
 
 &lt;p&gt;为了方便查找索引，建立了一个头结点索引数组，来存储已经读入头结点的值，来防止访问第一个图表，出现野指针的情况。当需要查找某个头结点的相关信息时，先在头结点数组确认存在后， 再去图*graph[600]里面直接按头结点id值等于图索引号获取。&lt;/p&gt;
 
-&lt;h6 id=&#34;算法描述:0ba0c5309010af3a84f484f67a82e239&#34;&gt;算法描述&lt;/h6&gt;
+&lt;h6 id=&#34;算法描述&#34;&gt;算法描述&lt;/h6&gt;
 
 &lt;ol&gt;
 &lt;li&gt;将图文件中的节点读进来，按照上面的图表格式存储，然后将有出度的头结点用指针联系起来，方便后面的访问。&lt;/li&gt;
@@ -3356,7 +3356,7 @@ short int path;    //default = -1  // due to the pre node value among [0:600], y
 &lt;li&gt;结合了强化学习正反馈的报酬机制。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h6 id=&#34;缺陷-反思:0ba0c5309010af3a84f484f67a82e239&#34;&gt;缺陷-反思&lt;/h6&gt;
+&lt;h6 id=&#34;缺陷-反思&#34;&gt;缺陷-反思&lt;/h6&gt;
 
 &lt;p&gt;缺少完备的理论证明。 并没有证明求解空间在这些规则下，是完备的，并且会收敛到最优(目前来看，收敛性不太好)。
 因此，实践起来，发现并不如我心意。

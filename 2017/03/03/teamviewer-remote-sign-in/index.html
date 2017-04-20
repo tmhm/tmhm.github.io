@@ -234,11 +234,11 @@
   <div class="container content">
   
 
-<h3 id="问题描述:5dc92b2f972a38d9f83619ba919e5954">问题描述</h3>
+<h3 id="问题描述">问题描述</h3>
 
 <p>win10 升级后，主机在锁屏状态下，Teamviewer无法远程登录账户，防火墙已关闭，无人值守访问不了</p>
 
-<h3 id="解决方式:5dc92b2f972a38d9f83619ba919e5954">解决方式：</h3>
+<h3 id="解决方式">解决方式：</h3>
 
 <ul>
 <li>注意主从机的版本一致</li>
@@ -249,7 +249,7 @@
 <p><img src="/images/无人值守访问.jpg" alt="" title="示图1" />
 <img src="/images/授权轻松访问.jpg" alt="" title="示图2" /></p>
 
-<h3 id="问题并未终结:5dc92b2f972a38d9f83619ba919e5954">问题并未终结</h3>
+<h3 id="问题并未终结">问题并未终结</h3>
 
 <ul>
 <li>当主机重启之后，Teamviewer的授权轻松访问的钩被去掉了，所以远程不能登录主机，即当主机锁屏的时候，Teamviewer可以连接到主机，但是远程不能登录主机账号。</li>
@@ -258,7 +258,7 @@
 
 <p><img src="/images/teamviewer配置原因.jpg" alt="" title="示图3" /></p>
 
-<h3 id="尝试方案:5dc92b2f972a38d9f83619ba919e5954">尝试方案</h3>
+<h3 id="尝试方案">尝试方案</h3>
 
 <ul>
 <li>不能直接勾选【授权轻松访问】选项，显示需要管理员登录，于是设置程序的【兼容性】属性，“以管理员身份运行程序”。</li>
@@ -274,7 +274,7 @@
 <li><p>尝试<strong>再次重装</strong>后，在首页，将随windows 一同启动Teamviewer，分配设备，授权轻松访问全部选上，既可以在设置选项里面看到打开了授权访问。并且<strong>重装后的teamviewer是可以锁屏登录的！</strong>，可恶的win10设置！</p></li>
 </ul>
 
-<h3 id="待解决:5dc92b2f972a38d9f83619ba919e5954">待解决</h3>
+<h3 id="待解决">待解决</h3>
 
 <p>ubuntu 14.04下的Teamviewer也登录不了，本来用着好的Teamviewer，现在却登录不了。苦于不在主机旁，只能用命令重新安装之，参考了<a href="http://blog.csdn.net/dreamhai/article/details/57080531">博文</a>，先在虚拟机上实现，却发现问题。</p>
 
@@ -326,7 +326,7 @@ sudo apt-get install -f
 
 <p>更加奇怪的是，服务器ubuntu 上的Teamviewer不登录任何账号的时候，可以直接远程访问了。</p>
 
-<h3 id="一些有用的命令:5dc92b2f972a38d9f83619ba919e5954">一些有用的命令</h3>
+<h3 id="一些有用的命令">一些有用的命令</h3>
 
 <ul>
 <li>获取Teamviewer的ID<code>teamviewer --info</code></li>
@@ -345,7 +345,7 @@ sudo apt-get install -f
 <li>重启服务<code>sudo teamviewer --daemon start</code></li>
 </ol>
 
-<h3 id="粗暴解决:5dc92b2f972a38d9f83619ba919e5954">粗暴解决</h3>
+<h3 id="粗暴解决">粗暴解决</h3>
 
 <p>在一台新的win10系统下，发现teamviewer，可以重启使用，突然想起，曾经用驱动精灵和金山毒霸进行过优化，于是，卸载之，并取消他们的优化，再安装teamviewer，发现可以正常使用了。
 <strong>都是过度优化惹得祸！</strong></p>
