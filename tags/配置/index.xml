@@ -28,10 +28,10 @@
     
     <item>
       <title>Python 中logging 模块的配置和使用</title>
-      <link>https://tmhm.github.io/2016/12/25/python-%E4%B8%ADlogging-%E6%A8%A1%E5%9D%97%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/</link>
+      <link>https://tmhm.github.io/2016/12/25/logging-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Sun, 25 Dec 2016 04:49:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/12/25/python-%E4%B8%ADlogging-%E6%A8%A1%E5%9D%97%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://tmhm.github.io/2016/12/25/logging-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/</guid>
       <description>
 
 &lt;p&gt;reference :&lt;/p&gt;
@@ -96,7 +96,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
 &lt;li&gt;文件中记录level 超过 debug 的信息&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;level设计:ab6ecea521d440c8d06d82d2c5fdae84&#34;&gt;level设计&lt;/h4&gt;
+&lt;h4 id=&#34;level设计&#34;&gt;level设计&lt;/h4&gt;
 
 &lt;p&gt;logging函数根据它们用来跟踪的事件的级别或严重程度来命名。&lt;a href=&#34;http://python.usyiyi.cn/translate/python_278/howto/logging.html#logging-advanced-tutorial&#34;&gt;标准级别及其适用性描述&lt;/a&gt;如下（以严重程度递增排序）：&lt;/p&gt;
 

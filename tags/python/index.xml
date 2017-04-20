@@ -14,10 +14,10 @@
     
     <item>
       <title>matplotlib y轴标注显示不全以及subplot调整的问题</title>
-      <link>https://tmhm.github.io/2016/12/23/matplotlib-y%E8%BD%B4%E6%A0%87%E6%B3%A8%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8%E4%BB%A5%E5%8F%8Asubplot%E8%B0%83%E6%95%B4%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>https://tmhm.github.io/2016/12/23/matplotlib-y-show-incomplete-subplot/</link>
       <pubDate>Fri, 23 Dec 2016 08:32:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/12/23/matplotlib-y%E8%BD%B4%E6%A0%87%E6%B3%A8%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8%E4%BB%A5%E5%8F%8Asubplot%E8%B0%83%E6%95%B4%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://tmhm.github.io/2016/12/23/matplotlib-y-show-incomplete-subplot/</guid>
       <description>
 
 &lt;p&gt;问题：
@@ -145,13 +145,13 @@ print elapsed
     
     <item>
       <title>PyBrain库的example之NFQ流程图分析</title>
-      <link>https://tmhm.github.io/2016/05/27/pybrain%E5%BA%93%E7%9A%84example%E4%B9%8Bnfq%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%88%86%E6%9E%90/</link>
+      <link>https://tmhm.github.io/2016/05/27/pybrain-libs_nfq-flowchart/</link>
       <pubDate>Fri, 27 May 2016 11:43:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/05/27/pybrain%E5%BA%93%E7%9A%84example%E4%B9%8Bnfq%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%88%86%E6%9E%90/</guid>
+      <guid>https://tmhm.github.io/2016/05/27/pybrain-libs_nfq-flowchart/</guid>
       <description>
 
-&lt;h4 id=&#34;pybrain库的example之nfq流程图分析:ee4d46bb0f922990b5099f1ed9a24c21&#34;&gt;PyBrain库的example之NFQ流程图分析&lt;/h4&gt;
+&lt;h4 id=&#34;pybrain库的example之nfq流程图分析:7e448002a1e4ec6b6b072f98178fcfc7&#34;&gt;PyBrain库的example之NFQ流程图分析&lt;/h4&gt;
 
 &lt;p&gt;如下是测试程序。主要分析&lt;strong&gt;doEpisode和learn&lt;/strong&gt;两个函数。&lt;/p&gt;
 
@@ -381,10 +381,10 @@ cat say
     
     <item>
       <title>python 有关引用的一些问题</title>
-      <link>https://tmhm.github.io/2016/05/21/python-%E6%9C%89%E5%85%B3%E5%BC%95%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</link>
+      <link>https://tmhm.github.io/2016/05/21/python_reference/</link>
       <pubDate>Sat, 21 May 2016 14:24:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/05/21/python-%E6%9C%89%E5%85%B3%E5%BC%95%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://tmhm.github.io/2016/05/21/python_reference/</guid>
       <description>
 
 &lt;pre&gt;&lt;code&gt;print id.__doc__
@@ -395,7 +395,7 @@ Return the identity of an object.  This is guaranteed to be unique among
 simultaneously existing objects.  (Hint: it&#39;s the object&#39;s memory address.)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;python中的引用对象特点:6ec06ff8aab68af73d72157c359718c6&#34;&gt;python中的引用对象特点：&lt;/h4&gt;
+&lt;h4 id=&#34;python中的引用对象特点&#34;&gt;python中的引用对象特点：&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;python不允许程序员选择采用传值还是传引用。
@@ -626,7 +626,7 @@ c:  [{&#39;num&#39;: 1, &#39;sqrt&#39;: 1}, {&#39;num&#39;: 2, &#39;sqrt&#39;: 4
       <guid>https://tmhm.github.io/2016/05/19/python%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E9%A1%B9/</guid>
       <description>
 
-&lt;h3 id=&#34;浮点除-和-整除&#34;&gt;&amp;rsquo;/&amp;lsquo;浮点除，和&amp;rsquo;//&amp;lsquo;整除&lt;/h3&gt;
+&lt;h3 id=&#34;浮点除-和-整除:54b2401234aa813c219ffc6fe8784914&#34;&gt;&amp;rsquo;/&amp;lsquo;浮点除，和&amp;rsquo;//&amp;lsquo;整除&lt;/h3&gt;
 
 &lt;p&gt;单个&amp;rsquo;/&amp;lsquo;是浮点除，两个除号&amp;rsquo;//&amp;lsquo;是整除&lt;/p&gt;
 
@@ -660,13 +660,13 @@ print &amp;quot;3.6//2.1 =&amp;quot;,3.6//2.1
     
     <item>
       <title>python一些内建函数(map,zip,filter,reduce,yield等)</title>
-      <link>https://tmhm.github.io/2016/05/17/python%E4%B8%80%E4%BA%9B%E5%86%85%E5%BB%BA%E5%87%BD%E6%95%B0mapzipfilterreduceyield%E7%AD%89/</link>
+      <link>https://tmhm.github.io/2016/05/17/some-built-in-function-of-python-mapzipfilterreduceyield/</link>
       <pubDate>Tue, 17 May 2016 15:06:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/05/17/python%E4%B8%80%E4%BA%9B%E5%86%85%E5%BB%BA%E5%87%BD%E6%95%B0mapzipfilterreduceyield%E7%AD%89/</guid>
+      <guid>https://tmhm.github.io/2016/05/17/some-built-in-function-of-python-mapzipfilterreduceyield/</guid>
       <description>
 
-&lt;h4 id=&#34;map函数&#34;&gt;map函数&lt;/h4&gt;
+&lt;h4 id=&#34;map函数:86ee1b61830f5f9486937eaef8a6426b&#34;&gt;map函数&lt;/h4&gt;
 
 &lt;p&gt;Python实际上提供了一个内置的工具，map函数。这个函数的主要功能是对一个序列对象中的每一个元素应用被传入的函数，并且返回一个包含了所有函数调用结果的一个列表。&lt;/p&gt;
 
@@ -725,7 +725,7 @@ Out[6]:
 [(11, 44, 77), (22, 55, 88), (33, 66, 99)]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;zip函数&#34;&gt;zip函数&lt;/h4&gt;
+&lt;h4 id=&#34;zip函数:86ee1b61830f5f9486937eaef8a6426b&#34;&gt;zip函数&lt;/h4&gt;
 
 &lt;p&gt;以下参考了&lt;a href=&#34;http://www.bkjia.com/Pythonjc/664161.html&#34;&gt;博文&lt;/a&gt;&lt;/p&gt;
 
@@ -747,7 +747,7 @@ for x,y in zip([1,2,3],[5,6]):
         
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;filter函数&#34;&gt;filter函数&lt;/h4&gt;
+&lt;h4 id=&#34;filter函数:86ee1b61830f5f9486937eaef8a6426b&#34;&gt;filter函数&lt;/h4&gt;
 
 &lt;p&gt;filter(bool_func,seq)：此函数的功能相当于过滤器。 调用一个布尔函数bool_func来迭代遍历每个seq中的元素，返回一个使bool_seq返回值为true的元素的序列。&lt;/p&gt;
 
@@ -756,7 +756,7 @@ Out[15]:
 [2, 4, 6]   
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;reduce函数&#34;&gt;reduce函数&lt;/h4&gt;
+&lt;h4 id=&#34;reduce函数:86ee1b61830f5f9486937eaef8a6426b&#34;&gt;reduce函数&lt;/h4&gt;
 
 &lt;p&gt;reduce(func,seq[,init])：func为二元函数，将func作用于seq序列的元素，每次携带一对（先前的结果以及下一个序列的元素），连续的将现有的结果和下一个值作用在获得的随后的结果上，最后减少我们的序列为一个单一的返回值：如果初始值init给定，第一个比较会是init和第一个序列元素而不是序列的头两个元素。&lt;/p&gt;
 
@@ -774,7 +774,7 @@ Out[21]:
 -6
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;isinstance&#34;&gt;isinstance&lt;/h4&gt;
+&lt;h4 id=&#34;isinstance:86ee1b61830f5f9486937eaef8a6426b&#34;&gt;isinstance&lt;/h4&gt;
 
 &lt;p&gt;isinstance(object, classinfo)  判断一个对象是否是一个已知的类型。&lt;/p&gt;
 
@@ -808,7 +808,7 @@ print isinstance(tes,(int, tuple))
     False
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;id&#34;&gt;id&lt;/h4&gt;
+&lt;h4 id=&#34;id:86ee1b61830f5f9486937eaef8a6426b&#34;&gt;id&lt;/h4&gt;
 
 &lt;p&gt;查看object 地址&lt;/p&gt;
 
@@ -824,7 +824,7 @@ print isinstance(tes,(int, tuple))
     simultaneously existing objects.  (Hint: it&#39;s the object&#39;s memory address.)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;assert&#34;&gt;assert&lt;/h4&gt;
+&lt;h4 id=&#34;assert:86ee1b61830f5f9486937eaef8a6426b&#34;&gt;assert&lt;/h4&gt;
 
 &lt;p&gt;断言&lt;/p&gt;
 
@@ -861,7 +861,7 @@ print a
 &lt;pre&gt;&lt;code&gt;[1, 2, 3]
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;min-max&#34;&gt;min &amp;amp;&amp;amp; max&lt;/h4&gt;
+&lt;h4 id=&#34;min-max:86ee1b61830f5f9486937eaef8a6426b&#34;&gt;min &amp;amp;&amp;amp; max&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;c = [-10, -45, 0, 5, 3, 50, 15, -20, 25]
 
@@ -879,26 +879,26 @@ print &amp;quot;max: %s&amp;quot; %c.index(max(c)) # 返回最大值
     
     <item>
       <title>python &amp;&amp; anaconda &amp;&amp; pycharm工具包安装</title>
-      <link>https://tmhm.github.io/2016/04/24/python--anaconda--pycharm%E5%B7%A5%E5%85%B7%E5%8C%85%E5%AE%89%E8%A3%85/</link>
+      <link>https://tmhm.github.io/2016/04/24/python--anaconda-pycharm-tools-install/</link>
       <pubDate>Sun, 24 Apr 2016 13:24:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/04/24/python--anaconda--pycharm%E5%B7%A5%E5%85%B7%E5%8C%85%E5%AE%89%E8%A3%85/</guid>
+      <guid>https://tmhm.github.io/2016/04/24/python--anaconda-pycharm-tools-install/</guid>
       <description>
 
 &lt;p&gt;&lt;code&gt;$ conda update conda
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;更新pip:6688ab8f41a9d12e2503ffc3d92f68f8&#34;&gt;更新pip&lt;/h4&gt;
+&lt;h4 id=&#34;更新pip:31744078359c688159835fa13bfb3276&#34;&gt;更新pip&lt;/h4&gt;
 
 &lt;p&gt;&lt;code&gt;python -m pip install --upgrade pip
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;更新所有:6688ab8f41a9d12e2503ffc3d92f68f8&#34;&gt;更新所有&lt;/h4&gt;
+&lt;h4 id=&#34;更新所有:31744078359c688159835fa13bfb3276&#34;&gt;更新所有&lt;/h4&gt;
 
 &lt;p&gt;&lt;code&gt;conda update --all
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;安装ffmpeg:6688ab8f41a9d12e2503ffc3d92f68f8&#34;&gt;安装ffmpeg&lt;/h4&gt;
+&lt;h4 id=&#34;安装ffmpeg:31744078359c688159835fa13bfb3276&#34;&gt;安装ffmpeg&lt;/h4&gt;
 
 &lt;p&gt;&lt;code&gt;conda install ffmpeg
 &lt;/code&gt;&lt;/p&gt;
@@ -914,7 +914,7 @@ print &amp;quot;max: %s&amp;quot; %c.index(max(c)) # 返回最大值
 
 &lt;p&gt;&lt;code&gt;[Anaconda2] C:\Users\xwei&amp;gt;conda install -c https://conda.anaconda.org/groakat ffmpeg-dev&lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;安装theano:6688ab8f41a9d12e2503ffc3d92f68f8&#34;&gt;安装theano&lt;/h4&gt;
+&lt;h4 id=&#34;安装theano:31744078359c688159835fa13bfb3276&#34;&gt;安装theano&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://deeplearning.net/software/theano/install_windows.html#install-windows&#34;&gt;source for win-install&lt;/a&gt;&lt;/p&gt;
 
@@ -942,7 +942,7 @@ print &amp;quot;max: %s&amp;quot; %c.index(max(c)) # 返回最大值
 &lt;li&gt;运行&lt;a href=&#34;http://www.deeplearning.net/tutorial/lstm.html#lstm&#34;&gt;LSTM Networks for Sentiment Analysis&lt;/a&gt; 明显快了很多很多，直接在cpu下运行纯python代码，一两分钟才出来第一次迭代， 安装之后，运行c代码的时候，基本上两三秒一次迭代。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;安装出现anaconda-python-installation-error:6688ab8f41a9d12e2503ffc3d92f68f8&#34;&gt;安装出现Anaconda Python installation error&lt;/h4&gt;
+&lt;h4 id=&#34;安装出现anaconda-python-installation-error:31744078359c688159835fa13bfb3276&#34;&gt;安装出现Anaconda Python installation error&lt;/h4&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201606/781469-20160612222301152-884209750.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 

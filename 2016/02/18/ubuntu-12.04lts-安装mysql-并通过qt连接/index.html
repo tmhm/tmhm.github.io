@@ -5,37 +5,41 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <title>ubuntu 12.04lts 安装mysql ，并通过QT连接  &middot; Well</title>
+  <title>ubuntu 12.04lts 安装 mysql，通过QT访问  &middot; Well</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="description" content=" " />
+<meta name="description" content="在虚拟机 ubuntu 12.04lts 安装mysql，并通过QT连接。" />
 
-<meta name="keywords" content="">
+<meta name="keywords" content="ubuntu, ">
 
 
-<meta property="og:title" content="ubuntu 12.04lts 安装mysql ，并通过QT连接  &middot; Well ">
+<meta property="og:title" content="ubuntu 12.04lts 安装 mysql，通过QT访问  &middot; Well ">
 <meta property="og:site_name" content="Well"/>
 <meta property="og:url" content="https://tmhm.github.io/2016/02/18/ubuntu-12.04lts-%E5%AE%89%E8%A3%85mysql-%E5%B9%B6%E9%80%9A%E8%BF%87qt%E8%BF%9E%E6%8E%A5/" />
 <meta property="og:locale" content="en-EN">
 
 
 <meta property="og:type" content="article" />
-<meta property="og:description" content=" "/>
+<meta property="og:description" content="在虚拟机 ubuntu 12.04lts 安装mysql，并通过QT连接。"/>
 <meta property="og:article:published_time" content="2016-02-18T10:58:00Z" />
 <meta property="og:article:modified_time" content="2016-02-18T10:58:00Z" />
 
+  
+    
+<meta property="og:article:tag" content="ubuntu">
+    
   
 
   
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@" />
 <meta name="twitter:creator" content="@" />
-<meta name="twitter:title" content="ubuntu 12.04lts 安装mysql ，并通过QT连接" />
-<meta name="twitter:description" content=" " />
+<meta name="twitter:title" content="ubuntu 12.04lts 安装 mysql，通过QT访问" />
+<meta name="twitter:description" content="在虚拟机 ubuntu 12.04lts 安装mysql，并通过QT连接。" />
 <meta name="twitter:url" content="https://tmhm.github.io/2016/02/18/ubuntu-12.04lts-%E5%AE%89%E8%A3%85mysql-%E5%B9%B6%E9%80%9A%E8%BF%87qt%E8%BF%9E%E6%8E%A5/" />
 <meta name="twitter:domain" content="https://tmhm.github.io/">
   
@@ -44,13 +48,13 @@
   {
     "@context": "http://schema.org",
     "@type": "Article",
-    "headline": "ubuntu 12.04lts 安装mysql ，并通过QT连接",
+    "headline": "ubuntu 12.04lts 安装 mysql，通过QT访问",
     "author": {
       "@type": "Person",
       "name": "http://profiles.google.com/+?rel=author"
     },
     "datePublished": "2016-02-18",
-    "description": " ",
+    "description": "在虚拟机 ubuntu 12.04lts 安装mysql，并通过QT连接。",
     "wordCount":  129 
   }
 </script>
@@ -62,7 +66,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://tmhm.github.io/v2.png">
 <link href="https://tmhm.github.io/v2.png" rel="icon">
 
-<meta name="generator" content="Hugo 0.18.1" />
+<meta name="generator" content="Hugo 0.15" />
 
   
 <!--[if lt IE 9]>
@@ -105,7 +109,7 @@
   
 <div class="container topline">
   
-  few words about your site
+  修行在当下
 
 
 </div>
@@ -173,7 +177,7 @@
 
 <article id="main-content" class="container main_content single">
   <header class="container hat">
-  <h1>ubuntu 12.04lts 安装mysql ，并通过QT连接
+  <h1>ubuntu 12.04lts 安装 mysql，通过QT访问
 </h1>
 
   <div class="metas">
@@ -185,6 +189,8 @@
   &middot; (129 Words)
   <br>
   
+<a class="label" href="https://tmhm.github.io/tags/ubuntu">ubuntu</a>
+
 
 
 <span id="busuanzi_container_page_pv">
@@ -205,7 +211,7 @@
     
 
     
-    <a class="next" href="https://tmhm.github.io/2016/02/21/dev-c-%E5%B0%8F%E9%97%AE%E9%A2%98%E9%94%A6%E9%9B%86/" title="Dev-C 小问题锦集">
+    <a class="next" href="https://tmhm.github.io/2016/02/21/dev-cplus-%E5%B0%8F%E9%97%AE%E9%A2%98%E9%94%A6%E9%9B%86/" title="Dev-C 小问题锦集">
       Next
     </a>
     
@@ -218,15 +224,16 @@
 </header>
 
   <div class="container content">
-  <p><div class="cnblogs_Highlighter">
-<p><strong>安装server$ sudo apt-get install mysql-server<br />
-安装驱动
-$ sudo apt-get install libqt4-sql-mysql
-</strong></p>
-</div>
-<p>　　</p>
-<div class="cnblogs_Highlighter">
-<pre class="brush:csharp;gutter:true;"><strong>$ dpkg &ndash;list | grep mysql</strong>
+  <ol>
+<li>安装server
+<code>$ sudo apt-get install mysql-server</code></li>
+
+<li><p>安装驱动<code>$ sudo apt-get install libqt4-sql-mysql</code></p></li>
+
+<li><p>测试</p></li>
+</ol>
+
+<pre><code>$ dpkg --list | grep mysql&lt;/strong&gt;
 ii  libdbd-mysql-perl                           4.020-1build2                           Perl5 database interface to the MySQL database
 ii  libmysqlclient18                            5.5.47-0ubuntu0.12.04.1                 MySQL database client library
 ii  libqt4-sql-mysql                            4:4.8.1-0ubuntu4.9                      Qt 4 MySQL database driver
@@ -236,26 +243,28 @@ ii  mysql-common                                5.5.47-0ubuntu0.12.04.1         
 ii  mysql-server                                5.5.47-0ubuntu0.12.04.1                 MySQL database server (metapackage depending on the latest version)
 ii  mysql-server-5.5                            5.5.47-0ubuntu0.12.04.1                 MySQL database server binaries and system database setup
 ii  mysql-server-core-5.5                       5.5.47-0ubuntu0.12.04.1                 MySQL database server binaries
-</pre>
-</div>
-<p>　　</p>
-<p>在目录 /usr/lib/i386-linux-gnu/qt4/plugins/sqldrivers/ &nbsp;&nbsp;找到文件 <strong>libqsqlmysql.so &nbsp;</strong></p>
-<p>复制到&nbsp;qt的安装目录下路径：&nbsp;/usr/local/Trolltech/Qt-4.8.6/plugins/sqldrivers/ &nbsp; &nbsp;</p>
-<div class="cnblogs_Highlighter">
-<pre class="brush:csharp;gutter:true;">sudo cp libqsqlmysql.so /usr/local/Trolltech/Qt-4.8.6/plugins/sqldrivers/
-</pre>
-</div>
-<p>　　</p>
-<div class="cnblogs_Highlighter">
-<pre class="brush:csharp;gutter:true;"><strong>确定具有x属性</strong></p>
+</code></pre>
 
-<p>-rwxr-xr-x 1 tl tl 533748 8月 9 2012 libqsqlite.so
+<ul>
+<li>在目录 /usr/lib/i386-linux-gnu/qt4/plugins/sqldrivers/   找到文件 libqsqlmysql.so<br />
+复制到 qt的安装目录下路径： /usr/local/Trolltech/Qt-4.8.6/plugins/sqldrivers/<br /></li>
+</ul>
+
+<pre><code>sudo cp libqsqlmysql.so /usr/local/Trolltech/Qt-4.8.6/plugins/sqldrivers/
+
+</code></pre>
+
+<ul>
+<li>确定具有x属性</li>
+</ul>
+
+<pre><code>-rwxr-xr-x 1 tl tl 533748 8月 9 2012 libqsqlite.so
 -rwxr-xr-x 1 tl tl 67816 5月 28 2015 libqsqlmysql.so
-</pre>
-</div>
+</code></pre>
+
 <p><strong>测试结果：</strong></p>
 <p><img src="http://images2015.cnblogs.com/blog/781469/201602/781469-20160218185633503-1658976193.jpg" alt="" />　　</p>
-<p>&nbsp;</p></p>
+<p>&nbsp;</p>
 
 </div>
 
@@ -273,7 +282,7 @@ ii  mysql-server-core-5.5                       5.5.47-0ubuntu0.12.04.1         
     
 
     
-    <a class="next" href="https://tmhm.github.io/2016/02/21/dev-c-%E5%B0%8F%E9%97%AE%E9%A2%98%E9%94%A6%E9%9B%86/" title="Dev-C 小问题锦集">
+    <a class="next" href="https://tmhm.github.io/2016/02/21/dev-cplus-%E5%B0%8F%E9%97%AE%E9%A2%98%E9%94%A6%E9%9B%86/" title="Dev-C 小问题锦集">
       Next
     </a>
     

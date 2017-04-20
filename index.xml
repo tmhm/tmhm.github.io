@@ -13,7 +13,7 @@
     <atom:link href="https://tmhm.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>RL_intro_1</title>
+      <title>RL笔记(1)-introduction</title>
       <link>https://tmhm.github.io/2017/04/12/rl_intro_1/</link>
       <pubDate>Wed, 12 Apr 2017 15:13:28 +0800</pubDate>
       <author>wells217@163.com (Well)</author>
@@ -33,7 +33,7 @@
   });
 &lt;/script&gt;
 
-&lt;h4 id=&#34;强化学习的定义&#34;&gt;强化学习的定义&lt;/h4&gt;
+&lt;h4 id=&#34;强化学习的定义:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;强化学习的定义&lt;/h4&gt;
 
 &lt;p&gt;强化学习（Reinforcement Learning）本身可以定义为一个广泛的学习问题，学会找到状态（Situation）到动作（Actions）的一个映射关系，以最大化一个数值型的回报（Reward）信号。一个完整的强化学习问题可以用马氏决策过程中的最优控制理论来进行描述。在马氏链中，当前时刻的状态（State） 仅仅与上一时刻的状态有关。如下图1所示，一个智能体（Agent）可以通过某种方式感受环境的状态（State），然后可以通过某一个动作（Action）来改变环境的下一状态。在这个不断交互的过程中，Agent还必须具有一个或者以上的、与此环境状态相关的目标（Goal）。
 &lt;center&gt;
@@ -44,7 +44,7 @@
 
 &lt;p&gt;与RL问题相对应的任何求解方法，可以称之为一个强化学习方法。&lt;/p&gt;
 
-&lt;h4 id=&#34;rl的两个重要特征&#34;&gt;RL的两个重要特征&lt;/h4&gt;
+&lt;h4 id=&#34;rl的两个重要特征:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;RL的两个重要特征&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;试错搜索（trial-and-error）&lt;/li&gt;
@@ -55,7 +55,7 @@
 监督学习中通过正确的指示（instruct）来进行反馈；强化学习是依靠整个生命周期所选择的动作来进行评价式的反馈。&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;rl系统中的四大主要元素-element&#34;&gt;Rl系统中的四大主要元素（element）&lt;/h4&gt;
+&lt;h4 id=&#34;rl系统中的四大主要元素-element:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;Rl系统中的四大主要元素（element）&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;策略（policy）&lt;/p&gt;
@@ -75,7 +75,7 @@
 &lt;p&gt;即对该Agent生存环境的行为模仿（mimics the behavior of the environment）。举一个例子，给定一个状态和动作，环境模型可以预测相对应的下一状态和奖励。如果模型已知，强化学习问题可以演化为动态规划问题求解。&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;rl中智能体学习方法的分类&#34;&gt;RL中智能体学习方法的分类&lt;/h4&gt;
+&lt;h4 id=&#34;rl中智能体学习方法的分类:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;RL中智能体学习方法的分类&lt;/h4&gt;
 
 &lt;p&gt;根据强化学习问题中所含元素的种类，其Agent的学习方法，可以分之为5大类。如下图2所示。
 &lt;center&gt;
@@ -86,7 +86,7 @@
 &lt;p&gt;图2 强化学习中智能体学习方法的分类
 &lt;/center&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;探索与利用的权衡&#34;&gt;探索与利用的权衡&lt;/h4&gt;
+&lt;h4 id=&#34;探索与利用的权衡:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;探索与利用的权衡&lt;/h4&gt;
 
 &lt;p&gt;&lt;em&gt;trade-off between exploration and exploitation&lt;/em&gt;&lt;/p&gt;
 
@@ -98,26 +98,28 @@
 &lt;li&gt;$ \epsilon $ -greedy action selection（以小概率不贪心的选择方式）&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Softmax action selection（基于Gibbs分布或者称之为玻尔兹曼分布，以概率选择动作）
-$$ \cfrac{e^{Q&lt;em&gt;t(a)/\tau}}{\sum&lt;/em&gt;{b=1}^n e^{Q_t(b)/\tau}}$$&lt;/p&gt;
+&lt;div&gt;$$ \cfrac{e^{Q&lt;em&gt;t(a)/\tau}}{\sum&lt;/em&gt;{b=1}^n e^{Q_t(b)/\tau}}$$&lt;/div&gt;&lt;/p&gt;
 
 &lt;p&gt;$\tau &amp;gt; 0 $表示温度（temperature）, 高的温度，选择动作近乎平等；温度趋近0的时候，此法接近于贪心选择。&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;refernece&#34;&gt;refernece&lt;/h4&gt;
+&lt;h4 id=&#34;refernece:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;refernece&lt;/h4&gt;
 
-&lt;p&gt;[1] Sutton R S, Barto A G. Reinforcement learning: An introduction[M]. MIT press Cambridge, 1998.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Sutton R S, Barto A G. Reinforcement learning: An introduction[M]. MIT press Cambridge, 1998.&lt;/p&gt;&lt;/li&gt;
 
-&lt;p&gt;[2] David Silver. Lecture 1: Introduction to Reinforcement Learning
-Learning&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;David Silver. Lecture 1: Introduction to Reinforcement Learning
+Learning&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
 </description>
     </item>
     
     <item>
-      <title>taste SQL</title>
-      <link>https://tmhm.github.io/2017/04/01/taste-sql/</link>
+      <title>SQL初识</title>
+      <link>https://tmhm.github.io/2017/04/01/taste_sql/</link>
       <pubDate>Sat, 01 Apr 2017 22:51:52 +0800</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2017/04/01/taste-sql/</guid>
+      <guid>https://tmhm.github.io/2017/04/01/taste_sql/</guid>
       <description>
 
 &lt;h3 id=&#34;事务的四项特性:c90b6d24769a3945b8ac28999f82ce69&#34;&gt;事务的四项特性&lt;/h3&gt;
@@ -166,13 +168,13 @@ Learning&lt;/p&gt;
     
     <item>
       <title>word每页添加不同的页眉及目录信息</title>
-      <link>https://tmhm.github.io/2017/03/21/word%E6%AF%8F%E9%A1%B5%E6%B7%BB%E5%8A%A0%E4%B8%8D%E5%90%8C%E7%9A%84%E9%A1%B5%E7%9C%89%E5%8F%8A%E7%9B%AE%E5%BD%95%E4%BF%A1%E6%81%AF/</link>
+      <link>https://tmhm.github.io/2017/03/21/word_pageheader/</link>
       <pubDate>Tue, 21 Mar 2017 09:34:20 +0800</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2017/03/21/word%E6%AF%8F%E9%A1%B5%E6%B7%BB%E5%8A%A0%E4%B8%8D%E5%90%8C%E7%9A%84%E9%A1%B5%E7%9C%89%E5%8F%8A%E7%9B%AE%E5%BD%95%E4%BF%A1%E6%81%AF/</guid>
+      <guid>https://tmhm.github.io/2017/03/21/word_pageheader/</guid>
       <description>
 
-&lt;h3 id=&#34;添加页眉&#34;&gt;添加页眉&lt;/h3&gt;
+&lt;h3 id=&#34;添加页眉:090626c6f854499c122a7d6f21a2db0c&#34;&gt;添加页眉&lt;/h3&gt;
 
 &lt;p&gt;参考了&lt;a href=&#34;https://zhidao.baidu.com/question/18216054.html&#34;&gt;知道网页&lt;/a&gt;&lt;/p&gt;
 
@@ -191,7 +193,7 @@ Learning&lt;/p&gt;
 
 &lt;p&gt;页眉添加完毕。&lt;/p&gt;
 
-&lt;h3 id=&#34;添加图表目录&#34;&gt;添加图表目录&lt;/h3&gt;
+&lt;h3 id=&#34;添加图表目录:090626c6f854499c122a7d6f21a2db0c&#34;&gt;添加图表目录&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;在图下，或者表上位置，点击&lt;code&gt;引用-&amp;gt;插入题注-&amp;gt;选择标签&lt;/code&gt;，确定即可。&lt;/p&gt;
@@ -212,10 +214,10 @@ Learning&lt;/p&gt;
     
     <item>
       <title>一语未尽</title>
-      <link>https://tmhm.github.io/2017/03/15/%E4%B8%80%E8%AF%AD%E6%9C%AA%E5%B0%BD/</link>
+      <link>https://tmhm.github.io/2017/03/15/%E4%BC%BC%E6%9B%BE%E7%9B%B8%E8%AF%86%E8%AF%AD%E6%9C%AA%E5%B0%BD/</link>
       <pubDate>Wed, 15 Mar 2017 16:38:20 +0800</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2017/03/15/%E4%B8%80%E8%AF%AD%E6%9C%AA%E5%B0%BD/</guid>
+      <guid>https://tmhm.github.io/2017/03/15/%E4%BC%BC%E6%9B%BE%E7%9B%B8%E8%AF%86%E8%AF%AD%E6%9C%AA%E5%B0%BD/</guid>
       <description>&lt;p&gt;&lt;em&gt;某些言语，让人若有所思。&lt;/em&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -234,17 +236,17 @@ Learning&lt;/p&gt;
     
     <item>
       <title>Teamviewer无法远程登录主机用户</title>
-      <link>https://tmhm.github.io/2017/03/03/teamviewer%E6%97%A0%E6%B3%95%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E4%B8%BB%E6%9C%BA%E7%94%A8%E6%88%B7/</link>
+      <link>https://tmhm.github.io/2017/03/03/teamviewer-remote-sign-in/</link>
       <pubDate>Fri, 03 Mar 2017 12:05:02 +0800</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2017/03/03/teamviewer%E6%97%A0%E6%B3%95%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95%E4%B8%BB%E6%9C%BA%E7%94%A8%E6%88%B7/</guid>
+      <guid>https://tmhm.github.io/2017/03/03/teamviewer-remote-sign-in/</guid>
       <description>
 
-&lt;h3 id=&#34;问题描述:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;问题描述&lt;/h3&gt;
+&lt;h3 id=&#34;问题描述:5dc92b2f972a38d9f83619ba919e5954&#34;&gt;问题描述&lt;/h3&gt;
 
 &lt;p&gt;win10 升级后，主机在锁屏状态下，Teamviewer无法远程登录账户，防火墙已关闭，无人值守访问不了&lt;/p&gt;
 
-&lt;h3 id=&#34;解决方式:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;解决方式：&lt;/h3&gt;
+&lt;h3 id=&#34;解决方式:5dc92b2f972a38d9f83619ba919e5954&#34;&gt;解决方式：&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;注意主从机的版本一致&lt;/li&gt;
@@ -255,7 +257,7 @@ Learning&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://tmhm.github.io/images/无人值守访问.jpg&#34; alt=&#34;&#34; title=&#34;示图1&#34; /&gt;
 &lt;img src=&#34;https://tmhm.github.io/images/授权轻松访问.jpg&#34; alt=&#34;&#34; title=&#34;示图2&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;问题并未终结:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;问题并未终结&lt;/h3&gt;
+&lt;h3 id=&#34;问题并未终结:5dc92b2f972a38d9f83619ba919e5954&#34;&gt;问题并未终结&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;当主机重启之后，Teamviewer的授权轻松访问的钩被去掉了，所以远程不能登录主机，即当主机锁屏的时候，Teamviewer可以连接到主机，但是远程不能登录主机账号。&lt;/li&gt;
@@ -264,7 +266,7 @@ Learning&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://tmhm.github.io/images/teamviewer配置原因.jpg&#34; alt=&#34;&#34; title=&#34;示图3&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;尝试方案:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;尝试方案&lt;/h3&gt;
+&lt;h3 id=&#34;尝试方案:5dc92b2f972a38d9f83619ba919e5954&#34;&gt;尝试方案&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;不能直接勾选【授权轻松访问】选项，显示需要管理员登录，于是设置程序的【兼容性】属性，“以管理员身份运行程序”。&lt;/li&gt;
@@ -280,7 +282,7 @@ Learning&lt;/p&gt;
 &lt;li&gt;&lt;p&gt;尝试&lt;strong&gt;再次重装&lt;/strong&gt;后，在首页，将随windows 一同启动Teamviewer，分配设备，授权轻松访问全部选上，既可以在设置选项里面看到打开了授权访问。并且&lt;strong&gt;重装后的teamviewer是可以锁屏登录的！&lt;/strong&gt;，可恶的win10设置！&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;待解决:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;待解决&lt;/h3&gt;
+&lt;h3 id=&#34;待解决:5dc92b2f972a38d9f83619ba919e5954&#34;&gt;待解决&lt;/h3&gt;
 
 &lt;p&gt;ubuntu 14.04下的Teamviewer也登录不了，本来用着好的Teamviewer，现在却登录不了。苦于不在主机旁，只能用命令重新安装之，参考了&lt;a href=&#34;http://blog.csdn.net/dreamhai/article/details/57080531&#34;&gt;博文&lt;/a&gt;，先在虚拟机上实现，却发现问题。&lt;/p&gt;
 
@@ -332,7 +334,7 @@ sudo apt-get install -f
 
 &lt;p&gt;更加奇怪的是，服务器ubuntu 上的Teamviewer不登录任何账号的时候，可以直接远程访问了。&lt;/p&gt;
 
-&lt;h3 id=&#34;一些有用的命令:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;一些有用的命令&lt;/h3&gt;
+&lt;h3 id=&#34;一些有用的命令:5dc92b2f972a38d9f83619ba919e5954&#34;&gt;一些有用的命令&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;获取Teamviewer的ID&lt;code&gt;teamviewer --info&lt;/code&gt;&lt;/li&gt;
@@ -351,7 +353,7 @@ sudo apt-get install -f
 &lt;li&gt;重启服务&lt;code&gt;sudo teamviewer --daemon start&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&#34;粗暴解决:dbdaddbfc7d155c7c6060cf0bee803a5&#34;&gt;粗暴解决&lt;/h3&gt;
+&lt;h3 id=&#34;粗暴解决:5dc92b2f972a38d9f83619ba919e5954&#34;&gt;粗暴解决&lt;/h3&gt;
 
 &lt;p&gt;在一台新的win10系统下，发现teamviewer，可以重启使用，突然想起，曾经用驱动精灵和金山毒霸进行过优化，于是，卸载之，并取消他们的优化，再安装teamviewer，发现可以正常使用了。
 &lt;strong&gt;都是过度优化惹得祸！&lt;/strong&gt;&lt;/p&gt;
@@ -362,13 +364,13 @@ sudo apt-get install -f
     
     <item>
       <title>Hugo在Ubuntu14.04系统下的配置 </title>
-      <link>https://tmhm.github.io/2017/02/27/hugo%E5%9C%A8ubuntu14.04%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E9%85%8D%E7%BD%AE/</link>
+      <link>https://tmhm.github.io/2017/02/27/use-hugo-under-ubuntu14.04/</link>
       <pubDate>Mon, 27 Feb 2017 13:55:22 +0800</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2017/02/27/hugo%E5%9C%A8ubuntu14.04%E7%B3%BB%E7%BB%9F%E4%B8%8B%E7%9A%84%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://tmhm.github.io/2017/02/27/use-hugo-under-ubuntu14.04/</guid>
       <description>
 
-&lt;h3 id=&#34;安装hugo&#34;&gt;安装Hugo&lt;/h3&gt;
+&lt;h3 id=&#34;安装hugo:ef24484c971cae41e86ce8b0925454b8&#34;&gt;安装Hugo&lt;/h3&gt;
 
 &lt;p&gt;Ubuntu14.04 下面直接用apt-get安装貌似不行，参考&lt;a href=&#34;https://vexxhost.com/resources/tutorials/how-to-install-and-use-hugo-the-static-site-generator-on-ubuntu-14-04/&#34;&gt;博主&lt;/a&gt;,直接下载源文件安装：&lt;/p&gt;
 
@@ -379,7 +381,7 @@ sudo dpkg -i hugo_0.15_amd64.deb
 
 &lt;p&gt;即可，测试一下版本&lt;code&gt;hugo version&lt;/code&gt;，成功输出版本号即安装成功。&lt;/p&gt;
 
-&lt;h3 id=&#34;安装markdown编辑工具-remarkable&#34;&gt;安装Markdown编辑工具（remarkable）&lt;/h3&gt;
+&lt;h3 id=&#34;安装markdown编辑工具-remarkable:ef24484c971cae41e86ce8b0925454b8&#34;&gt;安装Markdown编辑工具（remarkable）&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;从&lt;a href=&#34;http://locez.com/translation/best-markdown-editors-for-linux/&#34;&gt;此篇文章&lt;/a&gt;了解到 Remarkable，貌似apt-get也木有直接安装的，于是在&lt;a href=&#34;https://remarkableapp.github.io/linux/download.html&#34;&gt;官网&lt;/a&gt;下载.deb文件；&lt;/li&gt;
@@ -387,7 +389,7 @@ sudo dpkg -i hugo_0.15_amd64.deb
 &lt;li&gt;可以在终端直接用命令&lt;code&gt;remarkable&lt;/code&gt; 打开.md文件&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;安装搜狗输入法for-linux&#34;&gt;安装搜狗输入法for Linux&lt;/h3&gt;
+&lt;h3 id=&#34;安装搜狗输入法for-linux:ef24484c971cae41e86ce8b0925454b8&#34;&gt;安装搜狗输入法for Linux&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://pinyin.sogou.com/linux/help.php&#34;&gt;搜狗输入法官网&lt;/a&gt;下载安装文件；&lt;/li&gt;
@@ -396,7 +398,7 @@ sudo dpkg -i hugo_0.15_amd64.deb
 &lt;li&gt;重启，输入法生效。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;配置github&#34;&gt;配置github&lt;/h3&gt;
+&lt;h3 id=&#34;配置github:ef24484c971cae41e86ce8b0925454b8&#34;&gt;配置github&lt;/h3&gt;
 
 &lt;p&gt;由于hugo文件在另一台电脑已经配置好config.toml文件，所以只需要将整个文件夹copy过来，配置好Ubuntu本地的github即可&lt;/p&gt;
 
@@ -407,7 +409,7 @@ git remote add origin git@github.com:tmhm/blog_well.git
 git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;hugo-命令note&#34;&gt;Hugo 命令Note&lt;/h3&gt;
+&lt;h3 id=&#34;hugo-命令note:ef24484c971cae41e86ce8b0925454b8&#34;&gt;Hugo 命令Note&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;本地服务器，看样式：
 hugo server --baseURL=http://127.0.0.1:1313/ -t hyde-y -D --bind=&amp;quot;0.0.0.0&amp;quot;
@@ -420,7 +422,7 @@ hugo -t hyde-y --baseURL &amp;quot;https://tmhm.github.io/&amp;quot; -D
 hugo new post/second.md
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;写blog操作步骤&#34;&gt;写blog操作步骤&lt;/h3&gt;
+&lt;h3 id=&#34;写blog操作步骤:ef24484c971cae41e86ce8b0925454b8&#34;&gt;写blog操作步骤&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;用&lt;code&gt;hugo new post/test.md&lt;/code&gt;命令在&lt;code&gt;content/post/&lt;/code&gt;路径生成新文件test.md；&lt;/li&gt;
@@ -456,7 +458,7 @@ Favorites: ML,AI,DRL
 
 &lt;p&gt;=================================&lt;/p&gt;
 
-&lt;h2 id=&#34;preamble:53e892b8b41cc4caece1cfd5ef21d6e7&#34;&gt;Preamble&lt;/h2&gt;
+&lt;h2 id=&#34;preamble&#34;&gt;Preamble&lt;/h2&gt;
 
 &lt;p&gt;This Simple Public License 2.0 (SimPL-2.0 for short) is a plain language
 implementation of GPL 2.0.  The words are different, but the goal is the
@@ -464,7 +466,7 @@ same - to guarantee for all users the freedom to share and change
 software.  If anyone wonders about the meaning of the SimPL, they should
 interpret it as consistent with GPL 2.0.&lt;/p&gt;
 
-&lt;h1 id=&#34;simple-public-license-simpl-2-0:53e892b8b41cc4caece1cfd5ef21d6e7&#34;&gt;Simple Public License (SimPL) 2.0&lt;/h1&gt;
+&lt;h1 id=&#34;simple-public-license-simpl-2-0&#34;&gt;Simple Public License (SimPL) 2.0&lt;/h1&gt;
 
 &lt;p&gt;The SimPL applies to the software&amp;rsquo;s source and object code and comes
 with any rights that I have in it (other than trademarks). You agree to
@@ -517,7 +519,7 @@ licensees get to keep their rights if they abide);&lt;/li&gt;
 of the SimPL.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;license-for-the-license:53e892b8b41cc4caece1cfd5ef21d6e7&#34;&gt;License for the License&lt;/h2&gt;
+&lt;h2 id=&#34;license-for-the-license&#34;&gt;License for the License&lt;/h2&gt;
 
 &lt;p&gt;You may do anything that you want with the SimPL text; it&amp;rsquo;s a license
 form to use in any way that you find helpful.  To avoid confusion,
@@ -543,19 +545,19 @@ acknowledge that your license is &amp;laquo;based on the Simple Public License&a
     
     <item>
       <title>基于DRL和TORCS的自动驾驶仿真系统——之环境配置</title>
-      <link>https://tmhm.github.io/2017/02/08/%E5%9F%BA%E4%BA%8Edrl%E5%92%8Ctorcs%E7%9A%84%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E4%BB%BF%E7%9C%9F%E7%B3%BB%E7%BB%9F%E4%B9%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
+      <link>https://tmhm.github.io/2017/02/08/auto-driving-simulation-based-on-drltorcs_configuration/</link>
       <pubDate>Wed, 08 Feb 2017 09:13:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2017/02/08/%E5%9F%BA%E4%BA%8Edrl%E5%92%8Ctorcs%E7%9A%84%E8%87%AA%E5%8A%A8%E9%A9%BE%E9%A9%B6%E4%BB%BF%E7%9C%9F%E7%B3%BB%E7%BB%9F%E4%B9%8B%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://tmhm.github.io/2017/02/08/auto-driving-simulation-based-on-drltorcs_configuration/</guid>
       <description>
 
 &lt;p&gt;&lt;em&gt;玩TORCS和DRL差不多有一整年了，开始的摸爬滚打都是不断碰壁过来的，近来在参与&lt;a href=&#34;https://katefvision.github.io/&#34;&gt;CMU的DRL10703课程&lt;/a&gt;学习和翻译志愿者工作，也将自己以前的一些工作做一些备忘，以作为有兴趣同学的参考。&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;torcs仿真器平台安装:1793684d767565b415bdf28945fbfe28&#34;&gt;TORCS仿真器平台安装&lt;/h3&gt;
+&lt;h3 id=&#34;torcs仿真器平台安装&#34;&gt;TORCS仿真器平台安装&lt;/h3&gt;
 
 &lt;p&gt;仿真器平台主要包括两步：安装TORCS，然后添加锦标赛用的patch。&lt;/p&gt;
 
-&lt;h4 id=&#34;torcs仿真器的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;TORCS仿真器的安装&lt;/h4&gt;
+&lt;h4 id=&#34;torcs仿真器的安装&#34;&gt;TORCS仿真器的安装&lt;/h4&gt;
 
 &lt;p&gt;The open racing car simulator（TORCS）&lt;a href=&#34;http://torcs.sourceforge.net/&#34;&gt;主页&lt;/a&gt;&lt;/p&gt;
 
@@ -578,7 +580,7 @@ acknowledge that your license is &amp;laquo;based on the Simple Public License&a
 &lt;p&gt;如何在仿真器上一步步实现一个简单ROBOT，教程可见：
 &lt;a href=&#34;http://www.berniw.org/tutorials/robot/&#34;&gt;http://www.berniw.org/tutorials/robot/&lt;/a&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;championship-platform的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;Championship Platform的安装&lt;/h4&gt;
+&lt;h4 id=&#34;championship-platform的安装&#34;&gt;Championship Platform的安装&lt;/h4&gt;
 
 &lt;p&gt;为扩展仿真器平台用于我们的智能驾驶AI程序的开发，我们采用的是锦标赛平台的接口。在安装torcs之后，可以直接安装patch。实现安装源文件下载地址：
 &lt;a href=&#34;https://sourceforge.net/projects/cig/files/SCR%20Championship/&#34;&gt;https://sourceforge.net/projects/cig/files/SCR%20Championship/&lt;/a&gt;&lt;/p&gt;
@@ -602,16 +604,16 @@ Manual的官方文件: &lt;a href=&#34;http://arxiv.org/abs/1304.1672&#34;&gt;ht
 
 &lt;p&gt;至此，TORCS仿真器平台安装完毕，下面搭建配套的软件IDE环境。&lt;/p&gt;
 
-&lt;h3 id=&#34;软件ide环境搭建:1793684d767565b415bdf28945fbfe28&#34;&gt;软件IDE环境搭建&lt;/h3&gt;
+&lt;h3 id=&#34;软件ide环境搭建&#34;&gt;软件IDE环境搭建&lt;/h3&gt;
 
-&lt;h4 id=&#34;anaconda-的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;Anaconda 的安装&lt;/h4&gt;
+&lt;h4 id=&#34;anaconda-的安装&#34;&gt;Anaconda 的安装&lt;/h4&gt;
 
 &lt;p&gt;Anaconda 是一个开源的，基于python的跨平台（windows，osx，liunx）科学计算平台，支持python2和python3，示例用的是基于python2的anaconda2-4.0.0&lt;/p&gt;
 
 &lt;p&gt;安装后，会创建一个Anaconda Prompt（一个类似DOS的命令行窗口），它可以像linux一样来通过命令管理各种科学计算包，执行命令等。
 比如可以用conda ，pip等工具管理包&lt;/p&gt;
 
-&lt;h4 id=&#34;pybrain的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;PyBrain的安装&lt;/h4&gt;
+&lt;h4 id=&#34;pybrain的安装&#34;&gt;PyBrain的安装&lt;/h4&gt;
 
 &lt;p&gt;Pybrain是一个基于python的机器学习模块，对强化学习的支持比较好，2015年底的时候，还只有很少的模块是专门做强化学习的，Pybrain就是定位在强化学习和神经网络，由于是个人的项目，维护更新比较慢，目前使用的是0.33版本。&lt;/p&gt;
 
@@ -633,7 +635,7 @@ Manual的官方文件: &lt;a href=&#34;http://arxiv.org/abs/1304.1672&#34;&gt;ht
 
 &lt;p&gt;&lt;em&gt;Note： mq 是指包的发布者&lt;/em&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;pycharm-的安装:1793684d767565b415bdf28945fbfe28&#34;&gt;PyCharm 的安装&lt;/h4&gt;
+&lt;h4 id=&#34;pycharm-的安装&#34;&gt;PyCharm 的安装&lt;/h4&gt;
 
 &lt;p&gt;尽管Anaconda包含了一个Spyder 的IDE，个人感觉不太友好，故还是额外安装&lt;a href=&#34;https://www.jetbrains.com/pycharm/download/#section=windows&#34;&gt;PyCharm&lt;/a&gt;。PyCharm是JetBrains公司推出的一套基于python的跨平台工具。包含免费的社区版和收费的专业版，示例的是专业版，由于近期修改系统时间的漏洞已经修护（貌似最多就一年有效），建议直接安装社区版即可。与TORCS的接口程序在下一篇代码部分给出。&lt;/p&gt;
 </description>
@@ -641,10 +643,10 @@ Manual的官方文件: &lt;a href=&#34;http://arxiv.org/abs/1304.1672&#34;&gt;ht
     
     <item>
       <title>Python 中logging 模块的配置和使用</title>
-      <link>https://tmhm.github.io/2016/12/25/python-%E4%B8%ADlogging-%E6%A8%A1%E5%9D%97%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/</link>
+      <link>https://tmhm.github.io/2016/12/25/logging-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Sun, 25 Dec 2016 04:49:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/12/25/python-%E4%B8%ADlogging-%E6%A8%A1%E5%9D%97%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/</guid>
+      <guid>https://tmhm.github.io/2016/12/25/logging-%E7%9A%84%E9%85%8D%E7%BD%AE%E5%92%8C%E4%BD%BF%E7%94%A8/</guid>
       <description>
 
 &lt;p&gt;reference :&lt;/p&gt;
@@ -709,7 +711,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
 &lt;li&gt;文件中记录level 超过 debug 的信息&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;level设计:ab6ecea521d440c8d06d82d2c5fdae84&#34;&gt;level设计&lt;/h4&gt;
+&lt;h4 id=&#34;level设计&#34;&gt;level设计&lt;/h4&gt;
 
 &lt;p&gt;logging函数根据它们用来跟踪的事件的级别或严重程度来命名。&lt;a href=&#34;http://python.usyiyi.cn/translate/python_278/howto/logging.html#logging-advanced-tutorial&#34;&gt;标准级别及其适用性描述&lt;/a&gt;如下（以严重程度递增排序）：&lt;/p&gt;
 
@@ -769,10 +771,10 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
     
     <item>
       <title>matplotlib y轴标注显示不全以及subplot调整的问题</title>
-      <link>https://tmhm.github.io/2016/12/23/matplotlib-y%E8%BD%B4%E6%A0%87%E6%B3%A8%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8%E4%BB%A5%E5%8F%8Asubplot%E8%B0%83%E6%95%B4%E7%9A%84%E9%97%AE%E9%A2%98/</link>
+      <link>https://tmhm.github.io/2016/12/23/matplotlib-y-show-incomplete-subplot/</link>
       <pubDate>Fri, 23 Dec 2016 08:32:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/12/23/matplotlib-y%E8%BD%B4%E6%A0%87%E6%B3%A8%E6%98%BE%E7%A4%BA%E4%B8%8D%E5%85%A8%E4%BB%A5%E5%8F%8Asubplot%E8%B0%83%E6%95%B4%E7%9A%84%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://tmhm.github.io/2016/12/23/matplotlib-y-show-incomplete-subplot/</guid>
       <description>
 
 &lt;p&gt;问题：
@@ -857,10 +859,10 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
     
     <item>
       <title>无人驾驶之激光雷达&amp;摄像头</title>
-      <link>https://tmhm.github.io/2016/12/02/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E4%B9%8B%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E6%91%84%E5%83%8F%E5%A4%B4/</link>
+      <link>https://tmhm.github.io/2016/12/02/auto-driving_lidarcamera-shared-from-%E9%80%9F%E8%85%BE%E9%82%B1%E7%BA%AF%E9%91%AB/</link>
       <pubDate>Fri, 02 Dec 2016 05:03:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/12/02/%E6%97%A0%E4%BA%BA%E9%A9%BE%E9%A9%B6%E4%B9%8B%E6%BF%80%E5%85%89%E9%9B%B7%E8%BE%BE%E6%91%84%E5%83%8F%E5%A4%B4/</guid>
+      <guid>https://tmhm.github.io/2016/12/02/auto-driving_lidarcamera-shared-from-%E9%80%9F%E8%85%BE%E9%82%B1%E7%BA%AF%E9%91%AB/</guid>
       <description>
 
 &lt;blockquote&gt;
@@ -869,7 +871,7 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 
 &lt;p&gt;根据听的一些讲座和看的书籍，个人感觉：目前现在的自动驾驶，根本问题还是在于感知（路况，周边物体，交通标识等等)，控制的方法论问题并没有根本性的改变。&lt;/p&gt;
 
-&lt;h3 id=&#34;激光雷达与摄像头性能对比&#34;&gt;激光雷达与摄像头性能对比&lt;/h3&gt;
+&lt;h3 id=&#34;激光雷达与摄像头性能对比:8ac9e7f596e13310c647dc2e31d1f002&#34;&gt;激光雷达与摄像头性能对比&lt;/h3&gt;
 
 &lt;p&gt;摄像头的优点是成本低廉，技术上相对比较成熟。&lt;/p&gt;
 
@@ -883,7 +885,7 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 
 &lt;p&gt;&lt;strong&gt;从这里来看，激光雷达主要还是提供动态性能，但是，激光雷达对于信号的连续性又缺乏支持，需要摄像头来标定前后帧。&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;激光雷达和摄像头分别完成什么工作&#34;&gt;激光雷达和摄像头分别完成什么工作？&lt;/h3&gt;
+&lt;h3 id=&#34;激光雷达和摄像头分别完成什么工作:8ac9e7f596e13310c647dc2e31d1f002&#34;&gt;激光雷达和摄像头分别完成什么工作？&lt;/h3&gt;
 
 &lt;p&gt;无人驾驶过程中，环境感知信息主要有：&lt;/p&gt;
 
@@ -891,7 +893,7 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 
 &lt;p&gt;周边物体感知，就是可能影响车辆通行性、安全性的静态物体和动态物体的识别，包括车辆，行人以及交通标志的识别，包括红绿灯识别和限速牌识别。&lt;/p&gt;
 
-&lt;h3 id=&#34;对于环境感知所需要的传感器-我们把它分成三类&#34;&gt;对于环境感知所需要的传感器，我们把它分成三类：&lt;/h3&gt;
+&lt;h3 id=&#34;对于环境感知所需要的传感器-我们把它分成三类:8ac9e7f596e13310c647dc2e31d1f002&#34;&gt;对于环境感知所需要的传感器，我们把它分成三类：&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;感知周围物体的传感器，包括激光雷达、摄像头和毫米波雷达这三类；&lt;/li&gt;
@@ -901,7 +903,7 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 
 &lt;p&gt;感觉，跟移动机器人并没有本质上的区别。&lt;/p&gt;
 
-&lt;h4 id=&#34;车道线检测&#34;&gt;车道线检测：&lt;/h4&gt;
+&lt;h4 id=&#34;车道线检测:8ac9e7f596e13310c647dc2e31d1f002&#34;&gt;车道线检测：&lt;/h4&gt;
 
 &lt;p&gt;图像一般实际处理的是灰度图像，没用到彩色的作用，&lt;/p&gt;
 
@@ -909,24 +911,24 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 
 &lt;p&gt;直线拟合&lt;/p&gt;
 
-&lt;h4 id=&#34;无人驾驶环境感知中摄像头的用处&#34;&gt;无人驾驶环境感知中摄像头的用处：&lt;/h4&gt;
+&lt;h4 id=&#34;无人驾驶环境感知中摄像头的用处:8ac9e7f596e13310c647dc2e31d1f002&#34;&gt;无人驾驶环境感知中摄像头的用处：&lt;/h4&gt;
 
 &lt;p&gt;车道线检测，障碍物检测，交通标识识别&lt;/p&gt;
 
-&lt;h4 id=&#34;无人驾驶环境感知中激光雷达的用处&#34;&gt;无人驾驶环境感知中激光雷达的用处：&lt;/h4&gt;
+&lt;h4 id=&#34;无人驾驶环境感知中激光雷达的用处:8ac9e7f596e13310c647dc2e31d1f002&#34;&gt;无人驾驶环境感知中激光雷达的用处：&lt;/h4&gt;
 
 &lt;p&gt;1.路沿检测，包括车道线
 2.障碍物识别，对静态物体和动态物体的识别
 3.定位以及地图构建&lt;/p&gt;
 
-&lt;h5 id=&#34;路沿检测大致分三个步骤&#34;&gt;路沿检测大致分三个步骤：&lt;/h5&gt;
+&lt;h5 id=&#34;路沿检测大致分三个步骤:8ac9e7f596e13310c647dc2e31d1f002&#34;&gt;路沿检测大致分三个步骤：&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code&gt;1. 拿到原始点云，
 2. 地面店检测、提取路沿点
 3. 通过路沿点的直线拟合，可以把路沿检测出来
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;障碍物的检测-大致包括&#34;&gt;障碍物的检测，大致包括：&lt;/h5&gt;
+&lt;h5 id=&#34;障碍物的检测-大致包括:8ac9e7f596e13310c647dc2e31d1f002&#34;&gt;障碍物的检测，大致包括：&lt;/h5&gt;
 
 &lt;ol&gt;
 &lt;li&gt;获取三维点云数据后，对障碍物进行聚类&lt;/li&gt;
@@ -934,7 +936,7 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 &lt;li&gt;获取到新物体之后，把这个物体放到训练集里面，然后用SVM分类器把物体时别出来。（看来svm还是经典中的稳定战斗机），此处，选择特征也非常重要吧，对于每一个物体，可能包括它的反射强度，横纵向的宽度，以及位置姿态。（速腾的方法）&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h5 id=&#34;辅助定位&#34;&gt;辅助定位：&lt;/h5&gt;
+&lt;h5 id=&#34;辅助定位:8ac9e7f596e13310c647dc2e31d1f002&#34;&gt;辅助定位：&lt;/h5&gt;
 
 &lt;p&gt;利用激光雷达进行辅助定位。定位理论有两种：基于已知地图的定位方法以及基于未知地图的定位方法。&lt;/p&gt;
 
@@ -950,7 +952,7 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 
 &lt;p&gt;现在对高精度地图的定义，不同地图厂家有不同定义的方式。做高精度地图是为了辅助无人驾驶，所谓高精度地图就是相比之前的导航地图，前者精确度更高，可以达到厘米级；另一个就是高精度地图包含更多的信息量，比如说车道的宽度、倾斜度等信息。&lt;/p&gt;
 
-&lt;h3 id=&#34;摄像头和激光雷达的融合&#34;&gt;摄像头和激光雷达的融合&lt;/h3&gt;
+&lt;h3 id=&#34;摄像头和激光雷达的融合:8ac9e7f596e13310c647dc2e31d1f002&#34;&gt;摄像头和激光雷达的融合&lt;/h3&gt;
 
 &lt;p&gt;第一步，标定&lt;/p&gt;
 

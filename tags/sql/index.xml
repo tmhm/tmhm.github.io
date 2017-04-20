@@ -13,11 +13,11 @@
     <atom:link href="https://tmhm.github.io/tags/sql/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>taste SQL</title>
-      <link>https://tmhm.github.io/2017/04/01/taste-sql/</link>
+      <title>SQL初识</title>
+      <link>https://tmhm.github.io/2017/04/01/taste_sql/</link>
       <pubDate>Sat, 01 Apr 2017 22:51:52 +0800</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2017/04/01/taste-sql/</guid>
+      <guid>https://tmhm.github.io/2017/04/01/taste_sql/</guid>
       <description>
 
 &lt;h3 id=&#34;事务的四项特性:c90b6d24769a3945b8ac28999f82ce69&#34;&gt;事务的四项特性&lt;/h3&gt;

@@ -345,7 +345,7 @@ return 0;
 
 &lt;p&gt;C/C++小知识点&amp;ndash;[锦集]&lt;/p&gt;
 
-&lt;h4 id=&#34;和-的优先级&#34;&gt;“=”和“&amp;lt;=” 的优先级&lt;/h4&gt;
+&lt;h4 id=&#34;和-的优先级:bb201a2dec2d4d9a2d52c87713e5df85&#34;&gt;“=”和“&amp;lt;=” 的优先级&lt;/h4&gt;
 
 &lt;p&gt;1.(   (file_got_len = recv_str(sock,buf,BUF_SIZE) )    &amp;lt;= 0)&lt;/p&gt;
 
@@ -359,7 +359,7 @@ return 0;
 
 &lt;p&gt;所以在多语句写在一起时，最好用（） 明示！！&lt;/p&gt;
 
-&lt;h4 id=&#34;运算操作符&#34;&gt;运算操作符&lt;/h4&gt;
+&lt;h4 id=&#34;运算操作符:bb201a2dec2d4d9a2d52c87713e5df85&#34;&gt;运算操作符&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;int i,t;
 t = (i=1)+(++i);
@@ -387,7 +387,7 @@ t = (i=1)+(++i);
 
 &lt;p&gt;i自加后，只保留在eax 寄存器里，然后将eax的2赋给i，所以，i 就变成2了。此处和动态语言的引用似乎有所类似。&lt;/p&gt;
 
-&lt;h4 id=&#34;sizeof操作符与数组&#34;&gt;sizeof操作符与数组&lt;/h4&gt;
+&lt;h4 id=&#34;sizeof操作符与数组:bb201a2dec2d4d9a2d52c87713e5df85&#34;&gt;sizeof操作符与数组&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;int t,tt,num;
 int array[5];
@@ -431,10 +431,10 @@ num = sizeof(array)/sizeof(array[0]);  // get the number of array .  num =5
     
     <item>
       <title>Dev-C 小问题锦集</title>
-      <link>https://tmhm.github.io/2016/02/21/dev-c-%E5%B0%8F%E9%97%AE%E9%A2%98%E9%94%A6%E9%9B%86/</link>
+      <link>https://tmhm.github.io/2016/02/21/dev-cplus-%E5%B0%8F%E9%97%AE%E9%A2%98%E9%94%A6%E9%9B%86/</link>
       <pubDate>Sun, 21 Feb 2016 13:10:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/02/21/dev-c-%E5%B0%8F%E9%97%AE%E9%A2%98%E9%94%A6%E9%9B%86/</guid>
+      <guid>https://tmhm.github.io/2016/02/21/dev-cplus-%E5%B0%8F%E9%97%AE%E9%A2%98%E9%94%A6%E9%9B%86/</guid>
       <description>&lt;ul&gt;
 &lt;li&gt;C++ project cann&amp;rsquo;t debug&lt;/li&gt;
 &lt;/ul&gt;
