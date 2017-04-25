@@ -404,7 +404,7 @@ def solution(S):
 lesson 6: &lt;i&gt;sorting&lt;/i&gt;
 &lt;/h3&gt;
 
-&lt;h4 id=&#34;exercise&#34;&gt;exercise&lt;/h4&gt;
+&lt;h4 id=&#34;exercise:7cad0631f6a7aabc2988c4789e25cd49&#34;&gt;exercise&lt;/h4&gt;
 
 &lt;p&gt;&lt;strong&gt;Problem:&lt;/strong&gt;&lt;/p&gt;
 
@@ -481,7 +481,7 @@ def distinct(A):
 &lt;p&gt;Maximize A[P] * A[Q] * A[R] for any triplet (P, Q, R).&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h5 id=&#34;solution-1&#34;&gt;solution 1&lt;/h5&gt;
+&lt;h5 id=&#34;solution-1:7cad0631f6a7aabc2988c4789e25cd49&#34;&gt;solution 1&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;O(N)&lt;/li&gt;
@@ -513,7 +513,7 @@ def distinct(A):
     return a if a &amp;gt; b else b
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;solution-2&#34;&gt;solution 2&lt;/h5&gt;
+&lt;h5 id=&#34;solution-2:7cad0631f6a7aabc2988c4789e25cd49&#34;&gt;solution 2&lt;/h5&gt;
 
 &lt;p&gt;&lt;strong&gt;note:&lt;/strong&gt;&lt;/p&gt;
 
@@ -607,7 +607,7 @@ def distinct(A):
 &lt;li&gt;终点数组不要超过每个圆心的最大值，即小于len（A）－1， 故有min（length－1，i+A［i］）&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;sloution-100&#34;&gt;sloution:[100%]&lt;/h5&gt;
+&lt;h5 id=&#34;sloution-100:7cad0631f6a7aabc2988c4789e25cd49&#34;&gt;sloution:[100%]&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code&gt;def solution(A):
     result = 0
@@ -1260,7 +1260,7 @@ A[6] = 4
 
 &lt;p&gt;The goal is to calculate the value of every counter after all operations.&lt;/p&gt;
 
-&lt;h5 id=&#34;解法一&#34;&gt;解法一：&lt;/h5&gt;
+&lt;h5 id=&#34;解法一:96ab9ad5d66234dff3bc5f35191df08d&#34;&gt;解法一：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Detected time complexity: O(N*M)&lt;/li&gt;
@@ -1288,7 +1288,7 @@ A[6] = 4
     return ret
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;解法二&#34;&gt;解法二&lt;/h5&gt;
+&lt;h5 id=&#34;解法二:96ab9ad5d66234dff3bc5f35191df08d&#34;&gt;解法二&lt;/h5&gt;
 
 &lt;p&gt;[100%] MaxCounters
 &amp;gt;
@@ -2074,7 +2074,7 @@ lesson 4: &lt;i&gt;counting elements&lt;/i&gt;
 increase counter by 1; set value of all counters to current maximum.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h5 id=&#34;解法一&#34;&gt;解法一：&lt;/h5&gt;
+&lt;h5 id=&#34;解法一:3517a0950be7bc5bdabd425539a5cb6a&#34;&gt;解法一：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Detected time complexity: O(N*M)&lt;/li&gt;
@@ -2099,7 +2099,7 @@ increase counter by 1; set value of all counters to current maximum.&lt;/p&gt;
     return ret
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;解法二&#34;&gt;解法二&lt;/h5&gt;
+&lt;h5 id=&#34;解法二:3517a0950be7bc5bdabd425539a5cb6a&#34;&gt;解法二&lt;/h5&gt;
 
 &lt;p&gt;[100%] MaxCounters
 &amp;gt;
@@ -2180,7 +2180,7 @@ O(N)&lt;/p&gt;&lt;/li&gt;
 &lt;p&gt;Compute number of integers divisible by k in range [a..b].&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h5 id=&#34;countdiv-solution-1&#34;&gt;CountDiv solution 1&lt;/h5&gt;
+&lt;h5 id=&#34;countdiv-solution-1:3517a0950be7bc5bdabd425539a5cb6a&#34;&gt;CountDiv solution 1&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;test score 67%&lt;/li&gt;
@@ -2204,7 +2204,7 @@ O(N)&lt;/p&gt;&lt;/li&gt;
     return ret
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;countdiv-solution-2&#34;&gt;CountDiv solution 2&lt;/h5&gt;
+&lt;h5 id=&#34;countdiv-solution-2:3517a0950be7bc5bdabd425539a5cb6a&#34;&gt;CountDiv solution 2&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score 100%&lt;/li&gt;
@@ -2220,7 +2220,7 @@ O(N)&lt;/p&gt;&lt;/li&gt;
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;solution-3&#34;&gt;solution 3&lt;/h5&gt;
+&lt;h5 id=&#34;solution-3:3517a0950be7bc5bdabd425539a5cb6a&#34;&gt;solution 3&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score 100%&lt;/li&gt;
@@ -2241,7 +2241,7 @@ O(N)&lt;/p&gt;&lt;/li&gt;
 &lt;p&gt;Find the minimal nucleotide from a range of sequence DNA.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h5 id=&#34;解法一-1&#34;&gt;解法一：&lt;/h5&gt;
+&lt;h5 id=&#34;解法一-1:3517a0950be7bc5bdabd425539a5cb6a&#34;&gt;解法一：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score  37%&lt;/li&gt;
@@ -2271,7 +2271,7 @@ def solution(S, P, Q):
     return result
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;解法二-1&#34;&gt;解法二：&lt;/h5&gt;
+&lt;h5 id=&#34;解法二-1:3517a0950be7bc5bdabd425539a5cb6a&#34;&gt;解法二：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score 100%
@@ -2377,7 +2377,7 @@ lesson 6: &lt;i&gt;sorting&lt;/i&gt;
 &lt;p&gt;Maximize A[P] * A[Q] * A[R] for any triplet (P, Q, R).&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h5 id=&#34;solution-1&#34;&gt;solution 1&lt;/h5&gt;
+&lt;h5 id=&#34;solution-1:3517a0950be7bc5bdabd425539a5cb6a&#34;&gt;solution 1&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;O(N)&lt;/li&gt;
@@ -2403,7 +2403,7 @@ lesson 6: &lt;i&gt;sorting&lt;/i&gt;
     return a if a &amp;gt; b else b
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;solution-2&#34;&gt;solution 2&lt;/h5&gt;
+&lt;h5 id=&#34;solution-2:3517a0950be7bc5bdabd425539a5cb6a&#34;&gt;solution 2&lt;/h5&gt;
 
 &lt;p&gt;&lt;strong&gt;note:&lt;/strong&gt;&lt;/p&gt;
 
@@ -2547,11 +2547,11 @@ lesson 7: &lt;i&gt;stacks and queues&lt;/i&gt;
       <guid>https://tmhm.github.io/2016/08/30/%E6%95%B0%E5%AD%A6%E9%9A%8F%E8%AE%B0%E8%BD%AC%E8%BD%BD/</guid>
       <description>
 
-&lt;h3 id=&#34;数学随记&#34;&gt;数学随记&lt;/h3&gt;
+&lt;h3 id=&#34;数学随记:f15f8ddb13e5e15f5ca6ebf995658e96&#34;&gt;数学随记&lt;/h3&gt;
 
 &lt;p&gt;转载自：&lt;a href=&#34;http://www.matrix67.com/blog/archives/4294&#34;&gt;随记：我们需要怎样的数学教育？&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;虚数i&#34;&gt;虚数i&lt;/h3&gt;
+&lt;h3 id=&#34;虚数i:f15f8ddb13e5e15f5ca6ebf995658e96&#34;&gt;虚数i&lt;/h3&gt;
 
 &lt;p&gt;虚数是什么？&lt;/p&gt;
 
@@ -2567,7 +2567,7 @@ lesson 7: &lt;i&gt;stacks and queues&lt;/i&gt;
 
 &lt;p&gt;没错，这就把数轴扩展到了整个平面，正好解决了复数没地方表示的问题。于是，复数的乘法可以解释为缩放加旋转，复数本身自然也就有了 z = r (cosθ + sinθi) 的表示方式。顺着这个道理推下去，一切都顺理成章了。复数不但有了几何解释，有时还能更便捷地处理几何问题&lt;/p&gt;
 
-&lt;h2 id=&#34;线性代数&#34;&gt;线性代数&lt;/h2&gt;
+&lt;h2 id=&#34;线性代数:f15f8ddb13e5e15f5ca6ebf995658e96&#34;&gt;线性代数&lt;/h2&gt;
 
 &lt;p&gt;此处&lt;a href=&#34;http://mathoverflow.net/questions/7584/what-are-the-most-misleading-alternate-definitions-in-taught-mathematics&#34;&gt;网页&lt;/a&gt;，有人一语道破线性代数的真谛。
 就好像把 x 变成 2 x 一样，我们经常需要把 (x, y) 变成 (2 x + y, x – 3 y) 之类的东西，这就叫做线性变换。&lt;/p&gt;
@@ -2624,7 +2624,7 @@ struct my_struct {
 #pragma pack() //将地址对齐界线改回原来的值
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;对齐规则-参考-http-www-cnblogs-com-graphics-archive-2010-08-12-1797953-html&#34;&gt;对齐规则&lt;a href=&#34;http://www.cnblogs.com/graphics/archive/2010/08/12/1797953.html&#34;&gt;参考&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;对齐规则-参考-http-www-cnblogs-com-graphics-archive-2010-08-12-1797953-html:6e1b40b8b57ee22a0af6a446d958a932&#34;&gt;对齐规则&lt;a href=&#34;http://www.cnblogs.com/graphics/archive/2010/08/12/1797953.html&#34;&gt;参考&lt;/a&gt;&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;该博文也给出了#pragma pack(show) 和#pragma pack(num)的说明以及在VS中的设置；默认num＝8.&lt;/p&gt;
@@ -2640,7 +2640,7 @@ struct my_struct {
 &lt;li&gt;如果一个类型按n字节对齐，那么该类型的变量起始地址必须是n的倍数。比如int按四字节对齐，那么int类型的变量起始地址一定是4的倍数，比如0x0012ff60，0x0012ff48等。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;查看系统是多少位的&#34;&gt;查看系统是多少位的&lt;/h4&gt;
+&lt;h4 id=&#34;查看系统是多少位的:6e1b40b8b57ee22a0af6a446d958a932&#34;&gt;查看系统是多少位的&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;file /sbin/init&lt;/p&gt;
@@ -2677,7 +2677,7 @@ struct my_struct {
 &lt;p&gt;&lt;code&gt;Ubuntu 15.04 \n \l
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;测试数据所占字节&#34;&gt;测试数据所占字节&lt;/h4&gt;
+&lt;h4 id=&#34;测试数据所占字节:6e1b40b8b57ee22a0af6a446d958a932&#34;&gt;测试数据所占字节&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;因为在数据对齐的时候需要考虑是在什么系统下，各数据类型所占字节大小，纠正网上一些有问题的解答，比如long是只占4bits的。&lt;/p&gt;
@@ -2849,7 +2849,7 @@ class clt_1{
       <guid>https://tmhm.github.io/2016/06/04/%E6%AF%94%E8%BE%83%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%85%E5%90%AB%E4%BB%A5%E5%8F%8A%E5%8F%98%E4%BD%8D%E8%AF%8D/</guid>
       <description>
 
-&lt;h5 id=&#34;description:90262507d577af3b6d8bd16478af3fcf&#34;&gt;Description&lt;/h5&gt;
+&lt;h5 id=&#34;description&#34;&gt;Description&lt;/h5&gt;
 
 &lt;p&gt;Write a method anagram(s,t) to decide if two strings are anagrams or not.&lt;/p&gt;
 
@@ -2859,7 +2859,7 @@ class clt_1{
 &lt;li&gt;Two strings are anagram if they can be the same after change the order of characters.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;example:90262507d577af3b6d8bd16478af3fcf&#34;&gt;Example&lt;/h5&gt;
+&lt;h5 id=&#34;example&#34;&gt;Example&lt;/h5&gt;
 
 &lt;p&gt;Given s = &amp;laquo;abcd&amp;raquo;, t = &amp;laquo;dcab&amp;raquo;, return true.&lt;/p&gt;
 
@@ -2867,7 +2867,7 @@ class clt_1{
 
 &lt;p&gt;Given s = &amp;laquo;ab&amp;raquo;, t = &amp;laquo;ac&amp;raquo;, return false.&lt;/p&gt;
 
-&lt;h5 id=&#34;solution:90262507d577af3b6d8bd16478af3fcf&#34;&gt;solution：&lt;/h5&gt;
+&lt;h5 id=&#34;solution&#34;&gt;solution：&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code&gt;class Solution:
     &amp;quot;&amp;quot;&amp;quot;
@@ -2895,9 +2895,9 @@ class clt_1{
             return False
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;compare-strings:90262507d577af3b6d8bd16478af3fcf&#34;&gt;Compare Strings&lt;/h4&gt;
+&lt;h4 id=&#34;compare-strings&#34;&gt;Compare Strings&lt;/h4&gt;
 
-&lt;h5 id=&#34;description-1:90262507d577af3b6d8bd16478af3fcf&#34;&gt;Description&lt;/h5&gt;
+&lt;h5 id=&#34;description-1&#34;&gt;Description&lt;/h5&gt;
 
 &lt;p&gt;Compare two strings A and B, determine whether A contains all of the characters in B.&lt;/p&gt;
 
@@ -2906,13 +2906,13 @@ class clt_1{
 &lt;p&gt;&lt;strong&gt;Notice&lt;/strong&gt;
 &amp;gt;The characters of B in A are not necessary continuous or ordered.&lt;/p&gt;
 
-&lt;h5 id=&#34;example-1:90262507d577af3b6d8bd16478af3fcf&#34;&gt;Example&lt;/h5&gt;
+&lt;h5 id=&#34;example-1&#34;&gt;Example&lt;/h5&gt;
 
 &lt;p&gt;For A = &amp;laquo;ABCD&amp;raquo;, B = &amp;laquo;ACD&amp;raquo;, return true.&lt;/p&gt;
 
 &lt;p&gt;For A = &amp;laquo;ABCD&amp;raquo;, B = &amp;laquo;AABC&amp;raquo;, return false.&lt;/p&gt;
 
-&lt;h5 id=&#34;solution-1:90262507d577af3b6d8bd16478af3fcf&#34;&gt;solution&lt;/h5&gt;
+&lt;h5 id=&#34;solution-1&#34;&gt;solution&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code&gt;class Solution:
     &amp;quot;&amp;quot;&amp;quot;
