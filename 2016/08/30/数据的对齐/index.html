@@ -66,7 +66,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://tmhm.github.io/v2.png">
 <link href="https://tmhm.github.io/v2.png" rel="icon">
 
-<meta name="generator" content="Hugo 0.15" />
+<meta name="generator" content="Hugo 0.18.1" />
 
   
 <!--[if lt IE 9]>
@@ -175,6 +175,7 @@
 </header>
 
 
+
 <article id="main-content" class="container main_content single">
   <header class="container hat">
   <h1>数据的对齐
@@ -250,7 +251,7 @@ struct my_struct {
 #pragma pack() //将地址对齐界线改回原来的值
 </code></pre>
 
-<h4 id="对齐规则-参考-http-www-cnblogs-com-graphics-archive-2010-08-12-1797953-html:6e1b40b8b57ee22a0af6a446d958a932">对齐规则<a href="http://www.cnblogs.com/graphics/archive/2010/08/12/1797953.html">参考</a></h4>
+<h4 id="对齐规则-参考-http-www-cnblogs-com-graphics-archive-2010-08-12-1797953-html">对齐规则<a href="http://www.cnblogs.com/graphics/archive/2010/08/12/1797953.html">参考</a></h4>
 
 <blockquote>
 <p>该博文也给出了#pragma pack(show) 和#pragma pack(num)的说明以及在VS中的设置；默认num＝8.</p>
@@ -266,7 +267,7 @@ struct my_struct {
 <li>如果一个类型按n字节对齐，那么该类型的变量起始地址必须是n的倍数。比如int按四字节对齐，那么int类型的变量起始地址一定是4的倍数，比如0x0012ff60，0x0012ff48等。</li>
 </ul>
 
-<h4 id="查看系统是多少位的:6e1b40b8b57ee22a0af6a446d958a932">查看系统是多少位的</h4>
+<h4 id="查看系统是多少位的">查看系统是多少位的</h4>
 
 <blockquote>
 <p>file /sbin/init</p>
@@ -303,7 +304,7 @@ struct my_struct {
 <p><code>Ubuntu 15.04 \n \l
 </code></p>
 
-<h4 id="测试数据所占字节:6e1b40b8b57ee22a0af6a446d958a932">测试数据所占字节</h4>
+<h4 id="测试数据所占字节">测试数据所占字节</h4>
 
 <blockquote>
 <p>因为在数据对齐的时候需要考虑是在什么系统下，各数据类型所占字节大小，纠正网上一些有问题的解答，比如long是只占4bits的。</p>
@@ -361,11 +362,12 @@ cout &lt;&lt; &quot;char*: &quot; &lt;&lt; sizeof(char*) &lt;&lt; endl;
 <ul>
 <li>由于硬件设计的特点，CPU在读写内存时，如果所给的地址是机器字长的整数倍，则操作效率会比较高。</li>
 <li>有的CPU甚至不支持读写地址不对齐的内存单元。</li>
-
-<li><p>为了提高程序运行的效率，编译器会尽量避免一个变量（包括结构体成员）的存储空间跨越地址对齐的界线。</p></li>
-
-<li><p>实验（64bits 环境）</p></li>
+<li>为了提高程序运行的效率，编译器会尽量避免一个变量（包括结构体成员）的存储空间跨越地址对齐的界线。</li>
 </ul>
+
+<ol>
+<li>实验（64bits 环境）</li>
+</ol>
 
 <pre><code>
 #include &lt;iostream&gt;
@@ -565,8 +567,8 @@ class clt_1{
 
 </footer>
 <script type="text/javascript"
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 
 
     </main>

@@ -2,14 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Language on Well</title>
-    <link>https://tmhm.github.io/categories/language/</link>
+    <link>https://tmhm.github.io/categories/language/index.xml</link>
     <description>Recent content in Language on Well</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
     <managingEditor>wells217@163.com (Well)</managingEditor>
     <webMaster>wells217@163.com (Well)</webMaster>
     <copyright>(c) 2017 Well.</copyright>
-    <lastBuildDate>Sat, 01 Apr 2017 22:51:52 +0800</lastBuildDate>
     <atom:link href="https://tmhm.github.io/categories/language/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -20,7 +19,7 @@
       <guid>https://tmhm.github.io/2017/04/01/taste_sql/</guid>
       <description>
 
-&lt;h3 id=&#34;事务的四项特性:c90b6d24769a3945b8ac28999f82ce69&#34;&gt;事务的四项特性&lt;/h3&gt;
+&lt;h3 id=&#34;事务的四项特性&#34;&gt;事务的四项特性&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;ACID&lt;/li&gt;
@@ -47,11 +46,14 @@
 
 &lt;ul&gt;
 &lt;li&gt;事务提交，记录到硬盘，&lt;/li&gt;
-&lt;li&gt;刷新机制，时间－》秒， 事务提交即刷新，操作系统决定&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;刷新机制，时间－》秒， 事务提交即刷新，操作系统决定&lt;br /&gt;
+
+&lt;br /&gt;
+&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;sql:c90b6d24769a3945b8ac28999f82ce69&#34;&gt;SQL&lt;/h3&gt;
+&lt;h3 id=&#34;sql&#34;&gt;SQL&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;四种操作&lt;/li&gt;
@@ -134,7 +136,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
 &lt;li&gt;文件中记录level 超过 debug 的信息&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;level设计:ab6ecea521d440c8d06d82d2c5fdae84&#34;&gt;level设计&lt;/h4&gt;
+&lt;h4 id=&#34;level设计&#34;&gt;level设计&lt;/h4&gt;
 
 &lt;p&gt;logging函数根据它们用来跟踪的事件的级别或严重程度来命名。&lt;a href=&#34;http://python.usyiyi.cn/translate/python_278/howto/logging.html#logging-advanced-tutorial&#34;&gt;标准级别及其适用性描述&lt;/a&gt;如下（以严重程度递增排序）：&lt;/p&gt;
 
@@ -200,7 +202,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
       <guid>https://tmhm.github.io/2016/08/30/c_cplus%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%B6%89%E5%8F%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
       <description>
 
-&lt;h3 id=&#34;c中的printf函数:8cbe9a476867bcb8bd5afeaf4b977723&#34;&gt;c中的printf函数&lt;/h3&gt;
+&lt;h3 id=&#34;c中的printf函数&#34;&gt;c中的printf函数&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;main() {
 	int b = 3;
@@ -220,7 +222,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
 &lt;p&gt;原因：printf函数计算参数是&lt;strong&gt;从右往左压栈的&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;c和c-的关系:8cbe9a476867bcb8bd5afeaf4b977723&#34;&gt;c和c++的关系&lt;/h3&gt;
+&lt;h3 id=&#34;c和c-的关系&#34;&gt;c和c++的关系&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;c++ 语言支持函数重载，c语言不支持函数重载；&lt;/li&gt;
@@ -228,7 +230,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
 &lt;li&gt;C++提供了C连接交换指定符 extern &amp;laquo;c&amp;raquo; 解决名字匹配的问题。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;指针和引用:8cbe9a476867bcb8bd5afeaf4b977723&#34;&gt;指针和引用&lt;/h3&gt;
+&lt;h3 id=&#34;指针和引用&#34;&gt;指针和引用&lt;/h3&gt;
 
 &lt;p&gt;区别：&lt;/p&gt;
 
@@ -239,7 +241,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
 &lt;li&gt;应用区别，有存在不指向任何对象的可能和不同时刻会指向不同的对象等情况时，使用指针；如果总是指向一个对象并且指向一个对象以后就不会改变指向，那么应该使用引用。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;传递动态内存:8cbe9a476867bcb8bd5afeaf4b977723&#34;&gt;传递动态内存&lt;/h3&gt;
+&lt;h3 id=&#34;传递动态内存&#34;&gt;传递动态内存&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;void swap3(int *p, int *q) {
 	int *tmp;
@@ -276,7 +278,7 @@ void swap5(int &amp;amp;p, int &amp;amp;q) {
     cout &amp;lt;&amp;lt; t1 &amp;lt;&amp;lt; &amp;quot;&amp;quot;&amp;lt;&amp;lt; t2 &amp;lt;&amp;lt; endl;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;malloc-申请内存:8cbe9a476867bcb8bd5afeaf4b977723&#34;&gt;malloc 申请内存&lt;/h3&gt;
+&lt;h3 id=&#34;malloc-申请内存&#34;&gt;malloc 申请内存&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;void getMemory_err(char *p, int num) {
 p = (char *)malloc(sizeof(char )* num);
@@ -324,7 +326,7 @@ cout&amp;lt;&amp;lt; &amp;amp;str2 &amp;lt;&amp;lt; endl;
     012FF768
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;字符串变量存储问题:8cbe9a476867bcb8bd5afeaf4b977723&#34;&gt;字符串变量存储问题&lt;/h3&gt;
+&lt;h3 id=&#34;字符串变量存储问题&#34;&gt;字符串变量存储问题&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;int a = 0; //全局初始化区
 char *p1; //全局未初始化区
@@ -408,7 +410,7 @@ cout &amp;lt;&amp;lt; &amp;quot;After fun return:&amp;quot; &amp;lt;&amp;lt; &am
 &amp;gt; - 字符串数据保存在常量区，只读的数据段，不能直接修改
 &amp;gt; - 函数内数组是局部变量，在函数内通过str[0] 可以修改。return之后，局部变量释放，&lt;/p&gt;
 
-&lt;h3 id=&#34;构造函数:8cbe9a476867bcb8bd5afeaf4b977723&#34;&gt;构造函数&lt;/h3&gt;
+&lt;h3 id=&#34;构造函数&#34;&gt;构造函数&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;class tA{
 public:
@@ -446,7 +448,7 @@ return 0;
 &lt;p&gt;在构造B类之前，先调用A的构造函数&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;malloc-free-new-delete:8cbe9a476867bcb8bd5afeaf4b977723&#34;&gt;malloc/free ＆＆new/delete&lt;/h3&gt;
+&lt;h3 id=&#34;malloc-free-new-delete&#34;&gt;malloc/free ＆＆new/delete&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;malloc/free 是c++/c语言的标准库函数，new/delete是c++的运算符，它们都可以用于申请和释放动态内存&lt;/li&gt;
@@ -454,7 +456,7 @@ return 0;
 &lt;li&gt;c++语言中new运算符， 能完成动态内存分配和初始化工作； delete 运算符完成清理和释放内存工作&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;指针和句柄:8cbe9a476867bcb8bd5afeaf4b977723&#34;&gt;指针和句柄&lt;/h3&gt;
+&lt;h3 id=&#34;指针和句柄&#34;&gt;指针和句柄&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;句柄和指针其实是两个截然不同的概念。&lt;/li&gt;
@@ -463,7 +465,7 @@ return 0;
 &lt;li&gt;句柄可以看做是指向指针的指针。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;this-指针:8cbe9a476867bcb8bd5afeaf4b977723&#34;&gt;this 指针&lt;/h3&gt;
+&lt;h3 id=&#34;this-指针&#34;&gt;this 指针&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;本质上是一个函数参数，只是编译器隐藏起形式，语法层面的参数，this指针只能在成员函数中使用，全局函数，静态函数都不能使用this指针。 在python中直接显性给出&lt;/li&gt;
@@ -500,7 +502,7 @@ f.write(&amp;quot;hello,\n This is a test file&amp;quot;)
 f.close()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;计算程序运行时间:209ae7a9d321a421a49117ff5988f512&#34;&gt;计算程序运行时间&lt;/h3&gt;
+&lt;h3 id=&#34;计算程序运行时间&#34;&gt;计算程序运行时间&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;import time
 # ISOTIMEFORMAT=&#39;%Y-%m-%d %X&#39;
@@ -532,7 +534,7 @@ print elapsed
       <guid>https://tmhm.github.io/2016/05/26/python%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BB%A7%E6%89%BF/</guid>
       <description>
 
-&lt;h4 id=&#34;python之面向对象-继承:e35dc34c12c197a04379d91239a97544&#34;&gt;python之面向对象（继承）&lt;/h4&gt;
+&lt;h4 id=&#34;python之面向对象-继承&#34;&gt;python之面向对象（继承）&lt;/h4&gt;
 
 &lt;p&gt;面向对象的编程带来的主要好处之一是代码的重用，实现这种重用的方法之一是通过继承机制。继承完全可以理解成类之间的类型和子类型关系。&lt;/p&gt;
 
@@ -967,7 +969,7 @@ c:  [{&#39;num&#39;: 1, &#39;sqrt&#39;: 1}, {&#39;num&#39;: 2, &#39;sqrt&#39;: 4
       <guid>https://tmhm.github.io/2016/05/19/python%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E9%A1%B9/</guid>
       <description>
 
-&lt;h3 id=&#34;浮点除-和-整除:54b2401234aa813c219ffc6fe8784914&#34;&gt;&amp;rsquo;/&amp;lsquo;浮点除，和&amp;rsquo;//&amp;lsquo;整除&lt;/h3&gt;
+&lt;h3 id=&#34;浮点除-和-整除&#34;&gt;&amp;rsquo;/&amp;lsquo;浮点除，和&amp;rsquo;//&amp;lsquo;整除&lt;/h3&gt;
 
 &lt;p&gt;单个&amp;rsquo;/&amp;lsquo;是浮点除，两个除号&amp;rsquo;//&amp;lsquo;是整除&lt;/p&gt;
 
@@ -1229,17 +1231,17 @@ print &amp;quot;max: %s&amp;quot; %c.index(max(c)) # 返回最大值
 &lt;p&gt;&lt;code&gt;$ conda update conda
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;更新pip:31744078359c688159835fa13bfb3276&#34;&gt;更新pip&lt;/h4&gt;
+&lt;h4 id=&#34;更新pip&#34;&gt;更新pip&lt;/h4&gt;
 
 &lt;p&gt;&lt;code&gt;python -m pip install --upgrade pip
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;更新所有:31744078359c688159835fa13bfb3276&#34;&gt;更新所有&lt;/h4&gt;
+&lt;h4 id=&#34;更新所有&#34;&gt;更新所有&lt;/h4&gt;
 
 &lt;p&gt;&lt;code&gt;conda update --all
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;安装ffmpeg:31744078359c688159835fa13bfb3276&#34;&gt;安装ffmpeg&lt;/h4&gt;
+&lt;h4 id=&#34;安装ffmpeg&#34;&gt;安装ffmpeg&lt;/h4&gt;
 
 &lt;p&gt;&lt;code&gt;conda install ffmpeg
 &lt;/code&gt;&lt;/p&gt;
@@ -1255,7 +1257,7 @@ print &amp;quot;max: %s&amp;quot; %c.index(max(c)) # 返回最大值
 
 &lt;p&gt;&lt;code&gt;[Anaconda2] C:\Users\xwei&amp;gt;conda install -c https://conda.anaconda.org/groakat ffmpeg-dev&lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;安装theano:31744078359c688159835fa13bfb3276&#34;&gt;安装theano&lt;/h4&gt;
+&lt;h4 id=&#34;安装theano&#34;&gt;安装theano&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://deeplearning.net/software/theano/install_windows.html#install-windows&#34;&gt;source for win-install&lt;/a&gt;&lt;/p&gt;
 
@@ -1283,7 +1285,7 @@ print &amp;quot;max: %s&amp;quot; %c.index(max(c)) # 返回最大值
 &lt;li&gt;运行&lt;a href=&#34;http://www.deeplearning.net/tutorial/lstm.html#lstm&#34;&gt;LSTM Networks for Sentiment Analysis&lt;/a&gt; 明显快了很多很多，直接在cpu下运行纯python代码，一两分钟才出来第一次迭代， 安装之后，运行c代码的时候，基本上两三秒一次迭代。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;安装出现anaconda-python-installation-error:31744078359c688159835fa13bfb3276&#34;&gt;安装出现Anaconda Python installation error&lt;/h4&gt;
+&lt;h4 id=&#34;安装出现anaconda-python-installation-error&#34;&gt;安装出现Anaconda Python installation error&lt;/h4&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201606/781469-20160612222301152-884209750.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 

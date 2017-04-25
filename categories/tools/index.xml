@@ -2,14 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tools on Well</title>
-    <link>https://tmhm.github.io/categories/tools/</link>
+    <link>https://tmhm.github.io/categories/tools/index.xml</link>
     <description>Recent content in Tools on Well</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
     <managingEditor>wells217@163.com (Well)</managingEditor>
     <webMaster>wells217@163.com (Well)</webMaster>
     <copyright>(c) 2017 Well.</copyright>
-    <lastBuildDate>Tue, 21 Mar 2017 09:34:20 +0800</lastBuildDate>
     <atom:link href="https://tmhm.github.io/categories/tools/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -33,7 +32,8 @@
 &lt;li&gt;word2010为例，在奇数页页眉，依次找到&lt;code&gt;插入-&amp;gt;文档部件-&amp;gt;域&lt;/code&gt;；&lt;/li&gt;
 &lt;li&gt;选择类别&lt;code&gt;链接与引用&lt;/code&gt;，域名&lt;code&gt;StyleRef&lt;/code&gt;，域属性&lt;code&gt;标题1&lt;/code&gt;；&lt;/li&gt;
 &lt;li&gt;确定即可。&lt;/li&gt;
-&lt;li&gt;在偶数页插入&lt;code&gt;论文的题目标题&lt;/code&gt;，注意此处需要选择&lt;strong&gt;链接到上一页眉&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;在偶数页插入&lt;code&gt;论文的题目标题&lt;/code&gt;，注意此处需要选择&lt;strong&gt;链接到上一页眉&lt;/strong&gt;
+&lt;br /&gt;&lt;/li&gt;
 &lt;/ol&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -66,11 +66,11 @@
       <guid>https://tmhm.github.io/2017/03/03/teamviewer-remote-sign-in/</guid>
       <description>
 
-&lt;h3 id=&#34;问题描述:5dc92b2f972a38d9f83619ba919e5954&#34;&gt;问题描述&lt;/h3&gt;
+&lt;h3 id=&#34;问题描述&#34;&gt;问题描述&lt;/h3&gt;
 
 &lt;p&gt;win10 升级后，主机在锁屏状态下，Teamviewer无法远程登录账户，防火墙已关闭，无人值守访问不了&lt;/p&gt;
 
-&lt;h3 id=&#34;解决方式:5dc92b2f972a38d9f83619ba919e5954&#34;&gt;解决方式：&lt;/h3&gt;
+&lt;h3 id=&#34;解决方式&#34;&gt;解决方式：&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;注意主从机的版本一致&lt;/li&gt;
@@ -81,7 +81,7 @@
 &lt;p&gt;&lt;img src=&#34;https://tmhm.github.io/images/无人值守访问.jpg&#34; alt=&#34;&#34; title=&#34;示图1&#34; /&gt;
 &lt;img src=&#34;https://tmhm.github.io/images/授权轻松访问.jpg&#34; alt=&#34;&#34; title=&#34;示图2&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;问题并未终结:5dc92b2f972a38d9f83619ba919e5954&#34;&gt;问题并未终结&lt;/h3&gt;
+&lt;h3 id=&#34;问题并未终结&#34;&gt;问题并未终结&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;当主机重启之后，Teamviewer的授权轻松访问的钩被去掉了，所以远程不能登录主机，即当主机锁屏的时候，Teamviewer可以连接到主机，但是远程不能登录主机账号。&lt;/li&gt;
@@ -90,7 +90,7 @@
 
 &lt;p&gt;&lt;img src=&#34;https://tmhm.github.io/images/teamviewer配置原因.jpg&#34; alt=&#34;&#34; title=&#34;示图3&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;尝试方案:5dc92b2f972a38d9f83619ba919e5954&#34;&gt;尝试方案&lt;/h3&gt;
+&lt;h3 id=&#34;尝试方案&#34;&gt;尝试方案&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;不能直接勾选【授权轻松访问】选项，显示需要管理员登录，于是设置程序的【兼容性】属性，“以管理员身份运行程序”。&lt;/li&gt;
@@ -106,7 +106,7 @@
 &lt;li&gt;&lt;p&gt;尝试&lt;strong&gt;再次重装&lt;/strong&gt;后，在首页，将随windows 一同启动Teamviewer，分配设备，授权轻松访问全部选上，既可以在设置选项里面看到打开了授权访问。并且&lt;strong&gt;重装后的teamviewer是可以锁屏登录的！&lt;/strong&gt;，可恶的win10设置！&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;待解决:5dc92b2f972a38d9f83619ba919e5954&#34;&gt;待解决&lt;/h3&gt;
+&lt;h3 id=&#34;待解决&#34;&gt;待解决&lt;/h3&gt;
 
 &lt;p&gt;ubuntu 14.04下的Teamviewer也登录不了，本来用着好的Teamviewer，现在却登录不了。苦于不在主机旁，只能用命令重新安装之，参考了&lt;a href=&#34;http://blog.csdn.net/dreamhai/article/details/57080531&#34;&gt;博文&lt;/a&gt;，先在虚拟机上实现，却发现问题。&lt;/p&gt;
 
@@ -158,7 +158,7 @@ sudo apt-get install -f
 
 &lt;p&gt;更加奇怪的是，服务器ubuntu 上的Teamviewer不登录任何账号的时候，可以直接远程访问了。&lt;/p&gt;
 
-&lt;h3 id=&#34;一些有用的命令:5dc92b2f972a38d9f83619ba919e5954&#34;&gt;一些有用的命令&lt;/h3&gt;
+&lt;h3 id=&#34;一些有用的命令&#34;&gt;一些有用的命令&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;获取Teamviewer的ID&lt;code&gt;teamviewer --info&lt;/code&gt;&lt;/li&gt;
@@ -177,7 +177,7 @@ sudo apt-get install -f
 &lt;li&gt;重启服务&lt;code&gt;sudo teamviewer --daemon start&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&#34;粗暴解决:5dc92b2f972a38d9f83619ba919e5954&#34;&gt;粗暴解决&lt;/h3&gt;
+&lt;h3 id=&#34;粗暴解决&#34;&gt;粗暴解决&lt;/h3&gt;
 
 &lt;p&gt;在一台新的win10系统下，发现teamviewer，可以重启使用，突然想起，曾经用驱动精灵和金山毒霸进行过优化，于是，卸载之，并取消他们的优化，再安装teamviewer，发现可以正常使用了。
 &lt;strong&gt;都是过度优化惹得祸！&lt;/strong&gt;&lt;/p&gt;
@@ -194,7 +194,7 @@ sudo apt-get install -f
       <guid>https://tmhm.github.io/2017/02/27/hugo_ubuntu1404/</guid>
       <description>
 
-&lt;h3 id=&#34;安装hugo:851fb1211cd46b1a8f57f9c773fc7a3a&#34;&gt;安装Hugo&lt;/h3&gt;
+&lt;h3 id=&#34;安装hugo&#34;&gt;安装Hugo&lt;/h3&gt;
 
 &lt;p&gt;Ubuntu14.04 下面直接用apt-get安装貌似不行，参考&lt;a href=&#34;https://vexxhost.com/resources/tutorials/how-to-install-and-use-hugo-the-static-site-generator-on-ubuntu-14-04/&#34;&gt;博主&lt;/a&gt;,直接下载源文件安装：&lt;/p&gt;
 
@@ -205,7 +205,7 @@ sudo dpkg -i hugo_0.15_amd64.deb
 
 &lt;p&gt;即可，测试一下版本&lt;code&gt;hugo version&lt;/code&gt;，成功输出版本号即安装成功。&lt;/p&gt;
 
-&lt;h3 id=&#34;安装markdown编辑工具-remarkable:851fb1211cd46b1a8f57f9c773fc7a3a&#34;&gt;安装Markdown编辑工具（remarkable）&lt;/h3&gt;
+&lt;h3 id=&#34;安装markdown编辑工具-remarkable&#34;&gt;安装Markdown编辑工具（remarkable）&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;从&lt;a href=&#34;http://locez.com/translation/best-markdown-editors-for-linux/&#34;&gt;此篇文章&lt;/a&gt;了解到 Remarkable，貌似apt-get也木有直接安装的，于是在&lt;a href=&#34;https://remarkableapp.github.io/linux/download.html&#34;&gt;官网&lt;/a&gt;下载.deb文件；&lt;/li&gt;
@@ -213,7 +213,7 @@ sudo dpkg -i hugo_0.15_amd64.deb
 &lt;li&gt;可以在终端直接用命令&lt;code&gt;remarkable&lt;/code&gt; 打开.md文件&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;安装搜狗输入法for-linux:851fb1211cd46b1a8f57f9c773fc7a3a&#34;&gt;安装搜狗输入法for Linux&lt;/h3&gt;
+&lt;h3 id=&#34;安装搜狗输入法for-linux&#34;&gt;安装搜狗输入法for Linux&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://pinyin.sogou.com/linux/help.php&#34;&gt;搜狗输入法官网&lt;/a&gt;下载安装文件；&lt;/li&gt;
@@ -228,7 +228,7 @@ sudo dpkg -i hugo_0.15_amd64.deb
 sudo rm -rf sogou* Sogou*
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;配置github:851fb1211cd46b1a8f57f9c773fc7a3a&#34;&gt;配置github&lt;/h3&gt;
+&lt;h3 id=&#34;配置github&#34;&gt;配置github&lt;/h3&gt;
 
 &lt;p&gt;由于hugo文件在另一台电脑已经配置好config.toml文件，所以只需要将整个文件夹copy过来，配置好Ubuntu本地的github即可&lt;/p&gt;
 
@@ -239,7 +239,7 @@ git remote add origin git@github.com:tmhm/blog_well.git
 git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;hugo-命令note:851fb1211cd46b1a8f57f9c773fc7a3a&#34;&gt;Hugo 命令Note&lt;/h3&gt;
+&lt;h3 id=&#34;hugo-命令note&#34;&gt;Hugo 命令Note&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;本地服务器，看样式：
 hugo server --baseURL=http://127.0.0.1:1313/ -t hyde-y -D --bind=&amp;quot;0.0.0.0&amp;quot;
@@ -252,7 +252,7 @@ hugo -t hyde-y --baseURL &amp;quot;https://tmhm.github.io/&amp;quot; -D
 hugo new post/second.md
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;写blog操作步骤:851fb1211cd46b1a8f57f9c773fc7a3a&#34;&gt;写blog操作步骤&lt;/h3&gt;
+&lt;h3 id=&#34;写blog操作步骤&#34;&gt;写blog操作步骤&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;用&lt;code&gt;hugo new post/test.md&lt;/code&gt;命令在&lt;code&gt;content/post/&lt;/code&gt;路径生成新文件test.md；&lt;/li&gt;
@@ -282,7 +282,7 @@ hugo new post/second.md
 
 &lt;p&gt;&lt;img src=&#34;http://i.imgur.com/XZmJtEF.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;主要相关的api有:4563162cd989f3f67b20afff2f22c80a&#34;&gt;主要相关的api有：&lt;/h4&gt;
+&lt;h4 id=&#34;主要相关的api有&#34;&gt;主要相关的api有：&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;plt.subplots_adjust&lt;/li&gt;
@@ -290,7 +290,7 @@ hugo new post/second.md
 &lt;li&gt;plt.text&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;解决思路:4563162cd989f3f67b20afff2f22c80a&#34;&gt;解决思路&lt;/h4&gt;
+&lt;h4 id=&#34;解决思路&#34;&gt;解决思路&lt;/h4&gt;
 
 &lt;p&gt;来自matplotlib的&lt;a href=&#34;http://matplotlib.org/gallery.html&#34;&gt;官网&lt;/a&gt;,以及&lt;a href=&#34;http://matplotlib.org/examples/images_contours_and_fields/interpolation_none_vs_nearest.html&#34;&gt;图示&lt;/a&gt;&lt;/p&gt;
 
@@ -378,11 +378,13 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
     
     <item>
       <title>macdown在mac OS 中的配置</title>
-      <link>https://tmhm.github.io/2016/11/02/macdown%E5%9C%A8mac-os-%E4%B8%AD%E7%9A%84%E9%85%8D%E7%BD%AE/</link>
+      <link>https://tmhm.github.io/2016/11/02/macdown_in_macos/</link>
       <pubDate>Wed, 02 Nov 2016 13:50:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/11/02/macdown%E5%9C%A8mac-os-%E4%B8%AD%E7%9A%84%E9%85%8D%E7%BD%AE/</guid>
+      <guid>https://tmhm.github.io/2016/11/02/macdown_in_macos/</guid>
       <description>
+
+&lt;h4 id=&#34;配置方法&#34;&gt;配置方法&lt;/h4&gt;
 
 &lt;p&gt;执行两条命令即可。&lt;/p&gt;
 
@@ -391,7 +393,7 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 sudo chmod +x /usr/local/bin/macdown
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;设置文件默认打开方式&#34;&gt;设置文件默认打开方式&lt;/h3&gt;
+&lt;h4 id=&#34;设置文件默认打开方式&#34;&gt;设置文件默认打开方式&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;选定文件&lt;/li&gt;
@@ -399,6 +401,17 @@ sudo chmod +x /usr/local/bin/macdown
 &lt;li&gt;选择打开方式子选项&lt;/li&gt;
 &lt;li&gt;选择默认打开的程序，并设置全部更改。&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h4 id=&#34;配置latex语法显示&#34;&gt;配置LaTeX语法显示&lt;/h4&gt;
+
+&lt;p&gt;按如下配置即可预览LaTeX的公式。&lt;/p&gt;
+
+&lt;p&gt;&lt;center&gt;
+&lt;!-- ![](/images/macdown_show_Tex-like_math.png &#34;示图1&#34;)
+ --&gt;
+ &lt;img src=&#34;https://tmhm.github.io/images/macdown_show_Tex-like_math.png&#34; width = &#34;420&#34; height = &#34;680&#34; alt=&#34;示图1&#34; align=center /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/center&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -415,7 +428,7 @@ sudo chmod +x /usr/local/bin/macdown
 要写论文了，图像的分辨率是一大痛点&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;方法一:7fbf3a2b0b5857d5e743d063f4b00457&#34;&gt;方法一：&lt;/h3&gt;
+&lt;h3 id=&#34;方法一&#34;&gt;方法一：&lt;/h3&gt;
 
 &lt;p&gt;两步生成.eps文件&lt;/p&gt;
 
@@ -425,7 +438,7 @@ sudo chmod +x /usr/local/bin/macdown
 &lt;li&gt;&lt;p&gt;直接用adobe acrobat 打开pdf，然后保存为.eps 格式即可。&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&#34;方法二:7fbf3a2b0b5857d5e743d063f4b00457&#34;&gt;方法二：&lt;/h3&gt;
+&lt;h3 id=&#34;方法二&#34;&gt;方法二：&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;参考：&lt;a href=&#34;http://chrisalbon.com/python/matplotlib_save_a_plot_as_vector.html&#34;&gt;Save A Matplotlib Plot As A Vector&lt;/a&gt;&lt;/p&gt;
@@ -469,16 +482,16 @@ plt.savefig(&#39;./plteps.eps&#39;, format=&#39;eps&#39;, dpi=1000)
                 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;截图图片转换-eps:7fbf3a2b0b5857d5e743d063f4b00457&#34;&gt;截图图片转换.eps&lt;/h3&gt;
+&lt;h3 id=&#34;截图图片转换-eps&#34;&gt;截图图片转换.eps&lt;/h3&gt;
 
-&lt;h4 id=&#34;方法1:7fbf3a2b0b5857d5e743d063f4b00457&#34;&gt;方法1&lt;/h4&gt;
+&lt;h4 id=&#34;方法1&#34;&gt;方法1&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;用FastStone capture 截图，然后直接生成pdf；&lt;/li&gt;
 &lt;li&gt;用adobe acrobat 打开pdf，然后保存为.eps 格式即可。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;方法2:7fbf3a2b0b5857d5e743d063f4b00457&#34;&gt;方法2&lt;/h4&gt;
+&lt;h4 id=&#34;方法2&#34;&gt;方法2&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;上述方法1，当图片比较大的时候，会出现生成的eps文件只有一部分，会有黑色框。&lt;/li&gt;
@@ -544,7 +557,7 @@ plt.savefig(&#39;./plteps.eps&#39;, format=&#39;eps&#39;, dpi=1000)
       <guid>https://tmhm.github.io/2016/08/08/git%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
       <description>
 
-&lt;h5 id=&#34;1-创建ssh-key:97f2f1754c6e43aa005550a1d94d9e6b&#34;&gt;1.创建SSH Key&lt;/h5&gt;
+&lt;h5 id=&#34;1-创建ssh-key&#34;&gt;1.创建SSH Key&lt;/h5&gt;
 
 &lt;p&gt;&lt;code&gt;ssh-keygen -t rsa -C &amp;quot;5733*****@qq.com&amp;quot;
 &lt;/code&gt;&lt;/p&gt;
@@ -553,11 +566,11 @@ plt.savefig(&#39;./plteps.eps&#39;, format=&#39;eps&#39;, dpi=1000)
 
 &lt;p&gt;&lt;em&gt;id_rsa&lt;/em&gt; 是私钥， &lt;em&gt;id_rsa.pub&lt;/em&gt; 是公钥&lt;/p&gt;
 
-&lt;h5 id=&#34;2-add-ssh-key:97f2f1754c6e43aa005550a1d94d9e6b&#34;&gt;2.Add SSH Key&lt;/h5&gt;
+&lt;h5 id=&#34;2-add-ssh-key&#34;&gt;2.Add SSH Key&lt;/h5&gt;
 
 &lt;p&gt;登陆GitHub，打开 Account settings &amp;ndash;&amp;gt; SSH and GPG Keys页面：Add SSH Key, 填上Title， 在Key文本框粘贴&lt;em&gt;id_rsa.pub&lt;/em&gt; 的内容。&lt;/p&gt;
 
-&lt;h5 id=&#34;3-在远程服务器初始化仓库-swrd:97f2f1754c6e43aa005550a1d94d9e6b&#34;&gt;3.在远程服务器初始化仓库 swrd&lt;/h5&gt;
+&lt;h5 id=&#34;3-在远程服务器初始化仓库-swrd&#34;&gt;3.在远程服务器初始化仓库 swrd&lt;/h5&gt;
 
 &lt;p&gt;之后它会给出如下提示：&lt;/p&gt;
 
@@ -578,7 +591,7 @@ git push -u origin master
 git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;4-在本地-git-init并连接远程:97f2f1754c6e43aa005550a1d94d9e6b&#34;&gt;4.在本地 git init并连接远程&lt;/h5&gt;
+&lt;h5 id=&#34;4-在本地-git-init并连接远程&#34;&gt;4.在本地 git init并连接远程&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code&gt;git init
 git add --all
@@ -586,12 +599,12 @@ git commit -m &amp;quot;init commit&amp;quot;
 git remote add origin git@github.com:tmhm/swrd.git
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;5-push-到远程:97f2f1754c6e43aa005550a1d94d9e6b&#34;&gt;5.push 到远程&lt;/h5&gt;
+&lt;h5 id=&#34;5-push-到远程&#34;&gt;5.push 到远程&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code&gt;git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;gitingore文件:97f2f1754c6e43aa005550a1d94d9e6b&#34;&gt;.gitingore文件&lt;/h5&gt;
+&lt;h5 id=&#34;gitingore文件&#34;&gt;.gitingore文件&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;不想把所有的文件都track到远程库，可以通过添加.gitignore文件忽略（全局有效，可以忽略文件本身）&lt;/li&gt;

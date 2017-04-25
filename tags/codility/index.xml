@@ -2,14 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Codility on Well</title>
-    <link>https://tmhm.github.io/tags/codility/</link>
+    <link>https://tmhm.github.io/tags/codility/index.xml</link>
     <description>Recent content in Codility on Well</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
     <managingEditor>wells217@163.com (Well)</managingEditor>
     <webMaster>wells217@163.com (Well)</webMaster>
     <copyright>(c) 2017 Well.</copyright>
-    <lastBuildDate>Sat, 17 Sep 2016 10:44:00 +0000</lastBuildDate>
     <atom:link href="https://tmhm.github.io/tags/codility/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -404,7 +403,7 @@ def solution(S):
 lesson 6: &lt;i&gt;sorting&lt;/i&gt;
 &lt;/h3&gt;
 
-&lt;h4 id=&#34;exercise:7cad0631f6a7aabc2988c4789e25cd49&#34;&gt;exercise&lt;/h4&gt;
+&lt;h4 id=&#34;exercise&#34;&gt;exercise&lt;/h4&gt;
 
 &lt;p&gt;&lt;strong&gt;Problem:&lt;/strong&gt;&lt;/p&gt;
 
@@ -481,7 +480,7 @@ def distinct(A):
 &lt;p&gt;Maximize A[P] * A[Q] * A[R] for any triplet (P, Q, R).&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h5 id=&#34;solution-1:7cad0631f6a7aabc2988c4789e25cd49&#34;&gt;solution 1&lt;/h5&gt;
+&lt;h5 id=&#34;solution-1&#34;&gt;solution 1&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;O(N)&lt;/li&gt;
@@ -513,7 +512,7 @@ def distinct(A):
     return a if a &amp;gt; b else b
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;solution-2:7cad0631f6a7aabc2988c4789e25cd49&#34;&gt;solution 2&lt;/h5&gt;
+&lt;h5 id=&#34;solution-2&#34;&gt;solution 2&lt;/h5&gt;
 
 &lt;p&gt;&lt;strong&gt;note:&lt;/strong&gt;&lt;/p&gt;
 
@@ -607,7 +606,7 @@ def distinct(A):
 &lt;li&gt;终点数组不要超过每个圆心的最大值，即小于len（A）－1， 故有min（length－1，i+A［i］）&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;sloution-100:7cad0631f6a7aabc2988c4789e25cd49&#34;&gt;sloution:[100%]&lt;/h5&gt;
+&lt;h5 id=&#34;sloution-100&#34;&gt;sloution:[100%]&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code&gt;def solution(A):
     result = 0
@@ -750,7 +749,7 @@ A ≤ B.&lt;/li&gt;
 &lt;li&gt;expected worst-case space complexity is O(1).&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;countdiv-solution-1:7636a8ab415e12ff71d303247ac5f18e&#34;&gt;CountDiv solution 1&lt;/h5&gt;
+&lt;h5 id=&#34;countdiv-solution-1&#34;&gt;CountDiv solution 1&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score 100%&lt;/li&gt;
@@ -765,7 +764,7 @@ A ≤ B.&lt;/li&gt;
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;solution-2:7636a8ab415e12ff71d303247ac5f18e&#34;&gt;solution 2&lt;/h5&gt;
+&lt;h5 id=&#34;solution-2&#34;&gt;solution 2&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score 100%&lt;/li&gt;
@@ -829,7 +828,7 @@ A ≤ B.&lt;/li&gt;
 &lt;li&gt;expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;解法一:7636a8ab415e12ff71d303247ac5f18e&#34;&gt;解法一：&lt;/h5&gt;
+&lt;h5 id=&#34;解法一&#34;&gt;解法一：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score  62%&lt;/li&gt;
@@ -863,7 +862,7 @@ def solution(S, P, Q):
     return result
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;解法二:7636a8ab415e12ff71d303247ac5f18e&#34;&gt;解法二：&lt;/h5&gt;
+&lt;h5 id=&#34;解法二&#34;&gt;解法二：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score 100%&lt;/li&gt;
@@ -952,7 +951,7 @@ pG = [0, 0, 0, 1, 1, 1, 1, 1]
 &lt;li&gt;expected worst-case space complexity is O(N),&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;sloution:7636a8ab415e12ff71d303247ac5f18e&#34;&gt;sloution&lt;/h5&gt;
+&lt;h5 id=&#34;sloution&#34;&gt;sloution&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score 100%&lt;/li&gt;
@@ -1260,7 +1259,7 @@ A[6] = 4
 
 &lt;p&gt;The goal is to calculate the value of every counter after all operations.&lt;/p&gt;
 
-&lt;h5 id=&#34;解法一:96ab9ad5d66234dff3bc5f35191df08d&#34;&gt;解法一：&lt;/h5&gt;
+&lt;h5 id=&#34;解法一&#34;&gt;解法一：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Detected time complexity: O(N*M)&lt;/li&gt;
@@ -1288,7 +1287,7 @@ A[6] = 4
     return ret
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;解法二:96ab9ad5d66234dff3bc5f35191df08d&#34;&gt;解法二&lt;/h5&gt;
+&lt;h5 id=&#34;解法二&#34;&gt;解法二&lt;/h5&gt;
 
 &lt;p&gt;[100%] MaxCounters
 &amp;gt;
@@ -1746,7 +1745,8 @@ def solution(N):
 &lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.1&#34;&gt;lesson 1: &lt;em&gt;Iterations&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#1.1.1&#34;&gt;1. BinaryGap&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#1.1.1&#34;&gt;1. BinaryGap&lt;/a&gt;
+&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.2&#34;&gt;lesson 2: &lt;em&gt;Arrays&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
@@ -2074,7 +2074,7 @@ lesson 4: &lt;i&gt;counting elements&lt;/i&gt;
 increase counter by 1; set value of all counters to current maximum.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h5 id=&#34;解法一:3517a0950be7bc5bdabd425539a5cb6a&#34;&gt;解法一：&lt;/h5&gt;
+&lt;h5 id=&#34;解法一&#34;&gt;解法一：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Detected time complexity: O(N*M)&lt;/li&gt;
@@ -2099,7 +2099,7 @@ increase counter by 1; set value of all counters to current maximum.&lt;/p&gt;
     return ret
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;解法二:3517a0950be7bc5bdabd425539a5cb6a&#34;&gt;解法二&lt;/h5&gt;
+&lt;h5 id=&#34;解法二&#34;&gt;解法二&lt;/h5&gt;
 
 &lt;p&gt;[100%] MaxCounters
 &amp;gt;
@@ -2180,7 +2180,7 @@ O(N)&lt;/p&gt;&lt;/li&gt;
 &lt;p&gt;Compute number of integers divisible by k in range [a..b].&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h5 id=&#34;countdiv-solution-1:3517a0950be7bc5bdabd425539a5cb6a&#34;&gt;CountDiv solution 1&lt;/h5&gt;
+&lt;h5 id=&#34;countdiv-solution-1&#34;&gt;CountDiv solution 1&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;test score 67%&lt;/li&gt;
@@ -2204,7 +2204,7 @@ O(N)&lt;/p&gt;&lt;/li&gt;
     return ret
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;countdiv-solution-2:3517a0950be7bc5bdabd425539a5cb6a&#34;&gt;CountDiv solution 2&lt;/h5&gt;
+&lt;h5 id=&#34;countdiv-solution-2&#34;&gt;CountDiv solution 2&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score 100%&lt;/li&gt;
@@ -2220,7 +2220,7 @@ O(N)&lt;/p&gt;&lt;/li&gt;
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;solution-3:3517a0950be7bc5bdabd425539a5cb6a&#34;&gt;solution 3&lt;/h5&gt;
+&lt;h5 id=&#34;solution-3&#34;&gt;solution 3&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score 100%&lt;/li&gt;
@@ -2241,7 +2241,7 @@ O(N)&lt;/p&gt;&lt;/li&gt;
 &lt;p&gt;Find the minimal nucleotide from a range of sequence DNA.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h5 id=&#34;解法一-1:3517a0950be7bc5bdabd425539a5cb6a&#34;&gt;解法一：&lt;/h5&gt;
+&lt;h5 id=&#34;解法一-1&#34;&gt;解法一：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score  37%&lt;/li&gt;
@@ -2271,7 +2271,7 @@ def solution(S, P, Q):
     return result
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;解法二-1:3517a0950be7bc5bdabd425539a5cb6a&#34;&gt;解法二：&lt;/h5&gt;
+&lt;h5 id=&#34;解法二-1&#34;&gt;解法二：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score 100%
@@ -2377,7 +2377,7 @@ lesson 6: &lt;i&gt;sorting&lt;/i&gt;
 &lt;p&gt;Maximize A[P] * A[Q] * A[R] for any triplet (P, Q, R).&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h5 id=&#34;solution-1:3517a0950be7bc5bdabd425539a5cb6a&#34;&gt;solution 1&lt;/h5&gt;
+&lt;h5 id=&#34;solution-1&#34;&gt;solution 1&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;O(N)&lt;/li&gt;
@@ -2403,7 +2403,7 @@ lesson 6: &lt;i&gt;sorting&lt;/i&gt;
     return a if a &amp;gt; b else b
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;solution-2:3517a0950be7bc5bdabd425539a5cb6a&#34;&gt;solution 2&lt;/h5&gt;
+&lt;h5 id=&#34;solution-2&#34;&gt;solution 2&lt;/h5&gt;
 
 &lt;p&gt;&lt;strong&gt;note:&lt;/strong&gt;&lt;/p&gt;
 

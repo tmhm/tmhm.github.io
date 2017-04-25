@@ -2,14 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Life on Well</title>
-    <link>https://tmhm.github.io/tags/life/</link>
+    <link>https://tmhm.github.io/tags/life/index.xml</link>
     <description>Recent content in Life on Well</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
     <managingEditor>wells217@163.com (Well)</managingEditor>
     <webMaster>wells217@163.com (Well)</webMaster>
     <copyright>(c) 2017 Well.</copyright>
-    <lastBuildDate>Wed, 15 Mar 2017 16:38:20 +0800</lastBuildDate>
     <atom:link href="https://tmhm.github.io/tags/life/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -177,16 +176,16 @@
 &lt;ul&gt;
 &lt;li&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#问题定义:0ba0c5309010af3a84f484f67a82e239&#34;&gt;问题定义&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#说明:0ba0c5309010af3a84f484f67a82e239&#34;&gt;说明：&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#最终得分机制:0ba0c5309010af3a84f484f67a82e239&#34;&gt;最终得分机制&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#问题定义&#34;&gt;问题定义&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#说明&#34;&gt;说明：&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#最终得分机制&#34;&gt;最终得分机制&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#思:0ba0c5309010af3a84f484f67a82e239&#34;&gt;思：&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;#思&#34;&gt;思：&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#初衷:0ba0c5309010af3a84f484f67a82e239&#34;&gt;初衷：&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#于是-开始慢慢地折腾和实现了:0ba0c5309010af3a84f484f67a82e239&#34;&gt;于是，开始慢慢地折腾和实现了 :-)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#算法描述:0ba0c5309010af3a84f484f67a82e239&#34;&gt;算法描述&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#缺陷-反思:0ba0c5309010af3a84f484f67a82e239&#34;&gt;缺陷-反思&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#初衷&#34;&gt;初衷：&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#于是-开始慢慢地折腾和实现了&#34;&gt;于是，开始慢慢地折腾和实现了 :-)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#算法描述&#34;&gt;算法描述&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#缺陷-反思&#34;&gt;缺陷-反思&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
@@ -197,12 +196,12 @@
 
 &lt;p&gt;赛题源自“未来网络”业务发放中的路由计算问题。&lt;/p&gt;
 
-&lt;h6 id=&#34;问题定义:0ba0c5309010af3a84f484f67a82e239&#34;&gt;问题定义&lt;/h6&gt;
+&lt;h6 id=&#34;问题定义&#34;&gt;问题定义&lt;/h6&gt;
 
 &lt;p&gt;给定一个带权重的有向图G=(V,E)，V为顶点集，E为有向边集，每一条有向边均有一个权重。对于给定的顶点s、t，以及V的子集V&amp;rsquo;，寻找从s到t的不成环有向路径P，使得P经过V&amp;rsquo;中所有的顶点(对经过V&amp;rsquo;中节点的顺序不做要求)。
 若不存在这样的有向路径P，则输出无解，程序运行时间越短，则视为结果越优；若存在这样的有向路径P，则输出所得到的路径，路径的权重越小，则视为结果越优，在输出路径权重一样的前提下，程序运行时间越短，则视为结果越优。&lt;/p&gt;
 
-&lt;h6 id=&#34;说明:0ba0c5309010af3a84f484f67a82e239&#34;&gt;说明：&lt;/h6&gt;
+&lt;h6 id=&#34;说明&#34;&gt;说明：&lt;/h6&gt;
 
 &lt;ul&gt;
 &lt;li&gt;1）图中所有权重均为[1，20]内的整数；&lt;/li&gt;
@@ -214,14 +213,14 @@
 
 &lt;li&gt;&lt;p&gt;7）路径的权重是指所有组成该路径的所有有向边的权重之和。&lt;/p&gt;
 
-&lt;h6 id=&#34;最终得分机制:0ba0c5309010af3a84f484f67a82e239&#34;&gt;最终得分机制&lt;/h6&gt;
+&lt;h6 id=&#34;最终得分机制&#34;&gt;最终得分机制&lt;/h6&gt;
 
 &lt;p&gt;华为后台会使用N个测试用例判题，该N个测试用例分为初级、中级、高级三个等级，参赛者对于每个测试用例都会得到一个百分制分数，使用加权平均分(初级权重为0.2，中级权重为0.3，高级权重为0.5)作为该参赛者的最终得分。&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;输入输出采用文件的形式。&lt;/p&gt;
 
-&lt;h5 id=&#34;思:0ba0c5309010af3a84f484f67a82e239&#34;&gt;思：&lt;/h5&gt;
+&lt;h5 id=&#34;思&#34;&gt;思：&lt;/h5&gt;
 
 &lt;p&gt;对于上述，这么一个问题，
 最初的想法是根据dijkstra最短路径算法中贪心的思想，结合剪枝进行求解，但是对于复杂图节点的情况，主要是在于当必经节点变多，这个规则感觉就太多，没法继续下去。&lt;/p&gt;
@@ -234,13 +233,13 @@ TSP问题得以求解的核心思想在于：
 &lt;p&gt;然后，突然有了一个这样类蚂蚁的想法，接下来就是围绕这个想法在实现了。
 此处，仅仅是自己的一个思路的回顾，可能会存在一些问题。仅供讨论。&lt;/p&gt;
 
-&lt;h6 id=&#34;初衷:0ba0c5309010af3a84f484f67a82e239&#34;&gt;初衷：&lt;/h6&gt;
+&lt;h6 id=&#34;初衷&#34;&gt;初衷：&lt;/h6&gt;
 
 &lt;p&gt;&lt;strong&gt;将所有蚂蚁丢在 起点和必经点上，然后再让他们自己去走，走到另一必经点，其信息素增大， 如果走到终点，信息素更大，直到某只蚂蚁找到终点。每次信息素更新时，信息素更新量的大小跟该蚂蚁走过的node数量和是否经过必经点有关。 这样来，理想情况下，每次更新时，经过必经点的路径信息素应该是比较大的，每次更新信息素后，进行一次从起点开始贪心搜，每次走信息素最大的，看是否可以走到终点，如果走到终点，本次路径即是一个解。&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;因为，我们蚂蚁在每个节点，可供选择的节点是很少的， 最多才8个，而tsp问题是可以去任意个节点的 ，这样更新一遍信息素，就可以去类贪心一次，看是否可以找到解。&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h6 id=&#34;于是-开始慢慢地折腾和实现了:0ba0c5309010af3a84f484f67a82e239&#34;&gt;于是，开始慢慢地折腾和实现了 :-)&lt;/h6&gt;
+&lt;h6 id=&#34;于是-开始慢慢地折腾和实现了&#34;&gt;于是，开始慢慢地折腾和实现了 :-)&lt;/h6&gt;
 
 &lt;p&gt;####### 类邻接表的图表结构&lt;/p&gt;
 
@@ -331,7 +330,7 @@ short int path;    //default = -1  // due to the pre node value among [0:600], y
 
 &lt;p&gt;为了方便查找索引，建立了一个头结点索引数组，来存储已经读入头结点的值，来防止访问第一个图表，出现野指针的情况。当需要查找某个头结点的相关信息时，先在头结点数组确认存在后， 再去图*graph[600]里面直接按头结点id值等于图索引号获取。&lt;/p&gt;
 
-&lt;h6 id=&#34;算法描述:0ba0c5309010af3a84f484f67a82e239&#34;&gt;算法描述&lt;/h6&gt;
+&lt;h6 id=&#34;算法描述&#34;&gt;算法描述&lt;/h6&gt;
 
 &lt;ol&gt;
 &lt;li&gt;将图文件中的节点读进来，按照上面的图表格式存储，然后将有出度的头结点用指针联系起来，方便后面的访问。&lt;/li&gt;
@@ -360,7 +359,7 @@ short int path;    //default = -1  // due to the pre node value among [0:600], y
 &lt;li&gt;结合了强化学习正反馈的报酬机制。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h6 id=&#34;缺陷-反思:0ba0c5309010af3a84f484f67a82e239&#34;&gt;缺陷-反思&lt;/h6&gt;
+&lt;h6 id=&#34;缺陷-反思&#34;&gt;缺陷-反思&lt;/h6&gt;
 
 &lt;p&gt;缺少完备的理论证明。 并没有证明求解空间在这些规则下，是完备的，并且会收敛到最优(目前来看，收敛性不太好)。
 因此，实践起来，发现并不如我心意。

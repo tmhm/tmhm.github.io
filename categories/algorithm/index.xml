@@ -2,14 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Algorithm on Well</title>
-    <link>https://tmhm.github.io/categories/algorithm/</link>
+    <link>https://tmhm.github.io/categories/algorithm/index.xml</link>
     <description>Recent content in Algorithm on Well</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
     <managingEditor>wells217@163.com (Well)</managingEditor>
     <webMaster>wells217@163.com (Well)</webMaster>
     <copyright>(c) 2017 Well.</copyright>
-    <lastBuildDate>Sat, 17 Sep 2016 10:44:00 +0000</lastBuildDate>
     <atom:link href="https://tmhm.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -404,7 +403,7 @@ def solution(S):
 lesson 6: &lt;i&gt;sorting&lt;/i&gt;
 &lt;/h3&gt;
 
-&lt;h4 id=&#34;exercise:7cad0631f6a7aabc2988c4789e25cd49&#34;&gt;exercise&lt;/h4&gt;
+&lt;h4 id=&#34;exercise&#34;&gt;exercise&lt;/h4&gt;
 
 &lt;p&gt;&lt;strong&gt;Problem:&lt;/strong&gt;&lt;/p&gt;
 
@@ -481,7 +480,7 @@ def distinct(A):
 &lt;p&gt;Maximize A[P] * A[Q] * A[R] for any triplet (P, Q, R).&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h5 id=&#34;solution-1:7cad0631f6a7aabc2988c4789e25cd49&#34;&gt;solution 1&lt;/h5&gt;
+&lt;h5 id=&#34;solution-1&#34;&gt;solution 1&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;O(N)&lt;/li&gt;
@@ -513,7 +512,7 @@ def distinct(A):
     return a if a &amp;gt; b else b
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;solution-2:7cad0631f6a7aabc2988c4789e25cd49&#34;&gt;solution 2&lt;/h5&gt;
+&lt;h5 id=&#34;solution-2&#34;&gt;solution 2&lt;/h5&gt;
 
 &lt;p&gt;&lt;strong&gt;note:&lt;/strong&gt;&lt;/p&gt;
 
@@ -607,7 +606,7 @@ def distinct(A):
 &lt;li&gt;终点数组不要超过每个圆心的最大值，即小于len（A）－1， 故有min（length－1，i+A［i］）&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;sloution-100:7cad0631f6a7aabc2988c4789e25cd49&#34;&gt;sloution:[100%]&lt;/h5&gt;
+&lt;h5 id=&#34;sloution-100&#34;&gt;sloution:[100%]&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code&gt;def solution(A):
     result = 0
@@ -750,7 +749,7 @@ A ≤ B.&lt;/li&gt;
 &lt;li&gt;expected worst-case space complexity is O(1).&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;countdiv-solution-1:7636a8ab415e12ff71d303247ac5f18e&#34;&gt;CountDiv solution 1&lt;/h5&gt;
+&lt;h5 id=&#34;countdiv-solution-1&#34;&gt;CountDiv solution 1&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score 100%&lt;/li&gt;
@@ -765,7 +764,7 @@ A ≤ B.&lt;/li&gt;
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;solution-2:7636a8ab415e12ff71d303247ac5f18e&#34;&gt;solution 2&lt;/h5&gt;
+&lt;h5 id=&#34;solution-2&#34;&gt;solution 2&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score 100%&lt;/li&gt;
@@ -829,7 +828,7 @@ A ≤ B.&lt;/li&gt;
 &lt;li&gt;expected worst-case space complexity is O(N), beyond input storage (not counting the storage required for input arguments).&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;解法一:7636a8ab415e12ff71d303247ac5f18e&#34;&gt;解法一：&lt;/h5&gt;
+&lt;h5 id=&#34;解法一&#34;&gt;解法一：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score  62%&lt;/li&gt;
@@ -863,7 +862,7 @@ def solution(S, P, Q):
     return result
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;解法二:7636a8ab415e12ff71d303247ac5f18e&#34;&gt;解法二：&lt;/h5&gt;
+&lt;h5 id=&#34;解法二&#34;&gt;解法二：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score 100%&lt;/li&gt;
@@ -952,7 +951,7 @@ pG = [0, 0, 0, 1, 1, 1, 1, 1]
 &lt;li&gt;expected worst-case space complexity is O(N),&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;sloution:7636a8ab415e12ff71d303247ac5f18e&#34;&gt;sloution&lt;/h5&gt;
+&lt;h5 id=&#34;sloution&#34;&gt;sloution&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score 100%&lt;/li&gt;
@@ -1260,7 +1259,7 @@ A[6] = 4
 
 &lt;p&gt;The goal is to calculate the value of every counter after all operations.&lt;/p&gt;
 
-&lt;h5 id=&#34;解法一:96ab9ad5d66234dff3bc5f35191df08d&#34;&gt;解法一：&lt;/h5&gt;
+&lt;h5 id=&#34;解法一&#34;&gt;解法一：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Detected time complexity: O(N*M)&lt;/li&gt;
@@ -1288,7 +1287,7 @@ A[6] = 4
     return ret
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;解法二:96ab9ad5d66234dff3bc5f35191df08d&#34;&gt;解法二&lt;/h5&gt;
+&lt;h5 id=&#34;解法二&#34;&gt;解法二&lt;/h5&gt;
 
 &lt;p&gt;[100%] MaxCounters
 &amp;gt;
@@ -1746,7 +1745,8 @@ def solution(N):
 &lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.1&#34;&gt;lesson 1: &lt;em&gt;Iterations&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#1.1.1&#34;&gt;1. BinaryGap&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#1.1.1&#34;&gt;1. BinaryGap&lt;/a&gt;
+&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;&lt;a href=&#34;#1.2&#34;&gt;lesson 2: &lt;em&gt;Arrays&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
@@ -2074,7 +2074,7 @@ lesson 4: &lt;i&gt;counting elements&lt;/i&gt;
 increase counter by 1; set value of all counters to current maximum.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h5 id=&#34;解法一:3517a0950be7bc5bdabd425539a5cb6a&#34;&gt;解法一：&lt;/h5&gt;
+&lt;h5 id=&#34;解法一&#34;&gt;解法一：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Detected time complexity: O(N*M)&lt;/li&gt;
@@ -2099,7 +2099,7 @@ increase counter by 1; set value of all counters to current maximum.&lt;/p&gt;
     return ret
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;解法二:3517a0950be7bc5bdabd425539a5cb6a&#34;&gt;解法二&lt;/h5&gt;
+&lt;h5 id=&#34;解法二&#34;&gt;解法二&lt;/h5&gt;
 
 &lt;p&gt;[100%] MaxCounters
 &amp;gt;
@@ -2180,7 +2180,7 @@ O(N)&lt;/p&gt;&lt;/li&gt;
 &lt;p&gt;Compute number of integers divisible by k in range [a..b].&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h5 id=&#34;countdiv-solution-1:3517a0950be7bc5bdabd425539a5cb6a&#34;&gt;CountDiv solution 1&lt;/h5&gt;
+&lt;h5 id=&#34;countdiv-solution-1&#34;&gt;CountDiv solution 1&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;test score 67%&lt;/li&gt;
@@ -2204,7 +2204,7 @@ O(N)&lt;/p&gt;&lt;/li&gt;
     return ret
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;countdiv-solution-2:3517a0950be7bc5bdabd425539a5cb6a&#34;&gt;CountDiv solution 2&lt;/h5&gt;
+&lt;h5 id=&#34;countdiv-solution-2&#34;&gt;CountDiv solution 2&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score 100%&lt;/li&gt;
@@ -2220,7 +2220,7 @@ O(N)&lt;/p&gt;&lt;/li&gt;
 
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;solution-3:3517a0950be7bc5bdabd425539a5cb6a&#34;&gt;solution 3&lt;/h5&gt;
+&lt;h5 id=&#34;solution-3&#34;&gt;solution 3&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score 100%&lt;/li&gt;
@@ -2241,7 +2241,7 @@ O(N)&lt;/p&gt;&lt;/li&gt;
 &lt;p&gt;Find the minimal nucleotide from a range of sequence DNA.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h5 id=&#34;解法一-1:3517a0950be7bc5bdabd425539a5cb6a&#34;&gt;解法一：&lt;/h5&gt;
+&lt;h5 id=&#34;解法一-1&#34;&gt;解法一：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score  37%&lt;/li&gt;
@@ -2271,7 +2271,7 @@ def solution(S, P, Q):
     return result
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;解法二-1:3517a0950be7bc5bdabd425539a5cb6a&#34;&gt;解法二：&lt;/h5&gt;
+&lt;h5 id=&#34;解法二-1&#34;&gt;解法二：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Test score 100%
@@ -2377,7 +2377,7 @@ lesson 6: &lt;i&gt;sorting&lt;/i&gt;
 &lt;p&gt;Maximize A[P] * A[Q] * A[R] for any triplet (P, Q, R).&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h5 id=&#34;solution-1:3517a0950be7bc5bdabd425539a5cb6a&#34;&gt;solution 1&lt;/h5&gt;
+&lt;h5 id=&#34;solution-1&#34;&gt;solution 1&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;O(N)&lt;/li&gt;
@@ -2403,7 +2403,7 @@ lesson 6: &lt;i&gt;sorting&lt;/i&gt;
     return a if a &amp;gt; b else b
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;solution-2:3517a0950be7bc5bdabd425539a5cb6a&#34;&gt;solution 2&lt;/h5&gt;
+&lt;h5 id=&#34;solution-2&#34;&gt;solution 2&lt;/h5&gt;
 
 &lt;p&gt;&lt;strong&gt;note:&lt;/strong&gt;&lt;/p&gt;
 
@@ -2547,11 +2547,11 @@ lesson 7: &lt;i&gt;stacks and queues&lt;/i&gt;
       <guid>https://tmhm.github.io/2016/08/30/%E6%95%B0%E5%AD%A6%E9%9A%8F%E8%AE%B0%E8%BD%AC%E8%BD%BD/</guid>
       <description>
 
-&lt;h3 id=&#34;数学随记:f15f8ddb13e5e15f5ca6ebf995658e96&#34;&gt;数学随记&lt;/h3&gt;
+&lt;h3 id=&#34;数学随记&#34;&gt;数学随记&lt;/h3&gt;
 
 &lt;p&gt;转载自：&lt;a href=&#34;http://www.matrix67.com/blog/archives/4294&#34;&gt;随记：我们需要怎样的数学教育？&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;虚数i:f15f8ddb13e5e15f5ca6ebf995658e96&#34;&gt;虚数i&lt;/h3&gt;
+&lt;h3 id=&#34;虚数i&#34;&gt;虚数i&lt;/h3&gt;
 
 &lt;p&gt;虚数是什么？&lt;/p&gt;
 
@@ -2567,7 +2567,7 @@ lesson 7: &lt;i&gt;stacks and queues&lt;/i&gt;
 
 &lt;p&gt;没错，这就把数轴扩展到了整个平面，正好解决了复数没地方表示的问题。于是，复数的乘法可以解释为缩放加旋转，复数本身自然也就有了 z = r (cosθ + sinθi) 的表示方式。顺着这个道理推下去，一切都顺理成章了。复数不但有了几何解释，有时还能更便捷地处理几何问题&lt;/p&gt;
 
-&lt;h2 id=&#34;线性代数:f15f8ddb13e5e15f5ca6ebf995658e96&#34;&gt;线性代数&lt;/h2&gt;
+&lt;h2 id=&#34;线性代数&#34;&gt;线性代数&lt;/h2&gt;
 
 &lt;p&gt;此处&lt;a href=&#34;http://mathoverflow.net/questions/7584/what-are-the-most-misleading-alternate-definitions-in-taught-mathematics&#34;&gt;网页&lt;/a&gt;，有人一语道破线性代数的真谛。
 就好像把 x 变成 2 x 一样，我们经常需要把 (x, y) 变成 (2 x + y, x – 3 y) 之类的东西，这就叫做线性变换。&lt;/p&gt;
@@ -2624,7 +2624,7 @@ struct my_struct {
 #pragma pack() //将地址对齐界线改回原来的值
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;对齐规则-参考-http-www-cnblogs-com-graphics-archive-2010-08-12-1797953-html:6e1b40b8b57ee22a0af6a446d958a932&#34;&gt;对齐规则&lt;a href=&#34;http://www.cnblogs.com/graphics/archive/2010/08/12/1797953.html&#34;&gt;参考&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;对齐规则-参考-http-www-cnblogs-com-graphics-archive-2010-08-12-1797953-html&#34;&gt;对齐规则&lt;a href=&#34;http://www.cnblogs.com/graphics/archive/2010/08/12/1797953.html&#34;&gt;参考&lt;/a&gt;&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;该博文也给出了#pragma pack(show) 和#pragma pack(num)的说明以及在VS中的设置；默认num＝8.&lt;/p&gt;
@@ -2640,7 +2640,7 @@ struct my_struct {
 &lt;li&gt;如果一个类型按n字节对齐，那么该类型的变量起始地址必须是n的倍数。比如int按四字节对齐，那么int类型的变量起始地址一定是4的倍数，比如0x0012ff60，0x0012ff48等。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;查看系统是多少位的:6e1b40b8b57ee22a0af6a446d958a932&#34;&gt;查看系统是多少位的&lt;/h4&gt;
+&lt;h4 id=&#34;查看系统是多少位的&#34;&gt;查看系统是多少位的&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;file /sbin/init&lt;/p&gt;
@@ -2677,7 +2677,7 @@ struct my_struct {
 &lt;p&gt;&lt;code&gt;Ubuntu 15.04 \n \l
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;测试数据所占字节:6e1b40b8b57ee22a0af6a446d958a932&#34;&gt;测试数据所占字节&lt;/h4&gt;
+&lt;h4 id=&#34;测试数据所占字节&#34;&gt;测试数据所占字节&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;因为在数据对齐的时候需要考虑是在什么系统下，各数据类型所占字节大小，纠正网上一些有问题的解答，比如long是只占4bits的。&lt;/p&gt;
@@ -2735,11 +2735,12 @@ cout &amp;lt;&amp;lt; &amp;quot;char*: &amp;quot; &amp;lt;&amp;lt; sizeof(char*)
 &lt;ul&gt;
 &lt;li&gt;由于硬件设计的特点，CPU在读写内存时，如果所给的地址是机器字长的整数倍，则操作效率会比较高。&lt;/li&gt;
 &lt;li&gt;有的CPU甚至不支持读写地址不对齐的内存单元。&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;为了提高程序运行的效率，编译器会尽量避免一个变量（包括结构体成员）的存储空间跨越地址对齐的界线。&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;实验（64bits 环境）&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;为了提高程序运行的效率，编译器会尽量避免一个变量（包括结构体成员）的存储空间跨越地址对齐的界线。&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;ol&gt;
+&lt;li&gt;实验（64bits 环境）&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;pre&gt;&lt;code&gt;
 #include &amp;lt;iostream&amp;gt;
@@ -2966,9 +2967,9 @@ class clt_1{
 
 &lt;p&gt;&lt;em&gt;一直以为强化学习不属于统计学习的范畴，看来过去臆想了。&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;监督学习基本概念:01aa4df5ab2620b953a14d2f7f42805e&#34;&gt;监督学习基本概念&lt;/h3&gt;
+&lt;h3 id=&#34;监督学习基本概念&#34;&gt;监督学习基本概念&lt;/h3&gt;
 
-&lt;h4 id=&#34;输入-特征-输出空间:01aa4df5ab2620b953a14d2f7f42805e&#34;&gt;输入、特征、输出空间&lt;/h4&gt;
+&lt;h4 id=&#34;输入-特征-输出空间&#34;&gt;输入、特征、输出空间&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;输入与输出的所有值分别称之为&lt;strong&gt;输入空间&lt;/strong&gt;和&lt;strong&gt;输出空间&lt;/strong&gt;；&lt;/li&gt;
@@ -2984,24 +2985,24 @@ class clt_1{
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;联合概率分布:01aa4df5ab2620b953a14d2f7f42805e&#34;&gt;联合概率分布&lt;/h4&gt;
+&lt;h4 id=&#34;联合概率分布&#34;&gt;联合概率分布&lt;/h4&gt;
 
 &lt;p&gt;监督学习假设输入和输出遵循联合概率分布$P(X,Y)$.&lt;/p&gt;
 
-&lt;h4 id=&#34;假设空间:01aa4df5ab2620b953a14d2f7f42805e&#34;&gt;假设空间&lt;/h4&gt;
+&lt;h4 id=&#34;假设空间&#34;&gt;假设空间&lt;/h4&gt;
 
 &lt;p&gt;监督学习的目的在于学习一个有输入到输出的映射，这一映射由模型来表示。
 模型属于由输入空间到输出空间的映射的集合，这一集合就是&lt;strong&gt;假设空间（hypothesis space）&lt;/strong&gt;，假设空间的确定意味着学习范围的确定。&lt;/p&gt;
 
 &lt;p&gt;监督学习的模型可以是概率模型或非概率模型，用条件概率分布或决策函数表示。&lt;/p&gt;
 
-&lt;h4 id=&#34;问题形式化:01aa4df5ab2620b953a14d2f7f42805e&#34;&gt;问题形式化&lt;/h4&gt;
+&lt;h4 id=&#34;问题形式化&#34;&gt;问题形式化&lt;/h4&gt;
 
 &lt;p&gt;监督学习分学习和预测两个过程。学习过程是利用训练数据集学习一个模型，再用学习到的模型对测试样本进行预测，即预测过程。&lt;/p&gt;
 
 &lt;p&gt;一个具体的模型$y=f(x)$,对一个输入$x_i$,可以产生一个输出$f(x_i)$,而训练模型中对应的输出是$y_i$,如果这个模型训练的足够好，有很好的预测能力，则其训练样本的输出$y_i$和模型的输出$f(x_i)$之间的差就应该足够小。学习系统就是通过不断尝试，选取最好的模型，以便对训练数据集具有最好的预测，同时对未知的测试数据集的预测也有尽可能好的推广，即泛化能力。&lt;/p&gt;
 
-&lt;h3 id=&#34;统计学习三要素:01aa4df5ab2620b953a14d2f7f42805e&#34;&gt;统计学习三要素&lt;/h3&gt;
+&lt;h3 id=&#34;统计学习三要素&#34;&gt;统计学习三要素&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;模型
@@ -3040,14 +3041,14 @@ class clt_1{
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;模型的评估与模型选择:01aa4df5ab2620b953a14d2f7f42805e&#34;&gt;模型的评估与模型选择&lt;/h3&gt;
+&lt;h3 id=&#34;模型的评估与模型选择&#34;&gt;模型的评估与模型选择&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;一般考虑到&lt;strong&gt;训练误差&lt;/strong&gt;和&lt;strong&gt;测试误差&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;避免过拟合&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;正则化与交叉验证:01aa4df5ab2620b953a14d2f7f42805e&#34;&gt;正则化与交叉验证&lt;/h3&gt;
+&lt;h3 id=&#34;正则化与交叉验证&#34;&gt;正则化与交叉验证&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;正则项一般有1-范数和2-范数&lt;/li&gt;
@@ -3063,14 +3064,14 @@ class clt_1{
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;泛化能力:01aa4df5ab2620b953a14d2f7f42805e&#34;&gt;泛化能力&lt;/h3&gt;
+&lt;h3 id=&#34;泛化能力&#34;&gt;泛化能力&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;即模型对未知数据的预测能力。&lt;/li&gt;
 &lt;li&gt;理论上可以通过泛化误差上界的大小来进行分析。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;生成模型与判别模型:01aa4df5ab2620b953a14d2f7f42805e&#34;&gt;生成模型与判别模型&lt;/h3&gt;
+&lt;h3 id=&#34;生成模型与判别模型&#34;&gt;生成模型与判别模型&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;根据采用的方式是生成方法和判别方法而来。&lt;/li&gt;
@@ -3089,7 +3090,7 @@ class clt_1{
 &lt;li&gt;判别方法直接学习条件概率或决策函数，直接预测，往往学习的准确率更高；由于直接学习，可以对数据进行各种程度上的抽象、定义特征并使用特征，也可以简化学习问题&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;面向问题:01aa4df5ab2620b953a14d2f7f42805e&#34;&gt;面向问题&lt;/h3&gt;
+&lt;h3 id=&#34;面向问题&#34;&gt;面向问题&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;分类问题&lt;/p&gt;
@@ -3123,13 +3124,13 @@ class clt_1{
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;非监督学习:01aa4df5ab2620b953a14d2f7f42805e&#34;&gt;非监督学习&lt;/h3&gt;
+&lt;h3 id=&#34;非监督学习&#34;&gt;非监督学习&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;数据没有类别信息，也不给定目标值&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h6 id=&#34;典型代表:01aa4df5ab2620b953a14d2f7f42805e&#34;&gt;典型代表：&lt;/h6&gt;
+&lt;h6 id=&#34;典型代表&#34;&gt;典型代表：&lt;/h6&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;聚类&lt;/strong&gt;将数据集合分成由类似的对象组成的多个类&lt;/li&gt;
@@ -3173,16 +3174,16 @@ class clt_1{
 &lt;ul&gt;
 &lt;li&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#问题定义:0ba0c5309010af3a84f484f67a82e239&#34;&gt;问题定义&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#说明:0ba0c5309010af3a84f484f67a82e239&#34;&gt;说明：&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#最终得分机制:0ba0c5309010af3a84f484f67a82e239&#34;&gt;最终得分机制&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#问题定义&#34;&gt;问题定义&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#说明&#34;&gt;说明：&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#最终得分机制&#34;&gt;最终得分机制&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#思:0ba0c5309010af3a84f484f67a82e239&#34;&gt;思：&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;#思&#34;&gt;思：&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#初衷:0ba0c5309010af3a84f484f67a82e239&#34;&gt;初衷：&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#于是-开始慢慢地折腾和实现了:0ba0c5309010af3a84f484f67a82e239&#34;&gt;于是，开始慢慢地折腾和实现了 :-)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#算法描述:0ba0c5309010af3a84f484f67a82e239&#34;&gt;算法描述&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#缺陷-反思:0ba0c5309010af3a84f484f67a82e239&#34;&gt;缺陷-反思&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#初衷&#34;&gt;初衷：&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#于是-开始慢慢地折腾和实现了&#34;&gt;于是，开始慢慢地折腾和实现了 :-)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#算法描述&#34;&gt;算法描述&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#缺陷-反思&#34;&gt;缺陷-反思&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
@@ -3193,12 +3194,12 @@ class clt_1{
 
 &lt;p&gt;赛题源自“未来网络”业务发放中的路由计算问题。&lt;/p&gt;
 
-&lt;h6 id=&#34;问题定义:0ba0c5309010af3a84f484f67a82e239&#34;&gt;问题定义&lt;/h6&gt;
+&lt;h6 id=&#34;问题定义&#34;&gt;问题定义&lt;/h6&gt;
 
 &lt;p&gt;给定一个带权重的有向图G=(V,E)，V为顶点集，E为有向边集，每一条有向边均有一个权重。对于给定的顶点s、t，以及V的子集V&amp;rsquo;，寻找从s到t的不成环有向路径P，使得P经过V&amp;rsquo;中所有的顶点(对经过V&amp;rsquo;中节点的顺序不做要求)。
 若不存在这样的有向路径P，则输出无解，程序运行时间越短，则视为结果越优；若存在这样的有向路径P，则输出所得到的路径，路径的权重越小，则视为结果越优，在输出路径权重一样的前提下，程序运行时间越短，则视为结果越优。&lt;/p&gt;
 
-&lt;h6 id=&#34;说明:0ba0c5309010af3a84f484f67a82e239&#34;&gt;说明：&lt;/h6&gt;
+&lt;h6 id=&#34;说明&#34;&gt;说明：&lt;/h6&gt;
 
 &lt;ul&gt;
 &lt;li&gt;1）图中所有权重均为[1，20]内的整数；&lt;/li&gt;
@@ -3210,14 +3211,14 @@ class clt_1{
 
 &lt;li&gt;&lt;p&gt;7）路径的权重是指所有组成该路径的所有有向边的权重之和。&lt;/p&gt;
 
-&lt;h6 id=&#34;最终得分机制:0ba0c5309010af3a84f484f67a82e239&#34;&gt;最终得分机制&lt;/h6&gt;
+&lt;h6 id=&#34;最终得分机制&#34;&gt;最终得分机制&lt;/h6&gt;
 
 &lt;p&gt;华为后台会使用N个测试用例判题，该N个测试用例分为初级、中级、高级三个等级，参赛者对于每个测试用例都会得到一个百分制分数，使用加权平均分(初级权重为0.2，中级权重为0.3，高级权重为0.5)作为该参赛者的最终得分。&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;输入输出采用文件的形式。&lt;/p&gt;
 
-&lt;h5 id=&#34;思:0ba0c5309010af3a84f484f67a82e239&#34;&gt;思：&lt;/h5&gt;
+&lt;h5 id=&#34;思&#34;&gt;思：&lt;/h5&gt;
 
 &lt;p&gt;对于上述，这么一个问题，
 最初的想法是根据dijkstra最短路径算法中贪心的思想，结合剪枝进行求解，但是对于复杂图节点的情况，主要是在于当必经节点变多，这个规则感觉就太多，没法继续下去。&lt;/p&gt;
@@ -3230,13 +3231,13 @@ TSP问题得以求解的核心思想在于：
 &lt;p&gt;然后，突然有了一个这样类蚂蚁的想法，接下来就是围绕这个想法在实现了。
 此处，仅仅是自己的一个思路的回顾，可能会存在一些问题。仅供讨论。&lt;/p&gt;
 
-&lt;h6 id=&#34;初衷:0ba0c5309010af3a84f484f67a82e239&#34;&gt;初衷：&lt;/h6&gt;
+&lt;h6 id=&#34;初衷&#34;&gt;初衷：&lt;/h6&gt;
 
 &lt;p&gt;&lt;strong&gt;将所有蚂蚁丢在 起点和必经点上，然后再让他们自己去走，走到另一必经点，其信息素增大， 如果走到终点，信息素更大，直到某只蚂蚁找到终点。每次信息素更新时，信息素更新量的大小跟该蚂蚁走过的node数量和是否经过必经点有关。 这样来，理想情况下，每次更新时，经过必经点的路径信息素应该是比较大的，每次更新信息素后，进行一次从起点开始贪心搜，每次走信息素最大的，看是否可以走到终点，如果走到终点，本次路径即是一个解。&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;因为，我们蚂蚁在每个节点，可供选择的节点是很少的， 最多才8个，而tsp问题是可以去任意个节点的 ，这样更新一遍信息素，就可以去类贪心一次，看是否可以找到解。&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h6 id=&#34;于是-开始慢慢地折腾和实现了:0ba0c5309010af3a84f484f67a82e239&#34;&gt;于是，开始慢慢地折腾和实现了 :-)&lt;/h6&gt;
+&lt;h6 id=&#34;于是-开始慢慢地折腾和实现了&#34;&gt;于是，开始慢慢地折腾和实现了 :-)&lt;/h6&gt;
 
 &lt;p&gt;####### 类邻接表的图表结构&lt;/p&gt;
 
@@ -3327,7 +3328,7 @@ short int path;    //default = -1  // due to the pre node value among [0:600], y
 
 &lt;p&gt;为了方便查找索引，建立了一个头结点索引数组，来存储已经读入头结点的值，来防止访问第一个图表，出现野指针的情况。当需要查找某个头结点的相关信息时，先在头结点数组确认存在后， 再去图*graph[600]里面直接按头结点id值等于图索引号获取。&lt;/p&gt;
 
-&lt;h6 id=&#34;算法描述:0ba0c5309010af3a84f484f67a82e239&#34;&gt;算法描述&lt;/h6&gt;
+&lt;h6 id=&#34;算法描述&#34;&gt;算法描述&lt;/h6&gt;
 
 &lt;ol&gt;
 &lt;li&gt;将图文件中的节点读进来，按照上面的图表格式存储，然后将有出度的头结点用指针联系起来，方便后面的访问。&lt;/li&gt;
@@ -3356,7 +3357,7 @@ short int path;    //default = -1  // due to the pre node value among [0:600], y
 &lt;li&gt;结合了强化学习正反馈的报酬机制。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h6 id=&#34;缺陷-反思:0ba0c5309010af3a84f484f67a82e239&#34;&gt;缺陷-反思&lt;/h6&gt;
+&lt;h6 id=&#34;缺陷-反思&#34;&gt;缺陷-反思&lt;/h6&gt;
 
 &lt;p&gt;缺少完备的理论证明。 并没有证明求解空间在这些规则下，是完备的，并且会收敛到最优(目前来看，收敛性不太好)。
 因此，实践起来，发现并不如我心意。

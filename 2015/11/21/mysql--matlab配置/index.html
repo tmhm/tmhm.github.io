@@ -66,7 +66,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://tmhm.github.io/v2.png">
 <link href="https://tmhm.github.io/v2.png" rel="icon">
 
-<meta name="generator" content="Hugo 0.15" />
+<meta name="generator" content="Hugo 0.18.1" />
 
   
 <!--[if lt IE 9]>
@@ -175,6 +175,7 @@
 </header>
 
 
+
 <article id="main-content" class="container main_content single">
   <header class="container hat">
   <h1>mysql &amp;&amp; matlab配置
@@ -247,12 +248,10 @@
 
 <pre><code>conn=database('xw','root','key','com.mysql.jdbc.Driver','jdbc:mysql://localhost:3306/xw')
 aTemp = exec(conn,'select * from gd_train_data limit 5
-
-
+    
 aTemp = fetch(aTemp)
 curs = aTemp.Data
-
-
+    
 </code></pre></li>
 </ul>
 
@@ -356,8 +355,8 @@ curs = aTemp.Data
 
 </footer>
 <script type="text/javascript"
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 
 
     </main>
