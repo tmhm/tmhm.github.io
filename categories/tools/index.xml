@@ -20,7 +20,7 @@
       <guid>https://tmhm.github.io/2017/03/21/word_pageheader/</guid>
       <description>
 
-&lt;h3 id=&#34;添加页眉:090626c6f854499c122a7d6f21a2db0c&#34;&gt;添加页眉&lt;/h3&gt;
+&lt;h3 id=&#34;添加页眉&#34;&gt;添加页眉&lt;/h3&gt;
 
 &lt;p&gt;参考了&lt;a href=&#34;https://zhidao.baidu.com/question/18216054.html&#34;&gt;知道网页&lt;/a&gt;&lt;/p&gt;
 
@@ -39,7 +39,7 @@
 
 &lt;p&gt;页眉添加完毕。&lt;/p&gt;
 
-&lt;h3 id=&#34;添加图表目录:090626c6f854499c122a7d6f21a2db0c&#34;&gt;添加图表目录&lt;/h3&gt;
+&lt;h3 id=&#34;添加图表目录&#34;&gt;添加图表目录&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;在图下，或者表上位置，点击&lt;code&gt;引用-&amp;gt;插入题注-&amp;gt;选择标签&lt;/code&gt;，确定即可。&lt;/p&gt;
@@ -66,11 +66,11 @@
       <guid>https://tmhm.github.io/2017/03/03/teamviewer-remote-sign-in/</guid>
       <description>
 
-&lt;h3 id=&#34;问题描述&#34;&gt;问题描述&lt;/h3&gt;
+&lt;h3 id=&#34;问题描述:5dc92b2f972a38d9f83619ba919e5954&#34;&gt;问题描述&lt;/h3&gt;
 
 &lt;p&gt;win10 升级后，主机在锁屏状态下，Teamviewer无法远程登录账户，防火墙已关闭，无人值守访问不了&lt;/p&gt;
 
-&lt;h3 id=&#34;解决方式&#34;&gt;解决方式：&lt;/h3&gt;
+&lt;h3 id=&#34;解决方式:5dc92b2f972a38d9f83619ba919e5954&#34;&gt;解决方式：&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;注意主从机的版本一致&lt;/li&gt;
@@ -81,7 +81,7 @@
 &lt;p&gt;&lt;img src=&#34;https://tmhm.github.io/images/无人值守访问.jpg&#34; alt=&#34;&#34; title=&#34;示图1&#34; /&gt;
 &lt;img src=&#34;https://tmhm.github.io/images/授权轻松访问.jpg&#34; alt=&#34;&#34; title=&#34;示图2&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;问题并未终结&#34;&gt;问题并未终结&lt;/h3&gt;
+&lt;h3 id=&#34;问题并未终结:5dc92b2f972a38d9f83619ba919e5954&#34;&gt;问题并未终结&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;当主机重启之后，Teamviewer的授权轻松访问的钩被去掉了，所以远程不能登录主机，即当主机锁屏的时候，Teamviewer可以连接到主机，但是远程不能登录主机账号。&lt;/li&gt;
@@ -90,7 +90,7 @@
 
 &lt;p&gt;&lt;img src=&#34;https://tmhm.github.io/images/teamviewer配置原因.jpg&#34; alt=&#34;&#34; title=&#34;示图3&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;尝试方案&#34;&gt;尝试方案&lt;/h3&gt;
+&lt;h3 id=&#34;尝试方案:5dc92b2f972a38d9f83619ba919e5954&#34;&gt;尝试方案&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;不能直接勾选【授权轻松访问】选项，显示需要管理员登录，于是设置程序的【兼容性】属性，“以管理员身份运行程序”。&lt;/li&gt;
@@ -106,7 +106,7 @@
 &lt;li&gt;&lt;p&gt;尝试&lt;strong&gt;再次重装&lt;/strong&gt;后，在首页，将随windows 一同启动Teamviewer，分配设备，授权轻松访问全部选上，既可以在设置选项里面看到打开了授权访问。并且&lt;strong&gt;重装后的teamviewer是可以锁屏登录的！&lt;/strong&gt;，可恶的win10设置！&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;待解决&#34;&gt;待解决&lt;/h3&gt;
+&lt;h3 id=&#34;待解决:5dc92b2f972a38d9f83619ba919e5954&#34;&gt;待解决&lt;/h3&gt;
 
 &lt;p&gt;ubuntu 14.04下的Teamviewer也登录不了，本来用着好的Teamviewer，现在却登录不了。苦于不在主机旁，只能用命令重新安装之，参考了&lt;a href=&#34;http://blog.csdn.net/dreamhai/article/details/57080531&#34;&gt;博文&lt;/a&gt;，先在虚拟机上实现，却发现问题。&lt;/p&gt;
 
@@ -158,7 +158,7 @@ sudo apt-get install -f
 
 &lt;p&gt;更加奇怪的是，服务器ubuntu 上的Teamviewer不登录任何账号的时候，可以直接远程访问了。&lt;/p&gt;
 
-&lt;h3 id=&#34;一些有用的命令&#34;&gt;一些有用的命令&lt;/h3&gt;
+&lt;h3 id=&#34;一些有用的命令:5dc92b2f972a38d9f83619ba919e5954&#34;&gt;一些有用的命令&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;获取Teamviewer的ID&lt;code&gt;teamviewer --info&lt;/code&gt;&lt;/li&gt;
@@ -177,7 +177,7 @@ sudo apt-get install -f
 &lt;li&gt;重启服务&lt;code&gt;sudo teamviewer --daemon start&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&#34;粗暴解决&#34;&gt;粗暴解决&lt;/h3&gt;
+&lt;h3 id=&#34;粗暴解决:5dc92b2f972a38d9f83619ba919e5954&#34;&gt;粗暴解决&lt;/h3&gt;
 
 &lt;p&gt;在一台新的win10系统下，发现teamviewer，可以重启使用，突然想起，曾经用驱动精灵和金山毒霸进行过优化，于是，卸载之，并取消他们的优化，再安装teamviewer，发现可以正常使用了。
 &lt;strong&gt;都是过度优化惹得祸！&lt;/strong&gt;&lt;/p&gt;
@@ -259,10 +259,10 @@ hugo new post/second.md
     
     <item>
       <title>matplotlib y轴标注显示不全以及subplot调整的问题</title>
-      <link>https://tmhm.github.io/2016/12/23/matplotlib-y-show-incomplete-subplot/</link>
+      <link>https://tmhm.github.io/2016/12/23/matplotlib_show_incomplete/</link>
       <pubDate>Fri, 23 Dec 2016 08:32:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/12/23/matplotlib-y-show-incomplete-subplot/</guid>
+      <guid>https://tmhm.github.io/2016/12/23/matplotlib_show_incomplete/</guid>
       <description>
 
 &lt;p&gt;问题：
@@ -276,7 +276,7 @@ hugo new post/second.md
 
 &lt;p&gt;&lt;img src=&#34;http://i.imgur.com/XZmJtEF.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;主要相关的api有&#34;&gt;主要相关的api有：&lt;/h4&gt;
+&lt;h4 id=&#34;主要相关的api有:4563162cd989f3f67b20afff2f22c80a&#34;&gt;主要相关的api有：&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;plt.subplots_adjust&lt;/li&gt;
@@ -284,7 +284,7 @@ hugo new post/second.md
 &lt;li&gt;plt.text&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;解决思路&#34;&gt;解决思路&lt;/h4&gt;
+&lt;h4 id=&#34;解决思路:4563162cd989f3f67b20afff2f22c80a&#34;&gt;解决思路&lt;/h4&gt;
 
 &lt;p&gt;来自matplotlib的&lt;a href=&#34;http://matplotlib.org/gallery.html&#34;&gt;官网&lt;/a&gt;,以及&lt;a href=&#34;http://matplotlib.org/examples/images_contours_and_fields/interpolation_none_vs_nearest.html&#34;&gt;图示&lt;/a&gt;&lt;/p&gt;
 
@@ -742,76 +742,24 @@ make: *** [sub-tools-make_default-ordered] 错误 2
     </item>
     
     <item>
-      <title>QT环境下，全局变量共享问题</title>
-      <link>https://tmhm.github.io/2016/03/08/qt%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%85%B1%E4%BA%AB%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Tue, 08 Mar 2016 12:47:00 +0000</pubDate>
+      <title>Dev-C 小问题锦集</title>
+      <link>https://tmhm.github.io/2016/02/21/dev-cplus-%E5%B0%8F%E9%97%AE%E9%A2%98%E9%94%A6%E9%9B%86/</link>
+      <pubDate>Sun, 21 Feb 2016 13:10:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/03/08/qt%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%85%B1%E4%BA%AB%E9%97%AE%E9%A2%98/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;开始的技术路线是：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;首先有两个主线程：&lt;/p&gt;
-&lt;p&gt;　　1，gui线程&lt;/p&gt;
-&lt;p&gt;　　2，等待客户端socket连接用的，listen线程&lt;/p&gt;
-&lt;p&gt;　　（当有客户端连接时，即creat一个新的线程2用来跟客户端通信，再来新的客户端，继续creat新的work线程3用于通信，以此类推，目前最多可以creat5个线程，即可以同时跟5台客户端通信，设置了监听的socket服务器最多监听5个队列。线程2继续listen）&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;出现的问题是：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;　　用来通信的work线程3，收到一个来自客户端的xml文件，然后解析文件，并将其数据放在一个全局的静态struct数组里。数据正常，线程2和线程3均可以看到已经更新的数据值。但是，&lt;/p&gt;
-&lt;p&gt;　　当gui线程去访问时，发现数据并没有更新到其线程，在gui线程下改变该全局变量的数值，也并没有更新到
-
-&lt;p&gt;&lt;em&gt;一博主，有如此解释&lt;/em&gt;：&lt;/p&gt;
-&lt;div id=&#34;article_content&#34; class=&#34;article_content&#34;&gt;&lt;a href=&#34;http://blog.csdn.net/lmh12506/article/details/8452700&#34; target=&#34;_blank&#34;&gt;其实在Linux 中，新建的线程并不是在原先的进程中，而是系统通过一个系统调用clone() 。该系统copy 了一个和原先进程完全一样的进程，并在这个进程中执行线程函数。不过这个copy 过程和fork 不一样。copy 后的进程和原先的进程共享了所有的变量，运行环境（clone的实现是可以指定新进程与老进程之间的共享关系，100%共享就表示创建了一个线程）。这样，原先进程中的变量变动在copy 后的进程中便能体现出来。&lt;/a&gt;&lt;/div&gt;
-&lt;div class=&#34;bdsharebuttonbox tracking-ad bdshare-button-style0-16&#34; data-mod=&#34;popu_172&#34; data-bd-bind=&#34;1457096202549&#34;&gt;&amp;nbsp;&lt;/div&gt;
-&lt;div id=&#34;digg&#34;&gt;&amp;nbsp;不过，问题并没有清晰化。&lt;/div&gt;
-
-
-&lt;div&gt;想到的解决方案暂时有两种：&lt;/div&gt;
-&lt;div&gt;　　1，不在work线程里面解析数据，直接在gui线程里面解析数据。&lt;/div&gt;
-&lt;div&gt;&amp;nbsp;　　2，采用&lt;a href=&#34;https://www.ibm.com/developerworks/cn/linux/thread/posix_threadapi/part2/&#34; target=&#34;_blank&#34;&gt;线程私有数据&lt;/a&gt;&lt;/div&gt;
-
-
-&lt;p&gt;（此处出现过，小插曲：QT的变量查看器，在调试时不太稳定，更新过后的值在窗口中查看，并没有得到及时更新，需要通过程序判定验证！）&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201603/781469-20160309170140991-312431222.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;由于程序需要在线程创建之后必须返回到gui主线程，所以采用创建两次线程的方式：创建线程A，返回，然后在线程A里面创建&lt;/p&gt;
-&lt;p&gt;在多线程POSIX标准下，主线程（1），即是GUI线程。它初始化一个类，并调用其一个成员函数创建一个线程3（ininlistenThred）【不知，为什么不从2开始？】，然后在线程3里面一直循环检测是否有新的客户端发来socket连接。当有新的客户端连接上时，即创建一个新的线程专门用于socket通信。&lt;/p&gt;
-&lt;p&gt;此时有一客户端连接上，创建了通信工作线程4（listenthreadwork）。&lt;/p&gt;
-
-&lt;p&gt;输出g_buf[0].carid的代码位置分别为：&lt;/p&gt;
-&lt;p&gt;1，initlistenthread线程在进入循环入口 即打印出：&lt;/p&gt;
-&lt;div class=&#34;cnblogs_code&#34;&gt;
-&lt;p&gt;for( ; ; )&lt;br /&gt;    {&lt;/p&gt;
-&lt;p&gt;　　 &amp;nbsp;qDebug(&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;listenthread g_buf[0].carid: %s &lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;,g_buf[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;&lt;span&gt;].carid);&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em id=&#34;__mceDel&#34;&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;&amp;nbsp; 　　char&lt;/span&gt; *t = &amp;amp;(g_buf[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;].carid[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;&lt;span&gt;]);&lt;/span&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;em id=&#34;__mceDel&#34;&gt;&lt;em id=&#34;__mceDel&#34;&gt;&lt;span style=&#34;color: #000000;&#34;&gt;　　qDebug(&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;dizhi: %d&lt;/span&gt;&lt;/em&gt;&lt;span style=&#34;color: #800000;&#34;&gt; \n\n&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;,&amp;amp;t);&lt;br /&gt;//......&lt;br /&gt;}&lt;/em&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;2，gui主线程在点击按钮的时候，即打印：&lt;/p&gt;
-&lt;div class=&#34;cnblogs_code&#34;&gt;
-&lt;pre&gt;qDebug(&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;mainwindow g_buf[0].carid: %s&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;,g_buf[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;].carid);
-&lt;/span&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;char&lt;/span&gt; *t = &amp;amp;(g_buf[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;].carid[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;]);
-qDebug(&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;dizhi: %d \n\n&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;,&amp;amp;t);&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;3，listenthreadwork线程在循环工作的时候开始就打印信息：（一进去此线程就会先打印一次值，然后每次收到文件就会打印一次）&lt;/p&gt;
-&lt;div class=&#34;cnblogs_code&#34;&gt;
-&lt;pre&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;( ; ; )
-    {
-        qDebug(&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;listenthreadwork g_buf[0].carid: %s&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;,g_buf[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;].carid);
-        &lt;/span&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;char&lt;/span&gt; *t = &amp;amp;(g_buf[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;].carid[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;]);
-        qDebug(&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;dizhi: %d \n\n&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;,&amp;amp;&lt;span style=&#34;color: #000000;&#34;&gt;t);
-&lt;/span&gt;&lt;span style=&#34;color: #008000;&#34;&gt;//&lt;/span&gt;&lt;span style=&#34;color: #008000;&#34;&gt;.........&lt;/span&gt;
-}&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;线程3和4的值一样的！&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;线程1跟另外两个线程是不同的值！&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&amp;nbsp;跟类没关系的两个线程值一样&lt;/strong&gt;&lt;/li&gt;
+      <guid>https://tmhm.github.io/2016/02/21/dev-cplus-%E5%B0%8F%E9%97%AE%E9%A2%98%E9%94%A6%E9%9B%86/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;C++ project cann&amp;rsquo;t debug&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201603/781469-20160309171434179-548213179.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201603/781469-20160309191531804-530669003.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201603/781469-20160309191541944-1721815549.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Your project does not have debugging information, do you want to enable debugging and rebuild your project?
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;解决办法：&lt;/p&gt;
+
+&lt;p&gt;在tools 菜单下的compiler项中，勾选：&lt;code&gt;Add the following commands when calling compiler:&lt;/code&gt;
+&lt;p&gt;并在框内添加参数：-g&lt;/p&gt;
+&lt;p&gt;（版本：Dev-C++ 4.9.9.2.）&lt;/p&gt;&lt;/p&gt;
 </description>
     </item>
     

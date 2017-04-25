@@ -14,10 +14,10 @@
     
     <item>
       <title>QT环境下，全局变量共享问题</title>
-      <link>https://tmhm.github.io/2016/03/08/qt%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%85%B1%E4%BA%AB%E9%97%AE%E9%A2%98/</link>
+      <link>https://tmhm.github.io/2016/03/08/qt_shared_global_var/</link>
       <pubDate>Tue, 08 Mar 2016 12:47:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
-      <guid>https://tmhm.github.io/2016/03/08/qt%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%85%B1%E4%BA%AB%E9%97%AE%E9%A2%98/</guid>
+      <guid>https://tmhm.github.io/2016/03/08/qt_shared_global_var/</guid>
       <description>&lt;p&gt;&lt;strong&gt;开始的技术路线是：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&amp;nbsp;首先有两个主线程：&lt;/p&gt;
 &lt;p&gt;　　1，gui线程&lt;/p&gt;

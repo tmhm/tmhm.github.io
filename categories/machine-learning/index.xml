@@ -33,7 +33,7 @@
   });
 &lt;/script&gt;
 
-&lt;h4 id=&#34;强化学习的定义:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;强化学习的定义&lt;/h4&gt;
+&lt;h4 id=&#34;强化学习的定义&#34;&gt;强化学习的定义&lt;/h4&gt;
 
 &lt;p&gt;强化学习（Reinforcement Learning）本身可以定义为一个广泛的学习问题，学会找到状态（Situation）到动作（Actions）的一个映射关系，以最大化一个数值型的回报（Reward）信号。一个完整的强化学习问题可以用马氏决策过程中的最优控制理论来进行描述。在马氏链中，当前时刻的状态（State） 仅仅与上一时刻的状态有关。如下图1所示，一个智能体（Agent）可以通过某种方式感受环境的状态（State），然后可以通过某一个动作（Action）来改变环境的下一状态。在这个不断交互的过程中，Agent还必须具有一个或者以上的、与此环境状态相关的目标（Goal）。
 &lt;center&gt;
@@ -44,7 +44,7 @@
 
 &lt;p&gt;与RL问题相对应的任何求解方法，可以称之为一个强化学习方法。&lt;/p&gt;
 
-&lt;h4 id=&#34;rl的两个重要特征:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;RL的两个重要特征&lt;/h4&gt;
+&lt;h4 id=&#34;rl的两个重要特征&#34;&gt;RL的两个重要特征&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;试错搜索（trial-and-error）&lt;/li&gt;
@@ -55,7 +55,7 @@
 监督学习中通过正确的指示（instruct）来进行反馈；强化学习是依靠整个生命周期所选择的动作来进行评价式的反馈。&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;rl系统中的四大主要元素-element:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;Rl系统中的四大主要元素（element）&lt;/h4&gt;
+&lt;h4 id=&#34;rl系统中的四大主要元素-element&#34;&gt;Rl系统中的四大主要元素（element）&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;策略（policy）&lt;/p&gt;
@@ -75,7 +75,7 @@
 &lt;p&gt;即对该Agent生存环境的行为模仿（mimics the behavior of the environment）。举一个例子，给定一个状态和动作，环境模型可以预测相对应的下一状态和奖励。如果模型已知，强化学习问题可以演化为动态规划问题求解。&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;rl中智能体学习方法的分类:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;RL中智能体学习方法的分类&lt;/h4&gt;
+&lt;h4 id=&#34;rl中智能体学习方法的分类&#34;&gt;RL中智能体学习方法的分类&lt;/h4&gt;
 
 &lt;p&gt;根据强化学习问题中所含元素的种类，其Agent的学习方法，可以分之为5大类。如下图2所示。
 &lt;center&gt;
@@ -86,7 +86,7 @@
 &lt;p&gt;图2 强化学习中智能体学习方法的分类
 &lt;/center&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;探索与利用的权衡:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;探索与利用的权衡&lt;/h4&gt;
+&lt;h4 id=&#34;探索与利用的权衡&#34;&gt;探索与利用的权衡&lt;/h4&gt;
 
 &lt;p&gt;&lt;em&gt;trade-off between exploration and exploitation&lt;/em&gt;&lt;/p&gt;
 
@@ -103,7 +103,7 @@
 &lt;p&gt;$\tau &amp;gt; 0 $表示温度（temperature）, 高的温度，选择动作近乎平等；温度趋近0的时候，此法接近于贪心选择。&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;refernece:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;refernece&lt;/h4&gt;
+&lt;h4 id=&#34;refernece&#34;&gt;refernece&lt;/h4&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;Sutton R S, Barto A G. Reinforcement learning: An introduction[M]. MIT press Cambridge, 1998.&lt;/p&gt;&lt;/li&gt;
@@ -124,11 +124,11 @@ Learning&lt;/p&gt;&lt;/li&gt;
 
 &lt;p&gt;&lt;em&gt;玩TORCS和DRL差不多有一整年了，开始的摸爬滚打都是不断碰壁过来的，近来在参与&lt;a href=&#34;https://katefvision.github.io/&#34;&gt;CMU的DRL10703课程&lt;/a&gt;学习和翻译志愿者工作，也将自己以前的一些工作做一些备忘，以作为有兴趣同学的参考。&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;torcs仿真器平台安装&#34;&gt;TORCS仿真器平台安装&lt;/h3&gt;
+&lt;h3 id=&#34;torcs仿真器平台安装:a996312b7c1cb5e3decf29955e68e32d&#34;&gt;TORCS仿真器平台安装&lt;/h3&gt;
 
 &lt;p&gt;仿真器平台主要包括两步：安装TORCS，然后添加锦标赛用的patch。&lt;/p&gt;
 
-&lt;h4 id=&#34;torcs仿真器的安装&#34;&gt;TORCS仿真器的安装&lt;/h4&gt;
+&lt;h4 id=&#34;torcs仿真器的安装:a996312b7c1cb5e3decf29955e68e32d&#34;&gt;TORCS仿真器的安装&lt;/h4&gt;
 
 &lt;p&gt;The open racing car simulator（TORCS）&lt;a href=&#34;http://torcs.sourceforge.net/&#34;&gt;主页&lt;/a&gt;&lt;/p&gt;
 
@@ -151,7 +151,7 @@ Learning&lt;/p&gt;&lt;/li&gt;
 &lt;p&gt;如何在仿真器上一步步实现一个简单ROBOT，教程可见：
 &lt;a href=&#34;http://www.berniw.org/tutorials/robot/&#34;&gt;http://www.berniw.org/tutorials/robot/&lt;/a&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;championship-platform的安装&#34;&gt;Championship Platform的安装&lt;/h4&gt;
+&lt;h4 id=&#34;championship-platform的安装:a996312b7c1cb5e3decf29955e68e32d&#34;&gt;Championship Platform的安装&lt;/h4&gt;
 
 &lt;p&gt;为扩展仿真器平台用于我们的智能驾驶AI程序的开发，我们采用的是锦标赛平台的接口。在安装torcs之后，可以直接安装patch。实现安装源文件下载地址：
 &lt;a href=&#34;https://sourceforge.net/projects/cig/files/SCR%20Championship/&#34;&gt;https://sourceforge.net/projects/cig/files/SCR%20Championship/&lt;/a&gt;&lt;/p&gt;
@@ -175,16 +175,16 @@ Manual的官方文件: &lt;a href=&#34;http://arxiv.org/abs/1304.1672&#34;&gt;ht
 
 &lt;p&gt;至此，TORCS仿真器平台安装完毕，下面搭建配套的软件IDE环境。&lt;/p&gt;
 
-&lt;h3 id=&#34;软件ide环境搭建&#34;&gt;软件IDE环境搭建&lt;/h3&gt;
+&lt;h3 id=&#34;软件ide环境搭建:a996312b7c1cb5e3decf29955e68e32d&#34;&gt;软件IDE环境搭建&lt;/h3&gt;
 
-&lt;h4 id=&#34;anaconda-的安装&#34;&gt;Anaconda 的安装&lt;/h4&gt;
+&lt;h4 id=&#34;anaconda-的安装:a996312b7c1cb5e3decf29955e68e32d&#34;&gt;Anaconda 的安装&lt;/h4&gt;
 
 &lt;p&gt;Anaconda 是一个开源的，基于python的跨平台（windows，osx，liunx）科学计算平台，支持python2和python3，示例用的是基于python2的anaconda2-4.0.0&lt;/p&gt;
 
 &lt;p&gt;安装后，会创建一个Anaconda Prompt（一个类似DOS的命令行窗口），它可以像linux一样来通过命令管理各种科学计算包，执行命令等。
 比如可以用conda ，pip等工具管理包&lt;/p&gt;
 
-&lt;h4 id=&#34;pybrain的安装&#34;&gt;PyBrain的安装&lt;/h4&gt;
+&lt;h4 id=&#34;pybrain的安装:a996312b7c1cb5e3decf29955e68e32d&#34;&gt;PyBrain的安装&lt;/h4&gt;
 
 &lt;p&gt;Pybrain是一个基于python的机器学习模块，对强化学习的支持比较好，2015年底的时候，还只有很少的模块是专门做强化学习的，Pybrain就是定位在强化学习和神经网络，由于是个人的项目，维护更新比较慢，目前使用的是0.33版本。&lt;/p&gt;
 
@@ -206,7 +206,7 @@ Manual的官方文件: &lt;a href=&#34;http://arxiv.org/abs/1304.1672&#34;&gt;ht
 
 &lt;p&gt;&lt;em&gt;Note： mq 是指包的发布者&lt;/em&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;pycharm-的安装&#34;&gt;PyCharm 的安装&lt;/h4&gt;
+&lt;h4 id=&#34;pycharm-的安装:a996312b7c1cb5e3decf29955e68e32d&#34;&gt;PyCharm 的安装&lt;/h4&gt;
 
 &lt;p&gt;尽管Anaconda包含了一个Spyder 的IDE，个人感觉不太友好，故还是额外安装&lt;a href=&#34;https://www.jetbrains.com/pycharm/download/#section=windows&#34;&gt;PyCharm&lt;/a&gt;。PyCharm是JetBrains公司推出的一套基于python的跨平台工具。包含免费的社区版和收费的专业版，示例的是专业版，由于近期修改系统时间的漏洞已经修护（貌似最多就一年有效），建议直接安装社区版即可。与TORCS的接口程序在下一篇代码部分给出。&lt;/p&gt;
 </description>
@@ -354,7 +354,7 @@ Manual的官方文件: &lt;a href=&#34;http://arxiv.org/abs/1304.1672&#34;&gt;ht
     </item>
     
     <item>
-      <title>DL服务器主机环境配置 ubuntu14.04 &amp;&amp;  GTX1080 &amp;&amp; Cuda8.0 解决桌面重复登录</title>
+      <title>DL服务器主机环境配置 ubuntu14.04 &amp;  GTX1080 &amp; Cuda8.0 解决桌面重复登录</title>
       <link>https://tmhm.github.io/2016/11/21/dl_server_ubuntu_gtx1080_cuda8.0_relogin/</link>
       <pubDate>Mon, 21 Nov 2016 12:15:00 +0000</pubDate>
       <author>wells217@163.com (Well)</author>
@@ -651,7 +651,7 @@ NOTE: The CUDA Samples are not meant for performance measurements. Results may v
       <guid>https://tmhm.github.io/2016/11/21/gpu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E4%B8%AD%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80note/</guid>
       <description>
 
-&lt;h3 id=&#34;gpu-服务器&#34;&gt;GPU 服务器：&lt;/h3&gt;
+&lt;h3 id=&#34;gpu-服务器:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;GPU 服务器：&lt;/h3&gt;
 
 &lt;p&gt;添加组，用户，并为之新建主目录。&lt;/p&gt;
 
@@ -666,7 +666,7 @@ c302@c302-dl:~$ sudo useradd testuser -g testgroup -m
 &lt;p&gt;&lt;code&gt;passwd testuser
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;安装anaconda环境&#34;&gt;安装anaconda环境&lt;/h3&gt;
+&lt;h3 id=&#34;安装anaconda环境:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;安装anaconda环境&lt;/h3&gt;
 
 &lt;p&gt;官网下载之，&lt;a href=&#34;https://www.continuum.io/downloads&#34;&gt;https://www.continuum.io/downloads&lt;/a&gt;&lt;/p&gt;
 
@@ -674,7 +674,7 @@ c302@c302-dl:~$ sudo useradd testuser -g testgroup -m
 &lt;code&gt;export PATH=/home/c302/anaconda2/bin:$PATH
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;ubuntu-linux系统环境变量配置文件&#34;&gt;Ubuntu Linux系统环境变量配置文件：&lt;/h3&gt;
+&lt;h3 id=&#34;ubuntu-linux系统环境变量配置文件:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;Ubuntu Linux系统环境变量配置文件：&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;/etc/profile : 在登录时,操作系统定制用户环境时使用的第一个文件 ,此文件为系统的每个用户设置环境信息,当用户第一次登录时,该文件被执行。&lt;/p&gt;
@@ -690,7 +690,7 @@ c302@c302-dl:~$ sudo useradd testuser -g testgroup -m
 
 &lt;p&gt;修改~/.profile 文件，添加export PATH=/home/c302/anaconda2/bin:$PATH&lt;/p&gt;
 
-&lt;h3 id=&#34;安装pybrain-0-33&#34;&gt;安装pybrain 0.33&lt;/h3&gt;
+&lt;h3 id=&#34;安装pybrain-0-33:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;安装pybrain 0.33&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;
 pip install pybrain
@@ -726,7 +726,7 @@ pip install pybrain
 &lt;p&gt;&lt;code&gt;conda install -c https://conda.anaconda.org/mq pybrain
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;挂载硬盘&#34;&gt;挂载硬盘&lt;/h3&gt;
+&lt;h3 id=&#34;挂载硬盘:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;挂载硬盘&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;mount  /dev/sdb1 /data1
 mount  /dev/sdc1 /data2
@@ -746,7 +746,7 @@ mount  /dev/sdd1 /data3
 
 &lt;p&gt;这样重启后会自动挂载&lt;/p&gt;
 
-&lt;h3 id=&#34;安装-nvidia-gtx-1080-驱动-367-27&#34;&gt;安装 Nvidia GTX 1080 驱动 367.27&lt;/h3&gt;
+&lt;h3 id=&#34;安装-nvidia-gtx-1080-驱动-367-27:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;安装 Nvidia GTX 1080 驱动 367.27&lt;/h3&gt;
 
 &lt;p&gt;&lt;code&gt;sudo add-apt-repository ppa:graphics-drivers/ppa
 &lt;/code&gt;&lt;/p&gt;
@@ -770,7 +770,7 @@ sudo apt-get install freeglut3-dev
 
 &lt;p&gt;重启进不了ubuntu 的桌面，输入密码又返回登陆界面，但是可以用ssh远程登陆。&lt;/p&gt;
 
-&lt;h3 id=&#34;新安装的系统-14-04-输入密码后又返回登录界面&#34;&gt;新安装的系统，14.04。输入密码后又返回登录界面&lt;/h3&gt;
+&lt;h3 id=&#34;新安装的系统-14-04-输入密码后又返回登录界面:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;新安装的系统，14.04。输入密码后又返回登录界面&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;sudo rm -r .Xauthority*  （Xauthority文件在/home/用户名/.Xauthority）&lt;/p&gt;
@@ -805,7 +805,7 @@ sudo shutdown -r now
 &lt;p&gt;删除了nvidia的驱动，重启之后Unity桌面成功恢复了。
 nvidia-smi 已经无效。&lt;/p&gt;
 
-&lt;h3 id=&#34;teamviewer-安装&#34;&gt;teamviewer 安装&lt;/h3&gt;
+&lt;h3 id=&#34;teamviewer-安装:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;teamviewer 安装&lt;/h3&gt;
 
 &lt;p&gt;在网站下载teamviewer &lt;a href=&#34;https://www.teamviewer.com/zhcn/download/linux/&#34;&gt;https://www.teamviewer.com/zhcn/download/linux/&lt;/a&gt;&lt;/p&gt;
 
@@ -827,7 +827,7 @@ nvidia-smi 已经无效。&lt;/p&gt;
 
 &lt;p&gt;即可以通过teamviewer 远程访问图形界面&lt;/p&gt;
 
-&lt;h3 id=&#34;安装torcs-gym等相关环境&#34;&gt;安装TORCS_gym等相关环境&lt;/h3&gt;
+&lt;h3 id=&#34;安装torcs-gym等相关环境:6f4f42e18f49b3e4b2012d535ef005ca&#34;&gt;安装TORCS_gym等相关环境&lt;/h3&gt;
 
 &lt;p&gt;请参考上一文章记录&lt;a href=&#34;http://www.cnblogs.com/Qwells/p/6001699.html&#34;&gt;用Keras 和 DDPG play TORCS（环境配置篇）&lt;/a&gt;&lt;/p&gt;
 
@@ -856,7 +856,7 @@ nvidia-smi 已经无效。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;由于使用的环境是ubuntu 14.04 desktop版，故不需要安装opencv。&lt;/p&gt;
 
-&lt;h4 id=&#34;安装一些依赖包&#34;&gt;安装一些依赖包：&lt;/h4&gt;
+&lt;h4 id=&#34;安装一些依赖包:445d4f5c2af25f06f4eb62b0232e0fe8&#34;&gt;安装一些依赖包：&lt;/h4&gt;
 &lt;/blockquote&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo apt-get install xautomation
@@ -864,7 +864,7 @@ sudo pip install numpy
 sudo pip install gym
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;下载-gym-torcs源码-https-github-com-ugo-nama-kun-gym-torcs&#34;&gt;下载&lt;a href=&#34;https://github.com/ugo-nama-kun/gym_torcs&#34;&gt;gym_torcs源码&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;下载-gym-torcs源码-https-github-com-ugo-nama-kun-gym-torcs:445d4f5c2af25f06f4eb62b0232e0fe8&#34;&gt;下载&lt;a href=&#34;https://github.com/ugo-nama-kun/gym_torcs&#34;&gt;gym_torcs源码&lt;/a&gt;&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;然后将&lt;/li&gt;
@@ -901,7 +901,7 @@ sudo make datainstall
 
 &lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201611/781469-20161121150329987-1053577076.bmp&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;ddpg源码-https-github-com-yanpanlau-ddpg-keras-torcs&#34;&gt;&lt;a href=&#34;https://github.com/yanpanlau/DDPG-Keras-Torcs&#34;&gt;DDPG源码&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;ddpg源码-https-github-com-yanpanlau-ddpg-keras-torcs:445d4f5c2af25f06f4eb62b0232e0fe8&#34;&gt;&lt;a href=&#34;https://github.com/yanpanlau/DDPG-Keras-Torcs&#34;&gt;DDPG源码&lt;/a&gt;&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;pip install keras
 pip install tensorflow
@@ -937,7 +937,7 @@ cd ../gym_torcs
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;修改默认python&#34;&gt;修改默认python&lt;/h4&gt;
+&lt;h4 id=&#34;修改默认python:445d4f5c2af25f06f4eb62b0232e0fe8&#34;&gt;修改默认python&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;删除系统自带的python软链接&lt;/p&gt;
@@ -1076,11 +1076,11 @@ print &amp;quot;you put :&amp;quot;,str
 
 &lt;p&gt;有问题，戳&lt;a href=&#34;http://www.ibm.com/support/knowledgecenter/SSLVMB_23.0.0/spss/base/chart_creation_dualy.dita?lang=zh&#34;&gt;官方帮助文档&lt;/a&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;神经网络:097ac5ee64c3969f1004d2a1bb5ddcb8&#34;&gt;神经网络&lt;/h4&gt;
+&lt;h4 id=&#34;神经网络&#34;&gt;神经网络&lt;/h4&gt;
 
 &lt;p&gt;&lt;em&gt;分析-神经网络-多层感知机&lt;/em&gt;&lt;/p&gt;
 
-&lt;h5 id=&#34;变量:097ac5ee64c3969f1004d2a1bb5ddcb8&#34;&gt;变量。&lt;/h5&gt;
+&lt;h5 id=&#34;变量&#34;&gt;变量。&lt;/h5&gt;
 
 &lt;p&gt;&lt;em&gt;分析-神经网络-多层感知机-变量&lt;/em&gt;&lt;/p&gt;
 
@@ -1091,7 +1091,7 @@ print &amp;quot;you put :&amp;quot;,str
 &lt;li&gt;协变量允许各种类型的数据&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;频率分析:097ac5ee64c3969f1004d2a1bb5ddcb8&#34;&gt;频率分析&lt;/h4&gt;
+&lt;h4 id=&#34;频率分析&#34;&gt;频率分析&lt;/h4&gt;
 
 &lt;p&gt;&lt;em&gt;分析-描述统计-频率&lt;/em&gt;&lt;/p&gt;
 
@@ -1100,11 +1100,11 @@ print &amp;quot;you put :&amp;quot;,str
 &lt;li&gt;在图表选项可以添加直方图等&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;画图:097ac5ee64c3969f1004d2a1bb5ddcb8&#34;&gt;画图&lt;/h4&gt;
+&lt;h4 id=&#34;画图&#34;&gt;画图&lt;/h4&gt;
 
 &lt;p&gt;&lt;em&gt;图形-旧对话框-&amp;gt;&lt;/em&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;画双y轴图:097ac5ee64c3969f1004d2a1bb5ddcb8&#34;&gt;画双y轴图&lt;/h4&gt;
+&lt;h4 id=&#34;画双y轴图&#34;&gt;画双y轴图&lt;/h4&gt;
 
 &lt;p&gt;&lt;em&gt;图形-图表构建程序- 在选择范围框里面选：双轴&lt;/em&gt;&lt;/p&gt;
 </description>
@@ -1120,7 +1120,7 @@ print &amp;quot;you put :&amp;quot;,str
 
 &lt;p&gt;开始接触强化学习是在回到所里开始找课题研究方向的时候，偶然查到&lt;a href=&#34;http://news.berkeley.edu/2015/05/21/deep-learning-robot-masters-skills-via-trial-and-error/&#34;&gt;伯克利的机器人视频&lt;/a&gt;,给我比较惊艳的感觉。陆续开始查找强化学习的一些资料。最近看到一篇有关强化学习的&lt;a href=&#34;http://blog.exbot.net/archives/223&#34;&gt;博文&lt;/a&gt;，瞬时，想把自己接触到强化学习的过程也做一个简单梳理，为接下来准备在强化学习方向完成毕业论文做一个初略安排。&lt;/p&gt;
 
-&lt;h5 id=&#34;有关强化学习的资料:de16989b43bad915dba343b24e25263a&#34;&gt;有关强化学习的资料：&lt;/h5&gt;
+&lt;h5 id=&#34;有关强化学习的资料&#34;&gt;有关强化学习的资料：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;Tom M. Mitchell的《机器学习》最后一章讲reinforcement learning，算是入门&lt;/p&gt;&lt;/li&gt;
@@ -1147,7 +1147,7 @@ print &amp;quot;you put :&amp;quot;,str
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;应该关注的实验室:de16989b43bad915dba343b24e25263a&#34;&gt;应该关注的实验室：&lt;/h5&gt;
+&lt;h5 id=&#34;应该关注的实验室&#34;&gt;应该关注的实验室：&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.cs.york.ac.uk/rl/research.php&#34;&gt;Knowledge-Based Reinforcement Learning&lt;/a&gt;&lt;/li&gt;
@@ -1155,14 +1155,14 @@ print &amp;quot;you put :&amp;quot;,str
 &lt;li&gt;&lt;a href=&#34;http://www.cs.colostate.edu/~anderson/res/rl/&#34;&gt;Reinforcement Learning and Control&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;有关课程:de16989b43bad915dba343b24e25263a&#34;&gt;有关课程:&lt;/h5&gt;
+&lt;h5 id=&#34;有关课程&#34;&gt;有关课程:&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://rll.berkeley.edu/deeprlcourse/#assignments&#34;&gt;CS 294: Deep Reinforcement Learning&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www0.cs.ucl.ac.uk/staff/D.Silver/web/Teaching.html&#34;&gt;Dave Silver’s course on reinforcement learning&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;代码工具框架:de16989b43bad915dba343b24e25263a&#34;&gt;代码工具框架:&lt;/h5&gt;
+&lt;h5 id=&#34;代码工具框架&#34;&gt;代码工具框架:&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;最近找到一个&lt;a href=&#34;http://pybrain.org/&#34;&gt;PyBrain&lt;/a&gt;的python开源库，不错,准备前期就用它了&lt;/p&gt;&lt;/li&gt;
@@ -1179,7 +1179,7 @@ print &amp;quot;you put :&amp;quot;,str
             * &lt;a href=&#34;http://en.wikipedia.org/wiki/Reinforcement_learning&#34;&gt;http://en.wikipedia.org/wiki/Reinforcement_learning&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;一些相关会议:de16989b43bad915dba343b24e25263a&#34;&gt;一些相关会议：&lt;/h5&gt;
+&lt;h5 id=&#34;一些相关会议&#34;&gt;一些相关会议：&lt;/h5&gt;
 
 &lt;p&gt;&lt;em&gt;(from reinforcement learning State of the art)&lt;/em&gt;&lt;/p&gt;
 

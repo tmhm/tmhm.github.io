@@ -27,7 +27,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;由于使用的环境是ubuntu 14.04 desktop版，故不需要安装opencv。&lt;/p&gt;
 
-&lt;h4 id=&#34;安装一些依赖包&#34;&gt;安装一些依赖包：&lt;/h4&gt;
+&lt;h4 id=&#34;安装一些依赖包:445d4f5c2af25f06f4eb62b0232e0fe8&#34;&gt;安装一些依赖包：&lt;/h4&gt;
 &lt;/blockquote&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo apt-get install xautomation
@@ -35,7 +35,7 @@ sudo pip install numpy
 sudo pip install gym
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;下载-gym-torcs源码-https-github-com-ugo-nama-kun-gym-torcs&#34;&gt;下载&lt;a href=&#34;https://github.com/ugo-nama-kun/gym_torcs&#34;&gt;gym_torcs源码&lt;/a&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;下载-gym-torcs源码-https-github-com-ugo-nama-kun-gym-torcs:445d4f5c2af25f06f4eb62b0232e0fe8&#34;&gt;下载&lt;a href=&#34;https://github.com/ugo-nama-kun/gym_torcs&#34;&gt;gym_torcs源码&lt;/a&gt;&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;然后将&lt;/li&gt;
@@ -72,7 +72,7 @@ sudo make datainstall
 
 &lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201611/781469-20161121150329987-1053577076.bmp&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;ddpg源码-https-github-com-yanpanlau-ddpg-keras-torcs&#34;&gt;&lt;a href=&#34;https://github.com/yanpanlau/DDPG-Keras-Torcs&#34;&gt;DDPG源码&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;ddpg源码-https-github-com-yanpanlau-ddpg-keras-torcs:445d4f5c2af25f06f4eb62b0232e0fe8&#34;&gt;&lt;a href=&#34;https://github.com/yanpanlau/DDPG-Keras-Torcs&#34;&gt;DDPG源码&lt;/a&gt;&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;pip install keras
 pip install tensorflow
@@ -108,7 +108,7 @@ cd ../gym_torcs
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;修改默认python&#34;&gt;修改默认python&lt;/h4&gt;
+&lt;h4 id=&#34;修改默认python:445d4f5c2af25f06f4eb62b0232e0fe8&#34;&gt;修改默认python&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;删除系统自带的python软链接&lt;/p&gt;

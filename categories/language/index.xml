@@ -20,7 +20,7 @@
       <guid>https://tmhm.github.io/2017/04/01/taste_sql/</guid>
       <description>
 
-&lt;h3 id=&#34;事务的四项特性:c90b6d24769a3945b8ac28999f82ce69&#34;&gt;事务的四项特性&lt;/h3&gt;
+&lt;h3 id=&#34;事务的四项特性&#34;&gt;事务的四项特性&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;ACID&lt;/li&gt;
@@ -51,7 +51,7 @@
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;sql:c90b6d24769a3945b8ac28999f82ce69&#34;&gt;SQL&lt;/h3&gt;
+&lt;h3 id=&#34;sql&#34;&gt;SQL&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;四种操作&lt;/li&gt;
@@ -200,7 +200,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
       <guid>https://tmhm.github.io/2016/08/30/c_cplus%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%B6%89%E5%8F%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E7%9F%A5%E8%AF%86%E7%82%B9/</guid>
       <description>
 
-&lt;h3 id=&#34;c中的printf函数&#34;&gt;c中的printf函数&lt;/h3&gt;
+&lt;h3 id=&#34;c中的printf函数:8cbe9a476867bcb8bd5afeaf4b977723&#34;&gt;c中的printf函数&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;main() {
 	int b = 3;
@@ -220,7 +220,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
 &lt;p&gt;原因：printf函数计算参数是&lt;strong&gt;从右往左压栈的&lt;/strong&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;c和c-的关系&#34;&gt;c和c++的关系&lt;/h3&gt;
+&lt;h3 id=&#34;c和c-的关系:8cbe9a476867bcb8bd5afeaf4b977723&#34;&gt;c和c++的关系&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;c++ 语言支持函数重载，c语言不支持函数重载；&lt;/li&gt;
@@ -228,7 +228,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
 &lt;li&gt;C++提供了C连接交换指定符 extern &amp;laquo;c&amp;raquo; 解决名字匹配的问题。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;指针和引用&#34;&gt;指针和引用&lt;/h3&gt;
+&lt;h3 id=&#34;指针和引用:8cbe9a476867bcb8bd5afeaf4b977723&#34;&gt;指针和引用&lt;/h3&gt;
 
 &lt;p&gt;区别：&lt;/p&gt;
 
@@ -239,7 +239,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
 &lt;li&gt;应用区别，有存在不指向任何对象的可能和不同时刻会指向不同的对象等情况时，使用指针；如果总是指向一个对象并且指向一个对象以后就不会改变指向，那么应该使用引用。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;传递动态内存&#34;&gt;传递动态内存&lt;/h3&gt;
+&lt;h3 id=&#34;传递动态内存:8cbe9a476867bcb8bd5afeaf4b977723&#34;&gt;传递动态内存&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;void swap3(int *p, int *q) {
 	int *tmp;
@@ -276,7 +276,7 @@ void swap5(int &amp;amp;p, int &amp;amp;q) {
     cout &amp;lt;&amp;lt; t1 &amp;lt;&amp;lt; &amp;quot;&amp;quot;&amp;lt;&amp;lt; t2 &amp;lt;&amp;lt; endl;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;malloc-申请内存&#34;&gt;malloc 申请内存&lt;/h3&gt;
+&lt;h3 id=&#34;malloc-申请内存:8cbe9a476867bcb8bd5afeaf4b977723&#34;&gt;malloc 申请内存&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;void getMemory_err(char *p, int num) {
 p = (char *)malloc(sizeof(char )* num);
@@ -324,7 +324,7 @@ cout&amp;lt;&amp;lt; &amp;amp;str2 &amp;lt;&amp;lt; endl;
     012FF768
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;字符串变量存储问题&#34;&gt;字符串变量存储问题&lt;/h3&gt;
+&lt;h3 id=&#34;字符串变量存储问题:8cbe9a476867bcb8bd5afeaf4b977723&#34;&gt;字符串变量存储问题&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;int a = 0; //全局初始化区
 char *p1; //全局未初始化区
@@ -408,7 +408,7 @@ cout &amp;lt;&amp;lt; &amp;quot;After fun return:&amp;quot; &amp;lt;&amp;lt; &am
 &amp;gt; - 字符串数据保存在常量区，只读的数据段，不能直接修改
 &amp;gt; - 函数内数组是局部变量，在函数内通过str[0] 可以修改。return之后，局部变量释放，&lt;/p&gt;
 
-&lt;h3 id=&#34;构造函数&#34;&gt;构造函数&lt;/h3&gt;
+&lt;h3 id=&#34;构造函数:8cbe9a476867bcb8bd5afeaf4b977723&#34;&gt;构造函数&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;class tA{
 public:
@@ -446,7 +446,7 @@ return 0;
 &lt;p&gt;在构造B类之前，先调用A的构造函数&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;malloc-free-new-delete&#34;&gt;malloc/free ＆＆new/delete&lt;/h3&gt;
+&lt;h3 id=&#34;malloc-free-new-delete:8cbe9a476867bcb8bd5afeaf4b977723&#34;&gt;malloc/free ＆＆new/delete&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;malloc/free 是c++/c语言的标准库函数，new/delete是c++的运算符，它们都可以用于申请和释放动态内存&lt;/li&gt;
@@ -454,7 +454,7 @@ return 0;
 &lt;li&gt;c++语言中new运算符， 能完成动态内存分配和初始化工作； delete 运算符完成清理和释放内存工作&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;指针和句柄&#34;&gt;指针和句柄&lt;/h3&gt;
+&lt;h3 id=&#34;指针和句柄:8cbe9a476867bcb8bd5afeaf4b977723&#34;&gt;指针和句柄&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;句柄和指针其实是两个截然不同的概念。&lt;/li&gt;
@@ -463,7 +463,7 @@ return 0;
 &lt;li&gt;句柄可以看做是指向指针的指针。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;this-指针&#34;&gt;this 指针&lt;/h3&gt;
+&lt;h3 id=&#34;this-指针:8cbe9a476867bcb8bd5afeaf4b977723&#34;&gt;this 指针&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;本质上是一个函数参数，只是编译器隐藏起形式，语法层面的参数，this指针只能在成员函数中使用，全局函数，静态函数都不能使用this指针。 在python中直接显性给出&lt;/li&gt;
@@ -500,7 +500,7 @@ f.write(&amp;quot;hello,\n This is a test file&amp;quot;)
 f.close()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;计算程序运行时间:209ae7a9d321a421a49117ff5988f512&#34;&gt;计算程序运行时间&lt;/h3&gt;
+&lt;h3 id=&#34;计算程序运行时间&#34;&gt;计算程序运行时间&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;import time
 # ISOTIMEFORMAT=&#39;%Y-%m-%d %X&#39;
@@ -657,7 +657,7 @@ cat say
 
 &lt;p&gt;C/C++小知识点&amp;ndash;[锦集]&lt;/p&gt;
 
-&lt;h4 id=&#34;和-的优先级:bb201a2dec2d4d9a2d52c87713e5df85&#34;&gt;“=”和“&amp;lt;=” 的优先级&lt;/h4&gt;
+&lt;h4 id=&#34;和-的优先级&#34;&gt;“=”和“&amp;lt;=” 的优先级&lt;/h4&gt;
 
 &lt;p&gt;1.(   (file_got_len = recv_str(sock,buf,BUF_SIZE) )    &amp;lt;= 0)&lt;/p&gt;
 
@@ -671,7 +671,7 @@ cat say
 
 &lt;p&gt;所以在多语句写在一起时，最好用（） 明示！！&lt;/p&gt;
 
-&lt;h4 id=&#34;运算操作符:bb201a2dec2d4d9a2d52c87713e5df85&#34;&gt;运算操作符&lt;/h4&gt;
+&lt;h4 id=&#34;运算操作符&#34;&gt;运算操作符&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;int i,t;
 t = (i=1)+(++i);
@@ -699,7 +699,7 @@ t = (i=1)+(++i);
 
 &lt;p&gt;i自加后，只保留在eax 寄存器里，然后将eax的2赋给i，所以，i 就变成2了。此处和动态语言的引用似乎有所类似。&lt;/p&gt;
 
-&lt;h4 id=&#34;sizeof操作符与数组:bb201a2dec2d4d9a2d52c87713e5df85&#34;&gt;sizeof操作符与数组&lt;/h4&gt;
+&lt;h4 id=&#34;sizeof操作符与数组&#34;&gt;sizeof操作符与数组&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;int t,tt,num;
 int array[5];
@@ -736,7 +736,7 @@ Return the identity of an object.  This is guaranteed to be unique among
 simultaneously existing objects.  (Hint: it&#39;s the object&#39;s memory address.)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;python中的引用对象特点&#34;&gt;python中的引用对象特点：&lt;/h4&gt;
+&lt;h4 id=&#34;python中的引用对象特点:c54227613a3b857c250b26ab8f65a33c&#34;&gt;python中的引用对象特点：&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;python不允许程序员选择采用传值还是传引用。
@@ -967,7 +967,7 @@ c:  [{&#39;num&#39;: 1, &#39;sqrt&#39;: 1}, {&#39;num&#39;: 2, &#39;sqrt&#39;: 4
       <guid>https://tmhm.github.io/2016/05/19/python%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E9%A1%B9/</guid>
       <description>
 
-&lt;h3 id=&#34;浮点除-和-整除&#34;&gt;&amp;rsquo;/&amp;lsquo;浮点除，和&amp;rsquo;//&amp;lsquo;整除&lt;/h3&gt;
+&lt;h3 id=&#34;浮点除-和-整除:54b2401234aa813c219ffc6fe8784914&#34;&gt;&amp;rsquo;/&amp;lsquo;浮点除，和&amp;rsquo;//&amp;lsquo;整除&lt;/h3&gt;
 
 &lt;p&gt;单个&amp;rsquo;/&amp;lsquo;是浮点除，两个除号&amp;rsquo;//&amp;lsquo;是整除&lt;/p&gt;
 
@@ -1229,17 +1229,17 @@ print &amp;quot;max: %s&amp;quot; %c.index(max(c)) # 返回最大值
 &lt;p&gt;&lt;code&gt;$ conda update conda
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;更新pip:31744078359c688159835fa13bfb3276&#34;&gt;更新pip&lt;/h4&gt;
+&lt;h4 id=&#34;更新pip&#34;&gt;更新pip&lt;/h4&gt;
 
 &lt;p&gt;&lt;code&gt;python -m pip install --upgrade pip
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;更新所有:31744078359c688159835fa13bfb3276&#34;&gt;更新所有&lt;/h4&gt;
+&lt;h4 id=&#34;更新所有&#34;&gt;更新所有&lt;/h4&gt;
 
 &lt;p&gt;&lt;code&gt;conda update --all
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;安装ffmpeg:31744078359c688159835fa13bfb3276&#34;&gt;安装ffmpeg&lt;/h4&gt;
+&lt;h4 id=&#34;安装ffmpeg&#34;&gt;安装ffmpeg&lt;/h4&gt;
 
 &lt;p&gt;&lt;code&gt;conda install ffmpeg
 &lt;/code&gt;&lt;/p&gt;
@@ -1255,7 +1255,7 @@ print &amp;quot;max: %s&amp;quot; %c.index(max(c)) # 返回最大值
 
 &lt;p&gt;&lt;code&gt;[Anaconda2] C:\Users\xwei&amp;gt;conda install -c https://conda.anaconda.org/groakat ffmpeg-dev&lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;安装theano:31744078359c688159835fa13bfb3276&#34;&gt;安装theano&lt;/h4&gt;
+&lt;h4 id=&#34;安装theano&#34;&gt;安装theano&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://deeplearning.net/software/theano/install_windows.html#install-windows&#34;&gt;source for win-install&lt;/a&gt;&lt;/p&gt;
 
@@ -1283,7 +1283,7 @@ print &amp;quot;max: %s&amp;quot; %c.index(max(c)) # 返回最大值
 &lt;li&gt;运行&lt;a href=&#34;http://www.deeplearning.net/tutorial/lstm.html#lstm&#34;&gt;LSTM Networks for Sentiment Analysis&lt;/a&gt; 明显快了很多很多，直接在cpu下运行纯python代码，一两分钟才出来第一次迭代， 安装之后，运行c代码的时候，基本上两三秒一次迭代。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;安装出现anaconda-python-installation-error:31744078359c688159835fa13bfb3276&#34;&gt;安装出现Anaconda Python installation error&lt;/h4&gt;
+&lt;h4 id=&#34;安装出现anaconda-python-installation-error&#34;&gt;安装出现Anaconda Python installation error&lt;/h4&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201606/781469-20160612222301152-884209750.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
@@ -1323,6 +1323,80 @@ print &amp;quot;max: %s&amp;quot; %c.index(max(c)) # 返回最大值
 &lt;li&gt;esc进入命令模式，然后按h键进入快捷键帮助界面。&lt;/li&gt;
 &lt;li&gt;多查看&lt;a href=&#34;https://plot.ly/python/ipython-notebook-tutorial/&#34;&gt;Ipython notebook tutorial&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>QT环境下，全局变量共享问题</title>
+      <link>https://tmhm.github.io/2016/03/08/qt_shared_global_var/</link>
+      <pubDate>Tue, 08 Mar 2016 12:47:00 +0000</pubDate>
+      <author>wells217@163.com (Well)</author>
+      <guid>https://tmhm.github.io/2016/03/08/qt_shared_global_var/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;开始的技术路线是：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;首先有两个主线程：&lt;/p&gt;
+&lt;p&gt;　　1，gui线程&lt;/p&gt;
+&lt;p&gt;　　2，等待客户端socket连接用的，listen线程&lt;/p&gt;
+&lt;p&gt;　　（当有客户端连接时，即creat一个新的线程2用来跟客户端通信，再来新的客户端，继续creat新的work线程3用于通信，以此类推，目前最多可以creat5个线程，即可以同时跟5台客户端通信，设置了监听的socket服务器最多监听5个队列。线程2继续listen）&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;出现的问题是：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;　　用来通信的work线程3，收到一个来自客户端的xml文件，然后解析文件，并将其数据放在一个全局的静态struct数组里。数据正常，线程2和线程3均可以看到已经更新的数据值。但是，&lt;/p&gt;
+&lt;p&gt;　　当gui线程去访问时，发现数据并没有更新到其线程，在gui线程下改变该全局变量的数值，也并没有更新到
+
+&lt;p&gt;&lt;em&gt;一博主，有如此解释&lt;/em&gt;：&lt;/p&gt;
+&lt;div id=&#34;article_content&#34; class=&#34;article_content&#34;&gt;&lt;a href=&#34;http://blog.csdn.net/lmh12506/article/details/8452700&#34; target=&#34;_blank&#34;&gt;其实在Linux 中，新建的线程并不是在原先的进程中，而是系统通过一个系统调用clone() 。该系统copy 了一个和原先进程完全一样的进程，并在这个进程中执行线程函数。不过这个copy 过程和fork 不一样。copy 后的进程和原先的进程共享了所有的变量，运行环境（clone的实现是可以指定新进程与老进程之间的共享关系，100%共享就表示创建了一个线程）。这样，原先进程中的变量变动在copy 后的进程中便能体现出来。&lt;/a&gt;&lt;/div&gt;
+&lt;div class=&#34;bdsharebuttonbox tracking-ad bdshare-button-style0-16&#34; data-mod=&#34;popu_172&#34; data-bd-bind=&#34;1457096202549&#34;&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div id=&#34;digg&#34;&gt;&amp;nbsp;不过，问题并没有清晰化。&lt;/div&gt;
+
+
+&lt;div&gt;想到的解决方案暂时有两种：&lt;/div&gt;
+&lt;div&gt;　　1，不在work线程里面解析数据，直接在gui线程里面解析数据。&lt;/div&gt;
+&lt;div&gt;&amp;nbsp;　　2，采用&lt;a href=&#34;https://www.ibm.com/developerworks/cn/linux/thread/posix_threadapi/part2/&#34; target=&#34;_blank&#34;&gt;线程私有数据&lt;/a&gt;&lt;/div&gt;
+
+
+&lt;p&gt;（此处出现过，小插曲：QT的变量查看器，在调试时不太稳定，更新过后的值在窗口中查看，并没有得到及时更新，需要通过程序判定验证！）&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201603/781469-20160309170140991-312431222.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;由于程序需要在线程创建之后必须返回到gui主线程，所以采用创建两次线程的方式：创建线程A，返回，然后在线程A里面创建&lt;/p&gt;
+&lt;p&gt;在多线程POSIX标准下，主线程（1），即是GUI线程。它初始化一个类，并调用其一个成员函数创建一个线程3（ininlistenThred）【不知，为什么不从2开始？】，然后在线程3里面一直循环检测是否有新的客户端发来socket连接。当有新的客户端连接上时，即创建一个新的线程专门用于socket通信。&lt;/p&gt;
+&lt;p&gt;此时有一客户端连接上，创建了通信工作线程4（listenthreadwork）。&lt;/p&gt;
+
+&lt;p&gt;输出g_buf[0].carid的代码位置分别为：&lt;/p&gt;
+&lt;p&gt;1，initlistenthread线程在进入循环入口 即打印出：&lt;/p&gt;
+&lt;div class=&#34;cnblogs_code&#34;&gt;
+&lt;p&gt;for( ; ; )&lt;br /&gt;    {&lt;/p&gt;
+&lt;p&gt;　　 &amp;nbsp;qDebug(&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;listenthread g_buf[0].carid: %s &lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;,g_buf[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;&lt;span&gt;].carid);&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em id=&#34;__mceDel&#34;&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;&amp;nbsp; 　　char&lt;/span&gt; *t = &amp;amp;(g_buf[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;].carid[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;&lt;span&gt;]);&lt;/span&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;em id=&#34;__mceDel&#34;&gt;&lt;em id=&#34;__mceDel&#34;&gt;&lt;span style=&#34;color: #000000;&#34;&gt;　　qDebug(&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;dizhi: %d&lt;/span&gt;&lt;/em&gt;&lt;span style=&#34;color: #800000;&#34;&gt; \n\n&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;,&amp;amp;t);&lt;br /&gt;//......&lt;br /&gt;}&lt;/em&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;2，gui主线程在点击按钮的时候，即打印：&lt;/p&gt;
+&lt;div class=&#34;cnblogs_code&#34;&gt;
+&lt;pre&gt;qDebug(&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;mainwindow g_buf[0].carid: %s&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;,g_buf[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;].carid);
+&lt;/span&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;char&lt;/span&gt; *t = &amp;amp;(g_buf[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;].carid[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;]);
+qDebug(&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;dizhi: %d \n\n&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;,&amp;amp;t);&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;3，listenthreadwork线程在循环工作的时候开始就打印信息：（一进去此线程就会先打印一次值，然后每次收到文件就会打印一次）&lt;/p&gt;
+&lt;div class=&#34;cnblogs_code&#34;&gt;
+&lt;pre&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;for&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;( ; ; )
+    {
+        qDebug(&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;listenthreadwork g_buf[0].carid: %s&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;,g_buf[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;].carid);
+        &lt;/span&gt;&lt;span style=&#34;color: #0000ff;&#34;&gt;char&lt;/span&gt; *t = &amp;amp;(g_buf[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;].carid[&lt;span style=&#34;color: #800080;&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #000000;&#34;&gt;]);
+        qDebug(&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;dizhi: %d \n\n&lt;/span&gt;&lt;span style=&#34;color: #800000;&#34;&gt;&#34;&lt;/span&gt;,&amp;amp;&lt;span style=&#34;color: #000000;&#34;&gt;t);
+&lt;/span&gt;&lt;span style=&#34;color: #008000;&#34;&gt;//&lt;/span&gt;&lt;span style=&#34;color: #008000;&#34;&gt;.........&lt;/span&gt;
+}&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;线程3和4的值一样的！&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;线程1跟另外两个线程是不同的值！&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;nbsp;跟类没关系的两个线程值一样&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201603/781469-20160309171434179-548213179.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201603/781469-20160309191531804-530669003.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201603/781469-20160309191541944-1721815549.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
 </description>
     </item>
     
