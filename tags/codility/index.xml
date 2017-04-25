@@ -404,7 +404,7 @@ def solution(S):
 lesson 6: &lt;i&gt;sorting&lt;/i&gt;
 &lt;/h3&gt;
 
-&lt;h4 id=&#34;exercise:7cad0631f6a7aabc2988c4789e25cd49&#34;&gt;exercise&lt;/h4&gt;
+&lt;h4 id=&#34;exercise&#34;&gt;exercise&lt;/h4&gt;
 
 &lt;p&gt;&lt;strong&gt;Problem:&lt;/strong&gt;&lt;/p&gt;
 
@@ -481,7 +481,7 @@ def distinct(A):
 &lt;p&gt;Maximize A[P] * A[Q] * A[R] for any triplet (P, Q, R).&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h5 id=&#34;solution-1:7cad0631f6a7aabc2988c4789e25cd49&#34;&gt;solution 1&lt;/h5&gt;
+&lt;h5 id=&#34;solution-1&#34;&gt;solution 1&lt;/h5&gt;
 
 &lt;ul&gt;
 &lt;li&gt;O(N)&lt;/li&gt;
@@ -513,7 +513,7 @@ def distinct(A):
     return a if a &amp;gt; b else b
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;solution-2:7cad0631f6a7aabc2988c4789e25cd49&#34;&gt;solution 2&lt;/h5&gt;
+&lt;h5 id=&#34;solution-2&#34;&gt;solution 2&lt;/h5&gt;
 
 &lt;p&gt;&lt;strong&gt;note:&lt;/strong&gt;&lt;/p&gt;
 
@@ -607,7 +607,7 @@ def distinct(A):
 &lt;li&gt;终点数组不要超过每个圆心的最大值，即小于len（A）－1， 故有min（length－1，i+A［i］）&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h5 id=&#34;sloution-100:7cad0631f6a7aabc2988c4789e25cd49&#34;&gt;sloution:[100%]&lt;/h5&gt;
+&lt;h5 id=&#34;sloution-100&#34;&gt;sloution:[100%]&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code&gt;def solution(A):
     result = 0

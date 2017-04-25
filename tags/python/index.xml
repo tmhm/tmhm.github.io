@@ -119,7 +119,7 @@ f.write(&amp;quot;hello,\n This is a test file&amp;quot;)
 f.close()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;计算程序运行时间&#34;&gt;计算程序运行时间&lt;/h3&gt;
+&lt;h3 id=&#34;计算程序运行时间:209ae7a9d321a421a49117ff5988f512&#34;&gt;计算程序运行时间&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;import time
 # ISOTIMEFORMAT=&#39;%Y-%m-%d %X&#39;
@@ -264,7 +264,7 @@ print &amp;quot;you put :&amp;quot;,str
       <guid>https://tmhm.github.io/2016/05/26/python%E4%B9%8B%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BB%A7%E6%89%BF/</guid>
       <description>
 
-&lt;h4 id=&#34;python之面向对象-继承:e35dc34c12c197a04379d91239a97544&#34;&gt;python之面向对象（继承）&lt;/h4&gt;
+&lt;h4 id=&#34;python之面向对象-继承&#34;&gt;python之面向对象（继承）&lt;/h4&gt;
 
 &lt;p&gt;面向对象的编程带来的主要好处之一是代码的重用，实现这种重用的方法之一是通过继承机制。继承完全可以理解成类之间的类型和子类型关系。&lt;/p&gt;
 
@@ -395,7 +395,7 @@ Return the identity of an object.  This is guaranteed to be unique among
 simultaneously existing objects.  (Hint: it&#39;s the object&#39;s memory address.)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;python中的引用对象特点:c54227613a3b857c250b26ab8f65a33c&#34;&gt;python中的引用对象特点：&lt;/h4&gt;
+&lt;h4 id=&#34;python中的引用对象特点&#34;&gt;python中的引用对象特点：&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;python不允许程序员选择采用传值还是传引用。
@@ -888,17 +888,17 @@ print &amp;quot;max: %s&amp;quot; %c.index(max(c)) # 返回最大值
 &lt;p&gt;&lt;code&gt;$ conda update conda
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;更新pip&#34;&gt;更新pip&lt;/h4&gt;
+&lt;h4 id=&#34;更新pip:31744078359c688159835fa13bfb3276&#34;&gt;更新pip&lt;/h4&gt;
 
 &lt;p&gt;&lt;code&gt;python -m pip install --upgrade pip
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;更新所有&#34;&gt;更新所有&lt;/h4&gt;
+&lt;h4 id=&#34;更新所有:31744078359c688159835fa13bfb3276&#34;&gt;更新所有&lt;/h4&gt;
 
 &lt;p&gt;&lt;code&gt;conda update --all
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;安装ffmpeg&#34;&gt;安装ffmpeg&lt;/h4&gt;
+&lt;h4 id=&#34;安装ffmpeg:31744078359c688159835fa13bfb3276&#34;&gt;安装ffmpeg&lt;/h4&gt;
 
 &lt;p&gt;&lt;code&gt;conda install ffmpeg
 &lt;/code&gt;&lt;/p&gt;
@@ -914,7 +914,7 @@ print &amp;quot;max: %s&amp;quot; %c.index(max(c)) # 返回最大值
 
 &lt;p&gt;&lt;code&gt;[Anaconda2] C:\Users\xwei&amp;gt;conda install -c https://conda.anaconda.org/groakat ffmpeg-dev&lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;安装theano&#34;&gt;安装theano&lt;/h4&gt;
+&lt;h4 id=&#34;安装theano:31744078359c688159835fa13bfb3276&#34;&gt;安装theano&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://deeplearning.net/software/theano/install_windows.html#install-windows&#34;&gt;source for win-install&lt;/a&gt;&lt;/p&gt;
 
@@ -942,7 +942,7 @@ print &amp;quot;max: %s&amp;quot; %c.index(max(c)) # 返回最大值
 &lt;li&gt;运行&lt;a href=&#34;http://www.deeplearning.net/tutorial/lstm.html#lstm&#34;&gt;LSTM Networks for Sentiment Analysis&lt;/a&gt; 明显快了很多很多，直接在cpu下运行纯python代码，一两分钟才出来第一次迭代， 安装之后，运行c代码的时候，基本上两三秒一次迭代。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;安装出现anaconda-python-installation-error&#34;&gt;安装出现Anaconda Python installation error&lt;/h4&gt;
+&lt;h4 id=&#34;安装出现anaconda-python-installation-error:31744078359c688159835fa13bfb3276&#34;&gt;安装出现Anaconda Python installation error&lt;/h4&gt;
 
 &lt;p&gt;&lt;img src=&#34;http://images2015.cnblogs.com/blog/781469/201606/781469-20160612222301152-884209750.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 

@@ -20,7 +20,7 @@
       <guid>https://tmhm.github.io/2017/03/21/word_pageheader/</guid>
       <description>
 
-&lt;h3 id=&#34;添加页眉&#34;&gt;添加页眉&lt;/h3&gt;
+&lt;h3 id=&#34;添加页眉:090626c6f854499c122a7d6f21a2db0c&#34;&gt;添加页眉&lt;/h3&gt;
 
 &lt;p&gt;参考了&lt;a href=&#34;https://zhidao.baidu.com/question/18216054.html&#34;&gt;知道网页&lt;/a&gt;&lt;/p&gt;
 
@@ -39,7 +39,7 @@
 
 &lt;p&gt;页眉添加完毕。&lt;/p&gt;
 
-&lt;h3 id=&#34;添加图表目录&#34;&gt;添加图表目录&lt;/h3&gt;
+&lt;h3 id=&#34;添加图表目录:090626c6f854499c122a7d6f21a2db0c&#34;&gt;添加图表目录&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;在图下，或者表上位置，点击&lt;code&gt;引用-&amp;gt;插入题注-&amp;gt;选择标签&lt;/code&gt;，确定即可。&lt;/p&gt;
@@ -199,7 +199,7 @@ sudo apt-get install -f
 要写论文了，图像的分辨率是一大痛点&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;方法一:7fbf3a2b0b5857d5e743d063f4b00457&#34;&gt;方法一：&lt;/h3&gt;
+&lt;h3 id=&#34;方法一&#34;&gt;方法一：&lt;/h3&gt;
 
 &lt;p&gt;两步生成.eps文件&lt;/p&gt;
 
@@ -209,7 +209,7 @@ sudo apt-get install -f
 &lt;li&gt;&lt;p&gt;直接用adobe acrobat 打开pdf，然后保存为.eps 格式即可。&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&#34;方法二:7fbf3a2b0b5857d5e743d063f4b00457&#34;&gt;方法二：&lt;/h3&gt;
+&lt;h3 id=&#34;方法二&#34;&gt;方法二：&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;参考：&lt;a href=&#34;http://chrisalbon.com/python/matplotlib_save_a_plot_as_vector.html&#34;&gt;Save A Matplotlib Plot As A Vector&lt;/a&gt;&lt;/p&gt;
@@ -253,16 +253,16 @@ plt.savefig(&#39;./plteps.eps&#39;, format=&#39;eps&#39;, dpi=1000)
                 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;截图图片转换-eps:7fbf3a2b0b5857d5e743d063f4b00457&#34;&gt;截图图片转换.eps&lt;/h3&gt;
+&lt;h3 id=&#34;截图图片转换-eps&#34;&gt;截图图片转换.eps&lt;/h3&gt;
 
-&lt;h4 id=&#34;方法1:7fbf3a2b0b5857d5e743d063f4b00457&#34;&gt;方法1&lt;/h4&gt;
+&lt;h4 id=&#34;方法1&#34;&gt;方法1&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;用FastStone capture 截图，然后直接生成pdf；&lt;/li&gt;
 &lt;li&gt;用adobe acrobat 打开pdf，然后保存为.eps 格式即可。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;方法2:7fbf3a2b0b5857d5e743d063f4b00457&#34;&gt;方法2&lt;/h4&gt;
+&lt;h4 id=&#34;方法2&#34;&gt;方法2&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;上述方法1，当图片比较大的时候，会出现生成的eps文件只有一部分，会有黑色框。&lt;/li&gt;
