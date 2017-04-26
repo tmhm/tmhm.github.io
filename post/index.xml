@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Well</title>
-    <link>https://tmhm.github.io/post/index.xml</link>
+    <link>https://tmhm.github.io/post/</link>
     <description>Recent content in Posts on Well</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
@@ -33,7 +33,7 @@
   });
 &lt;/script&gt;
 
-&lt;h4 id=&#34;强化学习的定义&#34;&gt;强化学习的定义&lt;/h4&gt;
+&lt;h4 id=&#34;强化学习的定义:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;强化学习的定义&lt;/h4&gt;
 
 &lt;p&gt;强化学习（Reinforcement Learning）本身可以定义为一个广泛的学习问题，学会找到状态（Situation）到动作（Actions）的一个映射关系，以最大化一个数值型的回报（Reward）信号。一个完整的强化学习问题可以用马氏决策过程中的最优控制理论来进行描述。在马氏链中，当前时刻的状态（State） 仅仅与上一时刻的状态有关。如下图1所示，一个智能体（Agent）可以通过某种方式感受环境的状态（State），然后可以通过某一个动作（Action）来改变环境的下一状态。在这个不断交互的过程中，Agent还必须具有一个或者以上的、与此环境状态相关的目标（Goal）。
 &lt;center&gt;
@@ -44,7 +44,7 @@
 
 &lt;p&gt;与RL问题相对应的任何求解方法，可以称之为一个强化学习方法。&lt;/p&gt;
 
-&lt;h4 id=&#34;rl的两个重要特征&#34;&gt;RL的两个重要特征&lt;/h4&gt;
+&lt;h4 id=&#34;rl的两个重要特征:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;RL的两个重要特征&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;试错搜索（trial-and-error）&lt;/li&gt;
@@ -55,7 +55,7 @@
 监督学习中通过正确的指示（instruct）来进行反馈；强化学习是依靠整个生命周期所选择的动作来进行评价式的反馈。&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;rl系统中的四大主要元素-element&#34;&gt;Rl系统中的四大主要元素（element）&lt;/h4&gt;
+&lt;h4 id=&#34;rl系统中的四大主要元素-element:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;Rl系统中的四大主要元素（element）&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;策略（policy）&lt;/p&gt;
@@ -75,7 +75,7 @@
 &lt;p&gt;即对该Agent生存环境的行为模仿（mimics the behavior of the environment）。举一个例子，给定一个状态和动作，环境模型可以预测相对应的下一状态和奖励。如果模型已知，强化学习问题可以演化为动态规划问题求解。&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;rl中智能体学习方法的分类&#34;&gt;RL中智能体学习方法的分类&lt;/h4&gt;
+&lt;h4 id=&#34;rl中智能体学习方法的分类:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;RL中智能体学习方法的分类&lt;/h4&gt;
 
 &lt;p&gt;根据强化学习问题中所含元素的种类，其Agent的学习方法，可以分之为5大类。如下图2所示。
 &lt;center&gt;
@@ -86,7 +86,7 @@
 &lt;p&gt;图2 强化学习中智能体学习方法的分类
 &lt;/center&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;探索与利用的权衡&#34;&gt;探索与利用的权衡&lt;/h4&gt;
+&lt;h4 id=&#34;探索与利用的权衡:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;探索与利用的权衡&lt;/h4&gt;
 
 &lt;p&gt;&lt;em&gt;trade-off between exploration and exploitation&lt;/em&gt;&lt;/p&gt;
 
@@ -103,7 +103,7 @@
 &lt;p&gt;$\tau &amp;gt; 0 $表示温度（temperature）, 高的温度，选择动作近乎平等；温度趋近0的时候，此法接近于贪心选择。&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;refernece&#34;&gt;refernece&lt;/h4&gt;
+&lt;h4 id=&#34;refernece:877a7354ca4ae72eb3cbf9d53c436c2f&#34;&gt;refernece&lt;/h4&gt;
 
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;Sutton R S, Barto A G. Reinforcement learning: An introduction[M]. MIT press Cambridge, 1998.&lt;/p&gt;&lt;/li&gt;
@@ -122,7 +122,7 @@ Learning&lt;/p&gt;&lt;/li&gt;
       <guid>https://tmhm.github.io/2017/04/01/taste_sql/</guid>
       <description>
 
-&lt;h3 id=&#34;事务的四项特性&#34;&gt;事务的四项特性&lt;/h3&gt;
+&lt;h3 id=&#34;事务的四项特性:c90b6d24769a3945b8ac28999f82ce69&#34;&gt;事务的四项特性&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;ACID&lt;/li&gt;
@@ -149,14 +149,11 @@ Learning&lt;/p&gt;&lt;/li&gt;
 
 &lt;ul&gt;
 &lt;li&gt;事务提交，记录到硬盘，&lt;/li&gt;
-&lt;li&gt;刷新机制，时间－》秒， 事务提交即刷新，操作系统决定&lt;br /&gt;
-
-&lt;br /&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;刷新机制，时间－》秒， 事务提交即刷新，操作系统决定&lt;br /&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;sql&#34;&gt;SQL&lt;/h3&gt;
+&lt;h3 id=&#34;sql:c90b6d24769a3945b8ac28999f82ce69&#34;&gt;SQL&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;四种操作&lt;/li&gt;
@@ -190,8 +187,7 @@ Learning&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;word2010为例，在奇数页页眉，依次找到&lt;code&gt;插入-&amp;gt;文档部件-&amp;gt;域&lt;/code&gt;；&lt;/li&gt;
 &lt;li&gt;选择类别&lt;code&gt;链接与引用&lt;/code&gt;，域名&lt;code&gt;StyleRef&lt;/code&gt;，域属性&lt;code&gt;标题1&lt;/code&gt;；&lt;/li&gt;
 &lt;li&gt;确定即可。&lt;/li&gt;
-&lt;li&gt;在偶数页插入&lt;code&gt;论文的题目标题&lt;/code&gt;，注意此处需要选择&lt;strong&gt;链接到上一页眉&lt;/strong&gt;
-&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;在偶数页插入&lt;code&gt;论文的题目标题&lt;/code&gt;，注意此处需要选择&lt;strong&gt;链接到上一页眉&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
@@ -246,11 +242,11 @@ Learning&lt;/p&gt;&lt;/li&gt;
       <guid>https://tmhm.github.io/2017/03/03/teamviewer-remote-sign-in/</guid>
       <description>
 
-&lt;h3 id=&#34;问题描述&#34;&gt;问题描述&lt;/h3&gt;
+&lt;h3 id=&#34;问题描述:5dc92b2f972a38d9f83619ba919e5954&#34;&gt;问题描述&lt;/h3&gt;
 
 &lt;p&gt;win10 升级后，主机在锁屏状态下，Teamviewer无法远程登录账户，防火墙已关闭，无人值守访问不了&lt;/p&gt;
 
-&lt;h3 id=&#34;解决方式&#34;&gt;解决方式：&lt;/h3&gt;
+&lt;h3 id=&#34;解决方式:5dc92b2f972a38d9f83619ba919e5954&#34;&gt;解决方式：&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;注意主从机的版本一致&lt;/li&gt;
@@ -261,7 +257,7 @@ Learning&lt;/p&gt;&lt;/li&gt;
 &lt;p&gt;&lt;img src=&#34;https://tmhm.github.io/images/无人值守访问.jpg&#34; alt=&#34;&#34; title=&#34;示图1&#34; /&gt;
 &lt;img src=&#34;https://tmhm.github.io/images/授权轻松访问.jpg&#34; alt=&#34;&#34; title=&#34;示图2&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;问题并未终结&#34;&gt;问题并未终结&lt;/h3&gt;
+&lt;h3 id=&#34;问题并未终结:5dc92b2f972a38d9f83619ba919e5954&#34;&gt;问题并未终结&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;当主机重启之后，Teamviewer的授权轻松访问的钩被去掉了，所以远程不能登录主机，即当主机锁屏的时候，Teamviewer可以连接到主机，但是远程不能登录主机账号。&lt;/li&gt;
@@ -270,7 +266,7 @@ Learning&lt;/p&gt;&lt;/li&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://tmhm.github.io/images/teamviewer配置原因.jpg&#34; alt=&#34;&#34; title=&#34;示图3&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;尝试方案&#34;&gt;尝试方案&lt;/h3&gt;
+&lt;h3 id=&#34;尝试方案:5dc92b2f972a38d9f83619ba919e5954&#34;&gt;尝试方案&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;不能直接勾选【授权轻松访问】选项，显示需要管理员登录，于是设置程序的【兼容性】属性，“以管理员身份运行程序”。&lt;/li&gt;
@@ -286,7 +282,7 @@ Learning&lt;/p&gt;&lt;/li&gt;
 &lt;li&gt;&lt;p&gt;尝试&lt;strong&gt;再次重装&lt;/strong&gt;后，在首页，将随windows 一同启动Teamviewer，分配设备，授权轻松访问全部选上，既可以在设置选项里面看到打开了授权访问。并且&lt;strong&gt;重装后的teamviewer是可以锁屏登录的！&lt;/strong&gt;，可恶的win10设置！&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;待解决&#34;&gt;待解决&lt;/h3&gt;
+&lt;h3 id=&#34;待解决:5dc92b2f972a38d9f83619ba919e5954&#34;&gt;待解决&lt;/h3&gt;
 
 &lt;p&gt;ubuntu 14.04下的Teamviewer也登录不了，本来用着好的Teamviewer，现在却登录不了。苦于不在主机旁，只能用命令重新安装之，参考了&lt;a href=&#34;http://blog.csdn.net/dreamhai/article/details/57080531&#34;&gt;博文&lt;/a&gt;，先在虚拟机上实现，却发现问题。&lt;/p&gt;
 
@@ -338,7 +334,7 @@ sudo apt-get install -f
 
 &lt;p&gt;更加奇怪的是，服务器ubuntu 上的Teamviewer不登录任何账号的时候，可以直接远程访问了。&lt;/p&gt;
 
-&lt;h3 id=&#34;一些有用的命令&#34;&gt;一些有用的命令&lt;/h3&gt;
+&lt;h3 id=&#34;一些有用的命令:5dc92b2f972a38d9f83619ba919e5954&#34;&gt;一些有用的命令&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;获取Teamviewer的ID&lt;code&gt;teamviewer --info&lt;/code&gt;&lt;/li&gt;
@@ -357,7 +353,7 @@ sudo apt-get install -f
 &lt;li&gt;重启服务&lt;code&gt;sudo teamviewer --daemon start&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&#34;粗暴解决&#34;&gt;粗暴解决&lt;/h3&gt;
+&lt;h3 id=&#34;粗暴解决:5dc92b2f972a38d9f83619ba919e5954&#34;&gt;粗暴解决&lt;/h3&gt;
 
 &lt;p&gt;在一台新的win10系统下，发现teamviewer，可以重启使用，突然想起，曾经用驱动精灵和金山毒霸进行过优化，于是，卸载之，并取消他们的优化，再安装teamviewer，发现可以正常使用了。
 &lt;strong&gt;都是过度优化惹得祸！&lt;/strong&gt;&lt;/p&gt;
@@ -374,7 +370,7 @@ sudo apt-get install -f
       <guid>https://tmhm.github.io/2017/02/27/hugo_ubuntu1404/</guid>
       <description>
 
-&lt;h3 id=&#34;安装hugo&#34;&gt;安装Hugo&lt;/h3&gt;
+&lt;h3 id=&#34;安装hugo:851fb1211cd46b1a8f57f9c773fc7a3a&#34;&gt;安装Hugo&lt;/h3&gt;
 
 &lt;p&gt;Ubuntu14.04 下面直接用apt-get安装貌似不行，参考&lt;a href=&#34;https://vexxhost.com/resources/tutorials/how-to-install-and-use-hugo-the-static-site-generator-on-ubuntu-14-04/&#34;&gt;博主&lt;/a&gt;,直接下载源文件安装：&lt;/p&gt;
 
@@ -385,7 +381,7 @@ sudo dpkg -i hugo_0.15_amd64.deb
 
 &lt;p&gt;即可，测试一下版本&lt;code&gt;hugo version&lt;/code&gt;，成功输出版本号即安装成功。&lt;/p&gt;
 
-&lt;h3 id=&#34;安装markdown编辑工具-remarkable&#34;&gt;安装Markdown编辑工具（remarkable）&lt;/h3&gt;
+&lt;h3 id=&#34;安装markdown编辑工具-remarkable:851fb1211cd46b1a8f57f9c773fc7a3a&#34;&gt;安装Markdown编辑工具（remarkable）&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;从&lt;a href=&#34;http://locez.com/translation/best-markdown-editors-for-linux/&#34;&gt;此篇文章&lt;/a&gt;了解到 Remarkable，貌似apt-get也木有直接安装的，于是在&lt;a href=&#34;https://remarkableapp.github.io/linux/download.html&#34;&gt;官网&lt;/a&gt;下载.deb文件；&lt;/li&gt;
@@ -393,7 +389,7 @@ sudo dpkg -i hugo_0.15_amd64.deb
 &lt;li&gt;可以在终端直接用命令&lt;code&gt;remarkable&lt;/code&gt; 打开.md文件&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;安装搜狗输入法for-linux&#34;&gt;安装搜狗输入法for Linux&lt;/h3&gt;
+&lt;h3 id=&#34;安装搜狗输入法for-linux:851fb1211cd46b1a8f57f9c773fc7a3a&#34;&gt;安装搜狗输入法for Linux&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://pinyin.sogou.com/linux/help.php&#34;&gt;搜狗输入法官网&lt;/a&gt;下载安装文件；&lt;/li&gt;
@@ -408,7 +404,7 @@ sudo dpkg -i hugo_0.15_amd64.deb
 sudo rm -rf sogou* Sogou*
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;配置github&#34;&gt;配置github&lt;/h3&gt;
+&lt;h3 id=&#34;配置github:851fb1211cd46b1a8f57f9c773fc7a3a&#34;&gt;配置github&lt;/h3&gt;
 
 &lt;p&gt;由于hugo文件在另一台电脑已经配置好config.toml文件，所以只需要将整个文件夹copy过来，配置好Ubuntu本地的github即可&lt;/p&gt;
 
@@ -419,7 +415,7 @@ git remote add origin git@github.com:tmhm/blog_well.git
 git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;hugo-命令note&#34;&gt;Hugo 命令Note&lt;/h3&gt;
+&lt;h3 id=&#34;hugo-命令note:851fb1211cd46b1a8f57f9c773fc7a3a&#34;&gt;Hugo 命令Note&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;本地服务器，看样式：
 hugo server --baseURL=http://127.0.0.1:1313/ -t hyde-y -D --bind=&amp;quot;0.0.0.0&amp;quot;
@@ -432,7 +428,7 @@ hugo -t hyde-y --baseURL &amp;quot;https://tmhm.github.io/&amp;quot; -D
 hugo new post/second.md
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;写blog操作步骤&#34;&gt;写blog操作步骤&lt;/h3&gt;
+&lt;h3 id=&#34;写blog操作步骤:851fb1211cd46b1a8f57f9c773fc7a3a&#34;&gt;写blog操作步骤&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;用&lt;code&gt;hugo new post/test.md&lt;/code&gt;命令在&lt;code&gt;content/post/&lt;/code&gt;路径生成新文件test.md；&lt;/li&gt;
@@ -467,11 +463,11 @@ hugo new post/second.md
 
 &lt;p&gt;&lt;em&gt;玩TORCS和DRL差不多有一整年了，开始的摸爬滚打都是不断碰壁过来的，近来在参与&lt;a href=&#34;https://katefvision.github.io/&#34;&gt;CMU的DRL10703课程&lt;/a&gt;学习和翻译志愿者工作，也将自己以前的一些工作做一些备忘，以作为有兴趣同学的参考。&lt;/em&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;torcs仿真器平台安装&#34;&gt;TORCS仿真器平台安装&lt;/h3&gt;
+&lt;h3 id=&#34;torcs仿真器平台安装:a996312b7c1cb5e3decf29955e68e32d&#34;&gt;TORCS仿真器平台安装&lt;/h3&gt;
 
 &lt;p&gt;仿真器平台主要包括两步：安装TORCS，然后添加锦标赛用的patch。&lt;/p&gt;
 
-&lt;h4 id=&#34;torcs仿真器的安装&#34;&gt;TORCS仿真器的安装&lt;/h4&gt;
+&lt;h4 id=&#34;torcs仿真器的安装:a996312b7c1cb5e3decf29955e68e32d&#34;&gt;TORCS仿真器的安装&lt;/h4&gt;
 
 &lt;p&gt;The open racing car simulator（TORCS）&lt;a href=&#34;http://torcs.sourceforge.net/&#34;&gt;主页&lt;/a&gt;&lt;/p&gt;
 
@@ -494,7 +490,7 @@ hugo new post/second.md
 &lt;p&gt;如何在仿真器上一步步实现一个简单ROBOT，教程可见：
 &lt;a href=&#34;http://www.berniw.org/tutorials/robot/&#34;&gt;http://www.berniw.org/tutorials/robot/&lt;/a&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;championship-platform的安装&#34;&gt;Championship Platform的安装&lt;/h4&gt;
+&lt;h4 id=&#34;championship-platform的安装:a996312b7c1cb5e3decf29955e68e32d&#34;&gt;Championship Platform的安装&lt;/h4&gt;
 
 &lt;p&gt;为扩展仿真器平台用于我们的智能驾驶AI程序的开发，我们采用的是锦标赛平台的接口。在安装torcs之后，可以直接安装patch。实现安装源文件下载地址：
 &lt;a href=&#34;https://sourceforge.net/projects/cig/files/SCR%20Championship/&#34;&gt;https://sourceforge.net/projects/cig/files/SCR%20Championship/&lt;/a&gt;&lt;/p&gt;
@@ -518,16 +514,16 @@ Manual的官方文件: &lt;a href=&#34;http://arxiv.org/abs/1304.1672&#34;&gt;ht
 
 &lt;p&gt;至此，TORCS仿真器平台安装完毕，下面搭建配套的软件IDE环境。&lt;/p&gt;
 
-&lt;h3 id=&#34;软件ide环境搭建&#34;&gt;软件IDE环境搭建&lt;/h3&gt;
+&lt;h3 id=&#34;软件ide环境搭建:a996312b7c1cb5e3decf29955e68e32d&#34;&gt;软件IDE环境搭建&lt;/h3&gt;
 
-&lt;h4 id=&#34;anaconda-的安装&#34;&gt;Anaconda 的安装&lt;/h4&gt;
+&lt;h4 id=&#34;anaconda-的安装:a996312b7c1cb5e3decf29955e68e32d&#34;&gt;Anaconda 的安装&lt;/h4&gt;
 
 &lt;p&gt;Anaconda 是一个开源的，基于python的跨平台（windows，osx，liunx）科学计算平台，支持python2和python3，示例用的是基于python2的anaconda2-4.0.0&lt;/p&gt;
 
 &lt;p&gt;安装后，会创建一个Anaconda Prompt（一个类似DOS的命令行窗口），它可以像linux一样来通过命令管理各种科学计算包，执行命令等。
 比如可以用conda ，pip等工具管理包&lt;/p&gt;
 
-&lt;h4 id=&#34;pybrain的安装&#34;&gt;PyBrain的安装&lt;/h4&gt;
+&lt;h4 id=&#34;pybrain的安装:a996312b7c1cb5e3decf29955e68e32d&#34;&gt;PyBrain的安装&lt;/h4&gt;
 
 &lt;p&gt;Pybrain是一个基于python的机器学习模块，对强化学习的支持比较好，2015年底的时候，还只有很少的模块是专门做强化学习的，Pybrain就是定位在强化学习和神经网络，由于是个人的项目，维护更新比较慢，目前使用的是0.33版本。&lt;/p&gt;
 
@@ -549,7 +545,7 @@ Manual的官方文件: &lt;a href=&#34;http://arxiv.org/abs/1304.1672&#34;&gt;ht
 
 &lt;p&gt;&lt;em&gt;Note： mq 是指包的发布者&lt;/em&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;pycharm-的安装&#34;&gt;PyCharm 的安装&lt;/h4&gt;
+&lt;h4 id=&#34;pycharm-的安装:a996312b7c1cb5e3decf29955e68e32d&#34;&gt;PyCharm 的安装&lt;/h4&gt;
 
 &lt;p&gt;尽管Anaconda包含了一个Spyder 的IDE，个人感觉不太友好，故还是额外安装&lt;a href=&#34;https://www.jetbrains.com/pycharm/download/#section=windows&#34;&gt;PyCharm&lt;/a&gt;。PyCharm是JetBrains公司推出的一套基于python的跨平台工具。包含免费的社区版和收费的专业版，示例的是专业版，由于近期修改系统时间的漏洞已经修护（貌似最多就一年有效），建议直接安装社区版即可。与TORCS的接口程序在下一篇代码部分给出。&lt;/p&gt;
 </description>
@@ -625,7 +621,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
 &lt;li&gt;文件中记录level 超过 debug 的信息&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;level设计&#34;&gt;level设计&lt;/h4&gt;
+&lt;h4 id=&#34;level设计:ab6ecea521d440c8d06d82d2c5fdae84&#34;&gt;level设计&lt;/h4&gt;
 
 &lt;p&gt;logging函数根据它们用来跟踪的事件的级别或严重程度来命名。&lt;a href=&#34;http://python.usyiyi.cn/translate/python_278/howto/logging.html#logging-advanced-tutorial&#34;&gt;标准级别及其适用性描述&lt;/a&gt;如下（以严重程度递增排序）：&lt;/p&gt;
 
@@ -702,7 +698,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
 
 &lt;p&gt;&lt;img src=&#34;http://i.imgur.com/XZmJtEF.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;主要相关的api有&#34;&gt;主要相关的api有：&lt;/h4&gt;
+&lt;h4 id=&#34;主要相关的api有:4563162cd989f3f67b20afff2f22c80a&#34;&gt;主要相关的api有：&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;plt.subplots_adjust&lt;/li&gt;
@@ -710,7 +706,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
 &lt;li&gt;plt.text&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;解决思路&#34;&gt;解决思路&lt;/h4&gt;
+&lt;h4 id=&#34;解决思路:4563162cd989f3f67b20afff2f22c80a&#34;&gt;解决思路&lt;/h4&gt;
 
 &lt;p&gt;来自matplotlib的&lt;a href=&#34;http://matplotlib.org/gallery.html&#34;&gt;官网&lt;/a&gt;,以及&lt;a href=&#34;http://matplotlib.org/examples/images_contours_and_fields/interpolation_none_vs_nearest.html&#34;&gt;图示&lt;/a&gt;&lt;/p&gt;
 
@@ -785,7 +781,7 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 
 &lt;p&gt;根据听的一些讲座和看的书籍，个人感觉：目前现在的自动驾驶，根本问题还是在于感知（路况，周边物体，交通标识等等)，控制的方法论问题并没有根本性的改变。&lt;/p&gt;
 
-&lt;h3 id=&#34;激光雷达与摄像头性能对比&#34;&gt;激光雷达与摄像头性能对比&lt;/h3&gt;
+&lt;h3 id=&#34;激光雷达与摄像头性能对比:8ac9e7f596e13310c647dc2e31d1f002&#34;&gt;激光雷达与摄像头性能对比&lt;/h3&gt;
 
 &lt;p&gt;摄像头的优点是成本低廉，技术上相对比较成熟。&lt;/p&gt;
 
@@ -799,7 +795,7 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 
 &lt;p&gt;&lt;strong&gt;从这里来看，激光雷达主要还是提供动态性能，但是，激光雷达对于信号的连续性又缺乏支持，需要摄像头来标定前后帧。&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;激光雷达和摄像头分别完成什么工作&#34;&gt;激光雷达和摄像头分别完成什么工作？&lt;/h3&gt;
+&lt;h3 id=&#34;激光雷达和摄像头分别完成什么工作:8ac9e7f596e13310c647dc2e31d1f002&#34;&gt;激光雷达和摄像头分别完成什么工作？&lt;/h3&gt;
 
 &lt;p&gt;无人驾驶过程中，环境感知信息主要有：&lt;/p&gt;
 
@@ -807,7 +803,7 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 
 &lt;p&gt;周边物体感知，就是可能影响车辆通行性、安全性的静态物体和动态物体的识别，包括车辆，行人以及交通标志的识别，包括红绿灯识别和限速牌识别。&lt;/p&gt;
 
-&lt;h3 id=&#34;对于环境感知所需要的传感器-我们把它分成三类&#34;&gt;对于环境感知所需要的传感器，我们把它分成三类：&lt;/h3&gt;
+&lt;h3 id=&#34;对于环境感知所需要的传感器-我们把它分成三类:8ac9e7f596e13310c647dc2e31d1f002&#34;&gt;对于环境感知所需要的传感器，我们把它分成三类：&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;感知周围物体的传感器，包括激光雷达、摄像头和毫米波雷达这三类；&lt;/li&gt;
@@ -817,7 +813,7 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 
 &lt;p&gt;感觉，跟移动机器人并没有本质上的区别。&lt;/p&gt;
 
-&lt;h4 id=&#34;车道线检测&#34;&gt;车道线检测：&lt;/h4&gt;
+&lt;h4 id=&#34;车道线检测:8ac9e7f596e13310c647dc2e31d1f002&#34;&gt;车道线检测：&lt;/h4&gt;
 
 &lt;p&gt;图像一般实际处理的是灰度图像，没用到彩色的作用，&lt;/p&gt;
 
@@ -825,24 +821,24 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 
 &lt;p&gt;直线拟合&lt;/p&gt;
 
-&lt;h4 id=&#34;无人驾驶环境感知中摄像头的用处&#34;&gt;无人驾驶环境感知中摄像头的用处：&lt;/h4&gt;
+&lt;h4 id=&#34;无人驾驶环境感知中摄像头的用处:8ac9e7f596e13310c647dc2e31d1f002&#34;&gt;无人驾驶环境感知中摄像头的用处：&lt;/h4&gt;
 
 &lt;p&gt;车道线检测，障碍物检测，交通标识识别&lt;/p&gt;
 
-&lt;h4 id=&#34;无人驾驶环境感知中激光雷达的用处&#34;&gt;无人驾驶环境感知中激光雷达的用处：&lt;/h4&gt;
+&lt;h4 id=&#34;无人驾驶环境感知中激光雷达的用处:8ac9e7f596e13310c647dc2e31d1f002&#34;&gt;无人驾驶环境感知中激光雷达的用处：&lt;/h4&gt;
 
 &lt;p&gt;1.路沿检测，包括车道线
 2.障碍物识别，对静态物体和动态物体的识别
 3.定位以及地图构建&lt;/p&gt;
 
-&lt;h5 id=&#34;路沿检测大致分三个步骤&#34;&gt;路沿检测大致分三个步骤：&lt;/h5&gt;
+&lt;h5 id=&#34;路沿检测大致分三个步骤:8ac9e7f596e13310c647dc2e31d1f002&#34;&gt;路沿检测大致分三个步骤：&lt;/h5&gt;
 
 &lt;pre&gt;&lt;code&gt;1. 拿到原始点云，
 2. 地面店检测、提取路沿点
 3. 通过路沿点的直线拟合，可以把路沿检测出来
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h5 id=&#34;障碍物的检测-大致包括&#34;&gt;障碍物的检测，大致包括：&lt;/h5&gt;
+&lt;h5 id=&#34;障碍物的检测-大致包括:8ac9e7f596e13310c647dc2e31d1f002&#34;&gt;障碍物的检测，大致包括：&lt;/h5&gt;
 
 &lt;ol&gt;
 &lt;li&gt;获取三维点云数据后，对障碍物进行聚类&lt;/li&gt;
@@ -850,7 +846,7 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 &lt;li&gt;获取到新物体之后，把这个物体放到训练集里面，然后用SVM分类器把物体时别出来。（看来svm还是经典中的稳定战斗机），此处，选择特征也非常重要吧，对于每一个物体，可能包括它的反射强度，横纵向的宽度，以及位置姿态。（速腾的方法）&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h5 id=&#34;辅助定位&#34;&gt;辅助定位：&lt;/h5&gt;
+&lt;h5 id=&#34;辅助定位:8ac9e7f596e13310c647dc2e31d1f002&#34;&gt;辅助定位：&lt;/h5&gt;
 
 &lt;p&gt;利用激光雷达进行辅助定位。定位理论有两种：基于已知地图的定位方法以及基于未知地图的定位方法。&lt;/p&gt;
 
@@ -866,7 +862,7 @@ plt.yticks([0.01,0.03,0.05,0.07,0.09],fontsize = 17)
 
 &lt;p&gt;现在对高精度地图的定义，不同地图厂家有不同定义的方式。做高精度地图是为了辅助无人驾驶，所谓高精度地图就是相比之前的导航地图，前者精确度更高，可以达到厘米级；另一个就是高精度地图包含更多的信息量，比如说车道的宽度、倾斜度等信息。&lt;/p&gt;
 
-&lt;h3 id=&#34;摄像头和激光雷达的融合&#34;&gt;摄像头和激光雷达的融合&lt;/h3&gt;
+&lt;h3 id=&#34;摄像头和激光雷达的融合:8ac9e7f596e13310c647dc2e31d1f002&#34;&gt;摄像头和激光雷达的融合&lt;/h3&gt;
 
 &lt;p&gt;第一步，标定&lt;/p&gt;
 
@@ -1008,7 +1004,7 @@ $ sudo /etc/init.d/gdm start
 
 &lt;p&gt;升级到375版本， 还是没用，启动进入不了桌面，重复登录&lt;/p&gt;
 
-&lt;h3 id=&#34;install-driver-367-https-kusemanohar-wordpress-com-2016-07-29-gtx-1080-on-ubuntu-14-04-trusty&#34;&gt;&lt;a href=&#34;https://kusemanohar.wordpress.com/2016/07/29/gtx-1080-on-ubuntu-14-04-trusty/&#34;&gt;Install driver 367&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;install-driver-367-https-kusemanohar-wordpress-com-2016-07-29-gtx-1080-on-ubuntu-14-04-trusty:74c3db6e0f156f5d800a9ea319ed5703&#34;&gt;&lt;a href=&#34;https://kusemanohar.wordpress.com/2016/07/29/gtx-1080-on-ubuntu-14-04-trusty/&#34;&gt;Install driver 367&lt;/a&gt;&lt;/h3&gt;
 
 &lt;p&gt;Uninstall previous nvidia drivers.&lt;/p&gt;
 
@@ -1067,7 +1063,7 @@ $ sudo /etc/init.d/lightdm start
 &lt;p&gt;有人说，安装必须要在安装桌面前安装GTX 1080 driver，后面方案验证来看， 那个参数才是关键。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&#34;解决方法&#34;&gt;解决方法&lt;/h3&gt;
+&lt;h3 id=&#34;解决方法:74c3db6e0f156f5d800a9ea319ed5703&#34;&gt;解决方法&lt;/h3&gt;
 
 &lt;p&gt;利用sudo gedit /etc/modprobe.d/blacklist-nouveau.conf新建blacklist-nouveau.conf文件，输入命令&lt;/p&gt;
 
@@ -1122,7 +1118,7 @@ sudo /etc/init.d/lightdm start
 &lt;p&gt;NO
 &lt;img src=&#34;http://i.imgur.com/5DHQbMl.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&#34;cuda8-0安装&#34;&gt;cuda8.0安装&lt;/h3&gt;
+&lt;h3 id=&#34;cuda8-0安装:74c3db6e0f156f5d800a9ea319ed5703&#34;&gt;cuda8.0安装&lt;/h3&gt;
 
 &lt;p&gt;运行&lt;/p&gt;
 
@@ -1147,7 +1143,6 @@ Install the CUDA 8.0 Toolkit?
 (y)es/(n)o/(q)uit: y
 
 Enter Toolkit Location
- [ default is /usr/local/cuda-8.0 ]:
 
 Do you want to install a symbolic link at /usr/local/cuda?
 (y)es/(n)o/(q)uit: y
@@ -1156,7 +1151,6 @@ Install the CUDA 8.0 Samples?
 (y)es/(n)o/(q)uit: y
 
 Enter CUDA Samples Location
- [ default is /home/c302 ]:
 
 Installing the CUDA Toolkit in /usr/local/cuda-8.0 ...
 Installing the CUDA Samples in /home/c302 ...
@@ -1187,7 +1181,7 @@ Logfile is /tmp/cuda_install_9045.log
     
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;设置环境变量&#34;&gt;设置环境变量&lt;/h4&gt;
+&lt;h4 id=&#34;设置环境变量:74c3db6e0f156f5d800a9ea319ed5703&#34;&gt;设置环境变量&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;export PATH=/usr/local/cuda-8.0/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
@@ -1201,7 +1195,7 @@ export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
 &lt;code&gt;sudo ldconfig //环境变量立即生效
 &lt;/code&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;验证-cuda&#34;&gt;验证 cuda&lt;/h4&gt;
+&lt;h4 id=&#34;验证-cuda:74c3db6e0f156f5d800a9ea319ed5703&#34;&gt;验证 cuda&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;c302@c302-dl:~/Downloads$ nvcc -V
 nvcc: NVIDIA (R) Cuda compiler driver
@@ -1210,7 +1204,7 @@ Built on Sun_Sep__4_22:14:01_CDT_2016
 Cuda compilation tools, release 8.0, V8.0.44
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;测试cuda的samples&#34;&gt;测试cuda的samples&lt;/h3&gt;
+&lt;h3 id=&#34;测试cuda的samples:74c3db6e0f156f5d800a9ea319ed5703&#34;&gt;测试cuda的samples&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;cd ‘/home/zhou/NVIDIA_CUDA-8.0_Samples’
 make  //这里需要点时间

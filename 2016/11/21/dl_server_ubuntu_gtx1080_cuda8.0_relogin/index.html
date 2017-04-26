@@ -55,7 +55,7 @@
     },
     "datePublished": "2016-11-21",
     "description": "前面部分是自己的记录，后面的方案部分是成功安装GPU驱动\x2b解决桌面重复登录等",
-    "wordCount":  688 
+    "wordCount":  678 
   }
 </script>
 
@@ -66,7 +66,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://tmhm.github.io/v2.png">
 <link href="https://tmhm.github.io/v2.png" rel="icon">
 
-<meta name="generator" content="Hugo 0.18.1" />
+<meta name="generator" content="Hugo 0.15" />
 
   
 <!--[if lt IE 9]>
@@ -175,7 +175,6 @@
 </header>
 
 
-
 <article id="main-content" class="container main_content single">
   <header class="container hat">
   <h1>DL服务器主机环境配置 ubuntu14.04 &amp;  GTX1080 &amp; Cuda8.0 解决桌面重复登录
@@ -187,7 +186,7 @@
 
   
   &middot; Read in about 4 min
-  &middot; (688 Words)
+  &middot; (678 Words)
   <br>
   
 <a class="label" href="https://tmhm.github.io/tags/dl">DL</a>
@@ -270,7 +269,7 @@ $ sudo /etc/init.d/gdm start
 
 <p>升级到375版本， 还是没用，启动进入不了桌面，重复登录</p>
 
-<h3 id="install-driver-367-https-kusemanohar-wordpress-com-2016-07-29-gtx-1080-on-ubuntu-14-04-trusty"><a href="https://kusemanohar.wordpress.com/2016/07/29/gtx-1080-on-ubuntu-14-04-trusty/">Install driver 367</a></h3>
+<h3 id="install-driver-367-https-kusemanohar-wordpress-com-2016-07-29-gtx-1080-on-ubuntu-14-04-trusty:74c3db6e0f156f5d800a9ea319ed5703"><a href="https://kusemanohar.wordpress.com/2016/07/29/gtx-1080-on-ubuntu-14-04-trusty/">Install driver 367</a></h3>
 
 <p>Uninstall previous nvidia drivers.</p>
 
@@ -329,7 +328,7 @@ $ sudo /etc/init.d/lightdm start
 <p>有人说，安装必须要在安装桌面前安装GTX 1080 driver，后面方案验证来看， 那个参数才是关键。</p>
 </blockquote>
 
-<h3 id="解决方法">解决方法</h3>
+<h3 id="解决方法:74c3db6e0f156f5d800a9ea319ed5703">解决方法</h3>
 
 <p>利用sudo gedit /etc/modprobe.d/blacklist-nouveau.conf新建blacklist-nouveau.conf文件，输入命令</p>
 
@@ -384,7 +383,7 @@ sudo /etc/init.d/lightdm start
 <p>NO
 <img src="http://i.imgur.com/5DHQbMl.png" alt="" /></p>
 
-<h3 id="cuda8-0安装">cuda8.0安装</h3>
+<h3 id="cuda8-0安装:74c3db6e0f156f5d800a9ea319ed5703">cuda8.0安装</h3>
 
 <p>运行</p>
 
@@ -409,7 +408,6 @@ Install the CUDA 8.0 Toolkit?
 (y)es/(n)o/(q)uit: y
 
 Enter Toolkit Location
- [ default is /usr/local/cuda-8.0 ]:
 
 Do you want to install a symbolic link at /usr/local/cuda?
 (y)es/(n)o/(q)uit: y
@@ -418,7 +416,6 @@ Install the CUDA 8.0 Samples?
 (y)es/(n)o/(q)uit: y
 
 Enter CUDA Samples Location
- [ default is /home/c302 ]:
 
 Installing the CUDA Toolkit in /usr/local/cuda-8.0 ...
 Installing the CUDA Samples in /home/c302 ...
@@ -449,7 +446,7 @@ Logfile is /tmp/cuda_install_9045.log
     
 </code></pre>
 
-<h4 id="设置环境变量">设置环境变量</h4>
+<h4 id="设置环境变量:74c3db6e0f156f5d800a9ea319ed5703">设置环境变量</h4>
 
 <pre><code>export PATH=/usr/local/cuda-8.0/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
@@ -463,7 +460,7 @@ export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
 <code>sudo ldconfig //环境变量立即生效
 </code></p>
 
-<h4 id="验证-cuda">验证 cuda</h4>
+<h4 id="验证-cuda:74c3db6e0f156f5d800a9ea319ed5703">验证 cuda</h4>
 
 <pre><code>c302@c302-dl:~/Downloads$ nvcc -V
 nvcc: NVIDIA (R) Cuda compiler driver
@@ -472,7 +469,7 @@ Built on Sun_Sep__4_22:14:01_CDT_2016
 Cuda compilation tools, release 8.0, V8.0.44
 </code></pre>
 
-<h3 id="测试cuda的samples">测试cuda的samples</h3>
+<h3 id="测试cuda的samples:74c3db6e0f156f5d800a9ea319ed5703">测试cuda的samples</h3>
 
 <pre><code>cd ‘/home/zhou/NVIDIA_CUDA-8.0_Samples’
 make  //这里需要点时间
@@ -609,8 +606,8 @@ NOTE: The CUDA Samples are not meant for performance measurements. Results may v
 
 </footer>
 <script type="text/javascript"
-	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  </script>
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 
     </main>

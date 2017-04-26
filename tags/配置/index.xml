@@ -2,13 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>配置 on Well</title>
-    <link>https://tmhm.github.io/tags/%E9%85%8D%E7%BD%AE/index.xml</link>
+    <link>https://tmhm.github.io/tags/%E9%85%8D%E7%BD%AE/</link>
     <description>Recent content in 配置 on Well</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
     <managingEditor>wells217@163.com (Well)</managingEditor>
     <webMaster>wells217@163.com (Well)</webMaster>
     <copyright>(c) 2017 Well.</copyright>
+    <lastBuildDate>Mon, 13 Feb 2017 00:48:00 +0000</lastBuildDate>
     <atom:link href="https://tmhm.github.io/tags/%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -95,7 +96,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
 &lt;li&gt;文件中记录level 超过 debug 的信息&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;level设计&#34;&gt;level设计&lt;/h4&gt;
+&lt;h4 id=&#34;level设计:ab6ecea521d440c8d06d82d2c5fdae84&#34;&gt;level设计&lt;/h4&gt;
 
 &lt;p&gt;logging函数根据它们用来跟踪的事件的级别或严重程度来命名。&lt;a href=&#34;http://python.usyiyi.cn/translate/python_278/howto/logging.html#logging-advanced-tutorial&#34;&gt;标准级别及其适用性描述&lt;/a&gt;如下（以严重程度递增排序）：&lt;/p&gt;
 
@@ -186,7 +187,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
       <guid>https://tmhm.github.io/2016/11/02/macdown_in_macos/</guid>
       <description>
 
-&lt;h4 id=&#34;配置方法&#34;&gt;配置方法&lt;/h4&gt;
+&lt;h4 id=&#34;配置方法:b890d3fd758b9103485314cd4871d52c&#34;&gt;配置方法&lt;/h4&gt;
 
 &lt;p&gt;执行两条命令即可。&lt;/p&gt;
 
@@ -195,7 +196,7 @@ logging.warning(&amp;quot;this is warning from %s.&amp;quot; % nt)
 sudo chmod +x /usr/local/bin/macdown
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;设置文件默认打开方式&#34;&gt;设置文件默认打开方式&lt;/h4&gt;
+&lt;h4 id=&#34;设置文件默认打开方式:b890d3fd758b9103485314cd4871d52c&#34;&gt;设置文件默认打开方式&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;选定文件&lt;/li&gt;
@@ -204,7 +205,7 @@ sudo chmod +x /usr/local/bin/macdown
 &lt;li&gt;选择默认打开的程序，并设置全部更改。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;配置latex语法显示&#34;&gt;配置LaTeX语法显示&lt;/h4&gt;
+&lt;h4 id=&#34;配置latex语法显示:b890d3fd758b9103485314cd4871d52c&#34;&gt;配置LaTeX语法显示&lt;/h4&gt;
 
 &lt;p&gt;按如下配置即可预览LaTeX的公式。&lt;/p&gt;
 
@@ -285,13 +286,13 @@ sudo chmod +x /usr/local/bin/macdown
       <guid>https://tmhm.github.io/2015/11/21/mysql--matlab%E9%85%8D%E7%BD%AE/</guid>
       <description>
 
-&lt;h4 id=&#34;mysql-中一直出现-gt&#34;&gt;mysql 中一直出现&amp;rsquo;&amp;gt;&lt;/h4&gt;
+&lt;h4 id=&#34;mysql-中一直出现-gt:00e8afaab79b1cfab1db2b058a1ece7f&#34;&gt;mysql 中一直出现&amp;rsquo;&amp;gt;&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;单双引号没有配对&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h4 id=&#34;mysql-连接matlab&#34;&gt;mysql 连接matlab&lt;/h4&gt;
+&lt;h4 id=&#34;mysql-连接matlab:00e8afaab79b1cfab1db2b058a1ece7f&#34;&gt;mysql 连接matlab&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;1， 到mysql官网下载 &lt;a href=&#34;http://dev.mysql.com/downloads/connector/j/&#34;&gt;http://dev.mysql.com/downloads/connector/j/&lt;/a&gt;&lt;br /&gt;(mysql-connector-java-5.1.37.tar.gz&lt;br /&gt;将mysql-connector-java-5.1.37-bin.jar  放在matlabroot/java/jar/toolbox/&lt;/li&gt;
@@ -306,10 +307,12 @@ sudo chmod +x /usr/local/bin/macdown
 
 &lt;pre&gt;&lt;code&gt;conn=database(&#39;xw&#39;,&#39;root&#39;,&#39;key&#39;,&#39;com.mysql.jdbc.Driver&#39;,&#39;jdbc:mysql://localhost:3306/xw&#39;)
 aTemp = exec(conn,&#39;select * from gd_train_data limit 5
-    
+
+
 aTemp = fetch(aTemp)
 curs = aTemp.Data
-    
+
+
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>

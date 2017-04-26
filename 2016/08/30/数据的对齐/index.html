@@ -66,7 +66,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://tmhm.github.io/v2.png">
 <link href="https://tmhm.github.io/v2.png" rel="icon">
 
-<meta name="generator" content="Hugo 0.18.1" />
+<meta name="generator" content="Hugo 0.15" />
 
   
 <!--[if lt IE 9]>
@@ -173,7 +173,6 @@
   
 
 </header>
-
 
 
 <article id="main-content" class="container main_content single">
@@ -362,12 +361,11 @@ cout &lt;&lt; &quot;char*: &quot; &lt;&lt; sizeof(char*) &lt;&lt; endl;
 <ul>
 <li>由于硬件设计的特点，CPU在读写内存时，如果所给的地址是机器字长的整数倍，则操作效率会比较高。</li>
 <li>有的CPU甚至不支持读写地址不对齐的内存单元。</li>
-<li>为了提高程序运行的效率，编译器会尽量避免一个变量（包括结构体成员）的存储空间跨越地址对齐的界线。</li>
-</ul>
 
-<ol>
-<li>实验（64bits 环境）</li>
-</ol>
+<li><p>为了提高程序运行的效率，编译器会尽量避免一个变量（包括结构体成员）的存储空间跨越地址对齐的界线。</p></li>
+
+<li><p>实验（64bits 环境）</p></li>
+</ul>
 
 <pre><code>
 #include &lt;iostream&gt;
@@ -567,8 +565,8 @@ class clt_1{
 
 </footer>
 <script type="text/javascript"
-	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  </script>
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 
     </main>

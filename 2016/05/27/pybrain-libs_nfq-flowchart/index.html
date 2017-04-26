@@ -66,7 +66,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://tmhm.github.io/v2.png">
 <link href="https://tmhm.github.io/v2.png" rel="icon">
 
-<meta name="generator" content="Hugo 0.18.1" />
+<meta name="generator" content="Hugo 0.15" />
 
   
 <!--[if lt IE 9]>
@@ -175,7 +175,6 @@
 </header>
 
 
-
 <article id="main-content" class="container main_content single">
   <header class="container hat">
   <h1>PyBrain库的example之NFQ流程图分析
@@ -227,7 +226,7 @@
   <div class="container content">
   
 
-<h4 id="pybrain库的example之nfq流程图分析">PyBrain库的example之NFQ流程图分析</h4>
+<h4 id="pybrain库的example之nfq流程图分析:7e448002a1e4ec6b6b072f98178fcfc7">PyBrain库的example之NFQ流程图分析</h4>
 
 <p>如下是测试程序。主要分析<strong>doEpisode和learn</strong>两个函数。</p>
 
@@ -312,11 +311,25 @@ print &quot;you put :&quot;,str
 
 </code></pre>
 
-<p>experiment.doEpisodes(1)
-<img src="http://i.imgur.com/Un1ow9B.png" alt="" /></p>
+<p>experiment.doEpisodes(1)</p>
+
+<!-- ![](http://i.imgur.com/Un1ow9B.png)
+-->
+
+<p><center></p>
+
+<p><img src="/images/doEpisode control flow of NFQ in PyBrain.png" width = "800" height = "1680" alt="示图1" align=center /></p>
+
+<p></center></p>
 
 <p>agent.learn(2)
-<img src="http://i.imgur.com/TQ2YO9y.png" alt="" /></p>
+<!-- ![](http://i.imgur.com/TQ2YO9y.png)
+-->
+<center></p>
+
+<p><img src="/images/agent.learn() control flow of NFQ in PyBrain.png" width = "800" height = "780" alt="示图2" align=center /></p>
+
+<p></center></p>
 
 <p>图2的注释2部分，可以参考该博文<a href="http://lamda.nju.edu.cn/yangjw/project/drlintro.html">深度强化学习初探</a> ,但是他文中的公式应该有点问题。应该把Qm+1改为Qm，进一步参考维基百科<a href="https://en.wikipedia.org/wiki/Q-learning">Q-learning</a> ,如下所示。</p>
 
@@ -430,8 +443,8 @@ print &quot;you put :&quot;,str
 
 </footer>
 <script type="text/javascript"
-	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  </script>
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 
     </main>

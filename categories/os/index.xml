@@ -2,13 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Os on Well</title>
-    <link>https://tmhm.github.io/categories/os/index.xml</link>
+    <link>https://tmhm.github.io/categories/os/</link>
     <description>Recent content in Os on Well</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
     <managingEditor>wells217@163.com (Well)</managingEditor>
     <webMaster>wells217@163.com (Well)</webMaster>
     <copyright>(c) 2017 Well.</copyright>
+    <lastBuildDate>Mon, 13 Feb 2017 00:48:00 +0000</lastBuildDate>
     <atom:link href="https://tmhm.github.io/categories/os/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -301,7 +302,7 @@ $ .&lt;/span&gt;/&lt;span style=&#34;color: #000000;&#34;&gt;test.sh  #在一个
       <guid>https://tmhm.github.io/2016/03/08/debian%E5%88%9D%E8%AF%86%E9%80%89%E6%8B%A9%E6%9C%80%E4%BD%B3%E9%95%9C%E5%83%8F%E5%8F%91%E5%B8%83%E7%AB%99%E7%82%B9%E5%8A%A0%E5%85%A5source.list%E6%96%87%E4%BB%B6/</guid>
       <description>
 
-&lt;h4 id=&#34;选择最佳镜像发布站点加入source-list文件-netselect-netselect-apt&#34;&gt;选择最佳镜像发布站点加入source.list文件：netselect，netselect-apt&lt;/h4&gt;
+&lt;h4 id=&#34;选择最佳镜像发布站点加入source-list文件-netselect-netselect-apt:b791b82c299c95c84172ca2fade3d33a&#34;&gt;选择最佳镜像发布站点加入source.list文件：netselect，netselect-apt&lt;/h4&gt;
 
 &lt;p&gt;该将哪个Debian镜像发布站点加入&lt;samp&gt;source.list&lt;/samp&gt;文件？&amp;rdquo;。有很多方法来选择镜像发布站点，专家们可能会写一个脚本去测试 不同站点的ping时间。不过其实有一个程序可以帮你：&amp;nbsp;&lt;strong&gt;netselect&lt;/strong&gt;。&lt;/p&gt;
 
@@ -426,20 +427,24 @@ ii  mysql-server-core-5.5                       5.5.47-0ubuntu0.12.04.1         
 &lt;li&gt;&lt;p&gt;压缩出一块空闲的分区，即压缩卷之后，不做任何操作。&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;并且确保该空闲卷是“基本”类型
-　　　    　不是的话，&lt;a href=&#34;http://www.jianshu.com/p/2f0731274ee6&#34;&gt;参考&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;并且确保该空闲卷是“基本”类型
+　　　    　不是的话，&lt;a href=&#34;http://www.jianshu.com/p/2f0731274ee6&#34;&gt;参考&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;ol&gt;
-&lt;li&gt;下载免费的分区助手
-注：一定要下载分区助手3.0版本，其它的高版本如4.0没有包含动态磁盘转换器这个工具&lt;/li&gt;
-&lt;li&gt;安装并运行。在主界面的左上边，点击“动态磁盘转换器”来运行这个程序。&lt;/li&gt;
-&lt;li&gt;然后你将看动态磁盘转换器的欢迎界面，你可以读一下它的简介，然后直接点击“下一步”按钮以进入下一个向导页&lt;/li&gt;
-&lt;li&gt;在这儿的“操作选择”页里，请选择“转换动态磁盘到基本磁盘”选项，并点击“下一步”按钮&lt;/li&gt;
-&lt;li&gt;然后进入“动态磁盘列表”页，在这里程序要求你选择一个你想转换到基本磁盘的动态磁盘&lt;/li&gt;
-&lt;li&gt;操作确认，请在“我已经决定好执行这个转换”上打勾，然后点击“执行”按钮开始转换这个动态磁盘到基本磁盘。&lt;/li&gt;
-&lt;li&gt;在几秒后，这个转换将完成，同时程序可能要求你重启电脑，在重启电脑之后，你在进入Windows的磁盘管理器中查看磁盘时，它已经被成功改变到基本磁盘了&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;下载免费的分区助手
+注：一定要下载分区助手3.0版本，其它的高版本如4.0没有包含动态磁盘转换器这个工具&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;安装并运行。在主界面的左上边，点击“动态磁盘转换器”来运行这个程序。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;然后你将看动态磁盘转换器的欢迎界面，你可以读一下它的简介，然后直接点击“下一步”按钮以进入下一个向导页&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;在这儿的“操作选择”页里，请选择“转换动态磁盘到基本磁盘”选项，并点击“下一步”按钮&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;然后进入“动态磁盘列表”页，在这里程序要求你选择一个你想转换到基本磁盘的动态磁盘&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;操作确认，请在“我已经决定好执行这个转换”上打勾，然后点击“执行”按钮开始转换这个动态磁盘到基本磁盘。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;在几秒后，这个转换将完成，同时程序可能要求你重启电脑，在重启电脑之后，你在进入Windows的磁盘管理器中查看磁盘时，它已经被成功改变到基本磁盘了&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;分区空闲，不可用！！问题&lt;/p&gt;
 

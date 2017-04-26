@@ -66,7 +66,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://tmhm.github.io/v2.png">
 <link href="https://tmhm.github.io/v2.png" rel="icon">
 
-<meta name="generator" content="Hugo 0.18.1" />
+<meta name="generator" content="Hugo 0.15" />
 
   
 <!--[if lt IE 9]>
@@ -175,7 +175,6 @@
 </header>
 
 
-
 <article id="main-content" class="container main_content single">
   <header class="container hat">
   <h1>基于DRL和TORCS的自动驾驶仿真系统——之环境配置
@@ -229,11 +228,11 @@
 
 <p><em>玩TORCS和DRL差不多有一整年了，开始的摸爬滚打都是不断碰壁过来的，近来在参与<a href="https://katefvision.github.io/">CMU的DRL10703课程</a>学习和翻译志愿者工作，也将自己以前的一些工作做一些备忘，以作为有兴趣同学的参考。</em></p>
 
-<h3 id="torcs仿真器平台安装">TORCS仿真器平台安装</h3>
+<h3 id="torcs仿真器平台安装:a996312b7c1cb5e3decf29955e68e32d">TORCS仿真器平台安装</h3>
 
 <p>仿真器平台主要包括两步：安装TORCS，然后添加锦标赛用的patch。</p>
 
-<h4 id="torcs仿真器的安装">TORCS仿真器的安装</h4>
+<h4 id="torcs仿真器的安装:a996312b7c1cb5e3decf29955e68e32d">TORCS仿真器的安装</h4>
 
 <p>The open racing car simulator（TORCS）<a href="http://torcs.sourceforge.net/">主页</a></p>
 
@@ -256,7 +255,7 @@
 <p>如何在仿真器上一步步实现一个简单ROBOT，教程可见：
 <a href="http://www.berniw.org/tutorials/robot/">http://www.berniw.org/tutorials/robot/</a></p>
 
-<h4 id="championship-platform的安装">Championship Platform的安装</h4>
+<h4 id="championship-platform的安装:a996312b7c1cb5e3decf29955e68e32d">Championship Platform的安装</h4>
 
 <p>为扩展仿真器平台用于我们的智能驾驶AI程序的开发，我们采用的是锦标赛平台的接口。在安装torcs之后，可以直接安装patch。实现安装源文件下载地址：
 <a href="https://sourceforge.net/projects/cig/files/SCR%20Championship/">https://sourceforge.net/projects/cig/files/SCR%20Championship/</a></p>
@@ -280,16 +279,16 @@ Manual的官方文件: <a href="http://arxiv.org/abs/1304.1672">http://arxiv.org
 
 <p>至此，TORCS仿真器平台安装完毕，下面搭建配套的软件IDE环境。</p>
 
-<h3 id="软件ide环境搭建">软件IDE环境搭建</h3>
+<h3 id="软件ide环境搭建:a996312b7c1cb5e3decf29955e68e32d">软件IDE环境搭建</h3>
 
-<h4 id="anaconda-的安装">Anaconda 的安装</h4>
+<h4 id="anaconda-的安装:a996312b7c1cb5e3decf29955e68e32d">Anaconda 的安装</h4>
 
 <p>Anaconda 是一个开源的，基于python的跨平台（windows，osx，liunx）科学计算平台，支持python2和python3，示例用的是基于python2的anaconda2-4.0.0</p>
 
 <p>安装后，会创建一个Anaconda Prompt（一个类似DOS的命令行窗口），它可以像linux一样来通过命令管理各种科学计算包，执行命令等。
 比如可以用conda ，pip等工具管理包</p>
 
-<h4 id="pybrain的安装">PyBrain的安装</h4>
+<h4 id="pybrain的安装:a996312b7c1cb5e3decf29955e68e32d">PyBrain的安装</h4>
 
 <p>Pybrain是一个基于python的机器学习模块，对强化学习的支持比较好，2015年底的时候，还只有很少的模块是专门做强化学习的，Pybrain就是定位在强化学习和神经网络，由于是个人的项目，维护更新比较慢，目前使用的是0.33版本。</p>
 
@@ -311,7 +310,7 @@ Manual的官方文件: <a href="http://arxiv.org/abs/1304.1672">http://arxiv.org
 
 <p><em>Note： mq 是指包的发布者</em></p>
 
-<h4 id="pycharm-的安装">PyCharm 的安装</h4>
+<h4 id="pycharm-的安装:a996312b7c1cb5e3decf29955e68e32d">PyCharm 的安装</h4>
 
 <p>尽管Anaconda包含了一个Spyder 的IDE，个人感觉不太友好，故还是额外安装<a href="https://www.jetbrains.com/pycharm/download/#section=windows">PyCharm</a>。PyCharm是JetBrains公司推出的一套基于python的跨平台工具。包含免费的社区版和收费的专业版，示例的是专业版，由于近期修改系统时间的漏洞已经修护（貌似最多就一年有效），建议直接安装社区版即可。与TORCS的接口程序在下一篇代码部分给出。</p>
 
@@ -415,8 +414,8 @@ Manual的官方文件: <a href="http://arxiv.org/abs/1304.1672">http://arxiv.org
 
 </footer>
 <script type="text/javascript"
-	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-  </script>
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 
     </main>

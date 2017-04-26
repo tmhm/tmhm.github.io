@@ -2,13 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ubuntu on Well</title>
-    <link>https://tmhm.github.io/tags/ubuntu/index.xml</link>
+    <link>https://tmhm.github.io/tags/ubuntu/</link>
     <description>Recent content in Ubuntu on Well</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
     <managingEditor>wells217@163.com (Well)</managingEditor>
     <webMaster>wells217@163.com (Well)</webMaster>
     <copyright>(c) 2017 Well.</copyright>
+    <lastBuildDate>Mon, 27 Feb 2017 13:55:22 +0800</lastBuildDate>
     <atom:link href="https://tmhm.github.io/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -19,7 +20,7 @@
       <guid>https://tmhm.github.io/2017/02/27/hugo_ubuntu1404/</guid>
       <description>
 
-&lt;h3 id=&#34;安装hugo&#34;&gt;安装Hugo&lt;/h3&gt;
+&lt;h3 id=&#34;安装hugo:851fb1211cd46b1a8f57f9c773fc7a3a&#34;&gt;安装Hugo&lt;/h3&gt;
 
 &lt;p&gt;Ubuntu14.04 下面直接用apt-get安装貌似不行，参考&lt;a href=&#34;https://vexxhost.com/resources/tutorials/how-to-install-and-use-hugo-the-static-site-generator-on-ubuntu-14-04/&#34;&gt;博主&lt;/a&gt;,直接下载源文件安装：&lt;/p&gt;
 
@@ -30,7 +31,7 @@ sudo dpkg -i hugo_0.15_amd64.deb
 
 &lt;p&gt;即可，测试一下版本&lt;code&gt;hugo version&lt;/code&gt;，成功输出版本号即安装成功。&lt;/p&gt;
 
-&lt;h3 id=&#34;安装markdown编辑工具-remarkable&#34;&gt;安装Markdown编辑工具（remarkable）&lt;/h3&gt;
+&lt;h3 id=&#34;安装markdown编辑工具-remarkable:851fb1211cd46b1a8f57f9c773fc7a3a&#34;&gt;安装Markdown编辑工具（remarkable）&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;从&lt;a href=&#34;http://locez.com/translation/best-markdown-editors-for-linux/&#34;&gt;此篇文章&lt;/a&gt;了解到 Remarkable，貌似apt-get也木有直接安装的，于是在&lt;a href=&#34;https://remarkableapp.github.io/linux/download.html&#34;&gt;官网&lt;/a&gt;下载.deb文件；&lt;/li&gt;
@@ -38,7 +39,7 @@ sudo dpkg -i hugo_0.15_amd64.deb
 &lt;li&gt;可以在终端直接用命令&lt;code&gt;remarkable&lt;/code&gt; 打开.md文件&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;安装搜狗输入法for-linux&#34;&gt;安装搜狗输入法for Linux&lt;/h3&gt;
+&lt;h3 id=&#34;安装搜狗输入法for-linux:851fb1211cd46b1a8f57f9c773fc7a3a&#34;&gt;安装搜狗输入法for Linux&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://pinyin.sogou.com/linux/help.php&#34;&gt;搜狗输入法官网&lt;/a&gt;下载安装文件；&lt;/li&gt;
@@ -53,7 +54,7 @@ sudo dpkg -i hugo_0.15_amd64.deb
 sudo rm -rf sogou* Sogou*
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;配置github&#34;&gt;配置github&lt;/h3&gt;
+&lt;h3 id=&#34;配置github:851fb1211cd46b1a8f57f9c773fc7a3a&#34;&gt;配置github&lt;/h3&gt;
 
 &lt;p&gt;由于hugo文件在另一台电脑已经配置好config.toml文件，所以只需要将整个文件夹copy过来，配置好Ubuntu本地的github即可&lt;/p&gt;
 
@@ -64,7 +65,7 @@ git remote add origin git@github.com:tmhm/blog_well.git
 git push -u origin master
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;hugo-命令note&#34;&gt;Hugo 命令Note&lt;/h3&gt;
+&lt;h3 id=&#34;hugo-命令note:851fb1211cd46b1a8f57f9c773fc7a3a&#34;&gt;Hugo 命令Note&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;本地服务器，看样式：
 hugo server --baseURL=http://127.0.0.1:1313/ -t hyde-y -D --bind=&amp;quot;0.0.0.0&amp;quot;
@@ -77,7 +78,7 @@ hugo -t hyde-y --baseURL &amp;quot;https://tmhm.github.io/&amp;quot; -D
 hugo new post/second.md
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;写blog操作步骤&#34;&gt;写blog操作步骤&lt;/h3&gt;
+&lt;h3 id=&#34;写blog操作步骤:851fb1211cd46b1a8f57f9c773fc7a3a&#34;&gt;写blog操作步骤&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;用&lt;code&gt;hugo new post/test.md&lt;/code&gt;命令在&lt;code&gt;content/post/&lt;/code&gt;路径生成新文件test.md；&lt;/li&gt;
@@ -191,20 +192,24 @@ ii  mysql-server-core-5.5                       5.5.47-0ubuntu0.12.04.1         
 &lt;li&gt;&lt;p&gt;压缩出一块空闲的分区，即压缩卷之后，不做任何操作。&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;并且确保该空闲卷是“基本”类型
-　　　    　不是的话，&lt;a href=&#34;http://www.jianshu.com/p/2f0731274ee6&#34;&gt;参考&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;&lt;p&gt;并且确保该空闲卷是“基本”类型
+　　　    　不是的话，&lt;a href=&#34;http://www.jianshu.com/p/2f0731274ee6&#34;&gt;参考&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
 
-&lt;ol&gt;
-&lt;li&gt;下载免费的分区助手
-注：一定要下载分区助手3.0版本，其它的高版本如4.0没有包含动态磁盘转换器这个工具&lt;/li&gt;
-&lt;li&gt;安装并运行。在主界面的左上边，点击“动态磁盘转换器”来运行这个程序。&lt;/li&gt;
-&lt;li&gt;然后你将看动态磁盘转换器的欢迎界面，你可以读一下它的简介，然后直接点击“下一步”按钮以进入下一个向导页&lt;/li&gt;
-&lt;li&gt;在这儿的“操作选择”页里，请选择“转换动态磁盘到基本磁盘”选项，并点击“下一步”按钮&lt;/li&gt;
-&lt;li&gt;然后进入“动态磁盘列表”页，在这里程序要求你选择一个你想转换到基本磁盘的动态磁盘&lt;/li&gt;
-&lt;li&gt;操作确认，请在“我已经决定好执行这个转换”上打勾，然后点击“执行”按钮开始转换这个动态磁盘到基本磁盘。&lt;/li&gt;
-&lt;li&gt;在几秒后，这个转换将完成，同时程序可能要求你重启电脑，在重启电脑之后，你在进入Windows的磁盘管理器中查看磁盘时，它已经被成功改变到基本磁盘了&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;下载免费的分区助手
+注：一定要下载分区助手3.0版本，其它的高版本如4.0没有包含动态磁盘转换器这个工具&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;安装并运行。在主界面的左上边，点击“动态磁盘转换器”来运行这个程序。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;然后你将看动态磁盘转换器的欢迎界面，你可以读一下它的简介，然后直接点击“下一步”按钮以进入下一个向导页&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;在这儿的“操作选择”页里，请选择“转换动态磁盘到基本磁盘”选项，并点击“下一步”按钮&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;然后进入“动态磁盘列表”页，在这里程序要求你选择一个你想转换到基本磁盘的动态磁盘&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;操作确认，请在“我已经决定好执行这个转换”上打勾，然后点击“执行”按钮开始转换这个动态磁盘到基本磁盘。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;在几秒后，这个转换将完成，同时程序可能要求你重启电脑，在重启电脑之后，你在进入Windows的磁盘管理器中查看磁盘时，它已经被成功改变到基本磁盘了&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;分区空闲，不可用！！问题&lt;/p&gt;
 
