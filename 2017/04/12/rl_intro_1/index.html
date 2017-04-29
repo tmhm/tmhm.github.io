@@ -66,7 +66,7 @@
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://tmhm.github.io/v2.png">
 <link href="https://tmhm.github.io/v2.png" rel="icon">
 
-<meta name="generator" content="Hugo 0.15" />
+<meta name="generator" content="Hugo 0.18.1" />
 
   
 <!--[if lt IE 9]>
@@ -175,6 +175,7 @@
 </header>
 
 
+
 <article id="main-content" class="container main_content single">
   <header class="container hat">
   <h1>RL笔记(1)-introduction
@@ -235,7 +236,7 @@
   });
 </script>
 
-<h4 id="强化学习的定义:877a7354ca4ae72eb3cbf9d53c436c2f">强化学习的定义</h4>
+<h4 id="强化学习的定义">强化学习的定义</h4>
 
 <p>强化学习（Reinforcement Learning）本身可以定义为一个广泛的学习问题，学会找到状态（Situation）到动作（Actions）的一个映射关系，以最大化一个数值型的回报（Reward）信号。一个完整的强化学习问题可以用马氏决策过程中的最优控制理论来进行描述。在马氏链中，当前时刻的状态（State） 仅仅与上一时刻的状态有关。如下图1所示，一个智能体（Agent）可以通过某种方式感受环境的状态（State），然后可以通过某一个动作（Action）来改变环境的下一状态。在这个不断交互的过程中，Agent还必须具有一个或者以上的、与此环境状态相关的目标（Goal）。
 <center>
@@ -246,7 +247,7 @@
 
 <p>与RL问题相对应的任何求解方法，可以称之为一个强化学习方法。</p>
 
-<h4 id="rl的两个重要特征:877a7354ca4ae72eb3cbf9d53c436c2f">RL的两个重要特征</h4>
+<h4 id="rl的两个重要特征">RL的两个重要特征</h4>
 
 <ul>
 <li>试错搜索（trial-and-error）</li>
@@ -257,7 +258,7 @@
 监督学习中通过正确的指示（instruct）来进行反馈；强化学习是依靠整个生命周期所选择的动作来进行评价式的反馈。</p></li>
 </ul>
 
-<h4 id="rl系统中的四大主要元素-element:877a7354ca4ae72eb3cbf9d53c436c2f">Rl系统中的四大主要元素（element）</h4>
+<h4 id="rl系统中的四大主要元素-element">Rl系统中的四大主要元素（element）</h4>
 
 <ul>
 <li><p>策略（policy）</p>
@@ -277,7 +278,7 @@
 <p>即对该Agent生存环境的行为模仿（mimics the behavior of the environment）。举一个例子，给定一个状态和动作，环境模型可以预测相对应的下一状态和奖励。如果模型已知，强化学习问题可以演化为动态规划问题求解。</p></li>
 </ul>
 
-<h4 id="rl中智能体学习方法的分类:877a7354ca4ae72eb3cbf9d53c436c2f">RL中智能体学习方法的分类</h4>
+<h4 id="rl中智能体学习方法的分类">RL中智能体学习方法的分类</h4>
 
 <p>根据强化学习问题中所含元素的种类，其Agent的学习方法，可以分之为5大类。如下图2所示。
 <center>
@@ -288,7 +289,7 @@
 <p>图2 强化学习中智能体学习方法的分类
 </center></p>
 
-<h4 id="探索与利用的权衡:877a7354ca4ae72eb3cbf9d53c436c2f">探索与利用的权衡</h4>
+<h4 id="探索与利用的权衡">探索与利用的权衡</h4>
 
 <p><em>trade-off between exploration and exploitation</em></p>
 
@@ -305,13 +306,12 @@
 <p>$\tau &gt; 0 $表示温度（temperature）, 高的温度，选择动作近乎平等；温度趋近0的时候，此法接近于贪心选择。</p></li>
 </ul>
 
-<h4 id="refernece:877a7354ca4ae72eb3cbf9d53c436c2f">refernece</h4>
+<h4 id="refernece">refernece</h4>
 
 <ol>
 <li><p>Sutton R S, Barto A G. Reinforcement learning: An introduction[M]. MIT press Cambridge, 1998.</p></li>
 
-<li><p>David Silver. Lecture 1: Introduction to Reinforcement Learning
-Learning</p></li>
+<li><p>Slides, David Silver. Lecture 1: Introduction to Reinforcement Learning.</p></li>
 </ol>
 
 </div>
@@ -410,8 +410,8 @@ Learning</p></li>
 
 </footer>
 <script type="text/javascript"
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 
 
     </main>

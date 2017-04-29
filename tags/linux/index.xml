@@ -2,14 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on Well</title>
-    <link>https://tmhm.github.io/tags/linux/</link>
+    <link>https://tmhm.github.io/tags/linux/index.xml</link>
     <description>Recent content in Linux on Well</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
     <managingEditor>wells217@163.com (Well)</managingEditor>
     <webMaster>wells217@163.com (Well)</webMaster>
     <copyright>(c) 2017 Well.</copyright>
-    <lastBuildDate>Thu, 10 Mar 2016 08:36:00 +0000</lastBuildDate>
     <atom:link href="https://tmhm.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -91,7 +90,7 @@ $ .&lt;/span&gt;/&lt;span style=&#34;color: #000000;&#34;&gt;test.sh  #在一个
       <guid>https://tmhm.github.io/2016/03/08/debian%E5%88%9D%E8%AF%86%E9%80%89%E6%8B%A9%E6%9C%80%E4%BD%B3%E9%95%9C%E5%83%8F%E5%8F%91%E5%B8%83%E7%AB%99%E7%82%B9%E5%8A%A0%E5%85%A5source.list%E6%96%87%E4%BB%B6/</guid>
       <description>
 
-&lt;h4 id=&#34;选择最佳镜像发布站点加入source-list文件-netselect-netselect-apt:b791b82c299c95c84172ca2fade3d33a&#34;&gt;选择最佳镜像发布站点加入source.list文件：netselect，netselect-apt&lt;/h4&gt;
+&lt;h4 id=&#34;选择最佳镜像发布站点加入source-list文件-netselect-netselect-apt&#34;&gt;选择最佳镜像发布站点加入source.list文件：netselect，netselect-apt&lt;/h4&gt;
 
 &lt;p&gt;该将哪个Debian镜像发布站点加入&lt;samp&gt;source.list&lt;/samp&gt;文件？&amp;rdquo;。有很多方法来选择镜像发布站点，专家们可能会写一个脚本去测试 不同站点的ping时间。不过其实有一个程序可以帮你：&amp;nbsp;&lt;strong&gt;netselect&lt;/strong&gt;。&lt;/p&gt;
 

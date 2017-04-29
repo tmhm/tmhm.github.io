@@ -2,14 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Well</title>
-    <link>https://tmhm.github.io/tags/python/</link>
+    <link>https://tmhm.github.io/tags/python/index.xml</link>
     <description>Recent content in Python on Well</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-EN</language>
     <managingEditor>wells217@163.com (Well)</managingEditor>
     <webMaster>wells217@163.com (Well)</webMaster>
     <copyright>(c) 2017 Well.</copyright>
-    <lastBuildDate>Fri, 23 Dec 2016 08:32:00 +0000</lastBuildDate>
     <atom:link href="https://tmhm.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -31,7 +30,7 @@
 
 &lt;p&gt;&lt;img src=&#34;http://i.imgur.com/XZmJtEF.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&#34;主要相关的api有:4563162cd989f3f67b20afff2f22c80a&#34;&gt;主要相关的api有：&lt;/h4&gt;
+&lt;h4 id=&#34;主要相关的api有&#34;&gt;主要相关的api有：&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;plt.subplots_adjust&lt;/li&gt;
@@ -39,7 +38,7 @@
 &lt;li&gt;plt.text&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h4 id=&#34;解决思路:4563162cd989f3f67b20afff2f22c80a&#34;&gt;解决思路&lt;/h4&gt;
+&lt;h4 id=&#34;解决思路&#34;&gt;解决思路&lt;/h4&gt;
 
 &lt;p&gt;来自matplotlib的&lt;a href=&#34;http://matplotlib.org/gallery.html&#34;&gt;官网&lt;/a&gt;,以及&lt;a href=&#34;http://matplotlib.org/examples/images_contours_and_fields/interpolation_none_vs_nearest.html&#34;&gt;图示&lt;/a&gt;&lt;/p&gt;
 
@@ -119,7 +118,7 @@ f.write(&amp;quot;hello,\n This is a test file&amp;quot;)
 f.close()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;计算程序运行时间:209ae7a9d321a421a49117ff5988f512&#34;&gt;计算程序运行时间&lt;/h3&gt;
+&lt;h3 id=&#34;计算程序运行时间&#34;&gt;计算程序运行时间&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;import time
 # ISOTIMEFORMAT=&#39;%Y-%m-%d %X&#39;
@@ -151,7 +150,7 @@ print elapsed
       <guid>https://tmhm.github.io/2016/05/27/pybrain-libs_nfq-flowchart/</guid>
       <description>
 
-&lt;h4 id=&#34;pybrain库的example之nfq流程图分析:7e448002a1e4ec6b6b072f98178fcfc7&#34;&gt;PyBrain库的example之NFQ流程图分析&lt;/h4&gt;
+&lt;h4 id=&#34;pybrain库的example之nfq流程图分析&#34;&gt;PyBrain库的example之NFQ流程图分析&lt;/h4&gt;
 
 &lt;p&gt;如下是测试程序。主要分析&lt;strong&gt;doEpisode和learn&lt;/strong&gt;两个函数。&lt;/p&gt;
 
@@ -409,7 +408,7 @@ Return the identity of an object.  This is guaranteed to be unique among
 simultaneously existing objects.  (Hint: it&#39;s the object&#39;s memory address.)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h4 id=&#34;python中的引用对象特点:c54227613a3b857c250b26ab8f65a33c&#34;&gt;python中的引用对象特点：&lt;/h4&gt;
+&lt;h4 id=&#34;python中的引用对象特点&#34;&gt;python中的引用对象特点：&lt;/h4&gt;
 
 &lt;ul&gt;
 &lt;li&gt;python不允许程序员选择采用传值还是传引用。
@@ -640,7 +639,7 @@ c:  [{&#39;num&#39;: 1, &#39;sqrt&#39;: 1}, {&#39;num&#39;: 2, &#39;sqrt&#39;: 4
       <guid>https://tmhm.github.io/2016/05/19/python%E8%BF%90%E7%AE%97%E7%AC%A6%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E9%A1%B9/</guid>
       <description>
 
-&lt;h3 id=&#34;浮点除-和-整除:54b2401234aa813c219ffc6fe8784914&#34;&gt;&amp;rsquo;/&amp;lsquo;浮点除，和&amp;rsquo;//&amp;lsquo;整除&lt;/h3&gt;
+&lt;h3 id=&#34;浮点除-和-整除&#34;&gt;&amp;rsquo;/&amp;lsquo;浮点除，和&amp;rsquo;//&amp;lsquo;整除&lt;/h3&gt;
 
 &lt;p&gt;单个&amp;rsquo;/&amp;lsquo;是浮点除，两个除号&amp;rsquo;//&amp;lsquo;是整除&lt;/p&gt;
 
