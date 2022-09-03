@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>DL服务器主机环境配置 ubuntu14.04 &amp;&amp; Cuda8.0 - fooweel</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="fooweel" /><meta name="description" content="前面部分是自己的记录，后面方案部分是成功安装驱动&#43;桌面重复的正解" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.101.0 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/dl_server_ubuntu14_cuda8_gtx1080/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="DL服务器主机环境配置 ubuntu14.04 &amp;&amp; Cuda8.0" />
+<meta property="og:description" content="前面部分是自己的记录，后面方案部分是成功安装驱动&#43;桌面重复的正解" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/dl_server_ubuntu14_cuda8_gtx1080/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2016-11-21T12:15:00+00:00" />
+<meta property="article:modified_time" content="2016-11-21T12:15:00+00:00" />
+
+<meta itemprop="name" content="DL服务器主机环境配置 ubuntu14.04 &amp;&amp; Cuda8.0">
+<meta itemprop="description" content="前面部分是自己的记录，后面方案部分是成功安装驱动&#43;桌面重复的正解"><meta itemprop="datePublished" content="2016-11-21T12:15:00+00:00" />
+<meta itemprop="dateModified" content="2016-11-21T12:15:00+00:00" />
+<meta itemprop="wordCount" content="1621">
+<meta itemprop="keywords" content="环境配置,Cuda环境配置," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="DL服务器主机环境配置 ubuntu14.04 &amp;&amp; Cuda8.0"/>
+<meta name="twitter:description" content="前面部分是自己的记录，后面方案部分是成功安装驱动&#43;桌面重复的正解"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">FooWeel&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">FooWeel&#39;s Blog</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">DL服务器主机环境配置 ubuntu14.04 &amp;&amp; Cuda8.0</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-11-21 </span>
+        <div class="post-category">
+            <a href="/categories/tools/"> Tools </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#install-driver-367httpskusemanoharwordpresscom20160729gtx-1080-on-ubuntu-14-04-trusty"><a href="https://kusemanohar.wordpress.com/2016/07/29/gtx-1080-on-ubuntu-14-04-trusty/">Install driver 367</a></a></li>
+            <li><a href="#解决方法">解决方法</a></li>
+            <li><a href="#cuda80安装">Cuda8.0安装</a></li>
+            <li><a href="#设置环境变量">设置环境变量</a></li>
+            <li><a href="#验证-cuda">验证 cuda</a></li>
+            <li><a href="#测试cuda的samples">测试cuda的samples</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>实验室深度学习服务器环境配置ubuntu14.04 &amp;&amp;  GTX1080 &amp;&amp; Cuda8.0, 解决安装驱动后桌面重复登录问题。
+前面部分是配置ubuntu cuda 环境的记录，后面方案部分是成功安装驱动+桌面的正解。
+问题的焦点在于：安装cuda驱动后，登录不了桌面，停留在重复输入密码界面。</p>
+<p><a href="http://blog.csdn.net/nothinglefttosay/article/details/45095125">博文中</a>分析的<strong>结论：</strong>
+<strong>虚拟机中不能直接调用物理显卡进行 CUDA 编程；虚拟机中运行 CUDA 需要硬件和软件的配合才能使用，对于一般使用者可能暂时不太可能的。</strong></p>
+<p>参考博文：</p>
+<p><a href="http://www.52nlp.cn/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%BB%E6%9C%BA%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-ubuntu-16-04-nvidia-gtx-1080-cuda-8">深度学习主机环境配置: Ubuntu16.04+Nvidia GTX 1080+CUDA8.0</a></p>
+<p><a href="http://www.52nlp.cn/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%BB%E6%9C%BA%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-ubuntu16-04-geforce-gtx1080-tensorflow">深度学习主机环境配置: Ubuntu16.04+GeForce GTX 1080+TensorFlow</a></p>
+<p><a href="http://www.codexiu.cn/linux/blog/27993/">ubuntu14.04+cuda8.0（GTX1080）+caffe安装</a></p>
+<p><a href="https://www.r-bloggers.com/lang/chinese/2042">如何搭建一台深度学习服务器</a></p>
+<p>Ctrl+alt+F1进入字符界面，关闭图形界面</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo service lightdm stop //必须有，不然会安装失败
+</span></span><span class="line"><span class="cl">sudo /etc/init.d/lightdm stop //一样的命令
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">sudo chmod 755 NVIDIA-Linux-x86_64-367.27.run  //获取权限
+</span></span><span class="line"><span class="cl">sudo ./NVIDIA-Linux-x86_64-367.27.run  //安装驱动
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Accept
+Continue installation
+安装完成之后</p>
+<p><code>sudo service lightdm start</code></p>
+<p>图形界面出现，然后关机，由让人重复输入密码，登录不了</p>
+<p><a href="http://nemesisdesign.net/blog/coding/how-reinstall-nvidia-drivers-linux-ubuntu/">博主</a>说</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$ sudo /etc/init.d/gdm stop
+</span></span><span class="line"><span class="cl">$ sudo nvidia-installer --update
+</span></span><span class="line"><span class="cl">$ sudo /etc/init.d/gdm start
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>升级到375版本， 还是没用，启动进入不了桌面，重复登录</p>
+<h3 id="install-driver-367httpskusemanoharwordpresscom20160729gtx-1080-on-ubuntu-14-04-trusty"><a href="https://kusemanohar.wordpress.com/2016/07/29/gtx-1080-on-ubuntu-14-04-trusty/">Install driver 367</a></h3>
+<p>Uninstall previous nvidia drivers.</p>
+<p><code>$ sudo apt-get purge nvidia-* </code></p>
+<p>Stop light gdm (graphical interface)</p>
+<p><code>$ sudo service lightgdm </code></p>
+<p>Go to tty (CTRL+ALT+F1). Set your init state to 3 (text only mode). It is important to do this. Note these commands on a paper or something. I experienced sometimes the tty does not show with the newest driver. I just ssh to my PC as a way around.</p>
+<p><code>$ sudo init 3 </code></p>
+<p>Log in to tty and cd to the directory where your have downloaded the driver.</p>
+<p><code>$ sudo ./NVIDIA-Linux-x86_64-367.35.run </code></p>
+<p>It will ask if you want to install 32-bit libraries, say no (assuming you do not have a 32-bit OS, hopefully. If you do have a 32-bit OS it is a good idea to upgrade…)</p>
+<p>In a few minutes it is done….smooth. Reboot your PC
+<code>$ sudo reboot </code></p>
+<p>update 之后还是不能进 图形界面</p>
+<p>Uninstall previous nvidia drivers.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo apt-get purge nvidia-*
+</span></span><span class="line"><span class="cl">sudo apt-get autoremove
+</span></span><span class="line"><span class="cl">sudo apt-get --purge remove nvidia-*
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>remove 之后，</p>
+<p><code>nvidia-smi </code></p>
+<p>还是能看到gpu的。why？</p>
+<p>卸载不了？</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo apt-get install nvidia-prime
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ sudo /etc/init.d/lightdm stop
+</span></span><span class="line"><span class="cl">$ sudo nvidia-installer --update
+</span></span><span class="line"><span class="cl">$ sudo /etc/init.d/lightdm start
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>升级到375版本， 还是没用，启动进入不了桌面，重复登录</strong></p>
+<blockquote>
+<p>有人说，安装必须要在安装桌面前安装GTX 1080 driver，后面方案验证来看， 那个参数才是关键。</p>
+</blockquote>
+<h3 id="解决方法">解决方法</h3>
+<p>利用sudo gedit /etc/modprobe.d/blacklist-nouveau.conf新建blacklist-nouveau.conf文件，输入命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">blacklist nouveau
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">blacklist lbm-nouveau
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">options nouveau modeset=0
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">alias nouveau off
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">alias lbm-nouveau off
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>保存并退出。这一步是为了禁掉Ubuntu自带开源驱动nouveau。之后sudo reboot重启系统。在终端执行命令
+<code>lsmod | grep nouveau </code></p>
+<p>查看nouveau模块是否被加载。如果什么都没输出，则执行下一步。</p>
+<p>根本问题在于 参数：  <strong>&ndash;no-opengl-files</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">sudo /etc/init.d/lightdm stop
+</span></span><span class="line"><span class="cl">sudo ./NVIDIA-Linux-x86_64-375.20.run --no-opengl-files
+</span></span><span class="line"><span class="cl">sudo /etc/init.d/lightdm start
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>即可以正常登录界面了！！</p>
+<p>在安装过程中的选项：</p>
+<p>Accept</p>
+<p>Continue installation</p>
+<blockquote>
+<p>register the kernel moudle sources with DKMS?</p>
+</blockquote>
+<p>NO</p>
+<blockquote>
+<p>Would you like to run the nvidia-xconfig utility to automatically update your X Configuration file so set the NVIDIA X driver will be used when you restart X?</p>
+</blockquote>
+<p>NO</p>
+<blockquote>
+<p>Install 32-Bit compatibility <a href="https://elementaryforums.com/index.php?threads/howto-install-latest-nvidia-driver-on-linux-without-getting-black-screen.7/">libraries?参考</a></p>
+</blockquote>
+<p>NO
+<img src="http://i.imgur.com/5DHQbMl.png" alt=""></p>
+<h3 id="cuda80安装">Cuda8.0安装</h3>
+<p>运行</p>
+<p><code>sudo sh cuda_8.0.44_linux.run </code></p>
+<p>选项如下所示：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">Description</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">This</span> <span class="kn">package</span> <span class="nx">includes</span> <span class="nx">over</span> <span class="mi">100</span><span class="o">+</span> <span class="nx">CUDA</span> <span class="nx">examples</span> <span class="nx">that</span> <span class="nx">demonstrate</span>
+</span></span><span class="line"><span class="cl"><span class="nx">various</span> <span class="nx">CUDA</span> <span class="nx">programming</span> <span class="nx">principles</span><span class="p">,</span> <span class="nx">and</span> <span class="nx">efficient</span> <span class="nx">CUDA</span>
+</span></span><span class="line"><span class="cl"><span class="nx">implementation</span> <span class="nx">of</span> <span class="nx">algorithms</span> <span class="nx">in</span> <span class="nx">specific</span> <span class="nx">application</span> <span class="nx">domains</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl"><span class="nx">The</span> <span class="nx">NVIDIA</span> <span class="nx">CUDA</span> <span class="nx">Samples</span> <span class="nx">License</span> <span class="nx">Agreement</span> <span class="nx">is</span> <span class="nx">available</span> <span class="nx">in</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Do</span> <span class="nx">you</span> <span class="nx">accept</span> <span class="nx">the</span> <span class="nx">previously</span> <span class="nx">read</span> <span class="nx">EULA</span><span class="err">?</span>
+</span></span><span class="line"><span class="cl"><span class="nx">accept</span><span class="o">/</span><span class="nx">decline</span><span class="o">/</span><span class="nx">quit</span><span class="p">:</span> <span class="nx">accept</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">Install</span> <span class="nx">NVIDIA</span> <span class="nx">Accelerated</span> <span class="nx">Graphics</span> <span class="nx">Driver</span> <span class="k">for</span> <span class="nx">Linux</span><span class="o">-</span><span class="nx">x86_64</span> <span class="mf">367.48</span><span class="err">?</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nx">y</span><span class="p">)</span><span class="nx">es</span><span class="o">/</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span><span class="nx">o</span><span class="o">/</span><span class="p">(</span><span class="nx">q</span><span class="p">)</span><span class="nx">uit</span><span class="p">:</span> <span class="nx">n</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">Install</span> <span class="nx">the</span> <span class="nx">CUDA</span> <span class="mf">8.0</span> <span class="nx">Toolkit</span><span class="err">?</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nx">y</span><span class="p">)</span><span class="nx">es</span><span class="o">/</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span><span class="nx">o</span><span class="o">/</span><span class="p">(</span><span class="nx">q</span><span class="p">)</span><span class="nx">uit</span><span class="p">:</span> <span class="nx">y</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">Enter</span> <span class="nx">Toolkit</span> <span class="nx">Location</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span> <span class="k">default</span> <span class="nx">is</span> <span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">local</span><span class="o">/</span><span class="nx">cuda</span><span class="o">-</span><span class="mf">8.0</span> <span class="p">]:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">Do</span> <span class="nx">you</span> <span class="nx">want</span> <span class="nx">to</span> <span class="nx">install</span> <span class="nx">a</span> <span class="nx">symbolic</span> <span class="nx">link</span> <span class="nx">at</span> <span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">local</span><span class="o">/</span><span class="nx">cuda</span><span class="err">?</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nx">y</span><span class="p">)</span><span class="nx">es</span><span class="o">/</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span><span class="nx">o</span><span class="o">/</span><span class="p">(</span><span class="nx">q</span><span class="p">)</span><span class="nx">uit</span><span class="p">:</span> <span class="nx">y</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">Install</span> <span class="nx">the</span> <span class="nx">CUDA</span> <span class="mf">8.0</span> <span class="nx">Samples</span><span class="err">?</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nx">y</span><span class="p">)</span><span class="nx">es</span><span class="o">/</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span><span class="nx">o</span><span class="o">/</span><span class="p">(</span><span class="nx">q</span><span class="p">)</span><span class="nx">uit</span><span class="p">:</span> <span class="nx">y</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">Enter</span> <span class="nx">CUDA</span> <span class="nx">Samples</span> <span class="nx">Location</span>
+</span></span><span class="line"><span class="cl"> <span class="p">[</span> <span class="k">default</span> <span class="nx">is</span> <span class="o">/</span><span class="nx">home</span><span class="o">/</span><span class="nx">c302</span> <span class="p">]:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">Installing</span> <span class="nx">the</span> <span class="nx">CUDA</span> <span class="nx">Toolkit</span> <span class="nx">in</span> <span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">local</span><span class="o">/</span><span class="nx">cuda</span><span class="o">-</span><span class="mf">8.0</span> <span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Installing</span> <span class="nx">the</span> <span class="nx">CUDA</span> <span class="nx">Samples</span> <span class="nx">in</span> <span class="o">/</span><span class="nx">home</span><span class="o">/</span><span class="nx">c302</span> <span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Copying</span> <span class="nx">samples</span> <span class="nx">to</span> <span class="o">/</span><span class="nx">home</span><span class="o">/</span><span class="nx">c302</span><span class="o">/</span><span class="nx">NVIDIA_CUDA</span><span class="o">-</span><span class="mf">8.0</span><span class="nx">_Samples</span> <span class="nx">now</span><span class="o">...</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Finished</span> <span class="nx">copying</span> <span class="nx">samples</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">==========</span><span class="p">=</span>
+</span></span><span class="line"><span class="cl"><span class="p">=</span> <span class="nx">Summary</span> <span class="p">=</span>
+</span></span><span class="line"><span class="cl"><span class="o">==========</span><span class="p">=</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">Driver</span><span class="p">:</span>   <span class="nx">Not</span> <span class="nx">Selected</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Toolkit</span><span class="p">:</span>  <span class="nx">Installed</span> <span class="nx">in</span> <span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">local</span><span class="o">/</span><span class="nx">cuda</span><span class="o">-</span><span class="mf">8.0</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Samples</span><span class="p">:</span>  <span class="nx">Installed</span> <span class="nx">in</span> <span class="o">/</span><span class="nx">home</span><span class="o">/</span><span class="nx">c302</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">Please</span> <span class="nx">make</span> <span class="nx">sure</span> <span class="nx">that</span>
+</span></span><span class="line"><span class="cl"> <span class="o">-</span>   <span class="nx">PATH</span> <span class="nx">includes</span> <span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">local</span><span class="o">/</span><span class="nx">cuda</span><span class="o">-</span><span class="mf">8.0</span><span class="o">/</span><span class="nx">bin</span>
+</span></span><span class="line"><span class="cl"> <span class="o">-</span>   <span class="nx">LD_LIBRARY_PATH</span> <span class="nx">includes</span> <span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">local</span><span class="o">/</span><span class="nx">cuda</span><span class="o">-</span><span class="mf">8.0</span><span class="o">/</span><span class="nx">lib64</span><span class="p">,</span> <span class="nx">or</span><span class="p">,</span> <span class="nx">add</span> <span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">local</span><span class="o">/</span><span class="nx">cuda</span><span class="o">-</span><span class="mf">8.0</span><span class="o">/</span><span class="nx">lib64</span> <span class="nx">to</span> <span class="o">/</span><span class="nx">etc</span><span class="o">/</span><span class="nx">ld</span><span class="p">.</span><span class="nx">so</span><span class="p">.</span><span class="nx">conf</span> <span class="nx">and</span> <span class="nx">run</span> <span class="nx">ldconfig</span> <span class="nx">as</span> <span class="nx">root</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">To</span> <span class="nx">uninstall</span> <span class="nx">the</span> <span class="nx">CUDA</span> <span class="nx">Toolkit</span><span class="p">,</span> <span class="nx">run</span> <span class="nx">the</span> <span class="nx">uninstall</span> <span class="nx">script</span> <span class="nx">in</span> <span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">local</span><span class="o">/</span><span class="nx">cuda</span><span class="o">-</span><span class="mf">8.0</span><span class="o">/</span><span class="nx">bin</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">Please</span> <span class="nx">see</span> <span class="nx">CUDA_Installation_Guide_Linux</span><span class="p">.</span><span class="nx">pdf</span> <span class="nx">in</span> <span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">local</span><span class="o">/</span><span class="nx">cuda</span><span class="o">-</span><span class="mf">8.0</span><span class="o">/</span><span class="nx">doc</span><span class="o">/</span><span class="nx">pdf</span> <span class="k">for</span> <span class="nx">detailed</span> <span class="nx">information</span> <span class="nx">on</span> <span class="nx">setting</span> <span class="nx">up</span> <span class="nx">CUDA</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">***</span><span class="nx">WARNING</span><span class="p">:</span> <span class="nx">Incomplete</span> <span class="nx">installation</span><span class="p">!</span> <span class="nx">This</span> <span class="nx">installation</span> <span class="nx">did</span> <span class="nx">not</span> <span class="nx">install</span> <span class="nx">the</span> <span class="nx">CUDA</span> <span class="nx">Driver</span><span class="p">.</span> <span class="nx">A</span> <span class="nx">driver</span> <span class="nx">of</span> <span class="nx">version</span> <span class="nx">at</span> <span class="nx">least</span> <span class="mf">361.00</span> <span class="nx">is</span> <span class="nx">required</span> <span class="k">for</span> <span class="nx">CUDA</span> <span class="mf">8.0</span> <span class="nx">functionality</span> <span class="nx">to</span> <span class="nx">work</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl"><span class="nx">To</span> <span class="nx">install</span> <span class="nx">the</span> <span class="nx">driver</span> <span class="nx">using</span> <span class="nx">this</span> <span class="nx">installer</span><span class="p">,</span> <span class="nx">run</span> <span class="nx">the</span> <span class="nx">following</span> <span class="nx">command</span><span class="p">,</span> <span class="nx">replacing</span> <span class="p">&lt;</span><span class="nx">CudaInstaller</span><span class="p">&gt;</span> <span class="nx">with</span> <span class="nx">the</span> <span class="nx">name</span> <span class="nx">of</span> <span class="nx">this</span> <span class="nx">run</span> <span class="nx">file</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">sudo</span> <span class="p">&lt;</span><span class="nx">CudaInstaller</span><span class="p">&gt;.</span><span class="nx">run</span> <span class="o">-</span><span class="nx">silent</span> <span class="o">-</span><span class="nx">driver</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">Logfile</span> <span class="nx">is</span> <span class="o">/</span><span class="nx">tmp</span><span class="o">/</span><span class="nx">cuda_install_9045</span><span class="p">.</span><span class="nx">log</span>
+</span></span><span class="line"><span class="cl">    
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="设置环境变量">设置环境变量</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">export PATH=/usr/local/cuda-8.0/bin:$PATH
+</span></span><span class="line"><span class="cl">export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>添加系统变量修改到系统文件
+<code>sudo vi /etc/profile </code></p>
+<p>在最后添加上面两句，然后保存。使立即生效
+<code>sudo ldconfig //环境变量立即生效 </code></p>
+<h3 id="验证-cuda">验证 cuda</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">c302@c302-dl:~/Downloads$ nvcc -V
+</span></span><span class="line"><span class="cl">nvcc: NVIDIA (R) Cuda compiler driver
+</span></span><span class="line"><span class="cl">Copyright (c) 2005-2016 NVIDIA Corporation
+</span></span><span class="line"><span class="cl">Built on Sun_Sep__4_22:14:01_CDT_2016
+</span></span><span class="line"><span class="cl">Cuda compilation tools, release 8.0, V8.0.44
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="测试cuda的samples">测试cuda的samples</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cd ‘/home/zhou/NVIDIA_CUDA-8.0_Samples’
+</span></span><span class="line"><span class="cl">make  //这里需要点时间
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>最后显示：</p>
+<blockquote>
+<p>make[1]: Leaving directory `/home/c302/NVIDIA_CUDA-8.0_Samples/7_CUDALibraries/MersenneTwisterGP11213'</p>
+</blockquote>
+<blockquote>
+<p>Finished building CUDA samples</p>
+</blockquote>
+<p><code>cd 0_Simple/matrixMul</code></p>
+<p>运行测试如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">c302@c302-dl:~/NVIDIA_CUDA-8.0_Samples/0_Simple/matrixMul$ ./matrixMul
+</span></span><span class="line"><span class="cl">[Matrix Multiply Using CUDA] - Starting...
+</span></span><span class="line"><span class="cl">GPU Device 0: &#34;GeForce GTX 1080&#34; with compute capability 6.1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">MatrixA(320,320), MatrixB(640,320)
+</span></span><span class="line"><span class="cl">Computing result using CUDA Kernel...
+</span></span><span class="line"><span class="cl">done
+</span></span><span class="line"><span class="cl">Performance= 1109.06 GFlop/s, Time= 0.118 msec, Size= 131072000 Ops, WorkgroupSize= 1024 threads/block
+</span></span><span class="line"><span class="cl">Checking computed result for correctness: Result = PASS
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">NOTE: The CUDA Samples are not meant for performance measurements. Results may vary when GPU Boost is enabled.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="http://i.imgur.com/iRwuetR.png" alt=""></p>
+<p>下一篇将会是安装cuDNN、tensorflow等lib</p>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">fooweel</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2016-11-21
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a>
+          <a href="/tags/cuda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">Cuda环境配置</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/rl_basic/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">强化学习问题回顾</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/c_cplus_basic0/">
+            <span class="next-text nav-default">C_Cplus程序设计涉及的一些知识点</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:wells217@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/tmhm" class="iconfont icon-github" title="github"></a>
+  <a href="" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>fooweel</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

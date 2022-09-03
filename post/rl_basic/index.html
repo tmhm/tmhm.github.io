@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>强化学习问题回顾 - fooweel</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="fooweel" /><meta name="description" content="强化学习问题概述" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.101.0 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/rl_basic/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="强化学习问题回顾" />
+<meta property="og:description" content="强化学习问题概述" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/rl_basic/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2019-04-13T21:58:52+08:00" />
+<meta property="article:modified_time" content="2019-04-13T21:58:52+08:00" />
+
+<meta itemprop="name" content="强化学习问题回顾">
+<meta itemprop="description" content="强化学习问题概述"><meta itemprop="datePublished" content="2019-04-13T21:58:52+08:00" />
+<meta itemprop="dateModified" content="2019-04-13T21:58:52+08:00" />
+<meta itemprop="wordCount" content="1763">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="强化学习问题回顾"/>
+<meta name="twitter:description" content="强化学习问题概述"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">FooWeel&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">FooWeel&#39;s Blog</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">强化学习问题回顾</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-04-13 </span>
+        <div class="post-category">
+            <a href="/categories/%E6%80%BB%E7%BB%93/"> 总结 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#rl问题回顾">RL问题回顾</a></li>
+            <li><a href="#1-rl的两个重要特征">1. RL的两个重要特征</a></li>
+            <li><a href="#2-rl系统中的四大主要元素element">2. RL系统中的四大主要元素（element）</a></li>
+            <li><a href="#3-rl中智能体学习方法的分类">3. RL中智能体学习方法的分类</a></li>
+            <li><a href="#4-探索与利用的权衡">4. 探索与利用的权衡</a></li>
+            <li><a href="#5-frameworkplatform">5. Framework/Platform</a></li>
+            <li><a href="#refernece">Refernece</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>强化学习概述，从问题定义，到分类，以及经典开源库。</p>
+<h3 id="rl问题回顾">RL问题回顾</h3>
+<p>强化学习（Reinforcement Learning）本身可以定义为一个广泛的学习问题，学会找到状态（Situation）到动作（Actions）的一个映射关系，以最大化一个数值型的回报（Reward）信号。一个完整的强化学习问题可以用马氏决策过程中的最优控制理论来进行描述。在马氏链中，当前时刻的状态（State） 仅仅与上一时刻的状态有关。如下图1所示，一个智能体（Agent）可以通过某种方式感受环境的状态（State），然后可以通过某一个动作（Action）来改变环境的下一状态。在这个不断交互的过程中，Agent还必须具有一个或者以上的、与此环境状态相关的目标（Goal）。</p>
+<!--![](http://www.foolweel.com/wp-content/uploads/2019/05/RL-mdp.png =200x100)
+<center>图1 强化学习中智能体与环境的交互</center>-->
+<img src="http://www.foolweel.com/wp-content/uploads/2019/05/RL-mdp.png" width = "240" height = "100" alt="RL loop" align=center />
+<p>与RL问题相对应的任何求解方法，可以称之为一个强化学习方法。</p>
+<h3 id="1-rl的两个重要特征">1. RL的两个重要特征</h3>
+<ul>
+<li>试错搜索（trial-and-error）</li>
+<li>延迟回报（delayed reward）</li>
+</ul>
+<p>可以引出与监督学习的重要区别——评价的方式不同。 监督学习中通过正确的指示（instruct）来进行反馈；强化学习是依靠整个生命周期所选择的动作来进行评价式的反馈。</p>
+<h3 id="2-rl系统中的四大主要元素element">2. RL系统中的四大主要元素（element）</h3>
+<ul>
+<li>策略（Policy）</li>
+</ul>
+<p>定义某个时刻agent的行为，可以看做策略的映射$\pi_(s_t)$。粗略地说，一个策略可以看做是接收到状态到智能体做出动作的一种映射关系，可以用函数或者表的形式来表现。通常来说，策略可以是确定的，也可能是随机的，即可以用条件概率来表示。</p>
+<ul>
+<li>奖励/回报函数（Reward function）</li>
+</ul>
+<p>奖励函数定义了强化学习问题中的目标。它把当前每个状态（或者状态-动作对）映射到一个评价数值，以表现该Agent当前所做事件的好坏程度。</p>
+<ul>
+<li>值函数（Value function）</li>
+</ul>
+<p>奖励函数所表现出的是当前状态或者状态-动作对的立即评价，值函数表征的是对长远意义下的评判。
+$V_s$表示当前状态$s$下的累积回报；$V_{(s,a)}$表示当前状态$s$下，执行动作$a$下的累积回报。</p>
+<p>粗略来说，值函数可以表示从当前状态开始到未来（long-term），Agent可以收获到奖励的一种累积和。即值函数是对Agent整个生命周期的一种评价。值函数是动作选择的一个标准。</p>
+<ul>
+<li>环境的模型（model of the environment）</li>
+</ul>
+<p>即对该Agent生存环境的行为模仿（mimics the behavior of the environment）。举一个例子，给定一个状态和动作，环境模型可以预测相对应的下一状态和奖励。如果模型已知，强化学习问题可以演化为动态规划问题求解。</p>
+<h3 id="3-rl中智能体学习方法的分类">3. RL中智能体学习方法的分类</h3>
+<p>根据强化学习问题中所含元素的种类，其Agent的学习方法，可以分为5大类。</p>
+<ul>
+<li>Model-free</li>
+<li>Model-based</li>
+<li>Actor-critic (Policy + Value function)</li>
+<li>Policy-based</li>
+<li>Value-based</li>
+</ul>
+<h3 id="4-探索与利用的权衡">4. 探索与利用的权衡</h3>
+<p>Trade-off between exploration and exploitation</p>
+<p>Agent 需要根据已知的状态、动作和回报的相关信息，来不断获得最大的回报，即利用（exploit）当前已知的知识；另外，Agent 需要探索（explore）一些未知的知识，以期望在未来实现更好的动作。（由于目前的知识往往并不是最优的）</p>
+<p>因此，在RL中，利用与探索是一个权衡的话题，目前已提出多种方法来尝试解决这个问题。</p>
+<ul>
+<li>ϵ-greedy action selection（以小概率不贪心的选择方式）</li>
+<li>Softmax action selection（基于Gibbs分布或者称之为玻尔兹曼分布，以概率选择动作）</li>
+</ul>
+<p>$$ \cfrac{e^{Q_t(a)/\tau}}{\sum_{b=1}^n e^{Q_t(b)/\tau}} $$</p>
+<p>τ&gt;0表示温度（temperature）, 高的温度，选择动作近乎平等；温度趋近0的时候，此法接近于贪心选择。</p>
+<h3 id="5-frameworkplatform">5. Framework/Platform</h3>
+<ul>
+<li>
+<p><a href="https://github.com/openai/gym">OpenAI gym</a>
+是强化学习研究领域广泛使用的一个经典工具包，它主要包含两部分：</p>
+<ul>
+<li><a href="https://gym.openai.com/envs/#classic_control">Environments</a>，经典问题的测试集，并提供统一的接口；</li>
+<li><a href="https://github.com/openai/gym/wiki/Leaderboard">/ScoreBoards/LeaderBoards</a>/Benchmarking，用户算法性能对比的平台，用户可以通过api分享其算法的结果</li>
+</ul>
+</li>
+<li>
+<p><a href="https://rllab.readthedocs.io/en/latest/user/gym_integration.html">Rllab</a>
+与gym 完全兼容，并内置了一些RL的算法，目前rllab项目已停止更新。</p>
+</li>
+<li>
+<p><a href="https://github.com/rlworkgroup/garage">garage</a>是基于rllab 而来，该项目是为了benchmarking 连续动作控制场景下的DRL算法而建立。</p>
+</li>
+<li>
+<p><a href="https://github.com/tensorforce/tensorforce">Tensorforce: </a>A TensorFlow library for applied reinforcement learning</p>
+</li>
+<li>
+<p><a href="https://ray.readthedocs.io/en/latest/rllib.html"><strong>Ray/RLlib</strong></a> 目前RL应用领域sota的框架，构建remote特性；1）具备ms级的task响应，2）以及million的吞吐量。</p>
+</li>
+<li>
+<p><a href="https://github.com/NervanaSystems/coach">Intel Coach</a> is a python reinforcement learning research framework containing implementation of many state-of-the-art algorithms.</p>
+</li>
+<li>
+<p><a href="https://github.com/openai/baselines"><strong>OpenAi Baselines</strong></a> SOTA RL算法的集合</p>
+</li>
+</ul>
+<h3 id="refernece">Refernece</h3>
+<ul>
+<li>Sutton R S, Barto A G. Reinforcement learning: An introduction[M].</li>
+<li>Slides, David Silver. Lecture 1: Introduction to Reinforcement Learning.</li>
+</ul>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">fooweel</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2019-04-13
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/aisys_sketch/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">速写AI系统构建</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/dl_server_ubuntu14_cuda8_gtx1080/">
+            <span class="next-text nav-default">DL服务器主机环境配置 ubuntu14.04 &amp;&amp; Cuda8.0</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:wells217@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/tmhm" class="iconfont icon-github" title="github"></a>
+  <a href="" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>fooweel</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

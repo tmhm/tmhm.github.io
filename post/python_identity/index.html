@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Python 有关引用的一些问题 - fooweel</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="fooweel" /><meta name="description" content="Python中引用的一些分析记录" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.101.0 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/python_identity/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Python 有关引用的一些问题" />
+<meta property="og:description" content="Python中引用的一些分析记录" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/python_identity/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2016-05-21T14:24:00+00:00" />
+<meta property="article:modified_time" content="2016-05-21T14:24:00+00:00" />
+
+<meta itemprop="name" content="Python 有关引用的一些问题">
+<meta itemprop="description" content="Python中引用的一些分析记录"><meta itemprop="datePublished" content="2016-05-21T14:24:00+00:00" />
+<meta itemprop="dateModified" content="2016-05-21T14:24:00+00:00" />
+<meta itemprop="wordCount" content="1769">
+<meta itemprop="keywords" content="Python,编程基础,引用," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Python 有关引用的一些问题"/>
+<meta name="twitter:description" content="Python中引用的一些分析记录"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">FooWeel&#39;s Blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+
+  
+
+
+</nav>
+
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">FooWeel&#39;s Blog</a>
+</div>
+
+
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about">About</a>
+      </li>
+  </ul>
+</nav>
+
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Python 有关引用的一些问题</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2016-05-21 </span>
+        <div class="post-category">
+            <a href="/categories/%E5%AD%A6%E4%B9%A0/"> 学习 </a>
+            </div>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#python中的引用对象特点">python中的引用对象特点：</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>有关Python中引用特性的一些分析记录，包括对象的初始化，值拷贝等特性。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span> <span class="nb">id</span><span class="o">.</span><span class="vm">__doc__</span>
+</span></span><span class="line"><span class="cl"><span class="err">​</span>
+</span></span><span class="line"><span class="cl"><span class="nb">id</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">integer</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Return</span> <span class="n">the</span> <span class="n">identity</span> <span class="n">of</span> <span class="n">an</span> <span class="nb">object</span><span class="o">.</span>  <span class="n">This</span> <span class="ow">is</span> <span class="n">guaranteed</span> <span class="n">to</span> <span class="n">be</span> <span class="n">unique</span> <span class="n">among</span>
+</span></span><span class="line"><span class="cl"><span class="n">simultaneously</span> <span class="n">existing</span> <span class="n">objects</span><span class="o">.</span>  <span class="p">(</span><span class="n">Hint</span><span class="p">:</span> <span class="n">it</span><span class="s1">&#39;s the object&#39;</span><span class="n">s</span> <span class="n">memory</span> <span class="n">address</span><span class="o">.</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="python中的引用对象特点">python中的引用对象特点：</h3>
+<ul>
+<li>python不允许程序员选择采用传值还是传引用。
+<ul>
+<li>Python参数传递采用的肯定是“传对象引用”的方式。实际上，这种方式相当于传值和传引用的一种综合。如果函数收到的是一个可变对象（比如字典或者列表）的引用，就能修改对象的原始值——相当于通过“传引用”来传递对象。</li>
+<li>如果函数收到的是一个不可变对象（比如数字、字符或者元组）的引用，就不能直接修改原始对象——相当于通过“传值&rsquo;来传递对象。</li>
+</ul>
+</li>
+<li>当人们复制列表或字典时，就复制了对象列表的引用，如果改变引用的值，则修改了原始的参数。</li>
+<li>为了简化内存管理，Python通过引用计数机制实现自动垃圾回收功能，Python中的每个对象都有一个引用计数，用来计数该对象在不同场所分别被引用了多少次。每当引用一次Python对象，相应的引用计数就增1，每当消毁一次Python对象，则相应的引用就减1，只有当引用计数为零时，才真正从内存中删除Python对象。
+<a href="http://www.cnblogs.com/yuyan/archive/2012/04/21/2461673.html">参考</a></li>
+</ul>
+<p>以下是一些例子：</p>
+<p>In [19]:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># variable 动态创建一个新的变量，但是，list，tuple，dictionary 却不会创建新的实例</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="err">​</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="s2">&#34;change b to 3 &#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span>  <span class="s2">&#34;a: </span><span class="si">%s</span><span class="s2">, b: </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span><span class="p">(</span><span class="n">a</span> <span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="s2">&#34;a id is : </span><span class="si">%s</span><span class="s2">; b id is : </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>out:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">42295960</span>
+</span></span><span class="line"><span class="cl"><span class="mi">42295960</span>
+</span></span><span class="line"><span class="cl"><span class="n">change</span> <span class="n">b</span> <span class="n">to</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="nb">id</span> <span class="ow">is</span> <span class="p">:</span> <span class="mi">42295960</span><span class="p">;</span> <span class="n">b</span> <span class="nb">id</span> <span class="ow">is</span> <span class="p">:</span> <span class="mi">42295912</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>In [25]:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># list</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>   <span class="c1"># 引用</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="err">​</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">6</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="s2">&#34;change b to 3 &#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span>  <span class="s2">&#34;a: </span><span class="si">%s</span><span class="s2">, b: </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span><span class="p">(</span><span class="n">a</span> <span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="s2">&#34;a id is : </span><span class="si">%s</span><span class="s2">; b id is : </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>out：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">66189960</span>
+</span></span><span class="line"><span class="cl"><span class="mi">66189960</span>
+</span></span><span class="line"><span class="cl"><span class="n">change</span> <span class="n">b</span> <span class="n">to</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="n">b</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="nb">id</span> <span class="ow">is</span> <span class="p">:</span> <span class="mi">66189960</span><span class="p">;</span> <span class="n">b</span> <span class="nb">id</span> <span class="ow">is</span> <span class="p">:</span> <span class="mi">66189960</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>In [38]:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># list</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span> <span class="c1"># 值拷贝， 创建了新的对象实例</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="err">​</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">6</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="s2">&#34;change b to 3 &#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span>  <span class="s2">&#34;a: </span><span class="si">%s</span><span class="s2">, b: </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span><span class="p">(</span><span class="n">a</span> <span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="s2">&#34;a id is : </span><span class="si">%s</span><span class="s2">; b id is : </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>out：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">65422344</span>
+</span></span><span class="line"><span class="cl"><span class="mi">65421832</span>
+</span></span><span class="line"><span class="cl"><span class="n">change</span> <span class="n">b</span> <span class="n">to</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">b</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="nb">id</span> <span class="ow">is</span> <span class="p">:</span> <span class="mi">65422344</span><span class="p">;</span> <span class="n">b</span> <span class="nb">id</span> <span class="ow">is</span> <span class="p">:</span> <span class="mi">65421832</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>In [32]:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># dictionary</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ta&#39;</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="s1">&#39;tb&#39;</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="s1">&#39;tc&#39;</span><span class="p">:</span><span class="mi">33</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="c1"># 引用，改变的是原实例的值</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="err">​</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span><span class="p">[</span><span class="s1">&#39;tb&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">6</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="s2">&#34;change b to 3 &#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span>  <span class="s2">&#34;a: </span><span class="si">%s</span><span class="s2">,</span><span class="se">\n</span><span class="s2"> b: </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span><span class="p">(</span><span class="n">a</span> <span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="s2">&#34;a id is : </span><span class="si">%s</span><span class="s2">;</span><span class="se">\n</span><span class="s2"> b id is : </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>out：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">66214904</span>
+</span></span><span class="line"><span class="cl"><span class="mi">66214904</span>
+</span></span><span class="line"><span class="cl"><span class="n">change</span> <span class="n">b</span> <span class="n">to</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;tb&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;tc&#39;</span><span class="p">:</span> <span class="mi">33</span><span class="p">,</span> <span class="s1">&#39;ta&#39;</span><span class="p">:</span> <span class="mi">11</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl"> <span class="n">b</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;tb&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;tc&#39;</span><span class="p">:</span> <span class="mi">33</span><span class="p">,</span> <span class="s1">&#39;ta&#39;</span><span class="p">:</span> <span class="mi">11</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="nb">id</span> <span class="ow">is</span> <span class="p">:</span> <span class="mi">66214904</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"> <span class="n">b</span> <span class="nb">id</span> <span class="ow">is</span> <span class="p">:</span> <span class="mi">66214904</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>In [36]:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># tuple 元组用&#34;()&#34;标识。内部元素用逗号隔开。但是元组不能二次赋值，相当于只读列表。</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="err">​</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># b[0] = 6</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="s2">&#34;change b to 3 &#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span>  <span class="s2">&#34;a: </span><span class="si">%s</span><span class="s2">,</span><span class="se">\n</span><span class="s2"> b: </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span><span class="p">(</span><span class="n">a</span> <span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="s2">&#34;a id is : </span><span class="si">%s</span><span class="s2">;</span><span class="se">\n</span><span class="s2"> b id is : </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>out：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">66132296</span>
+</span></span><span class="line"><span class="cl"><span class="mi">66132296</span>
+</span></span><span class="line"><span class="cl"><span class="n">change</span> <span class="n">b</span> <span class="n">to</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"> <span class="n">b</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="nb">id</span> <span class="ow">is</span> <span class="p">:</span> <span class="mi">66132296</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"> <span class="n">b</span> <span class="nb">id</span> <span class="ow">is</span> <span class="p">:</span> <span class="mi">66132296</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>In [9]:此案例的问题来自<a href="http://www.cnblogs.com/yuyan/archive/2012/04/21/2461673.html">博文</a> ，经改进。如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">add_list</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pt</span> <span class="o">=</span> <span class="n">p</span> <span class="o">+</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>  <span class="c1"># 1</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span> <span class="o">=</span> <span class="n">p</span> <span class="o">+</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>  <span class="c1"># 2   1 和2 是等价的，没有将值返回， ‘=’左边的变量，都是函数内部生成的局部临时对象，并没有返回，故不会修改传入参数的值。</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 此处和静态语言的理解方式是一样的。</span>
+</span></span><span class="line"><span class="cl"><span class="err">​</span>
+</span></span><span class="line"><span class="cl"><span class="n">p1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">add_list</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>  <span class="c1">#1 和2 是等价的，没有改变返回值</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="n">p1</span>
+</span></span><span class="line"><span class="cl"><span class="err">​</span>
+</span></span><span class="line"><span class="cl"><span class="err">​</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">add_list2</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span> <span class="o">+=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">p2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">add_list2</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="n">p2</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>out：​</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>此处‘=’号左边的p 应该是一个函数新建的一个局部的、临时的对象实例，等号的右边的p是才是函数传进来的，由于临时的“P”并没有返回，故肯定不会改变传入list的值。此处和静态语言应该是一致的。 所以，它并没有修改原来的p引用。</p>
+<p>In [6]:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">help</span><span class="p">(</span><span class="s1">&#39;+=&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">An</span> <span class="n">augmented</span> <span class="n">assignment</span> <span class="n">expression</span> <span class="n">like</span> <span class="s2">&#34;x += 1&#34;</span> <span class="n">can</span> <span class="n">be</span> <span class="n">rewritten</span> <span class="k">as</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;x = x + 1&#34;</span> <span class="n">to</span> <span class="n">achieve</span> <span class="n">a</span> <span class="n">similar</span><span class="p">,</span> <span class="n">but</span> <span class="ow">not</span> <span class="n">exactly</span> <span class="n">equal</span> <span class="n">effect</span><span class="o">.</span> <span class="n">In</span> <span class="n">the</span>
+</span></span><span class="line"><span class="cl"><span class="n">augmented</span> <span class="n">version</span><span class="p">,</span> <span class="s2">&#34;x&#34;</span> <span class="ow">is</span> <span class="n">only</span> <span class="n">evaluated</span> <span class="n">once</span><span class="o">.</span> <span class="n">Also</span><span class="p">,</span> <span class="n">when</span> <span class="n">possible</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="n">the</span> <span class="n">actual</span> <span class="n">operation</span> <span class="ow">is</span> <span class="n">performed</span> <span class="o">*</span><span class="ow">in</span><span class="o">-</span><span class="n">place</span><span class="o">*</span><span class="p">,</span> <span class="n">meaning</span> <span class="n">that</span> <span class="n">rather</span> <span class="n">than</span>
+</span></span><span class="line"><span class="cl"><span class="n">creating</span> <span class="n">a</span> <span class="n">new</span> <span class="nb">object</span> <span class="ow">and</span> <span class="n">assigning</span> <span class="n">that</span> <span class="n">to</span> <span class="n">the</span> <span class="n">target</span><span class="p">,</span> <span class="n">the</span> <span class="n">old</span> <span class="nb">object</span>
+</span></span><span class="line"><span class="cl"><span class="ow">is</span> <span class="n">modified</span> <span class="n">instead</span><span class="o">.</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>In [11]:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 字典引用</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;num&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;sqrt&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">resurse</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">resurse</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">b</span><span class="p">[</span><span class="s1">&#39;num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">  <span class="n">b</span><span class="p">[</span><span class="s1">&#39;sqrt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">  <span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="s2">&#34;a: &#34;</span><span class="p">,</span><span class="n">a</span>
+</span></span><span class="line"><span class="cl"><span class="err">​</span>
+</span></span><span class="line"><span class="cl"><span class="n">d</span><span class="o">=</span><span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">resurse</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">b</span><span class="p">[</span><span class="s1">&#39;num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">    <span class="n">b</span><span class="p">[</span><span class="s1">&#39;sqrt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">    <span class="n">d1</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">d</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="s2">&#34;d: &#34;</span><span class="p">,</span><span class="n">d</span>
+</span></span><span class="line"><span class="cl"><span class="err">​</span>
+</span></span><span class="line"><span class="cl"><span class="n">c</span><span class="o">=</span><span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">resurse</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&#34;num&#34;</span><span class="p">:</span><span class="n">i</span><span class="p">,</span> <span class="s2">&#34;sqrt&#34;</span><span class="p">:</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="s2">&#34;c: &#34;</span><span class="p">,</span><span class="n">c</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>out：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="err">​</span><span class="n">a</span><span class="p">:</span>  <span class="p">[{</span><span class="s1">&#39;num&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;sqrt&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;num&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;sqrt&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;num&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;sqrt&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">}]</span>
+</span></span><span class="line"><span class="cl"><span class="n">d</span><span class="p">:</span>  <span class="p">[{</span><span class="s1">&#39;num&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;sqrt&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;num&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;sqrt&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;num&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;sqrt&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">}]</span>
+</span></span><span class="line"><span class="cl"><span class="n">c</span><span class="p">:</span>  <span class="p">[{</span><span class="s1">&#39;num&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;sqrt&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;num&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;sqrt&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;num&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;sqrt&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">}]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>b[&rsquo;num&rsquo;] = i  和 b[&lsquo;sqrt&rsquo;] = i * i  中的 b[&rsquo;num&rsquo;] 和 b[&lsquo;sqrt&rsquo;] 是已经<strong>压入list a 中元素的一个引用</strong>，故它可以在不断地改变list 内部变量的值。</p>
+<p>单步调试可以看到，</p>
+<p>a中值的变化情况：*以执行完语句a.append(b)为节点 *</p>
+<p>[{&rsquo;num&rsquo;: 1, &lsquo;sqrt&rsquo;: 1}]</p>
+<p>&ndash;&gt; [{&rsquo;num&rsquo;: 2, &lsquo;sqrt&rsquo;: 4},{&rsquo;num&rsquo;: 2, &lsquo;sqrt&rsquo;: 4}]</p>
+<p>&ndash;&gt;  [{&rsquo;num&rsquo;: 3, &lsquo;sqrt&rsquo;: 9}, {&rsquo;num&rsquo;: 3, &lsquo;sqrt&rsquo;: 9}, {&rsquo;num&rsquo;: 3, &lsquo;sqrt&rsquo;: 9}]</p>
+<p>在append(b)到list a之前获得b的值拷贝，将值append 到list a 也可以达到目标。如<strong>示例d</strong>所示。</p>
+<p>​
+当然，示例C是更加简洁的一个版本，这里应该还有迭代器的知识点，暂时还没折腾内部，待到下次和生成器一起分析。</p>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">fooweel</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2016-05-21
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/python/">Python</a>
+          <a href="/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/">编程基础</a>
+          <a href="/tags/%E5%BC%95%E7%94%A8/">引用</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/pybrain_example_nfq_code_flow/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">PyBrain库的example之NFQ流程图分析</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/py_builted_func/">
+            <span class="next-text nav-default">Python内建函数</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:wells217@163.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://github.com/tmhm" class="iconfont icon-github" title="github"></a>
+  <a href="" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>fooweel</span>
+  </span>
+</div>
+
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
