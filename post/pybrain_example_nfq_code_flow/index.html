@@ -49,7 +49,7 @@
 <meta itemprop="name" content="PyBrain库的example之NFQ流程图分析">
 <meta itemprop="description" content="PyBrain 库中NFQ算法的流程图分析"><meta itemprop="datePublished" content="2016-05-27T11:43:00+00:00" />
 <meta itemprop="dateModified" content="2016-05-27T11:43:00+00:00" />
-<meta itemprop="wordCount" content="679">
+<meta itemprop="wordCount" content="711">
 <meta itemprop="keywords" content="强化学习,PyBrain,流程图分析," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="PyBrain库的example之NFQ流程图分析"/>
 <meta name="twitter:description" content="PyBrain 库中NFQ算法的流程图分析"/>
@@ -268,68 +268,70 @@
 </span></span><span class="line"><span class="cl">    <span class="nv">renderer</span><span class="p">.</span><span class="nf">start</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="o">#</span> <span class="nv">balancetask</span><span class="p">.</span> <span class="nv">py</span> <span class="nv">inside</span> <span class="nv">only</span> <span class="nv">used</span> <span class="mi">2</span> <span class="nv">sensors</span><span class="p">,</span> <span class="nv">so</span> <span class="nv">here</span> <span class="nv">can</span><span class="s1">&#39;t use(4,3), just use (2,3)
-</span></span></span><span class="line"><span class="cl"><span class="s1"># there is a debug in vesion 0.30, now, new version 0.33 had correct it!!
-</span></span></span><span class="line"><span class="cl"><span class="s1">module = ActionValueNetwork(4,3)  #(4,3) #  0.33 had correct it
-</span></span></span><span class="line"><span class="cl"><span class="s1">#module = ActionValueLSTMNetwork(2,3)
-</span></span></span><span class="line"><span class="cl"><span class="s1">
-</span></span></span><span class="line"><span class="cl"><span class="s1">task = DiscreteBalanceTask(env, 100)
-</span></span></span><span class="line"><span class="cl"><span class="s1">learner = NFQ()
-</span></span></span><span class="line"><span class="cl"><span class="s1">learner.explorer.epsilon = 0.4
-</span></span></span><span class="line"><span class="cl"><span class="s1">
-</span></span></span><span class="line"><span class="cl"><span class="s1">agent = LearningAgent(module, learner)
-</span></span></span><span class="line"><span class="cl"><span class="s1">testagent = LearningAgent(module, None)
-</span></span></span><span class="line"><span class="cl"><span class="s1">experiment = EpisodicExperiment(task, agent)
-</span></span></span><span class="line"><span class="cl"><span class="s1">
-</span></span></span><span class="line"><span class="cl"><span class="s1">
-</span></span></span><span class="line"><span class="cl"><span class="s1">def plotPerformance(values, fig):
-</span></span></span><span class="line"><span class="cl"><span class="s1">    plt.figure(fig.number)
-</span></span></span><span class="line"><span class="cl"><span class="s1">    plt.clf()
-</span></span></span><span class="line"><span class="cl"><span class="s1">    plt.plot(values, &#39;</span><span class="nv">o</span><span class="o">-</span><span class="s1">&#39;)
-</span></span></span><span class="line"><span class="cl"><span class="s1">    plt.gcf().canvas.draw()
-</span></span></span><span class="line"><span class="cl"><span class="s1">
-</span></span></span><span class="line"><span class="cl"><span class="s1">
-</span></span></span><span class="line"><span class="cl"><span class="s1">performance = []
-</span></span></span><span class="line"><span class="cl"><span class="s1">
-</span></span></span><span class="line"><span class="cl"><span class="s1">if not render:
-</span></span></span><span class="line"><span class="cl"><span class="s1">    pf_fig = plt.figure()
-</span></span></span><span class="line"><span class="cl"><span class="s1">
-</span></span></span><span class="line"><span class="cl"><span class="s1">#while (True):
-</span></span></span><span class="line"><span class="cl"><span class="s1">for _ in xrange(60): #60
-</span></span></span><span class="line"><span class="cl"><span class="s1">    # one learning step after one episode of world-interaction!!!
-</span></span></span><span class="line"><span class="cl"><span class="s1">    experiment.doEpisodes(1)
-</span></span></span><span class="line"><span class="cl"><span class="s1">    agent.learn(2)  # 5
-</span></span></span><span class="line"><span class="cl"><span class="s1">
-</span></span></span><span class="line"><span class="cl"><span class="s1">    # test performance (these real-world experiences are not used for training)
-</span></span></span><span class="line"><span class="cl"><span class="s1">    if render:
-</span></span></span><span class="line"><span class="cl"><span class="s1">        env.delay = True
-</span></span></span><span class="line"><span class="cl"><span class="s1">    experiment.agent = testagent
-</span></span></span><span class="line"><span class="cl"><span class="s1">    #r = mean([sum(x) for x in experiment.doEpisodes(5)])
-</span></span></span><span class="line"><span class="cl"><span class="s1">    env.delay = False
-</span></span></span><span class="line"><span class="cl"><span class="s1">    testagent.reset()
-</span></span></span><span class="line"><span class="cl"><span class="s1">    experiment.agent = agent
-</span></span></span><span class="line"><span class="cl"><span class="s1">
-</span></span></span><span class="line"><span class="cl"><span class="s1">    #performance.append(r)
-</span></span></span><span class="line"><span class="cl"><span class="s1">    print &#34;update step&#34;, len(performance)
-</span></span></span><span class="line"><span class="cl"><span class="s1">
-</span></span></span><span class="line"><span class="cl"><span class="s1">    #print &#34;reward avg&#34;, r
-</span></span></span><span class="line"><span class="cl"><span class="s1">    print &#34;explorer epsilon&#34;, learner.explorer.epsilon
-</span></span></span><span class="line"><span class="cl"><span class="s1">    print &#34;num episodes&#34;, agent.history.getNumSequences()
-</span></span></span><span class="line"><span class="cl"><span class="s1">    print &#34;update step&#34;, len(performance)
-</span></span></span><span class="line"><span class="cl"><span class="s1">
-</span></span></span><span class="line"><span class="cl"><span class="s1">if not render:
-</span></span></span><span class="line"><span class="cl"><span class="s1">    plotPerformance(performance, pf_fig)
-</span></span></span><span class="line"><span class="cl"><span class="s1">
-</span></span></span><span class="line"><span class="cl"><span class="s1">str = raw_input(&#34;please input sth to end!&#34;)
-</span></span></span><span class="line"><span class="cl"><span class="s1">print &#34;you put :&#34;,str
-</span></span></span></code></pre></td></tr></table>
+</span></span><span class="line"><span class="cl"><span class="o">#</span> <span class="nv">balancetask</span><span class="p">.</span> <span class="nv">py</span> <span class="nv">inside</span> <span class="nv">only</span> <span class="nv">used</span> <span class="mi">2</span> <span class="nv">sensors</span><span class="p">,</span> <span class="nv">so</span> <span class="nv">here</span> <span class="nv">can</span> <span class="nv">not</span> <span class="nf">use</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="nv">just</span> <span class="nv">use</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">#</span> <span class="nv">there</span> <span class="k">is</span> <span class="nv">a</span> <span class="nv">debug</span> <span class="k">in</span> <span class="nv">vesion</span> <span class="mf">0.30</span><span class="p">,</span> <span class="nv">now</span><span class="p">,</span> <span class="nv">new</span> <span class="nv">version</span> <span class="mf">0.33</span> <span class="nv">had</span> <span class="nv">correct</span> <span class="vm">it</span><span class="o">!!</span>
+</span></span><span class="line"><span class="cl"><span class="kn">module</span> <span class="o">=</span> <span class="nc">ActionValueNetwork</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>  <span class="o">#</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="o">#</span>  <span class="mf">0.33</span> <span class="nv">had</span> <span class="nv">correct</span> <span class="vm">it</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#module = ActionValueLSTMNetwork(2,3)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">task</span> <span class="o">=</span> <span class="nc">DiscreteBalanceTask</span><span class="p">(</span><span class="nv">env</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">learner</span> <span class="o">=</span> <span class="nc">NFQ</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nv">learner</span><span class="p">.</span><span class="nv">explorer</span><span class="p">.</span><span class="nv">epsilon</span> <span class="o">=</span> <span class="mf">0.4</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">agent</span> <span class="o">=</span> <span class="nc">LearningAgent</span><span class="p">(</span><span class="kn">module</span><span class="p">,</span> <span class="nv">learner</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">testagent</span> <span class="o">=</span> <span class="nc">LearningAgent</span><span class="p">(</span><span class="kn">module</span><span class="p">,</span> <span class="nc">None</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">experiment</span> <span class="o">=</span> <span class="nc">EpisodicExperiment</span><span class="p">(</span><span class="nv">task</span><span class="p">,</span> <span class="nv">agent</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">def</span> <span class="nf">plotPerformance</span><span class="p">(</span><span class="nv">values</span><span class="p">,</span> <span class="nv">fig</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">(</span><span class="nv">fig</span><span class="p">.</span><span class="nv">number</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">plt</span><span class="p">.</span><span class="nf">clf</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">plt</span><span class="p">.</span><span class="nf">plot</span><span class="p">(</span><span class="nv">values</span><span class="p">,</span> <span class="s1">&#39;o-&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">plt</span><span class="p">.</span><span class="nf">gcf</span><span class="p">().</span><span class="nv">canvas</span><span class="p">.</span><span class="nf">draw</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">performance</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="nv">not</span> <span class="nl">render</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">pf_fig</span> <span class="o">=</span> <span class="nv">plt</span><span class="p">.</span><span class="nf">figure</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#while (True):</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="nv">_</span> <span class="k">in</span> <span class="nf">xrange</span><span class="p">(</span><span class="mi">60</span><span class="p">):</span> <span class="cp">#60</span>
+</span></span><span class="line"><span class="cl">    <span class="o">#</span> <span class="nv">one</span> <span class="nv">learning</span> <span class="nv">step</span> <span class="nv">after</span> <span class="nv">one</span> <span class="nv">episode</span> <span class="nv">of</span> <span class="nv">world</span><span class="o">-</span><span class="nv">interaction</span><span class="o">!!!</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">experiment</span><span class="p">.</span><span class="nf">doEpisodes</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">agent</span><span class="p">.</span><span class="nf">learn</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="o">#</span> <span class="mi">5</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="o">#</span> <span class="nv">test</span> <span class="nv">performance</span> <span class="p">(</span><span class="nv">these</span> <span class="nv">real</span><span class="o">-</span><span class="nv">world</span> <span class="nv">experiences</span> <span class="nv">are</span> <span class="nv">not</span> <span class="nv">used</span> <span class="k">for</span> <span class="nv">training</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nl">render</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">env</span><span class="p">.</span><span class="nv">delay</span> <span class="o">=</span> <span class="nc">True</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">experiment</span><span class="p">.</span><span class="nv">agent</span> <span class="o">=</span> <span class="nv">testagent</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">#r = mean([sum(x) for x in experiment.doEpisodes(5)])</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">env</span><span class="p">.</span><span class="nv">delay</span> <span class="o">=</span> <span class="nc">False</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">testagent</span><span class="p">.</span><span class="nf">reset</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">experiment</span><span class="p">.</span><span class="nv">agent</span> <span class="o">=</span> <span class="nv">agent</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cp">#performance.append(r)</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">print</span> <span class="s2">&#34;update step&#34;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nv">performance</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cp">#print &#34;reward avg&#34;, r</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">print</span> <span class="s2">&#34;explorer epsilon&#34;</span><span class="p">,</span> <span class="nv">learner</span><span class="p">.</span><span class="nv">explorer</span><span class="p">.</span><span class="nv">epsilon</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">print</span> <span class="s2">&#34;num episodes&#34;</span><span class="p">,</span> <span class="nv">agent</span><span class="p">.</span><span class="nv">history</span><span class="p">.</span><span class="nf">getNumSequences</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">print</span> <span class="s2">&#34;update step&#34;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nv">performance</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="nv">not</span> <span class="nl">render</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">plotPerformance</span><span class="p">(</span><span class="nv">performance</span><span class="p">,</span> <span class="nv">pf_fig</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">str</span> <span class="o">=</span> <span class="nf">raw_input</span><span class="p">(</span><span class="s2">&#34;please input sth to end!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">print</span> <span class="s2">&#34;you put :&#34;</span><span class="p">,</span><span class="nv">str</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>experiment.doEpisodes(1)
 <img src="http://i.imgur.com/Un1ow9B.png" alt=""></p>
 <p>agent.learn(2)
 <img src="http://i.imgur.com/TQ2YO9y.png" alt=""></p>
-<p>图2的注释2部分，可以参考该博文<a href="http://lamda.nju.edu.cn/yangjw/project/drlintro.html">深度强化学习初探</a> ,但是他文中的公式应该有点问题。应该把Qm+1改为Qm，进一步参考维基百科<a href="https://en.wikipedia.org/wiki/Q-learning">Q-learning</a> ,如下所示。</p>
-<p>Qm+1(st,at)=Qm(st,at)+α[rt+1+γQm(st+1,at+1)−Qm(st,at)]</p>
+<p>图2的注释2部分，可以参考该博文<a href="http://lamda.nju.edu.cn/yangjw/project/drlintro.html">深度强化学习初探</a> ,但是他文中的公式应该有点问题。应该把$Q_{m+1}$改为$Q_m$，进一步参考维基百科<a href="https://en.wikipedia.org/wiki/Q-learning">Q-learning</a> ,如下所示。</p>
+<p>$$
+Q_{m+1}(s_t,a_t)=Q_m(s_t,a_t)+α[r_{t+1}+γQ_m(s_{t+1},a_{t+1})−Q_m(s_t,a_t)]
+$$</p>
 <p>推荐所用的画图软件<a href="https://www.processon.com/i/56873407e4b0b5afb309e00c">process on</a></p>
 <ul>
 <li>用起来挺方便的，在线用谷歌浏览器运行，用户体验挺佳，比visio2010快多了；</li>
@@ -423,6 +425,14 @@
 
 
 <script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.5/es5/tex-mml-chtml.js" integrity="sha256-HGLuEfFcsUJGhvB8cQ8nr0gai9EucOOaIxFw7qxmd+w=" crossorigin="anonymous"></script>
 
 
 
