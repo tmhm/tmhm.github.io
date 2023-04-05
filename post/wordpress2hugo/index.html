@@ -52,7 +52,7 @@
 <meta itemprop="description" content="把个人站点从wordpress 迁移到了hugo&#43;even。
 本文主要记录hugo 下搭配使用even 主题的一些配置"><meta itemprop="datePublished" content="2022-09-03T13:50:28+08:00" />
 <meta itemprop="dateModified" content="2022-09-03T13:50:28+08:00" />
-<meta itemprop="wordCount" content="133">
+<meta itemprop="wordCount" content="196">
 <meta itemprop="keywords" content="Hugo,even," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Wordpress2Hugo"/>
 <meta name="twitter:description" content="把个人站点从wordpress 迁移到了hugo&#43;even。
@@ -154,6 +154,7 @@
         <li>
           <ul>
             <li><a href="#修改even-主图的icon">修改even 主图的icon</a></li>
+            <li><a href="#hugo-常用命令">Hugo 常用命令</a></li>
           </ul>
         </li>
       </ul>
@@ -167,6 +168,33 @@
 本文主要记录hugo 下搭配使用even 主题的一些配置</p>
 <h3 id="修改even-主图的icon">修改even 主图的icon</h3>
 <p>可以将之前做好的<code>512x512</code>图片传到这个<a href="https://www.logosc.cn/logo/favicon?s=">工具网站favivon</a>，自动生成多个尺度的icon 照片, 然后下载下来，解压到主题的目录 <code>themes/even/static/</code>.</p>
+<h3 id="hugo-常用命令">Hugo 常用命令</h3>
+<ul>
+<li>
+<p>生成网页预览，可使用Chrome 无痕模式查看 <code>http://localhost:1313/</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"> hugo server 
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>生成静态网页，然后将<code>public</code> 文件夹推到网站地址</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">hugo
+</span></span><span class="line"><span class="cl">cp -r public/* SITE_PATH
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
     </div>
 
     <div class="post-copyright">
@@ -235,7 +263,7 @@
   <span class="copyright-year">
     &copy; 
     2017 - 
-    2022<span class="heart"><i class="iconfont icon-heart"></i></span><span>fooweel</span>
+    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>fooweel</span>
   </span>
 </div>
 
