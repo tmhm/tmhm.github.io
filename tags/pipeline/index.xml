@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Pipeline on Xwell</title>
-    <link>http://localhost:1313/tags/pipeline/</link>
+    <link>http://localhost:60073/tags/pipeline/</link>
     <description>Recent content in Pipeline on Xwell</description>
     <generator>Hugo -- 0.133.0</generator>
     <language>en</language>
     <copyright>2017-2024 xwell All Rights Reserved</copyright>
     <lastBuildDate>Sat, 01 Jun 2019 22:30:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/pipeline/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:60073/tags/pipeline/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>速写AI系统构建</title>
-      <link>http://localhost:1313/posts/aisys_sketch/</link>
+      <link>http://localhost:60073/posts/aisys_sketch/</link>
       <pubDate>Sat, 01 Jun 2019 22:30:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/aisys_sketch/</guid>
+      <guid>http://localhost:60073/posts/aisys_sketch/</guid>
       <description>AI系统构建的简要记录</description>
     </item>
   </channel>

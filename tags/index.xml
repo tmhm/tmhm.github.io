@@ -2,130 +2,130 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Xwell</title>
-    <link>http://localhost:59413/tags/</link>
+    <link>http://localhost:60167/tags/</link>
     <description>Recent content in Tags on Xwell</description>
     <generator>Hugo -- 0.133.0</generator>
     <language>en</language>
     <copyright>2017-2024 xwell All Rights Reserved</copyright>
     <lastBuildDate>Thu, 22 Aug 2024 11:15:05 +0800</lastBuildDate>
-    <atom:link href="http://localhost:59413/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:60167/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ID编码</title>
-      <link>http://localhost:59413/tags/id%E7%BC%96%E7%A0%81/</link>
+      <link>http://localhost:60167/tags/id%E7%BC%96%E7%A0%81/</link>
       <pubDate>Sun, 18 Sep 2022 08:53:05 +0800</pubDate>
-      <guid>http://localhost:59413/tags/id%E7%BC%96%E7%A0%81/</guid>
+      <guid>http://localhost:60167/tags/id%E7%BC%96%E7%A0%81/</guid>
       <description></description>
     </item>
     <item>
       <title>Pandas</title>
-      <link>http://localhost:59413/tags/pandas/</link>
+      <link>http://localhost:60167/tags/pandas/</link>
       <pubDate>Sun, 18 Sep 2022 08:53:05 +0800</pubDate>
-      <guid>http://localhost:59413/tags/pandas/</guid>
+      <guid>http://localhost:60167/tags/pandas/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
-      <link>http://localhost:59413/tags/python/</link>
+      <link>http://localhost:60167/tags/python/</link>
       <pubDate>Sun, 18 Sep 2022 08:53:05 +0800</pubDate>
-      <guid>http://localhost:59413/tags/python/</guid>
+      <guid>http://localhost:60167/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>分组</title>
-      <link>http://localhost:59413/tags/%E5%88%86%E7%BB%84/</link>
+      <link>http://localhost:60167/tags/%E5%88%86%E7%BB%84/</link>
       <pubDate>Sun, 18 Sep 2022 08:53:05 +0800</pubDate>
-      <guid>http://localhost:59413/tags/%E5%88%86%E7%BB%84/</guid>
+      <guid>http://localhost:60167/tags/%E5%88%86%E7%BB%84/</guid>
       <description></description>
     </item>
     <item>
       <title>聚合</title>
-      <link>http://localhost:59413/tags/%E8%81%9A%E5%90%88/</link>
+      <link>http://localhost:60167/tags/%E8%81%9A%E5%90%88/</link>
       <pubDate>Sun, 18 Sep 2022 08:53:05 +0800</pubDate>
-      <guid>http://localhost:59413/tags/%E8%81%9A%E5%90%88/</guid>
+      <guid>http://localhost:60167/tags/%E8%81%9A%E5%90%88/</guid>
       <description></description>
     </item>
     <item>
       <title>Even</title>
-      <link>http://localhost:59413/tags/even/</link>
+      <link>http://localhost:60167/tags/even/</link>
       <pubDate>Sat, 03 Sep 2022 13:50:28 +0800</pubDate>
-      <guid>http://localhost:59413/tags/even/</guid>
+      <guid>http://localhost:60167/tags/even/</guid>
       <description></description>
     </item>
     <item>
       <title>Hugo</title>
-      <link>http://localhost:59413/tags/hugo/</link>
+      <link>http://localhost:60167/tags/hugo/</link>
       <pubDate>Sat, 03 Sep 2022 13:50:28 +0800</pubDate>
-      <guid>http://localhost:59413/tags/hugo/</guid>
+      <guid>http://localhost:60167/tags/hugo/</guid>
       <description></description>
     </item>
     <item>
       <title>阅读书单</title>
-      <link>http://localhost:59413/tags/%E9%98%85%E8%AF%BB%E4%B9%A6%E5%8D%95/</link>
+      <link>http://localhost:60167/tags/%E9%98%85%E8%AF%BB%E4%B9%A6%E5%8D%95/</link>
       <pubDate>Sun, 29 Dec 2019 10:47:05 +0800</pubDate>
-      <guid>http://localhost:59413/tags/%E9%98%85%E8%AF%BB%E4%B9%A6%E5%8D%95/</guid>
+      <guid>http://localhost:60167/tags/%E9%98%85%E8%AF%BB%E4%B9%A6%E5%8D%95/</guid>
       <description></description>
     </item>
     <item>
       <title>Cuda环境配置</title>
-      <link>http://localhost:59413/tags/cuda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
+      <link>http://localhost:60167/tags/cuda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Mon, 21 Nov 2016 12:15:00 +0000</pubDate>
-      <guid>http://localhost:59413/tags/cuda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
+      <guid>http://localhost:60167/tags/cuda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
       <description></description>
     </item>
     <item>
       <title>环境配置</title>
-      <link>http://localhost:59413/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
+      <link>http://localhost:60167/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Mon, 21 Nov 2016 12:15:00 +0000</pubDate>
-      <guid>http://localhost:59413/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
+      <guid>http://localhost:60167/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
       <description></description>
     </item>
     <item>
       <title>C&#43;&#43;</title>
-      <link>http://localhost:59413/tags/c&#43;&#43;/</link>
+      <link>http://localhost:60167/tags/c&#43;&#43;/</link>
       <pubDate>Tue, 30 Aug 2016 10:47:00 +0000</pubDate>
-      <guid>http://localhost:59413/tags/c&#43;&#43;/</guid>
+      <guid>http://localhost:60167/tags/c&#43;&#43;/</guid>
       <description></description>
     </item>
     <item>
       <title>编程基础</title>
-      <link>http://localhost:59413/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/</link>
+      <link>http://localhost:60167/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/</link>
       <pubDate>Tue, 30 Aug 2016 10:47:00 +0000</pubDate>
-      <guid>http://localhost:59413/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/</guid>
+      <guid>http://localhost:60167/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/</guid>
       <description></description>
     </item>
     <item>
       <title>PyBrain</title>
-      <link>http://localhost:59413/tags/pybrain/</link>
+      <link>http://localhost:60167/tags/pybrain/</link>
       <pubDate>Fri, 27 May 2016 11:43:00 +0000</pubDate>
-      <guid>http://localhost:59413/tags/pybrain/</guid>
+      <guid>http://localhost:60167/tags/pybrain/</guid>
       <description></description>
     </item>
     <item>
       <title>强化学习</title>
-      <link>http://localhost:59413/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/</link>
+      <link>http://localhost:60167/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/</link>
       <pubDate>Fri, 27 May 2016 11:43:00 +0000</pubDate>
-      <guid>http://localhost:59413/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/</guid>
+      <guid>http://localhost:60167/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/</guid>
       <description></description>
     </item>
     <item>
       <title>流程图分析</title>
-      <link>http://localhost:59413/tags/%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%88%86%E6%9E%90/</link>
+      <link>http://localhost:60167/tags/%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%88%86%E6%9E%90/</link>
       <pubDate>Fri, 27 May 2016 11:43:00 +0000</pubDate>
-      <guid>http://localhost:59413/tags/%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%88%86%E6%9E%90/</guid>
+      <guid>http://localhost:60167/tags/%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%88%86%E6%9E%90/</guid>
       <description></description>
     </item>
     <item>
       <title>引用</title>
-      <link>http://localhost:59413/tags/%E5%BC%95%E7%94%A8/</link>
+      <link>http://localhost:60167/tags/%E5%BC%95%E7%94%A8/</link>
       <pubDate>Sat, 21 May 2016 14:24:00 +0000</pubDate>
-      <guid>http://localhost:59413/tags/%E5%BC%95%E7%94%A8/</guid>
+      <guid>http://localhost:60167/tags/%E5%BC%95%E7%94%A8/</guid>
       <description></description>
     </item>
     <item>
       <title>内置函数</title>
-      <link>http://localhost:59413/tags/%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/</link>
+      <link>http://localhost:60167/tags/%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/</link>
       <pubDate>Tue, 17 May 2016 15:06:00 +0000</pubDate>
-      <guid>http://localhost:59413/tags/%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/</guid>
+      <guid>http://localhost:60167/tags/%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/</guid>
       <description></description>
     </item>
   </channel>
