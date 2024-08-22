@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>引用 on Xwell</title>
-    <link>http://localhost:61312/tags/%E5%BC%95%E7%94%A8/</link>
+    <link>http://www.imxwell.com/tags/%E5%BC%95%E7%94%A8/</link>
     <description>Recent content in 引用 on Xwell</description>
     <generator>Hugo -- 0.133.0</generator>
     <language>en</language>
     <copyright>2017-2024 xwell All Rights Reserved</copyright>
     <lastBuildDate>Sat, 21 May 2016 14:24:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:61312/tags/%E5%BC%95%E7%94%A8/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://www.imxwell.com/tags/%E5%BC%95%E7%94%A8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python 有关引用的一些问题</title>
-      <link>http://localhost:61312/posts/python_identity/</link>
+      <link>http://www.imxwell.com/posts/python_identity/</link>
       <pubDate>Sat, 21 May 2016 14:24:00 +0000</pubDate>
-      <guid>http://localhost:61312/posts/python_identity/</guid>
+      <guid>http://www.imxwell.com/posts/python_identity/</guid>
       <description>Python中引用的一些分析记录</description>
     </item>
   </channel>
