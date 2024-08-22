@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Cuda环境配置 on Xwell</title>
+    <link>http://localhost:58211/tags/cuda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
+    <description>Recent content in Cuda环境配置 on Xwell</description>
+    <generator>Hugo -- 0.133.0</generator>
+    <language>en</language>
+    <copyright>2017-2024 xwell All Rights Reserved</copyright>
+    <lastBuildDate>Mon, 21 Nov 2016 12:15:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:58211/tags/cuda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DL服务器主机环境配置 ubuntu14.04 &amp;&amp; Cuda8.0</title>
+      <link>http://localhost:58211/posts/dl_server_ubuntu14_cuda8_gtx1080/</link>
+      <pubDate>Mon, 21 Nov 2016 12:15:00 +0000</pubDate>
+      <guid>http://localhost:58211/posts/dl_server_ubuntu14_cuda8_gtx1080/</guid>
+      <description>前面部分是自己的记录，后面方案部分是成功安装驱动&#43;桌面重复的正解</description>
+    </item>
+  </channel>
+</rss>

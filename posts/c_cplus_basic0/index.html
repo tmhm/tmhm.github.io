@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=58211&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>C_Cplus程序设计涉及的一些知识点 | Xwell</title>
+<meta name="keywords" content="C&#43;&#43;, 编程基础">
+<meta name="description" content="C&#43;&#43;中的一些小知识点（printf压栈顺序，指针引用，动态内存以及变量的存储位置，构造函数，this指针等问题的回顾） ">
+<meta name="author" content="xwell">
+<link rel="canonical" href="http://localhost:58211/posts/c_cplus_basic0/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.fc220c15db4aef0318bbf30adc45d33d4d7c88deff3238b23eb255afdc472ca6.css" integrity="sha256-/CIMFdtK7wMYu/MK3EXTPU18iN7/MjiyPrJVr9xHLKY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:58211/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:58211/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:58211/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:58211/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:58211/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:58211/posts/c_cplus_basic0/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="C_Cplus程序设计涉及的一些知识点" />
+<meta property="og:description" content="C&#43;&#43;中的一些小知识点（printf压栈顺序，指针引用，动态内存以及变量的存储位置，构造函数，this指针等问题的回顾） " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:58211/posts/c_cplus_basic0/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2016-08-30T10:47:00+00:00" />
+<meta property="article:modified_time" content="2016-08-30T10:47:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="C_Cplus程序设计涉及的一些知识点"/>
+<meta name="twitter:description" content="C&#43;&#43;中的一些小知识点（printf压栈顺序，指针引用，动态内存以及变量的存储位置，构造函数，this指针等问题的回顾） "/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:58211/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "C_Cplus程序设计涉及的一些知识点",
+      "item": "http://localhost:58211/posts/c_cplus_basic0/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "C_Cplus程序设计涉及的一些知识点",
+  "name": "C_Cplus程序设计涉及的一些知识点",
+  "description": "C++中的一些小知识点（printf压栈顺序，指针引用，动态内存以及变量的存储位置，构造函数，this指针等问题的回顾） ",
+  "keywords": [
+    "C++", "编程基础"
+  ],
+  "articleBody": "C++中的一些小知识点。包括：printf压栈顺序，指针引用，动态内存以及变量的存储位置，构造函数，this指针等问题的回顾\nc中的printf函数 main() { int b = 3; int arr[]= {6,7,8,9,10}; int * ptr = arr; *(ptr++) += 123; printf(\"%d,%d\\n\",*ptr,*(++ptr)); return 0; } 输出 ：8,8\n原因：printf函数计算参数是从右往左压栈的\nc和c++的关系 c++ 语言支持函数重载，c语言不支持函数重载； 函数在C++编译后在库中的名字和C语言的不同，假设某个函数原型是void foo（int x， int y）。该函数被C编译器编译后，在库中的名字是_foo,而在C++编译器中则会产生像_foo_int_int之类的名字。 C++提供了C连接交换指定符 extern “c” 解决名字匹配的问题。 指针和引用 区别：\n非空区别，在任何情况下都不能使用指向空值的引用。一个引用必须总是指向某些对象； 合法性，在使用引用之前不需要测试它的合法性，相反，指针则应该总是被测试，防止其为空； 可修改区别，指针可被重新赋值以指向另一个不同对象。但是引用则总是指向在初始化被指定的对象，以后不能改变，但是指向的对象的其内容可以改变 应用区别，有存在不指向任何对象的可能和不同时刻会指向不同的对象等情况时，使用指针；如果总是指向一个对象并且指向一个对象以后就不会改变指向，那么应该使用引用。 传递动态内存 void swap3(int *p, int *q) { int *tmp; tmp = p; p = q; q = tmp;//仅仅交换了指针的值，并没有改变两块内存的值 } void swap4(int *p, int *q) { int tmp; tmp = *p; //获取p指向内存的值 *p = *q; *q = tmp; } void swap5(int \u0026p, int \u0026q) { int tmp; tmp = p; //获取p指向内存的值 p = q; q = tmp; } //————\nint t1 = 1,t2 = 2; cout \u003c\u003c t1 \u003c\u003c \"\"\u003c\u003c t2 \u003c\u003c endl; swap3(\u0026t1,\u0026t2); //仅仅交换了指针的值，并没有改变两块内存的值 cout \u003c\u003c t1 \u003c\u003c \"\"\u003c\u003c t2 \u003c\u003c endl; // 后面两个函数分别用指针和引用交换成功 swap4(\u0026t1,\u0026t2); cout \u003c\u003c t1 \u003c\u003c \"\"\u003c\u003c t2 \u003c\u003c endl; swap5(t1,t2); cout \u003c\u003c t1 \u003c\u003c \"\"\u003c\u003c t2 \u003c\u003c endl; malloc 申请内存 void getMemory_err(char *p, int num) { p = (char *)malloc(sizeof(char )* num); // 没有return 指针，不能传递动态内存 } //返回指针变量 char *pGetMemory(char *p, int num) { p = (char *)malloc(sizeof(char )* num); return p; } // 用指针的指针， void getMemory(char **p, int num) { *p = (char *)malloc(sizeof(char )* num); } //——\nchar *str = NULL; getMemory(\u0026str,10); strcpy(str,\"hello\"); char *str2 = NULL; str2 = pGetMemory(str2,10); strcpy(str2,\"test\"); cout\u003c\u003c *str \u003c",
+  "wordCount" : "727",
+  "inLanguage": "en",
+  "datePublished": "2016-08-30T10:47:00Z",
+  "dateModified": "2016-08-30T10:47:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "xwell"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:58211/posts/c_cplus_basic0/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Xwell",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:58211/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:58211/" accesskey="h" title="Xwell (Alt + H)">Xwell</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:58211/publications/" title="Publications">
+                    <span>Publications</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:58211/posts/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:58211/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:58211/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:58211/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:58211/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      C_Cplus程序设计涉及的一些知识点
+    </h1>
+    <div class="post-description">
+      C&#43;&#43;中的一些小知识点（printf压栈顺序，指针引用，动态内存以及变量的存储位置，构造函数，this指针等问题的回顾） 
+    </div>
+    <div class="post-meta"><span title='2016-08-30 10:47:00 +0000 UTC'>August 30, 2016</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;xwell
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#c%e4%b8%ad%e7%9a%84printf%e5%87%bd%e6%95%b0" aria-label="c中的printf函数">c中的printf函数</a></li>
+                <li>
+                    <a href="#c%e5%92%8cc%e7%9a%84%e5%85%b3%e7%b3%bb" aria-label="c和c&#43;&#43;的关系">c和c++的关系</a></li>
+                <li>
+                    <a href="#%e6%8c%87%e9%92%88%e5%92%8c%e5%bc%95%e7%94%a8" aria-label="指针和引用">指针和引用</a></li>
+                <li>
+                    <a href="#%e4%bc%a0%e9%80%92%e5%8a%a8%e6%80%81%e5%86%85%e5%ad%98" aria-label="传递动态内存">传递动态内存</a></li>
+                <li>
+                    <a href="#malloc-%e7%94%b3%e8%af%b7%e5%86%85%e5%ad%98" aria-label="malloc 申请内存">malloc 申请内存</a></li>
+                <li>
+                    <a href="#%e5%ad%97%e7%ac%a6%e4%b8%b2%e5%8f%98%e9%87%8f%e5%ad%98%e5%82%a8%e9%97%ae%e9%a2%98" aria-label="字符串变量存储问题">字符串变量存储问题</a></li>
+                <li>
+                    <a href="#%e6%9e%84%e9%80%a0%e5%87%bd%e6%95%b0" aria-label="构造函数">构造函数</a></li>
+                <li>
+                    <a href="#mallocfree-newdelete" aria-label="malloc/free ＆＆new/delete">malloc/free ＆＆new/delete</a></li>
+                <li>
+                    <a href="#%e6%8c%87%e9%92%88%e5%92%8c%e5%8f%a5%e6%9f%84" aria-label="指针和句柄">指针和句柄</a></li>
+                <li>
+                    <a href="#this-%e6%8c%87%e9%92%88" aria-label="this 指针">this 指针</a></li>
+                <li>
+                    <a href="#%e5%92%8c-%e7%9a%84%e4%bc%98%e5%85%88%e7%ba%a7" aria-label="“=”和“&lt;=” 的优先级">“=”和“&lt;=” 的优先级</a></li>
+                <li>
+                    <a href="#%e8%bf%90%e7%ae%97%e6%93%8d%e4%bd%9c%e7%ac%a6" aria-label="运算操作符">运算操作符</a></li>
+                <li>
+                    <a href="#sizeof%e6%93%8d%e4%bd%9c%e7%ac%a6%e4%b8%8e%e6%95%b0%e7%bb%84" aria-label="sizeof操作符与数组">sizeof操作符与数组</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>C++中的一些小知识点。包括：printf压栈顺序，指针引用，动态内存以及变量的存储位置，构造函数，this指针等问题的回顾</p>
+<h3 id="c中的printf函数">c中的printf函数<a hidden class="anchor" aria-hidden="true" href="#c中的printf函数">#</a></h3>
+<pre tabindex="0"><code>main() {
+	int b = 3;
+	int arr[]= {6,7,8,9,10};
+
+	int * ptr = arr;
+    *(ptr++) += 123;
+    printf(&#34;%d,%d\n&#34;,*ptr,*(++ptr));
+    return 0;
+}
+</code></pre><blockquote>
+<p>输出 ：8,8</p>
+</blockquote>
+<blockquote>
+<p>原因：printf函数计算参数是<strong>从右往左压栈的</strong></p>
+</blockquote>
+<h3 id="c和c的关系">c和c++的关系<a hidden class="anchor" aria-hidden="true" href="#c和c的关系">#</a></h3>
+<ul>
+<li>c++ 语言支持函数重载，c语言不支持函数重载；</li>
+<li>函数在C++编译后在库中的名字和C语言的不同，假设某个函数原型是void foo（int x， int y）。该函数被C编译器编译后，在库中的名字是_foo,而在C++编译器中则会产生像_foo_int_int之类的名字。</li>
+<li>C++提供了C连接交换指定符 extern &ldquo;c&rdquo; 解决名字匹配的问题。</li>
+</ul>
+<h3 id="指针和引用">指针和引用<a hidden class="anchor" aria-hidden="true" href="#指针和引用">#</a></h3>
+<p>区别：</p>
+<ul>
+<li>非空区别，在任何情况下都不能使用指向空值的引用。一个引用必须总是指向某些对象；</li>
+<li>合法性，在使用引用之前不需要测试它的合法性，相反，指针则应该总是被测试，防止其为空；</li>
+<li>可修改区别，指针可被重新赋值以指向另一个不同对象。但是引用则总是指向在初始化被指定的对象，以后不能改变，但是指向的对象的其内容可以改变</li>
+<li>应用区别，有存在不指向任何对象的可能和不同时刻会指向不同的对象等情况时，使用指针；如果总是指向一个对象并且指向一个对象以后就不会改变指向，那么应该使用引用。</li>
+</ul>
+<h3 id="传递动态内存">传递动态内存<a hidden class="anchor" aria-hidden="true" href="#传递动态内存">#</a></h3>
+<pre tabindex="0"><code>void swap3(int *p, int *q) {
+	int *tmp;
+    tmp = p;
+    p = q;
+    q = tmp;//仅仅交换了指针的值，并没有改变两块内存的值
+}
+
+void swap4(int *p, int *q) {
+	int tmp;
+    tmp = *p;  //获取p指向内存的值
+    *p = *q;
+    *q = tmp;
+}
+
+void swap5(int &amp;p, int &amp;q) {
+	int tmp;
+    tmp = p; //获取p指向内存的值
+    p = q;
+    q = tmp;
+}
+</code></pre><p>//&mdash;&mdash;&mdash;&mdash;</p>
+<pre tabindex="0"><code>    int t1 = 1,t2 = 2;
+    cout &lt;&lt; t1 &lt;&lt; &#34;&#34;&lt;&lt; t2 &lt;&lt; endl;
+    swap3(&amp;t1,&amp;t2); //仅仅交换了指针的值，并没有改变两块内存的值
+    cout &lt;&lt; t1 &lt;&lt; &#34;&#34;&lt;&lt; t2 &lt;&lt; endl;
+    // 后面两个函数分别用指针和引用交换成功
+    swap4(&amp;t1,&amp;t2);
+    cout &lt;&lt; t1 &lt;&lt; &#34;&#34;&lt;&lt; t2 &lt;&lt; endl;
+    swap5(t1,t2);
+    cout &lt;&lt; t1 &lt;&lt; &#34;&#34;&lt;&lt; t2 &lt;&lt; endl;
+</code></pre><h3 id="malloc-申请内存">malloc 申请内存<a hidden class="anchor" aria-hidden="true" href="#malloc-申请内存">#</a></h3>
+<pre tabindex="0"><code>void getMemory_err(char *p, int num) {
+p = (char *)malloc(sizeof(char )* num);
+        // 没有return 指针，不能传递动态内存
+}
+
+//返回指针变量
+char *pGetMemory(char *p, int num) {
+p = (char *)malloc(sizeof(char )* num);
+        return p;
+}
+
+// 用指针的指针，
+void getMemory(char **p, int num) {
+*p = (char *)malloc(sizeof(char )* num);
+}
+</code></pre><p>//&mdash;&mdash;</p>
+<pre tabindex="0"><code>char *str = NULL;
+getMemory(&amp;str,10);
+strcpy(str,&#34;hello&#34;);
+
+char *str2 = NULL;
+str2 = pGetMemory(str2,10);
+strcpy(str2,&#34;test&#34;);
+
+cout&lt;&lt; *str &lt;&lt;endl;
+cout&lt;&lt; str &lt;&lt; endl;
+cout&lt;&lt; &amp;str &lt;&lt; endl;
+
+cout&lt;&lt; *str2 &lt;&lt;endl;
+cout&lt;&lt; str2 &lt;&lt; endl;
+cout&lt;&lt; &amp;str2 &lt;&lt; endl;
+</code></pre><p>output:</p>
+<pre tabindex="0"><code>    h
+    hello
+    012FF774
+    t
+    test
+    012FF768
+</code></pre><h3 id="字符串变量存储问题">字符串变量存储问题<a hidden class="anchor" aria-hidden="true" href="#字符串变量存储问题">#</a></h3>
+<pre tabindex="0"><code>int a = 0; //全局初始化区
+char *p1; //全局未初始化区
+int _tmain(int argc, _TCHAR* argv[]) {
+int b; //栈
+char s[] = &#34;abc&#34;; //s在栈上， 常量区会存储一份&#34;abc\0&#34;，用于共享，s[]初始化的时候拷贝过来放到栈上
+char *p2; //栈
+char *p3 = &#34;123456&#34;; //123456\0在常量区，p3在栈上。
+const char *m = &#34;123456&#34;; //m在栈上， “123456” 在常量区
+static int c =0; //全局（静态）初始化区
+p1 = (char *)malloc(10);
+p2 = (char *)malloc(20);
+//分配得来得10和20字节的区域就在堆区。
+strcpy(p1, &#34;123456&#34;); //123456\0放在常量区，编译器可能会将它与p3所指向的&#34;123456&#34; 优化成一个地方。
+
+cout &lt;&lt; (m == p3 ? 1: 0) &lt;&lt; endl;
+// out 1,
+cout &lt;&lt; (p1 == p3? 1: 0) &lt;&lt; endl;
+// out 0;
+cout &lt;&lt; p1 &lt;&lt; &#34;———&#34; &lt;&lt; p3 &lt;&lt; endl; // out 123456---123456
+
+return 0;
+}
+</code></pre><p>//&mdash;</p>
+<pre tabindex="0"><code>char *strA() {
+	char str[] = &#34;hello world&#34;;
+    cout &lt;&lt; &#34;in str[] &#34;&lt;&lt;endl;
+    cout &lt;&lt; &#34;before: &#34;&lt;&lt; str &lt;&lt; endl;
+    str[0] = &#39;t&#39;;
+    cout &lt;&lt;&#34;After:&#34; &lt;&lt; str &lt;&lt; endl;
+    return str;
+}
+
+char *pStrA_err() {
+	char *str = &#34;hello world&#34;;
+    cout &lt;&lt; &#34;in *str &#34;&lt;&lt;endl;
+    cout &lt;&lt; &#34;before: &#34;&lt;&lt; str &lt;&lt; endl;
+    //*str = &#39;P&#39;; // !!!!!!------runtime error 字符串常量保存在只读数据段
+    cout &lt;&lt;&#34;After:&#34; &lt;&lt; str &lt;&lt; endl;
+    return str;
+}
+char *pStrA(){
+    static char *str = &#34;hello world&#34;;
+    cout &lt;&lt; &#34;in *str &#34;&lt;&lt;endl;
+    cout &lt;&lt; &#34;before: &#34;&lt;&lt; str &lt;&lt; endl;
+    //*str = &#39;P&#39;; // !!!!!!------runtime error  ,字符串常量保存在只读数据段
+    cout &lt;&lt;&#34;After:&#34; &lt;&lt; str &lt;&lt; endl;
+    return str;
+}
+</code></pre><p>main:</p>
+<pre tabindex="0"><code>char *c = strA();
+char *c2 = pStrA_err();
+char *c3 = pStrA();
+
+cout &lt;&lt; &#34;After fun return:&#34; &lt;&lt; &#34;--c:&#34; &lt;&lt; c &lt;&lt; &#34;--c2:&#34; &lt;&lt; c2 &lt;&lt; &#34;--c3&#34; &lt;&lt; c3 &lt;&lt; endl;
+</code></pre><p>output:</p>
+<pre tabindex="0"><code>    in str[]
+    before: hello world
+    After:tello world
+    in *str
+    before: hello world
+    After:hello world
+    in *str
+    before: hello world
+    After:hello world
+    After fun return:--c:@?--c2:hello world--c3hello world
+</code></pre><p><strong>结论：</strong></p>
+<blockquote>
+<ul>
+<li>字符串数据保存在常量区，只读的数据段，不能直接修改</li>
+<li>函数内数组是局部变量，在函数内通过str[0] 可以修改。return之后，局部变量释放，</li>
+</ul>
+</blockquote>
+<h3 id="构造函数">构造函数<a hidden class="anchor" aria-hidden="true" href="#构造函数">#</a></h3>
+<pre tabindex="0"><code>class tA{
+public:
+        int _a;
+        tA(){
+                _a = 1;
+        }
+        void print(){
+                printf(&#34;%d&#34;,_a);
+        }
+};
+class tB :public tA{
+public:
+        int _a;
+        tB(){
+                _a = 2;
+        }
+
+};
+</code></pre><p>//&ndash;</p>
+<pre tabindex="0"><code>tB b;
+tB b;
+b.print(); // 在构造B类之前，先调用A的构造函数，在A类中_a =1,
+printf(&#34;%d&#34;,b._a); // B类中 _a = 2;
+return 0;
+    
+</code></pre><blockquote>
+<p>output:        12</p>
+</blockquote>
+<blockquote>
+<p>在构造B类之前，先调用A的构造函数</p>
+</blockquote>
+<h3 id="mallocfree-newdelete">malloc/free ＆＆new/delete<a hidden class="anchor" aria-hidden="true" href="#mallocfree-newdelete">#</a></h3>
+<ul>
+<li>malloc/free 是c++/c语言的标准库函数，new/delete是c++的运算符，它们都可以用于申请和释放动态内存</li>
+<li>由于malloc/free是库函数而不是运算符，不在编译器控制权限之内，不能执行构造函数和析构函数</li>
+<li>c++语言中new运算符， 能完成动态内存分配和初始化工作； delete 运算符完成清理和释放内存工作</li>
+</ul>
+<h3 id="指针和句柄">指针和句柄<a hidden class="anchor" aria-hidden="true" href="#指针和句柄">#</a></h3>
+<ul>
+<li>句柄和指针其实是两个截然不同的概念。</li>
+<li>windows系统用句柄标记系统资源，隐藏系统的信息，它是一个32bit的uint。</li>
+<li>指针则标记某个物理内存的地址</li>
+<li>句柄可以看做是指向指针的指针。</li>
+</ul>
+<h3 id="this-指针">this 指针<a hidden class="anchor" aria-hidden="true" href="#this-指针">#</a></h3>
+<ul>
+<li>本质上是一个函数参数，只是编译器隐藏起形式，语法层面的参数，this指针只能在成员函数中使用，全局函数，静态函数都不能使用this指针。 在python中直接显性给出</li>
+<li>this指针在成员函数的开始前构造，在成员的结束后清除</li>
+<li>this指针并不占用对象的空间， 只会占用参数传递时的栈空间，或者直接占用一个寄存器</li>
+<li>this指针会因编译器不同而有不同的存放位置，可能是堆，栈，也可能是寄存器。</li>
+<li>this指针只有在成员函数中才有定义。因此，在获得一个对象后，也不能通过对象使用this指针。所以，我们无法知道一个对象的this指针的位置（只有在成员函数中才有this指针的位置）</li>
+</ul>
+<h3 id="和-的优先级">“=”和“&lt;=” 的优先级<a hidden class="anchor" aria-hidden="true" href="#和-的优先级">#</a></h3>
+<p>1.(   (file_got_len = recv_str(sock,buf,BUF_SIZE) )    &lt;= 0)</p>
+<p>2.(     file_got_len = recv_str(sock,buf,BUF_SIZE) &lt;= 0   )</p>
+<p>第二种情况下，当recv_str()函数成功返回发送字符串的时候，尽管会成功返回发送字节数大于0，</p>
+<p>但是，file_got_len只会返回0，</p>
+<p>因为“&lt;=”的优先级大于“=”。</p>
+<p>所以在多语句写在一起时，最好用（） 明示！！</p>
+<h3 id="运算操作符">运算操作符<a hidden class="anchor" aria-hidden="true" href="#运算操作符">#</a></h3>
+<pre tabindex="0"><code>int i,t;
+t = (i=1)+(++i);
+</code></pre><p>输出
+<code>t= 4 </code></p>
+<p>i首先被赋值1，随后++i，使i的值变为2，到做加法的操作的时候，两个操作数都要读i此时的值，结果是两个2相加，等于4.</p>
+<p>其汇编程序（基于vs2010），如下：</p>
+<pre tabindex="0"><code>int i,t;
+t = (i=1)+(++i);
+011413FE  mov         dword ptr [i],1
+01141405  mov         eax,dword ptr [i]
+01141408  add         eax,1
+0114140B  mov         dword ptr [i],eax
+0114140E  mov         ecx,dword ptr [i]
+01141411  add         ecx,dword ptr [i]
+01141414  mov         dword ptr [t],ecx
+</code></pre><p>i自加后，只保留在eax 寄存器里，然后将eax的2赋给i，所以，i 就变成2了。此处和动态语言的引用似乎有所类似。</p>
+<h3 id="sizeof操作符与数组">sizeof操作符与数组<a hidden class="anchor" aria-hidden="true" href="#sizeof操作符与数组">#</a></h3>
+<pre tabindex="0"><code>int t,tt,num;
+int array[5];
+int *p = array;
+
+t= sizeof(p); //t =4
+t= sizeof(int [5]);     // t= 20
+tt = sizeof(array);     // tt = 20
+num = sizeof(array)/sizeof(array[0]);  // get the number of array .  num =5
+</code></pre><p>开始自以为，数组名不是首地址嘛。 应该是一个指针，然后对指针sizeof ，应该是4
+个字节才对，<strong>为什么呢？</strong></p>
+<p>此时<strong>sizeof的是整个数组，而非首指针</strong>。
+要学会多查看<a href="https://msdn.microsoft.com/en-us/library/0w557fh7.aspx">MSDN</a>，解释如下：</p>
+<blockquote>
+<p>When you apply the sizeof operator to an array identifier, the result is the size of the entire array rather than the size of the pointer represented by the array identifier.</p>
+</blockquote>
+<hr>
+<p>参考：</p>
+<p>程序员面试宝典（第五版）</p>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:58211/tags/c&#43;&#43;/">C&#43;&#43;</a></li>
+      <li><a href="http://localhost:58211/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/">编程基础</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:58211/posts/dl_server_ubuntu14_cuda8_gtx1080/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>DL服务器主机环境配置 ubuntu14.04 &amp;&amp; Cuda8.0</span>
+  </a>
+  <a class="next" href="http://localhost:58211/posts/pybrain_example_nfq_code_flow/">
+    <span class="title">Next »</span>
+    <br>
+    <span>PyBrain库的example之NFQ流程图分析</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>© 2017-2024 <a href="http://www.imxwell.com">xwell</a> All Rights Reserved</span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

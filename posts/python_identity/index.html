@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=58211&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Python 有关引用的一些问题 | Xwell</title>
+<meta name="keywords" content="Python, 编程基础, 引用">
+<meta name="description" content="Python中引用的一些分析记录">
+<meta name="author" content="xwell">
+<link rel="canonical" href="http://localhost:58211/posts/python_identity/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.fc220c15db4aef0318bbf30adc45d33d4d7c88deff3238b23eb255afdc472ca6.css" integrity="sha256-/CIMFdtK7wMYu/MK3EXTPU18iN7/MjiyPrJVr9xHLKY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:58211/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:58211/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:58211/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:58211/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:58211/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:58211/posts/python_identity/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="Python 有关引用的一些问题" />
+<meta property="og:description" content="Python中引用的一些分析记录" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:58211/posts/python_identity/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2016-05-21T14:24:00+00:00" />
+<meta property="article:modified_time" content="2016-05-21T14:24:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Python 有关引用的一些问题"/>
+<meta name="twitter:description" content="Python中引用的一些分析记录"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:58211/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Python 有关引用的一些问题",
+      "item": "http://localhost:58211/posts/python_identity/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Python 有关引用的一些问题",
+  "name": "Python 有关引用的一些问题",
+  "description": "Python中引用的一些分析记录",
+  "keywords": [
+    "Python", "编程基础", "引用"
+  ],
+  "articleBody": "有关Python中引用特性的一些分析记录，包括对象的初始化，值拷贝等特性。\nprint id.__doc__ ​ id(object) -\u003e integer Return the identity of an object. This is guaranteed to be unique among simultaneously existing objects. (Hint: it's the object's memory address.) python中的引用对象特点： python不允许程序员选择采用传值还是传引用。 Python参数传递采用的肯定是“传对象引用”的方式。实际上，这种方式相当于传值和传引用的一种综合。如果函数收到的是一个可变对象（比如字典或者列表）的引用，就能修改对象的原始值——相当于通过“传引用”来传递对象。 如果函数收到的是一个不可变对象（比如数字、字符或者元组）的引用，就不能直接修改原始对象——相当于通过“传值’来传递对象。 当人们复制列表或字典时，就复制了对象列表的引用，如果改变引用的值，则修改了原始的参数。 为了简化内存管理，Python通过引用计数机制实现自动垃圾回收功能，Python中的每个对象都有一个引用计数，用来计数该对象在不同场所分别被引用了多少次。每当引用一次Python对象，相应的引用计数就增1，每当消毁一次Python对象，则相应的引用就减1，只有当引用计数为零时，才真正从内存中删除Python对象。 参考 以下是一些例子：\nIn [19]:\n# variable 动态创建一个新的变量，但是，list，tuple，dictionary 却不会创建新的实例 a= 1 b = a print id(a) print id(b) ​ b = 3 print \"change b to 3 \" print \"a: %s, b: %s\" %(a ,b) print \"a id is : %s; b id is : %s\" %(id(a),id(b)) out:\n42295960 42295960 change b to 3 a: 1, b: 3 a id is : 42295960; b id is : 42295912 In [25]:\n# list a= [1,2,3] b = a # 引用 print id(a) print id(b) ​ b[2] = 6 print \"change b to 3 \" print \"a: %s, b: %s\" %(a ,b) print \"a id is : %s; b id is : %s\" %(id(a),id(b)) out：\n66189960 66189960 change b to 3 a: [1, 2, 6], b: [1, 2, 6] a id is : 66189960; b id is : 66189960 In [38]:\n# list a= [1,2,3] b = a[:] # 值拷贝， 创建了新的对象实例 print id(a) print id(b) ​ b[2] = 6 print \"change b to 3 \" print \"a: %s, b: %s\" %(a ,b) print \"a id is : %s; b id is : %s\" %(id(a),id(b)) out：\n65422344 65421832 change b to 3 a: [1, 2, 3], b: [1, 2, 6] a id is : 65422344; b id is : 65421832 In [32]:\n# dictionary a= {'ta':11,'tb':22,'tc':33} b = a # 引用，改变的是原实例的值 print id(a) print id(b) ​ b['tb'] = 6 print \"change b to 3 \" print \"a: %s,\\n b: %s\" %(a ,b) print \"a id is : %s;\\n b id is : %s\" %(id(a),id(b)) out：\n66214904 66214904 change b to 3 a: {'tb': 6, 'tc': 33, 'ta': 11}, b: {'tb': 6, 'tc': 33, 'ta': 11} a id is : 66214904; b id is : 66214904 In [36]:\n# tuple 元组用\"()\"标识。内部元素用逗号隔开。但是元组不能二次赋值，相当于只读列表。 a= (1,2,3) b = a print id(a) print id(b) ​ # b[0] = 6 print \"change b to 3 \" print \"a: %s,\\n b: %s\" %(a ,b) print \"a id is : %s;\\n b id is : %s\" %(id(a),id(b)) out：\n66132296 66132296 change b to 3 a: (1, 2, 3), b: (1, 2, 3) a id is : 66132296; b id is : 66132296 In [9]:此案例的问题来自博文 ，经改进。如下\ndef add_list(p): pt = p +[5,6] # 1 p = p + [5,6] # 2 1 和2 是等价的，没有将值返回， ‘=’左边的变量，都是函数内部生成的局部临时对象，并没有返回，故不会修改传入参数的值。 # 此处和静态语言的理解方式是一样的。 ​ p1 = [1,2,3] add_list(p1) #1 和2 是等价的，没有改变返回值 print p1 ​ ​ def add_list2(p): p += [5,6] p2 = [1,2,3] add_list2(p2) print p2 out：​\n[1, 2, 3] [1, 2, 3, 5, 6] 此处‘=’号左边的p 应该是一个函数新建的一个局部的、临时的对象实例，等号的右边的p是才是函数传进来的，由于临时的“P”并没有返回，故肯定不会改变传入list的值。此处和静态语言应该是一致的。 所以，它并没有修改原来的p引用。\nIn [6]:\nhelp('+=') An augmented assignment expression like \"x += 1\" can be rewritten as \"x = x + 1\" to achieve a similar, but not exactly equal effect. In the augmented version, \"x\" is only evaluated once. Also, when possible, the actual operation is performed *in-place*, meaning that rather than creating a new object and assigning that to the target, the old object is modified instead. In [11]:\n# 字典引用 a = [] b = {'num':0, 'sqrt':0} resurse = [1,2,3] for i in resurse: b['num'] = i b['sqrt'] = i * i a.append(b) print \"a: \",a ​ d=[] for i in resurse: b['num'] = i b['sqrt'] = i * i d1 = b.copy() d.append(d1) print \"d: \",d ​ c=[] for i in resurse: c.append({\"num\":i, \"sqrt\":i*i}) print \"c: \",c out：\n​a: [{'num': 3, 'sqrt': 9}, {'num': 3, 'sqrt': 9}, {'num': 3, 'sqrt': 9}] d: [{'num': 1, 'sqrt': 1}, {'num': 2, 'sqrt': 4}, {'num': 3, 'sqrt': 9}] c: [{'num': 1, 'sqrt': 1}, {'num': 2, 'sqrt': 4}, {'num': 3, 'sqrt': 9}] b[’num’] = i 和 b[‘sqrt’] = i * i 中的 b[’num’] 和 b[‘sqrt’] 是已经压入list a 中元素的一个引用，故它可以在不断地改变list 内部变量的值。\n单步调试可以看到，\na中值的变化情况：*以执行完语句a.append(b)为节点 *\n[{’num’: 1, ‘sqrt’: 1}]\n–\u003e [{’num’: 2, ‘sqrt’: 4},{’num’: 2, ‘sqrt’: 4}]\n–\u003e [{’num’: 3, ‘sqrt’: 9}, {’num’: 3, ‘sqrt’: 9}, {’num’: 3, ‘sqrt’: 9}]\n在append(b)到list a之前获得b的值拷贝，将值append 到list a 也可以达到目标。如示例d所示。\n​ 当然，示例C是更加简洁的一个版本，这里应该还有迭代器的知识点，暂时还没折腾内部，待到下次和生成器一起分析。\n",
+  "wordCount" : "665",
+  "inLanguage": "en",
+  "datePublished": "2016-05-21T14:24:00Z",
+  "dateModified": "2016-05-21T14:24:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "xwell"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:58211/posts/python_identity/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Xwell",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:58211/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:58211/" accesskey="h" title="Xwell (Alt + H)">Xwell</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:58211/publications/" title="Publications">
+                    <span>Publications</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:58211/posts/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:58211/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:58211/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:58211/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:58211/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Python 有关引用的一些问题
+    </h1>
+    <div class="post-description">
+      Python中引用的一些分析记录
+    </div>
+    <div class="post-meta"><span title='2016-05-21 14:24:00 +0000 UTC'>May 21, 2016</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;xwell
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#python%e4%b8%ad%e7%9a%84%e5%bc%95%e7%94%a8%e5%af%b9%e8%b1%a1%e7%89%b9%e7%82%b9" aria-label="python中的引用对象特点：">python中的引用对象特点：</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>有关Python中引用特性的一些分析记录，包括对象的初始化，值拷贝等特性。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span> <span class="nb">id</span><span class="o">.</span><span class="vm">__doc__</span>
+</span></span><span class="line"><span class="cl"><span class="err">​</span>
+</span></span><span class="line"><span class="cl"><span class="nb">id</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">integer</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Return</span> <span class="n">the</span> <span class="n">identity</span> <span class="n">of</span> <span class="n">an</span> <span class="nb">object</span><span class="o">.</span>  <span class="n">This</span> <span class="ow">is</span> <span class="n">guaranteed</span> <span class="n">to</span> <span class="n">be</span> <span class="n">unique</span> <span class="n">among</span>
+</span></span><span class="line"><span class="cl"><span class="n">simultaneously</span> <span class="n">existing</span> <span class="n">objects</span><span class="o">.</span>  <span class="p">(</span><span class="n">Hint</span><span class="p">:</span> <span class="n">it</span><span class="s1">&#39;s the object&#39;</span><span class="n">s</span> <span class="n">memory</span> <span class="n">address</span><span class="o">.</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="python中的引用对象特点">python中的引用对象特点：<a hidden class="anchor" aria-hidden="true" href="#python中的引用对象特点">#</a></h3>
+<ul>
+<li>python不允许程序员选择采用传值还是传引用。
+<ul>
+<li>Python参数传递采用的肯定是“传对象引用”的方式。实际上，这种方式相当于传值和传引用的一种综合。如果函数收到的是一个可变对象（比如字典或者列表）的引用，就能修改对象的原始值——相当于通过“传引用”来传递对象。</li>
+<li>如果函数收到的是一个不可变对象（比如数字、字符或者元组）的引用，就不能直接修改原始对象——相当于通过“传值&rsquo;来传递对象。</li>
+</ul>
+</li>
+<li>当人们复制列表或字典时，就复制了对象列表的引用，如果改变引用的值，则修改了原始的参数。</li>
+<li>为了简化内存管理，Python通过引用计数机制实现自动垃圾回收功能，Python中的每个对象都有一个引用计数，用来计数该对象在不同场所分别被引用了多少次。每当引用一次Python对象，相应的引用计数就增1，每当消毁一次Python对象，则相应的引用就减1，只有当引用计数为零时，才真正从内存中删除Python对象。
+<a href="http://www.cnblogs.com/yuyan/archive/2012/04/21/2461673.html">参考</a></li>
+</ul>
+<p>以下是一些例子：</p>
+<p>In [19]:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># variable 动态创建一个新的变量，但是，list，tuple，dictionary 却不会创建新的实例</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="err">​</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="s2">&#34;change b to 3 &#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span>  <span class="s2">&#34;a: </span><span class="si">%s</span><span class="s2">, b: </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span><span class="p">(</span><span class="n">a</span> <span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="s2">&#34;a id is : </span><span class="si">%s</span><span class="s2">; b id is : </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</span></span></code></pre></div><p>out:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">42295960</span>
+</span></span><span class="line"><span class="cl"><span class="mi">42295960</span>
+</span></span><span class="line"><span class="cl"><span class="n">change</span> <span class="n">b</span> <span class="n">to</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="nb">id</span> <span class="ow">is</span> <span class="p">:</span> <span class="mi">42295960</span><span class="p">;</span> <span class="n">b</span> <span class="nb">id</span> <span class="ow">is</span> <span class="p">:</span> <span class="mi">42295912</span>
+</span></span></code></pre></div><p>In [25]:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># list</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>   <span class="c1"># 引用</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="err">​</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">6</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="s2">&#34;change b to 3 &#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span>  <span class="s2">&#34;a: </span><span class="si">%s</span><span class="s2">, b: </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span><span class="p">(</span><span class="n">a</span> <span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="s2">&#34;a id is : </span><span class="si">%s</span><span class="s2">; b id is : </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</span></span></code></pre></div><p>out：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">66189960</span>
+</span></span><span class="line"><span class="cl"><span class="mi">66189960</span>
+</span></span><span class="line"><span class="cl"><span class="n">change</span> <span class="n">b</span> <span class="n">to</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="n">b</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="nb">id</span> <span class="ow">is</span> <span class="p">:</span> <span class="mi">66189960</span><span class="p">;</span> <span class="n">b</span> <span class="nb">id</span> <span class="ow">is</span> <span class="p">:</span> <span class="mi">66189960</span>
+</span></span></code></pre></div><p>In [38]:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># list</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">[:]</span> <span class="c1"># 值拷贝， 创建了新的对象实例</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="err">​</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">6</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="s2">&#34;change b to 3 &#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span>  <span class="s2">&#34;a: </span><span class="si">%s</span><span class="s2">, b: </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span><span class="p">(</span><span class="n">a</span> <span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="s2">&#34;a id is : </span><span class="si">%s</span><span class="s2">; b id is : </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</span></span></code></pre></div><p>out：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">65422344</span>
+</span></span><span class="line"><span class="cl"><span class="mi">65421832</span>
+</span></span><span class="line"><span class="cl"><span class="n">change</span> <span class="n">b</span> <span class="n">to</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">b</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="nb">id</span> <span class="ow">is</span> <span class="p">:</span> <span class="mi">65422344</span><span class="p">;</span> <span class="n">b</span> <span class="nb">id</span> <span class="ow">is</span> <span class="p">:</span> <span class="mi">65421832</span>
+</span></span></code></pre></div><p>In [32]:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># dictionary</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ta&#39;</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="s1">&#39;tb&#39;</span><span class="p">:</span><span class="mi">22</span><span class="p">,</span><span class="s1">&#39;tc&#39;</span><span class="p">:</span><span class="mi">33</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="n">a</span> <span class="c1"># 引用，改变的是原实例的值</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="err">​</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span><span class="p">[</span><span class="s1">&#39;tb&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">6</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="s2">&#34;change b to 3 &#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span>  <span class="s2">&#34;a: </span><span class="si">%s</span><span class="s2">,</span><span class="se">\n</span><span class="s2"> b: </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span><span class="p">(</span><span class="n">a</span> <span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="s2">&#34;a id is : </span><span class="si">%s</span><span class="s2">;</span><span class="se">\n</span><span class="s2"> b id is : </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</span></span></code></pre></div><p>out：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">66214904</span>
+</span></span><span class="line"><span class="cl"><span class="mi">66214904</span>
+</span></span><span class="line"><span class="cl"><span class="n">change</span> <span class="n">b</span> <span class="n">to</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;tb&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;tc&#39;</span><span class="p">:</span> <span class="mi">33</span><span class="p">,</span> <span class="s1">&#39;ta&#39;</span><span class="p">:</span> <span class="mi">11</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl"> <span class="n">b</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;tb&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;tc&#39;</span><span class="p">:</span> <span class="mi">33</span><span class="p">,</span> <span class="s1">&#39;ta&#39;</span><span class="p">:</span> <span class="mi">11</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="nb">id</span> <span class="ow">is</span> <span class="p">:</span> <span class="mi">66214904</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"> <span class="n">b</span> <span class="nb">id</span> <span class="ow">is</span> <span class="p">:</span> <span class="mi">66214904</span>
+</span></span></code></pre></div><p>In [36]:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># tuple 元组用&#34;()&#34;标识。内部元素用逗号隔开。但是元组不能二次赋值，相当于只读列表。</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="err">​</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># b[0] = 6</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="s2">&#34;change b to 3 &#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span>  <span class="s2">&#34;a: </span><span class="si">%s</span><span class="s2">,</span><span class="se">\n</span><span class="s2"> b: </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span><span class="p">(</span><span class="n">a</span> <span class="p">,</span><span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="s2">&#34;a id is : </span><span class="si">%s</span><span class="s2">;</span><span class="se">\n</span><span class="s2"> b id is : </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">),</span><span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</span></span></code></pre></div><p>out：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="mi">66132296</span>
+</span></span><span class="line"><span class="cl"><span class="mi">66132296</span>
+</span></span><span class="line"><span class="cl"><span class="n">change</span> <span class="n">b</span> <span class="n">to</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"> <span class="n">b</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="nb">id</span> <span class="ow">is</span> <span class="p">:</span> <span class="mi">66132296</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"> <span class="n">b</span> <span class="nb">id</span> <span class="ow">is</span> <span class="p">:</span> <span class="mi">66132296</span>
+</span></span></code></pre></div><p>In [9]:此案例的问题来自<a href="http://www.cnblogs.com/yuyan/archive/2012/04/21/2461673.html">博文</a> ，经改进。如下</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">add_list</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pt</span> <span class="o">=</span> <span class="n">p</span> <span class="o">+</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>  <span class="c1"># 1</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span> <span class="o">=</span> <span class="n">p</span> <span class="o">+</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>  <span class="c1"># 2   1 和2 是等价的，没有将值返回， ‘=’左边的变量，都是函数内部生成的局部临时对象，并没有返回，故不会修改传入参数的值。</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 此处和静态语言的理解方式是一样的。</span>
+</span></span><span class="line"><span class="cl"><span class="err">​</span>
+</span></span><span class="line"><span class="cl"><span class="n">p1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">add_list</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>  <span class="c1">#1 和2 是等价的，没有改变返回值</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="n">p1</span>
+</span></span><span class="line"><span class="cl"><span class="err">​</span>
+</span></span><span class="line"><span class="cl"><span class="err">​</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">add_list2</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span> <span class="o">+=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">p2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">add_list2</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="n">p2</span>
+</span></span></code></pre></div><p>out：​</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</span></span></code></pre></div><p>此处‘=’号左边的p 应该是一个函数新建的一个局部的、临时的对象实例，等号的右边的p是才是函数传进来的，由于临时的“P”并没有返回，故肯定不会改变传入list的值。此处和静态语言应该是一致的。 所以，它并没有修改原来的p引用。</p>
+<p>In [6]:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">help</span><span class="p">(</span><span class="s1">&#39;+=&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">An</span> <span class="n">augmented</span> <span class="n">assignment</span> <span class="n">expression</span> <span class="n">like</span> <span class="s2">&#34;x += 1&#34;</span> <span class="n">can</span> <span class="n">be</span> <span class="n">rewritten</span> <span class="k">as</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;x = x + 1&#34;</span> <span class="n">to</span> <span class="n">achieve</span> <span class="n">a</span> <span class="n">similar</span><span class="p">,</span> <span class="n">but</span> <span class="ow">not</span> <span class="n">exactly</span> <span class="n">equal</span> <span class="n">effect</span><span class="o">.</span> <span class="n">In</span> <span class="n">the</span>
+</span></span><span class="line"><span class="cl"><span class="n">augmented</span> <span class="n">version</span><span class="p">,</span> <span class="s2">&#34;x&#34;</span> <span class="ow">is</span> <span class="n">only</span> <span class="n">evaluated</span> <span class="n">once</span><span class="o">.</span> <span class="n">Also</span><span class="p">,</span> <span class="n">when</span> <span class="n">possible</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="n">the</span> <span class="n">actual</span> <span class="n">operation</span> <span class="ow">is</span> <span class="n">performed</span> <span class="o">*</span><span class="ow">in</span><span class="o">-</span><span class="n">place</span><span class="o">*</span><span class="p">,</span> <span class="n">meaning</span> <span class="n">that</span> <span class="n">rather</span> <span class="n">than</span>
+</span></span><span class="line"><span class="cl"><span class="n">creating</span> <span class="n">a</span> <span class="n">new</span> <span class="nb">object</span> <span class="ow">and</span> <span class="n">assigning</span> <span class="n">that</span> <span class="n">to</span> <span class="n">the</span> <span class="n">target</span><span class="p">,</span> <span class="n">the</span> <span class="n">old</span> <span class="nb">object</span>
+</span></span><span class="line"><span class="cl"><span class="ow">is</span> <span class="n">modified</span> <span class="n">instead</span><span class="o">.</span>
+</span></span></code></pre></div><p>In [11]:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 字典引用</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;num&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;sqrt&#39;</span><span class="p">:</span><span class="mi">0</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">resurse</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">resurse</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">b</span><span class="p">[</span><span class="s1">&#39;num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">  <span class="n">b</span><span class="p">[</span><span class="s1">&#39;sqrt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">  <span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="s2">&#34;a: &#34;</span><span class="p">,</span><span class="n">a</span>
+</span></span><span class="line"><span class="cl"><span class="err">​</span>
+</span></span><span class="line"><span class="cl"><span class="n">d</span><span class="o">=</span><span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">resurse</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">b</span><span class="p">[</span><span class="s1">&#39;num&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">    <span class="n">b</span><span class="p">[</span><span class="s1">&#39;sqrt&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">    <span class="n">d1</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">d</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="s2">&#34;d: &#34;</span><span class="p">,</span><span class="n">d</span>
+</span></span><span class="line"><span class="cl"><span class="err">​</span>
+</span></span><span class="line"><span class="cl"><span class="n">c</span><span class="o">=</span><span class="p">[]</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">resurse</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&#34;num&#34;</span><span class="p">:</span><span class="n">i</span><span class="p">,</span> <span class="s2">&#34;sqrt&#34;</span><span class="p">:</span><span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span> <span class="s2">&#34;c: &#34;</span><span class="p">,</span><span class="n">c</span>
+</span></span></code></pre></div><p>out：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="err">​</span><span class="n">a</span><span class="p">:</span>  <span class="p">[{</span><span class="s1">&#39;num&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;sqrt&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;num&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;sqrt&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;num&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;sqrt&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">}]</span>
+</span></span><span class="line"><span class="cl"><span class="n">d</span><span class="p">:</span>  <span class="p">[{</span><span class="s1">&#39;num&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;sqrt&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;num&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;sqrt&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;num&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;sqrt&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">}]</span>
+</span></span><span class="line"><span class="cl"><span class="n">c</span><span class="p">:</span>  <span class="p">[{</span><span class="s1">&#39;num&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;sqrt&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;num&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;sqrt&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;num&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;sqrt&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">}]</span>
+</span></span></code></pre></div><p>b[&rsquo;num&rsquo;] = i  和 b[&lsquo;sqrt&rsquo;] = i * i  中的 b[&rsquo;num&rsquo;] 和 b[&lsquo;sqrt&rsquo;] 是已经<strong>压入list a 中元素的一个引用</strong>，故它可以在不断地改变list 内部变量的值。</p>
+<p>单步调试可以看到，</p>
+<p>a中值的变化情况：*以执行完语句a.append(b)为节点 *</p>
+<p>[{&rsquo;num&rsquo;: 1, &lsquo;sqrt&rsquo;: 1}]</p>
+<p>&ndash;&gt; [{&rsquo;num&rsquo;: 2, &lsquo;sqrt&rsquo;: 4},{&rsquo;num&rsquo;: 2, &lsquo;sqrt&rsquo;: 4}]</p>
+<p>&ndash;&gt;  [{&rsquo;num&rsquo;: 3, &lsquo;sqrt&rsquo;: 9}, {&rsquo;num&rsquo;: 3, &lsquo;sqrt&rsquo;: 9}, {&rsquo;num&rsquo;: 3, &lsquo;sqrt&rsquo;: 9}]</p>
+<p>在append(b)到list a之前获得b的值拷贝，将值append 到list a 也可以达到目标。如<strong>示例d</strong>所示。</p>
+<p>​
+当然，示例C是更加简洁的一个版本，这里应该还有迭代器的知识点，暂时还没折腾内部，待到下次和生成器一起分析。</p>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:58211/tags/python/">Python</a></li>
+      <li><a href="http://localhost:58211/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/">编程基础</a></li>
+      <li><a href="http://localhost:58211/tags/%E5%BC%95%E7%94%A8/">引用</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:58211/posts/pybrain_example_nfq_code_flow/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>PyBrain库的example之NFQ流程图分析</span>
+  </a>
+  <a class="next" href="http://localhost:58211/posts/py_builted_func/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Python内建函数</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>© 2017-2024 <a href="http://www.imxwell.com">xwell</a> All Rights Reserved</span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

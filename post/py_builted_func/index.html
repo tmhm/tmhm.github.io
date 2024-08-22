@@ -1,531 +1,382 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Python内建函数 - fooweel</title>
-  <meta name="renderer" content="webkit" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<html lang="en" dir="auto">
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Python内建函数 | Xwell&#39;s Blog</title>
+<meta name="keywords" content="Python, 内置函数">
+<meta name="description" content="Python中一些有用的内置函数，map，zip，filter，reduce，yield，instance等">
+<meta name="author" content="xwell">
+<link rel="canonical" href="http://localhost:1313/post/py_builted_func/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.fc220c15db4aef0318bbf30adc45d33d4d7c88deff3238b23eb255afdc472ca6.css" integrity="sha256-/CIMFdtK7wMYu/MK3EXTPU18iN7/MjiyPrJVr9xHLKY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/post/py_builted_func/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
-<meta name="theme-color" content="#f8f5ec" />
-<meta name="msapplication-navbutton-color" content="#f8f5ec">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
 
+            .list {
+                background: var(--theme);
+            }
 
-<meta name="author" content="fooweel" /><meta name="description" content="Python中一些有用的内置函数，map，zip，filter，reduce，yield，instance等" /><meta name="keywords" content="Hugo, theme, even" />
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
 
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
 
-
-
-
-
-<meta name="generator" content="Hugo 0.101.0 with theme even" />
-
-
-<link rel="canonical" href="http://localhost:1313/post/py_builted_func/" />
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-
-
-
-<link href="/sass/main.min.f92fd13721ddf72129410fd8250e73152cc6f2438082b6c0208dc24ee7c13fc4.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
-
+    </style>
+</noscript>
+  
 
 <meta property="og:title" content="Python内建函数" />
 <meta property="og:description" content="Python中一些有用的内置函数，map，zip，filter，reduce，yield，instance等" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/py_builted_func/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="http://localhost:1313/post/py_builted_func/" />
+<meta property="og:image" content="http://localhost:1313/images/papermod-cover.png" />
+<meta property="article:section" content="post" />
 <meta property="article:published_time" content="2016-05-17T15:06:00+00:00" />
 <meta property="article:modified_time" content="2019-03-17T15:00:00+00:00" />
 
-<meta itemprop="name" content="Python内建函数">
-<meta itemprop="description" content="Python中一些有用的内置函数，map，zip，filter，reduce，yield，instance等"><meta itemprop="datePublished" content="2016-05-17T15:06:00+00:00" />
-<meta itemprop="dateModified" content="2019-03-17T15:00:00+00:00" />
-<meta itemprop="wordCount" content="1768">
-<meta itemprop="keywords" content="Python,内置函数," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/images/papermod-cover.png" />
 <meta name="twitter:title" content="Python内建函数"/>
 <meta name="twitter:description" content="Python中一些有用的内置函数，map，zip，filter，reduce，yield，instance等"/>
 
-<!--[if lte IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
-<![endif]-->
 
-<!--[if lt IE 9]>
-  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
-<![endif]-->
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Python内建函数",
+      "item": "http://localhost:1313/post/py_builted_func/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Python内建函数",
+  "name": "Python内建函数",
+  "description": "Python中一些有用的内置函数，map，zip，filter，reduce，yield，instance等",
+  "keywords": [
+    "Python", "内置函数"
+  ],
+  "articleBody": "Python中一些有用的内置函数，包括map，zip，filter，reduce，yield，instance等函数，以及异步IO库asyncio的使用记录\nmap函数 Python实际上提供了一个内置的工具，map函数。这个函数的主要功能是对一个序列对象中的每一个元素应用被传入的函数，并且返回一个包含了所有函数调用结果的一个列表。\nmap?\nDocstring: map(function, sequence[, sequence, ...]) -\u003e list Return a list of the results of applying the function to the items of the argument sequence(s). If more than one sequence is given, the function is called with an argument list consisting of the corresponding item of each sequence, substituting None for missing values when not all sequences have the same length. If the function is None, return a list of the items of the sequence (or a list of tuples if more than one sequence). Type: builtin_function_or_method 下面三个例子参考了该博文 ​ 对可迭代函数’iterable’中的每一个元素应用‘function’方法，将结果作为list返回。\ndef add100(x): return x+100 hh = [11,22,33] map(add100,hh) Out[2]: [111, 122, 133] 如果给出了额外的可迭代参数，则对每个可迭代参数中的元素‘并行’的应用‘function’。\ndef abc(a, b, c): return a*10000 + b*100 + c ​ list1 = [11,22,33] list2 = [44,55,66] list3 = [77,88,99] map(abc,list1,list2,list3) Out[3]: [114477, 225588, 336699] 如果’function’给出的是‘None’，自动假定一个‘identity’函数（这个‘identity’不知道怎么解释，看例子吧）\nlist1 = [11,22,33] map(None,list1) Out[5]: [11, 22, 33] list1 = [11,22,33] list2 = [44,55,66] list3 = [77,88,99] map(None,list1,list2,list3) Out[6]: [(11, 44, 77), (22, 55, 88), (33, 66, 99)] zip函数 以下参考了博文\n函式说明：zip(seq1[,seq2 […]])-\u003e[(seq1(0),seq2(0)…,(…)]。 同时循环两个一样长的函数，返回一个包含每个参数元组对应元素的元组。若不一致，采取截取方式，使得返回的结果元组的长度为各参数元组长度最小值。\nfor x,y in zip([1,2,3],[4,5,6]): print x,y for x,y in zip([1,2,3],[4,5,6]): print x,y 1 4 2 5 3 6 for x,y in zip([1,2,3],[5,6]): print x,y 1 5 2 6 filter函数 filter(bool_func,seq)：此函数的功能相当于过滤器。 调用一个布尔函数bool_func来迭代遍历每个seq中的元素，返回一个使bool_seq返回值为true的元素的序列。\nfilter(lambda x:x%2==0,[1,2,3,4,6,5,7]) Out[15]: [2, 4, 6] reduce函数 reduce(func,seq[,init])：func为二元函数，将func作用于seq序列的元素，每次携带一对（先前的结果以及下一个序列的元素），连续的将现有的结果和下一个值作用在获得的随后的结果上，最后减少我们的序列为一个单一的返回值：如果初始值init给定，第一个比较会是init和第一个序列元素而不是序列的头两个元素。\nreduce(lambda x,y:x+y,[1,2,3,4]) Out[22]: 10 reduce(lambda x,y: x-y,[1,2,3,4,5],19) reduce(lambda x,y: x-y,[1,2,3,4,5],19) Out[23]: 4 reduce(lambda x,y: x-y,[1,2,3,5],5) Out[21]: -6 isinstance isinstance(object, classinfo) 判断一个对象是否是一个已知的类型。\nisinstance(object, class-or-type-or-tuple) -\u003e bool Return whether an object is an instance of a class or of a subclass thereof. With a type as second argument, return whether that is the object's type. The form using a tuple, isinstance(x, (A, B, ...)), is a shortcut for isinstance(x, A) or isinstance(x, B) or ... (etc.). 其第一个参数为对象，第二个为类型名或类型名的一个列表。其返回值为布尔型。若对象的类型与参数二的类型相同则返回True。若参数二为一个元组，则若对象类型与元组中类型名之一相同即返回True。\ntes = list() tes.append(3) ta= 'a','b' print tes print isinstance(tes, list) print isinstance(ta, tuple) print isinstance(tes,(int, tuple, list)) print isinstance(tes,(int, tuple)) Out:\n[3] True True True False id 查看object 地址\nin： print id.__doc__\nOut：​ id(object) -\u003e integer\nReturn the identity of an object. This is guaranteed to be unique among simultaneously existing objects. (Hint: it's the object's memory address.) assert 断言\nPython中assert用来判断语句的真假，如果为假的时候，将触发AssertionError错误\na = None assert a != None print a out：\nAssertionError Traceback (most recent call last) in () 1 2 a = None ----\u003e 3 assert a != None 4 print a AssertionError: 另一例子：\na=[1,2,3] # a = None assert len(a) \u003c 5 # 为真通过 assert a != None print a out：\n[1, 2, 3] min \u0026\u0026 max c = [-10, -45, 0, 5, 3, 50, 15, -20, 25] print \"min: %s\" %c.index(min(c)) # 返回最小值 print \"max: %s\" %c.index(max(c)) # 返回最大值 out:\nmin: 1 max: 5 异步IO asyncio 系统含有DNN 算法，需处理大量的数据 避免使用多进程/进程，带来大量切换开销 进程内有http的请求操作（e.g TF-serving 做模型推理)，IO操作频繁 该场景下，协程是一个较好的方案， 将数据的准备和推理并行 可以将多个模型并行推理（后台使用K8s 部署管理tf-serving实例， 进行负载均衡） 示例\nimport time import asyncio import json import functools now = lambda: time.time() async def do_some_work(index, x): sec = 0.5 count = 8 print(\"proc-%s, wait sec: %s\" % (index, sec)) await asyncio.sleep(sec) return json.dumps({\"result\": list([0.5*_i*x for _i in range(count)])}) def callback(t, future): print('Callback-%s, results: %s' % (t, future.result())) task_num = 5 start = now() tasks = [asyncio.ensure_future(do_some_work(_i, _i)) for _i in range(task_num)] loop = asyncio.get_event_loop() [task.add_done_callback(functools.partial(callback, _index)) for _index, task in enumerate(tasks)] loop.run_until_complete(asyncio.wait(tasks)) for task in tasks: print('Task ret: ', task.result()) print('TIME: ', now() - start) REF\n",
+  "wordCount" : "528",
+  "inLanguage": "en",
+  "image": "http://localhost:1313/images/papermod-cover.png","datePublished": "2016-05-17T15:06:00Z",
+  "dateModified": "2019-03-17T15:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "xwell"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/post/py_builted_func/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Xwell's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
-<body>
-  <div id="mobile-navbar" class="mobile-navbar">
-  <div class="mobile-header-logo">
-    <a href="/" class="logo">FooWeel&#39;s Blog</a>
-  </div>
-  <div class="mobile-navbar-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-<nav id="mobile-menu" class="mobile-menu slideout-menu">
-  <ul class="mobile-menu-list">
-    <a href="/">
-        <li class="mobile-menu-item">Home</li>
-      </a><a href="/post/">
-        <li class="mobile-menu-item">Archives</li>
-      </a><a href="/tags/">
-        <li class="mobile-menu-item">Tags</li>
-      </a><a href="/categories/">
-        <li class="mobile-menu-item">Categories</li>
-      </a><a href="/about">
-        <li class="mobile-menu-item">About</li>
-      </a>
-  </ul>
 
-  
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
 
+</script>
 
-</nav>
-
-  <div class="container" id="mobile-panel">
-    <header id="header" class="header">
-        <div class="logo-wrapper">
-  <a href="/" class="logo">FooWeel&#39;s Blog</a>
-</div>
-
-
-
-
-
-<nav class="site-navbar">
-  <ul id="menu" class="menu">
-    <li class="menu-item">
-        <a class="menu-item-link" href="/">Home</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/post/">Archives</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/tags/">Tags</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/categories/">Categories</a>
-      </li><li class="menu-item">
-        <a class="menu-item-link" href="/about">About</a>
-      </li>
-  </ul>
-</nav>
-
-    </header>
-
-    <main id="main" class="main">
-      <div class="content-wrapper">
-        <div id="content" class="content">
-          <article class="post">
-    
-    <header class="post-header">
-      <h1 class="post-title">Python内建函数</h1>
-
-      <div class="post-meta">
-        <span class="post-time"> 2016-05-17 </span>
-        <div class="post-category">
-            <a href="/categories/%E5%AD%A6%E4%B9%A0/"> 学习 </a>
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Xwell&#39;s Blog (Alt + H)">Xwell&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
             </div>
-        
-      </div>
-    </header>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search">
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
 
-    <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Contents</h2>
-  <div class="post-toc-content always-active">
-    <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li>
-          <ul>
-            <li><a href="#map函数">map函数</a></li>
-            <li><a href="#zip函数">zip函数</a></li>
-            <li><a href="#filter函数">filter函数</a></li>
-            <li><a href="#reduce函数">reduce函数</a></li>
-            <li><a href="#isinstance">isinstance</a></li>
-            <li><a href="#id">id</a></li>
-            <li><a href="#assert">assert</a></li>
-            <li><a href="#min--max">min &amp;&amp; max</a></li>
-            <li><a href="#异步io-asyncio">异步IO asyncio</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-  </div>
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/post/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Python内建函数
+    </h1>
+    <div class="post-description">
+      Python中一些有用的内置函数，map，zip，filter，reduce，yield，instance等
+    </div>
+    <div class="post-meta"><span title='2016-05-17 15:06:00 +0000 UTC'>May 17, 2016</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;xwell
+
 </div>
-    <div class="post-content">
-      <p>Python中一些有用的内置函数，包括map，zip，filter，reduce，yield，instance等函数，以及异步IO库asyncio的使用记录</p>
-<h3 id="map函数">map函数</h3>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#map%e5%87%bd%e6%95%b0" aria-label="map函数">map函数</a></li>
+                <li>
+                    <a href="#zip%e5%87%bd%e6%95%b0" aria-label="zip函数">zip函数</a></li>
+                <li>
+                    <a href="#filter%e5%87%bd%e6%95%b0" aria-label="filter函数">filter函数</a></li>
+                <li>
+                    <a href="#reduce%e5%87%bd%e6%95%b0" aria-label="reduce函数">reduce函数</a></li>
+                <li>
+                    <a href="#isinstance" aria-label="isinstance">isinstance</a></li>
+                <li>
+                    <a href="#id" aria-label="id">id</a></li>
+                <li>
+                    <a href="#assert" aria-label="assert">assert</a></li>
+                <li>
+                    <a href="#min--max" aria-label="min &amp;&amp; max">min &amp;&amp; max</a></li>
+                <li>
+                    <a href="#%e5%bc%82%e6%ad%a5io-asyncio" aria-label="异步IO asyncio">异步IO asyncio</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>Python中一些有用的内置函数，包括map，zip，filter，reduce，yield，instance等函数，以及异步IO库asyncio的使用记录</p>
+<h3 id="map函数">map函数<a hidden class="anchor" aria-hidden="true" href="#map函数">#</a></h3>
 <p>Python实际上提供了一个内置的工具，map函数。这个函数的主要功能是对一个序列对象中的每一个元素应用被传入的函数，并且返回一个包含了所有函数调用结果的一个列表。</p>
 <p>map?</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Docstring:
-</span></span><span class="line"><span class="cl">map(function, sequence[, sequence, ...]) -&gt; list
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Return a list of the results of applying the function to the items of
-</span></span><span class="line"><span class="cl">the argument sequence(s).  If more than one sequence is given, the
-</span></span><span class="line"><span class="cl">function is called with an argument list consisting of the corresponding
-</span></span><span class="line"><span class="cl">item of each sequence, substituting None for missing values when not all
-</span></span><span class="line"><span class="cl">sequences have the same length.  If the function is None, return a list of
-</span></span><span class="line"><span class="cl">the items of the sequence (or a list of tuples if more than one sequence).
-</span></span><span class="line"><span class="cl">Type:      builtin_function_or_method
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>下面三个例子参考了<a href="http://my.oschina.net/zyzzy/blog/115096">该博文</a>
+<pre tabindex="0"><code>Docstring:
+map(function, sequence[, sequence, ...]) -&gt; list
+
+Return a list of the results of applying the function to the items of
+the argument sequence(s).  If more than one sequence is given, the
+function is called with an argument list consisting of the corresponding
+item of each sequence, substituting None for missing values when not all
+sequences have the same length.  If the function is None, return a list of
+the items of the sequence (or a list of tuples if more than one sequence).
+Type:      builtin_function_or_method
+</code></pre><p>下面三个例子参考了<a href="http://my.oschina.net/zyzzy/blog/115096">该博文</a>
 ​
 对可迭代函数&rsquo;iterable&rsquo;中的每一个元素应用‘function’方法，将结果作为list返回。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">def add100(x):
-</span></span><span class="line"><span class="cl">    return x+100
-</span></span><span class="line"><span class="cl">hh = [11,22,33]
-</span></span><span class="line"><span class="cl">map(add100,hh)
-</span></span><span class="line"><span class="cl">Out[2]:
-</span></span><span class="line"><span class="cl">[111, 122, 133]
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>如果给出了额外的可迭代参数，则对每个可迭代参数中的元素‘并行’的应用‘function’。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">def abc(a, b, c):
-</span></span><span class="line"><span class="cl">    return a*10000 + b*100 + c
-</span></span><span class="line"><span class="cl">​
-</span></span><span class="line"><span class="cl">list1 = [11,22,33]
-</span></span><span class="line"><span class="cl">list2 = [44,55,66]
-</span></span><span class="line"><span class="cl">list3 = [77,88,99]
-</span></span><span class="line"><span class="cl">map(abc,list1,list2,list3)
-</span></span><span class="line"><span class="cl">Out[3]:
-</span></span><span class="line"><span class="cl">[114477, 225588, 336699]
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>如果&rsquo;function&rsquo;给出的是‘None’，自动假定一个‘identity’函数（这个‘identity’不知道怎么解释，看例子吧）</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">list1 = [11,22,33]
-</span></span><span class="line"><span class="cl">map(None,list1)
-</span></span><span class="line"><span class="cl">Out[5]:
-</span></span><span class="line"><span class="cl">[11, 22, 33]
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">list1 = [11,22,33]
-</span></span><span class="line"><span class="cl">list2 = [44,55,66]
-</span></span><span class="line"><span class="cl">list3 = [77,88,99]
-</span></span><span class="line"><span class="cl">map(None,list1,list2,list3)
-</span></span><span class="line"><span class="cl">Out[6]:
-</span></span><span class="line"><span class="cl">[(11, 44, 77), (22, 55, 88), (33, 66, 99)]
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="zip函数">zip函数</h3>
+<pre tabindex="0"><code>def add100(x):
+    return x+100
+hh = [11,22,33]
+map(add100,hh)
+Out[2]:
+[111, 122, 133]
+</code></pre><p>如果给出了额外的可迭代参数，则对每个可迭代参数中的元素‘并行’的应用‘function’。</p>
+<pre tabindex="0"><code>def abc(a, b, c):
+    return a*10000 + b*100 + c
+​
+list1 = [11,22,33]
+list2 = [44,55,66]
+list3 = [77,88,99]
+map(abc,list1,list2,list3)
+Out[3]:
+[114477, 225588, 336699]
+</code></pre><p>如果&rsquo;function&rsquo;给出的是‘None’，自动假定一个‘identity’函数（这个‘identity’不知道怎么解释，看例子吧）</p>
+<pre tabindex="0"><code>list1 = [11,22,33]
+map(None,list1)
+Out[5]:
+[11, 22, 33]
+
+
+list1 = [11,22,33]
+list2 = [44,55,66]
+list3 = [77,88,99]
+map(None,list1,list2,list3)
+Out[6]:
+[(11, 44, 77), (22, 55, 88), (33, 66, 99)]
+</code></pre><h3 id="zip函数">zip函数<a hidden class="anchor" aria-hidden="true" href="#zip函数">#</a></h3>
 <p>以下参考了<a href="http://www.bkjia.com/Pythonjc/664161.html">博文</a></p>
 <p>函式说明：zip(seq1[,seq2 [&hellip;]])-&gt;[(seq1(0),seq2(0)&hellip;,(&hellip;)]。 同时循环两个一样长的函数，返回一个包含每个参数元组对应元素的元组。若不一致，采取截取方式，使得返回的结果元组的长度为各参数元组长度最小值。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">for x,y in zip([1,2,3],[4,5,6]):
-</span></span><span class="line"><span class="cl">    print x,y
-</span></span><span class="line"><span class="cl">for x,y in zip([1,2,3],[4,5,6]):
-</span></span><span class="line"><span class="cl">    print x,y
-</span></span><span class="line"><span class="cl">1 4
-</span></span><span class="line"><span class="cl">2 5
-</span></span><span class="line"><span class="cl">3 6
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">for x,y in zip([1,2,3],[5,6]):
-</span></span><span class="line"><span class="cl">    print x,y
-</span></span><span class="line"><span class="cl">1 5
-</span></span><span class="line"><span class="cl">2 6
-</span></span><span class="line"><span class="cl">        
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="filter函数">filter函数</h3>
+<pre tabindex="0"><code>for x,y in zip([1,2,3],[4,5,6]):
+    print x,y
+for x,y in zip([1,2,3],[4,5,6]):
+    print x,y
+1 4
+2 5
+3 6
+
+
+for x,y in zip([1,2,3],[5,6]):
+    print x,y
+1 5
+2 6
+        
+</code></pre><h3 id="filter函数">filter函数<a hidden class="anchor" aria-hidden="true" href="#filter函数">#</a></h3>
 <p>filter(bool_func,seq)：此函数的功能相当于过滤器。 调用一个布尔函数bool_func来迭代遍历每个seq中的元素，返回一个使bool_seq返回值为true的元素的序列。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">filter(lambda x:x%2==0,[1,2,3,4,6,5,7])
-</span></span><span class="line"><span class="cl">Out[15]:
-</span></span><span class="line"><span class="cl">[2, 4, 6]   
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="reduce函数">reduce函数</h3>
+<pre tabindex="0"><code>filter(lambda x:x%2==0,[1,2,3,4,6,5,7])
+Out[15]:
+[2, 4, 6]   
+</code></pre><h3 id="reduce函数">reduce函数<a hidden class="anchor" aria-hidden="true" href="#reduce函数">#</a></h3>
 <p>reduce(func,seq[,init])：func为二元函数，将func作用于seq序列的元素，每次携带一对（先前的结果以及下一个序列的元素），连续的将现有的结果和下一个值作用在获得的随后的结果上，最后减少我们的序列为一个单一的返回值：如果初始值init给定，第一个比较会是init和第一个序列元素而不是序列的头两个元素。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">reduce(lambda x,y:x+y,[1,2,3,4])
-</span></span><span class="line"><span class="cl">Out[22]:
-</span></span><span class="line"><span class="cl">10
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">reduce(lambda x,y: x-y,[1,2,3,4,5],19)
-</span></span><span class="line"><span class="cl">reduce(lambda x,y: x-y,[1,2,3,4,5],19)
-</span></span><span class="line"><span class="cl">Out[23]:
-</span></span><span class="line"><span class="cl">4
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">reduce(lambda x,y: x-y,[1,2,3,5],5)
-</span></span><span class="line"><span class="cl">Out[21]:
-</span></span><span class="line"><span class="cl">-6
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="isinstance">isinstance</h3>
+<pre tabindex="0"><code>reduce(lambda x,y:x+y,[1,2,3,4])
+Out[22]:
+10
+
+reduce(lambda x,y: x-y,[1,2,3,4,5],19)
+reduce(lambda x,y: x-y,[1,2,3,4,5],19)
+Out[23]:
+4
+
+reduce(lambda x,y: x-y,[1,2,3,5],5)
+Out[21]:
+-6
+</code></pre><h3 id="isinstance">isinstance<a hidden class="anchor" aria-hidden="true" href="#isinstance">#</a></h3>
 <p>isinstance(object, classinfo)  判断一个对象是否是一个已知的类型。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">isinstance(object, class-or-type-or-tuple) -&gt; bool
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">Return whether an object is an instance of a class or of a subclass thereof.
-</span></span><span class="line"><span class="cl">With a type as second argument, return whether that is the object&#39;s type.
-</span></span><span class="line"><span class="cl">The form using a tuple, isinstance(x, (A, B, ...)), is a shortcut for
-</span></span><span class="line"><span class="cl">isinstance(x, A) or isinstance(x, B) or ... (etc.).
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>其第一个参数为对象，第二个为类型名或类型名的一个列表。其返回值为布尔型。若对象的类型与参数二的类型相同则返回True。若参数二为一个元组，则若对象类型与元组中类型名之一相同即返回True。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">tes = list()
-</span></span><span class="line"><span class="cl">tes.append(3)
-</span></span><span class="line"><span class="cl">ta= &#39;a&#39;,&#39;b&#39;
-</span></span><span class="line"><span class="cl">print tes
-</span></span><span class="line"><span class="cl">print isinstance(tes, list)
-</span></span><span class="line"><span class="cl">print isinstance(ta, tuple)
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">print isinstance(tes,(int, tuple, list))
-</span></span><span class="line"><span class="cl">print isinstance(tes,(int, tuple))
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Out:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">    [3]
-</span></span><span class="line"><span class="cl">    True
-</span></span><span class="line"><span class="cl">    True
-</span></span><span class="line"><span class="cl">    True
-</span></span><span class="line"><span class="cl">    False
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="id">id</h3>
+<pre tabindex="0"><code>isinstance(object, class-or-type-or-tuple) -&gt; bool
+
+Return whether an object is an instance of a class or of a subclass thereof.
+With a type as second argument, return whether that is the object&#39;s type.
+The form using a tuple, isinstance(x, (A, B, ...)), is a shortcut for
+isinstance(x, A) or isinstance(x, B) or ... (etc.).
+</code></pre><p>其第一个参数为对象，第二个为类型名或类型名的一个列表。其返回值为布尔型。若对象的类型与参数二的类型相同则返回True。若参数二为一个元组，则若对象类型与元组中类型名之一相同即返回True。</p>
+<pre tabindex="0"><code>tes = list()
+tes.append(3)
+ta= &#39;a&#39;,&#39;b&#39;
+print tes
+print isinstance(tes, list)
+print isinstance(ta, tuple)
+
+print isinstance(tes,(int, tuple, list))
+print isinstance(tes,(int, tuple))
+</code></pre><p>Out:</p>
+<pre tabindex="0"><code>    [3]
+    True
+    True
+    True
+    False
+</code></pre><h3 id="id">id<a hidden class="anchor" aria-hidden="true" href="#id">#</a></h3>
 <p>查看object 地址</p>
 <p>in：
 <code>    print id.__doc__</code></p>
 <p>Out：​
 <code>    id(object) -&gt; integer</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">    Return the identity of an object.  This is guaranteed to be unique among
-</span></span><span class="line"><span class="cl">    simultaneously existing objects.  (Hint: it&#39;s the object&#39;s memory address.)
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="assert">assert</h3>
+<pre tabindex="0"><code>    Return the identity of an object.  This is guaranteed to be unique among
+    simultaneously existing objects.  (Hint: it&#39;s the object&#39;s memory address.)
+</code></pre><h3 id="assert">assert<a hidden class="anchor" aria-hidden="true" href="#assert">#</a></h3>
 <p>断言</p>
 <p>Python中assert用来判断语句的真假，如果<strong>为假的时候，将触发AssertionError错误</strong></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">a = None
-</span></span><span class="line"><span class="cl">assert a != None
-</span></span><span class="line"><span class="cl">print a
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>out：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">AssertionError                            Traceback (most recent call last)
-</span></span><span class="line"><span class="cl">&lt;ipython-input-1-4165ca7bb901&gt; in &lt;module&gt;()
-</span></span><span class="line"><span class="cl">      1
-</span></span><span class="line"><span class="cl">      2 a = None
-</span></span><span class="line"><span class="cl">----&gt; 3 assert a != None
-</span></span><span class="line"><span class="cl">      4 print a
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">AssertionError:
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>另一例子：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">a=[1,2,3]
-</span></span><span class="line"><span class="cl"># a = None
-</span></span><span class="line"><span class="cl">assert len(a) &lt; 5  # 为真通过
-</span></span><span class="line"><span class="cl">assert a != None
-</span></span><span class="line"><span class="cl">print a
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>out：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[1, 2, 3]
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="min--max">min &amp;&amp; max</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">c = [-10, -45, 0, 5, 3, 50, 15, -20, 25]
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">print &#34;min: %s&#34; %c.index(min(c))  # 返回最小值
-</span></span><span class="line"><span class="cl">print &#34;max: %s&#34; %c.index(max(c)) # 返回最大值
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>out:</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">        min: 1
-</span></span><span class="line"><span class="cl">        max: 5
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="异步io-asyncio">异步IO asyncio</h3>
+<pre tabindex="0"><code>a = None
+assert a != None
+print a
+</code></pre><p>out：</p>
+<pre tabindex="0"><code class="language----------------------------------------------------------------------------" data-lang="---------------------------------------------------------------------------">AssertionError                            Traceback (most recent call last)
+&lt;ipython-input-1-4165ca7bb901&gt; in &lt;module&gt;()
+      1
+      2 a = None
+----&gt; 3 assert a != None
+      4 print a
+
+AssertionError:
+</code></pre><p>另一例子：</p>
+<pre tabindex="0"><code>a=[1,2,3]
+# a = None
+assert len(a) &lt; 5  # 为真通过
+assert a != None
+print a
+</code></pre><p>out：</p>
+<pre tabindex="0"><code>[1, 2, 3]
+</code></pre><h3 id="min--max">min &amp;&amp; max<a hidden class="anchor" aria-hidden="true" href="#min--max">#</a></h3>
+<pre tabindex="0"><code>c = [-10, -45, 0, 5, 3, 50, 15, -20, 25]
+
+print &#34;min: %s&#34; %c.index(min(c))  # 返回最小值
+print &#34;max: %s&#34; %c.index(max(c)) # 返回最大值
+</code></pre><p>out:</p>
+<pre tabindex="0"><code>        min: 1
+        max: 5
+</code></pre><h3 id="异步io-asyncio">异步IO asyncio<a hidden class="anchor" aria-hidden="true" href="#异步io-asyncio">#</a></h3>
 <ul>
 <li>系统含有DNN 算法，需处理大量的数据</li>
 <li>避免使用多进程/进程，带来大量切换开销</li>
@@ -538,39 +389,7 @@
 </li>
 </ul>
 <p><strong>示例</strong></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">time</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">asyncio</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">json</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">functools</span>
@@ -598,101 +417,206 @@
 </span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">tasks</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Task ret: &#39;</span><span class="p">,</span> <span class="n">task</span><span class="o">.</span><span class="n">result</span><span class="p">())</span>
 </span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;TIME: &#39;</span><span class="p">,</span> <span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><blockquote>
+</span></span></code></pre></div><blockquote>
 <p><a href="https://hackernoon.com/threaded-asynchronous-magic-and-how-to-wield-it-bba9ed602c32?gi=930493ba01f2#.71h32j2ir">REF</a></p>
 </blockquote>
-    </div>
 
-    <div class="post-copyright">
-  <p class="copyright-item">
-    <span class="item-title">Author</span>
-    <span class="item-content">fooweel</span>
-  </p>
-  <p class="copyright-item">
-    <span class="item-title">LastMod</span>
-    <span class="item-content">
-        2019-03-17
-        
-    </span>
-  </p>
-  
-  
-</div>
-<footer class="post-footer">
-      <div class="post-tags">
-          <a href="/tags/python/">Python</a>
-          <a href="/tags/%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/">内置函数</a>
-          </div>
-      <nav class="post-nav">
-        <a class="prev" href="/post/python_identity/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Python 有关引用的一些问题</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        
-      </nav>
-    </footer>
-  </article>
-        </div>
-        
-
-  
-
-  
-
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="social-links">
-      <a href="mailto:wells217@163.com" class="iconfont icon-email" title="email"></a>
-      <a href="https://github.com/tmhm" class="iconfont icon-github" title="github"></a>
-  <a href="" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
-</div>
-
-<div class="copyright">
-  <span class="power-by">
-    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
-  </span>
-  <span class="division">|</span>
-  <span class="theme-info">
-    Theme - 
-    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
-  </span>
-
-  
-
-  <span class="copyright-year">
-    &copy; 
-    2017 - 
-    2023<span class="heart"><i class="iconfont icon-heart"></i></span><span>fooweel</span>
-    <a href="https://beian.miit.gov.cn/" target="_blank">粤ICP备19154459号-1</a>
-  </span>
-</div>
-
-    </footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
-    </div>
   </div>
-  
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/python/">Python</a></li>
+      <li><a href="http://localhost:1313/tags/%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/">内置函数</a></li>
+    </ul>
 
 
+<ul class="share-buttons">
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Python内建函数 on x"
+            href="https://x.com/intent/tweet/?text=Python%e5%86%85%e5%bb%ba%e5%87%bd%e6%95%b0&amp;url=http%3a%2f%2flocalhost%3a1313%2fpost%2fpy_builted_func%2f&amp;hashtags=Python%2c%e5%86%85%e7%bd%ae%e5%87%bd%e6%95%b0">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M512 62.554 L 512 449.446 C 512 483.97 483.97 512 449.446 512 L 62.554 512 C 28.03 512 0 483.97 0 449.446 L 0 62.554 C 0 28.03 28.029 0 62.554 0 L 449.446 0 C 483.971 0 512 28.03 512 62.554 Z M 269.951 190.75 L 182.567 75.216 L 56 75.216 L 207.216 272.95 L 63.9 436.783 L 125.266 436.783 L 235.9 310.383 L 332.567 436.783 L 456 436.783 L 298.367 228.367 L 432.367 75.216 L 371.033 75.216 Z M 127.633 110 L 164.101 110 L 383.481 400.065 L 349.5 400.065 Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Python内建函数 on linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2flocalhost%3a1313%2fpost%2fpy_builted_func%2f&amp;title=Python%e5%86%85%e5%bb%ba%e5%87%bd%e6%95%b0&amp;summary=Python%e5%86%85%e5%bb%ba%e5%87%bd%e6%95%b0&amp;source=http%3a%2f%2flocalhost%3a1313%2fpost%2fpy_builted_func%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Python内建函数 on reddit"
+            href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fpost%2fpy_builted_func%2f&title=Python%e5%86%85%e5%bb%ba%e5%87%bd%e6%95%b0">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Python内建函数 on facebook"
+            href="https://facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fpost%2fpy_builted_func%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Python内建函数 on whatsapp"
+            href="https://api.whatsapp.com/send?text=Python%e5%86%85%e5%bb%ba%e5%87%bd%e6%95%b0%20-%20http%3a%2f%2flocalhost%3a1313%2fpost%2fpy_builted_func%2f">
+            <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Python内建函数 on telegram"
+            href="https://telegram.me/share/url?text=Python%e5%86%85%e5%bb%ba%e5%87%bd%e6%95%b0&amp;url=http%3a%2f%2flocalhost%3a1313%2fpost%2fpy_builted_func%2f">
+            <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28" height="30px" width="30px" fill="currentColor">
+                <path
+                    d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+            </svg>
+        </a>
+    </li>
+    <li>
+        <a target="_blank" rel="noopener noreferrer" aria-label="share Python内建函数 on ycombinator"
+            href="https://news.ycombinator.com/submitlink?t=Python%e5%86%85%e5%bb%ba%e5%87%bd%e6%95%b0&u=http%3a%2f%2flocalhost%3a1313%2fpost%2fpy_builted_func%2f">
+            <svg version="1.1" xml:space="preserve" width="30px" height="30px" viewBox="0 0 512 512" fill="currentColor"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape">
+                <path
+                    d="M449.446 0C483.971 0 512 28.03 512 62.554L512 449.446C512 483.97 483.97 512 449.446 512L62.554 512C28.03 512 0 483.97 0 449.446L0 62.554C0 28.03 28.029 0 62.554 0L449.446 0ZM183.8767 87.9921H121.8427L230.6673 292.4508V424.0079H281.3328V292.4508L390.1575 87.9921H328.1233L256 238.2489z" />
+            </svg>
+        </a>
+    </li>
+</ul>
 
-<script type="text/javascript" src="/js/main.min.4ae89da218555efa0e7093a20b92017d2e1202b66fff9fc2edf4cb8d44b44c6e.js"></script>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2024 <a href="http://localhost:1313/">Xwell&#39;s Blog</a></span> · 
 
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
 
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
 
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
 
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
 
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
 
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
 
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
 </body>
+
 </html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=58211&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>强化学习问题回顾 | Xwell</title>
+<meta name="keywords" content="">
+<meta name="description" content="强化学习问题概述">
+<meta name="author" content="xwell">
+<link rel="canonical" href="http://localhost:58211/posts/rl_basic/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.fc220c15db4aef0318bbf30adc45d33d4d7c88deff3238b23eb255afdc472ca6.css" integrity="sha256-/CIMFdtK7wMYu/MK3EXTPU18iN7/MjiyPrJVr9xHLKY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:58211/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:58211/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:58211/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:58211/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:58211/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:58211/posts/rl_basic/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="强化学习问题回顾" />
+<meta property="og:description" content="强化学习问题概述" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:58211/posts/rl_basic/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-04-13T21:58:52+08:00" />
+<meta property="article:modified_time" content="2019-04-13T21:58:52+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="强化学习问题回顾"/>
+<meta name="twitter:description" content="强化学习问题概述"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:58211/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "强化学习问题回顾",
+      "item": "http://localhost:58211/posts/rl_basic/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "强化学习问题回顾",
+  "name": "强化学习问题回顾",
+  "description": "强化学习问题概述",
+  "keywords": [
+    
+  ],
+  "articleBody": "强化学习概述，从问题定义，到分类，以及经典开源库。\nRL问题回顾 强化学习（Reinforcement Learning）本身可以定义为一个广泛的学习问题，学会找到状态（Situation）到动作（Actions）的一个映射关系，以最大化一个数值型的回报（Reward）信号。一个完整的强化学习问题可以用马氏决策过程中的最优控制理论来进行描述。在马氏链中，当前时刻的状态（State） 仅仅与上一时刻的状态有关。如下图1所示，一个智能体（Agent）可以通过某种方式感受环境的状态（State），然后可以通过某一个动作（Action）来改变环境的下一状态。在这个不断交互的过程中，Agent还必须具有一个或者以上的、与此环境状态相关的目标（Goal）。\n与RL问题相对应的任何求解方法，可以称之为一个强化学习方法。\n1. RL的两个重要特征 试错搜索（trial-and-error） 延迟回报（delayed reward） 可以引出与监督学习的重要区别——评价的方式不同。 监督学习中通过正确的指示（instruct）来进行反馈；强化学习是依靠整个生命周期所选择的动作来进行评价式的反馈。\n2. RL系统中的四大主要元素（element） 策略（Policy） 定义某个时刻agent的行为，可以看做策略的映射$\\pi_(s_t)$。粗略地说，一个策略可以看做是接收到状态到智能体做出动作的一种映射关系，可以用函数或者表的形式来表现。通常来说，策略可以是确定的，也可能是随机的，即可以用条件概率来表示。\n奖励/回报函数（Reward function） 奖励函数定义了强化学习问题中的目标。它把当前每个状态（或者状态-动作对）映射到一个评价数值，以表现该Agent当前所做事件的好坏程度。\n值函数（Value function） 奖励函数所表现出的是当前状态或者状态-动作对的立即评价，值函数表征的是对长远意义下的评判。 $V_s$表示当前状态$s$下的累积回报；$V_{(s,a)}$表示当前状态$s$下，执行动作$a$下的累积回报。\n粗略来说，值函数可以表示从当前状态开始到未来（long-term），Agent可以收获到奖励的一种累积和。即值函数是对Agent整个生命周期的一种评价。值函数是动作选择的一个标准。\n环境的模型（model of the environment） 即对该Agent生存环境的行为模仿（mimics the behavior of the environment）。举一个例子，给定一个状态和动作，环境模型可以预测相对应的下一状态和奖励。如果模型已知，强化学习问题可以演化为动态规划问题求解。\n3. RL中智能体学习方法的分类 根据强化学习问题中所含元素的种类，其Agent的学习方法，可以分为5大类。\nModel-free Model-based Actor-critic (Policy + Value function) Policy-based Value-based 4. 探索与利用的权衡 Trade-off between exploration and exploitation\nAgent 需要根据已知的状态、动作和回报的相关信息，来不断获得最大的回报，即利用（exploit）当前已知的知识；另外，Agent 需要探索（explore）一些未知的知识，以期望在未来实现更好的动作。（由于目前的知识往往并不是最优的）\n因此，在RL中，利用与探索是一个权衡的话题，目前已提出多种方法来尝试解决这个问题。\nϵ-greedy action selection（以小概率不贪心的选择方式） Softmax action selection（基于Gibbs分布或者称之为玻尔兹曼分布，以概率选择动作） $$ \\cfrac{e^{Q_t(a)/\\tau}}{\\sum_{b=1}^n e^{Q_t(b)/\\tau}} $$\nτ\u003e0表示温度（temperature）, 高的温度，选择动作近乎平等；温度趋近0的时候，此法接近于贪心选择。\n5. Framework/Platform OpenAI gym 是强化学习研究领域广泛使用的一个经典工具包，它主要包含两部分：\nEnvironments，经典问题的测试集，并提供统一的接口； /ScoreBoards/LeaderBoards/Benchmarking，用户算法性能对比的平台，用户可以通过api分享其算法的结果 Rllab 与gym 完全兼容，并内置了一些RL的算法，目前rllab项目已停止更新。\ngarage是基于rllab 而来，该项目是为了benchmarking 连续动作控制场景下的DRL算法而建立。\nTensorforce: A TensorFlow library for applied reinforcement learning\nRay/RLlib 目前RL应用领域sota的框架，构建remote特性；1）具备ms级的task响应，2）以及million的吞吐量。\nIntel Coach is a python reinforcement learning research framework containing implementation of many state-of-the-art algorithms.\nOpenAi Baselines SOTA RL算法的集合\nRefernece Sutton R S, Barto A G. Reinforcement learning: An introduction[M]. Slides, David Silver. Lecture 1: Introduction to Reinforcement Learning. ",
+  "wordCount" : "132",
+  "inLanguage": "en",
+  "datePublished": "2019-04-13T21:58:52+08:00",
+  "dateModified": "2019-04-13T21:58:52+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "xwell"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:58211/posts/rl_basic/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Xwell",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:58211/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:58211/" accesskey="h" title="Xwell (Alt + H)">Xwell</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:58211/publications/" title="Publications">
+                    <span>Publications</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:58211/posts/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:58211/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:58211/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:58211/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:58211/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      强化学习问题回顾
+    </h1>
+    <div class="post-description">
+      强化学习问题概述
+    </div>
+    <div class="post-meta"><span title='2019-04-13 21:58:52 +0800 CST'>April 13, 2019</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;xwell
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#rl%e9%97%ae%e9%a2%98%e5%9b%9e%e9%a1%be" aria-label="RL问题回顾">RL问题回顾</a></li>
+                <li>
+                    <a href="#1-rl%e7%9a%84%e4%b8%a4%e4%b8%aa%e9%87%8d%e8%a6%81%e7%89%b9%e5%be%81" aria-label="1. RL的两个重要特征">1. RL的两个重要特征</a></li>
+                <li>
+                    <a href="#2-rl%e7%b3%bb%e7%bb%9f%e4%b8%ad%e7%9a%84%e5%9b%9b%e5%a4%a7%e4%b8%bb%e8%a6%81%e5%85%83%e7%b4%a0element" aria-label="2. RL系统中的四大主要元素（element）">2. RL系统中的四大主要元素（element）</a></li>
+                <li>
+                    <a href="#3-rl%e4%b8%ad%e6%99%ba%e8%83%bd%e4%bd%93%e5%ad%a6%e4%b9%a0%e6%96%b9%e6%b3%95%e7%9a%84%e5%88%86%e7%b1%bb" aria-label="3. RL中智能体学习方法的分类">3. RL中智能体学习方法的分类</a></li>
+                <li>
+                    <a href="#4-%e6%8e%a2%e7%b4%a2%e4%b8%8e%e5%88%a9%e7%94%a8%e7%9a%84%e6%9d%83%e8%a1%a1" aria-label="4. 探索与利用的权衡">4. 探索与利用的权衡</a></li>
+                <li>
+                    <a href="#5-frameworkplatform" aria-label="5. Framework/Platform">5. Framework/Platform</a></li>
+                <li>
+                    <a href="#refernece" aria-label="Refernece">Refernece</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>强化学习概述，从问题定义，到分类，以及经典开源库。</p>
+<h3 id="rl问题回顾">RL问题回顾<a hidden class="anchor" aria-hidden="true" href="#rl问题回顾">#</a></h3>
+<p>强化学习（Reinforcement Learning）本身可以定义为一个广泛的学习问题，学会找到状态（Situation）到动作（Actions）的一个映射关系，以最大化一个数值型的回报（Reward）信号。一个完整的强化学习问题可以用马氏决策过程中的最优控制理论来进行描述。在马氏链中，当前时刻的状态（State） 仅仅与上一时刻的状态有关。如下图1所示，一个智能体（Agent）可以通过某种方式感受环境的状态（State），然后可以通过某一个动作（Action）来改变环境的下一状态。在这个不断交互的过程中，Agent还必须具有一个或者以上的、与此环境状态相关的目标（Goal）。</p>
+<div  align="center">    
+<img src="https://s3.bmp.ovh/imgs/2022/09/17/28ce2fc7d57c6751.png" width = "290" height = "150" />
+</div>
+<p>与RL问题相对应的任何求解方法，可以称之为一个强化学习方法。</p>
+<h3 id="1-rl的两个重要特征">1. RL的两个重要特征<a hidden class="anchor" aria-hidden="true" href="#1-rl的两个重要特征">#</a></h3>
+<ul>
+<li>试错搜索（trial-and-error）</li>
+<li>延迟回报（delayed reward）</li>
+</ul>
+<p>可以引出与监督学习的重要区别——评价的方式不同。 监督学习中通过正确的指示（instruct）来进行反馈；强化学习是依靠整个生命周期所选择的动作来进行评价式的反馈。</p>
+<h3 id="2-rl系统中的四大主要元素element">2. RL系统中的四大主要元素（element）<a hidden class="anchor" aria-hidden="true" href="#2-rl系统中的四大主要元素element">#</a></h3>
+<ul>
+<li>策略（Policy）</li>
+</ul>
+<p>定义某个时刻agent的行为，可以看做策略的映射$\pi_(s_t)$。粗略地说，一个策略可以看做是接收到状态到智能体做出动作的一种映射关系，可以用函数或者表的形式来表现。通常来说，策略可以是确定的，也可能是随机的，即可以用条件概率来表示。</p>
+<ul>
+<li>奖励/回报函数（Reward function）</li>
+</ul>
+<p>奖励函数定义了强化学习问题中的目标。它把当前每个状态（或者状态-动作对）映射到一个评价数值，以表现该Agent当前所做事件的好坏程度。</p>
+<ul>
+<li>值函数（Value function）</li>
+</ul>
+<p>奖励函数所表现出的是当前状态或者状态-动作对的立即评价，值函数表征的是对长远意义下的评判。
+$V_s$表示当前状态$s$下的累积回报；$V_{(s,a)}$表示当前状态$s$下，执行动作$a$下的累积回报。</p>
+<p>粗略来说，值函数可以表示从当前状态开始到未来（long-term），Agent可以收获到奖励的一种累积和。即值函数是对Agent整个生命周期的一种评价。值函数是动作选择的一个标准。</p>
+<ul>
+<li>环境的模型（model of the environment）</li>
+</ul>
+<p>即对该Agent生存环境的行为模仿（mimics the behavior of the environment）。举一个例子，给定一个状态和动作，环境模型可以预测相对应的下一状态和奖励。如果模型已知，强化学习问题可以演化为动态规划问题求解。</p>
+<h3 id="3-rl中智能体学习方法的分类">3. RL中智能体学习方法的分类<a hidden class="anchor" aria-hidden="true" href="#3-rl中智能体学习方法的分类">#</a></h3>
+<p>根据强化学习问题中所含元素的种类，其Agent的学习方法，可以分为5大类。</p>
+<ul>
+<li>Model-free</li>
+<li>Model-based</li>
+<li>Actor-critic (Policy + Value function)</li>
+<li>Policy-based</li>
+<li>Value-based</li>
+</ul>
+<h3 id="4-探索与利用的权衡">4. 探索与利用的权衡<a hidden class="anchor" aria-hidden="true" href="#4-探索与利用的权衡">#</a></h3>
+<p>Trade-off between exploration and exploitation</p>
+<p>Agent 需要根据已知的状态、动作和回报的相关信息，来不断获得最大的回报，即利用（exploit）当前已知的知识；另外，Agent 需要探索（explore）一些未知的知识，以期望在未来实现更好的动作。（由于目前的知识往往并不是最优的）</p>
+<p>因此，在RL中，利用与探索是一个权衡的话题，目前已提出多种方法来尝试解决这个问题。</p>
+<ul>
+<li>ϵ-greedy action selection（以小概率不贪心的选择方式）</li>
+<li>Softmax action selection（基于Gibbs分布或者称之为玻尔兹曼分布，以概率选择动作）</li>
+</ul>
+<p>$$ \cfrac{e^{Q_t(a)/\tau}}{\sum_{b=1}^n e^{Q_t(b)/\tau}} $$</p>
+<p>τ&gt;0表示温度（temperature）, 高的温度，选择动作近乎平等；温度趋近0的时候，此法接近于贪心选择。</p>
+<h3 id="5-frameworkplatform">5. Framework/Platform<a hidden class="anchor" aria-hidden="true" href="#5-frameworkplatform">#</a></h3>
+<ul>
+<li>
+<p><a href="https://github.com/openai/gym">OpenAI gym</a>
+是强化学习研究领域广泛使用的一个经典工具包，它主要包含两部分：</p>
+<ul>
+<li><a href="https://gym.openai.com/envs/#classic_control">Environments</a>，经典问题的测试集，并提供统一的接口；</li>
+<li><a href="https://github.com/openai/gym/wiki/Leaderboard">/ScoreBoards/LeaderBoards</a>/Benchmarking，用户算法性能对比的平台，用户可以通过api分享其算法的结果</li>
+</ul>
+</li>
+<li>
+<p><a href="https://rllab.readthedocs.io/en/latest/user/gym_integration.html">Rllab</a>
+与gym 完全兼容，并内置了一些RL的算法，目前rllab项目已停止更新。</p>
+</li>
+<li>
+<p><a href="https://github.com/rlworkgroup/garage">garage</a>是基于rllab 而来，该项目是为了benchmarking 连续动作控制场景下的DRL算法而建立。</p>
+</li>
+<li>
+<p><a href="https://github.com/tensorforce/tensorforce">Tensorforce: </a>A TensorFlow library for applied reinforcement learning</p>
+</li>
+<li>
+<p><a href="https://ray.readthedocs.io/en/latest/rllib.html"><strong>Ray/RLlib</strong></a> 目前RL应用领域sota的框架，构建remote特性；1）具备ms级的task响应，2）以及million的吞吐量。</p>
+</li>
+<li>
+<p><a href="https://github.com/NervanaSystems/coach">Intel Coach</a> is a python reinforcement learning research framework containing implementation of many state-of-the-art algorithms.</p>
+</li>
+<li>
+<p><a href="https://github.com/openai/baselines"><strong>OpenAi Baselines</strong></a> SOTA RL算法的集合</p>
+</li>
+</ul>
+<h3 id="refernece">Refernece<a hidden class="anchor" aria-hidden="true" href="#refernece">#</a></h3>
+<ul>
+<li>Sutton R S, Barto A G. Reinforcement learning: An introduction[M].</li>
+<li>Slides, David Silver. Lecture 1: Introduction to Reinforcement Learning.</li>
+</ul>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:58211/posts/wordpress2hugo/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Wordpress2Hugo</span>
+  </a>
+  <a class="next" href="http://localhost:58211/posts/dl_server_ubuntu14_cuda8_gtx1080/">
+    <span class="title">Next »</span>
+    <br>
+    <span>DL服务器主机环境配置 ubuntu14.04 &amp;&amp; Cuda8.0</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>© 2017-2024 <a href="http://www.imxwell.com">xwell</a> All Rights Reserved</span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

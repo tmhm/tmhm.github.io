@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=58211&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Python内建函数 | Xwell</title>
+<meta name="keywords" content="Python, 内置函数">
+<meta name="description" content="Python中一些有用的内置函数，map，zip，filter，reduce，yield，instance等">
+<meta name="author" content="xwell">
+<link rel="canonical" href="http://localhost:58211/posts/py_builted_func/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.fc220c15db4aef0318bbf30adc45d33d4d7c88deff3238b23eb255afdc472ca6.css" integrity="sha256-/CIMFdtK7wMYu/MK3EXTPU18iN7/MjiyPrJVr9xHLKY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:58211/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:58211/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:58211/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:58211/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:58211/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:58211/posts/py_builted_func/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="Python内建函数" />
+<meta property="og:description" content="Python中一些有用的内置函数，map，zip，filter，reduce，yield，instance等" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:58211/posts/py_builted_func/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2016-05-17T15:06:00+00:00" />
+<meta property="article:modified_time" content="2019-03-17T15:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Python内建函数"/>
+<meta name="twitter:description" content="Python中一些有用的内置函数，map，zip，filter，reduce，yield，instance等"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:58211/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Python内建函数",
+      "item": "http://localhost:58211/posts/py_builted_func/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Python内建函数",
+  "name": "Python内建函数",
+  "description": "Python中一些有用的内置函数，map，zip，filter，reduce，yield，instance等",
+  "keywords": [
+    "Python", "内置函数"
+  ],
+  "articleBody": "Python中一些有用的内置函数，包括map，zip，filter，reduce，yield，instance等函数，以及异步IO库asyncio的使用记录\nmap函数 Python实际上提供了一个内置的工具，map函数。这个函数的主要功能是对一个序列对象中的每一个元素应用被传入的函数，并且返回一个包含了所有函数调用结果的一个列表。\nmap?\nDocstring: map(function, sequence[, sequence, ...]) -\u003e list Return a list of the results of applying the function to the items of the argument sequence(s). If more than one sequence is given, the function is called with an argument list consisting of the corresponding item of each sequence, substituting None for missing values when not all sequences have the same length. If the function is None, return a list of the items of the sequence (or a list of tuples if more than one sequence). Type: builtin_function_or_method 下面三个例子参考了该博文 ​ 对可迭代函数’iterable’中的每一个元素应用‘function’方法，将结果作为list返回。\ndef add100(x): return x+100 hh = [11,22,33] map(add100,hh) Out[2]: [111, 122, 133] 如果给出了额外的可迭代参数，则对每个可迭代参数中的元素‘并行’的应用‘function’。\ndef abc(a, b, c): return a*10000 + b*100 + c ​ list1 = [11,22,33] list2 = [44,55,66] list3 = [77,88,99] map(abc,list1,list2,list3) Out[3]: [114477, 225588, 336699] 如果’function’给出的是‘None’，自动假定一个‘identity’函数（这个‘identity’不知道怎么解释，看例子吧）\nlist1 = [11,22,33] map(None,list1) Out[5]: [11, 22, 33] list1 = [11,22,33] list2 = [44,55,66] list3 = [77,88,99] map(None,list1,list2,list3) Out[6]: [(11, 44, 77), (22, 55, 88), (33, 66, 99)] zip函数 以下参考了博文\n函式说明：zip(seq1[,seq2 […]])-\u003e[(seq1(0),seq2(0)…,(…)]。 同时循环两个一样长的函数，返回一个包含每个参数元组对应元素的元组。若不一致，采取截取方式，使得返回的结果元组的长度为各参数元组长度最小值。\nfor x,y in zip([1,2,3],[4,5,6]): print x,y for x,y in zip([1,2,3],[4,5,6]): print x,y 1 4 2 5 3 6 for x,y in zip([1,2,3],[5,6]): print x,y 1 5 2 6 filter函数 filter(bool_func,seq)：此函数的功能相当于过滤器。 调用一个布尔函数bool_func来迭代遍历每个seq中的元素，返回一个使bool_seq返回值为true的元素的序列。\nfilter(lambda x:x%2==0,[1,2,3,4,6,5,7]) Out[15]: [2, 4, 6] reduce函数 reduce(func,seq[,init])：func为二元函数，将func作用于seq序列的元素，每次携带一对（先前的结果以及下一个序列的元素），连续的将现有的结果和下一个值作用在获得的随后的结果上，最后减少我们的序列为一个单一的返回值：如果初始值init给定，第一个比较会是init和第一个序列元素而不是序列的头两个元素。\nreduce(lambda x,y:x+y,[1,2,3,4]) Out[22]: 10 reduce(lambda x,y: x-y,[1,2,3,4,5],19) reduce(lambda x,y: x-y,[1,2,3,4,5],19) Out[23]: 4 reduce(lambda x,y: x-y,[1,2,3,5],5) Out[21]: -6 isinstance isinstance(object, classinfo) 判断一个对象是否是一个已知的类型。\nisinstance(object, class-or-type-or-tuple) -\u003e bool Return whether an object is an instance of a class or of a subclass thereof. With a type as second argument, return whether that is the object's type. The form using a tuple, isinstance(x, (A, B, ...)), is a shortcut for isinstance(x, A) or isinstance(x, B) or ... (etc.). 其第一个参数为对象，第二个为类型名或类型名的一个列表。其返回值为布尔型。若对象的类型与参数二的类型相同则返回True。若参数二为一个元组，则若对象类型与元组中类型名之一相同即返回True。\ntes = list() tes.append(3) ta= 'a','b' print tes print isinstance(tes, list) print isinstance(ta, tuple) print isinstance(tes,(int, tuple, list)) print isinstance(tes,(int, tuple)) Out:\n[3] True True True False id 查看object 地址\nin： print id.__doc__\nOut：​ id(object) -\u003e integer\nReturn the identity of an object. This is guaranteed to be unique among simultaneously existing objects. (Hint: it's the object's memory address.) assert 断言\nPython中assert用来判断语句的真假，如果为假的时候，将触发AssertionError错误\na = None assert a != None print a out：\nAssertionError Traceback (most recent call last) in () 1 2 a = None ----\u003e 3 assert a != None 4 print a AssertionError: 另一例子：\na=[1,2,3] # a = None assert len(a) \u003c 5 # 为真通过 assert a != None print a out：\n[1, 2, 3] min \u0026\u0026 max c = [-10, -45, 0, 5, 3, 50, 15, -20, 25] print \"min: %s\" %c.index(min(c)) # 返回最小值 print \"max: %s\" %c.index(max(c)) # 返回最大值 out:\nmin: 1 max: 5 异步IO asyncio 系统含有DNN 算法，需处理大量的数据 避免使用多进程/进程，带来大量切换开销 进程内有http的请求操作（e.g TF-serving 做模型推理)，IO操作频繁 该场景下，协程是一个较好的方案， 将数据的准备和推理并行 可以将多个模型并行推理（后台使用K8s 部署管理tf-serving实例， 进行负载均衡） 示例\nimport time import asyncio import json import functools now = lambda: time.time() async def do_some_work(index, x): sec = 0.5 count = 8 print(\"proc-%s, wait sec: %s\" % (index, sec)) await asyncio.sleep(sec) return json.dumps({\"result\": list([0.5*_i*x for _i in range(count)])}) def callback(t, future): print('Callback-%s, results: %s' % (t, future.result())) task_num = 5 start = now() tasks = [asyncio.ensure_future(do_some_work(_i, _i)) for _i in range(task_num)] loop = asyncio.get_event_loop() [task.add_done_callback(functools.partial(callback, _index)) for _index, task in enumerate(tasks)] loop.run_until_complete(asyncio.wait(tasks)) for task in tasks: print('Task ret: ', task.result()) print('TIME: ', now() - start) REF\n",
+  "wordCount" : "528",
+  "inLanguage": "en",
+  "datePublished": "2016-05-17T15:06:00Z",
+  "dateModified": "2019-03-17T15:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "xwell"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:58211/posts/py_builted_func/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Xwell",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:58211/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:58211/" accesskey="h" title="Xwell (Alt + H)">Xwell</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:58211/publications/" title="Publications">
+                    <span>Publications</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:58211/posts/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:58211/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:58211/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:58211/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:58211/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Python内建函数
+    </h1>
+    <div class="post-description">
+      Python中一些有用的内置函数，map，zip，filter，reduce，yield，instance等
+    </div>
+    <div class="post-meta"><span title='2016-05-17 15:06:00 +0000 UTC'>May 17, 2016</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;xwell
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#map%e5%87%bd%e6%95%b0" aria-label="map函数">map函数</a></li>
+                <li>
+                    <a href="#zip%e5%87%bd%e6%95%b0" aria-label="zip函数">zip函数</a></li>
+                <li>
+                    <a href="#filter%e5%87%bd%e6%95%b0" aria-label="filter函数">filter函数</a></li>
+                <li>
+                    <a href="#reduce%e5%87%bd%e6%95%b0" aria-label="reduce函数">reduce函数</a></li>
+                <li>
+                    <a href="#isinstance" aria-label="isinstance">isinstance</a></li>
+                <li>
+                    <a href="#id" aria-label="id">id</a></li>
+                <li>
+                    <a href="#assert" aria-label="assert">assert</a></li>
+                <li>
+                    <a href="#min--max" aria-label="min &amp;&amp; max">min &amp;&amp; max</a></li>
+                <li>
+                    <a href="#%e5%bc%82%e6%ad%a5io-asyncio" aria-label="异步IO asyncio">异步IO asyncio</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>Python中一些有用的内置函数，包括map，zip，filter，reduce，yield，instance等函数，以及异步IO库asyncio的使用记录</p>
+<h3 id="map函数">map函数<a hidden class="anchor" aria-hidden="true" href="#map函数">#</a></h3>
+<p>Python实际上提供了一个内置的工具，map函数。这个函数的主要功能是对一个序列对象中的每一个元素应用被传入的函数，并且返回一个包含了所有函数调用结果的一个列表。</p>
+<p>map?</p>
+<pre tabindex="0"><code>Docstring:
+map(function, sequence[, sequence, ...]) -&gt; list
+
+Return a list of the results of applying the function to the items of
+the argument sequence(s).  If more than one sequence is given, the
+function is called with an argument list consisting of the corresponding
+item of each sequence, substituting None for missing values when not all
+sequences have the same length.  If the function is None, return a list of
+the items of the sequence (or a list of tuples if more than one sequence).
+Type:      builtin_function_or_method
+</code></pre><p>下面三个例子参考了<a href="http://my.oschina.net/zyzzy/blog/115096">该博文</a>
+​
+对可迭代函数&rsquo;iterable&rsquo;中的每一个元素应用‘function’方法，将结果作为list返回。</p>
+<pre tabindex="0"><code>def add100(x):
+    return x+100
+hh = [11,22,33]
+map(add100,hh)
+Out[2]:
+[111, 122, 133]
+</code></pre><p>如果给出了额外的可迭代参数，则对每个可迭代参数中的元素‘并行’的应用‘function’。</p>
+<pre tabindex="0"><code>def abc(a, b, c):
+    return a*10000 + b*100 + c
+​
+list1 = [11,22,33]
+list2 = [44,55,66]
+list3 = [77,88,99]
+map(abc,list1,list2,list3)
+Out[3]:
+[114477, 225588, 336699]
+</code></pre><p>如果&rsquo;function&rsquo;给出的是‘None’，自动假定一个‘identity’函数（这个‘identity’不知道怎么解释，看例子吧）</p>
+<pre tabindex="0"><code>list1 = [11,22,33]
+map(None,list1)
+Out[5]:
+[11, 22, 33]
+
+
+list1 = [11,22,33]
+list2 = [44,55,66]
+list3 = [77,88,99]
+map(None,list1,list2,list3)
+Out[6]:
+[(11, 44, 77), (22, 55, 88), (33, 66, 99)]
+</code></pre><h3 id="zip函数">zip函数<a hidden class="anchor" aria-hidden="true" href="#zip函数">#</a></h3>
+<p>以下参考了<a href="http://www.bkjia.com/Pythonjc/664161.html">博文</a></p>
+<p>函式说明：zip(seq1[,seq2 [&hellip;]])-&gt;[(seq1(0),seq2(0)&hellip;,(&hellip;)]。 同时循环两个一样长的函数，返回一个包含每个参数元组对应元素的元组。若不一致，采取截取方式，使得返回的结果元组的长度为各参数元组长度最小值。</p>
+<pre tabindex="0"><code>for x,y in zip([1,2,3],[4,5,6]):
+    print x,y
+for x,y in zip([1,2,3],[4,5,6]):
+    print x,y
+1 4
+2 5
+3 6
+
+
+for x,y in zip([1,2,3],[5,6]):
+    print x,y
+1 5
+2 6
+        
+</code></pre><h3 id="filter函数">filter函数<a hidden class="anchor" aria-hidden="true" href="#filter函数">#</a></h3>
+<p>filter(bool_func,seq)：此函数的功能相当于过滤器。 调用一个布尔函数bool_func来迭代遍历每个seq中的元素，返回一个使bool_seq返回值为true的元素的序列。</p>
+<pre tabindex="0"><code>filter(lambda x:x%2==0,[1,2,3,4,6,5,7])
+Out[15]:
+[2, 4, 6]   
+</code></pre><h3 id="reduce函数">reduce函数<a hidden class="anchor" aria-hidden="true" href="#reduce函数">#</a></h3>
+<p>reduce(func,seq[,init])：func为二元函数，将func作用于seq序列的元素，每次携带一对（先前的结果以及下一个序列的元素），连续的将现有的结果和下一个值作用在获得的随后的结果上，最后减少我们的序列为一个单一的返回值：如果初始值init给定，第一个比较会是init和第一个序列元素而不是序列的头两个元素。</p>
+<pre tabindex="0"><code>reduce(lambda x,y:x+y,[1,2,3,4])
+Out[22]:
+10
+
+reduce(lambda x,y: x-y,[1,2,3,4,5],19)
+reduce(lambda x,y: x-y,[1,2,3,4,5],19)
+Out[23]:
+4
+
+reduce(lambda x,y: x-y,[1,2,3,5],5)
+Out[21]:
+-6
+</code></pre><h3 id="isinstance">isinstance<a hidden class="anchor" aria-hidden="true" href="#isinstance">#</a></h3>
+<p>isinstance(object, classinfo)  判断一个对象是否是一个已知的类型。</p>
+<pre tabindex="0"><code>isinstance(object, class-or-type-or-tuple) -&gt; bool
+
+Return whether an object is an instance of a class or of a subclass thereof.
+With a type as second argument, return whether that is the object&#39;s type.
+The form using a tuple, isinstance(x, (A, B, ...)), is a shortcut for
+isinstance(x, A) or isinstance(x, B) or ... (etc.).
+</code></pre><p>其第一个参数为对象，第二个为类型名或类型名的一个列表。其返回值为布尔型。若对象的类型与参数二的类型相同则返回True。若参数二为一个元组，则若对象类型与元组中类型名之一相同即返回True。</p>
+<pre tabindex="0"><code>tes = list()
+tes.append(3)
+ta= &#39;a&#39;,&#39;b&#39;
+print tes
+print isinstance(tes, list)
+print isinstance(ta, tuple)
+
+print isinstance(tes,(int, tuple, list))
+print isinstance(tes,(int, tuple))
+</code></pre><p>Out:</p>
+<pre tabindex="0"><code>    [3]
+    True
+    True
+    True
+    False
+</code></pre><h3 id="id">id<a hidden class="anchor" aria-hidden="true" href="#id">#</a></h3>
+<p>查看object 地址</p>
+<p>in：
+<code>    print id.__doc__</code></p>
+<p>Out：​
+<code>    id(object) -&gt; integer</code></p>
+<pre tabindex="0"><code>    Return the identity of an object.  This is guaranteed to be unique among
+    simultaneously existing objects.  (Hint: it&#39;s the object&#39;s memory address.)
+</code></pre><h3 id="assert">assert<a hidden class="anchor" aria-hidden="true" href="#assert">#</a></h3>
+<p>断言</p>
+<p>Python中assert用来判断语句的真假，如果<strong>为假的时候，将触发AssertionError错误</strong></p>
+<pre tabindex="0"><code>a = None
+assert a != None
+print a
+</code></pre><p>out：</p>
+<pre tabindex="0"><code class="language----------------------------------------------------------------------------" data-lang="---------------------------------------------------------------------------">AssertionError                            Traceback (most recent call last)
+&lt;ipython-input-1-4165ca7bb901&gt; in &lt;module&gt;()
+      1
+      2 a = None
+----&gt; 3 assert a != None
+      4 print a
+
+AssertionError:
+</code></pre><p>另一例子：</p>
+<pre tabindex="0"><code>a=[1,2,3]
+# a = None
+assert len(a) &lt; 5  # 为真通过
+assert a != None
+print a
+</code></pre><p>out：</p>
+<pre tabindex="0"><code>[1, 2, 3]
+</code></pre><h3 id="min--max">min &amp;&amp; max<a hidden class="anchor" aria-hidden="true" href="#min--max">#</a></h3>
+<pre tabindex="0"><code>c = [-10, -45, 0, 5, 3, 50, 15, -20, 25]
+
+print &#34;min: %s&#34; %c.index(min(c))  # 返回最小值
+print &#34;max: %s&#34; %c.index(max(c)) # 返回最大值
+</code></pre><p>out:</p>
+<pre tabindex="0"><code>        min: 1
+        max: 5
+</code></pre><h3 id="异步io-asyncio">异步IO asyncio<a hidden class="anchor" aria-hidden="true" href="#异步io-asyncio">#</a></h3>
+<ul>
+<li>系统含有DNN 算法，需处理大量的数据</li>
+<li>避免使用多进程/进程，带来大量切换开销</li>
+<li>进程内有http的请求操作（e.g TF-serving 做模型推理)，IO操作频繁</li>
+<li>该场景下，协程是一个较好的方案，
+<ul>
+<li>将数据的准备和推理并行</li>
+<li>可以将多个模型并行推理（后台使用K8s 部署管理tf-serving实例， 进行负载均衡）</li>
+</ul>
+</li>
+</ul>
+<p><strong>示例</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">time</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">asyncio</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">json</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">functools</span>
+</span></span><span class="line"><span class="cl"><span class="n">now</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">async</span> <span class="k">def</span> <span class="nf">do_some_work</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sec</span> <span class="o">=</span> <span class="mf">0.5</span>
+</span></span><span class="line"><span class="cl">    <span class="n">count</span> <span class="o">=</span> <span class="mi">8</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;proc-</span><span class="si">%s</span><span class="s2">, wait sec: </span><span class="si">%s</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">sec</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">sec</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s2">&#34;result&#34;</span><span class="p">:</span> <span class="nb">list</span><span class="p">([</span><span class="mf">0.5</span><span class="o">*</span><span class="n">_i</span><span class="o">*</span><span class="n">x</span> <span class="k">for</span> <span class="n">_i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">count</span><span class="p">)])})</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">callback</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">future</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Callback-</span><span class="si">%s</span><span class="s1">, results: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">future</span><span class="o">.</span><span class="n">result</span><span class="p">()))</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl"><span class="n">task_num</span> <span class="o">=</span> <span class="mi">5</span>
+</span></span><span class="line"><span class="cl"><span class="n">start</span> <span class="o">=</span> <span class="n">now</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">tasks</span> <span class="o">=</span> <span class="p">[</span><span class="n">asyncio</span><span class="o">.</span><span class="n">ensure_future</span><span class="p">(</span><span class="n">do_some_work</span><span class="p">(</span><span class="n">_i</span><span class="p">,</span> <span class="n">_i</span><span class="p">))</span> <span class="k">for</span> <span class="n">_i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">task_num</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl"><span class="n">loop</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">get_event_loop</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">task</span><span class="o">.</span><span class="n">add_done_callback</span><span class="p">(</span><span class="n">functools</span><span class="o">.</span><span class="n">partial</span><span class="p">(</span><span class="n">callback</span><span class="p">,</span> <span class="n">_index</span><span class="p">))</span> <span class="k">for</span> <span class="n">_index</span><span class="p">,</span> <span class="n">task</span> <span class="ow">in</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">enumerate</span><span class="p">(</span><span class="n">tasks</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl"><span class="n">loop</span><span class="o">.</span><span class="n">run_until_complete</span><span class="p">(</span><span class="n">asyncio</span><span class="o">.</span><span class="n">wait</span><span class="p">(</span><span class="n">tasks</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="n">tasks</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Task ret: &#39;</span><span class="p">,</span> <span class="n">task</span><span class="o">.</span><span class="n">result</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;TIME: &#39;</span><span class="p">,</span> <span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
+</span></span></code></pre></div><blockquote>
+<p><a href="https://hackernoon.com/threaded-asynchronous-magic-and-how-to-wield-it-bba9ed602c32?gi=930493ba01f2#.71h32j2ir">REF</a></p>
+</blockquote>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:58211/tags/python/">Python</a></li>
+      <li><a href="http://localhost:58211/tags/%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/">内置函数</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:58211/posts/python_identity/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Python 有关引用的一些问题</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>© 2017-2024 <a href="http://www.imxwell.com">xwell</a> All Rights Reserved</span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

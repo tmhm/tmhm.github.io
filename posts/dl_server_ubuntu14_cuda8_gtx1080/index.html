@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=58211&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>DL服务器主机环境配置 ubuntu14.04 &amp;&amp; Cuda8.0 | Xwell</title>
+<meta name="keywords" content="环境配置, Cuda环境配置">
+<meta name="description" content="前面部分是自己的记录，后面方案部分是成功安装驱动&#43;桌面重复的正解">
+<meta name="author" content="xwell">
+<link rel="canonical" href="http://localhost:58211/posts/dl_server_ubuntu14_cuda8_gtx1080/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.fc220c15db4aef0318bbf30adc45d33d4d7c88deff3238b23eb255afdc472ca6.css" integrity="sha256-/CIMFdtK7wMYu/MK3EXTPU18iN7/MjiyPrJVr9xHLKY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:58211/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:58211/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:58211/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:58211/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:58211/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:58211/posts/dl_server_ubuntu14_cuda8_gtx1080/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="DL服务器主机环境配置 ubuntu14.04 &amp;&amp; Cuda8.0" />
+<meta property="og:description" content="前面部分是自己的记录，后面方案部分是成功安装驱动&#43;桌面重复的正解" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:58211/posts/dl_server_ubuntu14_cuda8_gtx1080/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2016-11-21T12:15:00+00:00" />
+<meta property="article:modified_time" content="2016-11-21T12:15:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="DL服务器主机环境配置 ubuntu14.04 &amp;&amp; Cuda8.0"/>
+<meta name="twitter:description" content="前面部分是自己的记录，后面方案部分是成功安装驱动&#43;桌面重复的正解"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:58211/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "DL服务器主机环境配置 ubuntu14.04 \u0026\u0026 Cuda8.0",
+      "item": "http://localhost:58211/posts/dl_server_ubuntu14_cuda8_gtx1080/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "DL服务器主机环境配置 ubuntu14.04 \u0026\u0026 Cuda8.0",
+  "name": "DL服务器主机环境配置 ubuntu14.04 \u0026\u0026 Cuda8.0",
+  "description": "前面部分是自己的记录，后面方案部分是成功安装驱动+桌面重复的正解",
+  "keywords": [
+    "环境配置", "Cuda环境配置"
+  ],
+  "articleBody": "实验室深度学习服务器环境配置ubuntu14.04 \u0026\u0026 GTX1080 \u0026\u0026 Cuda8.0, 解决安装驱动后桌面重复登录问题。 前面部分是配置ubuntu cuda 环境的记录，后面方案部分是成功安装驱动+桌面的正解。 问题的焦点在于：安装cuda驱动后，登录不了桌面，停留在重复输入密码界面。\n博文中分析的结论： 虚拟机中不能直接调用物理显卡进行 CUDA 编程；虚拟机中运行 CUDA 需要硬件和软件的配合才能使用，对于一般使用者可能暂时不太可能的。\n参考博文：\n深度学习主机环境配置: Ubuntu16.04+Nvidia GTX 1080+CUDA8.0\n深度学习主机环境配置: Ubuntu16.04+GeForce GTX 1080+TensorFlow\nubuntu14.04+cuda8.0（GTX1080）+caffe安装\n如何搭建一台深度学习服务器\nCtrl+alt+F1进入字符界面，关闭图形界面\nsudo service lightdm stop //必须有，不然会安装失败 sudo /etc/init.d/lightdm stop //一样的命令 sudo chmod 755 NVIDIA-Linux-x86_64-367.27.run //获取权限 sudo ./NVIDIA-Linux-x86_64-367.27.run //安装驱动 Accept Continue installation 安装完成之后\nsudo service lightdm start\n图形界面出现，然后关机，由让人重复输入密码，登录不了\n博主说\n$ sudo /etc/init.d/gdm stop $ sudo nvidia-installer --update $ sudo /etc/init.d/gdm start 升级到375版本， 还是没用，启动进入不了桌面，重复登录\nInstall driver 367 Uninstall previous nvidia drivers.\n$ sudo apt-get purge nvidia-* Stop light gdm (graphical interface)\n$ sudo service lightgdm Go to tty (CTRL+ALT+F1). Set your init state to 3 (text only mode). It is important to do this. Note these commands on a paper or something. I experienced sometimes the tty does not show with the newest driver. I just ssh to my PC as a way around.\n$ sudo init 3 Log in to tty and cd to the directory where your have downloaded the driver.\n$ sudo ./NVIDIA-Linux-x86_64-367.35.run It will ask if you want to install 32-bit libraries, say no (assuming you do not have a 32-bit OS, hopefully. If you do have a 32-bit OS it is a good idea to upgrade…)\nIn a few minutes it is done….smooth. Reboot your PC $ sudo reboot update 之后还是不能进 图形界面\nUninstall previous nvidia drivers.\nsudo apt-get purge nvidia-* sudo apt-get autoremove sudo apt-get --purge remove nvidia-* remove 之后，\nnvidia-smi 还是能看到gpu的。why？\n卸载不了？\nsudo apt-get install nvidia-prime $ sudo /etc/init.d/lightdm stop $ sudo nvidia-installer --update $ sudo /etc/init.d/lightdm start 升级到375版本， 还是没用，启动进入不了桌面，重复登录\n有人说，安装必须要在安装桌面前安装GTX 1080 driver，后面方案验证来看， 那个参数才是关键。\n解决方法 利用sudo gedit /etc/modprobe.d/blacklist-nouveau.conf新建blacklist-nouveau.conf文件，输入命令\nblacklist nouveau blacklist lbm-nouveau options nouveau modeset=0 alias nouveau off alias lbm-nouveau off 保存并退出。这一步是为了禁掉Ubuntu自带开源驱动nouveau。之后sudo reboot重启系统。在终端执行命令 lsmod | grep nouveau 查看nouveau模块是否被加载。如果什么都没输出，则执行下一步。\n根本问题在于 参数： –no-opengl-files\nsudo /etc/init.d/lightdm stop sudo ./NVIDIA-Linux-x86_64-375.20.run --no-opengl-files sudo /etc/init.d/lightdm start 即可以正常登录界面了！！\n在安装过程中的选项：\nAccept\nContinue installation\nregister the kernel moudle sources with DKMS?\nNO\nWould you like to run the nvidia-xconfig utility to automatically update your X Configuration file so set the NVIDIA X driver will be used when you restart X?\nNO\nInstall 32-Bit compatibility libraries?参考\nNO Cuda8.0安装 运行\nsudo sh cuda_8.0.44_linux.run 选项如下所示：\nDescription This package includes over 100+ CUDA examples that demonstrate various CUDA programming principles, and efficient CUDA implementation of algorithms in specific application domains. The NVIDIA CUDA Samples License Agreement is available in Do you accept the previously read EULA? accept/decline/quit: accept Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 367.48? (y)es/(n)o/(q)uit: n Install the CUDA 8.0 Toolkit? (y)es/(n)o/(q)uit: y Enter Toolkit Location [ default is /usr/local/cuda-8.0 ]: Do you want to install a symbolic link at /usr/local/cuda? (y)es/(n)o/(q)uit: y Install the CUDA 8.0 Samples? (y)es/(n)o/(q)uit: y Enter CUDA Samples Location [ default is /home/c302 ]: Installing the CUDA Toolkit in /usr/local/cuda-8.0 ... Installing the CUDA Samples in /home/c302 ... Copying samples to /home/c302/NVIDIA_CUDA-8.0_Samples now... Finished copying samples. =========== = Summary = =========== Driver: Not Selected Toolkit: Installed in /usr/local/cuda-8.0 Samples: Installed in /home/c302 Please make sure that - PATH includes /usr/local/cuda-8.0/bin - LD_LIBRARY_PATH includes /usr/local/cuda-8.0/lib64, or, add /usr/local/cuda-8.0/lib64 to /etc/ld.so.conf and run ldconfig as root To uninstall the CUDA Toolkit, run the uninstall script in /usr/local/cuda-8.0/bin Please see CUDA_Installation_Guide_Linux.pdf in /usr/local/cuda-8.0/doc/pdf for detailed information on setting up CUDA. ***WARNING: Incomplete installation! This installation did not install the CUDA Driver. A driver of version at least 361.00 is required for CUDA 8.0 functionality to work. To install the driver using this installer, run the following command, replacing with the name of this run file: sudo .run -silent -driver Logfile is /tmp/cuda_install_9045.log 设置环境变量 export PATH=/usr/local/cuda-8.0/bin:$PATH export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH 添加系统变量修改到系统文件 sudo vi /etc/profile 在最后添加上面两句，然后保存。使立即生效 sudo ldconfig //环境变量立即生效 验证 cuda c302@c302-dl:~/Downloads$ nvcc -V nvcc: NVIDIA (R) Cuda compiler driver Copyright (c) 2005-2016 NVIDIA Corporation Built on Sun_Sep__4_22:14:01_CDT_2016 Cuda compilation tools, release 8.0, V8.0.44 测试cuda的samples cd ‘/home/zhou/NVIDIA_CUDA-8.0_Samples’ make //这里需要点时间 最后显示：\nmake[1]: Leaving directory `/home/c302/NVIDIA_CUDA-8.0_Samples/7_CUDALibraries/MersenneTwisterGP11213'\nFinished building CUDA samples\ncd 0_Simple/matrixMul\n运行测试如下：\nc302@c302-dl:~/NVIDIA_CUDA-8.0_Samples/0_Simple/matrixMul$ ./matrixMul [Matrix Multiply Using CUDA] - Starting... GPU Device 0: \"GeForce GTX 1080\" with compute capability 6.1 MatrixA(320,320), MatrixB(640,320) Computing result using CUDA Kernel... done Performance= 1109.06 GFlop/s, Time= 0.118 msec, Size= 131072000 Ops, WorkgroupSize= 1024 threads/block Checking computed result for correctness: Result = PASS NOTE: The CUDA Samples are not meant for performance measurements. Results may vary when GPU Boost is enabled. 下一篇将会是安装cuDNN、tensorflow等lib\n",
+  "wordCount" : "695",
+  "inLanguage": "en",
+  "datePublished": "2016-11-21T12:15:00Z",
+  "dateModified": "2016-11-21T12:15:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "xwell"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:58211/posts/dl_server_ubuntu14_cuda8_gtx1080/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Xwell",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:58211/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:58211/" accesskey="h" title="Xwell (Alt + H)">Xwell</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:58211/publications/" title="Publications">
+                    <span>Publications</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:58211/posts/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:58211/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:58211/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:58211/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:58211/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      DL服务器主机环境配置 ubuntu14.04 &amp;&amp; Cuda8.0
+    </h1>
+    <div class="post-description">
+      前面部分是自己的记录，后面方案部分是成功安装驱动&#43;桌面重复的正解
+    </div>
+    <div class="post-meta"><span title='2016-11-21 12:15:00 +0000 UTC'>November 21, 2016</span>&nbsp;·&nbsp;4 min&nbsp;·&nbsp;xwell
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#install-driver-367httpskusemanoharwordpresscom20160729gtx-1080-on-ubuntu-14-04-trusty" aria-label="Install driver 367">Install driver 367</a></li>
+                <li>
+                    <a href="#%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95" aria-label="解决方法">解决方法</a></li>
+                <li>
+                    <a href="#cuda80%e5%ae%89%e8%a3%85" aria-label="Cuda8.0安装">Cuda8.0安装</a></li>
+                <li>
+                    <a href="#%e8%ae%be%e7%bd%ae%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f" aria-label="设置环境变量">设置环境变量</a></li>
+                <li>
+                    <a href="#%e9%aa%8c%e8%af%81-cuda" aria-label="验证 cuda">验证 cuda</a></li>
+                <li>
+                    <a href="#%e6%b5%8b%e8%af%95cuda%e7%9a%84samples" aria-label="测试cuda的samples">测试cuda的samples</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>实验室深度学习服务器环境配置ubuntu14.04 &amp;&amp;  GTX1080 &amp;&amp; Cuda8.0, 解决安装驱动后桌面重复登录问题。
+前面部分是配置ubuntu cuda 环境的记录，后面方案部分是成功安装驱动+桌面的正解。
+问题的焦点在于：安装cuda驱动后，登录不了桌面，停留在重复输入密码界面。</p>
+<p><a href="http://blog.csdn.net/nothinglefttosay/article/details/45095125">博文中</a>分析的<strong>结论：</strong>
+<strong>虚拟机中不能直接调用物理显卡进行 CUDA 编程；虚拟机中运行 CUDA 需要硬件和软件的配合才能使用，对于一般使用者可能暂时不太可能的。</strong></p>
+<p>参考博文：</p>
+<p><a href="http://www.52nlp.cn/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%BB%E6%9C%BA%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-ubuntu-16-04-nvidia-gtx-1080-cuda-8">深度学习主机环境配置: Ubuntu16.04+Nvidia GTX 1080+CUDA8.0</a></p>
+<p><a href="http://www.52nlp.cn/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%BB%E6%9C%BA%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-ubuntu16-04-geforce-gtx1080-tensorflow">深度学习主机环境配置: Ubuntu16.04+GeForce GTX 1080+TensorFlow</a></p>
+<p><a href="http://www.codexiu.cn/linux/blog/27993/">ubuntu14.04+cuda8.0（GTX1080）+caffe安装</a></p>
+<p><a href="https://www.r-bloggers.com/lang/chinese/2042">如何搭建一台深度学习服务器</a></p>
+<p>Ctrl+alt+F1进入字符界面，关闭图形界面</p>
+<pre tabindex="0"><code>sudo service lightdm stop //必须有，不然会安装失败
+sudo /etc/init.d/lightdm stop //一样的命令
+
+sudo chmod 755 NVIDIA-Linux-x86_64-367.27.run  //获取权限
+sudo ./NVIDIA-Linux-x86_64-367.27.run  //安装驱动
+</code></pre><p>Accept
+Continue installation
+安装完成之后</p>
+<p><code>sudo service lightdm start</code></p>
+<p>图形界面出现，然后关机，由让人重复输入密码，登录不了</p>
+<p><a href="http://nemesisdesign.net/blog/coding/how-reinstall-nvidia-drivers-linux-ubuntu/">博主</a>说</p>
+<pre tabindex="0"><code>$ sudo /etc/init.d/gdm stop
+$ sudo nvidia-installer --update
+$ sudo /etc/init.d/gdm start
+</code></pre><p>升级到375版本， 还是没用，启动进入不了桌面，重复登录</p>
+<h3 id="install-driver-367httpskusemanoharwordpresscom20160729gtx-1080-on-ubuntu-14-04-trusty"><a href="https://kusemanohar.wordpress.com/2016/07/29/gtx-1080-on-ubuntu-14-04-trusty/">Install driver 367</a><a hidden class="anchor" aria-hidden="true" href="#install-driver-367httpskusemanoharwordpresscom20160729gtx-1080-on-ubuntu-14-04-trusty">#</a></h3>
+<p>Uninstall previous nvidia drivers.</p>
+<p><code>$ sudo apt-get purge nvidia-* </code></p>
+<p>Stop light gdm (graphical interface)</p>
+<p><code>$ sudo service lightgdm </code></p>
+<p>Go to tty (CTRL+ALT+F1). Set your init state to 3 (text only mode). It is important to do this. Note these commands on a paper or something. I experienced sometimes the tty does not show with the newest driver. I just ssh to my PC as a way around.</p>
+<p><code>$ sudo init 3 </code></p>
+<p>Log in to tty and cd to the directory where your have downloaded the driver.</p>
+<p><code>$ sudo ./NVIDIA-Linux-x86_64-367.35.run </code></p>
+<p>It will ask if you want to install 32-bit libraries, say no (assuming you do not have a 32-bit OS, hopefully. If you do have a 32-bit OS it is a good idea to upgrade…)</p>
+<p>In a few minutes it is done….smooth. Reboot your PC
+<code>$ sudo reboot </code></p>
+<p>update 之后还是不能进 图形界面</p>
+<p>Uninstall previous nvidia drivers.</p>
+<pre tabindex="0"><code>sudo apt-get purge nvidia-*
+sudo apt-get autoremove
+sudo apt-get --purge remove nvidia-*
+</code></pre><p>remove 之后，</p>
+<p><code>nvidia-smi </code></p>
+<p>还是能看到gpu的。why？</p>
+<p>卸载不了？</p>
+<pre tabindex="0"><code>sudo apt-get install nvidia-prime
+
+$ sudo /etc/init.d/lightdm stop
+$ sudo nvidia-installer --update
+$ sudo /etc/init.d/lightdm start
+</code></pre><p><strong>升级到375版本， 还是没用，启动进入不了桌面，重复登录</strong></p>
+<blockquote>
+<p>有人说，安装必须要在安装桌面前安装GTX 1080 driver，后面方案验证来看， 那个参数才是关键。</p>
+</blockquote>
+<h3 id="解决方法">解决方法<a hidden class="anchor" aria-hidden="true" href="#解决方法">#</a></h3>
+<p>利用sudo gedit /etc/modprobe.d/blacklist-nouveau.conf新建blacklist-nouveau.conf文件，输入命令</p>
+<pre tabindex="0"><code>blacklist nouveau
+
+blacklist lbm-nouveau
+
+options nouveau modeset=0
+
+alias nouveau off
+
+alias lbm-nouveau off
+</code></pre><p>保存并退出。这一步是为了禁掉Ubuntu自带开源驱动nouveau。之后sudo reboot重启系统。在终端执行命令
+<code>lsmod | grep nouveau </code></p>
+<p>查看nouveau模块是否被加载。如果什么都没输出，则执行下一步。</p>
+<p>根本问题在于 参数：  <strong>&ndash;no-opengl-files</strong></p>
+<pre tabindex="0"><code>sudo /etc/init.d/lightdm stop
+sudo ./NVIDIA-Linux-x86_64-375.20.run --no-opengl-files
+sudo /etc/init.d/lightdm start
+</code></pre><p>即可以正常登录界面了！！</p>
+<p>在安装过程中的选项：</p>
+<p>Accept</p>
+<p>Continue installation</p>
+<blockquote>
+<p>register the kernel moudle sources with DKMS?</p>
+</blockquote>
+<p>NO</p>
+<blockquote>
+<p>Would you like to run the nvidia-xconfig utility to automatically update your X Configuration file so set the NVIDIA X driver will be used when you restart X?</p>
+</blockquote>
+<p>NO</p>
+<blockquote>
+<p>Install 32-Bit compatibility <a href="https://elementaryforums.com/index.php?threads/howto-install-latest-nvidia-driver-on-linux-without-getting-black-screen.7/">libraries?参考</a></p>
+</blockquote>
+<p>NO
+<img loading="lazy" src="http://i.imgur.com/5DHQbMl.png" alt=""  />
+</p>
+<h3 id="cuda80安装">Cuda8.0安装<a hidden class="anchor" aria-hidden="true" href="#cuda80安装">#</a></h3>
+<p>运行</p>
+<p><code>sudo sh cuda_8.0.44_linux.run </code></p>
+<p>选项如下所示：</p>
+<pre tabindex="0"><code>Description
+
+This package includes over 100+ CUDA examples that demonstrate
+various CUDA programming principles, and efficient CUDA
+implementation of algorithms in specific application domains.
+The NVIDIA CUDA Samples License Agreement is available in
+Do you accept the previously read EULA?
+accept/decline/quit: accept
+
+Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 367.48?
+(y)es/(n)o/(q)uit: n
+
+Install the CUDA 8.0 Toolkit?
+(y)es/(n)o/(q)uit: y
+
+Enter Toolkit Location
+ [ default is /usr/local/cuda-8.0 ]:
+
+Do you want to install a symbolic link at /usr/local/cuda?
+(y)es/(n)o/(q)uit: y
+
+Install the CUDA 8.0 Samples?
+(y)es/(n)o/(q)uit: y
+
+Enter CUDA Samples Location
+ [ default is /home/c302 ]:
+
+Installing the CUDA Toolkit in /usr/local/cuda-8.0 ...
+Installing the CUDA Samples in /home/c302 ...
+Copying samples to /home/c302/NVIDIA_CUDA-8.0_Samples now...
+Finished copying samples.
+
+===========
+= Summary =
+===========
+
+Driver:   Not Selected
+Toolkit:  Installed in /usr/local/cuda-8.0
+Samples:  Installed in /home/c302
+
+Please make sure that
+ -   PATH includes /usr/local/cuda-8.0/bin
+ -   LD_LIBRARY_PATH includes /usr/local/cuda-8.0/lib64, or, add /usr/local/cuda-8.0/lib64 to /etc/ld.so.conf and run ldconfig as root
+
+To uninstall the CUDA Toolkit, run the uninstall script in /usr/local/cuda-8.0/bin
+
+Please see CUDA_Installation_Guide_Linux.pdf in /usr/local/cuda-8.0/doc/pdf for detailed information on setting up CUDA.
+
+***WARNING: Incomplete installation! This installation did not install the CUDA Driver. A driver of version at least 361.00 is required for CUDA 8.0 functionality to work.
+To install the driver using this installer, run the following command, replacing &lt;CudaInstaller&gt; with the name of this run file:
+    sudo &lt;CudaInstaller&gt;.run -silent -driver
+
+Logfile is /tmp/cuda_install_9045.log
+    
+</code></pre><h3 id="设置环境变量">设置环境变量<a hidden class="anchor" aria-hidden="true" href="#设置环境变量">#</a></h3>
+<pre tabindex="0"><code>export PATH=/usr/local/cuda-8.0/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
+</code></pre><p>添加系统变量修改到系统文件
+<code>sudo vi /etc/profile </code></p>
+<p>在最后添加上面两句，然后保存。使立即生效
+<code>sudo ldconfig //环境变量立即生效 </code></p>
+<h3 id="验证-cuda">验证 cuda<a hidden class="anchor" aria-hidden="true" href="#验证-cuda">#</a></h3>
+<pre tabindex="0"><code>c302@c302-dl:~/Downloads$ nvcc -V
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2016 NVIDIA Corporation
+Built on Sun_Sep__4_22:14:01_CDT_2016
+Cuda compilation tools, release 8.0, V8.0.44
+</code></pre><h3 id="测试cuda的samples">测试cuda的samples<a hidden class="anchor" aria-hidden="true" href="#测试cuda的samples">#</a></h3>
+<pre tabindex="0"><code>cd ‘/home/zhou/NVIDIA_CUDA-8.0_Samples’
+make  //这里需要点时间
+</code></pre><p>最后显示：</p>
+<blockquote>
+<p>make[1]: Leaving directory `/home/c302/NVIDIA_CUDA-8.0_Samples/7_CUDALibraries/MersenneTwisterGP11213'</p>
+</blockquote>
+<blockquote>
+<p>Finished building CUDA samples</p>
+</blockquote>
+<p><code>cd 0_Simple/matrixMul</code></p>
+<p>运行测试如下：</p>
+<pre tabindex="0"><code>c302@c302-dl:~/NVIDIA_CUDA-8.0_Samples/0_Simple/matrixMul$ ./matrixMul
+[Matrix Multiply Using CUDA] - Starting...
+GPU Device 0: &#34;GeForce GTX 1080&#34; with compute capability 6.1
+
+MatrixA(320,320), MatrixB(640,320)
+Computing result using CUDA Kernel...
+done
+Performance= 1109.06 GFlop/s, Time= 0.118 msec, Size= 131072000 Ops, WorkgroupSize= 1024 threads/block
+Checking computed result for correctness: Result = PASS
+
+NOTE: The CUDA Samples are not meant for performance measurements. Results may vary when GPU Boost is enabled.
+</code></pre><p><img loading="lazy" src="http://i.imgur.com/iRwuetR.png" alt=""  />
+</p>
+<p>下一篇将会是安装cuDNN、tensorflow等lib</p>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:58211/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">环境配置</a></li>
+      <li><a href="http://localhost:58211/tags/cuda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">Cuda环境配置</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:58211/posts/rl_basic/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>强化学习问题回顾</span>
+  </a>
+  <a class="next" href="http://localhost:58211/posts/c_cplus_basic0/">
+    <span class="title">Next »</span>
+    <br>
+    <span>C_Cplus程序设计涉及的一些知识点</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>© 2017-2024 <a href="http://www.imxwell.com">xwell</a> All Rights Reserved</span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
