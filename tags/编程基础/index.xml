@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>编程基础 on Xwell</title>
-    <link>http://localhost:60167/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/</link>
+    <link>https://www.imxwell.com/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/</link>
     <description>Recent content in 编程基础 on Xwell</description>
     <generator>Hugo -- 0.133.0</generator>
     <language>en</language>
     <copyright>2017-2024 xwell All Rights Reserved</copyright>
     <lastBuildDate>Tue, 30 Aug 2016 10:47:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:60167/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.imxwell.com/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>C_Cplus程序设计涉及的一些知识点</title>
-      <link>http://localhost:60167/posts/c_cplus_basic0/</link>
+      <link>https://www.imxwell.com/posts/c_cplus_basic0/</link>
       <pubDate>Tue, 30 Aug 2016 10:47:00 +0000</pubDate>
-      <guid>http://localhost:60167/posts/c_cplus_basic0/</guid>
+      <guid>https://www.imxwell.com/posts/c_cplus_basic0/</guid>
       <description>C&#43;&#43;中的一些小知识点（printf压栈顺序，指针引用，动态内存以及变量的存储位置，构造函数，this指针等问题的回顾） </description>
     </item>
     <item>
       <title>Python 有关引用的一些问题</title>
-      <link>http://localhost:60167/posts/python_identity/</link>
+      <link>https://www.imxwell.com/posts/python_identity/</link>
       <pubDate>Sat, 21 May 2016 14:24:00 +0000</pubDate>
-      <guid>http://localhost:60167/posts/python_identity/</guid>
+      <guid>https://www.imxwell.com/posts/python_identity/</guid>
       <description>Python中引用的一些分析记录</description>
     </item>
   </channel>

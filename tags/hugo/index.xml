@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Hugo on Xwell</title>
-    <link>http://localhost:60167/tags/hugo/</link>
+    <link>https://www.imxwell.com/tags/hugo/</link>
     <description>Recent content in Hugo on Xwell</description>
     <generator>Hugo -- 0.133.0</generator>
     <language>en</language>
     <copyright>2017-2024 xwell All Rights Reserved</copyright>
     <lastBuildDate>Sat, 03 Sep 2022 13:50:28 +0800</lastBuildDate>
-    <atom:link href="http://localhost:60167/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.imxwell.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Wordpress2Hugo</title>
-      <link>http://localhost:60167/posts/wordpress2hugo/</link>
+      <link>https://www.imxwell.com/posts/wordpress2hugo/</link>
       <pubDate>Sat, 03 Sep 2022 13:50:28 +0800</pubDate>
-      <guid>http://localhost:60167/posts/wordpress2hugo/</guid>
+      <guid>https://www.imxwell.com/posts/wordpress2hugo/</guid>
       <description>&lt;p&gt;把个人站点从wordpress 迁移到了hugo+even。
 本文主要记录hugo 下搭配使用even 主题的一些配置&lt;/p&gt;</description>
     </item>

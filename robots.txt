@@ -1,3 +1,3 @@
 User-agent: *
 Disallow:
-Sitemap: http://localhost:60167/sitemap.xml
+Sitemap: https://www.imxwell.com/sitemap.xml

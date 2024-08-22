@@ -2,83 +2,83 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Xwell</title>
-    <link>http://localhost:60167/</link>
+    <link>https://www.imxwell.com/</link>
     <description>Recent content on Xwell</description>
     <generator>Hugo -- 0.133.0</generator>
     <language>en</language>
     <copyright>2017-2024 xwell All Rights Reserved</copyright>
     <lastBuildDate>Thu, 22 Aug 2024 11:15:05 +0800</lastBuildDate>
-    <atom:link href="http://localhost:60167/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.imxwell.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>阅读书单</title>
-      <link>http://localhost:60167/posts/reading_list/</link>
+      <link>https://www.imxwell.com/posts/reading_list/</link>
       <pubDate>Sun, 29 Dec 2019 10:47:05 +0800</pubDate>
-      <guid>http://localhost:60167/posts/reading_list/</guid>
+      <guid>https://www.imxwell.com/posts/reading_list/</guid>
       <description>&lt;p&gt;学而时习之，不亦说乎?    &amp;mdash;《论语》&lt;/p&gt;</description>
     </item>
     <item>
       <title>Pandas分组聚合及编码</title>
-      <link>http://localhost:60167/posts/pandas_group/</link>
+      <link>https://www.imxwell.com/posts/pandas_group/</link>
       <pubDate>Sun, 18 Sep 2022 08:53:05 +0800</pubDate>
-      <guid>http://localhost:60167/posts/pandas_group/</guid>
+      <guid>https://www.imxwell.com/posts/pandas_group/</guid>
       <description>&lt;p&gt;有关Pandas 分组聚合相关操作的一些总结，包括groupby分组, transform, 以及explode等操作。&lt;/p&gt;</description>
     </item>
     <item>
       <title>Wordpress2Hugo</title>
-      <link>http://localhost:60167/posts/wordpress2hugo/</link>
+      <link>https://www.imxwell.com/posts/wordpress2hugo/</link>
       <pubDate>Sat, 03 Sep 2022 13:50:28 +0800</pubDate>
-      <guid>http://localhost:60167/posts/wordpress2hugo/</guid>
+      <guid>https://www.imxwell.com/posts/wordpress2hugo/</guid>
       <description>&lt;p&gt;把个人站点从wordpress 迁移到了hugo+even。
 本文主要记录hugo 下搭配使用even 主题的一些配置&lt;/p&gt;</description>
     </item>
     <item>
       <title>Selected Publications</title>
-      <link>http://localhost:60167/publications/</link>
+      <link>https://www.imxwell.com/publications/</link>
       <pubDate>Sun, 28 Aug 2022 16:23:03 +0800</pubDate>
-      <guid>http://localhost:60167/publications/</guid>
+      <guid>https://www.imxwell.com/publications/</guid>
       <description>Thanks to all the collaborators I&amp;rsquo;ve worked with. ☺
 Li, Q., Xia, W. etc. Privileged Knowledge State Distillation for Reinforcement Learning-based Educational Path Recommendation, KDD24. Accepted Liu, Y., Xia, W.*, Liu, W., Zhu, M., Zhang, W., Tang, R., &amp;amp; Yu, Y. (2024, May). HiFI: Hierarchical Fairness-aware Integrated Ranking with Constrained Reinforcement Learning. In Companion Proceedings of the ACM on Web Conference 24(pp. 196-205). Li, Q., Xia, W., Yin, L. A.</description>
     </item>
     <item>
       <title>强化学习问题回顾</title>
-      <link>http://localhost:60167/posts/rl_basic/</link>
+      <link>https://www.imxwell.com/posts/rl_basic/</link>
       <pubDate>Sat, 13 Apr 2019 21:58:52 +0800</pubDate>
-      <guid>http://localhost:60167/posts/rl_basic/</guid>
+      <guid>https://www.imxwell.com/posts/rl_basic/</guid>
       <description>强化学习问题概述</description>
     </item>
     <item>
       <title>DL服务器主机环境配置 ubuntu14.04 &amp;&amp; Cuda8.0</title>
-      <link>http://localhost:60167/posts/dl_server_ubuntu14_cuda8_gtx1080/</link>
+      <link>https://www.imxwell.com/posts/dl_server_ubuntu14_cuda8_gtx1080/</link>
       <pubDate>Mon, 21 Nov 2016 12:15:00 +0000</pubDate>
-      <guid>http://localhost:60167/posts/dl_server_ubuntu14_cuda8_gtx1080/</guid>
+      <guid>https://www.imxwell.com/posts/dl_server_ubuntu14_cuda8_gtx1080/</guid>
       <description>前面部分是自己的记录，后面方案部分是成功安装驱动&#43;桌面重复的正解</description>
     </item>
     <item>
       <title>C_Cplus程序设计涉及的一些知识点</title>
-      <link>http://localhost:60167/posts/c_cplus_basic0/</link>
+      <link>https://www.imxwell.com/posts/c_cplus_basic0/</link>
       <pubDate>Tue, 30 Aug 2016 10:47:00 +0000</pubDate>
-      <guid>http://localhost:60167/posts/c_cplus_basic0/</guid>
+      <guid>https://www.imxwell.com/posts/c_cplus_basic0/</guid>
       <description>C&#43;&#43;中的一些小知识点（printf压栈顺序，指针引用，动态内存以及变量的存储位置，构造函数，this指针等问题的回顾） </description>
     </item>
     <item>
       <title>PyBrain库的example之NFQ流程图分析</title>
-      <link>http://localhost:60167/posts/pybrain_example_nfq_code_flow/</link>
+      <link>https://www.imxwell.com/posts/pybrain_example_nfq_code_flow/</link>
       <pubDate>Fri, 27 May 2016 11:43:00 +0000</pubDate>
-      <guid>http://localhost:60167/posts/pybrain_example_nfq_code_flow/</guid>
+      <guid>https://www.imxwell.com/posts/pybrain_example_nfq_code_flow/</guid>
       <description>PyBrain 库中NFQ算法的流程图分析</description>
     </item>
     <item>
       <title>Python 有关引用的一些问题</title>
-      <link>http://localhost:60167/posts/python_identity/</link>
+      <link>https://www.imxwell.com/posts/python_identity/</link>
       <pubDate>Sat, 21 May 2016 14:24:00 +0000</pubDate>
-      <guid>http://localhost:60167/posts/python_identity/</guid>
+      <guid>https://www.imxwell.com/posts/python_identity/</guid>
       <description>Python中引用的一些分析记录</description>
     </item>
     <item>
       <title>Python内建函数</title>
-      <link>http://localhost:60167/posts/py_builted_func/</link>
+      <link>https://www.imxwell.com/posts/py_builted_func/</link>
       <pubDate>Tue, 17 May 2016 15:06:00 +0000</pubDate>
-      <guid>http://localhost:60167/posts/py_builted_func/</guid>
+      <guid>https://www.imxwell.com/posts/py_builted_func/</guid>
       <description>Python中一些有用的内置函数，map，zip，filter，reduce，yield，instance等</description>
     </item>
   </channel>
