@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>PyBrain on Xwell</title>
-    <link>http://localhost:58211/tags/pybrain/</link>
+    <link>http://localhost:59413/tags/pybrain/</link>
     <description>Recent content in PyBrain on Xwell</description>
     <generator>Hugo -- 0.133.0</generator>
     <language>en</language>
     <copyright>2017-2024 xwell All Rights Reserved</copyright>
     <lastBuildDate>Fri, 27 May 2016 11:43:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:58211/tags/pybrain/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:59413/tags/pybrain/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PyBrain库的example之NFQ流程图分析</title>
-      <link>http://localhost:58211/posts/pybrain_example_nfq_code_flow/</link>
+      <link>http://localhost:59413/posts/pybrain_example_nfq_code_flow/</link>
       <pubDate>Fri, 27 May 2016 11:43:00 +0000</pubDate>
-      <guid>http://localhost:58211/posts/pybrain_example_nfq_code_flow/</guid>
+      <guid>http://localhost:59413/posts/pybrain_example_nfq_code_flow/</guid>
       <description>PyBrain 库中NFQ算法的流程图分析</description>
     </item>
   </channel>

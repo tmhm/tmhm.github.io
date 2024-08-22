@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>C&#43;&#43; on Xwell</title>
-    <link>http://localhost:58211/tags/c&#43;&#43;/</link>
+    <link>http://localhost:59413/tags/c&#43;&#43;/</link>
     <description>Recent content in C&#43;&#43; on Xwell</description>
     <generator>Hugo -- 0.133.0</generator>
     <language>en</language>
     <copyright>2017-2024 xwell All Rights Reserved</copyright>
     <lastBuildDate>Tue, 30 Aug 2016 10:47:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:58211/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:59413/tags/c++/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>C_Cplus程序设计涉及的一些知识点</title>
-      <link>http://localhost:58211/posts/c_cplus_basic0/</link>
+      <link>http://localhost:59413/posts/c_cplus_basic0/</link>
       <pubDate>Tue, 30 Aug 2016 10:47:00 +0000</pubDate>
-      <guid>http://localhost:58211/posts/c_cplus_basic0/</guid>
+      <guid>http://localhost:59413/posts/c_cplus_basic0/</guid>
       <description>C&#43;&#43;中的一些小知识点（printf压栈顺序，指针引用，动态内存以及变量的存储位置，构造函数，this指针等问题的回顾） </description>
     </item>
   </channel>
