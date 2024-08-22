@@ -2,106 +2,106 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://www.imxwell.com/posts/reading_list/</loc>
+    <loc>http://localhost:61312/posts/reading_list/</loc>
     <lastmod>2024-08-22T11:15:05+08:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/posts/</loc>
+    <loc>http://localhost:61312/posts/</loc>
     <lastmod>2024-08-22T11:15:05+08:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/</loc>
+    <loc>http://localhost:61312/</loc>
     <lastmod>2024-08-22T11:15:05+08:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/categories/</loc>
+    <loc>http://localhost:61312/categories/</loc>
     <lastmod>2024-08-22T11:15:05+08:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/tags/id%E7%BC%96%E7%A0%81/</loc>
+    <loc>http://localhost:61312/tags/id%E7%BC%96%E7%A0%81/</loc>
     <lastmod>2022-09-25T15:11:05+08:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/tags/pandas/</loc>
+    <loc>http://localhost:61312/tags/pandas/</loc>
     <lastmod>2022-09-25T15:11:05+08:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/posts/pandas_group/</loc>
+    <loc>http://localhost:61312/posts/pandas_group/</loc>
     <lastmod>2022-09-25T15:11:05+08:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/tags/python/</loc>
+    <loc>http://localhost:61312/tags/python/</loc>
     <lastmod>2022-09-25T15:11:05+08:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/tags/</loc>
+    <loc>http://localhost:61312/tags/</loc>
     <lastmod>2024-08-22T11:15:05+08:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/tags/%E5%88%86%E7%BB%84/</loc>
+    <loc>http://localhost:61312/tags/%E5%88%86%E7%BB%84/</loc>
     <lastmod>2022-09-25T15:11:05+08:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/categories/%E6%80%BB%E7%BB%93/</loc>
+    <loc>http://localhost:61312/categories/%E6%80%BB%E7%BB%93/</loc>
     <lastmod>2022-09-25T15:11:05+08:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/tags/%E8%81%9A%E5%90%88/</loc>
+    <loc>http://localhost:61312/tags/%E8%81%9A%E5%90%88/</loc>
     <lastmod>2022-09-25T15:11:05+08:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/tags/even/</loc>
+    <loc>http://localhost:61312/tags/even/</loc>
     <lastmod>2022-09-03T13:50:28+08:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/tags/hugo/</loc>
+    <loc>http://localhost:61312/tags/hugo/</loc>
     <lastmod>2022-09-03T13:50:28+08:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/categories/tools/</loc>
+    <loc>http://localhost:61312/categories/tools/</loc>
     <lastmod>2022-09-03T13:50:28+08:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/posts/wordpress2hugo/</loc>
+    <loc>http://localhost:61312/posts/wordpress2hugo/</loc>
     <lastmod>2022-09-03T13:50:28+08:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/publications/</loc>
+    <loc>http://localhost:61312/publications/</loc>
     <lastmod>2022-08-28T16:23:03+08:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/categories/%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>http://localhost:61312/categories/%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2024-08-22T11:15:05+08:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/tags/%E9%98%85%E8%AF%BB%E4%B9%A6%E5%8D%95/</loc>
+    <loc>http://localhost:61312/tags/%E9%98%85%E8%AF%BB%E4%B9%A6%E5%8D%95/</loc>
     <lastmod>2024-08-22T11:15:05+08:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/posts/rl_basic/</loc>
+    <loc>http://localhost:61312/posts/rl_basic/</loc>
     <lastmod>2019-04-13T21:58:52+08:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/tags/cuda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
+    <loc>http://localhost:61312/tags/cuda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2016-11-21T12:15:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/posts/dl_server_ubuntu14_cuda8_gtx1080/</loc>
+    <loc>http://localhost:61312/posts/dl_server_ubuntu14_cuda8_gtx1080/</loc>
     <lastmod>2016-11-21T12:15:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
+    <loc>http://localhost:61312/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2016-11-21T12:15:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/posts/c_cplus_basic0/</loc>
+    <loc>http://localhost:61312/posts/c_cplus_basic0/</loc>
     <lastmod>2016-08-30T10:47:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/tags/c&#43;&#43;/</loc>
+    <loc>http://localhost:61312/tags/c&#43;&#43;/</loc>
     <lastmod>2016-08-30T10:47:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/</loc>
+    <loc>http://localhost:61312/tags/%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2016-08-30T10:47:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/tags/pybrain/</loc>
+    <loc>http://localhost:61312/tags/pybrain/</loc>
     <lastmod>2016-05-27T11:43:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/posts/pybrain_example_nfq_code_flow/</loc>
+    <loc>http://localhost:61312/posts/pybrain_example_nfq_code_flow/</loc>
     <lastmod>2016-05-27T11:43:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>http://localhost:61312/tags/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2016-05-27T11:43:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/tags/%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%88%86%E6%9E%90/</loc>
+    <loc>http://localhost:61312/tags/%E6%B5%81%E7%A8%8B%E5%9B%BE%E5%88%86%E6%9E%90/</loc>
     <lastmod>2016-05-27T11:43:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/posts/python_identity/</loc>
+    <loc>http://localhost:61312/posts/python_identity/</loc>
     <lastmod>2016-05-21T14:24:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/tags/%E5%BC%95%E7%94%A8/</loc>
+    <loc>http://localhost:61312/tags/%E5%BC%95%E7%94%A8/</loc>
     <lastmod>2016-05-21T14:24:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/posts/py_builted_func/</loc>
+    <loc>http://localhost:61312/posts/py_builted_func/</loc>
     <lastmod>2019-03-17T15:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.imxwell.com/tags/%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/</loc>
+    <loc>http://localhost:61312/tags/%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/</loc>
     <lastmod>2019-03-17T15:00:00+00:00</lastmod>
   </url>
 </urlset>
